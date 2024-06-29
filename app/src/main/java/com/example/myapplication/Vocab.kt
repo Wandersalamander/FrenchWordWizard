@@ -59,7 +59,8 @@ data class Vocab(
         if (sharedPreferences == null) {
             return
         }
-        viewTimeMilli = sharedPreferences.getString("${hash}viewTimeMilli", 10000.toString())!!.toLong()
+        viewTimeMilli =
+            sharedPreferences.getString("${hash}viewTimeMilli", 10000.toString())!!.toLong()
         viewTimeMilli_prev =
             sharedPreferences.getString("${hash}viewTimeMilli_prev", 10000.toString())!!.toLong()
         nTimesViewed = sharedPreferences.getString("${hash}nTimesViewed", "0")!!.toInt()
@@ -93,7 +94,7 @@ data class Vocab(
             1.0f
         } else {
             val base = 0.5f / nTimesViewed.toFloat()
-            base + (1.0f-base)*nTimesFailed.toFloat() / nTimesViewed.toFloat()
+            base + (1.0f - base) * nTimesFailed.toFloat() / nTimesViewed.toFloat()
         }
     }
 
@@ -106,9 +107,8 @@ data class Vocab(
     fun sortValue(): Double {
         // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
         val lastSeenHours = viewedMiutesAgo() / 60.0
-        return (ln(1.0f + lastSeenHours)+1.0f) * (failureProbability() + (meanTimeViewedMilli()) / 10e3)
+        return (ln(1.0f + lastSeenHours) + 1.0f) * (failureProbability() + (meanTimeViewedMilli()) / 10e3)
     }
-
 
 
     fun replaceMultiplePhrasesRegexFr(input: String): String {

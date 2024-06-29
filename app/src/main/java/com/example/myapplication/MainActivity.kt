@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.media.MediaPlayer
-import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
@@ -296,7 +295,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         if (saveVocab) {
             saveCurrentVocab(penalty)
         }
-        if (currentVocab == null){
+        if (currentVocab == null) {
             currentVocab = if (newCandidates) {
                 vocabDictionary.getInactiveVocab()
             } else {
