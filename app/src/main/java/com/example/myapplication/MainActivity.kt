@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var vocabDictionary: MyDictionary
     private var currentVocab: Vocab? = null
-    var startTime: Long? = null
-    var endTime: Long? = null
-    var timeElapsed: Long? = null
+    private var startTime: Long? = null
+    private var endTime: Long? = null
+    private var timeElapsed: Long? = null
 
     private lateinit var buttonFail: Button
     private lateinit var buttonNext: Button
@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     private val channelId = "MyChannelId"
-    private val notificationId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +97,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
 
             override fun onError(p0: String?) {
+                TODO("Not yet implemented")
             }
 
 
@@ -136,15 +136,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         textScore.text = ""
         textGuessLong.text = ""
         textFr.text = "Apprenez le français !"
-        textEn.text = "Click 'next' to begin!"
+        textEn.text = getString(R.string.START_INFO_TEXT)
 
         vocabDictionary = MyDictionary(
             inputStream, sharedPreferences
         )
-        progressBar.setProgress(
-            ((vocabDictionary.getActiveDataSize() + 1)
-                .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
-        )
+        progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
+            .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
 
 
         startTime = System.currentTimeMillis()
@@ -194,23 +192,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }.start()
         }
 
-        buttonFail.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                revealAllVocabData(showNextVocab = true)
-
-            }
-        })
-        buttonNext.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                updateVocab(0, false)
-            }
-        })
-
-        buttonNew.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                updateVocab(0, true)
-            }
-        })
+        buttonFail.setOnClickListener { revealAllVocabData(showNextVocab = true) }
+        buttonNext.setOnClickListener { updateVocab(0, false) }
+        buttonNew.setOnClickListener { updateVocab(0, true) }
 
 
     }
@@ -282,7 +266,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
 
-    fun saveCurrentVocab(penalty: Long) {
+    private fun saveCurrentVocab(penalty: Long) {
         if (startTime != null && currentVocab != null) {
             endTime = System.currentTimeMillis()
             timeElapsed = endTime!! - startTime!! + penalty
@@ -302,7 +286,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
-    fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
+    private fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
         if (penalty > 0) {
             currentVocab!!.nTimesFailed += 1
         }
@@ -310,17 +294,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         if (saveVocab) {
             saveCurrentVocab(penalty)
         }
-        if (newCandidates) {
-            vocabDictionary.updateCandidates(true)
+        currentVocab = if (newCandidates) {
+            vocabDictionary.getInactiveVocab()
+        } else {
+            vocabDictionary.getActiveVocabWeightened()
         }
 
-        currentVocab = vocabDictionary.getNextVocab()
-
         runOnUiThread {
-            progressBar.setProgress(
-                ((vocabDictionary.getActiveDataSize() + 1)
-                    .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
-            )
+            progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
+                .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
             print(currentVocab!!.meanTimeViewedMilli())
             if (currentVocab!!.meanTimeViewedMilli() == (10 * 1e3)) {
                 textScore.text =
@@ -328,9 +310,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 buttonFail.isClickable = true
                 buttonFail.isEnabled = true
 
-                buttonNew.isClickable = false
-                buttonNew.isEnabled = false
+                buttonNext.isClickable = true
+                buttonNext.isEnabled = true
 
+                buttonNew.isClickable = true
+                buttonNew.isEnabled = true
 
 
             } else {
@@ -338,6 +322,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     String.format("%.1f s", (currentVocab!!.meanTimeViewedMilli() / 1e3))
                 buttonFail.isClickable = true
                 buttonFail.isEnabled = true
+
+                buttonNext.isClickable = true
+                buttonNext.isEnabled = true
 
                 buttonNew.isClickable = true
                 buttonNew.isEnabled = true
@@ -368,19 +355,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Show vocabs"
-            val descriptionText = "This channel shows continuously vocabs to practice"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel = NotificationChannel(channelId, name, importance).apply {
-                description = descriptionText
-            }
-
-            val notificationManager =
-                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
-            notificationManager.createNotificationChannel(channel)
+        val name = "Show vocabs"
+        val descriptionText = "This channel shows continuously vocabs to practice"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel(channelId, name, importance).apply {
+            description = descriptionText
         }
+
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        notificationManager.createNotificationChannel(channel)
     }
 
 }

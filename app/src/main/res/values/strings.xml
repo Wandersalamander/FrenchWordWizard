@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">French WordWizard</string>
     <string name="next">Next</string>
+    <string name="START_INFO_TEXT">Click \'next\' to begin!</string>
 </resources>

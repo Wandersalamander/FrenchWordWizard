@@ -125,33 +125,31 @@ class MyForegroundService : Service() {
 
     private fun updateNotification() {
         val localVocab = vocabDictionary.getActiveVocabWeightened()
-        if (localVocab != null) {
-            val notificationIntent = Intent(
-                this,
-                MainActivity::class.java
-            )
-            val pendingIntent = PendingIntent.getActivity(
-                this,
-                0,
-                notificationIntent,
-                PendingIntent.FLAG_MUTABLE
-            )
+        val notificationIntent = Intent(
+            this,
+            MainActivity::class.java
+        )
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            notificationIntent,
+            PendingIntent.FLAG_MUTABLE
+        )
 
-            val builder = NotificationCompat.Builder(
-                this,
-                NOTIFICATION_CHANNEL_ID
-            )
-                .setSmallIcon(R.drawable.ic_notification)
-                .setContentIntent(pendingIntent)
-                .setContentTitle("${localVocab.french} | ${localVocab.english}")
-                .setContentText(localVocab.frenchLong)
+        val builder = NotificationCompat.Builder(
+            this,
+            NOTIFICATION_CHANNEL_ID
+        )
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentIntent(pendingIntent)
+            .setContentTitle("${localVocab.french} | ${localVocab.english}")
+            .setContentText(localVocab.frenchLong)
 
 
-            val notificationManager =
-                getSystemService(Context.NOTIFICATION_SERVICE)
-                        as NotificationManager
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE)
+                    as NotificationManager
 
-            notificationManager.notify(NOTIFICATION_ID, builder.build())
-        }
+        notificationManager.notify(NOTIFICATION_ID, builder.build())
     }
 }
