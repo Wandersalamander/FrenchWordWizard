@@ -2,7 +2,7 @@ package com.example.myapplication
 
 import android.content.SharedPreferences
 import java.util.concurrent.TimeUnit
-import kotlin.math.sqrt
+import kotlin.math.ln
 
 val abbreviationDictionaryFr = mapOf(
     "Jr." to "Junior",
@@ -106,7 +106,7 @@ data class Vocab(
     fun sortValue(): Double {
         // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
         val lastSeenHours = viewedMiutesAgo() / 60.0
-        return sqrt(1.0f + lastSeenHours) * failureProbability() * meanTimeViewedMilli()
+        return (ln(1.0f + lastSeenHours)+1.0f) * (failureProbability() + (meanTimeViewedMilli()) / 10e3)
     }
 
 

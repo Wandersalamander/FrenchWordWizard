@@ -288,16 +288,28 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
         if (penalty > 0) {
-            currentVocab!!.nTimesFailed += 1
+            if (currentVocab != null) {
+                currentVocab!!.nTimesFailed += 1
+            }
         }
 
         if (saveVocab) {
             saveCurrentVocab(penalty)
         }
-        currentVocab = if (newCandidates) {
-            vocabDictionary.getInactiveVocab()
-        } else {
-            vocabDictionary.getActiveVocabWeightened()
+        if (currentVocab == null){
+            currentVocab = if (newCandidates) {
+                vocabDictionary.getInactiveVocab()
+            } else {
+                vocabDictionary.getActiveVocabWeightened()
+            }
+        }
+        val previousVocabFrench = currentVocab!!.french
+        while (currentVocab!!.french == previousVocabFrench) {
+            currentVocab = if (newCandidates) {
+                vocabDictionary.getInactiveVocab()
+            } else {
+                vocabDictionary.getActiveVocabWeightened()
+            }
         }
 
         runOnUiThread {
