@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             "vocabulary_preferences", Context.MODE_PRIVATE
         )
         val inputStream: InputStream = resources.openRawResource(
-            R.raw.dictionary_sorted
+            R.raw.dictionary_sorted_2
         )
         textProgress.text = ""
         textScore.text = ""
@@ -140,6 +140,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         vocabDictionary = MyDictionary(
             inputStream, sharedPreferences
         )
+        // vocabDictionary.debugDictionary()
         progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
             .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
 
@@ -218,7 +219,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         val wordFr = vocab.pronounceableFr()
         val wordEn = vocab.pronounceableEn()
-        val sentenceFr = vocab.frenchLong
+        val sentenceFr = textGuessLong.text
 
         val params = Bundle()
         params.putString(
@@ -285,6 +286,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
+
     private fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
         if (penalty > 0) {
             if (currentVocab != null) {
@@ -329,8 +331,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
             } else {
-                textScore.text =
-                    String.format("%.1f s", (currentVocab!!.meanTimeViewedMilli() / 1e3))
+                textScore.text = currentVocab!!.getInfoString()
                 buttonFail.isClickable = true
                 buttonFail.isEnabled = true
 
@@ -349,7 +350,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             textEn.text = currentVocab!!.english
 
             textGuessLong.visibility = View.INVISIBLE
-            textGuessLong.text = currentVocab!!.frenchLong
+            textGuessLong.text = currentVocab!!.getSomeFrenchLong()
 
         }
         startTime = System.currentTimeMillis()

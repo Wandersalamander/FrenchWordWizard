@@ -13,22 +13,38 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
 
     }
 
+    fun debugDictionary() {
+        val activeData = csvData.filter { it.nTimesViewed != 0 }.iterator()
+        while (activeData.hasNext()) {
+            val vocab = activeData.next()
+            println(vocab.debugSortValue())
+        }
+    }
+
     fun readCsv(inputStream: InputStream): List<Vocab> {
         val reader = inputStream.bufferedReader()
         return reader.lineSequence()
-            .map {
-                val (french, english, importance, hash, frenchLong) = it.split(
-                    '\t', ignoreCase = false, limit = 5
-                )
+            .map { line ->
+                val parts = line.split('\t', ignoreCase = false, limit = 6)
+                val french = parts[0]
+                val english = parts[1]
+                val importance = parts[2]
+                val hash = parts[3]
+                val frenchLong = parts[4]
+                val frenchLong2 = parts[5]
                 Vocab(
                     french.trim(),
                     english.trim(),
                     importance.trim().toInt(),
                     hash.trim(),
                     frenchLong.trim(),
+                    frenchLong2.trim(),
                     sharedPreferences
                 )
-            }.toList()
+            }
+            .filterNotNull() // Filter out lines where processing failed or skipped
+            .toList()
+
     }
 
     fun getInactiveVocab(): Vocab {

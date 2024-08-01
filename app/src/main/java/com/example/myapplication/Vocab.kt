@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.SharedPreferences
 import java.util.concurrent.TimeUnit
 import kotlin.math.ln
+import kotlin.random.Random
 
 val abbreviationDictionaryFr = mapOf(
     "Jr." to "Junior",
@@ -42,8 +43,10 @@ data class Vocab(
     val importance: Int,
     val hash: String,
     val frenchLong: String,
-    val sharedPreferences: SharedPreferences? = null
-) {
+    val frenchLong2: String,
+    val sharedPreferences: SharedPreferences? = null,
+
+    ) {
     var viewTimeMilli: Long = 10000
     var viewTimeMilli_prev: Long = 10000
     var nTimesViewed: Int = 0
@@ -51,8 +54,18 @@ data class Vocab(
     var ignore: Boolean = false
     var lastDisplayed: Long = 0
 
+
     init {
         loadPreferences()
+    }
+
+    fun getSomeFrenchLong(): String {
+        val index = Random.nextInt(2)
+        when (index) {
+            0 -> return frenchLong2
+            1 -> return frenchLong
+        }
+        return frenchLong // fallback option
     }
 
     fun loadPreferences() {
@@ -68,6 +81,20 @@ data class Vocab(
             sharedPreferences.getString("${hash}nTimesFailed", nTimesViewed.toString())!!.toInt()
         ignore = sharedPreferences.getString("${hash}ignore", "false")!!.toBoolean()
         lastDisplayed = sharedPreferences.getString("${hash}lastDisplayed", "0")!!.toLong()
+    }
+
+    fun debugSortValue(): String {
+        // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
+        val lastSeenHours = viewedMiutesAgo() / 60.0
+        val a = viewedMiutesAgo()
+        val b = ((ln(1.0f + lastSeenHours) + 1.0f))
+        var c = (failureProbability())
+        if (c < 0.1) {
+            c = 0.0F  // ignore words that are learned well enough
+        }
+        val d = (meanTimeViewedMilli()) / 10e3
+        val z = sortValue()
+        return String.format("$french\t$a\t$b\t$c\t$d\t$z")
     }
 
     fun savePreferences() {
@@ -98,6 +125,29 @@ data class Vocab(
         }
     }
 
+    fun getInfoString(): String {
+        return getTimeString() + "\n" + getStarsString()
+    }
+
+    fun getTimeString(): String {
+        return String.format("⧖ %.1f s", (meanTimeViewedMilli() / 1e3))
+    }
+
+    fun getStarsString(): String {
+        var sucessProbability: Float = 1.0f - failureProbability() // 0 to 1
+        if (sucessProbability > 1.0f) {
+            sucessProbability = 1.0f
+        }
+        if (sucessProbability < 0.0f) {
+            sucessProbability = 1.0f
+        }
+        val star_number = 5
+        val n_full_stars: Int = ((star_number * sucessProbability).toInt())
+
+        val remainder: Int = star_number - n_full_stars
+        return "★".repeat(n_full_stars) + "☆".repeat(remainder)
+    }
+
     fun meanTimeViewedMilli() = ((viewTimeMilli.toDouble() + viewTimeMilli_prev.toDouble()) * 0.5)
 
     fun viewedMiutesAgo() =
@@ -107,7 +157,11 @@ data class Vocab(
     fun sortValue(): Double {
         // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
         val lastSeenHours = viewedMiutesAgo() / 60.0
-        return (ln(1.0f + lastSeenHours) + 1.0f) * (failureProbability() + (meanTimeViewedMilli()) / 10e3)
+        val fpb = failureProbability()
+        if (fpb < 0.1) {
+            return 0.0
+        }
+        return (ln(1.0f + lastSeenHours) + 1.0f) * (fpb + (meanTimeViewedMilli()) / 10e3)
     }
 
 

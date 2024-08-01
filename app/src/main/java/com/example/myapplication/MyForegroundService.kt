@@ -74,7 +74,7 @@ class MyForegroundService : Service() {
             "vocabulary_preferences", Context.MODE_PRIVATE
         )
         val inputStream: InputStream = resources.openRawResource(
-            R.raw.dictionary_sorted
+            R.raw.dictionary_sorted_2
         )
         vocabDictionary = MyDictionary(inputStream, sharedPreferences)
 
@@ -143,7 +143,7 @@ class MyForegroundService : Service() {
             .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(pendingIntent)
             .setContentTitle("${localVocab.french} | ${localVocab.english}")
-            .setContentText(localVocab.frenchLong)
+            .setContentText(localVocab.getSomeFrenchLong())
 
 
         val notificationManager =
