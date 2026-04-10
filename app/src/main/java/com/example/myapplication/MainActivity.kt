@@ -5,9 +5,12 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.media.AudioAttributes
-import android.media.MediaPlayer
+import android.media.SoundPool
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.view.View
@@ -44,7 +47,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var textGuessLong: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var serviceIntent: Intent
-    private var mediaPlayer: MediaPlayer? = null
+    private var soundPool: SoundPool? = null
+    private var successSoundId: Int = 0
+    private var inSpotCheck: Boolean = false
+    private val spotCheckProbability = 0.2
 
 
     private val channelId = MyForegroundService.NOTIFICATION_CHANNEL_ID
@@ -64,24 +70,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val dexOutputDir: File = codeCacheDir
         dexOutputDir.setReadOnly()
 
-        // Initialize MediaPlayer with the success sound
-        // Use USAGE_ASSISTANCE_NAVIGATION_GUIDANCE to avoid stealing focus from music apps
+        // Initialize SoundPool for the success sound
+        // SoundPool mixes audio without requesting audio focus, so it won't interfere with Spotify etc.
         val audioAttrs = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build()
-        mediaPlayer = MediaPlayer().apply {
-            setAudioAttributes(audioAttrs)
-            val afd = resources.openRawResourceFd(R.raw.duolingo_sucess)
-            setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
-            afd.close()
-            prepare()
-        }
-
-        // Set completion listener to reset player for reuse
-        mediaPlayer?.setOnCompletionListener {
-            it.seekTo(0)
-        }
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttrs)
+            .build()
+        successSoundId = soundPool!!.load(this, R.raw.duolingo_sucess, 1)
 
 
 
@@ -246,8 +245,49 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }.start()
         }
 
-        buttonFail.setOnClickListener { revealAllVocabData(showNextVocab = true) }
-        buttonNext.setOnClickListener { updateVocab(0, false) }
+        fun exitSpotCheck(wasWrong: Boolean) {
+            inSpotCheck = false
+            buttonFail.text = "I don't know"
+            buttonNext.text = "Next"
+            if (wasWrong) {
+                currentVocab?.nTimesFailed = (currentVocab?.nTimesFailed ?: 0f) + 1.0f
+                updateVocab(2000, false)
+            } else {
+                updateVocab(0, false)
+            }
+        }
+
+        fun startSpotCheck() {
+            inSpotCheck = true
+            textEn.visibility = View.VISIBLE
+
+            buttonFail.text = "✗ Wrong"
+            buttonNext.text = "✓ Correct"
+            buttonNew.isEnabled = false
+            buttonNew.isClickable = false
+            buttonTip.isEnabled = false
+            buttonTip.isClickable = false
+
+            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+
+        buttonFail.setOnClickListener {
+            if (inSpotCheck) {
+                exitSpotCheck(wasWrong = true)
+            } else {
+                revealAllVocabData(showNextVocab = true)
+            }
+        }
+        buttonNext.setOnClickListener {
+            if (inSpotCheck) {
+                exitSpotCheck(wasWrong = false)
+            } else if (currentVocab != null && Math.random() < spotCheckProbability) {
+                startSpotCheck()
+            } else {
+                updateVocab(0, false)
+            }
+        }
         buttonNew.setOnClickListener { updateVocab(0, true) }
         buttonTip.setOnClickListener { showTip() }
 
@@ -316,7 +356,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 textToSpeech.shutdown()
             }
             stopService(serviceIntent)
-            releaseMediaPlayer()
+            releaseSoundPool()
             super.onDestroy()
         }
 
@@ -378,6 +418,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
 
             runOnUiThread {
+                inSpotCheck = false
+                buttonFail.text = "I don't know"
+                buttonNext.text = "Next"
                 progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
                     .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
                 print(currentVocab!!.meanTimeViewedMilli())
@@ -431,12 +474,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
 
         private fun playSuccessSound() {
-            mediaPlayer?.start()
+            soundPool?.play(successSoundId, 1f, 1f, 1, 0, 1f)
         }
 
-        private fun releaseMediaPlayer() {
-            mediaPlayer?.release()
-            mediaPlayer = null
+        private fun releaseSoundPool() {
+            soundPool?.release()
+            soundPool = null
         }
 
         private fun createNotificationChannel() {
