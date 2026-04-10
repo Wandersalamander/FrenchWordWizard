@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var startTime: Long? = null
     private var endTime: Long? = null
     private var timeElapsed: Long? = null
+    @Volatile
+    private var latch = CountDownLatch(1)
 
     private lateinit var buttonFail: Button
     private lateinit var buttonNext: Button
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var mediaPlayer: MediaPlayer? = null
 
 
-    private val channelId = "MyChannelId"
+    private val channelId = MyForegroundService.NOTIFICATION_CHANNEL_ID
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,9 +68,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             this, R.raw.duolingo_sucess
         )
 
-        // Set completion listener to release resources when playback completes
+        // Set completion listener to reset player for reuse
         mediaPlayer?.setOnCompletionListener {
-            releaseMediaPlayer()
+            it.seekTo(0)
         }
 
 
@@ -76,9 +78,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         setContentView(R.layout.activity_main)
         // Initialize TextToSpeech
         textToSpeech = TextToSpeech(this, this)
-        // Initialize the latch with a count of 1
-        var latch = CountDownLatch(1)
-
         textToSpeech.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
             override fun onStart(utteranceId: String) {
 
@@ -86,18 +85,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun onDone(utteranceId: String) {
                 if (utteranceId == "yourUtteranceIdEn") {
-                    // Update your UI or perform other
-                    // actions after TTS is finished
-                    print("this.latch.countDown")
-                    // Decrement the this.latch count
-                    // to release the waiting thread
                     latch.countDown()
                 }
 
             }
 
             override fun onError(p0: String?) {
-                TODO("Not yet implemented")
+                println("TTS error: $p0")
+                latch.countDown()
             }
 
 
@@ -153,6 +148,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         startTime = System.currentTimeMillis()
 
         fun showTip() {
+            if (currentVocab == null) return
             currentVocab!!.nTimesFailed += 0.25f
 
             buttonFail.isEnabled = false
@@ -167,27 +163,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             buttonTip.isEnabled = false
             buttonTip.isClickable = false
-            // Initialize the latch with a count of 1
             latch = CountDownLatch(1)
+            val capturedSentence = textGuessLong.text
 
             Thread {
-
                 if (currentVocab != null) {
                     runOnUiThread {
-                        //textEn.visibility = View.VISIBLE
                         textGuessLong.visibility = View.VISIBLE
                     }
-                    speakText(currentVocab!!, en = false, fr = false, exampleSentence=true)
+                    speakText(currentVocab!!, en = false, fr = false, exampleSentence=true, sentenceText=capturedSentence)
                 }
             }.start()
             Thread {
-                // Block the main thread
-                // until the latch count is 0
                 latch.await()
                 Thread.sleep(1000)
-                runOnUiThread {
-
-                }
                 runOnUiThread {
                     buttonFail.isEnabled = true
                     buttonFail.isClickable = true
@@ -200,6 +189,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
 
         fun revealAllVocabData(showNextVocab: Boolean) {
+            if (currentVocab == null) return
             buttonFail.isEnabled = false
             buttonFail.isClickable = false
 
@@ -212,27 +202,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             buttonTip.isEnabled = false
             buttonTip.isClickable = false
-            // Initialize the latch with a count of 1
             latch = CountDownLatch(1)
+            val capturedSentence = textGuessLong.text
 
             Thread {
-
                 if (currentVocab != null) {
                     runOnUiThread {
                         textEn.visibility = View.VISIBLE
                         textGuessLong.visibility = View.VISIBLE
                     }
-                    speakText(currentVocab!!, en = true, fr = false, exampleSentence = true)
+                    speakText(currentVocab!!, en = true, fr = false, exampleSentence = true, sentenceText = capturedSentence)
                 }
             }.start()
             Thread {
-                // Block the main thread
-                // until the latch count is 0
                 latch.await()
                 Thread.sleep(1000)
-                runOnUiThread {
-
-                }
                 if (showNextVocab) {
                     updateVocab(2000, false)
                     Thread.sleep(100)
@@ -274,12 +258,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean, exampleSentence: Boolean) {
-        // Speak the provided text#
-
+    private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean, exampleSentence: Boolean, sentenceText: CharSequence? = null) {
         val wordFr = vocab.pronounceableFr()
         val wordEn = vocab.pronounceableEn()
-        val sentenceFr = textGuessLong.text
+        val sentenceFr = sentenceText ?: textGuessLong.text
 
         val params = Bundle()
         params.putString(
@@ -287,9 +269,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         )
 
         if (fr) {
+            textToSpeech.stop()
             textToSpeech.language = Locale.FRENCH
             textToSpeech.speak(
-                wordFr, TextToSpeech.QUEUE_FLUSH, null, null
+                wordFr, TextToSpeech.QUEUE_ADD, null, null
             )
         }
         if (en) {
@@ -367,12 +350,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 }
             }
             val previousVocabFrench = currentVocab!!.french
-            while (currentVocab!!.french == previousVocabFrench) {
+            var attempts = 0
+            while (currentVocab!!.french == previousVocabFrench && attempts < 50) {
                 currentVocab = if (newCandidates) {
                     vocabDictionary.getInactiveVocab()
                 } else {
                     vocabDictionary.getActiveVocabWeightened()
                 }
+                attempts++
             }
 
             runOnUiThread {

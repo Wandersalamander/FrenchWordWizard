@@ -8,6 +8,10 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     val csvData: List<Vocab> = readCsv(inputStream)
 
 
+    fun reloadPreferences() {
+        csvData.forEach { it.loadPreferences() }
+    }
+
     fun getActiveDataSize(): Int {
         return csvData.filter { it.nTimesViewed > 0 }.size
 
@@ -22,33 +26,31 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     }
 
     fun readCsv(inputStream: InputStream): List<Vocab> {
-        val reader = inputStream.bufferedReader()
-        return reader.lineSequence()
-            .map { line ->
-                val parts = line.split('\t', ignoreCase = false, limit = 6)
-                val french = parts[0]
-                val english = parts[1]
-                val importance = parts[2]
-                val hash = parts[3]
-                val frenchLong = parts[4]
-                val frenchLong2 = parts[5]
-                Vocab(
-                    french.trim(),
-                    english.trim(),
-                    importance.trim().toInt(),
-                    hash.trim(),
-                    frenchLong.trim(),
-                    frenchLong2.trim(),
-                    sharedPreferences
-                )
-            }
-            .filterNotNull() // Filter out lines where processing failed or skipped
-            .toList()
-
+        return inputStream.bufferedReader().use { reader ->
+            reader.lineSequence()
+                .mapNotNull { line ->
+                    val parts = line.split('\t', ignoreCase = false, limit = 6)
+                    if (parts.size < 6) return@mapNotNull null
+                    try {
+                        Vocab(
+                            parts[0].trim(),
+                            parts[1].trim(),
+                            parts[2].trim().toInt(),
+                            parts[3].trim(),
+                            parts[4].trim(),
+                            parts[5].trim(),
+                            sharedPreferences
+                        )
+                    } catch (e: NumberFormatException) {
+                        null
+                    }
+                }
+                .toList()
+        }
     }
 
     fun getInactiveVocab(): Vocab {
-        val inactiveCsvData = csvData.filter { it.nTimesViewed == 0 }
+        val inactiveCsvData = csvData.filter { it.nTimesViewed == 0 && !it.ignore }
         if (inactiveCsvData.isEmpty()) {
             return getActiveVocabWeightened()
         } else {
@@ -57,9 +59,11 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     }
 
     fun getActiveVocabWeightened(): Vocab {
-        val activeData = csvData.filter { (it.nTimesViewed != 0) && (it.sortValue() > 0.0) }
-        if (activeData.size < 20) { // There should be at least 20 vocabs to learn
-            return csvData.get(Random.nextInt(csvData.size))
+        val activeData = csvData.filter { (it.nTimesViewed != 0) && !it.ignore && (it.sortValue() > 0.0) }
+        if (activeData.size < 20) {
+            val available = csvData.filter { !it.ignore }
+            if (available.isEmpty()) return csvData[Random.nextInt(csvData.size)]
+            return available[Random.nextInt(available.size)]
         }
         val totalChance = activeData.sumOf { it.sortValue() }
         val randomValue = Random.nextDouble(0.0, totalChance)
@@ -72,7 +76,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
                 break
             }
         }
-        return activeData.get(idx)
+        return activeData[idx]
     }
 
 }

@@ -33,8 +33,8 @@ val abbreviationDictionaryEn = mapOf(
     "Ph.D." to "P H D ",
 )
 
-val regExPatternFr = abbreviationDictionaryFr.keys.joinToString("|").toRegex()
-val regExPatternEn = abbreviationDictionaryEn.keys.joinToString("|").toRegex()
+val regExPatternFr = abbreviationDictionaryFr.keys.joinToString("|") { Regex.escape(it) }.toRegex()
+val regExPatternEn = abbreviationDictionaryEn.keys.joinToString("|") { Regex.escape(it) }.toRegex()
 
 
 data class Vocab(
@@ -78,7 +78,7 @@ data class Vocab(
             sharedPreferences.getString("${hash}viewTimeMilli_prev", 10000.toString())!!.toLong()
         nTimesViewed = sharedPreferences.getString("${hash}nTimesViewed", "0")!!.toInt()
         nTimesFailed =
-            sharedPreferences.getString("${hash}nTimesFailed", nTimesViewed.toString())!!.toFloat()
+            sharedPreferences.getString("${hash}nTimesFailed", "0")!!.toFloat()
         ignore = sharedPreferences.getString("${hash}ignore", "false")!!.toBoolean()
         lastDisplayed = sharedPreferences.getString("${hash}lastDisplayed", "0")!!.toLong()
     }
@@ -101,19 +101,15 @@ data class Vocab(
         if (sharedPreferences == null) {
             return
         }
-        Thread {
-            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
-            // Put the value to be saved
-            editor.putString("${hash}viewTimeMilli", viewTimeMilli.toString())
-            editor.putString("${hash}viewTimeMilli_prev", viewTimeMilli_prev.toString())
-            editor.putString("${hash}nTimesViewed", nTimesViewed.toString())
-            editor.putString("${hash}nTimesFailed", nTimesFailed.toString())
-            editor.putString("${hash}ignore", ignore.toString())
-            editor.putString("${hash}lastDisplayed", lastDisplayed.toString())
-            // Commit the changes
-            editor.apply()
-        }.start()
+        editor.putString("${hash}viewTimeMilli", viewTimeMilli.toString())
+        editor.putString("${hash}viewTimeMilli_prev", viewTimeMilli_prev.toString())
+        editor.putString("${hash}nTimesViewed", nTimesViewed.toString())
+        editor.putString("${hash}nTimesFailed", nTimesFailed.toString())
+        editor.putString("${hash}ignore", ignore.toString())
+        editor.putString("${hash}lastDisplayed", lastDisplayed.toString())
+        editor.apply()
     }
 
     fun failureProbability(): Float {
@@ -139,7 +135,7 @@ data class Vocab(
             sucessProbability = 1.0f
         }
         if (sucessProbability < 0.0f) {
-            sucessProbability = 1.0f
+            sucessProbability = 0.0f
         }
         val star_number = 5
         val n_full_stars: Int = ((star_number * sucessProbability).toInt())

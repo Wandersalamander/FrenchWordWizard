@@ -14,6 +14,7 @@ import java.io.InputStream
 class MyForegroundService : Service() {
     lateinit var vocabDictionary: MyDictionary
     var updateThread: Thread? = null
+    @Volatile
     var threadRunning = false
 
     companion object {
@@ -96,7 +97,7 @@ class MyForegroundService : Service() {
             this,
             0,
             notificationIntent,
-            PendingIntent.FLAG_MUTABLE
+            PendingIntent.FLAG_IMMUTABLE
         )
 
         return NotificationCompat.Builder(
@@ -124,6 +125,7 @@ class MyForegroundService : Service() {
     }
 
     private fun updateNotification() {
+        vocabDictionary.reloadPreferences()
         val localVocab = vocabDictionary.getActiveVocabWeightened()
         val notificationIntent = Intent(
             this,
@@ -133,7 +135,7 @@ class MyForegroundService : Service() {
             this,
             0,
             notificationIntent,
-            PendingIntent.FLAG_MUTABLE
+            PendingIntent.FLAG_IMMUTABLE
         )
 
         val builder = NotificationCompat.Builder(
