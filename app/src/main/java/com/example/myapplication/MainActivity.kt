@@ -7,7 +7,9 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.media.SoundPool
+import android.media.ToneGenerator
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -270,6 +272,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+
+            // Play a short "blub" tone
+            try {
+                val toneGen = ToneGenerator(AudioManager.STREAM_NOTIFICATION, 60)
+                toneGen.startTone(ToneGenerator.TONE_PROP_ACK, 150)
+                Thread { Thread.sleep(200); toneGen.release() }.start()
+            } catch (_: Exception) {}
         }
 
         buttonFail.setOnClickListener {
