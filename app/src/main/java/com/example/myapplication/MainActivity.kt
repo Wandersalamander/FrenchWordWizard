@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var buttonFail: Button
     private lateinit var buttonNext: Button
     private lateinit var buttonNew: Button
+    private lateinit var buttonTip: Button
 
     private lateinit var textFr: TextView
     private lateinit var textScore: TextView
@@ -109,12 +110,16 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         buttonFail = findViewById(R.id.button_fail)
         buttonNext = findViewById(R.id.button_next)
         buttonNew = findViewById(R.id.button_new)
+        buttonTip = findViewById(R.id.button_tip)
+
 
         buttonFail.isClickable = false
         buttonFail.isEnabled = false
 
         buttonNew.isClickable = false
         buttonNew.isEnabled = false
+        buttonTip.isClickable = false
+        buttonTip.isEnabled = false
 
         textFr = findViewById(R.id.textGuess)
         textScore = findViewById(R.id.textScore)
@@ -143,9 +148,56 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // vocabDictionary.debugDictionary()
         progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
             .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
-
+        //vocabDictionary.debugDictionary()
 
         startTime = System.currentTimeMillis()
+
+        fun showTip() {
+            currentVocab!!.nTimesFailed += 0.25f
+
+            buttonFail.isEnabled = false
+            buttonFail.isClickable = false
+
+            buttonNext.isEnabled = false
+            buttonNext.isClickable = false
+
+
+            buttonNew.isEnabled = false
+            buttonNew.isClickable = false
+
+            buttonTip.isEnabled = false
+            buttonTip.isClickable = false
+            // Initialize the latch with a count of 1
+            latch = CountDownLatch(1)
+
+            Thread {
+
+                if (currentVocab != null) {
+                    runOnUiThread {
+                        //textEn.visibility = View.VISIBLE
+                        textGuessLong.visibility = View.VISIBLE
+                    }
+                    speakText(currentVocab!!, en = false, fr = false, exampleSentence=true)
+                }
+            }.start()
+            Thread {
+                // Block the main thread
+                // until the latch count is 0
+                latch.await()
+                Thread.sleep(1000)
+                runOnUiThread {
+
+                }
+                runOnUiThread {
+                    buttonFail.isEnabled = true
+                    buttonFail.isClickable = true
+
+                    buttonNext.isEnabled = true
+                    buttonNext.isClickable = true
+                }
+            }.start()
+
+        }
 
         fun revealAllVocabData(showNextVocab: Boolean) {
             buttonFail.isEnabled = false
@@ -157,6 +209,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             buttonNew.isEnabled = false
             buttonNew.isClickable = false
+
+            buttonTip.isEnabled = false
+            buttonTip.isClickable = false
             // Initialize the latch with a count of 1
             latch = CountDownLatch(1)
 
@@ -167,7 +222,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                         textEn.visibility = View.VISIBLE
                         textGuessLong.visibility = View.VISIBLE
                     }
-                    speakText(currentVocab!!, en = true, fr = false)
+                    speakText(currentVocab!!, en = true, fr = false, exampleSentence = true)
                 }
             }.start()
             Thread {
@@ -188,6 +243,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
                     buttonNext.isEnabled = true
                     buttonNext.isClickable = true
+
+
+
+                    buttonTip.isEnabled = true
+                    buttonTip.isClickable = true
                 }
             }.start()
         }
@@ -195,7 +255,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         buttonFail.setOnClickListener { revealAllVocabData(showNextVocab = true) }
         buttonNext.setOnClickListener { updateVocab(0, false) }
         buttonNew.setOnClickListener { updateVocab(0, true) }
-
+        buttonTip.setOnClickListener { showTip() }
 
     }
 
@@ -214,7 +274,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean) {
+    private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean, exampleSentence: Boolean) {
         // Speak the provided text#
 
         val wordFr = vocab.pronounceableFr()
@@ -238,148 +298,159 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 wordEn, TextToSpeech.QUEUE_ADD, null, null
             )
 
+
+        }
+        if (exampleSentence) {
             textToSpeech.language = Locale.FRENCH
             textToSpeech.speak(
                 sentenceFr, TextToSpeech.QUEUE_ADD, params, "yourUtteranceIdEn"
             )
         }
 
-
-    }
-
-    override fun onDestroy() {
-        // Shutdown TextToSpeech when the activity is destroyed
-        if (::textToSpeech.isInitialized) {
-            textToSpeech.stop()
-            textToSpeech.shutdown()
         }
-        stopService(serviceIntent)
-        releaseMediaPlayer()
-        super.onDestroy()
-    }
 
-    override fun onResume() {
-        super.onResume()
-        startTime = System.currentTimeMillis()
-
-        //updateVocab(0,false,false)
-    }
-
-
-    private fun saveCurrentVocab(penalty: Long) {
-        if (startTime != null && currentVocab != null) {
-            endTime = System.currentTimeMillis()
-            timeElapsed = endTime!! - startTime!! + penalty
-
-            val prevFailureProbability = currentVocab!!.failureProbability()
-
-            currentVocab!!.nTimesViewed += 1
-            currentVocab!!.viewTimeMilli_prev = currentVocab!!.viewTimeMilli
-            currentVocab!!.viewTimeMilli = timeElapsed as Long
-            currentVocab!!.lastDisplayed = System.currentTimeMillis()
-            currentVocab!!.savePreferences()
-            if (currentVocab!!.failureProbability() < 0.1 && prevFailureProbability >= 0.1) {
-                // Play the success sound
-                playSuccessSound()
+        override fun onDestroy() {
+            // Shutdown TextToSpeech when the activity is destroyed
+            if (::textToSpeech.isInitialized) {
+                textToSpeech.stop()
+                textToSpeech.shutdown()
             }
+            stopService(serviceIntent)
+            releaseMediaPlayer()
+            super.onDestroy()
         }
 
-    }
+        override fun onResume() {
+            super.onResume()
+            startTime = System.currentTimeMillis()
+
+            //updateVocab(0,false,false)
+        }
 
 
-    private fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
-        if (penalty > 0) {
-            if (currentVocab != null) {
-                currentVocab!!.nTimesFailed += 1
+        private fun saveCurrentVocab(penalty: Long) {
+            if (startTime != null && currentVocab != null) {
+                endTime = System.currentTimeMillis()
+                timeElapsed = endTime!! - startTime!! + penalty
+
+                val prevFailureProbability = currentVocab!!.failureProbability()
+
+                currentVocab!!.nTimesViewed += 1
+                currentVocab!!.viewTimeMilli_prev = currentVocab!!.viewTimeMilli
+                currentVocab!!.viewTimeMilli = timeElapsed as Long
+                currentVocab!!.lastDisplayed = System.currentTimeMillis()
+                currentVocab!!.savePreferences()
+                if (currentVocab!!.failureProbability() < 0.1 && prevFailureProbability >= 0.1) {
+                    // Play the success sound
+                    playSuccessSound()
+                }
             }
+
         }
 
-        if (saveVocab) {
-            saveCurrentVocab(penalty)
-        }
-        if (currentVocab == null) {
-            currentVocab = if (newCandidates) {
-                vocabDictionary.getInactiveVocab()
-            } else {
-                vocabDictionary.getActiveVocabWeightened()
+
+        private fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
+            if (penalty > 0) {
+                if (currentVocab != null) {
+                    currentVocab!!.nTimesFailed += 1.0f
+                }
             }
-        }
-        val previousVocabFrench = currentVocab!!.french
-        while (currentVocab!!.french == previousVocabFrench) {
-            currentVocab = if (newCandidates) {
-                vocabDictionary.getInactiveVocab()
-            } else {
-                vocabDictionary.getActiveVocabWeightened()
+
+            if (saveVocab) {
+                saveCurrentVocab(penalty)
             }
-        }
-
-        runOnUiThread {
-            progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
-                .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
-            print(currentVocab!!.meanTimeViewedMilli())
-            if (currentVocab!!.meanTimeViewedMilli() == (10 * 1e3)) {
-                textScore.text =
-                    String.format("A new word!")
-                buttonFail.isClickable = true
-                buttonFail.isEnabled = true
-
-                buttonNext.isClickable = true
-                buttonNext.isEnabled = true
-
-                buttonNew.isClickable = true
-                buttonNew.isEnabled = true
-
-
-            } else {
-                textScore.text = currentVocab!!.getInfoString()
-                buttonFail.isClickable = true
-                buttonFail.isEnabled = true
-
-                buttonNext.isClickable = true
-                buttonNext.isEnabled = true
-
-                buttonNew.isClickable = true
-                buttonNew.isEnabled = true
+            if (currentVocab == null) {
+                currentVocab = if (newCandidates) {
+                    vocabDictionary.getInactiveVocab()
+                } else {
+                    vocabDictionary.getActiveVocabWeightened()
+                }
             }
-            textProgress.text = String.format(
-                "%d / %d", (vocabDictionary.getActiveDataSize() + 1), vocabDictionary.csvData.size
-            )
-            textFr.text = currentVocab!!.french
+            val previousVocabFrench = currentVocab!!.french
+            while (currentVocab!!.french == previousVocabFrench) {
+                currentVocab = if (newCandidates) {
+                    vocabDictionary.getInactiveVocab()
+                } else {
+                    vocabDictionary.getActiveVocabWeightened()
+                }
+            }
 
-            textEn.visibility = View.INVISIBLE
-            textEn.text = currentVocab!!.english
+            runOnUiThread {
+                progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
+                    .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+                print(currentVocab!!.meanTimeViewedMilli())
+                if (currentVocab!!.meanTimeViewedMilli() == (10 * 1e3)) {
+                    textScore.text =
+                        String.format("A new word!")
+                    buttonFail.isClickable = true
+                    buttonFail.isEnabled = true
 
-            textGuessLong.visibility = View.INVISIBLE
-            textGuessLong.text = currentVocab!!.getSomeFrenchLong()
+                    buttonNext.isClickable = true
+                    buttonNext.isEnabled = true
 
+                    buttonNew.isClickable = true
+                    buttonNew.isEnabled = true
+
+
+                    buttonTip.isClickable = true
+                    buttonTip.isEnabled = true
+
+
+                } else {
+                    textScore.text = currentVocab!!.getInfoString()
+                    buttonFail.isClickable = true
+                    buttonFail.isEnabled = true
+
+                    buttonNext.isClickable = true
+                    buttonNext.isEnabled = true
+
+                    buttonNew.isClickable = true
+                    buttonNew.isEnabled = true
+
+                    buttonTip.isClickable = true
+                    buttonTip.isEnabled = true
+                }
+                textProgress.text = String.format(
+                    "%d / %d",
+                    (vocabDictionary.getActiveDataSize() + 1),
+                    vocabDictionary.csvData.size
+                )
+                textFr.text = currentVocab!!.french
+
+                textEn.visibility = View.INVISIBLE
+                textEn.text = currentVocab!!.english
+
+                textGuessLong.visibility = View.INVISIBLE
+                textGuessLong.text = currentVocab!!.getSomeFrenchLong()
+
+            }
+            startTime = System.currentTimeMillis()
+            speakText(currentVocab!!, en = false, fr = true, exampleSentence = false)
         }
-        startTime = System.currentTimeMillis()
-        speakText(currentVocab!!, en = false, fr = true)
-    }
 
-    private fun playSuccessSound() {
-        mediaPlayer?.start()
-    }
-
-    private fun releaseMediaPlayer() {
-        mediaPlayer?.release()
-        mediaPlayer = null
-    }
-
-    private fun createNotificationChannel() {
-        val name = "Show vocabs"
-        val descriptionText = "This channel shows continuously vocabs to practice"
-        val importance = NotificationManager.IMPORTANCE_DEFAULT
-        val channel = NotificationChannel(channelId, name, importance).apply {
-            description = descriptionText
+        private fun playSuccessSound() {
+            mediaPlayer?.start()
         }
 
-        val notificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        private fun releaseMediaPlayer() {
+            mediaPlayer?.release()
+            mediaPlayer = null
+        }
 
-        notificationManager.createNotificationChannel(channel)
+        private fun createNotificationChannel() {
+            val name = "Show vocabs"
+            val descriptionText = "This channel shows continuously vocabs to practice"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(channelId, name, importance).apply {
+                description = descriptionText
+            }
+
+            val notificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            notificationManager.createNotificationChannel(channel)
+        }
+
     }
-
-}
 
 

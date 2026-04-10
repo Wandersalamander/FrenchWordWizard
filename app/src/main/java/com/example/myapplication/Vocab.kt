@@ -50,7 +50,7 @@ data class Vocab(
     var viewTimeMilli: Long = 10000
     var viewTimeMilli_prev: Long = 10000
     var nTimesViewed: Int = 0
-    var nTimesFailed: Int = 0
+    var nTimesFailed: Float = 0.0f
     var ignore: Boolean = false
     var lastDisplayed: Long = 0
 
@@ -78,7 +78,7 @@ data class Vocab(
             sharedPreferences.getString("${hash}viewTimeMilli_prev", 10000.toString())!!.toLong()
         nTimesViewed = sharedPreferences.getString("${hash}nTimesViewed", "0")!!.toInt()
         nTimesFailed =
-            sharedPreferences.getString("${hash}nTimesFailed", nTimesViewed.toString())!!.toInt()
+            sharedPreferences.getString("${hash}nTimesFailed", nTimesViewed.toString())!!.toFloat()
         ignore = sharedPreferences.getString("${hash}ignore", "false")!!.toBoolean()
         lastDisplayed = sharedPreferences.getString("${hash}lastDisplayed", "0")!!.toLong()
     }
@@ -121,7 +121,7 @@ data class Vocab(
             1.0f
         } else {
             val base = 0.5f / nTimesViewed.toFloat()
-            base + (1.0f - base) * nTimesFailed.toFloat() / nTimesViewed.toFloat()
+            base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
         }
     }
 
@@ -156,11 +156,11 @@ data class Vocab(
 
     fun sortValue(): Double {
         // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
-        val lastSeenHours = viewedMiutesAgo() / 60.0
         val fpb = failureProbability()
         if (fpb < 0.1) {
             return 0.0
         }
+        val lastSeenHours = viewedMiutesAgo() / 60.0
         return (ln(1.0f + lastSeenHours) + 1.0f) * (fpb + (meanTimeViewedMilli()) / 10e3)
     }
 
