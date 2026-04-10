@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -64,9 +65,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         dexOutputDir.setReadOnly()
 
         // Initialize MediaPlayer with the success sound
-        mediaPlayer = MediaPlayer.create(
-            this, R.raw.duolingo_sucess
-        )
+        // Use USAGE_ASSISTANCE_NAVIGATION_GUIDANCE to avoid stealing focus from music apps
+        val audioAttrs = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+        mediaPlayer = MediaPlayer().apply {
+            setAudioAttributes(audioAttrs)
+            val afd = resources.openRawResourceFd(R.raw.duolingo_sucess)
+            setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
+            afd.close()
+            prepare()
+        }
 
         // Set completion listener to reset player for reuse
         mediaPlayer?.setOnCompletionListener {
@@ -252,6 +262,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 // Handle the case where French language data is missing or not supported
                 println("French language is not supported.")
             }
+
+            // Use audio attributes that don't steal focus from music apps
+            val audioAttributes = AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .build()
+            textToSpeech.setAudioAttributes(audioAttributes)
         } else {
             // Handle initialization failure
             println("TextToSpeech initialization failed.")

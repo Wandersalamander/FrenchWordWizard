@@ -56,9 +56,9 @@ entre	between	1	62d4cf0dcc32a02deea6691aa5ce60df	Il n’y a plus de magie entre 
 premier / première	first	1	83312d083ba83c7cf574a040f2e04685	La compétition s’est très bien déroulée : Philippe a terminé premier.	C'est son premier jour à l'école.
 aucun / aucune	none / no	1	c200f83a0d5c9de65a86d10d3dcf4820	Il n’y a aucune voyelle dans mon nom. C’est vrai! Il n’y en a aucune.	Aucun des étudiants n'a réussi l'examen.
 déjà	already	1	efda269c9ad07d9f7598419f4287b4b9	Pardon, je ne savais pas que tu étais déjà là.	Elle a déjà fini son travail.
-grand / grande	tall	1	d6e620ef218fcf77c23400123ada86cb	Je ne peux pas sortir avec cette fille, elle est beaucoup trop grande!	Il est très grand pour son âge.
+grand / grande	big / large / tall	1	d6e620ef218fcf77c23400123ada86cb	Je ne peux pas sortir avec cette fille, elle est beaucoup trop grande!	Il est très grand pour son âge.
 mon / ma	my	1	54cf7e1284a76035eb7b7efde45e0a34	Je déteste laisser mon chien seul à la maison.	Mon frère habite à Paris.
-me	myself	1	974e9aa8f954676d1a72bff70635c8e0	Je dois être prudent avec ce couteau, j’ai failli me blesser la dernière fois!	Je me prépare pour la réunion.
+me	me / myself	1	974e9aa8f954676d1a72bff70635c8e0	Je dois être prudent avec ce couteau, j’ai failli me blesser la dernière fois!	Je me prépare pour la réunion.
 moins	less	1	f62e206cbe3359befc3d164ca3c8d463	Ce serait bon pour ta santé si tu essayais de manger moins gras.	Il a moins d'amis depuis qu'il a déménagé.
 quelques	some	1	8d2cdfabd8313a6715a4593c9febc792	J’ai ramené deux pommes et quelques abricots de l’épicerie.	J'ai quelques amis à l'étranger.
 lui	him / her	1	4223e76860ea0577d773b89ad75e10df	Il lui a demandé d’aller au bal avec lui, mais elle a dit non!	Je parle avec lui tous les jours.
@@ -99,7 +99,7 @@ ainsi	thus	1	425367c95af05f829d7360d49152bfc2	Il est ainsi très important de su
 une heure	an hour	1	b3a9516f44d1dfdaad3409808a0594f9	Je t’attends au parc depuis une heure.	Il est parti il y a une heure.
 une année	a year	1	1c032d152b444c57a994633fb2ec02cf	Depuis combien d’années habitez-vous ici ?	J'ai passé une bonne année à l'université.
 toujours	always	1	e93010841a34dd02a4ea91ddc6643eda	Je serai toujours là pour toi, peu importe ce qui se passe.	Elle porte toujours son bracelet préféré.
-tenir	to hold	1	a4ad2d6696528328708e880e1a47ad78	N’oublis pas de tenir la main de ton frère avant de traverser la rue.	Tiens bien la rampe quand tu descends.
+tenir	to hold	1	a4ad2d6696528328708e880e1a47ad78	N’oublie pas de tenir la main de ton frère avant de traverser la rue.	Tiens bien la rampe quand tu descends.
 porter	to wear / to carry	1	7cced69cde2bc6571140f1b004cc5ad6	Tu veux porter des talons hauts ? Tu auras mal aux pieds et je devrai encore te porter sur mes épaules!	Elle porte une robe rouge pour la fête.
 parler	to speak / to talk (to)	1	566cf40bc634d511ebca9a600568f069	J’ai vraiment besoin de parler à quelqu’un.	Il parle souvent de ses voyages en Asie.
 seul / seule	alone	1	b3edcd20a9d508c2f84f70bc6f24edde	Ma meilleure amie ne peut pas venir, alors j’irai seule.	Il préfère travailler seul dans son bureau.
@@ -202,7 +202,7 @@ un service	a service / a favor	1	9c94405aa63afff57bdf74b0ff8a74d1	Rendez-vous se
 un / une ministre	a minister	1	a7093b400b381398c84861085e833b2a	Nous avons réellement besoin d’un ministre de l’Éducation qualifié.	Le ministre de l'Éducation a fait une annonce importante.
 vivre	to live	1	5d5a6061e0a63b6662aea3da27a62443	Je préfèrerais vivre à la campagne qu’au centre-ville.	Ils vivent dans une petite maison à la campagne.
 chez	at / to (someone’s)	1	f0fc7635d42a4166e29e18f493e3b2de	On peut manger chez moi ou on peut aller chez Marie-Ève.	Je vais chez mes grands-parents ce week-end.
-te	yourself	1	ccc17677701abee182feadcc5890371d	Tu te coupes toujours avec ce couteau de cuisine, fais attention!	Tu te prépares pour la soirée ?
+te	you / yourself	1	ccc17677701abee182feadcc5890371d	Tu te coupes toujours avec ce couteau de cuisine, fais attention!	Tu te prépares pour la soirée ?
 rappeler	to call back / to remind of	1	61b3ca548938264ee711455de8c548d9	Je dois rappeler Jasmine pour lui rappeler de ne pas oublier ses clés.	Je te rappelle demain matin pour confirmer.
 en face de	in front of	1	849bc814017ff0f348e53ed284cd372b	Elle était en face de moi, mais je n’ai pas été capable de lui dire la vérité.	Le magasin est en face de la bibliothèque.
 accepter	to accept	1	c887a99962f45dcc1a4d16e1dba6fcf0	Tu dois accepter mon invitation pour qu’on puisse jouer en ligne ensemble.	Elle a finalement accepté l'invitation à dîner.
@@ -273,7 +273,7 @@ exister	to exist	1	6bb7627db66c2f7fe6c7eaa07e79345f	Bientôt, certaines langues 
 quant à	as for	1	959a1a9ac129fe0e0d5e4fe77c714c8d	Julien aime le cinéma ; quant à Martine, elle préfère la photographie.	Quant à moi, je pense que c'est une bonne idée.
 mort / morte	dead	1	3e20460b7de6becea99e84f783f4cf84	Sa femme l’a laissé, il a perdu son emploi et maintenant sa mère est morte.	Il est mort il y a dix ans.
 mal	bad	1	5532ee07f421cb9505558686ae10f3a7	Je me sens mal pour Louise, je devrais aller lui parler.	Il a mal à la tête depuis ce matin.
-mauvais / mauvaise	wrong	1	288465ee281e9abeb78def383bb91e08	J’ai encore eu la mauvaise réponse à cette question.	Ce n'est pas le bon code, il est mauvais.
+mauvais / mauvaise	bad / wrong	1	288465ee281e9abeb78def383bb91e08	J’ai encore eu la mauvaise réponse à cette question.	Ce n'est pas le bon code, il est mauvais.
 réussir	to succeed	1	d4c5a07d7d469fee5b303fb21c432a25	Si tu pratiques tous les jours, tu vas réussir.	Elle a réussi son examen avec mention.
 un marché	a market	1	304f9b23a47f21de92a2e23b3e20f933	Le marché de l’assurance est très lucratif.	Le marché aux puces est ouvert tous les samedis.
 une condition	a condition	1	aeb92c835ebf0cd839da132783b52008	J’irai avec toi à une condition : je conduis la voiture.	Ils ont accepté sous certaines conditions.
@@ -317,7 +317,7 @@ courant / courante	common	1	9b68918f0b71a2a16236a36c73044a3f	Cette méthode est 
 appartenir	to belong	1	ec7171904be2762e02ea00375adf5a5a	Cette paire de lunettes pourrait appartenir au coupable!	Cette maison appartient à ma famille depuis des générations.
 la liberté	the liberty / the freedom	1	49999fbc8bbda24c2b2e190cd3bf2241	Tu as la liberté de t’en aller si c’est ce que tu veux.	La liberté est un droit fondamental.
 assez	enough	1	9dd17fc1ebf7edc68482ef90ce83e506	Je n’ai pas assez d’argent pour manger dans ce restaurant.	Il n'a pas assez d'argent pour acheter la voiture.
-un détail	a detail	1	ee7a8c2cd6bec86228cadf3a5dc48b63	Je ne comprends pas, j’ai besoin plus de détails.	Il faut vérifier chaque détail avant de finaliser le projet.
+un détail	a detail	1	ee7a8c2cd6bec86228cadf3a5dc48b63	Je ne comprends pas, j’ai besoin de plus de détails.	Il faut vérifier chaque détail avant de finaliser le projet.
 chacun	each	1	ec550a4e076572085bee2c33c5cde013	Tu dois quinze dollars à chacun de nous pour le repas d’hier.	Chacun a apporté quelque chose à partager lors du pique-nique.
 concerner	to concern	1	1dbbdb16b1ff8f66bd9002362a00a9f0	Mêle-toi de tes affaires, ça ne te concerne pas.	Ce règlement va concerner toutes les entreprises de la région.
 une maison	a house	1	82bbc06e1ba9b00885536250dc130b9d	Je viens d’acheter une maison; j’emménage avec ma femme dans un mois.	Le jardin autour de leur maison est magnifique.
@@ -338,7 +338,7 @@ clair / claire	clear	1	69b9dda40fe12cd24d4f58a15c124a85	Le ciel est clair et les
 un programme	a program	1	e5308187cd70b44e1fdcd09be8a96787	Cet élève fait partie d’un programme sportif à son école.	Ils ont développé un programme informatique très efficace.
 loin	far	1	b6c488c77c1751b94810aa99a9765f8b	Mon grand-père habite très loin d’ici.	Ils habitent loin de la ville, dans la campagne.
 une ligne	a line	1	6ab5e3a556a1285acc765e84bc8eb076	Il est important de savoir où tracer la ligne.	Il a écrit une nouvelle sur chaque ligne de la page.
-apporter	to bring (something)	1	487704f300d6e0c4c22af863139edb74	N’oublis pas d’apporter ton chargeur cette fois-ci.	N'oublie pas d'apporter ton passeport à l'aéroport.
+apporter	to bring (something)	1	487704f300d6e0c4c22af863139edb74	N’oublie pas d’apporter ton chargeur cette fois-ci.	N'oublie pas d'apporter ton passeport à l'aéroport.
 libre	free	1	45ca2e5663574fbe14006955814c5cd5	Son père est en prison, il sera libre dans six mois.	Il est libre de choisir son propre chemin dans la vie.
 utiliser	to use	1	7a98faea00ddadafc4e996148a72493d	Ma grand-mère ne sait toujours pas comment utiliser un ordinateur.	Comment utiliser ce nouvel outil de cuisine ?
 atteindre	to reach	1	b1fea358364c6ca526cfdad9f6420ced	Je me suis fixé un objectif et j’arriverai à l’atteindre.	Elle a réussi à atteindre ses objectifs professionnels.
@@ -373,13 +373,13 @@ américain / américaine	american	1	23d11fabebf5ff0ef95e089f4044797a	J’aime le
 un rôle	a role	1	db1ffa0a244ac8ac2d975860cadab316	L’éducation joue un rôle important dans notre société.	Elle a un rôle principal dans la pièce de théâtre.
 relever	to face	1	d46741334e04ad197d1b47de6a8c5de0	Pour vivre une vie excitante, tu devras relever des défis.	Il a relevé le défi avec succès.
 un peuple	a people	1	1b400429b0a7bb37fb327c6f4978b9a6	Nous faisons tous partie du même peuple, alors pourquoi se battre?	Ils sont un peuple pacifique et accueillant.
-second / seconde	second	1	bb78d6e06c65111ca9593b7492566406	C’est la seconde fois que j’oublis mes clés cette semaine.	Il a terminé en second place lors de la compétition.
+second / seconde	second	1	bb78d6e06c65111ca9593b7492566406	C’est la seconde fois que j’oublie mes clés cette semaine.	Il a terminé en second place lors de la compétition.
 une minute	a minute	1	63001df7d2ce058b8fb763701aa39b92	Attends une minute… Est-ce que tu portes mes chaussures?	J'arrive dans une minute, ne pars pas sans moi !
 prochain / prochaine	next	1	0f97cc23937ca872efb3dfad5aaff9c2	Je ne suis pas libre aujourd’hui, on se verra la prochaine fois.	Ils prévoient de se revoir le week-end prochain.
 autant	as much	1	19fd15b6b3645feb159d24ccadc05286	Je ne crois pas qu’il m’aime autant que je l’aime.	Elle travaille autant que nécessaire pour réussir.
 écrire	to write	1	ab927437a994a6ae46852d1d7b4bc029	Vivianne m’a dit qu’elle voulait écrire une histoire de science-fiction.	Il aime écrire des poèmes pendant son temps libre.
 une position	a position	1	8df44dd47c8a05390eac022f09459073	J’ai mal à l’épaule, car j’ai dormi dans une position inconfortable.	Elle occupe une position importante dans l'entreprise.
-un développement	a development	1	d4ace7123188c99cc6a4af2fd3f6afa5	Toute le monde doit contribuer au développement de la société.	Ce projet nécessite un développement technologique significatif.
+un développement	a development	1	d4ace7123188c99cc6a4af2fd3f6afa5	Tout le monde doit contribuer au développement de la société.	Ce projet nécessite un développement technologique significatif.
 défendre	to defend / to forbid	1	9117f29992fde010c08e8a60a0176734	Tu l’as frappé pour te défendre? Pourtant je t’ai toujours défendu de te battre.	Il est prêt à défendre ses idées jusqu'au bout.
 un / une chef	a leader	1	fc63cca2d7831b1aba9803651eafeb59	Yannick est le chef de notre équipe pour le projet final.	Le chef de l'entreprise a pris une décision stratégique.
 particulier / particulière	particular / peculiar	1	f8bbf7031de293bf43873dac5a09563c	Cette fleur est très rare; sa couleur est particulière.	C'est un cas particulier qui nécessite une attention spéciale.
@@ -392,7 +392,7 @@ beau / belle	beautiful	1	9f3261cb130b35b221100ddd5f203892	Ta fille est très bel
 plein / pleine	full	1	6900dbceee23dbc8e3e035775fa14d6c	Mon verre était plein il y a cinq minutes, que s’est-il passé?	Le réservoir est plein, nous pouvons partir en voyage.
 juger	to judge	1	c170adf73c8128928af74301759c6a43	Tu n’as aucun droit de me juger.	Il ne faut pas juger les autres sans connaître leur histoire.
 éviter	to avoid	1	d1a5ad8f4456ab18f5db0c42c44fc559	Arrête de l’éviter et va lui parler avant qu’il ne soit trop tard.	Il a essayé d'éviter les embouteillages en prenant une route différente.
-ancien / ancienne	ancient	1	2ed5121d559b23d8f89197357a8a10c6	Des archéologues ont découvert une tombe très ancienne.	C'est un ancien bâtiment datant du XVIIIe siècle.
+ancien / ancienne	former / old / ancient	1	2ed5121d559b23d8f89197357a8a10c6	Des archéologues ont découvert une tombe très ancienne.	C'est un ancien bâtiment datant du XVIIIe siècle.
 personnel / personnelle	personal	1	0c7b47e4aa2ef8157bf2089987b88c09	Je ne veux pas en parler, c’est trop personnel.	C'est une question personnelle que je préfère ne pas discuter.
 un titre	a title	1	6fdf408f2ed5d7b3096b7f6657dbae3c	J’ai terminé d’écrire mon poème, il ne me reste plus qu’à lui trouver un titre.	Il a publié son premier livre sous le titre "Le Voyageur".
 un soir	an evening	1	328aafca10e2e5f22d7f4b2044ca0bc9	J’ai rendez-vous avec Céline ce soir.	Nous sommes sortis dîner ensemble un soir d'été.
@@ -487,7 +487,7 @@ un poste	a position	1	167b21fe06c67791ffd65cd9adf00fa5	Malheureusement, ce poste
 une demande	a request	1	2987290d06d4694467f6c2ac17f46e11	Ce n’est pas une demande, c’est un ordre!	Ils ont reçu de nombreuses demandes pour le poste vacant.
 le futur	the future	1	920b9f4fb60320de4fff11dc088ed4e6	Nous aimerions avoir des enfants dans un futur proche.	Ils planifient déjà pour le futur de l'entreprise.
 un acte	an act	1	1fcad21183533bf4276ee2b056e037d7	Il est en prison, parce qu’il a commis un acte criminel.	Il a posé un acte de générosité en donnant de l'argent aux sans-abris.
-disparaître	to disappear	1	373c61316e278f96533029124f0bf0e8	Parfois, j’aimerais pouvoir faire disparaître toutes tes problèmes.	Les nuages ont finalement commencé à disparaître.
+disparaître	to disappear	1	373c61316e278f96533029124f0bf0e8	Parfois, j’aimerais pouvoir faire disparaître tous tes problèmes.	Les nuages ont finalement commencé à disparaître.
 priver	to deprive	1	237f481eb822dd7206823cd31dfb16be	Cet hôpital refuse de priver les patients des meilleurs soins possible.	Ils ne veulent pas le priver de l'opportunité d'apprendre.
 constituer	to constitute	1	3c256de8b5af737eae8f59a4aec8a6d7	Tous tes efforts constituent déjà une amélioration.	Chaque membre constitue une partie importante de l'équipe.
 le centre	the center	1	10138a6bf63eca412e6642154d86bed1	Le contour du tapis est bleu, mais le centre est beige.	Le centre-ville est animé le week-end.
@@ -545,7 +545,7 @@ tomber	to fall	1	8895d07fba73b0c2e7531d04f3809dc6	Il est normal de tomber en app
 un départ	a departure	1	9cfd2f524cd5ac107342b76e9ab68287	Le départ est prévu pour dix-huit heures.	Ils vont assister au départ de leur fils à l'étranger.
 mondial / mondiale	global	1	f3c864fa5087f48ca77646ca6457040a	Cette entreprise a une portée mondiale.	Ce problème a un impact mondial sur l'économie.
 court / courte	short	1	f13c64066764219e3721309132092604	Frédéric a tiré la courte paille, c’est son tour!	Il a pris un chemin plus court pour rentrer chez lui.
-disposer	to dispose	1	38df16120dec68734df9336b7d7e8ea5	Cette alliance pourrait nous permettre de disposer de nombreuses ressources.	Il a disposé les livres par ordre alphabétique sur l'étagère.
+disposer	to have (available) / to arrange	1	38df16120dec68734df9336b7d7e8ea5	Cette alliance pourrait nous permettre de disposer de nombreuses ressources.	Il a disposé les livres par ordre alphabétique sur l'étagère.
 une parole	a word	1	4f4217c1b418aa27507fe889db98f93d	Mon frère ne tient jamais sa parole, je ne peux pas lui faire confiance.	Il a tenu parole en réalisant tous ses engagements.
 le fond	the bottom	1	62b36993cebc449d0acc1c816131af1f	Il y a un insecte au fond de la bouteille!	Au fond du lac, on trouve des trésors cachés.
 public / publique	public	1	de986f2bad762e002d248e4a8f6c4c6f	Ce groupe organisera un concert public dans le parc.	Il est interdit de fumer dans les lieux publics.
@@ -724,7 +724,7 @@ spécial / spéciale	special	1	d5fed4104c784294a761c9f8204121eb	Elle est une per
 accompagner	to accompany	1	551f3ad960021116aa47ff0b6081ced2	Pourrais-tu m’accompagner aux toilettes?	Elle l'a accompagné jusqu'à la gare pour son départ.
 actuellement	currently	1	286eddfb43f7d056a446fb56b38c44f6	Je suis chez moi actuellement.	Actuellement, elle travaille comme ingénieure dans une grande entreprise.
 une union	a union	1	b66e31545be57e2252a7507405a3b5f9	Notre mariage est une union symbolique.	Leur mariage a symbolisé une belle union entre deux familles.
-supposer	to suppose	1	e6e92ec6fde83f7f5e28d2bc51a8a7fc	Je suppose qu’il ne viendras pas ce soir.	On suppose qu'il arrivera à midi pour la réunion.
+supposer	to suppose	1	e6e92ec6fde83f7f5e28d2bc51a8a7fc	Je suppose qu’il ne viendra pas ce soir.	On suppose qu'il arrivera à midi pour la réunion.
 une possibilité	a possibility	1	0a83c66b45a6909425442b653f88bd52	Tu dois considérer toutes les possibilités.	Il existe toujours une possibilité de changer d'avis.
 ceci	this	1	67a9f53313335990e1d54dde455d2f0f	Je ne comprends pas ceci, pourriez-vous me donner un autre exemple?	Ceci est un cadeau que j'ai reçu de mon meilleur ami.
 exiger	to demand	1	d3cf40f5aa2ddf9d6bf2b11f6bfb6009	J’exige que tu sortes les poubelles immédiatement.	Son travail exige une grande précision et une attention aux détails.
@@ -737,7 +737,7 @@ protéger	to protect	1	ba2838e2e7d9f224fae4c8ff8df58110	Je l’ai fait pour te p
 abandonner	to give up	1	30be6e15e69e8114592ebec172b18c58	Tu y es presque, tu ne peux pas abandonner maintenant!	Malgré les difficultés, elle refuse d'abandonner ses rêves.
 discuter	to discuss	1	f376daf78a14fcc142b48b6e8113d6bc	Nous devons discuter de ce qui s’est passé hier soir.	Nous devons discuter de ce problème avant de prendre une décision.
 battre	to beat	1	2eb1480bf655ce8655ea3341afd0a053	Mon frère me bat tout le temps à ce jeu, ce n’est pas juste!	Son cœur battait rapidement avant de monter sur scène.
-pire	worse	1	709880ac9c78a545e6d10278a7fd4760	Arrêtez de crier ou la situation sera pire qu’elle soit déjà.	Les choses pourraient toujours être pires, donc soyons reconnaissants.
+pire	worse	1	709880ac9c78a545e6d10278a7fd4760	Arrêtez de crier ou la situation sera pire qu’elle ne l’est déjà.	Les choses pourraient toujours être pires, donc soyons reconnaissants.
 adresser	to address	1	de4f6110b64338738e3a83679c7d9655	J’aimerais lui adresser quelques questions.	Elle a décidé de s'adresser directement au responsable pour résoudre le problème.
 préciser	to specify	1	748b034b1ed6592dc05fad8873b39b0f	J’aimerais préciser que je travaille ici depuis huit ans.	Pourriez-vous préciser vos attentes concernant ce projet ?
 une intervention	an intervention	1	76f3ed9c3c1d1fecab9d439fa607bdea	L’intervention de la police était trop tard.	L'intervention des pompiers a sauvé la maison de l'incendie.
@@ -772,7 +772,7 @@ une banque	a bank	1	e70a89809e81e24c9c4eddea24c3fdd6	Je n’ai plus d’argent l
 un instant	an instant / a moment	1	0b9ca0646d87739bda974640dcce530f	J’arrive dans un instant, attends-moi dehors.	Attendez un instant, je vais chercher les documents nécessaires.
 se reposer	to rest	1	8318da2915fe04fb55d52cc17fa14b63	Il est rentré tard hier soir, laisse-le se reposer.	Après une longue journée de travail, elle aime se reposer dans son fauteuil.
 une opinion	an opinion	1	19ee53ee203e5c99d3f2386624ec8d01	Personne ne t’a demandé ton opinion.	Elle a une opinion bien arrêtée sur la question de l'environnement.
-une classe	a class	1	b43a040fb83eb5bbcd515f2cea4ac876	Je ne tolére pas ce comportement dans ma classe.	La classe de français commence à neuf heures du matin.
+une classe	a class	1	b43a040fb83eb5bbcd515f2cea4ac876	Je ne tolère pas ce comportement dans ma classe.	La classe de français commence à neuf heures du matin.
 particulièrement	particularly	1	a15feb67784518fdc372aa88cf2a06b6	Ton sourire est particulièrement radieux aujourd’hui.	Ce livre est particulièrement intéressant pour ceux qui aiment l'histoire.
 commun / commune	common	1	46d64326dfa6d0f7450d9e8a6ff334cc	Ce genre de comportement est très commun chez les chats.	Ils ont un intérêt commun pour les voyages et la photographie.
 une compagnie	a company	1	e21fc77fd3fa9e480702d97ca277eb9f	Ta compagnie est grandement appréciée pendant ce moment difficile.	Elle travaille pour une grande compagnie de technologie à Paris.
@@ -797,7 +797,7 @@ une proposition	a proposal	1	9e9104c33d355f095aeb94a105ad4662	Mon patron m’a f
 combien	how much / how many	1	d7ff2e60168dc7b5a0ef729e464c07b3	Combien coûte ce bracelet?	Combien de personnes seront présentes à la réunion demain ?
 un dossier	a record	1	a48d56740e4eab1ba2ef45e87ddc1437	Le propriétaire ne sait pas qu’elle a un dossier criminel.	Son dossier scolaire est excellent avec de bonnes notes dans toutes les matières.
 une absence	an absence	1	3301b6a0762387ad2177b6200c42c185	Son absence me rend folle, je déteste être seule.	Il a été absent de l'école la semaine dernière à cause d'une grippe.
-cher / chère	expensive	1	31bca501da3ab29da4f812d3c2b06dea	J’aimerais acheter cette voiture, mais elle est trop chère.	Les produits de cette boutique sont souvent très chers.
+cher / chère	expensive / dear	1	31bca501da3ab29da4f812d3c2b06dea	J’aimerais acheter cette voiture, mais elle est trop chère.	Les produits de cette boutique sont souvent très chers.
 plaire	to please	1	6309f5ec0967dd053bf047bc4b8c024b	J’ai tout essayé pour lui plaire.	Ce cadeau lui a beaucoup plu.
 derrière	behind	1	a422a506f3367099ce47694b14922ae5	La prise électrique est située derrière l’appareil.	Il se tenait derrière moi pendant toute la réunion.
 une connaissance	knowledge	1	5f029662e70989e70737647a1c98d024	Josée a beaucoup de connaissances sur le sujet, demande-lui.	Elle a une vaste connaissance en histoire de l'art.
@@ -915,7 +915,7 @@ exposer	to display	1	dfcb86f50e1e86bcf77a7ae3dbcdc7e1	J’exposerai cette œuvre
 un progrès	progress	1	4d534e9cd746280d79075d2039ecd0f1	Tu as fait beaucoup de progrès depuis le début de cette leçon.	Les scientifiques ont fait d'énormes progrès dans leur recherche.
 un / une secrétaire	a secretary	1	6873416e5426fd607bc631e13ffc424e	Veuillez laisser un message à la secrétaire du Dr. Raymond.	La secrétaire a pris un message pour vous.
 la mer	the sea	1	f825f64a2144531756475b66e46aa9e5	Ce chien n’avait encore jamais vu la mer.	Nous avons passé nos vacances au bord de la mer.
-rapporter	to bring back	1	3c134dc9d283983d58b4b6e7c6c45afd	N’oublis pas de me rapporter mon chargeur quand tu auras fini avec.	Il a rapporté de beaux souvenirs de son voyage en Inde.
+rapporter	to bring back	1	3c134dc9d283983d58b4b6e7c6c45afd	N’oublie pas de me rapporter mon chargeur quand tu auras fini avec.	Il a rapporté de beaux souvenirs de son voyage en Inde.
 appuyer	to support	1	59ff4adbb29fd1d0eebc36a339d1e28f	Il n’a aucun argument valide pour appuyer sa thèse.	Je suis totalement d'accord et je vais appuyer cette décision.
 client / cliente	client	1	0c806a09f1651fc52dd710809a5cd0ad	Le client n’est pas satisfait, il veut se faire rembourser.	Le client était satisfait du service reçu.
 rentrer	to come back	1	9c57227e2675a0ea840fb19145bac43c	Suzanne est rentrée tôt hier soir; la fête était ennuyeuse.	Ils sont rentrés à la maison après une longue journée de travail.
@@ -924,7 +924,7 @@ un caractère	a character	1	d99b07e8b322cf230b9004628b110801	Ton chat a un très
 détruire	to destroy	1	d9bc8360981438f02bb66b8bf3cad512	Leur divorce va détruire la vie de leurs enfants.	Le feu a presque totalement détruit la maison.
 civil / civile	civil	1	fb1637415a5148caa49dbd90cea02eb9	Le recyclage est la responsabilité civile de tous.	C'est une affaire civile, pas criminelle.
 une liste	a list	1	6a45740d816c2feff4be5cef2316475d	J’ai fait une liste de toutes les choses que je dois acheter pour la fête.	J'ai dressé une liste des courses à faire ce week-end.
-juin	june	1	7e0bab8a08f27e56ee11ab680b1d447d	Annabelle se Marie le vingt-six juin.	Mon anniversaire est en juin.
+juin	june	1	7e0bab8a08f27e56ee11ab680b1d447d	Annabelle se marie le vingt-six juin.	Mon anniversaire est en juin.
 un danger	a danger	1	d13ca63337ac31a896d1d3e77fa81d4a	Cet homme est un danger au volant.	Il y a un grand danger à nager dans cette rivière.
 complexe	complex	1	252f303ad99526753440459fc32ff243	Cette sculpture m’impressionne avec tous ses détails complexes.	C'est un problème complexe qui nécessite une solution innovante.
 un commerce	a trade	1	85eaa213cb654bff3225254c1963c208	Notre pays encourage le commerce libre et équitable.	Ils ont ouvert un nouveau commerce dans le quartier.
@@ -1007,7 +1007,7 @@ une prison	a prison	1	4bc410808dd7f92b5b11c89104c4f63c	Cette école est comme un
 une armée	an army	1	7f48650c4d2d7c433e0eb8e3664501c3	Plusieurs de mes amis sont dans l’armée.	L'armée a été mobilisée pour aider lors de la catastrophe naturelle.
 rejoindre	to join	1	e45a74709b0bd5f3ca4aefc85db8ace3	À quelle heure viendras-tu nous rejoindre?	Elle va rejoindre l'équipe de basket de son école.
 complètement	completely	1	bb4851469d544d109711ac22e5ff9e56	Je refuse, cette idée est complètement inappropriée.	La tasse était complètement vide après le repas.
-confirmer	to confirm	1	c6d47d73df5ac85d43ba182c30c779b1	N’oublis pas de confirmer ta présence.	Veuillez confirmer votre présence à la réunion demain matin.
+confirmer	to confirm	1	c6d47d73df5ac85d43ba182c30c779b1	N’oublie pas de confirmer ta présence.	Veuillez confirmer votre présence à la réunion demain matin.
 un salaire	a salary	1	5cdac7205bfc0708745a4109ca7fe5af	Le salaire de ma femme est plus élevé que le mien.	Il a reçu une augmentation de salaire après son évaluation annuelle.
 une lecture	a reading	1	a2df08eb1262e2196c410404dbef08d4	Je ferai une lecture de ce livre devant la classe demain.	J'ai terminé la lecture de ce livre passionnant hier soir.
 un revenu	a revenue	1	c75278386334409203cdddfdc766357c	Ce métier est épuisant, mais il permet un revenu élevé.	Le gouvernement cherche à augmenter le revenu des ménages.
@@ -1017,7 +1017,7 @@ remonter	to go back up	1	a0af038e22e7af47eca53b4c662afddc	Je n’ai pas envie de
 certes	certainly	1	7148f88dcd8b290387b16b05dd4849ba	Certes, il aura beaucoup de travail à faire s’il veut être promu.	Certes, il est difficile de prendre cette décision.
 contribuer	to contribute	1	5aaf9dc6854caeb5b7105f02bb28c977	J’apprécie beaucoup que tu contribues au projet.	Chacun peut contribuer à améliorer l'environnement.
 autrement	differently	1	4fb7c69052e991b7093563f6071515b9	À ta place, je ferais les choses autrement.	Vous devez voir les choses autrement pour comprendre son point de vue.
-ferme	firm	1	eca7f662032c0a773a7ebfed024ad8ae	Je déteste dormir sur un matelas qui soit trop ferme.	Il est connu pour être un fermé dans ses décisions.
+ferme	firm	1	eca7f662032c0a773a7ebfed024ad8ae	Je déteste dormir sur un matelas qui soit trop ferme.	Il est connu pour être ferme dans ses décisions.
 désormais	from now on	1	560186eead3de72f7bb1ee2f28498d0c	Désormais, je veux que tu m’appelles à dix-neuf heures tous les jours.	Désormais, nous devons faire attention à nos dépenses.
 lourd / lourde	heavy	1	322040010ac32adfb3047f74f9bc0fa0	J’ai besoin d’aide, c’est trop lourd pour moi.	Le carton était trop lourd pour être soulevé seul.
 susciter	to generate	1	da9c6f6ced98482824c9e3b46b1f3670	Son travail a suscité l’intérêt des professionnels.	Son discours a suscité beaucoup de réactions positives.
@@ -1147,7 +1147,7 @@ fonctionner	to work	1	91ab2d66f2612787768a4095223a761c	J’ai besoin d’aide, m
 envers	towards	1	fccb006268befffa72dc934f0c3274a6	Ton attitude envers moi est inacceptable.	Il a toujours été gentil envers ses collègues.
 distribuer	to distribute	1	cb0549bff6cc3b758c32557f20d6f965	Cette entreprise distribue des produits à travers le monde entier.	Ils vont distribuer les cadeaux aux enfants.
 une existence	an existence	1	da23103cbb781a158ad14bf9c3e0a20b	Je n’avais jamais entendu parler de son existence.	L'existence de cette espèce est menacée.
-prétendre	to pretend	1	a3a2de1c77ce472a20964b1b14ae5acd	Il prétend être quelqu’un d’autre et c’est pathétique.	Il prétendait ne pas savoir ce qui s'était passé.
+prétendre	to claim	1	a3a2de1c77ce472a20964b1b14ae5acd	Il prétend être quelqu’un d’autre et c’est pathétique.	Il prétendait ne pas savoir ce qui s'était passé.
 global / globale	global	1	4cb4def04af5a10bc42072d29db6d451	Cette couleur augmente l’attrait global de la pièce.	Ils ont discuté des problèmes à l'échelle globale.
 un / une professeur	a professor	1	7d30aa26580eb0c1c15b37f691cad024	Il faut de nombreuses années d’études pour devenir professeur.	Le professeur a expliqué la théorie avec clarté.
 le crédit	the credit	1	4d0ffcff7632ad8e963a2a2ab6a7826e	Le gagnant aura le crédit qu’il mérite.	Elle a reçu le crédit pour son travail sur le projet.
@@ -1162,7 +1162,7 @@ une version	a version	1	c01943721f8d2f11a01a511f14c70521	Envoyez-moi la version 
 un règlement	a rule	1	e045651144d9cbf2628218f3fec6d254	Tu n’as pas le choix, c’est le règlement.	Respecter le règlement est obligatoire pour tous les étudiants.
 relatif / relative	relative	1	8db13fc96bc5ce575087370e01052051	Ce principe est relatif, il dépend de différents facteurs.	Ce problème est relatif à notre discussion précédente.
 mercredi	wednesday	1	bc825f90fee87ec38fee590813eea91a	Je vais me coucher tôt mercredi.	Nous avons rendez-vous mercredi après-midi.
-régional / régionale	regional	1	dfe8e80b17e8f20773c7ee74246292f0	Notre équipe a remporté le tournoi regional.	Ce plat est une spécialité régionale.
+régional / régionale	regional	1	dfe8e80b17e8f20773c7ee74246292f0	Notre équipe a remporté le tournoi régional.	Ce plat est une spécialité régionale.
 sinon	otherwise	1	60f3481fa8dd9c238641da3de24b12f3	Range ta chambre, sinon tu seras privé de sortie.	Sinon, nous devrons annuler nos vacances.
 entreprendre	to undertake	1	2a2dcedba76a4dd71bc33cc94d284aca	Nous devons d’abord entreprendre une vérification des informations.	Ils ont décidé d'entreprendre un voyage autour du monde.
 au-delà	beyond	1	9e12b5c130af38afee391365342e65d0	La beauté de cet endroit va au-delà de l’imaginaire.	Il y a des défis au-delà de nos attentes.
@@ -1196,13 +1196,13 @@ une urgence	an emergency	1	586d03be0fe0e07e8ac0dcb3a6b25265	Appelle-moi immédia
 une clé	a key	1	2f0ea864d88126d2711ac79ae283324e	J’ai encore oublié mes clés sur la table.	La clé de la réussite est la persévérance.
 jeter	to throw away	1	33bd8cd16e0022ae4f040f45c861278d	Je suis très attachée à cette photo, ne la jette pas!	Il a décidé de jeter ses vieux vêtements.
 religieux / religieuse	religious	1	015abfb2a4e9628be057241384bd8589	Son appartement est rempli de symboles religieux.	Elle pratique des rites religieux chaque semaine.
-une analyse	an analysis	1	6b8daf665a3014ad789dfd8b545ac5d9	Je vais maitenant procéder à l’analyse des données.	L'analyse des résultats a révélé des tendances intéressantes.
+une analyse	an analysis	1	6b8daf665a3014ad789dfd8b545ac5d9	Je vais maintenant procéder à l’analyse des données.	L'analyse des résultats a révélé des tendances intéressantes.
 disponible	available	1	a22a99ee30084395709c1b884b6a4639	Ce siège est-il disponible?	Le poste est toujours disponible pour les candidats qualifiés.
 un regard	a look	1	3ccb4bdbba46d0d3e9a9cd6677776e0b	Elle m’a lancé un regard à la fois perçant et effrayant.	Elle lui lança un regard plein de tristesse.
 prévenir	to prevent / to warn	1	922577fbe6e5ceba89eaf3c52e732081	Afin de prévenir une catastrophe, j’ai préféré te prévenir.	Il faut prévenir les autorités en cas d'urgence.
 enlever	to remove	1	ef34ff9de148a72a33fab694bda27ff3	Veuillez enlever vos souliers avant d’entrer.	Elle a dû enlever ses chaussures avant d'entrer.
 analyser	to analyse	1	e09156b502f8ea4b9cd1f86666f18731	Laisse-moi le temps d’analyser la situation.	Les scientifiques ont analysé les résultats avec attention.
-un mariage	a wedding / marriage	1	93900384c86b7dc4cb90951292da65e8	N’oublis pas : c’est le mariage de ton cousin ce weekend.	Leur mariage était célébré dans une petite église.
+un mariage	a wedding / marriage	1	93900384c86b7dc4cb90951292da65e8	N’oublie pas : c’est le mariage de ton cousin ce weekend.	Leur mariage était célébré dans une petite église.
 une couleur	a color	1	60dc82f45d906db772ae4593a9eb0c06	Je préfèrerais une couleur neutre pour la salle de bain.	Le ciel était d'une magnifique couleur orange au coucher du soleil.
 témoigner	to testify	1	5705daf07a1679597a4b47694ef99ae7	Il va témoigner devant le juge à neuf heures.	Il a témoigné en faveur de son ami lors du procès.
 sauver	to save	1	7d495e43e786c96225cc41fe1799d1cd	Je te dois tout, tu m’as sauvé la vie.	Le pompier a réussi à sauver le chat coincé dans l'arbre.
@@ -1282,7 +1282,7 @@ une stratégie	a strategy	1	d9b3497cd6349a78b2224cca6a17ef50	J’ai gagné, car 
 un bateau	a boat	1	2fcd728ff0f3d34c56fa7345bf186aea	Marcel vient de s’acheter un bateau; il n’a jamais été aussi heureux.	Ils ont navigué sur un bateau à voile le long de la côte.
 une troupe	a troupe	1	b5ca467d638ff51aa231487dca15a041	J’ai auditionné pour faire partie de cette troupe de théâtre.	La troupe de théâtre a répété pendant des semaines avant la première.
 une course	a race	1	90658b6c95fef23b3b2e2ae2454d0849	Je m’entraîne depuis des mois pour gagner cette course.	Elle a participé à une course de marathon le mois dernier.
-un exercice	an exercise	1	8ef6fc3363bdc20c63e25942c76c2ad7	Mon entraîneur m’a recommendé d’essayer un nouvel exercice.	Faire des exercices physiques régulièrement est bon pour la santé.
+un exercice	an exercise	1	8ef6fc3363bdc20c63e25942c76c2ad7	Mon entraîneur m’a recommandé d’essayer un nouvel exercice.	Faire des exercices physiques régulièrement est bon pour la santé.
 fondamental / fondamentale	fundamental	1	c78079f254ab481b98c28ce4d5a6a6e1	Le respect est une chose fondamentale.	Le respect des droits de l'homme est un principe fondamental.
 un visage	a face	1	18701463d8092e0b636dc6f9fdbd94ad	Qui est-ce? Je ne reconnais pas son visage.	Son visage exprimait la joie quand elle a vu son cadeau.
 le printemps	spring	1	bc608991acfd532a72a6fbc744c34678	J’ai déjà hâte au printemps prochain.	Les fleurs commencent à éclore avec l'arrivée du printemps.
@@ -1377,7 +1377,7 @@ aboutir	to end up	1	ee5416d159da679e28eeaf01fc74eb5d	Nous avons pris la mauvaise
 désirer	to desire	1	e560106bac5f64f8939a722aa1037d99	C’est ce que je désire plus que tout.	Elle désirait ardemment réussir dans sa carrière.
 une côte	a coast	1	1e9383030e20f12412f8e425f98d569d	Cette espèce vit de l’autre côté de la côte.	Ils ont acheté une maison sur la côte pour profiter de la plage.
 une génération	a generation	1	9be2d4ad39c10e2788ccb40fad3142ff	J’ai peur que la prochaine génération manque de ressources.	Cette technologie appartient à une nouvelle génération de smartphones.
-le vent	the wind	1	7752163a9706572805f9fff4b2ccc219	Le vent est très fort aujourd’hui, soit prudent.	Le vent soufflait fort lors de leur promenade en bord de mer.
+le vent	the wind	1	7752163a9706572805f9fff4b2ccc219	Le vent est très fort aujourd’hui, sois prudent.	Le vent soufflait fort lors de leur promenade en bord de mer.
 la technologie	technology	1	fdc0a0657076f5413d965a682d70dff0	André est fasciné par les nouvelles technologies.	La technologie moderne a révolutionné notre façon de communiquer.
 échouer	to fail	1	711f66180c01c75a683ea328a46f6b0b	J’ai vraiment peur d’échouer mon examen.	Malgré tous ses efforts, il a fini par échouer à l'examen.
 en dépit	in spite	1	7e4429560fc23001877785af2ccd9c90	La fête aura lieu en dépit des récents événements.	En dépit des obstacles, ils ont poursuivi leur voyage.
@@ -1445,7 +1445,7 @@ inconnu / inconnue	unknown	1	7c3b0fd49ddf4c34db41b8535150058e	Nous nous sommes r
 un montant	an amount	1	483f2501981b44151c2c451d50d4f45b	Le montant d’argent nécessaire est trop élevé pour moi.	Le montant total de la facture s'élève à 250 euros.
 éliminer	to eliminate	1	2b712abec3cdca6bce0925a13a67ae15	Nous travaillons fort pour éliminer toutes vos inquiétudes.	Ils ont réussi à éliminer toutes les erreurs du rapport.
 dénoncer	to denounce	1	eaf801eeef408879ca5fa634a8d3a853	Cette injustice doit être dénoncée.	Elle a dénoncé les pratiques discriminatoires de son employeur.
-un tableau	a board	1	70b63e192fad53cfdcdab713254ff722	Certaines clases ont encore un tableau noir.	Le tableau de bord affiche toutes les informations importantes.
+un tableau	a board	1	70b63e192fad53cfdcdab713254ff722	Certaines classes ont encore un tableau noir.	Le tableau de bord affiche toutes les informations importantes.
 exclure	to exclude	1	6d8b2c098a6601edaa6c26dfa07b0ebb	Nous ne pouvons pas exclure la possibilité qu’il arrive en retard.	Ils ont décidé d'exclure cette option de leur plan.
 un meurtre	a murder	1	41e017df923c0f2689359cb8484657a7	Le meurtre a été commis pendant la nuit.	L'inspecteur enquête sur un meurtre mystérieux dans la ville.
 un exemplaire	a copy	1	d770f1285c863702442719d1764e8289	Je vais lui demander de signer mon exemplaire de son livre.	Chaque participant recevra un exemplaire du rapport.
@@ -1530,14 +1530,14 @@ tromper	to deceive	1	050bfff3116ed06439f1bc9db1cd0cfd	Il a trouvé un moyen de t
 modeste	modest	1	b239014d29c180e8ca5fd2e48838a0fd	Bienvenue dans notre modeste demeure!	Malgré son succès, elle reste modeste.
 éloigner	to move away	1	d12fa942f1d2bd7aa5a0a43c5ce776c0	Éloigne ton assiette du rebord de la table.	Ils ont dû éloigner les enfants du feu.
 aborder	to approach	1	41688766bc5702c0e0a849875adc3558	Il m’a abordée pour une offre d’emploi intéressante.	Nous devons aborder ce sujet lors de la prochaine réunion.
-malheureusement	unfortunately	1	052cd8edb1c99b1687dbfa7b87f7518d	Malheureusement, il n’a pas survécu l’accident.	Malheureusement, il n'était pas disponible pour la réunion.
+malheureusement	unfortunately	1	052cd8edb1c99b1687dbfa7b87f7518d	Malheureusement, il n’a pas survécu à l’accident.	Malheureusement, il n'était pas disponible pour la réunion.
 évaluer	to evaluate	1	d2a984b74ca524bc4cfee727c73c1b9f	Nous devons d’abord évaluer la situation.	Il faut évaluer les risques avant de prendre une décision.
 extrêmement	extremely	1	c227785193dd23f67c1906fc519b96c7	Cette ballerine est extrêmement gracieuse.	Il fait extrêmement froid en hiver.
 interne	internal	1	a80b8f4abb11f309ed875de9f212be93	Elle a subi une hémorragie interne.	Il y a eu une fuite de données internes dans l'entreprise.
 voire même	even	1	1075175f1f1ef9a46336149771703589	Elle pourrait quitter le cours, voire même quitter le programme.	Il a parcouru le monde entier, voire même plus.
 une seconde	a second	1	1d2b4fa0ee829c169f0ef4f4a3c2467d	J’ai jamais pensé à ça, même pas pendant une seconde.	Attends une seconde, je vais chercher les documents.
 des messieurs	gentlemen	1	91585db2bae9d8aed6ea57d70ec1233d	Veuillez accompagner ces messieurs à leur chambre.	Les messieurs ont discuté de politique pendant le dîner.
-effectivement	effectively	1	380cd3e70ce765bb2e7b00ea7be2f79e	Effectivement, j’avais déjà remarqué.	Effectivement, cette méthode semble être la plus efficace.
+effectivement	indeed / actually	1	380cd3e70ce765bb2e7b00ea7be2f79e	Effectivement, j’avais déjà remarqué.	Effectivement, cette méthode semble être la plus efficace.
 un gaz	a gas	1	a4dd14b26dd61b774a378716bebc2c01	L’azote est un gaz qui est présent dans l’atmosphère.	Le dioxyde de carbone est un gaz à effet de serre.
 acteur / actrice	actor	1	9b39a437ebfa376968a66def19263692	Mon acteur favori a remporté un Oscar l’an dernier.	Elle est une actrice célèbre à Hollywood.
 s’adapter	to adapt	1	14e85d98a5127d6def00a5c936d084d1	La nature trouve toujours un moyen de s’adapter.	Il sait s'adapter à toutes les situations.
@@ -1562,7 +1562,7 @@ un siège	a seat	1	e8abac276886369a3da92a8cc7b39f26	Il y a des sièges en cuir d
 une hausse	an increase	1	1adb2562bd91ca47f417809093bd03a1	Le gouvernement a annoncé une hausse du salaire minimum.	Une hausse des prix est prévue pour le mois prochain.
 diviser	to divide	1	c2a8d288ab43e65b743c8a82bfb0e1c4	Nous devons diviser les ressources de manière plus équilibrée.	Ils ont décidé de diviser les tâches pour aller plus vite.
 traditionnel / traditionnelle	traditional	1	38281744b61c5c226770327b59edf609	Ceci est une coutume traditionnelle en France.	Ce plat est un plat traditionnel de Noël.
-un quart	a quarter	1	92781ad4f4d57fcab9166c4dbb54b84d	Nous auront chacun un quart du trésor.	Il reste un quart de gâteau si tu en veux.
+un quart	a quarter	1	92781ad4f4d57fcab9166c4dbb54b84d	Nous aurons chacun un quart du trésor.	Il reste un quart de gâteau si tu en veux.
 approcher	to approach	1	2071d429ac71d270586919c6baa0e94c	Le léopard approche lentement sa proie.	Il faut approcher ce problème avec prudence.
 le trafic	the traffic	1	74457c3a0491a58f0d1edab5acade42d	Je suis prise dans le trafic depuis une heure.	Le trafic était dense sur l'autoroute ce matin.
 catholique	catholic	1	6a280605622a551d69473ed8e2521acc	Je suis allée à l’école catholique.	Elle pratique la religion catholique depuis son enfance.
@@ -1616,12 +1616,12 @@ armé / armée	armed	1	7b1dc07e8483903ebb795ee0cdd8221f	Ils ont arrêté un homm
 un enseignement	a teaching	1	4dc222c9f7b405759712cc1b66c7dd5e	L’enseignement est une vocation.	Elle enseigne l'histoire à l'université.
 étonnant / étonnante	surprising	1	e2cfd73a72c1c0b712a7561204fc1588	Vous trouverez que les faits sont étonnants.	C'est une nouvelle étonnante !
 une dizaine	ten	1	1f051ff33eea014012c4ac68b703ba51	Il est parti depuis une dizaine de jours.	Il y avait une dizaine de personnes à la réunion.
-sur le dessus	on (the) top	1	9a4efeb4f9b64f54d32a82daacce3169	Pourais-tu placer mon ordinateur sur le dessus de la table s’il-te-plaît?	Les clés sont sur le dessus de la table.
+sur le dessus	on (the) top	1	9a4efeb4f9b64f54d32a82daacce3169	Pourrais-tu placer mon ordinateur sur le dessus de la table s’il-te-plaît?	Les clés sont sur le dessus de la table.
 un calcul	a calculation	1	fa0a6cfb0673d10f4922f3e2b5be55ff	On peut obtenir le même résultat avec différents calculs.	Il a fait un calcul rapide dans sa tête.
 un / une fonctionnaire	a state employee	1	ddb5e02d8ef7bcd50ceefb478f80bedf	Il travaille comme fonctionnaire depuis dix ans.	Les fonctionnaires travaillent pour l'État.
 une instruction	an instruction	1	cbdb1a4b005525779014fa0f9983a89e	Les instructions sont accompagnées de schémas.	Les instructions pour assembler le meuble étaient claires.
 pratiquement	practically	1	9777e610dcdf1f0b43be082d857b02f7	Il n’y a pratiquement aucun livre intéressant dans cette bibliothèque.	Il a pratiquement terminé son travail.
-oser	to dare	1	7869027f030dd5ac868a9ed2d25c8f98	Elle n’a pas ôsé repeindre sa cuisine en jaune.	Elle a osé lui dire ce qu'elle pensait vraiment.
+oser	to dare	1	7869027f030dd5ac868a9ed2d25c8f98	Elle n’a pas osé repeindre sa cuisine en jaune.	Elle a osé lui dire ce qu'elle pensait vraiment.
 rassembler	to gather	1	b82e6248773c8fdf56933cc49de8cd10	Rassemble tous les documents qui concernent ce procès.	Ils ont réussi à rassembler suffisamment de fonds pour le projet.
 achever	to complete	1	de98bdc11bafbec80fcaa7b467d9b47d	Vous devriez être sur le point d’achever votre travail.	Ils ont enfin achevé la construction de la maison.
 fiscal / fiscale	fiscal	1	45d95a154a808109468f5fd7eec81567	Ce drame fiscal est partout dans les médias.	La réforme fiscale a été adoptée par le gouvernement.
@@ -1638,7 +1638,7 @@ une âme	a soul	1	2b6f5f37347ca83866ca5e2c979ce79a	Il a l’air gentil, mais nou
 dominer	to dominate	1	8175df530f0c0ac4e28e1ade6e49c56a	Le Brésil a dominé cette partie de soccer.	La tour domine la ville du haut de la colline.
 pur / pure	pure	1	4fa46d0d1affa10f2da64bdacd57bb7b	L’eau de cette source est la plus pure.	C'est un vin pur, sans additifs ni sulfites.
 un instrument	an instrument	1	4ed860cbf8fc010fa42c8a24d58a7592	Si tu es musicien, alors de quel instrument joues-tu?	Il joue de plusieurs instruments de musique.
-une indépendance	independence	1	fb4291170cd121228303b52140cb13ea	Laisse-le tranquille, il a besoin de son independence.	Ils ont lutté pour obtenir leur indépendance politique.
+une indépendance	independence	1	fb4291170cd121228303b52140cb13ea	Laisse-le tranquille, il a besoin de son indépendance.	Ils ont lutté pour obtenir leur indépendance politique.
 un tort	a wrong	1	073f1af513266530b073fabd4a245af0	Tu as tort! Jérémie ne ferait jamais une chose pareille.	Il a admis son tort et s'est excusé.
 la hauteur	the height	1	f901e1fd3c4dd0bb2a781e5fffd1339b	La hauteur de cette bibliothèque est de sept pieds.	La montagne atteint une hauteur impressionnante.
 critiquer	to criticize	1	76dd9858cf140c18036e9ef4bfaba2f7	Ma mère m’a critiquée toute ma vie.	Il aime critiquer les films qu'il voit au cinéma.
@@ -1660,7 +1660,7 @@ une hypothèse	a hypothesis	1	5f1a5332d6b7fc918b73df5d7a5fc316	Ce résultat ne n
 relier	to connect	1	de39cf33262e50949f9ce5aa0025250f	Reliez la partie A à la partie B avant de passer à l’étape suivante.	Il a relié les deux câbles pour réparer la connexion.
 un financement	financing	1	4f88b48576b342347499f0a0df5ba4b0	Notre projet a grandement besoin de financement.	Ils ont obtenu un financement pour leur start-up.
 un dos	a back	1	f583500776a7dd56cb55a62ab83eadfa	Rester assis toute la journée est mauvais pour le dos.	Il a mal au dos depuis plusieurs jours.
-consommateur / consommatrice	consumer / customer	1	1d08992522ae2523cf0f98b52bc22c73	Nous essayons satisfaire les besoins des consommateurs.	Il est important de protéger les droits des consommateurs.
+consommateur / consommatrice	consumer / customer	1	1d08992522ae2523cf0f98b52bc22c73	Nous essayons de satisfaire les besoins des consommateurs.	Il est important de protéger les droits des consommateurs.
 une épreuve	an ordeal	1	4cab96f43833e671741ba7c2031664f2	Ginette a traversé une épreuve difficile lorsque son mari est décédé.	Passer cette épreuve était plus difficile que prévu.
 volontaire	voluntary	1	78878a9f7c3b09030035f6e9e010ead1	Je suis désolée, ce n’était pas volontaire.	Il a participé en tant que volontaire à l'organisation de l'événement.
 négocier	to negotiate	1	4d90c89a9117c1052b1d97826330c9b8	Ceci est le prix final, n’essayez pas de négocier.	Ils ont commencé à négocier les conditions du contrat.
@@ -1721,7 +1721,7 @@ une forêt	a forest	1	65b9d26d17d1b65ecbd0d0db07b5c630	Suis la carte, je ne veux
 une montagne	a mountain	1	03c65a1a5f959c3539c62cdaf1357bcc	Nous avons une magnifique vue sur les montagnes de notre chambre.	La vue depuis la montagne était à couper le souffle.
 sévère	severe	1	7e6d553b8d5a3b029aafbddb0d3b9c13	Sa fracture au crâne est très sévère.	La grippe peut avoir des conséquences sévères pour les personnes âgées.
 apparemment	apparently	1	6644694803c2e805428c5b4f75feaf82	Apparemment, il fait toujours très chaud en Arizona.	Apparemment, il n'était pas au courant de la réunion.
-la présidence	presidency	1	ce7b44ddae2863a1972cb99ee8eb1d31	Elle a laissé la présidence lui a monté à la tête; elle est devenue arrogante.	Il a été élu à la présidence du conseil d'administration.
+la présidence	presidency	1	ce7b44ddae2863a1972cb99ee8eb1d31	Elle a laissé la présidence lui monter à la tête ; elle est devenue arrogante.	Il a été élu à la présidence du conseil d'administration.
 un magasin	a shop / a store	1	0714b26b4ac486e2af35b019b6a8469f	J’ai acheté ce sac à main dans un magasin au centre-ville.	Elle a trouvé une jolie robe dans ce magasin.
 un / une commissaire	a commissioner	1	c6601f5d723fffd1570a8113109e0096	Ce commissaire a été choisi par le nouveau premier ministre.	Le commissaire de police a dirigé l'enquête.
 calme	calm	1	7bd979219796657ae35329b4b87f2961	Restez calme, ce n’était qu’une fausse alerte.	Le lac était d'une grande calme ce matin.
@@ -1735,7 +1735,7 @@ un chien	a dog	1	42cfd11d890013f9f4f7e437f1157a7a	Mon chien me suit partout.	Le 
 indispensable	indispensable	1	e6ad7fe5441906ab0cbd59f65571029c	Nous vous remercions, votre travail est indispensable à notre succès.	L'eau est indispensable à la vie sur terre.
 une conversation	a conversation	1	6f9fd6ec24dcec4cea0286b7f0ae9862	Elle est tombée amoureuse de lui après une seule conversation.	Ils ont eu une longue conversation sur l'avenir de l'entreprise.
 une surface	a surface	1	805927c7392c9e6f7e0c95dc4090369b	La surface de cette table est faite de marbre.	La surface de la table était lisse et brillante.
-féliciter	to congratulate	1	c5c2b6cf91a8b3e97034bd645b6d5223	N’oublis pas de féliciter ton frère pour son diplôme.	Je vous félicite pour votre promotion bien méritée.
+féliciter	to congratulate	1	c5c2b6cf91a8b3e97034bd645b6d5223	N’oublie pas de féliciter ton frère pour son diplôme.	Je vous félicite pour votre promotion bien méritée.
 sûrement	surely	1	8fbe2b87311e2dc49ef58355c5046c44	Éric sera sûrement présent à ta fête d’anniversaire.	Elle viendra sûrement à la réunion demain.
 la surveillance	surveillance	1	ffdc4aea0ed6240c6dc34bebfbe55b01	Cet édifice est muni d’un système de surveillance moderne.	La surveillance vidéo est installée pour des raisons de sécurité.
 une efficacité	an efficiency / an effectiveness	1	98b6f27dceda8a2f5cc84f84b38ececb	Je ne regrette pas d’avoir engagé Tania, son efficacité est remarquable.	L'efficacité de ce nouveau système est remarquable.
@@ -1820,7 +1820,7 @@ régner	to reign	1	ba1ebc61864b46711bd1d87864bf2316	Le Roi régnait sur un peupl
 une catastrophe	a catastrophe	1	7cba7758b7192598291b045c740005a3	Nous nous dirigeons tout droit vers une catastrophe.	L'ouragan a provoqué une catastrophe naturelle.
 ressortir	to go out again	1	4b28205e7ed7c640d06e49807eb3549a	Je viens d’arriver et j’ai eu une longue journée, je n’ai pas envie de ressortir.	Il est ressorti acheter du pain après le dîner.
 susceptible	susceptible / touchy	1	f32bcbc4f6ef66522cd03da8bf3b7e99	Elle est susceptible de se mettre en colère; n’oublis pas qu’elle est très susceptible.	Il est susceptible de mal réagir aux critiques.
-une manifestation	a manifestation	1	b14aec3f1209bd77c2341123e25dce54	Cette action était une manifestion de courage.	Une grande manifestation a eu lieu pour défendre les droits des travailleurs.
+une manifestation	a manifestation	1	b14aec3f1209bd77c2341123e25dce54	Cette action était une manifestation de courage.	Une grande manifestation a eu lieu pour défendre les droits des travailleurs.
 dormir	to sleep	1	9d317f55f1316c2704088292f78431d6	Je suis épuisé, je dois aller dormir.	Elle dort paisiblement après une longue journée de travail.
 un lit	a bed	1	fcbb7752f1d8151b9a43df6a10c43b27	Son lit est gigantesque, il ne fera pas dans la pièce.	Il a posé les bagages sur le lit avant de se reposer.
 une bouche	a mouth	1	1d4dfac866cd401eaa559666340e75a7	Ferme ta bouche quand tu manges, sinon c’est impoli.	Elle a dessiné un sourire sur sa bouche.
@@ -1828,7 +1828,7 @@ une excuse	an excuse	1	4e2c01e5c2b312dc369fd5e42df2ba8b	Ce n’était qu’une e
 la veille	the day before	1	68d0d96a450f2624ae5553600b50c2c8	Il s’est endormi dans l’autobus, car il n’avait pas beaucoup dormi la veille.	La veille du départ en vacances, ils ont fait leurs valises.
 content / contente	glad	1	feef50c6024a6f18b51e33c59ffb99f1	Je suis content que vous appréciiez mon travail.	Elle était contente de recevoir une nouvelle offre d'emploi.
 une exploitation	an exploitation	1	4c897df4a5c3d536495c56d42da5caa7	Ils veulent mettre fin à l’exploitation de cette ressource naturelle.	L'exploitation des ressources naturelles doit être durable.
-triste	sad	1	bb246255187baf2a4fb1e68cf16c046f	Je suis si triste que tu sois parti sans dire aurevoir.	Elle s'est sentie triste en lisant la nouvelle.
+triste	sad	1	bb246255187baf2a4fb1e68cf16c046f	Je suis si triste que tu sois parti sans dire au revoir.	Elle s'est sentie triste en lisant la nouvelle.
 latin / latine	latin	1	38d3c5f7c1112cd50844628d9d30b9b4	Elle est la championne du monde en danse latine.	Le latin est une langue ancienne encore utilisée dans certaines professions.
 classique	classic	1	86c068139c489df35cebf725feec6581	Cette table de cuisine est élégante et classique.	Beethoven est un compositeur classique célèbre.
 une alliance	an alliance	1	ed0a73626f1867ddb1e672b748945710	Ils ont formé une alliance en août deux mille seize.	L'alliance entre les deux entreprises a renforcé leur position sur le marché.
@@ -1849,7 +1849,7 @@ un club	a club	1	cc3676b0d9a44d976cd75632a5448a35	Yvonne fait partie d’un club
 ouvrier / ouvrière	worker	1	3e59c05c2a607e674db4ece5d97bf47d	Les conditions de travail des ouvriers se sont améliorées.	Les ouvriers travaillent dur pour construire la nouvelle autoroute.
 la souffrance	suffering	1	fc7aa1d57fdd3c4857e56b712d905886	Une nouvelle présence dans la maison pourrait apaiser ta souffrance.	La souffrance des populations touchées par la guerre est immense.
 une observation	an observation	1	00ddf815910bb04244ecf81321881655	Permettez-moi de partager mes observations.	Cette observation est cruciale pour notre compréhension du phénomène.
-rétablir	to re-establish	1	fd44dc8cb28ae919edb6734dac36d78b	Cette loi sera réétablie le premier avril.	Il a réussi à rétablir la connexion Internet après une panne.
+rétablir	to re-establish	1	fd44dc8cb28ae919edb6734dac36d78b	Cette loi sera rétablie le premier avril.	Il a réussi à rétablir la connexion Internet après une panne.
 un secours	a rescue	1	d8642f36b90e6d4774543c488c1e8fd6	Il allait se noyer, mais le sauveteur est venu à son secours!	Les secours sont arrivés rapidement sur les lieux de l'accident.
 une passion	a passion	1	35d3ca7fd95d454c78a151bdf51747ad	Il n’y a aucun doute que la musique soit sa passion.	La danse est sa grande passion depuis son enfance.
 une rupture	a break-up	1	2e89f4e78c433b3f89b322ab6c9584bb	Je ne sais pas comment l’aider à oublier sa rupture avec Émile.	Leur rupture a été difficile pour les deux parties.
@@ -1924,7 +1924,7 @@ grandir	to grow	1	62cde966288d8a46ec142bc6aad4b54d	Tu as tellement grandi depuis
 élaborer	to elaborate	1	6287efa8e4a3d62c3afd34d10702eba5	Nous devons élaborer un plan astucieux.	Le chef a élaboré une nouvelle recette de dessert pour le menu du soir.
 un doigt	a finger	1	c94fb41a7f17c32479137344b66db35b	Il n’a pas levé le doigt pour l’aider.	Elle a montré la blessure à son doigt après s'être coupée en cuisinant.
 illustrer	to illustrate	1	702faf09c034ed33f57aeba3b2a89f58	Cette métaphore illustre parfaitement ma pensée.	Les illustrations du livre captivent l'imagination des jeunes lecteurs.
-une poche	a pocket	1	3a0e4a9519421638532c57849980a1dd	N’oublis pas que mes clés sont dans tes poches.	Il a rangé ses clés dans la poche de son manteau.
+une poche	a pocket	1	3a0e4a9519421638532c57849980a1dd	N’oublie pas que mes clés sont dans tes poches.	Il a rangé ses clés dans la poche de son manteau.
 la transmission	transmission	1	a3f25b583fd4b4e0eac26377ec26b173	La transmission de tous les fichiers est complétée.	La transmission des données est sécurisée grâce à un protocole crypté.
 éclater	to burst	1	107e51c6de5cd2cd79fb1fb912d7148f	Si tu n’arrêtes pas de souffler, le ballon va éclater.	Les feux d'artifice ont commencé à éclater dans le ciel nocturne.
 la honte	the shame	1	d673294a5e82514f3006b0220058cdba	La honte qu’il ressent est sa punition.	Il a ressenti une profonde honte après avoir commis cette erreur publiquement.
@@ -1948,9 +1948,9 @@ fuir	to flee	1	d09c51240fabafe9802d64cf36d775c9	Il est trop orgueilleux pour fui
 chercheur / chercheuse	researcher	1	7cec37a9202fd91ebf66dee819500557	Les chercheurs viennent de découvrir cette nouvelle espèce.	Le chercheur a publié ses résultats dans une revue scientifique renommée.
 un médicament	medication	1	dc6c75b3729d57c49fc2dc2a91a991c4	Je dois prendre mes médicaments avant de me coucher.	Ce médicament est prescrit pour traiter les symptômes de l'allergie.
 une personnalité	a personality	1	d4cfe27e93a0ec5d21d3d56b0e3e893a	Cette femme a une merveilleuse personnalité.	Elle a une personnalité vibrante qui attire facilement les autres.
-inventer	to invent	1	54ab5d39997760aa382c65aabb6da2c0	Ce scientist a inventé une nouvelle machine.	Thomas Edison a inventé la première ampoule électrique fonctionnelle.
+inventer	to invent	1	54ab5d39997760aa382c65aabb6da2c0	Ce scientifique a inventé une nouvelle machine.	Thomas Edison a inventé la première ampoule électrique fonctionnelle.
 principalement	mainly	1	0b3179427eb5e05afe36c49c1c85fa19	Nous faisons ceci principalement pour t’aider.	Ils se nourrissent principalement de fruits et de légumes frais.
-la prudence	caution	1	ee4426b16f85328ee2316ab07d956398	N’oublis pas ton casque : la prudence d’abord!	La prudence est de mise lorsqu'on traverse la rue.
+la prudence	caution	1	ee4426b16f85328ee2316ab07d956398	N’oublie pas ton casque : la prudence d’abord!	La prudence est de mise lorsqu'on traverse la rue.
 un stade	a stadium	1	72c3984d18d285207793047dd6cd0ddd	Ce concert aura lieu dans un stade de football.	Le stade était plein à craquer pour la finale du championnat.
 une liaison	a connection	1	16f443314751ec194d32d18f7f55ee0e	Ne tentez pas de faire la liaison électrique par vous-même.	La liaison entre les deux villes a été renforcée par le nouveau pont.
 varier	to vary	1	46f51ddd0ddbac609721f14d3169ac72	La couleur réelle peut varier de ce que vous voyez à l’écran.	Les températures peuvent varier considérablement d'un jour à l'autre en automne.
@@ -1971,7 +1971,7 @@ une dame	a lady	1	98d61ff7ee4eb89d6e208f2e090479f8	Cette dame a demandé à voir
 la joie	joy	1	b55eeecf68907ba4bd95cf32d4ad7053	Cette rencontre m’a apporté beaucoup de joie.	La naissance de leur premier enfant a rempli leur cœur de joie.
 durable	durable	1	244604fbd364ba8e70d26021de2ec277	Cette échelle est durable, car elle est faite en acier.	L'objectif est de promouvoir une agriculture durable dans cette région.
 la faim	hunger	1	167fae9b3c823c723a5b7b822b37e2d6	Ce pays est dévasté par la faim et la pauvreté.	La faim dans le monde est une préoccupation majeure pour les organisations humanitaires.
-une considération	a consideration	1	e8c6ea22bcca9ff57a953608b6fdd00d	Votre considération a beaucoup d’importance pour moi; je vous admire.	Prenez-en considération les besoins spécifiques de chaque client.
+une considération	a consideration	1	e8c6ea22bcca9ff57a953608b6fdd00d	Votre considération a beaucoup d’importance pour moi; je vous admire.	Prenez en considération les besoins spécifiques de chaque client.
 recommander	to recommend	1	fcf7cc82aae40eda6048d04d1be8f894	Faites-le si vous le voulez, mais je ne le recommande pas.	Je peux vous recommander un bon restaurant français près d'ici.
 un concept	a concept	1	1deedd6b2a8c2c4b34745e14582ebb2e	Ce nouveau concept attire l’attention des médias.	Ce concept de durabilité est au cœur de notre stratégie d'entreprise.
 le cerveau	the brain	1	c396465c8c4e9abe1f69b99c6fcb88b7	L’aire visuelle du cerveau est à l’arrière.	Le cerveau humain est l'organe le plus complexe du corps.
