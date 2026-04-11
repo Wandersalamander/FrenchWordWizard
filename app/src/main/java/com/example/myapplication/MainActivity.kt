@@ -7,9 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.media.AudioAttributes
-import android.media.AudioManager
 import android.media.SoundPool
-import android.media.ToneGenerator
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -51,6 +49,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var serviceIntent: Intent
     private var soundPool: SoundPool? = null
     private var successSoundId: Int = 0
+    private var spotCheckSoundId: Int = 0
     private var inSpotCheck: Boolean = false
     private val spotCheckProbability = 0.2
 
@@ -79,10 +78,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build()
         soundPool = SoundPool.Builder()
-            .setMaxStreams(1)
+            .setMaxStreams(2)
             .setAudioAttributes(audioAttrs)
             .build()
         successSoundId = soundPool!!.load(this, R.raw.duolingo_sucess, 1)
+
+        // Generate a short "blub" tone as a WAV file and load into SoundPool
+        val blubFile = File(cacheDir, "blub.wav")
+        generateBlubWav(blubFile)
+        spotCheckSoundId = soundPool!!.load(blubFile.absolutePath, 1)
 
 
 
@@ -273,12 +277,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
 
-            // Play a short "blub" tone
-            try {
-                val toneGen = ToneGenerator(AudioManager.STREAM_NOTIFICATION, 60)
-                toneGen.startTone(ToneGenerator.TONE_PROP_ACK, 150)
-                Thread { Thread.sleep(200); toneGen.release() }.start()
-            } catch (_: Exception) {}
+            playSpotCheckSound()
         }
 
         buttonFail.setOnClickListener {
@@ -335,7 +334,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         )
 
         if (fr) {
-            textToSpeech.stop()
             textToSpeech.language = Locale.FRENCH
             textToSpeech.speak(
                 wordFr, TextToSpeech.QUEUE_ADD, null, null
@@ -485,6 +483,56 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         private fun playSuccessSound() {
             soundPool?.play(successSoundId, 1f, 1f, 1, 0, 1f)
         }
+
+        private fun playSpotCheckSound() {
+            soundPool?.play(spotCheckSoundId, 0.7f, 0.7f, 1, 0, 1f)
+        }
+
+        private fun generateBlubWav(file: File) {
+            val sampleRate = 22050
+            val durationMs = 120
+            val numSamples = sampleRate * durationMs / 1000
+            val freq = 220.0 // low A note — gives a "blub" feel
+            val samples = ShortArray(numSamples)
+            for (i in 0 until numSamples) {
+                val t = i.toDouble() / sampleRate
+                // Fade envelope: quick attack, fast decay
+                val envelope = if (i < numSamples / 10) i.toFloat() / (numSamples / 10)
+                    else 1.0f - (i.toFloat() / numSamples)
+                val sample = (envelope * Short.MAX_VALUE * Math.sin(2.0 * Math.PI * freq * t)).toInt()
+                samples[i] = sample.coerceIn(Short.MIN_VALUE.toInt(), Short.MAX_VALUE.toInt()).toShort()
+            }
+            val dataSize = numSamples * 2
+            file.outputStream().use { out ->
+                // WAV header
+                out.write("RIFF".toByteArray())
+                out.write(intToBytes(36 + dataSize))
+                out.write("WAVE".toByteArray())
+                out.write("fmt ".toByteArray())
+                out.write(intToBytes(16)) // chunk size
+                out.write(shortToBytes(1)) // PCM
+                out.write(shortToBytes(1)) // mono
+                out.write(intToBytes(sampleRate))
+                out.write(intToBytes(sampleRate * 2)) // byte rate
+                out.write(shortToBytes(2)) // block align
+                out.write(shortToBytes(16)) // bits per sample
+                out.write("data".toByteArray())
+                out.write(intToBytes(dataSize))
+                for (s in samples) {
+                    out.write(s.toInt() and 0xFF)
+                    out.write((s.toInt() shr 8) and 0xFF)
+                }
+            }
+        }
+
+        private fun intToBytes(v: Int): ByteArray = byteArrayOf(
+            (v and 0xFF).toByte(), (v shr 8 and 0xFF).toByte(),
+            (v shr 16 and 0xFF).toByte(), (v shr 24 and 0xFF).toByte()
+        )
+
+        private fun shortToBytes(v: Int): ByteArray = byteArrayOf(
+            (v and 0xFF).toByte(), (v shr 8 and 0xFF).toByte()
+        )
 
         private fun releaseSoundPool() {
             soundPool?.release()
