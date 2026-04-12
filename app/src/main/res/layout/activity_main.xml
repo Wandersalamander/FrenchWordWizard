@@ -51,6 +51,28 @@
         app:layout_constraintBottom_toTopOf="@+id/textGuess"
         app:layout_constraintStart_toStartOf="@+id/textGuess" />
 
+    <Button
+        android:id="@+id/button_hard"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="⚑"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textGuessLong"
+        app:layout_constraintStart_toEndOf="@+id/textReal"
+        app:layout_constraintTop_toBottomOf="@+id/textScore"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button_learned"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="✓"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textScore"
+        app:layout_constraintStart_toEndOf="@+id/textGuess" />
+
     <TextView
         android:id="@+id/textProgressFinished"
         android:layout_width="wrap_content"

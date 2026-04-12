@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var buttonNext: Button
     private lateinit var buttonNew: Button
     private lateinit var buttonTip: Button
+    private lateinit var buttonHard: Button
+    private lateinit var buttonLearned: Button
 
     private lateinit var textFr: TextView
     private lateinit var textScore: TextView
@@ -124,6 +126,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         buttonNext = findViewById(R.id.button_next)
         buttonNew = findViewById(R.id.button_new)
         buttonTip = findViewById(R.id.button_tip)
+        buttonHard = findViewById(R.id.button_hard)
+        buttonLearned = findViewById(R.id.button_learned)
 
 
         buttonFail.isClickable = false
@@ -164,10 +168,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             inputStream, sharedPreferences
         )
         // vocabDictionary.debugDictionary()
-        progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
-            .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+        val initTotalSize = (vocabDictionary.csvData.size - vocabDictionary.getIgnoredDataSize()).toFloat()
+        progressBar.progress = (vocabDictionary.getActiveDataSize()
+            .toFloat() / initTotalSize * 100).toInt()
         progressBarFinished.progress = (vocabDictionary.getFinishedDataSize()
-            .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+            .toFloat() / initTotalSize * 100).toInt()
         //vocabDictionary.debugDictionary()
 
         startTime = System.currentTimeMillis()
@@ -309,6 +314,16 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         buttonNew.setOnClickListener { updateVocab(0, true) }
         buttonTip.setOnClickListener { showTip() }
 
+        buttonHard.setOnClickListener {
+            if (currentVocab != null) {
+                currentVocab!!.flaggedHard = !currentVocab!!.flaggedHard
+                currentVocab!!.savePreferences()
+                buttonHard.text = if (currentVocab!!.flaggedHard) "⚑!" else "⚑"
+            }
+        }
+
+        setupLearnedButton()
+
     }
 
     override fun onInit(status: Int) {
@@ -333,7 +348,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
     }
 
-    private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean, exampleSentence: Boolean, sentenceText: CharSequence? = null) {
+    private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean, exampleSentence: Boolean, sentenceText: CharSequence? = null, flush: Boolean = false) {
         val wordFr = vocab.pronounceableFr()
         val wordEn = vocab.pronounceableEn()
         val sentenceFr = sentenceText ?: textGuessLong.text
@@ -343,24 +358,26 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "yourUtteranceIdEn"
         )
 
+        var queueMode = if (flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
+
         if (fr) {
             textToSpeech.language = Locale.FRENCH
             textToSpeech.speak(
-                wordFr, TextToSpeech.QUEUE_ADD, null, null
+                wordFr, queueMode, null, null
             )
+            queueMode = TextToSpeech.QUEUE_ADD
         }
         if (en) {
             textToSpeech.language = Locale.ENGLISH
             textToSpeech.speak(
-                wordEn, TextToSpeech.QUEUE_ADD, null, null
+                wordEn, queueMode, null, null
             )
-
-
+            queueMode = TextToSpeech.QUEUE_ADD
         }
         if (exampleSentence) {
             textToSpeech.language = Locale.FRENCH
             textToSpeech.speak(
-                sentenceFr, TextToSpeech.QUEUE_ADD, params, "yourUtteranceIdEn"
+                sentenceFr, queueMode, params, "yourUtteranceIdEn"
             )
         }
 
@@ -438,10 +455,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 inSpotCheck = false
                 buttonFail.text = "I don't know"
                 buttonNext.text = "Next"
-                progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
-                    .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+                val totalSize = (vocabDictionary.csvData.size - vocabDictionary.getIgnoredDataSize()).toFloat()
+                progressBar.progress = ((vocabDictionary.getActiveDataSize())
+                    .toFloat() / totalSize * 100).toInt()
                 progressBarFinished.progress = (vocabDictionary.getFinishedDataSize()
-                    .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+                    .toFloat() / totalSize * 100).toInt()
                 print(currentVocab!!.meanTimeViewedMilli())
                 if (currentVocab!!.meanTimeViewedMilli() == (10 * 1e3)) {
                     textScore.text =
@@ -474,16 +492,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     buttonTip.isClickable = true
                     buttonTip.isEnabled = true
                 }
+                val ignored = vocabDictionary.getIgnoredDataSize()
+                val total = vocabDictionary.csvData.size - ignored
                 val finished = vocabDictionary.getFinishedDataSize()
                 val active = vocabDictionary.getActiveDataSize() - finished
-                val unseen = vocabDictionary.csvData.size - vocabDictionary.getActiveDataSize()
+                val unseen = total - vocabDictionary.getActiveDataSize()
                 textProgressFinished.text = finished.toString()
                 textProgressActive.text = active.toString()
                 textProgressUnseen.text = unseen.toString()
                 progressBar.post {
-                    val total = vocabDictionary.csvData.size.toFloat()
-                    val finishedFraction = finished.toFloat() / total
-                    val seenFraction = vocabDictionary.getActiveDataSize().toFloat() / total
+                    val totalF = total.toFloat()
+                    val finishedFraction = finished.toFloat() / totalF
+                    val seenFraction = vocabDictionary.getActiveDataSize().toFloat() / totalF
                     val barWidth = progressBar.width
                     val center = (finishedFraction + seenFraction) / 2f * barWidth
                     textProgressActive.translationX = center - textProgressActive.width / 2f
@@ -496,9 +516,29 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 textGuessLong.visibility = View.INVISIBLE
                 textGuessLong.text = currentVocab!!.getSomeFrenchLong()
 
+                buttonHard.text = if (currentVocab!!.flaggedHard) "⚑!" else "⚑"
+                setupLearnedButton()
+
             }
             startTime = System.currentTimeMillis()
-            speakText(currentVocab!!, en = false, fr = true, exampleSentence = false)
+            speakText(currentVocab!!, en = false, fr = true, exampleSentence = false, flush = true)
+        }
+
+        private fun setupLearnedButton() {
+            buttonLearned.text = "✓"
+            buttonLearned.setOnClickListener {
+                if (currentVocab != null) {
+                    textEn.visibility = View.VISIBLE
+                    textGuessLong.visibility = View.VISIBLE
+                    buttonLearned.text = "✓?"
+                    buttonLearned.setOnClickListener {
+                        currentVocab!!.ignore = true
+                        currentVocab!!.savePreferences()
+                        setupLearnedButton()
+                        updateVocab(0, false)
+                    }
+                }
+            }
         }
 
         private fun playSuccessSound() {

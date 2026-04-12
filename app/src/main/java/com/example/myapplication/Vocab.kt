@@ -52,6 +52,7 @@ data class Vocab(
     var nTimesViewed: Int = 0
     var nTimesFailed: Float = 0.0f
     var ignore: Boolean = false
+    var flaggedHard: Boolean = false
     var lastDisplayed: Long = 0
 
 
@@ -80,6 +81,7 @@ data class Vocab(
         nTimesFailed =
             sharedPreferences.getString("${hash}nTimesFailed", "0")!!.toFloat()
         ignore = sharedPreferences.getString("${hash}ignore", "false")!!.toBoolean()
+        flaggedHard = sharedPreferences.getString("${hash}flaggedHard", "false")!!.toBoolean()
         lastDisplayed = sharedPreferences.getString("${hash}lastDisplayed", "0")!!.toLong()
     }
 
@@ -108,6 +110,7 @@ data class Vocab(
         editor.putString("${hash}nTimesViewed", nTimesViewed.toString())
         editor.putString("${hash}nTimesFailed", nTimesFailed.toString())
         editor.putString("${hash}ignore", ignore.toString())
+        editor.putString("${hash}flaggedHard", flaggedHard.toString())
         editor.putString("${hash}lastDisplayed", lastDisplayed.toString())
         editor.apply()
     }
@@ -157,7 +160,10 @@ data class Vocab(
             return 0.0
         }
         val lastSeenHours = viewedMiutesAgo() / 60.0
-        return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) * (fpb + (meanTimeViewedMilli()) / 10e3)
+        val hardMultiplier = if (flaggedHard) 3.0 else 1.0
+        // Time as a gentle multiplier: 5s -> 1.0, 2s -> 0.7, 15s -> 1.4, clamped to [0.5, 2.0]
+        val timeFactor = (0.4 + 0.12 * meanTimeViewedMilli() / 1000.0).coerceIn(0.5, 2.0)
+        return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) * fpb * timeFactor * hardMultiplier
     }
 
 

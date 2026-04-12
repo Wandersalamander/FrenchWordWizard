@@ -13,11 +13,15 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     }
 
     fun getActiveDataSize(): Int {
-        return csvData.filter { it.nTimesViewed > 0 }.size
+        return csvData.filter { it.nTimesViewed > 0 && !it.ignore }.size
     }
 
     fun getFinishedDataSize(): Int {
-        return csvData.filter { it.nTimesViewed > 0 && it.failureProbability() < 0.1f }.size
+        return csvData.filter { it.nTimesViewed > 0 && !it.ignore && it.failureProbability() < 0.1f }.size
+    }
+
+    fun getIgnoredDataSize(): Int {
+        return csvData.filter { it.ignore }.size
     }
 
     fun debugDictionary() {
