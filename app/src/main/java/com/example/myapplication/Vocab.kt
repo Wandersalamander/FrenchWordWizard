@@ -152,13 +152,12 @@ data class Vocab(
 
 
     fun sortValue(): Double {
-        // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
         val fpb = failureProbability()
         if (fpb < 0.1) {
             return 0.0
         }
         val lastSeenHours = viewedMiutesAgo() / 60.0
-        return (ln(1.0f + lastSeenHours) + 1.0f) * (fpb + (meanTimeViewedMilli()) / 10e3)
+        return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) * (fpb + (meanTimeViewedMilli()) / 10e3)
     }
 
 
