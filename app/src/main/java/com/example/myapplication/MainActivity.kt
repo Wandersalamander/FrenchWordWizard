@@ -14,6 +14,8 @@ import android.os.Vibrator
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.view.View
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -26,6 +28,9 @@ import java.util.concurrent.CountDownLatch
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var textToSpeech: TextToSpeech
+
+    private var currentLanguage: String = "fr"
+    private var foreignLocale: Locale = Locale.FRENCH
 
     private lateinit var vocabDictionary: MyDictionary
     private var currentVocab: Vocab? = null
@@ -153,15 +158,25 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val sharedPreferences: SharedPreferences = getSharedPreferences(
             "vocabulary_preferences", Context.MODE_PRIVATE
         )
-        val inputStream: InputStream = resources.openRawResource(
-            R.raw.dictionary_sorted_2
-        )
+        currentLanguage = sharedPreferences.getString("app_language", "fr") ?: "fr"
+        foreignLocale = when (currentLanguage) {
+            "de" -> Locale.GERMAN
+            else -> Locale.FRENCH
+        }
+        val dictionaryRes = when (currentLanguage) {
+            "de" -> R.raw.dictionary_sorted_german
+            else -> R.raw.dictionary_sorted_2
+        }
+        val inputStream: InputStream = resources.openRawResource(dictionaryRes)
         textProgressFinished.text = ""
         textProgressActive.text = ""
         textProgressUnseen.text = ""
         textScore.text = ""
         textGuessLong.text = ""
-        textFr.text = "Apprenez le français !"
+        textFr.text = when (currentLanguage) {
+            "de" -> "Lerne Deutsch!"
+            else -> "Apprenez le français !"
+        }
         textEn.text = getString(R.string.START_INFO_TEXT)
 
         vocabDictionary = MyDictionary(
@@ -326,14 +341,27 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
-            // Set the language to French
-            val result = textToSpeech.setLanguage(Locale.FRENCH)
+            val result = textToSpeech.setLanguage(foreignLocale)
 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                // Handle the case where French language data is missing or not supported
-                println("French language is not supported.")
+                println("Language $foreignLocale is not supported.")
             }
 
             // Use audio attributes that don't steal focus from music apps
@@ -349,9 +377,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun speakText(vocab: Vocab, en: Boolean, fr: Boolean, exampleSentence: Boolean, sentenceText: CharSequence? = null, flush: Boolean = false) {
-        val wordFr = vocab.pronounceableFr()
+        val wordForeign = vocab.pronounceableForeign(currentLanguage)
         val wordEn = vocab.pronounceableEn()
-        val sentenceFr = sentenceText ?: textGuessLong.text
+        val sentenceForeign = sentenceText ?: textGuessLong.text
 
         val params = Bundle()
         params.putString(
@@ -361,9 +389,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         var queueMode = if (flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
 
         if (fr) {
-            textToSpeech.language = Locale.FRENCH
+            textToSpeech.language = foreignLocale
             textToSpeech.speak(
-                wordFr, queueMode, null, null
+                wordForeign, queueMode, null, null
             )
             queueMode = TextToSpeech.QUEUE_ADD
         }
@@ -375,9 +403,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             queueMode = TextToSpeech.QUEUE_ADD
         }
         if (exampleSentence) {
-            textToSpeech.language = Locale.FRENCH
+            textToSpeech.language = foreignLocale
             textToSpeech.speak(
-                sentenceFr, queueMode, params, "yourUtteranceIdEn"
+                sentenceForeign, queueMode, params, "yourUtteranceIdEn"
             )
         }
 
@@ -396,9 +424,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         override fun onResume() {
             super.onResume()
+            val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
+            val savedLang = prefs.getString("app_language", "fr") ?: "fr"
+            if (savedLang != currentLanguage) {
+                recreate()
+                return
+            }
             startTime = System.currentTimeMillis()
-
-            //updateVocab(0,false,false)
         }
 
 
