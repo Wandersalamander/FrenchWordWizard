@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             inputStream, sharedPreferences
         )
         // vocabDictionary.debugDictionary()
-        val initTotalSize = (vocabDictionary.csvData.size - vocabDictionary.getIgnoredDataSize()).toFloat()
+        val initTotalSize = vocabDictionary.csvData.size.toFloat()
         progressBar.progress = (vocabDictionary.getActiveDataSize()
             .toFloat() / initTotalSize * 100).toInt()
         progressBarFinished.progress = (vocabDictionary.getFinishedDataSize()
@@ -455,8 +455,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 inSpotCheck = false
                 buttonFail.text = "I don't know"
                 buttonNext.text = "Next"
-                val totalSize = (vocabDictionary.csvData.size - vocabDictionary.getIgnoredDataSize()).toFloat()
-                progressBar.progress = ((vocabDictionary.getActiveDataSize())
+                val totalSize = vocabDictionary.csvData.size.toFloat()
+                progressBar.progress = (vocabDictionary.getActiveDataSize()
                     .toFloat() / totalSize * 100).toInt()
                 progressBarFinished.progress = (vocabDictionary.getFinishedDataSize()
                     .toFloat() / totalSize * 100).toInt()
@@ -492,8 +492,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     buttonTip.isClickable = true
                     buttonTip.isEnabled = true
                 }
-                val ignored = vocabDictionary.getIgnoredDataSize()
-                val total = vocabDictionary.csvData.size - ignored
+                val total = vocabDictionary.csvData.size
                 val finished = vocabDictionary.getFinishedDataSize()
                 val active = vocabDictionary.getActiveDataSize() - finished
                 val unseen = total - vocabDictionary.getActiveDataSize()
