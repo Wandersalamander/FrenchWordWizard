@@ -393,8 +393,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 val prevFailureProbability = currentVocab!!.failureProbability()
 
                 currentVocab!!.nTimesViewed += 1
-                currentVocab!!.viewTimeMilli_prev = currentVocab!!.viewTimeMilli
-                currentVocab!!.viewTimeMilli = timeElapsed as Long
+                val alpha = 0.3
+                currentVocab!!.viewTimeMilli = (alpha * timeElapsed!! + (1.0 - alpha) * currentVocab!!.viewTimeMilli).toLong()
                 currentVocab!!.lastDisplayed = System.currentTimeMillis()
                 currentVocab!!.savePreferences()
                 if (currentVocab!!.failureProbability() < 0.1 && prevFailureProbability >= 0.1) {

@@ -117,7 +117,8 @@ data class Vocab(
             1.0f
         } else {
             val base = 0.5f / nTimesViewed.toFloat()
-            base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
+            val raw = base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
+            raw.coerceIn(0.0f, 1.0f)
         }
     }
 
@@ -144,7 +145,7 @@ data class Vocab(
         return "★".repeat(n_full_stars) + "☆".repeat(remainder)
     }
 
-    fun meanTimeViewedMilli() = ((viewTimeMilli.toDouble() + viewTimeMilli_prev.toDouble()) * 0.5)
+    fun meanTimeViewedMilli() = viewTimeMilli.toDouble()
 
     fun viewedMiutesAgo() =
         TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - lastDisplayed)

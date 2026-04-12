@@ -64,7 +64,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     fun getActiveVocabWeightened(): Vocab {
         val activeData = csvData.filter { (it.nTimesViewed != 0) && !it.ignore && (it.sortValue() > 0.0) }
         if (activeData.size < 20) {
-            val available = csvData.filter { !it.ignore }
+            val available = csvData.filter { !it.ignore && !(it.nTimesViewed > 0 && it.failureProbability() < 0.1f) }
             if (available.isEmpty()) return csvData[Random.nextInt(csvData.size)]
             return available[Random.nextInt(available.size)]
         }
