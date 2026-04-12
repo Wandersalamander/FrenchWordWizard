@@ -52,13 +52,31 @@
         app:layout_constraintStart_toStartOf="@+id/textGuess" />
 
     <TextView
-        android:id="@+id/textProgress"
+        android:id="@+id/textProgressFinished"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1999 / 2000"
+        android:text="0"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/progressBar"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/textProgressUnseen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/textProgressActive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar" />
 
     <Button
         android:id="@+id/button_next"
@@ -120,4 +138,16 @@
         android:progress="10"
         app:layout_constraintBottom_toTopOf="@+id/button_fail"
         app:layout_constraintStart_toStartOf="@+id/button_fail" />
+
+    <ProgressBar
+        android:id="@+id/progressBarFinished"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        android:progressTint="#FFFFFF"
+        android:progressBackgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

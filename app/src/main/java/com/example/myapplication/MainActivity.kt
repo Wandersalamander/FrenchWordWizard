@@ -42,10 +42,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var textFr: TextView
     private lateinit var textScore: TextView
-    private lateinit var textProgress: TextView
+    private lateinit var textProgressFinished: TextView
+    private lateinit var textProgressActive: TextView
+    private lateinit var textProgressUnseen: TextView
     private lateinit var textEn: TextView
     private lateinit var textGuessLong: TextView
     private lateinit var progressBar: ProgressBar
+    private lateinit var progressBarFinished: ProgressBar
     private lateinit var serviceIntent: Intent
     private var soundPool: SoundPool? = null
     private var successSoundId: Int = 0
@@ -74,7 +77,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // Initialize SoundPool for the success sound
         // SoundPool mixes audio without requesting audio focus, so it won't interfere with Spotify etc.
         val audioAttrs = AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+            .setUsage(AudioAttributes.USAGE_GAME)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build()
         soundPool = SoundPool.Builder()
@@ -133,11 +136,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         textFr = findViewById(R.id.textGuess)
         textScore = findViewById(R.id.textScore)
-        textProgress = findViewById(R.id.textProgress)
+        textProgressFinished = findViewById(R.id.textProgressFinished)
+        textProgressActive = findViewById(R.id.textProgressActive)
+        textProgressUnseen = findViewById(R.id.textProgressUnseen)
 
         textEn = findViewById(R.id.textReal)
         textGuessLong = findViewById(R.id.textGuessLong)
         progressBar = findViewById(R.id.progressBar)
+        progressBarFinished = findViewById(R.id.progressBarFinished)
 
 
         val sharedPreferences: SharedPreferences = getSharedPreferences(
@@ -146,7 +152,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val inputStream: InputStream = resources.openRawResource(
             R.raw.dictionary_sorted_2
         )
-        textProgress.text = ""
+        textProgressFinished.text = ""
+        textProgressActive.text = ""
+        textProgressUnseen.text = ""
         textScore.text = ""
         textGuessLong.text = ""
         textFr.text = "Apprenez le français !"
@@ -157,6 +165,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         )
         // vocabDictionary.debugDictionary()
         progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
+            .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+        progressBarFinished.progress = (vocabDictionary.getFinishedDataSize()
             .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
         //vocabDictionary.debugDictionary()
 
@@ -313,7 +323,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             // Use audio attributes that don't steal focus from music apps
             val audioAttributes = AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_NAVIGATION_GUIDANCE)
+                .setUsage(AudioAttributes.USAGE_GAME)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                 .build()
             textToSpeech.setAudioAttributes(audioAttributes)
@@ -430,6 +440,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 buttonNext.text = "Next"
                 progressBar.progress = ((vocabDictionary.getActiveDataSize() + 1)
                     .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
+                progressBarFinished.progress = (vocabDictionary.getFinishedDataSize()
+                    .toFloat() / vocabDictionary.csvData.size.toFloat() * 100).toInt()
                 print(currentVocab!!.meanTimeViewedMilli())
                 if (currentVocab!!.meanTimeViewedMilli() == (10 * 1e3)) {
                     textScore.text =
@@ -462,11 +474,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     buttonTip.isClickable = true
                     buttonTip.isEnabled = true
                 }
-                textProgress.text = String.format(
-                    "%d / %d",
-                    (vocabDictionary.getActiveDataSize() + 1),
-                    vocabDictionary.csvData.size
-                )
+                val finished = vocabDictionary.getFinishedDataSize()
+                val active = vocabDictionary.getActiveDataSize() - finished
+                val unseen = vocabDictionary.csvData.size - vocabDictionary.getActiveDataSize()
+                textProgressFinished.text = finished.toString()
+                textProgressActive.text = active.toString()
+                textProgressUnseen.text = unseen.toString()
+                progressBar.post {
+                    val total = vocabDictionary.csvData.size.toFloat()
+                    val finishedFraction = finished.toFloat() / total
+                    val seenFraction = vocabDictionary.getActiveDataSize().toFloat() / total
+                    val barWidth = progressBar.width
+                    val center = (finishedFraction + seenFraction) / 2f * barWidth
+                    textProgressActive.translationX = center - textProgressActive.width / 2f
+                }
                 textFr.text = currentVocab!!.french
 
                 textEn.visibility = View.INVISIBLE

@@ -1994,3 +1994,101 @@ une ombre	a shadow	1	7d6859cb33786ab7041885b499eade49	J’ai cru voir une ombre 
 un séjour	a stay	1	25e36752ded2e3956a9f654acbd3308b	Bienvenue à notre hôtel, nous espérons que vous apprécierez votre séjour.	Ils ont passé un agréable séjour dans un petit village au bord de la mer.
 guider	to guide	1	c99d19d156afb9b41f0054a00f4908ed	Nous avons laissé la mer nous guider jusqu’à cette île.	Le guide touristique les a guidés à travers les ruelles étroites de la vieille ville.
 spécialiser	to specialize	1	494001f8a2f5a171b62d0b172ae25b7c	Il a décidé de se spécialiser dans la neurochirurgie.	Elle s'est spécialisée en médecine pédiatrique après ses études.
+fois	time (occurrence)	1	13ad1c181492891ce8cd7958863d9d44	C'est la première fois que je visite ce musée, et j'espère que ce ne sera pas la dernière.	Il était une fois un roi très sage.
+une fleur	a flower	1	f3bb0762bbc9fdd07438b54d6963052f	Les fleurs du jardin embaument toute la maison quand on ouvre les fenêtres.	Elle a cueilli une fleur dans le jardin.
+la cuisine	the kitchen / cooking	1	c97f5125cc9fe061b52dc62eba15b21f	La cuisine française est réputée dans le monde entier pour sa diversité et sa finesse.	Il prépare le dîner dans la cuisine.
+dîner	to have dinner / dinner	1	1717b3d724f5da72c87be9d80692ee31	Nous avons dîné dans un restaurant étoilé pour célébrer notre anniversaire de mariage.	Nous dînons à sept heures ce soir.
+un chat	a cat	1	cb15a2d01030ea9be6bec2243bb8ec95	Le chat du voisin a l'habitude de se faufiler dans notre jardin pour dormir au soleil.	Le chat dort sur le canapé.
+le pain	bread	1	d0647281cd00d3e86d6dcde272b7576c	L'odeur du pain frais qui sort du four me rappelle les matins chez ma grand-mère.	J'achète du pain à la boulangerie.
+le vin	wine	1	55fde7a4a823c6e3b7786afae295a898	Ce vignoble produit un vin rouge exceptionnel qui a remporté plusieurs prix internationaux.	Il boit un verre de vin rouge.
+un verre	a glass	1	ba68282586fe4ccd62a893e150a901d3	Elle a fait tomber son verre de cristal qui s'est brisé en mille morceaux sur le carrelage.	Il boit un verre d'eau.
+un jardin	a garden	1	cc15d89ce5100b55ec310986711d2b09	Mon grand-père passait des heures dans son jardin à tailler les rosiers et à planter des légumes.	Les enfants jouent dans le jardin.
+danser	to dance	1	3ce44a88e4e122ee45e9e7011de70aed	Elle a appris à danser le tango lors de son séjour en Argentine.	Ils aiment danser le samedi soir.
+un cheveu / des cheveux	a hair / hair	1	661787f55ec5f131c98154fc6d4406ad	Ses cheveux bouclés lui tombaient sur les épaules, dorés par le soleil de l'été.	Elle a les cheveux longs et bruns.
+une dent	a tooth	1	6bcc29a2e2dab7f598331cb403ce758f	Le dentiste m'a dit que je devais me faire arracher une dent de sagesse la semaine prochaine.	L'enfant a perdu sa première dent.
+le nez	the nose	1	a57c3bada03b631bcb35e25edbc483d5	Il a le nez fin et peut reconnaître n'importe quel parfum en quelques secondes.	Il a le nez rouge à cause du froid.
+une jambe	a leg	1	982144456ca8fde6de00fefda8ef50ab	Il s'est cassé la jambe en faisant du ski et a dû porter un plâtre pendant six semaines.	Il a mal à la jambe droite.
+la peau	the skin	1	e7d5eaa30e85846cfc65c406d0b09a53	La crème solaire protège la peau contre les rayons ultraviolets qui peuvent causer des brûlures.	Elle a la peau douce.
+le ventre	the stomach / belly	1	de081d2e704a1425cee2f5ad68cb15e7	J'ai eu mal au ventre toute la nuit après avoir mangé des fruits de mer pas frais.	Le bébé dort sur le ventre.
+un oiseau	a bird	1	b6fdc30f4627a0ab9a82f6bdb2c94f1a	Les oiseaux migrateurs parcourent des milliers de kilomètres chaque année pour trouver un climat plus chaud.	Un oiseau chante dans l'arbre.
+un arbre	a tree	1	e0cd88e5799a71c5d07d033c94ececd1	Le vieil arbre au fond du jardin a été planté par mon arrière-grand-père il y a un siècle.	Il y a un grand arbre devant la maison.
+un lac	a lake	1	3c1bc18135d9641ddffaab28c5f446b3	Le lac gelé reflétait les montagnes enneigées dans un silence presque irréel.	Nous nageons dans le lac en été.
+la pluie	the rain	1	2eeddacfc302e042013ebd7ab0583d37	La pluie battante n'a pas empêché les manifestants de défiler dans les rues pendant des heures.	La pluie tombe depuis ce matin.
+la glace	ice / ice cream	1	7a1cf67ee584efe91ff5f396337e20ef	Les enfants adorent manger de la glace au chocolat sur la terrasse du café en été.	Je voudrais une glace à la vanille.
+la viande	meat	1	df4a28302597f46e8f3fa9141523b100	Le boucher du quartier est réputé pour la qualité exceptionnelle de sa viande de bœuf.	Il ne mange pas de viande.
+un repas	a meal	1	399c1a2f3d00eceaee3e730d05e54355	Préparer un bon repas pour sa famille est l'une des plus grandes joies de la vie quotidienne.	Le repas est prêt.
+un sac	a bag	1	02fefd1a8d36484becac2d87e9f256fd	Elle a fouillé dans son sac pendant dix minutes avant de retrouver ses clés tout au fond.	Mets tes affaires dans ton sac.
+une robe	a dress	1	5344d10a0733ed67c57e611e6f59ad6c	Elle portait une robe élégante en soie rouge qui attirait tous les regards lors de la soirée.	Elle porte une robe bleue.
+un vêtement	a piece of clothing	1	7c6d867b1ad64b66aa9ec2a36271da66	Il faudrait trier les vêtements que tu ne portes plus et les donner à une association caritative.	Ce vêtement est trop grand pour moi.
+une chanson	a song	1	2bd704d66e35770bcf82a645e50c8a76	Cette chanson me rappelle les vacances que nous passions ensemble au bord de la mer.	Il chante une chanson joyeuse.
+une chaise	a chair	1	61c97bffa4775f273e0b2897d0fceada	La vieille chaise en bois craquait à chaque mouvement, mais personne n'osait la jeter.	Assieds-toi sur la chaise.
+un oncle	an uncle	1	3d08c04cdb19c2a6290b793d9a833f22	Mon oncle, qui vit au Canada depuis vingt ans, revient nous rendre visite chaque été.	Mon oncle habite à Lyon.
+une tante	an aunt	1	fc8ca12e4f618204af4d7d35f6c3ba81	Ma tante m'a appris à cuisiner quand j'étais petite et je lui en suis encore reconnaissante.	Ma tante vient dîner ce soir.
+papa	dad	1	a9944bb20fac0f37abebf2c3fae8b884	Papa m'a toujours dit que le plus important dans la vie, c'est d'être honnête avec soi-même.	Papa joue avec nous dans le jardin.
+un copain / une copine	a friend / a boyfriend / a girlfriend	1	bcbf63d512edfc6ea7c4a9bc416e0772	Mon copain d'enfance est devenu médecin et travaille maintenant dans un hôpital à Marseille.	Elle sort avec ses copines ce soir.
+adorer	to love / to adore	1	a528b4b9cc053e27d26ef558375dbb74	J'adore me promener le long de la Seine quand le soleil se couche sur Paris.	Les enfants adorent le chocolat.
+un bain	a bath	1	4fb71ea161d31740726cc1bb500bb3fd	Après une longue journée de travail, rien ne vaut un bain chaud pour se détendre.	Le bébé prend son bain le soir.
+le beurre	butter	1	c9f855da500908d8d1aedb9337547c71	En France, le beurre est un ingrédient essentiel que l'on retrouve dans presque toutes les recettes traditionnelles.	Mets du beurre sur le pain.
+le boulot	work / job (informal)	1	6037a85c798201ebd25536da2814e95a	Je dois me lever tôt demain parce que j'ai un boulot monstre qui m'attend au bureau.	Il part au boulot à huit heures.
+casser	to break	1	df08f9d963b600e2f1e008ba54a9369d	Il a cassé le vase de sa grand-mère en jouant au ballon dans le salon.	Le verre est tombé et s'est cassé.
+un chapeau	a hat	1	ddd81bf4f68cdaa0aa8f1b856bca2606	Le vieil homme portait toujours un chapeau de paille quand il sortait se promener au soleil.	Elle porte un chapeau rouge.
+un château	a castle	1	bf32bba638fbf8f61e1a9ed488998070	Le château de Versailles attire des millions de visiteurs chaque année grâce à ses jardins magnifiques.	Nous avons visité un château ancien.
+coucher	to put to bed / to go to bed	1	c3ea27b4b0367f860c635ab3cf72aeed	Il faut coucher les enfants avant huit heures si on veut qu'ils soient en forme demain matin.	Je me couche à dix heures.
+curieux / curieuse	curious	1	b55c8ee0f18537551e136f21508c5a10	L'enfant était si curieux qu'il posait sans cesse des questions sur tout ce qu'il voyait.	Elle est curieuse de tout.
+un docteur	a doctor	1	56df517c2c96e5e159778193806dfd77	Le docteur lui a conseillé de se reposer et de boire beaucoup d'eau pendant sa convalescence.	Le docteur examine le patient.
+doux / douce	soft / sweet / gentle	1	3d311097500e11fc2e8a3de608af6c04	Sa voix douce avait le pouvoir de calmer même les personnes les plus anxieuses.	Le tissu est très doux.
+drôle	funny	1	bc3f0c374216c1e14981bfe1a3073a0e	Cette comédie est tellement drôle que j'ai ri aux larmes du début à la fin.	Il raconte des histoires drôles.
+une étoile	a star	1	3a1cc40bfb7ec3d0b7e7bc1718dcead3	Par les nuits claires d'été, on peut observer des milliers d'étoiles depuis la campagne.	Il y a une étoile brillante dans le ciel.
+une gare	a train station	1	bce5eee361e599ee8ad589c38ba016d6	La gare était bondée de voyageurs pressés qui couraient pour attraper le dernier train.	Le train arrive à la gare à midi.
+un genou	a knee	1	0655e22d4b2e5a543581b6a3823899c1	Il est tombé sur le genou en jouant au football et a dû quitter le terrain.	Il a mal au genou.
+gris / grise	grey	1	2b91d677355639fcfdb146c70433086c	Le ciel gris et menaçant annonçait un orage violent pour la fin de l'après-midi.	Le chat est gris et blanc.
+jaune	yellow	1	dad14997a2a87604da02622bef626126	Les champs de tournesols jaunes s'étendaient à perte de vue sous le soleil de Provence.	Le soleil est jaune.
+joli / jolie	pretty	1	96e80c9c8808ae8008ebda5bf0babd40	Elle habitait dans un joli petit village de montagne entouré de forêts de sapins.	C'est une jolie maison.
+laver	to wash	1	e88e438d76dc8ad1937063c50ddf62cd	Il faut laver les fruits et les légumes avant de les manger pour éliminer les pesticides.	Elle lave les assiettes après le dîner.
+lent / lente	slow	1	3e35068cfd2ff806fe9dca43a2c29e3c	La circulation était si lente ce matin que j'ai mis deux heures pour arriver au bureau.	La tortue est lente.
+la lune	the moon	1	23c81a949647443137d35a00b4dbb039	La pleine lune éclairait le chemin à travers la forêt comme si c'était presque le jour.	La lune brille dans le ciel ce soir.
+des lunettes	glasses (eyewear)	1	1d38ee367a843b1727e2d5c939b3cb30	Sans ses lunettes, elle ne pouvait même pas lire les panneaux dans la rue.	Il porte des lunettes pour lire.
+un morceau	a piece / a bit	1	911c022d69f48d753e1094c967859a8e	Le musicien a interprété un morceau de Chopin avec une émotion qui a touché tout le public.	Veux-tu un morceau de gâteau ?
+une odeur	a smell	1	bc64d9c1d520dc7758a3b9dad4ebcfcd	L'odeur du café fraîchement moulu se répandait dans toute la maison dès le matin.	Il y a une mauvaise odeur ici.
+pleurer	to cry	1	bc083315bff45bb5a7bfb74e9268a31e	Le bébé n'arrêtait pas de pleurer, et rien ne semblait pouvoir le consoler.	L'enfant pleure parce qu'il est tombé.
+la rivière	the river	1	092cde859dd559886f71eb54bf86c20b	La rivière serpentait à travers la vallée verdoyante, offrant un paysage d'une beauté paisible.	Les enfants se baignent dans la rivière.
+rose	pink / a rose	1	6469fff76fa4fbc1926c4fa1e3084013	Les murs roses de la chambre donnaient à la pièce une atmosphère chaleureuse et apaisante.	Elle aime la couleur rose.
+le sommeil	sleep	1	a5b98f22d45724851591a34af9e25beb	Le manque de sommeil peut avoir des conséquences graves sur la santé à long terme.	Il a besoin de sommeil.
+tranquille	quiet / calm	1	455d435619fe1fb2c1056c77c28b2754	Ce petit village tranquille au bord de la mer est l'endroit idéal pour se reposer.	La maison est tranquille le matin.
+trembler	to tremble / to shake	1	48e0cbb88be9f0e7f026895ba70bb0fb	Ses mains tremblaient de froid après être resté dehors pendant des heures sous la neige.	Elle tremble de peur.
+réveiller	to wake up	1	d5234fb40e738247769eefc5f98a880f	Le bruit des travaux dans la rue m'a réveillé à cinq heures du matin.	Je me réveille à sept heures.
+soigner	to treat / to care for	1	222eef8e4cbe2908c830e9d315cb01f0	L'infirmière a soigné les blessés avec un dévouement exemplaire pendant toute la nuit.	Le médecin soigne les malades.
+occuper	to occupy / to keep busy	1	1d20cfe3f5eefc775eeeab46f17cee95	Ce projet m'occupe tellement que je n'ai plus le temps de voir mes amis.	Les enfants s'occupent avec des jeux.
+attraper	to catch	1	7ca9b966238741e8310aa255a181db6a	Le policier a réussi à attraper le voleur après une course-poursuite dans les rues du quartier.	Le chat essaie d'attraper la souris.
+aussitôt	immediately	1	32bb88a9e7619d17b634bb5ab162854d	Aussitôt la nouvelle annoncée, les journalistes se sont précipités devant le bâtiment.	Il est parti aussitôt après le dîner.
+bête	stupid / an animal	1	aa549d144fd748334b5828640de703b0	Ne sois pas bête, tu sais très bien que ce n'est pas ce que je voulais dire.	Ce n'est pas bête comme idée.
+dessous	below / underneath	1	9265a37039578890f4e5d8e85440fdeb	Les voisins du dessous se plaignent du bruit que font les enfants en courant dans l'appartement.	Le chat se cache en dessous du lit.
+emmener	to take (someone along)	1	5a89604d651780094f1d1e5dd632f289	Je vais emmener les enfants au parc d'attractions pour fêter la fin de l'année scolaire.	Il emmène son fils à l'école.
+un ennui	boredom / a problem	1	1cd401acaeca79b0ecf27f1250164963	L'ennui est souvent le signe qu'on a besoin de changement dans sa vie quotidienne.	Il meurt d'ennui pendant les vacances.
+un escalier	stairs / a staircase	1	255d5a0c41a4a9755037fb9758dbef09	L'escalier en colimaçon de ce vieux château est si étroit qu'on ne peut y passer qu'un à la fois.	Monte l'escalier pour aller à ta chambre.
+fatiguer	to tire / to get tired	1	fdbb38eacc6342b9812a60b281929d93	Cette longue randonnée en montagne m'a tellement fatigué que je me suis endormi aussitôt rentré.	La marche fatigue les enfants.
+franchement	frankly / honestly	1	7839e6b81ba82057b605117912743dcb	Franchement, je ne comprends pas pourquoi tu refuses de nous accompagner à cette fête.	Franchement, c'est très bon.
+la gorge	the throat	1	2fd5799d077e24233978ab6d60c4aa27	J'ai mal à la gorge depuis hier et je commence à perdre la voix.	Il a mal à la gorge.
+habiller	to dress / to get dressed	1	d9f42b766cd2cb28a6dfa7e4c01d1e8d	Elle met toujours beaucoup de temps à s'habiller le matin car elle hésite entre plusieurs tenues.	L'enfant apprend à s'habiller seul.
+l'herbe	grass	1	bc9c9574a8673f3809205c695a5d3813	L'herbe fraîchement coupée dégageait un parfum agréable qui rappelait les étés de mon enfance.	Les enfants jouent sur l'herbe.
+une larme	a tear	1	b1285bfa23f45d4b23744537d0657b6c	Une larme a coulé sur sa joue quand elle a lu la lettre de son fils parti à l'étranger.	Il y a des larmes dans ses yeux.
+une lèvre	a lip	1	d1d76b2dc299e4f94e57ac42c06403da	Elle se mordait la lèvre inférieure, signe qu'elle réfléchissait intensément à la question.	Il a les lèvres sèches.
+mélanger	to mix	1	135d44806380eb7e89e134cca8a84298	Il faut mélanger la farine et les œufs avant d'ajouter le lait pour obtenir une pâte lisse.	Mélange bien les ingrédients.
+un mensonge	a lie	1	c04459ce746d4bcd9fb88839d7935731	Le plus grave dans cette affaire, ce n'est pas l'erreur, c'est le mensonge qui a suivi.	Dire un mensonge est mal.
+mentir	to lie	1	24f8f9b9d25657997852edbdeb2c03f9	Il a menti à ses parents pour ne pas avouer qu'il avait séché les cours toute la semaine.	Il ne faut pas mentir.
+un paysage	a landscape	1	db8824a2618b08d3b21d3695b7876f36	Le paysage de la côte bretonne, avec ses falaises et ses criques, est d'une beauté sauvage.	Le paysage est magnifique ici.
+la poésie	poetry	1	57af83f35c2335e22e9c2ecce272b432	La poésie de Victor Hugo continue d'émouvoir des générations de lecteurs à travers le monde.	Elle aime lire de la poésie.
+promener	to walk / to stroll	1	5c6d406c1f2103f289d4539f041e6b08	Nous aimons nous promener le long du canal le dimanche matin quand la ville est encore endormie.	Il promène son chien chaque soir.
+ranger	to tidy up / to put away	1	efb7a61f26fe360feea9237e14c2d2bc	Ta chambre est un vrai désordre ; il faudrait que tu ranges tes affaires avant ce soir.	Range tes jouets dans le placard.
+rond / ronde	round	1	4c4ba905ba946199bafb58e4dcb7af9a	La table ronde au centre de la pièce permettait à tous les convives de se voir facilement.	La Terre est ronde.
+sauter	to jump	1	98ada736b5aee4d54d5af637bdeeeda7	Les enfants adorent sauter dans les flaques d'eau après la pluie, même si leurs parents désapprouvent.	Le chat saute sur la table.
+sec / sèche	dry	1	0f8030dbaa61e799aa9f24fcfc541c18	L'été a été si sec cette année que les récoltes ont été gravement touchées dans tout le sud.	Le linge est sec.
+serrer	to squeeze / to tighten	1	eb9c608b10be0b1cfbbe69a0376f5ccc	Il m'a serré la main si fort que j'ai cru qu'il allait me briser les doigts.	Elle serre son doudou dans ses bras.
+sombre	dark / gloomy	1	40fb27cda48de74b6ee5d1ddb6477709	La pièce sombre au fond du couloir n'avait qu'une petite fenêtre donnant sur la cour intérieure.	Il fait sombre dans cette pièce.
+sonner	to ring	1	69c980f28aa1cf43d066b5ebc2ec4990	Le téléphone n'arrête pas de sonner depuis ce matin et je n'ai pas eu une minute de repos.	La cloche sonne à midi.
+tousser	to cough	1	5f078ad78c954fa6c36c315a2548376a	Il toussait tellement qu'il a dû quitter la salle de cinéma pour ne pas déranger les autres.	L'enfant tousse depuis hier.
+traîner	to drag / to hang around	1	83c957620e6c4082e0b37e108ee3a31c	Ne traîne pas en chemin, on va être en retard pour le début du spectacle.	Il traîne les pieds pour aller à l'école.
+fumer	to smoke	1	7c8fffba8fd103a5ff6cfd5e7a06eab2	Il a décidé d'arrêter de fumer après avoir lu un article sur les dangers du tabac pour la santé.	Il est interdit de fumer ici.
+un dieu	a god	1	bbb85220902417248d93fbe33a2f5f9a	Dans la mythologie grecque, les dieux vivaient sur le mont Olympe et gouvernaient le destin des mortels.	Il prie Dieu chaque soir.
+la poitrine	the chest	1	7b0439e0fe38ebfb635a7d9e9674f1ee	Il a ressenti une douleur vive à la poitrine et a immédiatement appelé les urgences.	Il a mal à la poitrine.
+un prince	a prince	1	a7f59aeecb157278af1643dc28bab164	Le prince héritier a prononcé un discours émouvant devant des milliers de personnes rassemblées.	Le prince vit dans un grand château.
