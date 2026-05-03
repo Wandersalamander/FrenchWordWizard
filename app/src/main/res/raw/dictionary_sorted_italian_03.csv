@@ -1,0 +1,200 @@
+pasta	pasta	3	871235bcf942b6904980603b4cf5f189	La pasta italiana è famosa in tutto il mondo per la sua qualità eccellente e tradizione antica.	Mangio la pasta.
+pizza	pizza	3	7cf2db5ec261a0fa27a502d3196a6f60	La pizza margherita è il piatto italiano più conosciuto e amato in tutto il mondo intero.	Una pizza, prego.
+riso	rice	3	48d0429f32fd76867c6ded7bb8f54739	Il riso è la base di molti piatti italiani come il risotto alla milanese tradizionale e cremoso.	Cucino il riso.
+formaggio	cheese	3	ed9b86f2c6796b773cfda6c0ed24b2e3	Il formaggio italiano come il parmigiano è conosciuto e apprezzato in tutto il mondo intero.	Un po' di formaggio.
+frutta	fruit	3	e08129d05e47a27320d063037c5ef3ae	Mangio sempre frutta fresca a colazione perché è sana e mi dà energia per la giornata.	Mangio frutta.
+verdura	vegetable	3	a793a8f9fb1dc73a47c630fd086da0d5	La verdura del mio orto è biologica e ha un sapore davvero speciale e naturale buonissimo.	Mangio verdura.
+carne	meat	3	409f4cd5e6a103f5a0d4bfcc18215b0e	Preferisco mangiare carne bianca come il pollo invece della carne rossa più pesante e grassa.	Carne alla griglia.
+pesce	fish	3	390cb69fae0bf57dfb1ef44b30d5eb87	Il pesce fresco del mercato è il migliore per preparare un buon piatto di pesce al forno.	Pesce al forno.
+sale	salt	3	e70b59714528d5798b1c8adaf0d0ed15	Bisogna aggiungere un pizzico di sale alla pasta mentre bolle nell'acqua calda della pentola.	Passami il sale.
+zucchero	sugar	3	374362d9d73727148c366856d40e0146	Metto sempre due cucchiaini di zucchero nel mio caffè ogni mattina al bar del paese.	Senza zucchero.
+olio	oil	3	c20c2b248d84d014f3b6ca696692c333	L'olio d'oliva extra vergine è la base della cucina italiana tradizionale e mediterranea originale.	Olio d'oliva.
+burro	butter	3	0d4f505ff8ecdb25178fec66b46262df	Spalmo il burro sul pane appena tostato per fare una colazione veloce e saporita ogni mattina.	Pane e burro.
+uovo	egg	3	fa085da61f8dde8d0e2f021c3fbb75de	Per fare una buona frittata servono almeno tre uova fresche di gallina ruspante di campagna.	Un uovo sodo.
+latte	milk	3	c18c81318d17d0a77f6264877360cfa6	Bevo un bicchiere di latte caldo prima di andare a dormire ogni sera per rilassarmi.	Latte e biscotti.
+dolce	dessert / sweet	3	128c85534e12fcb8a553f44c436ce4e1	Per dessert mia nonna prepara sempre un dolce tradizionale fatto in casa con le sue mani.	Mi piace il dolce.
+minestra	soup	3	4cc1db89bd7c54adff98291405ea5b33	La minestra di verdure è perfetta per riscaldarsi durante una fredda serata invernale a casa propria.	Una minestra calda.
+insalata	salad	3	46ac8b33211ac65bb9a13f853ec80699	Per pranzo mi preparo sempre un'insalata mista con pomodori, cetrioli e olio d'oliva extra vergine.	Un'insalata fresca.
+mela	apple	3	661f6ca42f69f22915ab45429418421b	Una mela al giorno toglie il medico di torno, dice un proverbio italiano antico e popolare.	Mangio una mela.
+pera	pear	3	d8795f0d07280328f80e59b1e8414c49	La pera matura è dolcissima e perfetta per fare una marmellata casalinga in autunno fresco.	Una pera dolce.
+arancia	orange	3	aa0ff4dc76a016304bf02a19d75ebe3e	L'arancia è ricca di vitamina C ed è ottima durante l'inverno per evitare il raffreddore stagionale.	Un'arancia matura.
+limone	lemon	3	299a58ef0ca158087c894bde8429a4ad	Spremo sempre un po' di limone sul pesce per dargli un sapore più fresco e gradevole.	Succo di limone.
+fragola	strawberry	3	a315d7da54e1a2214a0431ea79669785	La fragola di stagione è dolcissima e profumata, è il mio frutto preferito di primavera.	Una fragola rossa.
+uva	grapes	3	d3da5eb0da6870aec2297a935d7159a8	L'uva di settembre è dolce e succosa, perfetta per fare un buon vino italiano d'annata.	Un grappolo d'uva.
+banana	banana	3	72b302bf297a228a75730123efef7c41	Una banana matura al mattino mi dà l'energia necessaria per affrontare la giornata di lavoro lunga.	Mangio una banana.
+pomodoro	tomato	3	5c2ef40a458d57a952be0937672faf07	Il pomodoro fresco dell'orto è la base del sugo della pasta italiana tradizionale di mia nonna.	Pomodori freschi.
+patata	potato	3	35bc8cec895861697a0243c1304c7789	La patata bollita è un contorno semplice ma molto gustoso da abbinare a tante pietanze diverse.	Patate fritte.
+carota	carrot	3	855caea0aaefe75cd6a379652e7b0311	La carota cruda è un ottimo spuntino salutare da portare al lavoro durante la pausa pranzo.	Una carota dolce.
+cipolla	onion	3	55d48d448645677e38d407ded6f2a566	Quando taglio la cipolla mi vengono sempre le lacrime agli occhi mentre cucino la cena di stasera.	Cipolla rossa.
+aglio	garlic	3	d7486b37fff21fbc8308cb8b800c9a10	L'aglio è un ingrediente fondamentale di moltissimi piatti tipici della cucina mediterranea italiana saporita.	Uno spicchio d'aglio.
+pollo	chicken	3	85738572271b1cedfd4f27f8a5654335	Il pollo arrosto è il piatto preferito della domenica nella mia famiglia da molti anni.	Pollo al forno.
+prosciutto	ham	3	baf6c0eff9640c40530a571e49f0da82	Il prosciutto di Parma è considerato uno dei migliori salumi italiani al mondo intero davvero.	Prosciutto e melone.
+salame	salami	3	e18900207d2584a1c7615316e28a2443	Il salame piccante della mia regione è famoso e si trova in tutti i ristoranti tradizionali locali.	Una fetta di salame.
+cioccolato	chocolate	3	301636862e7c43df58b1f1d50a7373ec	Il cioccolato fondente è il mio dolce preferito da gustare la sera dopo cena con calma.	Cioccolato fondente.
+gelato	ice cream	3	cda860e843fe3970ad10ed27b4e168cf	In estate mangio sempre un gelato al cioccolato dopo cena passeggiando lungo la strada principale.	Un gelato grande.
+torta	cake	3	57ffec0a0664048a8d7142d12d9ed6eb	Per il mio compleanno mia madre prepara sempre una torta al cioccolato deliziosa e profumatissima.	Una torta di compleanno.
+biscotto	biscuit / cookie	3	a7b8616485c8a963ff522315b8d3857c	Mangio sempre due biscotti con il caffè a colazione prima di uscire di casa la mattina.	Un biscotto dolce.
+caramella	candy	3	5ab158c470decf5ee4769479ffad67aa	Ai bambini piace molto ricevere una caramella alla fine del pasto come piccolo premio gradito.	Una caramella alla menta.
+miele	honey	3	2af70fd2f036cee74e650d6e38fc67d6	Il miele è ottimo nel tè caldo durante l'inverno per addolcirlo in modo naturale e sano.	Un cucchiaio di miele.
+marmellata	jam	3	ee04aada79536098b397cd62ea0a726a	La marmellata di fragole fatta in casa è molto migliore di quella industriale del supermercato.	Marmellata di fragole.
+tè	tea	3	9edde68e1ffe3830c237bdcb9804ddae	Bevo sempre una tazza di tè caldo nel pomeriggio per rilassarmi dopo il lavoro stancante.	Una tazza di tè.
+succo	juice	3	3c9eec4b64f9159256af86369f96f9c7	Bevo un succo d'arancia ogni mattina a colazione per fare il pieno di vitamine naturali.	Succo di frutta.
+birra	beer	3	52e440637d805ecf3e8957210444bb02	Una birra fresca è perfetta dopo una lunga giornata di lavoro al sole d'estate calda.	Una birra, prego.
+cena	dinner	3	31ff4c4538fe1c10d6c340776be75822	La cena di Natale è il momento più importante per riunire tutta la famiglia insieme allegramente.	A cena fuori.
+pranzo	lunch	3	2aa912794c9d589f63dace9dbe711878	Il pranzo della domenica con i miei è una tradizione che dura da molti anni felici.	Pranzo al sacco.
+colazione	breakfast	3	bdb493758290db4a94c30131e462c670	La colazione italiana è semplice ma deliziosa, di solito con cappuccino e cornetto al bar.	Faccio colazione.
+ristorante	restaurant	3	e3d4734b4f52fc52f393844263e51f6a	Conosco un ristorante tipico italiano dove preparano la migliore pasta che abbia mai mangiato io.	Andiamo al ristorante.
+menu	menu	3	8d6ab84ca2af9fccd4e4048694176ebf	Il cameriere ci ha portato il menu e abbiamo scelto subito i piatti del giorno consigliati.	Posso vedere il menu?
+ricetta	recipe	3	a86565d9964029e885411d61516a2879	La ricetta della pasta al pomodoro di mia nonna è un segreto di famiglia tramandato da generazioni.	Una ricetta facile.
+cuoco	cook / chef	3	c3d99554d5e2eace9909d51f7b5911d9	Il cuoco di questo ristorante è famoso in tutta la regione per la sua creatività in cucina.	Un bravo cuoco.
+cameriere	waiter	3	b6b80f1dcb2e62a97152a7052df341e8	Il cameriere è stato molto gentile e ci ha consigliato i migliori piatti del menu di stasera.	Cameriere, il conto!
+ordinare	to order	3	728daaadf4b13e9848df9a607b051650	Cosa volete ordinare per cena stasera al ristorante in centro città vicino al teatro?	Ordino la pasta.
+servire	to serve	3	af96cef361334119e8eeac2174ebbd8e	Il cameriere ci ha appena servito il primo piatto in questo ristorante elegante del centro storico.	Mi serva subito.
+assaggiare	to taste	3	53b1a0fa36215408be5158537dbce814	Voglio assaggiare il dolce della casa che il cuoco ha preparato per i clienti speciali oggi.	Vuoi assaggiare?
+gustare	to enjoy / savor	3	0ffe5b904a95ec2881b6376b5a29b55b	Mi piace gustare un buon vino rosso accompagnato da un piatto di formaggi misti italiani.	Gusto il pranzo.
+bollire	to boil	3	76f36e857e6de9a7f1f71cdc48ff6ec7	Devo bollire l'acqua per la pasta prima di aggiungerla quando l'acqua è ben calda nella pentola.	L'acqua bolle.
+friggere	to fry	3	f4e7dc7de5dbff64a61044ae92055c53	Voglio friggere le patate in olio bollente per fare delle ottime patatine fritte casalinghe e croccanti.	Friggo i pesci.
+tagliare	to cut	3	e8bd8ce93ffc412cc48b3111b50397f5	Devo tagliare le verdure a pezzi piccoli per preparare la zuppa per la cena di stasera.	Taglia il pane.
+mescolare	to mix	3	6e2158b1ccae2962178b6729a234fa71	Bisogna mescolare bene gli ingredienti per ottenere un impasto liscio e omogeneo per la torta dolce.	Mescolo la pasta.
+riempire	to fill	3	9ffc253360d4ca0ee3cb6467ce1f0f89	Posso riempire il tuo bicchiere di vino rosso prima di iniziare la cena di stasera importante?	Riempi il piatto.
+aggiungere	to add	3	bb64a1919bb9bf2fce85c3978bdd09e6	Bisogna aggiungere un po' di sale alla minestra per renderla più saporita e gustosa al palato.	Aggiungi il sale.
+cane	dog	3	0165801c0cce07c7a8751949845c93d2	Il mio cane è molto fedele e mi accompagna sempre durante le lunghe passeggiate al parco.	Ho un cane.
+gatto	cat	3	427ade9c15ec643751860eba9899355b	Il gatto della mia vicina dorme tutto il giorno sul divano del salotto comodamente al caldo.	Un gatto nero.
+uccello	bird	3	3f5f1d940df548d4cdb2a4faa3b17e6d	Ogni mattina sento gli uccelli cantare fuori dalla finestra della mia camera da letto presto.	Un uccello canta.
+cavallo	horse	3	ef1a5131a0f62733d8b599b93658e829	Mio padre ha sempre voluto avere un cavallo da quando era bambino in campagna con i nonni.	Cavallo bianco.
+mucca	cow	3	8c998fc48b716da2b1f9c3a9495b1b3a	La mucca dà il latte fresco che usiamo per fare il formaggio fatto in casa di nonna.	Una mucca al pascolo.
+pecora	sheep	3	96ee9356b83cf4bad2eb7700abdd6420	La pecora è un animale tranquillo che pascola nei prati di montagna durante l'estate calda.	Tante pecore.
+maiale	pig / pork	3	3a860a9ece2db20ca61adf03b48376c7	Il maiale è un animale molto intelligente che vive nelle fattorie di campagna italiane tradizionali.	Carne di maiale.
+gallina	hen	3	ea0337650a6fa9f5ebb0bb04dd0c0244	La gallina di mia nonna fa un uovo fresco ogni mattina nel pollaio del giardino di casa.	Una gallina vecchia.
+topo	mouse	3	04b9c07a5ce95c5997dfbee5a3df33a3	C'è un topo in cantina e devo chiamare qualcuno per risolvere subito questo problema fastidioso urgente.	Un piccolo topo.
+leone	lion	3	8b403c567bc7b421c063ba3a82d3330d	Il leone è considerato il re della giungla in molte storie e fiabe per bambini italiani.	Un leone forte.
+elefante	elephant	3	87bc60b1d2525741a77d18fda9476cd8	L'elefante è il più grande animale terrestre e vive in Africa e in Asia tropicale calda.	Un elefante grigio.
+lupo	wolf	3	4b272863588574688f039bdbfadf6833	Il lupo è un animale sociale che vive in branco nelle foreste di montagna fredde e selvagge.	Il lupo cattivo.
+volpe	fox	3	bdb97ece222f2359046ed451b840505b	La volpe è un animale astuto che vive nei boschi e caccia di notte di solito silenziosamente.	Una volpe rossa.
+ape	bee	3	180031a348c14d401143be02fe7708f5	L'ape è fondamentale per l'ecosistema perché impollina i fiori e produce il miele dolcissimo naturale.	Una piccola ape.
+coniglio	rabbit	3	d5dee9bb22da7bf49badc2f669b94a70	Il coniglio bianco di mia sorella vive in una gabbia nel giardino di casa nostra grande.	Un coniglio veloce.
+rosso	red	3	f0c0976535cfaf33574b5175e072bce9	Il vestito rosso che ho comprato ieri sta benissimo per la festa di sabato sera elegante.	Una mela rossa.
+verde	green	3	d4177dc752cddc204b22ec5798c4400e	Le foglie sono verdi in primavera e cambiano colore in autunno con il freddo dell'aria.	Un prato verde.
+blu	blue	3	6f2fb2d3def4f99053edab239195f146	Il cielo è di un bel blu intenso oggi senza una sola nuvola all'orizzonte limpido.	Una macchina blu.
+giallo	yellow	3	85f3c35de5e6ac28e4d31b17cbb529d3	Il sole è giallo brillante e illumina tutto il giardino questa bellissima mattina d'estate calda.	Una rosa gialla.
+nero	black	3	770bfedcd56afdbb406a93355add8070	Il mio gatto nero ha gli occhi verdi e dorme sempre sul mio letto comodamente.	Un caffè nero.
+bianco	white	3	99914b157a01e4f50883d4a2adbc2085	Il vestito bianco della sposa è elegante e perfetto per il matrimonio in chiesa antica.	Pane bianco.
+rosa	pink	3	84109ae4b4178430b8174b1dfef9162b	Le rose rosa sono il mio fiore preferito e le ricevo spesso da chi mi ama davvero.	Una camicia rosa.
+viola	purple	3	c31ac812dbb4b1a273b3c2d3bd465690	Il fiore viola del lillà profuma tutto il giardino in primavera con il suo aroma dolce intenso.	Un vestito viola.
+marrone	brown	3	2126c164e7abbe8e5561ddfb6192811c	Le mie scarpe marroni sono comode e perfette per camminare in città tutta la giornata lunga.	Capelli marroni.
+grigio	gray	3	1d7b0b2fc8e498910de6922eea8ab8bc	Il cielo grigio di novembre annuncia che presto comincerà a piovere forte sul paese tranquillo.	Un gatto grigio.
+arancione	orange (color)	3	01e255d1dcad62921e34e41fbf88348d	L'arancione è il colore tipico dell'autunno quando le foglie cadono dagli alberi nel parco.	Un cappotto arancione.
+azzurro	light blue	3	950afdf4c7ebebd040a338caf5c0cad4	Il mare azzurro della Sardegna è il più bello che abbia mai visto in vacanza estiva.	Acqua azzurra.
+lunedì	Monday	3	62ca8c20736a0cf2b282320c8796c004	Il lunedì è il giorno più difficile della settimana perché ricomincia il lavoro dopo il weekend.	Ci vediamo lunedì.
+martedì	Tuesday	3	3eed4dd5cc5b1f7a726ef847ba6d0790	Ogni martedì sera vado in palestra a fare ginnastica con un mio caro amico di vecchia data.	Martedì prossimo.
+mercoledì	Wednesday	3	bcd9403ef84deb4c7a5ddab5cf1f8d19	Il mercoledì è il giorno in cui di solito faccio la spesa al mercato del paese piccolo.	Mercoledì pomeriggio.
+giovedì	Thursday	3	4af9e1ff31c37f01667db36894a07771	Il giovedì sera ci vediamo sempre con gli amici al solito bar del centro città storico.	A giovedì!
+venerdì	Friday	3	01acf0a55e77b02adc2650b99ba2e2e3	Finalmente è venerdì e domani potrò dormire fino a tardi senza dover sentire la sveglia mattutina.	Venerdì sera.
+sabato	Saturday	3	3e6570889b6ebd46bed8fd66224c7f0b	Il sabato mattina vado sempre al mercato a comprare la frutta e la verdura fresca di stagione.	Sabato sera.
+domenica	Sunday	3	6d2af649822896aa1d89b4ad569a5d0d	La domenica pranzo sempre con i miei genitori in campagna in una bella casa antica di famiglia.	Buona domenica!
+gennaio	January	3	382db50b7a07cbfb6fcaeedbc72ac2df	Gennaio è il primo mese dell'anno e di solito fa molto freddo nella mia città del nord.	Il primo gennaio.
+febbraio	February	3	4cde963e84812870ccf8708e5b70753d	Febbraio è il mese più corto dell'anno ed è anche quello del mio compleanno importante.	In febbraio.
+marzo	March	3	52b073c34b10fb26da4b6f099273841e	A marzo arriva la primavera e i primi fiori cominciano a sbocciare nei giardini delle case del paese.	Marzo è ventoso.
+aprile	April	3	dc004b9a266e361248ee7c7cd0e09a52	Aprile è un mese piovoso ma anche bellissimo per fare gite fuori porta nel verde della campagna.	Aprile dolce dormire.
+maggio	May	3	d8d24528ce20365ddb55b988ef3ec469	Maggio è il mese più bello dell'anno con le sue giornate calde e i fiori colorati ovunque nei prati.	Il primo maggio.
+giugno	June	3	ca6f520a1ab19c58dc0f0153a2529703	Giugno è il mese in cui finisce la scuola e iniziano le vacanze estive per i bambini di tutte le età.	Giugno è caldo.
+luglio	July	3	77f4afcc6648ca93f4f2052a04146515	Luglio è il mese più caldo dell'estate e molti italiani vanno al mare in vacanza con la famiglia.	Andiamo a luglio.
+agosto	August	3	31bd7d583099c1afdf7091605db3012e	Ad agosto le città si svuotano perché tutti vanno in ferie al mare o in montagna fresca con gli amici.	Agosto è bollente.
+settembre	September	3	bb39a0260227fdcb4768c610ae6642e3	A settembre ricominciano la scuola e il lavoro dopo le lunghe vacanze estive di tutti gli italiani.	Settembre è dolce.
+ottobre	October	3	92ae8781d7692641464bf9d682307718	Ottobre è il mese delle castagne e delle prime foglie che cadono dagli alberi del parco cittadino.	Ottobre piovoso.
+novembre	November	3	732cad42733bddf1cd450e4ba511e9aa	Novembre è un mese grigio e malinconico ma perfetto per leggere libri davanti al camino acceso.	Novembre uggioso.
+dicembre	December	3	2a0c185dd3595236bf78d5b5edcabbf7	Dicembre è il mese del Natale e tutte le famiglie si preparano per le feste in compagnia gioiosa.	Dicembre è freddo.
+primavera	spring	3	6cae5deced2f4f510040013690d96267	La primavera è la mia stagione preferita perché tutto rinasce e i fiori colorano il mondo intero.	In primavera.
+estate	summer	3	59f84bcd5fc987fea00d626ba0c6bb4f	L'estate al mare con la famiglia è il momento più atteso di tutto l'anno per noi piccoli.	Buona estate!
+autunno	autumn / fall	3	dc636518d718caa28f8872597c3decb5	L'autunno porta con sé i colori caldi delle foglie e il profumo delle castagne arrostite per strada.	L'autunno è breve.
+inverno	winter	3	90cf5c1a0b5223274a7c19a3f272a765	L'inverno in montagna è bellissimo, soprattutto quando nevica e tutto si copre di bianco candido.	Inverno freddo.
+pomeriggio	afternoon	3	87d0b2afc486188987bbaff9463fb961	Nel pomeriggio mi piace bere un caffè al bar e leggere il giornale con calma e tranquillità.	Buon pomeriggio!
+mezzogiorno	noon	3	6523dc038bc2f44bcde59fd6f7a11052	A mezzogiorno suonano sempre le campane della chiesa del paese per chiamare al pranzo i fedeli.	È quasi mezzogiorno.
+mezzanotte	midnight	3	ca235519966b27056a28f22cd181db11	A mezzanotte di Capodanno tutti brindano con lo spumante e si scambiano gli auguri felici del nuovo anno.	A mezzanotte.
+alba	dawn / sunrise	3	74efb8aac68e37c289dfcf260e19ab25	L'alba sul mare è uno spettacolo unico che vale la pena vedere almeno una volta nella vita.	Una bella alba.
+tramonto	sunset	3	e9ec396962f176f7b9d868ccd45f61e3	Il tramonto sulla spiaggia è romantico e crea un'atmosfera magica perfetta per le foto di gruppo.	Un tramonto rosso.
+pioggia	rain	3	b00f591a2a073887878507dfb1f81f07	La pioggia di stamattina ha bagnato tutta la città e ha rinfrescato l'aria calda d'estate.	Sotto la pioggia.
+neve	snow	3	7a678213cf73b14959c80a19cf14283d	La neve sulle montagne è abbondante quest'anno e perfetta per chi ama lo sci alpino veloce.	Neve fresca.
+vento	wind	3	ae6b0a636d9dd53a9d35d204fa0e7785	Il vento di tramontana soffia forte e porta con sé un'aria fredda e molto pungente di montagna.	C'è vento forte.
+nuvola	cloud	3	5abdfb0656291ba6be44f81a9cb89c7e	Nel cielo si vede solo una piccola nuvola bianca che si muove lentamente verso est di sera.	Una nuvola scura.
+temporale	thunderstorm	3	7d633c110066747c33d2aa111209c1d8	Il temporale di ieri sera ha fatto cadere molti rami degli alberi nel giardino di casa nostra.	Un forte temporale.
+nebbia	fog	3	b25034c37b26a9f4fbfdba8cbdee9773	La nebbia in pianura padana è densa e rende difficile guidare in macchina la mattina presto.	Nebbia fitta.
+sole	sun	3	beb7f7a395dc21ad97425bbc061afbaf	Il sole splende alto nel cielo e riscalda piacevolmente la pelle in questa giornata d'estate calda.	Sotto il sole.
+cielo	sky	3	be7740aa9d6f946349d2a54c8d133160	Il cielo stellato di una notte d'estate è uno spettacolo che fa sognare tutti i romantici.	Cielo sereno.
+temperatura	temperature	3	ee9cf3b7ac113ccd7af311804b2be8ff	La temperatura di oggi è perfetta per una passeggiata al parco con tutta la famiglia riunita.	Bassa temperatura.
+fresco	cool / fresh	3	8d068c9dd06fac84989c48aa8b9f1685	L'aria fresca della mattina è perfetta per fare una corsa lungo il fiume del paese tranquillo.	Pane fresco.
+umido	humid	3	c0e0af4392bb2f455e199f984ffca62d	Il clima umido di questa città mi fa sentire sempre stanco e con il fiato corto pesante.	Aria umida.
+secco	dry	3	e6d948b4905562dd8eac9c606c6a592d	Il clima secco della montagna è perfetto per chi soffre di problemi respiratori e allergie stagionali.	Vino secco.
+piovere	to rain	3	e6248931347d56fde505de9a1ab93a71	Sta per piovere, dovremmo affrettarci a tornare a casa prima del temporale forte previsto.	Piove a dirotto.
+nevicare	to snow	3	9075072cc0d7dad44885614744115ca3	Quest'anno ha nevicato poco in pianura ma molto in montagna per la gioia degli sciatori esperti.	Nevica forte.
+ghiaccio	ice	3	5c4ea34b1eb497c3db9aac4b9c5cab18	Il ghiaccio sulla strada è pericoloso e bisogna guidare con molta attenzione in inverno freddo.	Cubetti di ghiaccio.
+felicità	happiness	3	57497a0672199395dbe592aae36b82ee	La felicità è fatta di piccoli momenti quotidiani trascorsi insieme alle persone che amiamo davvero.	Una grande felicità.
+tristezza	sadness	3	932846c2894bae8fd7b406dc5fdb2d16	La tristezza per la perdita di un amico è un sentimento difficile da superare in fretta da soli.	Una profonda tristezza.
+rabbia	anger	3	864fd77edd0a06b426ec04229eddfe22	Ho provato molta rabbia quando ho saputo cosa era successo durante la riunione di ieri pomeriggio.	Rabbia incontrollabile.
+gelosia	jealousy	3	e00a620815c57ed19fd1448091e1c58f	La gelosia è un sentimento brutto che può rovinare anche il più bel rapporto d'amore vero.	Una folle gelosia.
+sorpresa	surprise	3	59e0f98e11ce2f78e2073a15e2a373f0	La festa a sorpresa per il mio compleanno è stata organizzata in segreto da mia sorella maggiore.	Che sorpresa!
+vergogna	shame	3	63db4d77faa8136af1233042376505a4	Provo vergogna ogni volta che ripenso a quella figuraccia fatta davanti a tutti i colleghi di lavoro.	Che vergogna!
+fiducia	trust	3	afccab04e765067ccc46dbeb5892ea99	La fiducia è alla base di ogni rapporto sano sia nell'amicizia che nell'amore vero e profondo.	Avere fiducia.
+dubbio	doubt	3	b7fcde4bd65a88c63e7f097de2abce2e	Ho un dubbio importante sulla decisione di accettare quel nuovo lavoro all'estero il prossimo anno.	Senza dubbio.
+calma	calm	3	9583efc731c93c94b480a27ab0ffabc4	Devi mantenere la calma in situazioni difficili per riuscire a prendere le decisioni giuste sempre.	Mantieni la calma.
+entusiasmo	enthusiasm	3	3c1f670565fdc02148da4e105deed4b2	Il suo entusiasmo per il nuovo progetto era contagioso e ha coinvolto tutta la squadra di lavoro.	Pieno di entusiasmo.
+noia	boredom	3	73ffbf436d1e44b2c1fe5d6b2dd168c0	La noia di una giornata di pioggia mi ha fatto venire voglia di leggere un libro nuovo lungo.	Che noia!
+preoccupazione	worry	3	592ea46bbe6fc2d9e0ba8862fb6b6684	La mia preoccupazione principale in questo momento è la salute dei miei genitori anziani malati.	Una grande preoccupazione.
+coraggio	courage	3	fbb033e6865d1cab169e67edaafd8f05	Ci vuole coraggio per cambiare vita e ricominciare da zero in un paese completamente nuovo lontano.	Avere coraggio.
+pazienza	patience	3	318ba1168a5fd067afddd740465b1554	Ci vuole molta pazienza per imparare una nuova lingua bene e parlarla fluentemente con tutti i nativi.	Abbi pazienza.
+emozione	emotion	3	003f78db1cfa81966e77d5ca4793b0b8	Ho provato una forte emozione quando ho visto mio figlio diplomarsi dopo tanti anni di studio difficile.	Una grande emozione.
+vestito	dress / suit	3	d431de5be4358c21a99e2b23b181362f	Il vestito da sposa di mia sorella era davvero elegante e bellissimo nei suoi dettagli ricamati.	Un vestito nuovo.
+camicia	shirt	3	907dd7a1fb75bf8113b7fb4398e00836	La camicia bianca è perfetta da abbinare a una giacca elegante per le occasioni formali importanti.	Una camicia stirata.
+pantaloni	pants / trousers	3	4f80818dc26a067bb376ebf88b7b77bc	I pantaloni neri sono comodi e si abbinano a qualsiasi tipo di camicia o maglia colorata.	Pantaloni lunghi.
+scarpa	shoe	3	353e31b89851d09338b7a9dbe4d765be	Mi sono comprato un paio di scarpe nuove per la festa di sabato sera al ristorante elegante.	Una bella scarpa.
+cappello	hat	3	bb7b269e0cab68e413c7444a4c2bfe8a	In inverno porto sempre un cappello di lana per proteggermi dal freddo intenso del nord italiano.	Un cappello rosso.
+cappotto	coat	3	4e8db0a490460e40e597ce5d208fba50	Il mio cappotto invernale è caldissimo e mi protegge dal freddo durante le giornate gelide di gennaio.	Un cappotto pesante.
+maglia	sweater	3	eb67d8fb634cab7d38e8913f9e9cb293	Mi metto sempre una maglia di lana quando fa freddo nella mia camera da letto la sera.	Una maglia calda.
+gonna	skirt	3	3bfea1f31bb5a1e40786ff7eef41bf81	La gonna lunga è di moda quest'estate e si abbina bene alle scarpe basse comode per camminare.	Una gonna corta.
+giacca	jacket	3	c878a2ef42476b09fc73c22084427e8b	La giacca di pelle è alla moda e si abbina perfettamente con i jeans casual blu da sera.	Una giacca elegante.
+calzini	socks	3	b63c810d3fd92eb8a0d1573b601441d8	Mi metto sempre dei calzini di cotone per evitare di sudare durante la giornata di lavoro al computer.	Calzini puliti.
+guanti	gloves	3	fa3898941c70444ffa3300fe06ae5afb	I guanti di lana mi tengono le mani al caldo durante le passeggiate invernali nel parco innevato.	Guanti caldi.
+sciarpa	scarf	3	3cc47d13f410b1a64b155d1de96187cb	La sciarpa di mia nonna è fatta a mano con la lana di pecora delle nostre montagne abruzzesi.	Una sciarpa lunga.
+cintura	belt	3	26d29aa50eadfc3116b0f4b2ddd813d4	La cintura di pelle è un accessorio fondamentale per completare un look elegante e raffinato da uomo.	Una cintura nuova.
+borsa	bag	3	0dfcc0daa7a4a1e69d603776cd54d270	La mia borsa è piena di cose importanti che porto sempre con me ovunque vada per lavoro.	Una borsa pesante.
+portafoglio	wallet	3	fa5f31a5d0f9c0d744d450852751cf83	Ho dimenticato il portafoglio a casa stamattina e non posso pagare il caffè al bar del centro.	Un portafoglio nero.
+malato	sick	3	a0de0a96c40393fcdb586c95b9d20c7f	Sono malato da tre giorni e devo restare a casa a letto per riposarmi un po' prima di lavorare.	Mi sento malato.
+sano	healthy	3	7ec7d4601015ff019f3433e59a32a078	Una dieta sana ed equilibrata con tanta frutta e verdura aiuta a vivere meglio e più a lungo.	Una vita sana.
+febbre	fever	3	b1632e7d9b0d065a14b5fff7e4b75850	Ho la febbre alta da ieri sera e devo prendere la medicina ogni sei ore esatte come prescritto.	Misuro la febbre.
+raffreddore	cold (illness)	3	31d3947786967956a73146a8e4c28db4	Ho preso un brutto raffreddore al mare a causa del vento freddo della sera scorsa improvviso.	Un forte raffreddore.
+tosse	cough	3	2c64d76b5f6ce7ee810ee1d355f63bd6	La tosse mi tiene sveglio la notte e non riesco a riposare bene per niente ultimamente purtroppo.	Una tosse secca.
+ferita	wound	3	207ee49339654b6a0a971ab6efbd429c	La ferita al braccio si sta lentamente rimarginando e tra qualche giorno sarà completamente guarita.	Una piccola ferita.
+malattia	illness	3	cb049f6a23c05d05d407e94003cc1cfc	La malattia di mio padre è grave e dobbiamo prenderci cura di lui giorno e notte sempre.	Una brutta malattia.
+sintomo	symptom	3	c495d5dc9a0a95cf54160da449679912	Il primo sintomo dell'influenza è il mal di testa seguito dalla febbre alta improvvisa e fastidiosa.	Sintomi gravi.
+pillola	pill	3	f2dea04491baf83182c4f03dffa9bed6	Devo prendere una pillola dopo cena ogni giorno per il mal di testa frequente che ho ultimamente.	Una pillola al giorno.
+guarire	to heal	3	b69b704517dc234a81ae278ed2708ca6	Spero di guarire presto da questa influenza per poter tornare al lavoro la prossima settimana finalmente.	Guarisco presto.
+scegliere	to choose	3	22e802b523faf68a972b52f327aa68b3	Devo scegliere quale università frequentare e la decisione mi sta facendo davvero impazzire ultimamente.	Scegli tu.
+succedere	to happen	3	fac4cf20302d6d87f32505a673a9b9b9	Cosa è successo ieri sera durante la festa di Marco a casa sua nuova in periferia?	È successo qualcosa?
+sembrare	to seem	3	03f1b87f90a27d98e6f809cfe10c2200	Sembri stanco oggi, hai dormito abbastanza la notte scorsa per affrontare la giornata pesante?	Sembra giusto.
+riuscire	to succeed / manage	3	4e29a1ee9c143a51e8a47d84ce2da20a	Non riesco a finire questo lavoro entro stasera senza l'aiuto di tutti i miei colleghi disponibili.	Ci riesco.
+decidere	to decide	3	49a22cdf1409938050f84a50139c7dbf	Devo decidere prima di domani se accettare quel nuovo lavoro all'estero o restare qui in Italia.	Hai deciso?
+immaginare	to imagine	3	4cdf1a926ea6f930e2f9667f1e310430	Posso solo immaginare quanto sia stato difficile per te affrontare quella situazione da solo per mesi.	Immagina che bello.
+restare	to stay / remain	3	5dab81a1e7dced62f3078106f4c49f32	Voglio restare ancora un po' al mare prima di tornare in città a lavorare in ufficio.	Resta con me.
+esistere	to exist	3	5e726e0166838976efe2dfca6ea857ba	Non credo che esista una soluzione perfetta a questo problema così complicato e difficile da risolvere.	Esiste davvero.
+funzionare	to work / function	3	c3be2a058f24bc5f793a939ffdd187a7	Il computer non funziona da ieri sera e devo chiamare un tecnico per ripararlo subito al più presto.	Funziona bene.
+occorrere	to be needed	3	1db47b5349b0eade98588ebe876108f2	Mi occorre un nuovo computer per il lavoro perché quello vecchio non è più affidabile per niente.	Mi occorre tempo.
+fame	hunger	3	f86f4786f77a482d600ad9366292cff4	Ho una fame da lupi e non vedo l'ora di mangiare la cena preparata da mia madre stasera.	Ho fame.
+sete	thirst	3	a7222f153e5c1450b46a3446c957eae8	Ho una sete terribile dopo aver corso per due ore al sole della giornata estiva calda e afosa.	Ho sete.
+voglia	desire / want	3	420d8174943e805fbb019ac36af0ae89	Ho voglia di un buon caffè caldo dopo il pranzo abbondante con tutta la famiglia riunita oggi.	Ho voglia di gelato.
+bisogno	need	3	8726092d8a5a8fdb99bd3b8660db7f53	Ho bisogno di una vacanza lunga per rilassarmi dopo questi mesi di lavoro intenso e stressante difficile.	Ho bisogno di te.
+esperienza	experience	3	1fc4ff816f5f9f94f846f35d7f2822ec	L'esperienza di lavoro all'estero mi ha cambiato profondamente e mi ha aperto la mente a nuove culture.	Una bella esperienza.
+futuro	future	3	5c72b79ee66109770d5813eb17112c12	Il futuro è incerto e dobbiamo essere pronti ad adattarci a qualunque cambiamento ci aspetti più avanti.	Pensa al futuro.
+passato	past	3	286ec838b8bcd72e241c3a2a2546e24e	Il passato non si può cambiare ma possiamo imparare dai nostri errori per il futuro migliore insieme.	Nel passato.
+presente	present	3	c0cbc0bd20dabae8cc946f893d6e7b41	Bisogna vivere il presente perché ieri è già passato e domani non è ancora arrivato davvero.	Vivi il presente.
+decisione	decision	3	4a18d948dcc2f5bacbd4c7021046c8a5	La decisione di trasferirmi all'estero è stata difficile ma necessaria per la mia carriera professionale futura.	Una grande decisione.
+scelta	choice	3	fa713bbc7a139d202c77cd098b6b3907	La scelta tra studiare all'università o iniziare subito a lavorare è davvero molto difficile per i giovani.	Una scelta giusta.
+bagnato	wet	3	105d197b5be99835552e9611a916883f	I miei capelli sono ancora bagnati dopo la doccia e non ho tempo di asciugarli bene stamattina.	Pavimento bagnato.
+asciutto	dry (not wet)	3	048f4d90414c6659892d48212c8a30f3	I vestiti sono finalmente asciutti dopo essere stati sul balcone tutto il pomeriggio al sole caldo.	Capelli asciutti.
+salato	salty	3	120bd7cb27f9d14d35637e284b4406a9	Questo piatto è troppo salato per i miei gusti e non riesco a finirlo nonostante la fame che ho.	Acqua salata.
+amaro	bitter	3	cb2cb7f993366424e65420afe184c7a9	Il caffè amaro al mattino è perfetto per svegliarsi e iniziare bene la giornata di lavoro pesante.	Sapore amaro.
+acido	sour / acid	3	2f16bf897cd577f04eba36f687352163	Il limone è troppo acido per me e preferisco aggiungere un po' di zucchero al succo per addolcirlo.	Sapore acido.
+maturo	ripe / mature	3	f89c77c4e10cd973813778765a186558	Questa pera è molto matura e dolcissima, perfetta per fare una buona marmellata casalinga di stagione.	Frutto maturo.
+crudo	raw	3	58266a6ed9386318a4afdf356696fcaf	Il pesce crudo è una specialità della cucina giapponese che amo mangiare al ristorante del centro.	Carne cruda.
+cotto	cooked	3	8fcb4ec3d7dc5d5eb9aaee8be82a71b4	Il pollo è cotto al punto giusto e profuma di rosmarino e olio d'oliva extra vergine ottimo.	Riso cotto.
+pulito	clean	3	87e12e9d29588c6368a25f8bf6847298	Il bagno è pulito e profumato dopo aver passato tutto il pomeriggio a fare le pulizie a fondo.	Aria pulita.
+sporco	dirty	3	dc4440853a6e577ba93791bcab005383	Il pavimento è sporco di fango perché i bambini sono entrati con le scarpe piene di terra del giardino.	Vestiti sporchi.

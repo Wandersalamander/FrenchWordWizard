@@ -1,0 +1,200 @@
+albero	tree	7	338a96591f778e7af4cce7b601d785d2	L'albero più alto del giardino è una grande quercia secolare piantata da mio bisnonno tanto tempo fa.	Un grande albero.
+quercia	oak	7	ddc08a4246b8bc30e7e085223c1dec5d	La quercia di fronte a casa mia ha più di duecento anni e produce ghiande in autunno.	Una vecchia quercia.
+pino	pine	7	3080d0cf183721b6c35affb8e3bf8f15	Il pino marittimo cresce lungo tutta la costa toscana e profuma l'aria di resina balsamica.	Pino mediterraneo.
+ulivo	olive tree	7	7a62b61ecfb8e270c74a8dafc76411ea	L'ulivo è il simbolo della Toscana e produce olive nere mature in autunno per fare l'olio.	Ulivi secolari.
+abete	fir / spruce	7	6c2be783b818a4a3611256b9b7f97f1e	L'abete bianco delle Alpi è perfetto come albero di Natale per le festività di dicembre.	Un abete maestoso.
+faggio	beech	7	a5afab9787aecbd801d5908b1aa2475b	Il faggio cambia colore in autunno e le sue foglie diventano di un bel rosso intenso.	Un faggio antico.
+palma	palm tree	7	217f4aacc91dba034f40937f47d52d8f	La palma sulla spiaggia ondeggia al vento del mare durante una tipica giornata estiva tropicale.	Una palma alta.
+salice	willow	7	96f00994e47070f3462c11221ea6453d	Il salice piangente cresce vicino al fiume e i suoi rami arrivano fino all'acqua chiara.	Un salice piangente.
+betulla	birch	7	6ee1d9373ed07373b0b435ad135e70a0	La betulla bianca delle foreste del nord ha una corteccia particolare e foglie piccole verdi.	Una betulla snella.
+melo	apple tree	7	fe0e2fe499dba85ed54677a881e39d41	Nel giardino di mia nonna c'è un vecchio melo che produce mele dolcissime ogni autunno.	Un melo carico.
+pero	pear tree	7	e0930567dc04aa6771e01634e7733fcd	Il pero del giardino è in fiore ed è bellissimo durante la primavera della valle umbra.	Un pero fiorito.
+fico	fig / fig tree	7	7c48884fec6b4fc057fab30146343448	Il fico del cortile produce frutti dolcissimi a fine agosto che mangiamo direttamente dall'albero.	Un fico dolce.
+cipresso	cypress	7	4d3a2a44526dba47260942bc17839420	Il cipresso è il simbolo dei paesaggi toscani e si trova lungo tutte le strade di campagna.	Un cipresso solitario.
+acero	maple	7	841ef77999408100bb550589632ee60f	L'acero canadese tinge le sue foglie di rosso fuoco durante l'autunno settentrionale per qualche settimana.	Foglia d'acero.
+castagno	chestnut tree	7	b576bd1cb446bdc69e9ab04444a6c0f1	Il castagno produce castagne dolci che raccogliamo in autunno nei boschi delle Alpi italiane.	Un castagno gigante.
+fiore	flower	7	de43660386db04fa5dce2030568416b0	Il fiore preferito di mia madre è la rosa rossa che le regalo per il suo compleanno.	Un bel fiore.
+tulipano	tulip	7	d7b128a3bd157f4bea00e8d09e7913bc	I tulipani olandesi sono famosi nel mondo per i loro colori intensi e variegati di primavera.	Un tulipano rosso.
+girasole	sunflower	7	24463396920a00752f61ffc9365b0558	Il girasole gira la sua testa enorme verso il sole durante tutto il giorno di estate.	Un campo di girasoli.
+margherita	daisy	7	649b7e6ef5b75a95d166b8b266619494	Le margherite del prato sono semplici ma bellissime e mi ricordano l'infanzia in campagna.	Una margherita bianca.
+gelsomino	jasmine	7	32db1b4272ec6a0d9eab1cfabe2fcf69	Il gelsomino profuma tutta la terrazza durante le sere d'estate creando un'atmosfera magica e romantica.	Profumo di gelsomino.
+lavanda	lavender	7	70bf419a95ffb92216cb07b889fdfb12	I campi di lavanda della Provenza sono uno spettacolo unico durante l'estate per i turisti.	Olio di lavanda.
+narciso	narcissus	7	cbb1d8259dc2b7335b206a32bf806cbb	Il narciso giallo sboccia in primavera vicino ai laghi alpini delle nostre belle montagne italiane.	Un narciso profumato.
+giglio	lily	7	87bbe64ae8cc5fdcacdedd0a21e95c71	Il giglio bianco simboleggia la purezza e si usa spesso nelle decorazioni dei matrimoni religiosi.	Un giglio elegante.
+orchidea	orchid	7	122906bf17a7bba2f413ca3a90e338fb	L'orchidea è una pianta delicata che richiede cure specifiche per fiorire bene durante l'anno.	Un'orchidea rara.
+mughetto	lily of the valley	7	effc7d0e3fca58feeef8d153c6df4f00	Il mughetto fiorisce in maggio e i suoi piccoli fiori bianchi profumano i boschi alpini freschi.	Un mughetto delicato.
+papavero	poppy	7	86cf0ba33916bfbe2fa5a5445d79c909	I papaveri rossi colorano i campi di grano in primavera creando un contrasto cromatico bellissimo.	Papaveri rossi.
+ciclamino	cyclamen	7	941d4a85ee859a410282241a6b04150c	Il ciclamino è un fiore tipico dell'autunno e arricchisce i giardini con i suoi colori intensi.	Un ciclamino rosa.
+zucchina	zucchini	7	e8a83f654b84d89835fe6a8373721a5c	Le zucchine del mio orto sono cresciute molto bene quest'anno grazie alle piogge estive di luglio.	Zucchine fresche.
+melanzana	eggplant	7	9cdcfe6c5f54d7b827a770a564e4c47e	La melanzana alla parmigiana è uno dei piatti più tipici della tradizione culinaria napoletana antica.	Una melanzana viola.
+peperone	bell pepper	7	66efabd122939bcb1eb85c8fb1c623c5	Il peperone giallo è dolce e perfetto da mettere nell'insalata mista per pranzo durante l'estate.	Peperone ripieno.
+sedano	celery	7	103b71709ad117231540884f57d6466f	Il sedano dà sapore al brodo di carne ed è ottimo anche da mangiare crudo come spuntino.	Un gambo di sedano.
+finocchio	fennel	7	1549c9258b22d884a537940fb6193318	Il finocchio crudo è perfetto come spuntino sano e digestivo dopo un pasto abbondante e pesante.	Finocchi freschi.
+fagiolo	bean	7	2bd222c16d993a3c6fa521e330679be3	I fagioli borlotti con la pasta sono un piatto tradizionale veneto della cucina povera contadina.	Fagioli secchi.
+lenticchia	lentil	7	973ba6ce9f3a5570b03673c31189e8ce	La lenticchia di Castelluccio è famosa in tutta Italia per la sua qualità e il sapore unico.	Una lenticchia umbra.
+pisello	pea	7	240ee262ee43658758920ea2815d910b	I piselli freschi di primavera sono dolcissimi e perfetti per fare un buon risotto cremoso.	Piselli verdi.
+cetriolo	cucumber	7	3b13bb92a231a22fd0daf3a6a2f1d19a	Il cetriolo è perfetto per un'insalata estiva fresca con pomodori, cipolla e olio extra vergine.	Un cetriolo lungo.
+cavolo	cabbage	7	19af41d94bf5b22dcc65aeda59f902a7	Il cavolo nero toscano è ottimo nella ribollita, una zuppa tradizionale della cucina contadina toscana.	Cavolo crudo.
+broccolo	broccoli	7	11219fefc945680895ebf30a7ba420e7	I broccoli al vapore sono un contorno sano e leggero perfetto per una cena dietetica.	Broccoli verdi.
+asparago	asparagus	7	34b85ede73535bacd646e1c5b1144a9b	Gli asparagi di primavera sono una vera prelibatezza e li servo bolliti con olio e limone.	Asparagi selvatici.
+zucca	pumpkin / squash	7	2aaa27601a1af45549cf1b5e777c74fc	La zucca è perfetta per fare un risotto cremoso e profumato durante le sere d'autunno fredde.	Una zucca arancione.
+mais	corn	7	82f7c3db28865edb8aa913fb2e937c2f	Il mais cresce nei campi della pianura padana durante l'estate calda e si raccoglie a settembre.	Pannocchia di mais.
+spinaci	spinach	7	59df93073e73d99de4037fb2bb5433f3	Gli spinaci sono ricchi di ferro e fanno bene alla salute soprattutto per i bambini in crescita.	Spinaci saltati.
+fungo	mushroom	7	559ac5cb873eea9a5d2417f0667f110a	Il fungo porcino dei nostri boschi è il più pregiato della cucina italiana tradizionale di montagna.	Un fungo velenoso.
+tartufo	truffle	7	97237ee537f32144505082ccaefd0471	Il tartufo bianco di Alba è considerato uno dei prodotti più pregiati della gastronomia mondiale famosa.	Tartufo nero.
+porcino	porcini	7	2868ee4b7b1a537746dc9f75c4c04efc	Il porcino fresco è perfetto per fare il risotto autunnale con burro e parmigiano cremoso.	Porcini secchi.
+basilico	basil	7	d240445b5f0c9b2fd37b7b75f820d156	Il basilico genovese è la base del pesto, una salsa tradizionale della cucina ligure famosa.	Foglie di basilico.
+prezzemolo	parsley	7	3b452e7c59d2b64b87925e084559fde6	Il prezzemolo tritato è perfetto per insaporire i piatti di pesce alla griglia e le minestre.	Prezzemolo fresco.
+rosmarino	rosemary	7	12c22eab7c1f8528680406543843cff0	Il rosmarino è la pianta aromatica perfetta per insaporire le patate al forno con olio e sale.	Rametto di rosmarino.
+salvia	sage	7	bab3fd6ed675ab64a35811cb33ea19bf	La salvia fritta nel burro è uno dei contorni più semplici ma deliziosi della cucina italiana.	Salvia fresca.
+menta	mint	7	b8d4891bbb304bc7e0ab4b317af2508c	La menta è perfetta per fare un tè freddo dissetante durante le calde giornate estive di luglio.	Foglie di menta.
+origano	oregano	7	24ac14d2ec54386dac8ebb5c4275e2fa	L'origano siciliano è perfetto sulla pizza margherita appena uscita dal forno a legna tradizionale.	Origano essiccato.
+peperoncino	chili pepper	7	a6d51a7a083ba7e3d8086d7d88d39597	Il peperoncino calabrese è famoso per essere uno dei più piccanti d'Italia e dà sapore.	Peperoncino piccante.
+anatra	duck	7	9f26f2a9555b4d9ca311a2c999c85e30	L'anatra del laghetto del parco viene a mangiare il pane che le portano i bambini.	Un'anatra selvatica.
+oca	goose	7	bad32aa0994c9e556d58f4fe60115563	L'oca del cortile difende i pulcini con grande aggressività quando si avvicina qualcuno.	Un'oca grigia.
+capra	goat	7	a7641a103c1eadcec84f03140c0f0888	La capra produce un latte eccellente che usiamo per fare il formaggio caprino fatto in casa.	Una capra bianca.
+asino	donkey	7	99fb713edf42ede8e72de92193b655c7	L'asino del contadino porta i carichi pesanti su per i sentieri di montagna ogni mattina.	Un asino paziente.
+cammello	camel	7	96ce48439595f7874ea46d4e5dead34a	Il cammello è l'animale del deserto che può resistere senza acqua per molte settimane consecutive.	Un cammello stanco.
+mulo	mule	7	e24106b375a4196c02e8cb7f9de4fa2c	Il mulo è incrocio tra cavallo e asino e viene usato in montagna per il trasporto.	Un mulo robusto.
+tacchino	turkey	7	5ea8094812c19c2592256399d86b7265	Il tacchino arrosto è il piatto tradizionale del pranzo del Ringraziamento in America familiare.	Un grosso tacchino.
+agnello	lamb	7	7ddb22089518569092a8ce65428dd569	L'agnello arrosto è il piatto tipico della Pasqua nella tradizione italiana di campagna familiare.	Carne di agnello.
+vitello	veal	7	2e328c24a27f522e1d58df517eae3c4c	La cotoletta di vitello alla milanese è uno dei piatti più famosi della cucina lombarda elegante.	Carne di vitello.
+puledro	foal / colt	7	1a6aea28861310c29d4a5f07c0fdc6fa	Il puledro appena nato è ancora incerto sulle gambe ma corre nel prato della fattoria.	Un puledro veloce.
+scimmia	monkey	7	e4c3b800c0faeca1312ce870fb4751dc	La scimmia dello zoo è molto intelligente e impara velocemente a usare strumenti vari complessi.	Scimmia furba.
+orso	bear	7	c4f830de47c37abf9b3e9922aef85763	L'orso bruno marsicano vive nei boschi del parco nazionale d'Abruzzo ed è una specie protetta.	Un orso grosso.
+cervo	deer	7	b0d9de769d1d8fcb19000cf670f87145	Il cervo dei boschi alpini ha corna maestose che cambia ogni primavera per riconquistare le femmine.	Un cervo elegante.
+scoiattolo	squirrel	7	5ec10235e94e283ebdfcf0ea4416eb05	Lo scoiattolo rosso salta da un albero all'altro con grande agilità nascondendo le ghiande raccolte.	Uno scoiattolo veloce.
+pipistrello	bat	7	27da01164149d36e390241c39fdc3cdf	Il pipistrello vola di notte e si nutre principalmente di insetti che cattura in volo silenziosamente.	Un pipistrello notturno.
+tasso	badger	7	4b85a21200e8eb254e79417678a63664	Il tasso vive sotto terra e esce solo di notte per cercare cibo nei boschi solitari.	Un tasso timido.
+riccio	hedgehog	7	9d5975a5c1c30a5d1efaaf679b7ff644	Il riccio si arrotola su se stesso quando ha paura di un predatore vicino al suo nido.	Un riccio spinoso.
+talpa	mole	7	f49b3f1f7ca99d139ceb3064fdfa6d4e	La talpa scava lunghi tunnel sotterranei nel giardino per cercare lombrichi e insetti vari.	Una piccola talpa.
+cinghiale	wild boar	7	42399825af8029cbbbde727fcc6520fd	Il cinghiale dei boschi della Maremma è cacciato durante la stagione venatoria autunnale per la carne.	Un cinghiale grosso.
+tigre	tiger	7	1ddff545424249df81f3c4ab552dbb3d	La tigre del Bengala è il felino più grande del mondo e vive nelle giungle dell'Asia.	Una tigre feroce.
+giraffa	giraffe	7	420b106731066f6c7dd32d6dca797776	La giraffa ha il collo più lungo di tutti gli animali e mangia le foglie degli alberi alti.	Una giraffa altissima.
+zebra	zebra	7	69c459dd76c6198f72f0c20ddd3c9447	La zebra ha la pelliccia a strisce bianche e nere uniche per ogni esemplare africano.	Una zebra africana.
+ippopotamo	hippopotamus	7	fa85ebf3fe6067bce8db39c889502224	L'ippopotamo passa la maggior parte della giornata nell'acqua dei fiumi africani per restare fresco.	Un ippopotamo enorme.
+rinoceronte	rhinoceros	7	8b6af78505e0209ea06ee89c48b64f23	Il rinoceronte è in pericolo di estinzione a causa del bracconaggio per le sue corna preziose.	Un rinoceronte bianco.
+canguro	kangaroo	7	7134dfe9ad659ea6f72d961c6c879e99	Il canguro australiano salta velocissimo nel deserto e porta i suoi piccoli nel marsupio anteriore.	Un canguro saltante.
+lucertola	lizard	7	2f32db57cb906eca962303a392f8e33d	La lucertola si scalda al sole sulla pietra del muretto del giardino durante le ore più calde.	Una lucertola veloce.
+rana	frog	7	90a1e95dba0d3d9c11e3f220cc4f7879	La rana del laghetto canta tutta la notte d'estate e tiene svegli tutti i vicini di casa.	Una rana verde.
+rospo	toad	7	61a7f3ed0138e112fe5eb8e2d7fe297c	Il rospo vive nelle zone umide del giardino e mangia molti insetti dannosi per le piante.	Un rospo grande.
+coccodrillo	crocodile	7	c9f570a4c01e409666bf4f9fbb99be60	Il coccodrillo del Nilo è uno dei rettili più pericolosi e vive nei fiumi tropicali africani.	Un coccodrillo gigante.
+iguana	iguana	7	cb499ccae051c3606b62cafa4d9635cb	L'iguana verde è un rettile tipico delle giungle dell'America centrale e meridionale tropicale calda.	Un'iguana esotica.
+granchio	crab	7	01b53ca5f32df23c2f81eaf3ee0be940	Il granchio cammina di lato sulla sabbia della spiaggia e si nasconde nei fori vicino al mare.	Un granchio rosso.
+polpo	octopus	7	8a7d894b37b15651a30fb2489e06673e	Il polpo alla griglia è una specialità della cucina ligure servita con olio limone e prezzemolo.	Un polpo intelligente.
+calamaro	squid	7	4e2af0eb382c89f764cf39b9869f754f	I calamari fritti sono uno dei piatti più tipici della cucina mediterranea da mangiare al mare.	Calamari ripieni.
+gambero	shrimp / prawn	7	f92d1261e8d2aef3582f99eecea44fa0	I gamberi rossi della Sicilia sono famosi in tutto il mondo per il loro sapore intenso e dolce.	Gamberi alla griglia.
+tonno	tuna	7	df818b1ee44399e618350d09443d05c7	Il tonno fresco di Sicilia è uno dei pesci più pregiati della cucina mediterranea italiana antica.	Tonno in scatola.
+salmone	salmon	7	934f4eba8c1bc3b564d31abfcaa7699b	Il salmone affumicato norvegese è perfetto per l'antipasto di Natale insieme a pane e burro.	Salmone fresco.
+sardina	sardine	7	39e191e890c64daa683042d428803e83	Le sardine sotto sale sono un piatto povero della tradizione siciliana di pesca antica costiera.	Sardine fritte.
+trota	trout	7	0598a92c5abdb56b6d5880e756a733c5	La trota di fiume è ottima alla griglia con un po' di olio e una spruzzata di limone.	Una trota fresca.
+ostrica	oyster	7	876e7dcdf1be9dc88b506d65d55ba121	Le ostriche fresche con limone sono una prelibatezza che si mangia spesso durante le cene eleganti.	Ostrica perlifera.
+cozza	mussel	7	c9955127d995a286e8413d951f72e5c0	Le cozze alla marinara sono un piatto tipico della Liguria che mangio sempre in vacanza estiva.	Cozze nere.
+medusa	jellyfish	7	1068f877f9f5087ddcc602f68870d534	La medusa nuota silenziosamente nel mare ma il contatto con i suoi tentacoli può essere doloroso.	Una medusa pericolosa.
+seppia	cuttlefish	7	bfc1b7443bfd4c33fa883052690818ea	La seppia in nero è una ricetta tipica veneziana servita con polenta gialla e pane casereccio.	Seppia ripiena.
+piccione	pigeon	7	4a748278af163af67344cec5bfa27ce4	I piccioni della piazza San Marco a Venezia sono famosi per la loro confidenza con i turisti.	Piccione grigio.
+falco	falcon / hawk	7	0599db6d3eefe8e0b079c0d43a83406d	Il falco pellegrino vola altissimo e poi si lancia in picchiata sulla preda con grande velocità.	Un falco veloce.
+corvo	crow / raven	7	ecb5f1aed96906b988a04cd8993d20cd	Il corvo è un uccello molto intelligente e usa strumenti per cercare il cibo nelle città.	Un corvo nero.
+passero	sparrow	7	a6384da264e632825c600737cdfa91f8	I passeri del cortile vengono a mangiare le briciole che lascio sulla finestra della cucina.	Un passero piccolo.
+rondine	swallow	7	3040305bab0faf42fc0a500d7a4331a5	Le rondini tornano dall'Africa in primavera e fanno il nido sotto il tetto della casa di campagna.	Una rondine veloce.
+pappagallo	parrot	7	7827884c33b417ae95bc361fd2c79cea	Il pappagallo dei tropici impara a parlare e ripete le parole che gli insegnano i suoi padroni.	Un pappagallo colorato.
+pavone	peacock	7	1e190bfe9a7fd51e51e709994325989a	Il pavone apre la sua coda meravigliosa per attirare la femmina durante la stagione riproduttiva primaverile.	Un pavone elegante.
+cigno	swan	7	ba08d0b3c6de6bac8d19d85d73198204	Il cigno bianco nuota maestoso sul lago insieme ai suoi piccoli grigi durante una bella mattina.	Un cigno bianco.
+gabbiano	seagull	7	8f92382caf0ccf3dce2eb6a46e98dd78	I gabbiani volano sopra il porto cercando cibo tra le barche dei pescatori al ritorno dalla pesca.	Un gabbiano affamato.
+usignolo	nightingale	7	9be185663cb1086e070f3554a5b0ec17	L'usignolo canta con voce melodiosa nelle notti di primavera vicino alla finestra della camera da letto.	Canto dell'usignolo.
+vespa	wasp	7	07cb7acd547de41b92549b4ccc4cafd8	La vespa mi ha punto al braccio mentre stavo facendo un picnic in giardino con la famiglia.	Una vespa aggressiva.
+scarafaggio	cockroach	7	11ee2e996793ef2a5488e36e48979c70	Lo scarafaggio nero esce di notte dalla cucina e bisogna chiamare la disinfestazione subito al mattino.	Uno scarafaggio fastidioso.
+farfalla	butterfly	7	416c156ca489a9ddb2b3217eb5ca9e75	La farfalla colorata vola da un fiore all'altro nel prato di primavera dietro casa nostra.	Una farfalla blu.
+libellula	dragonfly	7	cc1feedb4c3495972c982e6d2a7eb944	La libellula vola sopra il laghetto del parco con le sue ali trasparenti che brillano al sole.	Una libellula veloce.
+grillo	cricket	7	01d084cc430188c92b49d3f93cebf7c6	Il grillo canta tutte le notti d'estate nel campo dietro casa e mi accompagna nel sonno.	Un grillo canterino.
+lumaca	snail	7	940caaf3cf7ad210722a3fd225a36d78	La lumaca lascia una scia argentata sul muro del giardino dopo la pioggia di primavera.	Una lumaca lenta.
+scorpione	scorpion	7	0c69ffabf82214a8b823a7150a3e4d79	Lo scorpione del deserto è velenoso e bisogna fare attenzione quando si cammina tra le rocce.	Uno scorpione nero.
+cimice	bug / stink bug	7	3b9d1f578ba409fc7f784473d77f1cb9	La cimice verde è entrata in casa durante la fine dell'estate e bisogna farla uscire delicatamente.	Cimice marrone.
+coccinella	ladybug	7	6e209dfc0a1bc4d1a74b67232c079430	La coccinella rossa con i puntini neri porta fortuna secondo la tradizione popolare italiana antica.	Una coccinella rossa.
+cavalletta	grasshopper	7	e109ceb233663aa3436aadab8d54f98c	La cavalletta verde salta lontanissimo nel campo di erba alta della campagna toscana estiva.	Una cavalletta saltante.
+natura	nature	7	3903161801c977c562bcc9a87628201a	Amo la natura e passo molto tempo all'aperto in montagna durante le vacanze estive con la famiglia.	Amo la natura.
+ecosistema	ecosystem	7	912a00fe339e4796464ee3843753e8d8	L'ecosistema marino è in pericolo a causa dell'inquinamento e dei cambiamenti climatici globali continui.	Un ecosistema delicato.
+biodiversità	biodiversity	7	c287112b3fd7d39bb16c4c80dcc37da9	La biodiversità della foresta amazzonica è la più ricca del mondo con migliaia di specie uniche.	Tutela della biodiversità.
+specie	species	7	0b55f322c06f134a63d38f3f75f52773	Questa specie di farfalla è in pericolo di estinzione a causa della distruzione del suo habitat naturale.	Una specie rara.
+habitat	habitat	7	5d1a4e2d48970bc7a47fae9404899208	L'habitat naturale del lupo sono i boschi delle montagne italiane lontano dalle città grandi e affollate.	Un habitat protetto.
+fauna	fauna / wildlife	7	11eb5e39508ffbe2ef6b5055b5e8271b	La fauna del parco nazionale è ricca e varia con molte specie di mammiferi e uccelli.	Fauna selvatica.
+flora	flora	7	979c8e8f8271e3431249f935cd7d3f4c	La flora delle Alpi è ricca di specie endemiche che non si trovano in nessuna altra parte.	Una flora alpina.
+selvaggio	wild / savage	7	c8e416833b69d4c5faa21e3e7c7daf06	L'animale selvaggio non si lascia avvicinare facilmente dall'uomo e fugge appena lo vede arrivare.	Animale selvaggio.
+selvatico	wild (plant/animal)	7	4f03033654597270e459d15e6c498b81	Il fiore selvatico cresce spontaneamente nei prati di montagna durante la primavera mite.	Fiori selvatici.
+domestico	domestic	7	44d6d00e6a739c7abc2ad6d739cc0b9c	Il cane è il più antico animale domestico ed è il migliore amico dell'uomo da migliaia di anni.	Un animale domestico.
+estinzione	extinction	7	6d9031179ac938d4d4bf5b020fcae003	Molte specie sono in pericolo di estinzione a causa dell'attività umana incontrollata sul pianeta nostro.	Rischio di estinzione.
+protezione	protection	7	e61217fbcf64a6dfdfe83454294d3020	La protezione dell'ambiente è fondamentale per garantire un futuro sostenibile alle prossime generazioni umane.	Una protezione necessaria.
+conservazione	conservation	7	2f08a2ff636bdedb338fa1bc03ac5a67	La conservazione dei monumenti antichi richiede grande impegno economico e tecnico da parte dello stato.	Conservazione naturale.
+riserva	reserve / preserve	7	0b7df0fed156b954bff509215e50d067	La riserva naturale protegge gli animali selvatici e permette loro di vivere nel loro habitat originale.	Una grande riserva.
+stagno	pond	7	a322e669b143fbe710b92415b24e0880	Lo stagno del giardino è popolato da rane, pesci rossi e libellule durante l'estate calda.	Un piccolo stagno.
+tuono	thunder	7	a2138a3bfe69c497d52c514ed0eebddd	Il tuono ha fatto tremare tutti i vetri della casa durante il forte temporale di ieri sera.	Un forte tuono.
+fulmine	lightning	7	8f38f14d0dfc630a52ebe24dc1576d21	Il fulmine ha colpito un albero nel giardino di mio nonno durante il temporale notturno improvviso.	Veloce come un fulmine.
+lampo	lightning flash	7	fee9e052986f65ef247a79f3130235e4	Il lampo ha illuminato per un istante tutta la valle durante il forte temporale notturno della sera.	Un lampo improvviso.
+arcobaleno	rainbow	7	a7c7f747d1ef73b299d0cbd869bd4828	Dopo la pioggia è apparso un bellissimo arcobaleno con tutti i colori che attraversava il cielo.	Un arcobaleno doppio.
+brina	frost	7	1c32fe506bd81b0723b0d294c69b16a8	La brina ha coperto i prati di campagna durante la fredda notte di novembre con un velo bianco.	Brina mattutina.
+grandine	hail	7	acd2f86d23edd27d3e222a0c70c6e259	La grandine ha distrutto il raccolto di uva del vigneto durante la tempesta improvvisa di luglio.	Forte grandine.
+rugiada	dew	7	3cebaca2fb42a90e8882da2e2b494b37	La rugiada del mattino bagna l'erba del prato e fa brillare i fiori al primo sole.	Goccia di rugiada.
+brezza	breeze	7	c0b0b03be1063288808177c0e33671f9	Una piacevole brezza marina rinfresca la spiaggia anche durante le ore più calde di agosto.	Brezza leggera.
+uragano	hurricane	7	e7591d8c4aee9198768a891e02d21c75	L'uragano ha distrutto molte case dei Caraibi causando danni enormi e migliaia di sfollati senza casa.	Un terribile uragano.
+tornado	tornado	7	99bdf8d95da8972f6979bead2f2e2090	Il tornado ha sfiorato il paese causando danni alle case e alle macchine parcheggiate per strada.	Un tornado distruttivo.
+scogliera	cliff	7	17e9888f5ac79e52c2ff04ca3a811293	La scogliera a strapiombo sul mare offre un panorama mozzafiato sulla costa amalfitana incantevole.	Una scogliera alta.
+baia	bay	7	faff990670070aca9b9f29e94c1e2496	La baia di Napoli è una delle più belle del Mediterraneo con il Vesuvio sullo sfondo lontano.	Una piccola baia.
+golfo	gulf	7	c2924aa800f8f089b8e2a22a211aec27	Il golfo di Genova è ricco di porti e di città storiche che attirano molti turisti italiani.	Un grande golfo.
+penisola	peninsula	7	5271933cc447bdd08f2bd9b9446d7f29	L'Italia è una penisola circondata dal mare Mediterraneo che è bagnata da quattro mari diversi unici.	Una piccola penisola.
+duna	dune	7	22dc7ba595fddf34804a5f7454e001a2	Le dune di sabbia del Sahara cambiano forma con il vento del deserto durante le tempeste sabbiose.	Una grande duna.
+promontorio	promontory / headland	7	a0b8fcddc8678f8becd236228b4cc492	Il promontorio si protende nel mare e offre una vista stupenda sulla costa rocciosa intorno.	Un alto promontorio.
+dirupo	cliff / precipice	7	1676f3151bf35a51c516ef801d3bc8f6	Bisogna fare attenzione vicino al dirupo perché la caduta sarebbe mortale per chi ci si avvicina troppo.	Un dirupo pericoloso.
+cascata	waterfall	7	a2ce929c1a7e744255f5e5e1b5c4c9c3	La cascata delle Marmore è la più alta d'Europa e si trova in Umbria, vicino a Terni.	Una grande cascata.
+sorgente	spring (water)	7	77895b7e5feb67dd97a8fe6c452aa0ad	La sorgente del fiume sgorga fresca dalle rocce della montagna alpina italiana del nord.	Acqua di sorgente.
+ruscello	small stream	7	b75149db457ffa16dd25a9872019bf8f	Il ruscello scorre tra le rocce del bosco con un suono rilassante per chi cammina vicino.	Un piccolo ruscello.
+torrente	torrent / mountain stream	7	ea7e6422fdfc587681d132507d69e7f6	Il torrente di montagna è gonfio di acqua dopo le piogge primaverili abbondanti del mese scorso.	Un torrente alpino.
+palude	marsh / swamp	7	6c2d9a1be95e738d920f1392e6a2b5ca	La palude della maremma è ricca di uccelli migratori che vi sostano durante il viaggio annuale.	Una palude paludosa.
+oasi	oasis	7	71b47f3f599851a43cfc1150ebd97591	L'oasi nel deserto offre acqua e ombra ai viaggiatori stanchi dopo il lungo viaggio nel deserto caldo.	Un'oasi verde.
+ghiacciaio	glacier	7	336cd7fab95f51d298728043757689fc	Il ghiacciaio si sta sciogliendo a causa del riscaldamento globale a un ritmo impressionante e preoccupante.	Un grande ghiacciaio.
+vulcano	volcano	7	5a960a6c09f2ed249f522227ee12c24d	Il vulcano Etna in Sicilia è il più alto vulcano attivo d'Europa e si vede da lontano.	Vulcano attivo.
+piantare	to plant	7	4274a86ef60daae8c221bd75bc3c1c02	Devo piantare i pomodori in primavera per averli pronti per l'estate quando saranno maturi.	Pianta un albero.
+seminare	to sow	7	ff4b5a29218ab2d9af049943706cb426	Il contadino semina il grano in autunno per raccoglierlo l'estate successiva nei suoi campi.	Semina i fiori.
+coltivare	to cultivate / grow	7	1d8dc21414f63b126bb251654ff0c726	Mio padre coltiva un orto biologico nel giardino di casa per avere verdure fresche tutto l'anno.	Coltivare la terra.
+innaffiare	to water (plants)	7	75ce9a53a0ff391b56f68efb84991594	Devo innaffiare le piante del balcone ogni mattina d'estate altrimenti si seccano con il caldo.	Innaffia le piante.
+potare	to prune	7	ed3e7d480d95ca438bfde1ba7f76c65e	È importante potare gli alberi da frutto in inverno per avere un buon raccolto in estate.	Potare la siepe.
+mietere	to reap / harvest	7	9d81cad9ccd990bebc200836f7af9d75	Il contadino miete il grano con la mietitrebbia durante le calde giornate estive di luglio italiano.	Mietere il grano.
+cacciare	to hunt	7	2264fab312271b1b9cf6174c7520c70f	I cacciatori cacciano i cinghiali nei boschi durante l'autunno con i loro fucili e i cani.	Cacciare la lepre.
+pescare	to fish	7	f71006fbdc6a0b58b94dd540d9db8c80	Mi piace pescare nel fiume tutti i fine settimana con il mio caro amico di vecchia data.	Pescare al lago.
+fiorire	to bloom	7	ccdcfd3562ae4b13e2c819372f4985bb	Le rose del giardino fioriscono in primavera e profumano tutto il cortile di casa con le loro essenze.	I ciliegi fioriscono.
+sbocciare	to bloom / open	7	06c35ccd7a51fdab72dbd576de1de788	I papaveri sbocciano nei campi di grano durante la primavera tarda con i loro colori intensi.	Sboccia un fiore.
+crescere	to grow	7	4b80cda47ab7b0dbe71f929832ea75c5	I bambini crescono velocemente e ogni anno sembra che siano già diventati grandi e maturi.	Crescere bene.
+marcire	to rot	7	2ef2c3689b229dc0de8bcf56daf724bb	La frutta dimenticata sul tavolo della cucina marcisce velocemente durante l'estate calda e umida estiva.	Marciscono le mele.
+appassire	to wither / wilt	7	b6d17eae22e1b96921bece101251bde2	I fiori del vaso appassiscono velocemente se non si cambia l'acqua tutti i giorni regolarmente.	I fiori appassiscono.
+abbattere	to chop down / fell	7	154f2ec9ea47750a36d85620ab5a5add	Hanno deciso di abbattere il vecchio albero del giardino perché era diventato pericoloso per la casa.	Abbattere un muro.
+pascolare	to graze	7	c6767774ad632fa2f0bfc13bb90eb26a	Le pecore pascolano sui prati di montagna durante l'estate sotto la guida del pastore esperto.	Pascolare le mucche.
+verdeggiante	verdant	7	7ff7fbad32cc023686bc14b64d8d4d0d	I prati verdeggianti delle Alpi sono uno spettacolo unico durante la primavera mite e profumata di fiori.	Una valle verdeggiante.
+fiorito	in bloom	7	45624e1e57e9635cc9e3efa7b18c77aa	Il giardino fiorito di mia nonna è un'esplosione di colori durante tutta la primavera fino all'estate.	Un prato fiorito.
+frondoso	leafy	7	2d0dbabeac4356a949b3e3d3df973d8a	Il bosco frondoso offre ombra fresca durante le calde giornate estive di luglio per i visitatori stanchi.	Un albero frondoso.
+soleggiato	sunny	7	2f34e204638e54d0f21a603e73dd7bba	Il giardino soleggiato è perfetto per le piante mediterranee come ulivi, lavanda e rosmarino aromatico.	Una giornata soleggiata.
+ombroso	shady	7	1f3d232aa4f368d80aad2f87bba4d864	L'angolo ombroso del giardino è perfetto per riposare durante le ore più calde del pomeriggio estivo.	Un viale ombroso.
+arido	arid / dry	7	62bdbefc8f3de4b219af0e4fec91d186	Il clima arido del deserto rende difficile la vita per molte specie animali e vegetali fragili.	Una terra arida.
+fertile	fertile	7	556812cf6709ad44c1a3b3023f597042	La terra della pianura padana è fertile e produce grandi quantità di grano, mais e riso ogni anno.	Suolo fertile.
+sterile	sterile / barren	7	7c0561305a40a7b4f1c766684a90f949	Il terreno sterile non produce nulla e bisogna concimarlo con cura prima di poterlo coltivare bene.	Una terra sterile.
+lussureggiante	lush	7	0daf95a9a318ae62fc12b0643fbfe827	La vegetazione lussureggiante delle foreste tropicali è impressionante con i suoi alberi giganti e fiori esotici.	Una giungla lussureggiante.
+pozzo	well	7	34c414b46e032ba15e96f01e72341da3	Il pozzo del giardino è profondo dieci metri e l'acqua è ancora fresca anche durante le estati.	Un pozzo profondo.
+rivolo	rivulet / small stream	7	7443d19cc83e6c9fe72f476f2cf5be67	Un rivolo d'acqua scorre tra le pietre del giardino formando un piccolo angolo di paradiso.	Un piccolo rivolo.
+larva	larva	7	0179897d80f77a41274d87d27772a06e	La larva della farfalla si trasforma in crisalide prima di diventare un meraviglioso insetto adulto colorato.	Una larva piccola.
+bozzolo	cocoon	7	f3426dfba7783fda645adb12732516a5	Il bozzolo del baco da seta produce la seta che viene poi tessuta nei tessuti pregiati italiani.	Un bozzolo bianco.
+nido	nest	7	e43fe6167398eb52ca33dcddd1c29897	Gli uccelli costruiscono il nido sul tetto della casa per proteggere le uova durante la primavera.	Un nido caldo.
+alveare	beehive	7	9dd9662a14a2b4514483575ee6e6514e	L'alveare dell'apicoltore produce un miele eccellente che vendiamo al mercato del paese ogni domenica mattina.	Un alveare attivo.
+gabbia	cage	7	b0ed17fa52a6d31343ab6689539937e0	La gabbia del pappagallo è grande e il piccolo uccello può volare al suo interno comodamente sereno.	Una gabbia dorata.
+tana	den / lair	7	245f5f86628abb7b2e0ae9ac72b8e888	La tana della volpe si trova nascosta tra le rocce del bosco lontano dagli sguardi indiscreti dell'uomo.	Una tana segreta.
+recinto	fence / pen	7	40664c600b0ff413301bfebce24d4691	Il recinto del pollaio impedisce alla volpe di catturare le galline che vivono dentro tranquille.	Un recinto alto.
+fattoria	farm	7	b5ff8123a1b5cac951746367eab8a96c	Mio nonno aveva una fattoria in Toscana con mucche, galline e un piccolo orto di verdure fresche.	Una grande fattoria.
+mulino	mill	7	6f2d7c59fd2004bf4a1411bf396b966d	Il mulino ad acqua del paese era usato per macinare il grano fino a circa cinquant'anni fa.	Un vecchio mulino.
+stalla	stable / barn	7	9e9955d94460b5f81995393ab349520b	Le mucche dormono nella stalla durante l'inverno freddo per proteggerle dal gelo della montagna alpina.	Una stalla pulita.
+pollaio	chicken coop	7	44962baefb13455e6be2f56ada0573a0	Le galline del pollaio fanno le uova fresche ogni mattina che raccogliamo per la colazione di famiglia.	Un pollaio rustico.
+vigneto	vineyard	7	b7ed3e416f0e6eae106d94ac6c675e5e	Il vigneto di mio zio in Toscana produce un Chianti eccellente venduto in tutta Italia da generazioni.	Un grande vigneto.
+frutteto	orchard	7	56696727dbf629c7bce58c40a03bccc6	Nel frutteto del nonno crescono meli, peri e ciliegi che danno frutti dolcissimi ogni estate calda.	Un bel frutteto.
+oliveto	olive grove	7	ddef4ca84fd2269d0a18293e44adeb4c	L'oliveto della mia famiglia produce olio d'oliva extra vergine biologico venduto solo localmente da generazioni.	Un antico oliveto.
+orto	vegetable garden	7	9fe7f1d6a7b348b78d4915f409ef672c	Nell'orto di casa coltiviamo pomodori, zucchine, melanzane e tante altre verdure fresche di stagione.	Un piccolo orto.
+semenzaio	seedbed	7	dbf0417c032e3dd53bc7954339d2908f	Il semenzaio del vivaio comunale produce le piantine che i contadini comprano per i loro orti familiari.	Un grande semenzaio.
+serra	greenhouse	7	7da88ad7eca13492ca0cf95869412360	La serra del giardino permette di coltivare ortaggi anche durante l'inverno freddo grazie al calore interno.	Una serra moderna.
+pollame	poultry	7	b50df6d1a64b74ac7d9abebf24942711	Il pollame del nostro allevamento è biologico e gli animali vivono liberi all'aria aperta tutto il giorno.	Tutto il pollame.
+bestiame	livestock	7	b2b04f4afa633c8a614d538c147e1f8f	Il bestiame della fattoria pascola libero nei prati alpini durante tutta la stagione estiva calda.	Un grande bestiame.
+gregge	flock / herd	7	eb82bc037fd326dfcb75033c80bcd72f	Il gregge di pecore si sposta in alta montagna durante l'estate seguito dal pastore esperto e abile.	Un gregge numeroso.

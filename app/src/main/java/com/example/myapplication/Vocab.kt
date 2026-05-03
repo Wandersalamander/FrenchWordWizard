@@ -28,6 +28,19 @@ val abbreviationDictionaryDe = mapOf(
     "ca." to "circa",
 )
 
+val abbreviationDictionaryIt = mapOf(
+    "Sig." to "Signor",
+    "Sig.ra" to "Signora",
+    "Sig.na" to "Signorina",
+    "Dr." to "Dottore",
+    "Prof." to "Professore",
+    "ecc." to "eccetera",
+    "etc." to "eccetera",
+    "es." to "esempio",
+    "pag." to "pagina",
+    "St." to "Santo",
+)
+
 val abbreviationDictionaryEn = mapOf(
     "vs." to "versus",
     "sth." to "something",
@@ -48,6 +61,7 @@ val abbreviationDictionaryEn = mapOf(
 val regExPatternFr = abbreviationDictionaryFr.keys.joinToString("|") { Regex.escape(it) }.toRegex()
 val regExPatternEn = abbreviationDictionaryEn.keys.joinToString("|") { Regex.escape(it) }.toRegex()
 val regExPatternDe = abbreviationDictionaryDe.keys.joinToString("|") { Regex.escape(it) }.toRegex()
+val regExPatternIt = abbreviationDictionaryIt.keys.joinToString("|") { Regex.escape(it) }.toRegex()
 
 
 data class Vocab(
@@ -198,6 +212,12 @@ data class Vocab(
         }.replace("(", "").replace(")", "")
     }
 
+    fun replaceMultiplePhrasesRegexIt(input: String): String {
+        return regExPatternIt.replace(input) {
+            abbreviationDictionaryIt[it.value] ?: it.value
+        }.replace("(", "").replace(")", "")
+    }
+
     fun pronounceableFr(): String {
         return replaceMultiplePhrasesRegexFr(french)
     }
@@ -209,6 +229,7 @@ data class Vocab(
     fun pronounceableForeign(lang: String): String {
         return when (lang) {
             "de" -> replaceMultiplePhrasesRegexDe(french)
+            "it" -> replaceMultiplePhrasesRegexIt(french)
             else -> replaceMultiplePhrasesRegexFr(french)
         }
     }

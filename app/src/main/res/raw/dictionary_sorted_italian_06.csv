@@ -1,0 +1,200 @@
+impresa	company / enterprise	6	9773adae3d02f8a0973cbfaa39f4b2ed	La nostra impresa familiare produce vino di qualità da più di tre generazioni di vignaioli esperti.	Una piccola impresa.
+azienda	company / business	6	f6f0dd53202d2a2a31c792b40db1a1b6	L'azienda dove lavoro ha sede a Milano e impiega più di mille dipendenti in tutto il paese.	Una grande azienda.
+ditta	firm	6	dbcbbc0e3ca1fc247953ceedb6a91159	Mio padre ha fondato una piccola ditta di trasporti negli anni Ottanta in provincia.	La nostra ditta.
+società	company / society	6	61dadd7aa5a9e01fbafcac7eb88530ff	La società per azioni è quotata in borsa e i suoi titoli sono molto richiesti dagli investitori.	Una società moderna.
+fabbrica	factory	6	ef96d2da73b222e5dcd81d998ed41950	La fabbrica di automobili impiega migliaia di operai specializzati nella produzione di motori innovativi.	Una grande fabbrica.
+officina	workshop	6	00e4106397d6e4f6274d57e18210142c	Porto la macchina in officina ogni sei mesi per il tagliando e il controllo periodico generale.	Un'officina meccanica.
+capo	boss / chief	6	eca85aa0dc9e94610e81a141ed813c18	Il mio capo è una persona molto esigente ma giusta nei confronti di tutti i dipendenti.	Il capo arriva.
+dirigente	manager / executive	6	3734fa4dbcff0a162f1737413ac7135c	Il dirigente dell'azienda ha annunciato nuovi investimenti per il prossimo trimestre durante la riunione.	Un dirigente capace.
+manager	manager	6	1d0258c2440a8d19e716292b231e3190	Il manager del progetto coordina tutto il team di sviluppo del nuovo software innovativo aziendale.	Un bravo manager.
+impiegato	employee (white-collar)	6	63aac26fb0142c1e14066ae686b896e9	Lavoro come impiegato amministrativo in un ufficio del centro di Milano da più di dieci anni.	Un impiegato fedele.
+operaio	worker (blue-collar)	6	905fc05bc592f3916e95587916ca491e	Mio nonno lavorava come operaio metalmeccanico nella grande fabbrica di Torino fino al pensionamento.	Un operaio specializzato.
+artigiano	craftsman / artisan	6	2fc679a8fe129441b58a39145311a5f1	Quell'artigiano produce ceramiche tradizionali siciliane secondo tecniche antiche tramandate da generazioni.	Un bravo artigiano.
+dipendente	employee	6	a17a54e46fb7f594574a9d74b36fe68a	Sono dipendente pubblico da venti anni e mi mancano altri venticinque anni alla pensione.	Un dipendente onesto.
+collega	colleague	6	6293b12cbfa36def0a27b80cd7642806	Il mio collega di ufficio è anche un caro amico e usciamo spesso insieme la sera.	Un buon collega.
+contratto	contract	6	6136ed54f41524037d005dc20cd9790d	Ho firmato il contratto di lavoro per il nuovo impiego nella grande azienda informatica milanese.	Un contratto a tempo indeterminato.
+riunione	meeting	6	8e9700ee16c8c2bc47c276654c19f537	La riunione del lunedì mattina è obbligatoria per tutti i dipendenti del reparto vendite aziendale.	Una lunga riunione.
+pausa	break	6	13ff159fdf432421288a594a4b2c4565	Faccio una pausa caffè di dieci minuti ogni due ore per rilassarmi un po' dal lavoro.	Pausa pranzo.
+turno	shift	6	37a013e34d6c9a78643eaecf3b2666dd	Lavoro di turno e questa settimana faccio il turno notturno in fabbrica fino alle sei di mattina.	Cambio turno.
+straordinario	overtime	6	db5f559e76bb13b40d911b0fc06adeb0	Faccio molto straordinario questo mese per finire il progetto prima della scadenza importante di fine anno.	Pago lo straordinario.
+professione	profession	6	079289c41f3d9e23f845fbc43902798d	Ha scelto la professione di medico per aiutare le persone in difficoltà e seguire la sua vocazione.	La mia professione.
+mestiere	trade / craft	6	f53a8a2235e84cb3b31be1d443e6ab6b	Il mestiere del falegname richiede grande pazienza, esperienza e abilità manuale per realizzare opere uniche.	Un mestiere antico.
+carriera	career	6	cec2f8321a87d004f64e366fa1bbb536	Ho fatto una bella carriera in questa azienda e adesso sono diventato direttore di reparto.	Una brillante carriera.
+settore	sector	6	5812263f88f6153bc403fa004222fccc	Il settore tecnologico è in forte crescita e offre molte opportunità lavorative ai giovani laureati.	Un settore importante.
+progetto	project	6	0fa3c82b1dcd0b2c9efa017a7bedc7fc	Il nuovo progetto aziendale è ambizioso e richiederà l'impegno di tutto il team per due anni.	Un grande progetto.
+scadenza	deadline	6	f514884816d341af2f85fa2089d729f0	La scadenza del progetto è fissata per la fine del mese e dobbiamo lavorare tutti insieme.	Rispetta la scadenza.
+obiettivo	goal / objective	6	cefdb931deb504bdda9b4d4f1c516713	Il nostro obiettivo principale è raggiungere il fatturato previsto entro la fine dell'anno fiscale.	Un obiettivo ambizioso.
+risultato	result	6	46a59288f2802c60b696501d4e252e24	Il risultato del nostro lavoro è stato eccellente e il capo ci ha fatto i complimenti.	Un buon risultato.
+successo	success	6	87c4729b7f3328042fcd8feaddeb554c	Il successo professionale richiede sacrificio, dedizione e tanta passione per quello che si fa nella vita.	Un grande successo.
+fallimento	failure	6	3089687c96d8be284b60916aafacee85	Il fallimento di quel progetto è stato una lezione importante per tutta la nostra squadra di lavoro.	Un brutto fallimento.
+crisi	crisis	6	b22fdb0cfe9e3ef3cbb9efbb33b7f71e	L'azienda è in crisi a causa della pandemia e dobbiamo trovare nuove soluzioni per sopravvivere.	Una crisi economica.
+profitto	profit	6	c39ea3bd67e664cc2d9f844daa8b762e	Il profitto dell'azienda è aumentato del venti per cento rispetto allo stesso periodo dell'anno scorso.	Un grande profitto.
+investimento	investment	6	890575ce2afb309e582eac16b16ccd62	Ho fatto un investimento importante in titoli di stato per garantirmi una pensione sicura nel futuro.	Un buon investimento.
+fondazione	foundation	6	29ec08a01cb0303abdafb0dd6031f4c6	La fondazione benefica raccoglie denaro per aiutare i bambini malati negli ospedali pediatrici italiani.	Una grande fondazione.
+organizzazione	organization	6	1578cee838e1a59aeba52915bf97ec69	L'organizzazione del convegno richiede la collaborazione di tutti i membri del comitato scientifico.	Una buona organizzazione.
+banca	bank	6	33284cfe03da16025c9641fb5dc03063	Vado in banca a depositare lo stipendio del mese ogni primo giorno lavorativo del mese.	In banca.
+paga	pay / wage	6	37da868a45f136ace32e241f782939b0	Ricevo la paga il primo giorno lavorativo di ogni mese direttamente sul conto bancario.	Una buona paga.
+indennità	allowance / compensation	6	5d50be424e7ab8ff3178398dfcda6a39	Ricevo un'indennità di trasferta quando devo viaggiare per lavoro fuori dalla mia città di residenza.	Indennità di disoccupazione.
+premio	prize / bonus	6	153697b4d766ede6971ee05a9d42e86c	Ho ricevuto un bel premio aziendale per aver superato gli obiettivi del trimestre con largo anticipo.	Un premio meritato.
+bonus	bonus	6	78056ebb02cffc14bb7ece14904812dc	Il bonus di fine anno mi permetterà di andare in vacanza con la famiglia ai Caraibi.	Un bonus generoso.
+aumento	raise / increase	6	ad6cc3e161e1d5e53fb14d0ab1642b7d	Ho chiesto un aumento di stipendio al mio capo dopo cinque anni di lavoro nella stessa azienda.	Un grande aumento.
+curriculum	résumé / CV	6	bb63773cad97ffcfd39f5cfc66ed12e6	Devo aggiornare il mio curriculum prima di mandarlo a quella nuova azienda che assume programmatori.	Un buon curriculum.
+colloquio	interview	6	ddf6f504afc7424f02f7a4db3ab04111	Ho un colloquio di lavoro importante domani mattina alle dieci nella sede centrale dell'azienda.	Un colloquio difficile.
+denaro	money	6	e39f40e367b1206c5eb0b1795f7efbcb	Il denaro non fa la felicità ma certamente aiuta a vivere una vita più tranquilla e serena.	Tanto denaro.
+contante	cash	6	67e163447b04b0b4e66ee27aa0faf91b	Pago in contante perché non ho una carta di credito attiva al momento del pagamento.	Solo contante.
+moneta	coin / currency	6	8f9f34c41fd574e8b6c473ff2401db69	La moneta ufficiale dell'Italia è l'euro dal duemiladue dopo la fine della lira italiana.	Una moneta antica.
+banconota	banknote / bill	6	5e1f40e83c7dd72eaf5af9de9e0d25bc	Ho perso una banconota da cinquanta euro nel parcheggio e non sono riuscito a ritrovarla mai.	Una banconota nuova.
+assegno	check	6	3e20186269783fcd434927bb20c02d6f	Ho pagato l'affitto con un assegno bancario perché il proprietario non accetta i bonifici online.	Un assegno circolare.
+risparmio	savings	6	4ef862a079aab4d71545bc21f41bf77c	Il mio risparmio mensile è di circa cinquecento euro e li metto su un libretto bancario.	Conto di risparmio.
+credito	credit	6	a1d23e6b7205bfa1e79e6ca9a1176251	La banca mi ha concesso un credito per comprare la casa nuova in periferia con il giardino.	Carta di credito.
+debito	debt	6	f894ff486dcd3620c9d86dd9cef03911	Ho un debito con la banca per il mutuo della casa che dovrò ripagare in vent'anni.	Un grande debito.
+prestito	loan	6	e2c2ee566336f7aa407d94c0741c1d28	Ho chiesto un prestito personale alla banca per comprare la macchina nuova della mia famiglia.	Un piccolo prestito.
+tasse	taxes	6	3ec1625441c53d1c2d6877e32a9fdf60	Devo pagare le tasse entro il trentuno maggio per evitare le sanzioni dell'agenzia delle entrate italiana.	Pago le tasse.
+imposta	tax (single)	6	75ac71095184369ec76904efe5ad218c	L'imposta sui redditi è progressiva e cresce con l'aumento dello stipendio annuale lordo dichiarato.	Imposta sul reddito.
+pagamento	payment	6	9eb3f68b1df55837553be41f5ffe5b20	Il pagamento della bolletta deve essere effettuato entro il quindici del mese per evitare penalità.	Un pagamento rapido.
+fattura	invoice	6	29a3b9d0336ea38333b246e4c5d7eb8b	L'idraulico mi ha mandato la fattura per i lavori fatti la settimana scorsa nel bagno principale.	Una fattura alta.
+ricevuta	receipt	6	201b1ff31eb40a2644e46dc25acc2af0	Conservo sempre la ricevuta del supermercato in caso di problemi con i prodotti acquistati settimanalmente.	Una ricevuta fiscale.
+sconto	discount	6	11fdb22947ec16d739dbf63cd7fabe07	Mi hanno fatto uno sconto del venti per cento perché sono un cliente abituale del negozio.	Un grande sconto.
+offerta	offer / deal	6	faf46285a1e6d3429a26fa6907f6ef05	L'offerta speciale del supermercato finisce domani sera e devo correre a fare la spesa.	Un'offerta imperdibile.
+vendita	sale / selling	6	48f84ec95d9499e425590bbf1af27eff	La vendita di questo prodotto è stata un successo e abbiamo superato tutti gli obiettivi.	Una grande vendita.
+acquisto	purchase	6	f5c8bfa9510848a4d1ca518355d805a2	L'acquisto della casa è stata la decisione più importante della mia vita finanziaria personale.	Un acquisto importante.
+capitale	capital	6	2c336467a45cb7b3ae06fb6e0c749865	Servono molti capitali per avviare una nuova azienda di successo nel settore tecnologico moderno.	Una grande capitale.
+mutuo	mortgage	6	5c066b95e61bc7aef3bf1d5af0ed1b91	Il mutuo della casa lo pago da quindici anni e mi mancano altri quindici anni alla fine.	Un mutuo lungo.
+economia	economy	6	0dcbfa3e8507c240d9f372a0b8053885	L'economia italiana sta crescendo lentamente dopo la lunga crisi economica degli ultimi dieci anni difficili.	Una buona economia.
+stipendio	salary	6	612dc62b158c04f11f1b3230738609b2	Il mio stipendio mensile mi permette di vivere bene e di mettere via un po' di soldi.	Un buono stipendio.
+salario	wage	6	4ee003af242630d97dc88830cc73741d	Il salario minimo dovrebbe essere alzato per garantire una vita dignitosa a tutti i lavoratori italiani.	Un salario basso.
+pensione	pension	6	07218b1b08b15a50297f95d66dd4b4ed	La pensione di mio nonno è bassa e non gli basta per arrivare alla fine del mese.	Vado in pensione.
+mancia	tip	6	96abca110bf466976f72136affeb148b	Ho lasciato una buona mancia al cameriere perché il servizio è stato eccellente e molto gentile.	Una bella mancia.
+università	university	6	e8093d3a73150b381fdc00f4cd986174	L'università di Bologna è la più antica del mondo occidentale ed è famosa internazionalmente per la storia.	Vado all'università.
+facoltà	faculty	6	a5fd2b4b3e8bd8d839c1fd8c7abc771c	La facoltà di medicina è la più difficile e richiede sei anni di studio intenso e specializzato.	Una buona facoltà.
+dipartimento	department	6	d20301f74e94255a8caf070dfcfb9891	Il dipartimento di lingue offre molti corsi di italiano per stranieri durante tutto l'anno accademico.	Un grande dipartimento.
+corso	course	6	596befa8ed524061b5abdb777cd9403e	Ho seguito un corso di italiano avanzato all'università per migliorare la mia grammatica scritta.	Un corso utile.
+lezione	lesson	6	f521a7fe6420245e76fe8e1f4dcc615d	La lezione di matematica è alle nove di mattina nell'aula magna del primo piano.	Una bella lezione.
+materia	subject	6	ea9f44d47a98e4434fe1ad9105c0c64a	La mia materia preferita a scuola era la storia perché mi affascinano le antiche civiltà mediterranee.	Materia di studio.
+esame	exam	6	eb7552e2a95c2734882c4a63ce6bf43f	Ho superato l'esame di stato con il massimo dei voti e adesso posso esercitare la professione.	Un esame difficile.
+voto	grade	6	a071a50330ebfd0a41f8c4a46a195c90	Ho preso un bel voto al test di matematica grazie alle ore di studio fatte la settimana scorsa.	Un buon voto.
+diploma	diploma	6	e42094e44cf3201366abb7ff2ad817a8	Ho ottenuto il diploma di scuola superiore con votazione massima dopo cinque anni di studio intenso.	Un diploma prestigioso.
+laurea	degree	6	408baa543ae1ff7870b392cff5301a31	Mi sono laureato in ingegneria con il massimo dei voti dopo cinque anni di duro lavoro accademico.	La laurea triennale.
+dottorato	doctorate / PhD	6	8f8c7c8f95da21133625049772f2595b	Sto facendo il dottorato di ricerca in fisica all'università di Bologna da tre anni ormai.	Un dottorato impegnativo.
+professore	professor	6	7e0ccd232bfb44c90ce4fe8bc1a3bb52	Il professore di italiano è molto severo ma ha una grande passione per la letteratura medievale.	Un bravo professore.
+insegnante	teacher	6	b52967cc88dc9ce2824dd87dcf7575d2	L'insegnante di mio figlio è gentile e paziente con tutti i bambini della classe quarta elementare.	Un'ottima insegnante.
+alunno	pupil	6	f89a063ecfeddd8ad6e0122d8737fa10	Ogni alunno deve avere il suo libro di testo e un quaderno per ogni materia studiata.	Un alunno diligente.
+studente	student	6	ccde740343df622efc7c6236020b748c	Sono uno studente universitario al terzo anno di economia e commercio nella facoltà milanese famosa.	Uno studente serio.
+allievo	pupil / student	6	50044a7bd503ebb8d4782f5ed123e2b1	L'allievo più bravo della classe ha vinto il premio scolastico di fine anno per merito.	Un caro allievo.
+classe	class	6	1af080153383444d8f5b3602d7bb11fd	La classe di mio figlio è composta da venticinque bambini molto vivaci ma anche molto educati.	Una classe affiatata.
+banco	school desk	6	4ab10179e578c4421552ab639aef64aa	Il bambino è seduto al banco accanto alla finestra dove può vedere il cortile della scuola.	Sotto il banco.
+lavagna	blackboard	6	79dde42a4309cd5c56588ddc7c99826e	Il professore scrive le formule alla lavagna e gli studenti copiano sui quaderni con attenzione.	Lavagna nera.
+quaderno	notebook	6	6382630c511f5d16c420cc96c5618586	Ho un quaderno per ogni materia scolastica e sulla copertina ho scritto il mio nome.	Un quaderno nuovo.
+penna	pen	6	0ec0b9e04fac01d8a16b4b845372d2ac	Mi serve una penna nera per firmare il contratto importante che mi è stato consegnato adesso.	Una bella penna.
+matita	pencil	6	1ca319fa7e736f947e6bc3d82a513274	Disegno con la matita prima di colorare con i pennarelli durante le ore di arte a scuola.	Una matita gialla.
+gomma	eraser	6	7ca32af8fd2c59e80c0ee51b0e4dde7c	Uso la gomma per cancellare gli errori che faccio mentre svolgo gli esercizi di matematica difficili.	Una gomma morbida.
+compito	homework	6	9dd7e02123a396566425c0c3c45b3935	I bambini devono fare i compiti tutti i giorni dopo essere tornati a casa da scuola.	Un compito difficile.
+lettura	reading (act)	6	32bb8353b0e0fdd7ef155337015c36f5	La lettura è il mio passatempo preferito e leggo almeno un libro al mese di varie tematiche.	Una bella lettura.
+aula	classroom	6	1d86ec4ce9d3a4cf793d052268bd1924	L'aula di mio figlio è grande e luminosa con grandi finestre che danno sul cortile esterno.	Un'aula spaziosa.
+ricerca	research	6	a12cfc54ab5a50806103c8d07f92fa9c	La ricerca scientifica richiede molti anni di studio e sperimentazione prima di ottenere risultati concreti.	Una ricerca importante.
+studio	study (act / room)	6	c944634550c698febdd9c868db908d9d	Lo studio dell'italiano richiede impegno costante e tanta pratica con madrelingua per migliorare velocemente.	Studio ogni giorno.
+avvocato	lawyer	6	9229babf01fa35257aa856b5c67c5246	L'avvocato di mio padre è famoso in tutta la città per le sue arringhe brillanti in tribunale.	Un bravo avvocato.
+ingegnere	engineer	6	33604f383554a3a3b4220d918ef0e3d2	Mio cugino è ingegnere informatico e lavora per una grande multinazionale americana di Milano.	Un ingegnere capace.
+architetto	architect	6	ae30a620b504b9cdb99433c72192ab40	L'architetto ha progettato la nostra casa nuova in stile moderno con grandi vetrate panoramiche luminose.	Un architetto famoso.
+infermiere	nurse	6	de754f737bd949716759a603ae71a2cc	L'infermiere mi ha fatto la puntura senza che me ne accorgessi nemmeno un attimo.	Un infermiere gentile.
+dentista	dentist	6	403720b7964ada4c4bfff631252ab2cc	Il dentista mi ha estratto il dente del giudizio la settimana scorsa con una piccola operazione.	Un dentista bravo.
+farmacista	pharmacist	6	aa4b011842874efa6ea3b96391aa818e	Il farmacista mi ha consigliato uno sciroppo efficace per il raffreddore stagionale che mi tormenta.	Un farmacista esperto.
+poliziotto	police officer	6	882e5774ad5adc0ceac6b7dc8df88eec	Il poliziotto mi ha fermato per un controllo di routine durante un blocco stradale a Milano.	Un poliziotto onesto.
+pompiere	firefighter	6	f92e79fc245e8551c24f87ea3067f025	I pompieri sono arrivati subito per spegnere l'incendio nel palazzo abitato del centro storico.	Un pompiere coraggioso.
+soldato	soldier	6	4ca77fa02f2db651abf61f49b096974f	Il soldato è in missione di pace in Africa per sei mesi al servizio dell'esercito italiano.	Un soldato fedele.
+pilota	pilot	6	58228b98f45e6f1bde9c573ea438e5ce	Il pilota dell'aereo ha annunciato l'atterraggio anticipato a causa del maltempo previsto in destinazione.	Un pilota esperto.
+autista	driver	6	3671166e85b495174f769aaaf592f85f	L'autista del bus è gentile e saluta sempre tutti i passeggeri quando salgono a bordo.	Un bravo autista.
+postino	postman	6	d56073982cd608496263cd292b436ddc	Il postino arriva ogni mattina alle nove con la posta del giorno e i pacchi.	Il postino è arrivato.
+idraulico	plumber	6	9fcfcdff5a74f3c3b7db4a0a795cc147	Ho chiamato l'idraulico per riparare la perdita d'acqua del lavandino della cucina che gocciola.	Un idraulico bravo.
+elettricista	electrician	6	331c970d7e3f09f374468d2ccb456eb7	L'elettricista è venuto a riparare l'impianto della luce che non funzionava da due giorni in casa.	Un elettricista esperto.
+falegname	carpenter	6	7c994a62e6bb4042cfcb9a1177629c92	Il falegname mi ha costruito una libreria su misura per il salotto della casa nuova in centro.	Un bravo falegname.
+meccanico	mechanic	6	023001d3b94caad6be753d66773f0225	Il meccanico mi ha detto che la macchina ha bisogno di una riparazione costosa al motore.	Un meccanico fidato.
+sarto	tailor	6	a3722f79b27f637f31cc00a66a3d1478	Il sarto del paese fa ancora gli abiti su misura come si faceva una volta in Italia.	Un sarto abile.
+parrucchiere	hairdresser	6	dc7ad574fae232c08fd8586dfeaf8b4d	Vado dal parrucchiere ogni mese per tagliare i capelli e fare la piega prima delle feste importanti.	Un parrucchiere famoso.
+contadino	farmer	6	a9a42ca71869fee30ba87ec242700e24	Il contadino lavora la terra dall'alba al tramonto per coltivare le verdure che vende al mercato.	Un contadino povero.
+pescatore	fisherman	6	c2068b53431b2963cd20f956da26ad26	Il pescatore esce in mare ogni mattina presto per portare il pesce fresco al mercato del paese.	Un pescatore esperto.
+scrittore	writer	6	c9eae2edc0f96a7794380499e6b0fa05	Lo scrittore famoso ha pubblicato il suo nuovo romanzo dopo cinque anni di lavoro costante e meditato.	Uno scrittore prolifico.
+pittore	painter	6	00dfefa511025df0fe24d41653a6b2ae	Il pittore ha esposto i suoi quadri in una galleria d'arte famosa nel centro di Roma.	Un pittore moderno.
+musicista	musician	6	cee56c3980d10298b99b9cb4024ec2cd	Il musicista suona il violino in un'orchestra sinfonica importante e fa concerti in tutto il mondo.	Un musicista talentuoso.
+attore	actor	6	723ff94feecd51826da52b76bb54d30a	L'attore ha vinto il premio Oscar per il miglior ruolo maschile in un film drammatico americano.	Un grande attore.
+cantante	singer	6	39a8f4b80cbf9b1295d33ffb6bdb9562	Il cantante ha tenuto un concerto memorabile allo stadio davanti a cinquantamila fan entusiasti.	Una brava cantante.
+regista	director (film)	6	af03bde1c7bca350793e832309fc0ef7	Il regista italiano ha vinto il premio al festival di Cannes per il suo nuovo film drammatico.	Un regista geniale.
+fotografo	photographer	6	ffd0f3a5a4d8f6b702bcf20ea9d917fa	Il fotografo ha scattato bellissime foto del matrimonio di mio cugino la settimana scorsa.	Un bravo fotografo.
+giornalista	journalist	6	2a933eee593487c4ecc29f16d30290ca	La giornalista ha scritto un articolo molto interessante sulla situazione politica attuale del paese italiano.	Una giornalista coraggiosa.
+panettiere	baker	6	95c11b2502213f98dac2bc42a5d262b9	Il panettiere apre il forno alle quattro del mattino per preparare il pane fresco per i clienti.	Un buon panettiere.
+cassiere	cashier	6	6534e3845cd940aba7215a67f07ceb40	La cassiera del supermercato è gentile e veloce nel battere lo scontrino dei prodotti acquistati.	La cassiera è gentile.
+commesso	shop assistant	6	6a46067ee484e8b9d1c19224741a4772	Il commesso del negozio mi ha aiutato a scegliere il regalo perfetto per il compleanno di mia moglie.	Un commesso paziente.
+libraio	bookseller	6	0661eb0b99731fc6c8f26e2a8e879038	Il libraio del centro mi consiglia sempre i libri più interessanti del momento secondo i miei gusti.	Un libraio appassionato.
+oste	innkeeper	6	1143484c2a36e81ea8c63671f53c394f	L'oste della trattoria del paese serve i piatti tipici della tradizione locale ai turisti curiosi.	Un oste simpatico.
+sindaco	mayor	6	3035f32b3e3c33d508e2eab230e1b441	Il sindaco del paese ha inaugurato il nuovo parco pubblico in periferia ieri pomeriggio con grande festa.	Un sindaco capace.
+presidente	president	6	1c4708df8cb006d2a007b3920a7b92a5	Il presidente della repubblica italiana ha tenuto un discorso importante per le festività nazionali del due giugno.	Il presidente parla.
+ministro	minister	6	e8912d27c62855d197f0d331fb8d12eb	Il ministro dell'economia ha annunciato nuove misure fiscali per favorire la crescita economica nazionale prossima.	Un ministro importante.
+segretario	secretary	6	d1ebb42fd6deebc64101aa227c03cd9f	Il segretario del partito politico ha indetto un congresso per scegliere il nuovo leader nazionale moderno.	Un bravo segretario.
+assumere	to hire	6	ebf5046ff344375100cdd187b4be90b3	L'azienda ha deciso di assumere dieci nuovi ingegneri per il progetto di sviluppo del software innovativo.	Vogliono assumermi.
+licenziare	to fire	6	06176ac263f9e2e92f9c883f4afa8714	Il capo ha dovuto licenziare alcuni dipendenti a causa della crisi economica che ha colpito l'azienda.	Mi hanno licenziato.
+dimettersi	to resign	6	b1389cfe5ec1c2705bd506fa45ad17c1	Ho deciso di dimettermi dal mio lavoro per cercarne uno migliore in un'altra città italiana grande.	Si è dimesso.
+dirigere	to direct / lead	6	6bea08958519ce00b53340aa8eb4cda0	Il direttore deve dirigere il personale con autorevolezza e gentilezza per ottenere i migliori risultati possibili.	Dirige bene.
+gestire	to manage	6	98846bc1dd3e3f35c3b3c12fe03c34d0	Devo gestire un team di dieci persone e organizzare il loro lavoro quotidiano per la produzione.	Gestisce tutto.
+amministrare	to administer	6	73f11ed628c789c6d9f7f7ddc85474ee	Il direttore amministra le finanze dell'azienda con grande prudenza e responsabilità professionale comprovata.	Amministra l'azienda.
+comandare	to command	6	aeaff5604faf7822239bc26d73f30a36	Il capitano comanda la nave durante la lunga traversata atlantica con esperienza e fermezza assoluta.	Comanda lui.
+obbedire	to obey	6	5f4ac33b4ff09818a60166c2bff52204	Il soldato deve obbedire agli ordini del superiore senza fare domande in situazioni di emergenza.	Devi obbedire.
+insegnare	to teach	6	7f00c3e2e7bc064ab075a4a2034f665b	La maestra insegna ai bambini a leggere e scrivere durante il primo anno di scuola elementare.	Insegnami l'italiano.
+esercitare	to practice / exercise	6	57d83127d4bf6fc5a0cb2772b0044c62	Devo esercitare la mia professione di medico con grande passione e dedizione verso i pazienti malati.	Esercito la professione.
+formare	to form / train	6	44ea5466d03e3a298db49b59e0bc350a	L'azienda forma i nuovi dipendenti con corsi specifici di un mese prima di assegnare loro le mansioni.	Formare il team.
+applicare	to apply	6	8d012f1bf17c2235896e1058511c0acb	Devo applicare le nuove regole aziendali a partire dal mese prossimo per tutti i dipendenti senza eccezioni.	Applico la legge.
+valutare	to evaluate	6	8295b1061ac5c18874b5a5f8e0f0e2f4	Il professore valuta gli studenti in base ai voti dei compiti e alle interrogazioni orali periodiche.	Valuto la situazione.
+programmare	to program / schedule	6	882b077316bd454a646810e435b22f45	Devo programmare il mio lavoro per la prossima settimana per non perdere nessuna scadenza importante prevista.	Programmo le ferie.
+pianificare	to plan	6	2ea979966a48f21add65473225e313b6	Bisogna pianificare bene le vacanze estive per trovare le migliori offerte e i prezzi più convenienti.	Pianifica tutto.
+raccogliere	to gather / pick up	6	cfd874444bc1dd99b0750ed4b9dd947b	Devo raccogliere le foglie cadute dal giardino prima dell'arrivo della pioggia e del maltempo previsto.	Raccogli i giocattoli.
+distribuire	to distribute	6	db94b122edbbe776df293003d41b820e	Il capo deve distribuire equamente il lavoro tra tutti i membri del team di sviluppo software.	Distribuisci le pizze.
+dividere	to divide	6	b0af37f32f92a8ddbedc0b1135ee5347	Dividiamo equamente le spese del viaggio tra tutti i partecipanti per essere giusti con tutti i compagni.	Dividi in due.
+unire	to unite / join	6	1a6cc3cf6ca804e3d0ef08cf63dfdd20	Dobbiamo unire le nostre forze per raggiungere insieme l'obiettivo che ci siamo prefissati come gruppo.	Unisci i puntini.
+separare	to separate	6	f11a6fec4e6324864527de698ea5a895	Devo separare i panni bianchi dai colorati prima di metterli in lavatrice per non rovinarli.	Separa la carta.
+sostituire	to replace	6	5adf4cc2d6f5a9da0ab5846e4a61590f	Devo sostituire la lampadina del soggiorno perché si è bruciata ieri sera durante la cena con gli ospiti.	Sostituisci il filtro.
+scambiare	to exchange	6	912eacdb42e3748319d2b653e1248eac	Vorrei scambiare questo regalo con un altro più adatto alle mie esigenze pratiche di tutti i giorni.	Scambiamo i posti.
+prestare	to lend	6	39cdb839f8848b5565ab88507b7ecae6	Posso prestarti il libro che ho finito di leggere ieri sera tardi se ti interessa la trama.	Prestami i soldi.
+restituire	to return / give back	6	560ef5f8b80fbc3ba4459c49d7986a48	Devo restituire il libro alla biblioteca entro la fine della settimana per evitare di pagare la multa.	Restituisci la chiave.
+rendere	to render / make / give back	6	e30229a33f957c4d84cbb53b3112d84d	Vivere in campagna mi rende felice perché finalmente posso respirare l'aria pulita della natura tranquilla.	Mi rende triste.
+donare	to donate	6	fa17f4e734bacc13a5dfe16ddf603e07	Voglio donare un po' di denaro alla fondazione benefica che aiuta i bambini malati nei paesi in via di sviluppo.	Dona il sangue.
+regalare	to give as gift	6	2c9fd82bcd50edbf8d3dbe2064dfad95	Voglio regalare un bel libro alla mia amica per il suo compleanno la settimana prossima.	Le regalo un mazzo di fiori.
+scoprire	to discover	6	7f8497c882ffafc920f5ba1c7ee05d6d	Voglio scoprire nuovi posti durante questo viaggio in Italia con i miei amici e la famiglia.	Ho scoperto la verità.
+inventare	to invent	6	216a224c6c03909f2ceda523bfa40fb1	Mio nonno è riuscito a inventare un nuovo strumento per lavorare la terra molto più velocemente di prima.	Inventa una storia.
+descrivere	to describe	6	604f49040e2213d971c43b74f2c51a8c	Puoi descrivere la persona che hai visto al parco ieri sera tardi prima dell'incidente avvenuto?	Descrivi la scena.
+assicurare	to assure / insure	6	925cdb5bca041c9b30c8cd18fb1b7c66	Ti posso assicurare che farò tutto il possibile per aiutarti in questa situazione difficile e delicata.	Assicuro la macchina.
+incaricare	to entrust	6	d6f6749e5171f38850d421618188ca2d	Mi hanno incaricato di organizzare la festa di Natale aziendale per tutti i dipendenti della sede.	Lo incarico io.
+occupare	to occupy	6	bb6323dc5afbd7e8c7b4ef4eb3875737	Quel posto a sedere è già occupato da un'altra persona che è andata in bagno per un attimo.	Occupo il tempo.
+contattare	to contact	6	4dccee5dec57d79c58aa14d96aa75a83	Devi contattare il servizio clienti per risolvere il problema con la fattura del mese scorso sbagliata.	Contattami subito.
+comunicare	to communicate	6	eb5ba8f2486405fb80f0b27d80880363	È importante comunicare bene con i propri colleghi per evitare malintesi durante il lavoro di gruppo.	Comunico la novità.
+informare	to inform	6	e04947b5d4e320187ccd7df2f71c2d51	Devo informare il mio capo che sarò assente domani per un'importante visita medica programmata da tempo.	Ti informo subito.
+avvisare	to warn / notify	6	050af4d0ec25508da1c6b8f70f9c83a0	Avvisami quando arrivi a casa stasera così posso stare tranquillo e dormire serenamente.	Avvisa i vicini.
+segnalare	to signal / report	6	229f34ae4c2dcbd05d932dfbfb23e853	Devo segnalare il problema al responsabile dell'ufficio per trovare una soluzione definitiva al più presto possibile.	Segnalo il guasto.
+professionale	professional	6	5d550bfd2ddcbe5be6e2dff9a7071a31	Mostra sempre un atteggiamento professionale sul lavoro anche quando le situazioni diventano difficili e stressanti per tutti.	Una vita professionale.
+qualificato	qualified	6	e2288114a34b32f3a18e030e54b234e0	Sono un tecnico qualificato e specializzato in installazioni di impianti elettrici industriali in grandi fabbriche.	Personale qualificato.
+esperto	expert / experienced	6	91e64340369c63e9ecfb56ec442da424	Mio padre è un esperto di vini italiani e collabora con riviste specializzate del settore enologico.	Un esperto del settore.
+principiante	beginner	6	6d20a8ec595fe8c0564fc24363cd60ae	Sono principiante in cucina e devo imparare ancora molte ricette tradizionali italiane prima di cucinare bene.	Da principiante.
+abile	skilled	6	9bbf6624f5cc6cca044c840c9a4d6a66	È molto abile con le mani e riesce a riparare qualsiasi cosa si rompa in casa senza problemi.	Un artigiano abile.
+capace	capable	6	1acdf8e3bf58c99b3d7071a7edda4b2d	Sei capace di guidare in autostrada di notte da solo o preferisci che ti accompagni qualcuno?	Una persona capace.
+efficiente	efficient	6	f1bac88b41c9e8c95ca72f5c5841a52b	Il nuovo sistema informatico è molto più efficiente di quello vecchio e fa risparmiare tempo prezioso.	Un metodo efficiente.
+produttivo	productive	6	fac17e83976ed5cd6b334c2c1222a23a	Ho passato una giornata davvero produttiva e sono riuscito a finire tutti i compiti previsti per oggi.	Un lavoro produttivo.
+redditizio	profitable	6	76413cd5afcd80e298713148d2096bf0	Quel nuovo investimento è davvero redditizio e mi sta dando ottimi guadagni dopo solo sei mesi.	Un affare redditizio.
+costoso	expensive	6	3f53f908224262041ce482929445884c	Quell'orologio svizzero è troppo costoso per le mie possibilità economiche al momento del mio nuovo stipendio.	Un albergo costoso.
+economico	economical / cheap	6	de55fbf50dab0c4f841f6020ed600e67	Ho trovato un volo molto economico per Parigi per il prossimo weekend con la compagnia low cost.	Una soluzione economica.
+gratuito	free of charge	6	7fd93560fa6a81fc3b31fa5d6e9d1086	L'ingresso al museo è gratuito la prima domenica di ogni mese per tutti i visitatori italiani.	Servizio gratuito.
+conveniente	convenient / cheap	6	6b00e4431cc78fca28c8c8ca1531e661	È più conveniente comprare in offerta al supermercato del centro che pagare i prezzi pieni del piccolo negozio.	Un prezzo conveniente.
+esigente	demanding	6	6218d56aa7762b8cea20b1c794b40d50	Il mio capo è molto esigente ma giusto con tutti i dipendenti del nostro reparto produttivo.	Un cliente esigente.
+disponibile	available	6	0fdcda857572922f39c7a3c35533fdd0	Sono sempre disponibile ad aiutare i miei colleghi quando ne hanno bisogno durante le ore di lavoro.	Sono disponibile.
+orario	schedule / hours	6	f14f2f8695179071d03015da0630348f	L'orario di apertura del negozio è dalle nove alle diciannove dal lunedì al sabato escluse le feste.	Orario continuato.
+agenda	agenda / planner	6	d0dbdfd8edf8dd1608405055c26adc94	Scrivo tutti gli appuntamenti sulla mia agenda elettronica per non dimenticare nessun impegno importante della settimana.	Una fitta agenda.
+appuntamento	appointment	6	4dc75af5cf5729db73facdae141172e1	Ho un appuntamento dal medico domani mattina alle nove per la visita di controllo annuale prevista.	Prendo appuntamento.
+data	date	6	8d777f385d3dfec8815d20f7496026dc	Qual è la data del nostro prossimo incontro? Devo segnarmela sulla agenda per non dimenticare l'impegno.	La data di nascita.
+periodo	period	6	b98917264cbb9144fcf9ce9861bbcd37	Questo è un periodo difficile della mia vita ma sono sicuro che presto andrà tutto bene.	Un lungo periodo.
+durata	duration	6	1b68ae6f4069df2f5ff41a52454b535e	La durata del corso è di sei mesi e prevede tre lezioni alla settimana di due ore ciascuna.	Una breve durata.
+intervallo	interval / break	6	9b54f2510549e4899ba2ea04d48f9338	Durante l'intervallo fra le lezioni i bambini giocano nel cortile della scuola elementare con grande gioia.	Un breve intervallo.
+frequenza	frequency	6	d347c725089515b84dfec18145b6bf9b	La frequenza delle riunioni aziendali è settimanale e si svolgono ogni lunedì mattina alle nove in punto.	Alta frequenza.
+ritmo	rhythm / pace	6	4ec61f637a5e90f8fef5ec75334a3f3c	Il ritmo di vita in città è molto più frenetico di quello tranquillo della campagna toscana.	Un buon ritmo.
+programma	program / schedule	6	0132fb50cb37f922f0810f1740306382	Il programma del convegno prevede tre giornate di conferenze su temi importanti dell'economia mondiale moderna.	Un programma denso.
+sessione	session	6	40b2f04a8e114f7993f7ef33fe80553b	La sessione di esami invernale inizia il primo dicembre e finisce il quindici febbraio del prossimo anno.	Una sessione difficile.
+conferenza	conference / lecture	6	b40bfb451c282eb5f630b076c695f29a	Ho partecipato a una conferenza interessante sui cambiamenti climatici tenuta da un famoso scienziato italiano.	Una conferenza stampa.
+presentazione	presentation	6	ed76107a91fcb6777961908f05658a13	Devo preparare la presentazione del progetto per la riunione di domani mattina con tutti i clienti importanti.	Una bella presentazione.
+anniversario	anniversary	6	cf5305ec75c9dc7d26be5ca1e57b7336	Festeggiamo il nostro anniversario di matrimonio andando a cena nel ristorante dove ci siamo conosciuti tanti anni fa.	Buon anniversario!
+calendario	calendar	6	c80c7d5e801ff686643a20b33710d3ec	Segno tutti gli appuntamenti importanti sul calendario della cucina così tutta la famiglia può vederli ogni giorno.	Calendario annuale.

@@ -1,8 +1,32 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.SharedPreferences
 import java.io.InputStream
+import java.io.SequenceInputStream
+import java.util.Collections
 import kotlin.random.Random
+
+fun openDictionaryStream(context: Context, language: String): InputStream {
+    return when (language) {
+        "de" -> context.resources.openRawResource(R.raw.dictionary_sorted_german)
+        "it" -> openItalianDictionary(context)
+        else -> context.resources.openRawResource(R.raw.dictionary_sorted_2)
+    }
+}
+
+private fun openItalianDictionary(context: Context): InputStream {
+    val streams = mutableListOf<InputStream>()
+    var i = 1
+    while (true) {
+        val name = "dictionary_sorted_italian_%02d".format(i)
+        val resId = context.resources.getIdentifier(name, "raw", context.packageName)
+        if (resId == 0) break
+        streams.add(context.resources.openRawResource(resId))
+        i++
+    }
+    return SequenceInputStream(Collections.enumeration(streams))
+}
 
 class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences) {
     val csvData: List<Vocab> = readCsv(inputStream)
@@ -60,14 +84,21 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         val inactiveCsvData = csvData.filter { it.nTimesViewed == 0 && !it.ignore }
         if (inactiveCsvData.isEmpty()) {
             return getActiveVocabWeightened()
-        } else {
-            return inactiveCsvData.get(Random.nextInt(inactiveCsvData.size))
         }
+        val minImportance = inactiveCsvData.minOf { it.importance }
+        val candidates = inactiveCsvData.filter { it.importance == minImportance }
+        return candidates[Random.nextInt(candidates.size)]
     }
 
     fun getActiveVocabWeightened(): Vocab {
         val activeData = csvData.filter { (it.nTimesViewed != 0) && !it.ignore && (it.sortValue() > 0.0) }
         if (activeData.size < 20) {
+            val inactive = csvData.filter { it.nTimesViewed == 0 && !it.ignore }
+            if (inactive.isNotEmpty()) {
+                val minImportance = inactive.minOf { it.importance }
+                val candidates = inactive.filter { it.importance == minImportance }
+                return candidates[Random.nextInt(candidates.size)]
+            }
             val available = csvData.filter { !it.ignore && !(it.nTimesViewed > 0 && it.failureProbability() < 0.1f) }
             if (available.isEmpty()) return csvData[Random.nextInt(csvData.size)]
             return available[Random.nextInt(available.size)]

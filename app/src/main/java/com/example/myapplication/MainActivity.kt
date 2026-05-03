@@ -161,13 +161,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         currentLanguage = sharedPreferences.getString("app_language", "fr") ?: "fr"
         foreignLocale = when (currentLanguage) {
             "de" -> Locale.GERMAN
+            "it" -> Locale.ITALIAN
             else -> Locale.FRENCH
         }
-        val dictionaryRes = when (currentLanguage) {
-            "de" -> R.raw.dictionary_sorted_german
-            else -> R.raw.dictionary_sorted_2
-        }
-        val inputStream: InputStream = resources.openRawResource(dictionaryRes)
+        val inputStream: InputStream = openDictionaryStream(this, currentLanguage)
         textProgressFinished.text = ""
         textProgressActive.text = ""
         textProgressUnseen.text = ""
@@ -175,6 +172,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         textGuessLong.text = ""
         textFr.text = when (currentLanguage) {
             "de" -> "Lerne Deutsch!"
+            "it" -> "Impara l'italiano!"
             else -> "Apprenez le français !"
         }
         textEn.text = getString(R.string.START_INFO_TEXT)
