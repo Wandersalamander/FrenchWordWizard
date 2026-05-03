@@ -7,20 +7,19 @@ import java.io.SequenceInputStream
 import java.util.Collections
 import kotlin.random.Random
 
-fun openDictionaryStream(context: Context, language: String): InputStream {
-    return when (language) {
-        "de" -> context.assets.open("german/dictionary_sorted_german.csv")
-        "it" -> openItalianDictionary(context)
-        else -> context.assets.open("french/dictionary_sorted_2.csv")
-    }
-}
+private val tierFileRegex = Regex("""dictionary_sorted_.+_\d{2}\.csv""")
 
-private fun openItalianDictionary(context: Context): InputStream {
-    val files = context.assets.list("italian")
-        ?.filter { it.startsWith("dictionary_sorted_italian_") && it.endsWith(".csv") }
+fun openDictionaryStream(context: Context, language: String): InputStream {
+    val folder = when (language) {
+        "de" -> "german"
+        "it" -> "italian"
+        else -> "french"
+    }
+    val files = context.assets.list(folder)
+        ?.filter { tierFileRegex.matches(it) }
         ?.sorted()
         .orEmpty()
-    val streams = files.map { context.assets.open("italian/$it") }
+    val streams = files.map { context.assets.open("$folder/$it") }
     return SequenceInputStream(Collections.enumeration(streams))
 }
 

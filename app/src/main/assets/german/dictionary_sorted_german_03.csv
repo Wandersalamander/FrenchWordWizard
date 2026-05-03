@@ -1,0 +1,193 @@
+der Koffer	suitcase	3	f0dda619efce1d23fc44b150452dbf8e	Der Koffer, der am Flughafen versehentlich auf ein falsches Gepäckband gelegt worden war.	Der Koffer ist zu schwer.
+der Regenschirm	umbrella	3	333fa42c5930fa3cae73d74b3fe63e47	Hätte sie ihren Regenschirm nicht vergessen.	Nimm den Regenschirm mit.
+die Brille	glasses	3	389e26a6f488c2361d745de1acdb15ed	Ohne ihre Brille, die sie leider zu Hause vergessen hatte, konnte sie die Buchstaben auf der Tafel kaum erkennen.	Ich brauche eine neue Brille.
+der Ring	ring	3	48dfeaebbf0f5f7bdfec80e31856246c	Der Ring, den er ihr bei Sonnenuntergang am Strand überreichte, war ein Symbol ihrer ewigen Liebe und Verbundenheit.	Der Ring ist aus Gold.
+die Uhr	watch / clock	3	50be617d4255240da572006ac95dcadf	Die alte Uhr seines Urgroßvaters, die vor über hundert Jahren angefertigt wurde, funktioniert noch.	Die Uhr zeigt drei Uhr an.
+die Kette	chain / necklace	3	4b4d0ad190b48c23aeee0fae379924e6	Die Kette, die sie zu ihrem achtzehnten Geburtstag von ihrer Mutter bekommen hatte.	Die Kette ist sehr hübsch.
+der Schmuck	jewelry	3	08bf1ee35577d169ddb4eac5b4e14261	Der Schmuck, der seit Generationen in der Familie weitergegeben worden war.	Der Schmuck glänzt.
+die Socke	sock	3	fe6fc4fd5b8fe8e8f63c50759526b8dd	Die Socke, die nach dem Waschen einzeln aus der Maschine kam, fand erst Tage später ihr Gegenstück hinter der Trommel.	Die Socke hat ein Loch.
+die Unterwäsche	underwear	3	e685ae2ac3a0faddfea562a9ff0c062f	Die Unterwäsche, die aus einem weichen und atmungsaktiven Material hergestellt wurde.	Die Unterwäsche ist bequem.
+der Ärmel	sleeve	3	4e1ac481f1755753817909220a7709c4	Da der Ärmel seines Hemdes beim Kochen versehentlich in die Soße geraten war.	Der Ärmel ist zu kurz.
+der Knopf	button	3	500417e22d72c449a148052f3c6e4540	Der Knopf, der sich beim Anziehen von seinem Lieblingshemd gelöst hatte, musste dringend wieder angenäht werden.	Der Knopf fehlt.
+der Reißverschluss	zipper	3	e1d2e82beec113b9480aa4dc301f2cc1	Der Reißverschluss ihrer Winterjacke klemmte ausgerechnet an dem Tag, als die Temperaturen unter minus zehn Grad fielen.	Der Reißverschluss klemmt.
+die Größe	size	3	e45a8f172710f86ed3b0efe4db6bba99	Obwohl sie ihre genaue Größe kannte, bestellte sie vorsichtshalber zwei verschiedene Nummern.	Welche Größe tragen Sie?
+das Zimmer	room	3	fddf77a995804ea53c37e5fb011106fb	Obwohl das Zimmer, das wir ursprünglich gebucht hatten, bereits vergeben war, wurde uns ein größeres zugewiesen.	Das Zimmer ist groß.
+das Schlafzimmer	bedroom	3	a2facbd1138acd816a5cb9caea3bb6ea	Wenn ich ein größeres Schlafzimmer hätte, würde ich mir einen begehbaren Kleiderschrank einbauen lassen.	Das Schlafzimmer hat ein Fenster.
+das Wohnzimmer	living room	3	9368a0fa8645b98dd21c425a869a73b6	Das Wohnzimmer, in dem sich die ganze Familie jeden Abend versammelt, wurde kürzlich renoviert.	Wir sitzen im Wohnzimmer.
+das Badezimmer	bathroom	3	925b600052e2ad4be3c2f438609cb42e	Das Badezimmer, dessen Fliesen schon seit Jahren erneuert werden müssten, wird nächste Woche endlich saniert.	Das Badezimmer ist sauber.
+die Toilette	toilet	3	215729e4aebf17ae11bb3ab3e1f22f56	Die Toilette, die erst vor kurzem repariert worden war, musste erneut vom Klempner überprüft werden.	Wo ist die Toilette?
+der Flur	hallway	3	1e5c6df217e863fd057564065eaff39d	Im Flur, der die verschiedenen Zimmer miteinander verbindet, hängen zahlreiche Familienfotos an den Wänden.	Der Flur ist lang und dunkel.
+der Keller	basement, cellar	3	9308eaa6ebc5db1e6be7bf48fbc1e602	Hätten wir den Keller früher isoliert, wären die Heizkosten im letzten Winter deutlich niedriger gewesen.	Im Keller ist es kalt.
+der Dachboden	attic	3	9dbd2aa19f8e0eabae4d3c8e1ec9434a	Auf dem Dachboden, der seit Jahren nicht mehr aufgeräumt worden ist, wurden alte Briefe aus dem Krieg gefunden.	Der Dachboden ist voll.
+die Treppe	stairs, staircase	3	c5d76914cb5623ad243332ad72f59aec	Die Treppe, die in den zweiten Stock führt, müsste dringend repariert werden, da einige Stufen morsch sind.	Die Treppe ist steil.
+die Wand	wall	3	72aac46036a470069b28766055d73c66	An der Wand, die frisch gestrichen worden war, hing ein Gemälde, das meine Großmutter gemalt hatte.	Die Wand ist weiß.
+der Boden	floor, ground	3	eba6908826434abcd7f26a2fae9c4feb	Der Boden, der gerade erst verlegt worden war, wurde durch das eindringende Wasser stark beschädigt.	Der Boden ist aus Holz.
+die Decke	ceiling	3	0590cc60d8b4eeae750ad7946414750b	Wenn die Decke nicht so niedrig wäre, könnte man in diesem Raum problemlos einen großen Kronleuchter aufhängen.	Die Decke ist sehr hoch.
+das Dach	roof	3	ceac1d5588ede65fd67f279174d0f8c1	Das Dach, das im letzten Sturm beschädigt worden war, muss so schnell wie möglich repariert werden.	Das Dach ist rot.
+der Schrank	cupboard, wardrobe	3	e6aa41f55210e71f48064e4ef8f00b45	Der Schrank, den mein Großvater vor fünfzig Jahren gebaut hatte, steht immer noch im Schlafzimmer meiner Eltern.	Der Schrank ist voll.
+das Regal	shelf	3	500c845cf162076db5cbfa90953d4449	Das Regal, das an der Wand befestigt werden sollte, ist heruntergefallen, weil die Dübel nicht richtig saßen.	Das Regal hängt an der Wand.
+die Lampe	lamp	3	a37567ab4916a21d36deec9b37266694	Die Lampe, die seit Wochen flackerte und die niemand reparieren wollte, ist gestern endgültig ausgefallen.	Die Lampe ist kaputt.
+der Spiegel	mirror	3	23d89ba7865254c9da2161dbd61226a3	Der Spiegel, der im Badezimmer hängt und der bereits einen kleinen Sprung hat, sollte bald ersetzt werden.	Der Spiegel ist rund.
+der Teppich	carpet, rug	3	f952ea02ae749acec3fdaec59209dda7	Den Teppich, der von meiner Tante aus Persien mitgebracht worden war, hätte ich niemals so günstig verkaufen sollen.	Der Teppich ist weich.
+die Heizung	heating, radiator	3	9df2b95ea5d7617764cd9c387ea2ef7a	Die Heizung, die trotz mehrfacher Reparaturversuche nicht richtig funktionierte.	Die Heizung ist an.
+der Aufzug	elevator, lift	3	7025133b9ff1b89d588479ebb793e404	Der Aufzug, der seit drei Tagen außer Betrieb war, konnte erst repariert werden.	Der Aufzug ist kaputt.
+die Wohnung	apartment, flat	3	d8fbb3aa7fa0c07ee1ee2e6629b54a75	Die Wohnung, in der wir seit zehn Jahren leben und die wir sehr lieben, soll nächstes Jahr renoviert werden.	Die Wohnung hat drei Zimmer.
+die Miete	rent	3	b0c160dc83bd2ef3117b6171d475a997	Wenn die Miete nicht so hoch wäre, könnten wir uns eine größere Wohnung in der Innenstadt leisten.	Die Miete ist teuer.
+der Vermieter	landlord	3	124e46228876cd65e7b48a7fd715cbac	Der Vermieter, der uns versprochen hatte, die Heizung rechtzeitig reparieren zu lassen.	Der Vermieter ist nett.
+der Nachbar / die Nachbarin	neighbor	3	a182238b12b79730f135b5799f3b307f	Unser Nachbar, dessen Hund jede Nacht bellt, wird langsam zum Problem.	Der Nachbar ist freundlich.
+der Schlüssel	key	3	d4adf2e21daa2b1d69385edfd2d864e2	Den Schlüssel, den ich gestern noch in meiner Jackentasche hatte, konnte ich trotz intensiver Suche nirgends finden.	Ich habe den Schlüssel verloren.
+das Schloss	lock, castle	3	b06c3204decd4b4c7b97321e25e46655	Das Schloss, das an der Haustür eingebaut worden war, ließ sich nicht mehr öffnen, obwohl der Schlüssel passte.	Das Schloss ist alt.
+die Klingel	doorbell	3	ca4769cd98c820d469c2a91dcecb8d8e	Die Klingel, die seit Wochen defekt war und die der Vermieter hätte reparieren sollen, wurde endlich ausgetauscht.	Die Klingel funktioniert nicht.
+der Briefkasten	mailbox	3	9559fdf8d023565fb066f5b539f76477	Der Briefkasten, der schon seit Tagen nicht geleert worden war, quoll über vor Werbeprospekten und Rechnungen.	Der Briefkasten ist leer.
+die Garage	garage	3	53e071fb13b0134cd96c111702e5253b	Die Garage, in der früher zwei Autos Platz fanden, wird jetzt als Werkstatt genutzt, was den Nachbarn missfällt.	Das Auto steht in der Garage.
+der Balkon	balcony	3	f9e3ede373ef3d9bb1d51f84ca7a83aa	Auf dem Balkon, von dem aus man einen wunderbaren Blick über die Stadt hätte.	Der Balkon ist klein.
+die Reise	trip, journey	3	dc8aa4d169a073736c1e73797baa919e	Die Reise, auf die wir uns seit Monaten gefreut hatten.	Die Reise war schön.
+der Urlaub	vacation, holiday	3	89152715791ffd7f0f34117562ce55ba	Wenn ich mehr Urlaub hätte, würde ich jedes Jahr mindestens drei Wochen durch Südamerika reisen.	Wir fahren in den Urlaub.
+der Flughafen	airport	3	84e50f1c126efc810782c354e87a2b5a	Am Flughafen, der wegen des starken Nebels vorübergehend geschlossen worden war.	Der Flughafen ist weit weg.
+der Bahnhof	train station	3	067495453a429be6db0149c65a6f27c5	Am Bahnhof, an dem sich täglich Tausende von Pendlern drängen, wurde eine neue Anzeigetafel installiert.	Der Bahnhof ist in der Stadtmitte.
+die Haltestelle	stop (bus/tram)	3	fe9fa95c21e31991cc862a54a4019b71	An der Haltestelle, die erst kürzlich renoviert worden war, standen trotz des strömenden Regens viele Menschen.	Die Haltestelle ist hier.
+das Ticket	ticket	3	7675d2bae6f0f39e8384cf0757cf4c6b	Das Ticket, das ich online gebucht hatte, konnte am Automaten nicht eingelesen werden.	Ich kaufe ein Ticket.
+der Fahrplan	timetable, schedule	3	789e3fc43300e60b805f415b841abc2c	Der Fahrplan, der wegen der Bauarbeiten mehrfach geändert worden war, sorgte bei den Pendlern für große Verwirrung.	Der Fahrplan hängt an der Wand.
+die Abfahrt	departure	3	77f2c6ac9c9ce38b4c69effbe0969b99	Die Abfahrt, die ursprünglich für acht Uhr geplant gewesen war.	Die Abfahrt ist um zehn Uhr.
+die Ankunft	arrival	3	87ee194ff2b830eeda9bfce4a5dded19	Die Ankunft, auf die alle Familienmitglieder sehnsüchtig gewartet hatten.	Die Ankunft ist um fünf Uhr.
+das Gepäck	luggage, baggage	3	bfdd1690b60e5b8c80774cb502dd5a1c	Das Gepäck, das bei der Umsteigeverbindung in Frankfurt hätte umgeladen werden sollen.	Mein Gepäck ist schwer.
+der Reisepass	passport	3	97fcabc8298451f53fbb02c72f55a292	Den Reisepass, ohne den man nicht über die Grenze gelassen wird.	Ich brauche meinen Reisepass.
+die Grenze	border, boundary	3	f236369e7664d9eda43d356d9df871ea	An der Grenze, die wir gegen Mitternacht erreichten, wurden alle Pässe von den Beamten äußerst gründlich kontrolliert.	Die Grenze ist nicht weit.
+das Visum	visa	3	b6b8390a2a39ab6a2d4629f0a6821b2e	Das Visum, das ich rechtzeitig hätte beantragen sollen.	Ich brauche ein Visum.
+die Landkarte	map	3	e07870999bf1a1853622eff567a522f0	Die Landkarte, die wir im Buchladen gekauft hatten, zeigte mehrere Straßen, die längst umgebaut worden waren.	Ich schaue auf die Landkarte.
+die Richtung	direction	3	9e7cd8824139ffd4260282ae07832445	Die Richtung, in die wir hätten abbiegen sollen, war wegen einer fehlenden Beschilderung nicht erkennbar.	In welche Richtung muss ich gehen?
+nördlich	northern, northward	3	e0d361148ad2ff368784d4f0240d4c54	Die nördlich gelegenen Regionen, die im Winter besonders kalt werden, sind für ihre atemberaubende Landschaft bekannt.	Die Stadt liegt nördlich von hier.
+südlich	southern, southward	3	399c3c22d8c127bd861d6bcdea81601f	Die südlich des Flusses gelegenen Dörfer, die früher isoliert waren, sind durch eine neue Brücke verbunden worden.	Das Dorf liegt südlich der Stadt.
+östlich	eastern, eastward	3	d72042eb7817dcccfab3a07d2ca0d202	Die östlich des Gebirges liegenden Täler, in denen es kaum regnet, sind für den Weinanbau besonders geeignet.	Der Park liegt östlich vom Bahnhof.
+westlich	western, westward	3	c9c76872488c98e64ce719831e8f92a4	Die westlich der Grenze liegenden Gebiete, die historisch umstritten waren.	Das Meer liegt westlich von uns.
+links	left	3	1784ca8185bbee7acac6b43c58f3e55c	Wenn Sie an der nächsten Kreuzung links abbiegen, kommen Sie direkt zum Marktplatz.	Gehen Sie links.
+rechts	right	3	b09a6d11d7dafbce3b722cadb1dcab9c	Obwohl mir empfohlen wurde, rechts abzubiegen, nahm ich die falsche Abzweigung und verirrte mich im Industriegebiet.	Die Bank ist rechts.
+geradeaus	straight ahead	3	502d107df408f23a50659339df9bacfe	Wenn Sie geradeaus weitergehen, erreichen Sie nach etwa zehn Minuten den Dom.	Gehen Sie geradeaus.
+die Kreuzung	intersection, crossroads	3	6f84feb636bdc41bf460437142d8784f	An der Kreuzung, an der sich täglich mehrere Unfälle ereignen, sollte längst eine Ampel installiert worden sein.	Die Kreuzung ist gefährlich.
+die Ampel	traffic light	3	5ea408f2bb7a5bd45595fe3bec627694	Die Ampel, die an der Hauptstraße installiert worden war, fiel während des Stromausfalls aus.	Die Ampel ist rot.
+die Brücke	bridge	3	f5044fee4055234ac8a1dc071c2c555e	Die Brücke, die über den Fluss führt, steht heute unter Denkmalschutz.	Die Brücke ist sehr alt.
+die Autobahn	highway, motorway	3	5d5c98392fd817626f9b714b2e14177c	Auf der Autobahn, die wegen der Baustelle nur einspurig befahrbar war, standen wir über drei Stunden im Stau.	Die Autobahn ist voll.
+der Stau	traffic jam	3	a849a6864b10e29890aeeb7e2b5a1aa9	Im Stau, der sich wegen eines Unfalls auf der Autobahn gebildet hatte.	Wir stehen im Stau.
+die Tankstelle	gas station	3	f93ee2f0b3f873211fa65619ca01bb5a	An der Tankstelle, die als einzige in der Umgebung rund um die Uhr geöffnet hatte.	Die Tankstelle ist um die Ecke.
+parken	to park	3	ee9a3285effc5338be3db238fc24f7a5	Obwohl es verboten war, dort zu parken, stellten viele Autofahrer ihre Wagen auf dem Gehweg ab.	Hier darf man nicht parken.
+der Beruf	profession, occupation	3	835d9d8feed1f68d18f41aa2e4d3578e	Den Beruf, den sie seit ihrer Jugend hatte ausüben wollen, konnte sie erst nach einem langen Studium ergreifen.	Mein Beruf macht mir Spaß.
+die Stelle	position, job	3	a942961e1c6e3eab5f472282df3c7e40	Die Stelle, auf die ich mich vor zwei Monaten beworben hatte, wurde leider intern vergeben.	Ich suche eine neue Stelle.
+der Chef / die Chefin	boss	3	b2882f9119ac09b80bd57eae57b87dc2	Der Chef, dem die schlechten Quartalszahlen vorgelegt worden waren, beschloss sofort, eine Krisensitzung einzuberufen.	Der Chef ist heute nicht da.
+der Kollege / die Kollegin	colleague	3	ce9b3102c1251f5bd32c7af87ae4c1e2	Der Kollege, mit dem ich seit fünf Jahren zusammenarbeite, wird nächsten Monat in Rente gehen.	Mein Kollege ist sehr nett.
+das Büro	office	3	39af7aaa5d0702b1f56ef7870ed1f6b8	Im Büro, das erst kürzlich renoviert worden war, herrschte eine angenehme Arbeitsatmosphäre.	Ich bin im Büro.
+der Computer	computer	3	129b448877f0a2870189d2d0f67674ae	Der Computer, der gestern noch einwandfrei funktioniert hatte, ließ sich heute Morgen nicht mehr hochfahren.	Der Computer ist neu.
+der Bildschirm	screen, monitor	3	31a4d80d9a3a8c87842c913bec364cfc	Der Bildschirm, der erst letzte Woche geliefert worden war, zeigte bereits nach wenigen Tagen störende Pixelfehler.	Der Bildschirm ist groß.
+die Tastatur	keyboard	3	52bb9ffd93b4a35e7cac118f60fc6768	Die Tastatur, an die ich mich nach dem Wechsel von einem deutschen zu einem englischen Layout hätte gewöhnen müssen.	Die Tastatur ist schmutzig.
+die Maus	mouse (computer)	3	e3a5a51a10c7d14c86d43e2319ea08b1	Die Maus, die mir mein Kollege empfohlen hatte.	Die Maus funktioniert nicht.
+der Drucker	printer	3	46e4e6e1d5ca9992edc955ae1d580470	Der Drucker, der schon seit Wochen Papierstaus verursachte, wurde endlich durch ein neues Modell ersetzt.	Der Drucker druckt zu langsam.
+die E-Mail	email	3	9b1ba10b279632f18b483110e52fa8d0	Die E-Mail, die ich gestern an den Kunden geschickt hatte, der nicht für ihn bestimmt war, sorgte für große Aufregung.	Ich schreibe eine E-Mail.
+das Telefon	telephone	3	1f350a67609a1698eed327c82b112f56	Das Telefon, das den ganzen Vormittag ununterbrochen geklingelt hatte, wurde schließlich auf lautlos gestellt.	Das Telefon klingelt.
+das Gehalt	salary	3	e43019d5e99c9d2eb0f2108ed1be67e4	Das Gehalt, über das im Vorstellungsgespräch gesprochen worden war, entsprach nicht dem.	Das Gehalt ist gut.
+die Bewerbung	application (job)	3	347650c02d212541e58e9f3d7f191d0c	Die Bewerbung, die ich trotz großer Zweifel abgeschickt hatte.	Ich schreibe eine Bewerbung.
+das Vorstellungsgespräch	job interview	3	0158d03d06a04d5389dcf1f17bb83ea1	Das Vorstellungsgespräch, auf das ich mich wochenlang vorbereitet hatte, verlief so gut.	Das Vorstellungsgespräch war gut.
+der Vertrag	contract	3	9a4383e0082b3504c78c2c83b8634dff	Den Vertrag, den ich hätte unterschreiben sollen, musste ich meinem Anwalt vorlegen.	Ich unterschreibe den Vertrag.
+kündigen	to quit, to terminate	3	f0410f26df3108c0bb0f704e4238f2df	Obwohl er eigentlich hätte kündigen wollen, entschied er sich zu bleiben.	Er will kündigen.
+die Besprechung	meeting	3	254a4f86f4f5d7a65bc9d76a5c7e4eec	Die Besprechung, die eigentlich nur eine Stunde hätte dauern sollen, zog sich bis in den späten Nachmittag hin.	Die Besprechung ist um zwei Uhr.
+das Projekt	project	3	bd0f5967f1de459b17ee49ec88e2584a	Das Projekt, an dem wir seit sechs Monaten gearbeitet hatten, wurde überraschend eingestellt.	Das Projekt ist fast fertig.
+die Aufgabe	task, assignment	3	7df7fb518bd5daa3b4f5db127f78e17a	Die Aufgabe, die mir übertragen worden war, erwies sich als weitaus komplexer als erwartet.	Die Aufgabe ist schwer.
+die Frist	deadline	3	087ef56991173b1bd0064d9f28d6103f	Die Frist, die für die Abgabe des Berichts gesetzt worden war, konnte nicht eingehalten werden.	Die Frist endet morgen.
+der Termin	appointment	3	8af9c9c3498654d1b335bc5cc361c379	Den Termin, den ich vor drei Wochen vereinbart hatte, musste ich verschieben.	Ich habe einen Termin um drei.
+die Pause	break, pause	3	ee8a7361f6a86535d7d6441748708704	In der Pause, besprachen wir die wichtigsten Punkte für die Nachmittagssitzung.	Ich mache eine Pause.
+die Überstunde	overtime hour	3	db3bc5ed1302b47e11915ad482f5e1bf	Die Überstunde, die mir aufgrund des dringenden Auftrags auferlegt worden war.	Ich muss heute eine Überstunde machen.
+der Feierabend	end of workday	3	4bc030ff90c1090702a24834fa57f46a	Nach dem Feierabend, auf den ich mich den ganzen Tag gefreut hatte, ging ich direkt ins Fitnessstudio.	Es ist Feierabend.
+die Erfahrung	experience	3	3e04fe90308efe639a5c93d327ddb5da	Die Erfahrung, die sie während ihres Auslandsaufenthalts gesammelt hatte, erwies sich bei der Jobsuche als wertvoll.	Ich habe viel Erfahrung.
+die Ausbildung	training, apprenticeship	3	16c32c0f775f3ee1fd7712888ef87888	Die Ausbildung, die er nach dem Abitur begonnen hatte, verschaffte ihm hervorragende Berufschancen.	Die Ausbildung dauert drei Jahre.
+das Praktikum	internship	3	c5aa78d306af7ba295b21aba66e606d0	Das Praktikum, das ich während des Studiums absolviert hatte, half mir dabei.	Das Praktikum war interessant.
+der Lebenslauf	resume, CV	3	8f857555ef6267d0d36ba71ff24b1a0e	Der Lebenslauf, den ich für die Bewerbung geschrieben hatte, wurde von einer Personalberaterin überarbeitet.	Mein Lebenslauf ist zwei Seiten lang.
+das Zeugnis	certificate, report card	3	f3745404119f36bb62a0fa282640bc26	Das Zeugnis, das ihm nach Abschluss der Ausbildung ausgestellt worden war.	Mein Zeugnis ist gut.
+das Tier	animal	3	17fb0f87f4179466a2b4e622deaefdbc	Das Tier, das im Wald gefunden und in die Auffangstation gebracht worden war.	Das Tier ist im Garten.
+der Hund	dog	3	bfdd100b510ef83746e065e7d03397db	Der Hund, der seit einer Woche im Tierheim gewesen war, fand endlich ein liebevolles Zuhause.	Der Hund spielt im Park.
+die Katze	cat	3	05493f5115a15523f70e93508f337ce5	Die Katze, die sich auf dem Dachboden versteckt hatte, wurde erst gefunden.	Die Katze schläft auf dem Sofa.
+der Vogel	bird	3	f55dbc7b64fdb49e66dbf86096f25d8e	Der Vogel, dessen Gesang jeden Morgen durch das offene Fenster zu hören war.	Der Vogel singt laut.
+die Ente	duck	3	19da93d5734cd25709615c5c4b4abd27	Die Ente, die am Teich ihre Küken aufzog, kehrte jeden Frühling zurück.	Die Ente schwimmt im See.
+die Kuh	cow	3	fd1cdb3d2551393a07ecc1d1ef1e8946	Die Kuh, die auf der Weide stand und die vom Bauern zweimal täglich gemolken wurde, gab besonders reichhaltige Milch.	Die Kuh steht auf der Wiese.
+das Pferd	horse	3	ebf5d085779012bd20afecb3b2d2ce0a	Das Pferd, das jahrelang im Rennsport eingesetzt worden war, wurde nach seiner Karriere auf einen Gnadenhof gebracht.	Das Pferd läuft schnell.
+das Schwein	pig	3	29415000a9546af9be1373e4f564c2d2	Das Schwein, das auf dem Bauernhof aufgewachsen war und von den Kindern als Haustier betrachtet wurde.	Das Schwein ist rosa.
+das Schaf	sheep	3	f7a3f4551af5f00ec7494a89f556b91b	Das Schaf, das sich von der Herde entfernt hatte, musste vom Bergrettungsdienst geholt werden.	Das Schaf frisst Gras.
+die Ziege	goat	3	9caf65adbfd1d418aefaf83af3d0c4fc	Die Ziege, die aus dem Gehege ausgebrochen war und im Garten des Nachbarn sämtliche Blumen gefressen hatte.	Die Ziege klettert gern.
+der Hase	rabbit, hare	3	3f71a80fc38794190e3614861dbcfe07	Der Hase, der im Garten gesichtet worden war, verschwand blitzschnell im Gebüsch.	Der Hase hüpft über die Wiese.
+das Insekt	insect	3	cc0a70b63ce1a8e0a4a903df7b8d90d4	Das Insekt, das sich in mein Schlafzimmer verirrt hatte, hielt mich die halbe Nacht wach.	Das Insekt fliegt am Licht.
+der Bär	bear	3	1692a7f05eb02616c3bb48722f153400	Der Bär, der in den letzten Wochen mehrfach in der Nähe des Dorfes gesichtet worden war.	Der Bär lebt im Wald.
+der Wolf	wolf	3	2d0b23bc9777bc88c8fe586675f9a4d3	Der Wolf, dessen Rückkehr in die heimischen Wälder von Naturschützern begrüßt, von Landwirten jedoch gefürchtet wird.	Der Wolf heult in der Nacht.
+der Fuchs	fox	3	df63ce7850a02e417c96b4b7998cd277	Der Fuchs, der sich nachts in den Hühnerstall geschlichen hatte, konnte entkommen.	Der Fuchs ist schlau.
+der Löwe	lion	3	54e6ff32cb80eeaca6a1ffbfa914bde3	Der Löwe, der im Zoo geboren und aufgezogen worden war.	Der Löwe ist stark.
+der Elefant	elephant	3	2582621e98a3e7bbbaa9ed44d747bf8a	Der Elefant, der seit seiner Geburt in Gefangenschaft gelebt hatte und nie in der Wildnis gewesen war.	Der Elefant ist sehr groß.
+die Schlange	snake	3	4e0bec73268787cdb60e33cdd22148a6	Die Schlange, die im Garten entdeckt worden war, erwies sich glücklicherweise als harmlose Ringelnatter.	Die Schlange liegt in der Sonne.
+der Frosch	frog	3	52c3ca985d381c04838f8f68e4acb40d	Der Frosch, dessen lautes Quaken im Sommer von den Anwohnern als störend empfunden wurde.	Der Frosch springt ins Wasser.
+die Biene	bee	3	e2109ece75a2b864701b9f1154585b44	Die Biene, die eine entscheidende Rolle im Ökosystem spielt, wird von vielen Imkern liebevoll gepflegt.	Die Biene fliegt zur Blume.
+der Schmetterling	butterfly	3	8c1a2aca44b64b02e2989ae186a493f0	Der Schmetterling, der sich aus der Raupe entwickelt hatte, ließ sich auf meiner Hand nieder.	Der Schmetterling ist bunt.
+der Wald	forest	3	9ce9dd1e4887499dcd8d78b829db2386	Im Wald, der sich über mehrere Quadratkilometer erstreckt, dürfen weder Bäume gefällt noch Wege angelegt werden.	Wir gehen in den Wald.
+die Wiese	meadow	3	178f8f2ed7d88a3cf868cbf9832a24cc	Die Wiese, auf der früher Kühe geweidet hatten und die seit Jahren brachlag, wurde in ein Naturschutzgebiet umgewandelt.	Die Wiese ist grün.
+der Berg	mountain	3	845d405678b6bb2f981368960be105a6	Der Berg, dessen Gipfel bei klarem Wetter von der Stadt aus zu sehen ist, wurde letztes Jahr zum Naturerbe erklärt.	Der Berg ist sehr hoch.
+das Tal	valley	3	0259e372bffc285abb6d6da7a8fa335a	Das Tal, das von hohen Bergen umgeben ist und in dem ein kleiner Fluss fließt.	Das Tal ist schön.
+der Fluss	river	3	c26044eb8f653fed1117ecf6140047b2	Der Fluss, der nach den starken Regenfällen über die Ufer getreten war, überflutete mehrere Dörfer in der Umgebung.	Der Fluss fließt durch die Stadt.
+der See	lake	3	2f543580169a17c67182e32f9ee2c9b1	Am See, dessen Wasser so klar war, dass man den Grund sehen konnte, verbrachten wir jeden Sommer unsere Ferien.	Der See ist kalt.
+das Meer	sea, ocean	3	779889b0a1595122d7b2e57cf3b74552	Das Meer, das an diesem Morgen ungewöhnlich ruhig dalag, lud zum Schwimmen ein.	Das Meer ist blau.
+die Küste	coast	3	af25e627efdf03d96c8ee09731129924	An der Küste, die durch den Klimawandel zunehmend von Erosion bedroht wird, wurden aufwendige Schutzmaßnahmen ergriffen.	Die Küste ist wunderschön.
+die Insel	island	3	265b1a300558cce4c510c5cd516809d9	Die Insel, die nur mit einer kleinen Fähre erreichbar war und auf der weniger als hundert Menschen lebten.	Die Insel ist klein.
+das Wetter	weather	3	253f7dc17804c64bb96ba7b596fc261a	Das Wetter, das den ganzen Tag über wechselhaft gewesen war, besserte sich am Abend.	Das Wetter ist heute schön.
+die Temperatur	temperature	3	959774eca3720f0f83ccd2efec97eb3a	Die Temperatur, die in den letzten Tagen stetig gestiegen war, erreichte gestern einen Rekordwert.	Die Temperatur liegt bei zwanzig Grad.
+der Nebel	fog	3	56702c828b392fac1b7caece8f387eea	Der Nebel, der sich am frühen Morgen über dem Tal ausgebreitet hatte, löste sich erst gegen Mittag auf.	Der Nebel ist sehr dicht.
+das Eis	ice	3	cf4cf9f2743dd3d4c93677f794b1336a	Das Eis, das sich über Nacht auf den Straßen gebildet hatte, führte zu zahlreichen Unfällen.	Das Eis ist glatt.
+der Sturm	storm	3	c3f6dc457f964a2b289a49cb0e2f5634	Der Sturm, der in der Nacht über die Küstenregion hinweggefegt war, hatte Bäume entwurzelt und Stromleitungen gekappt.	Der Sturm war sehr stark.
+der Donner	thunder	3	19159fc4954e805a79730d02f21c114e	Der Donner, der unmittelbar nach dem Blitz erklang, dass die Fenster klirrten, erschreckte die Kinder.	Der Donner ist laut.
+der Blitz	lightning	3	f57ca89829461cf64c59492477fb13e1	Der Blitz, der in den alten Kirchturm eingeschlagen hatte, konnte von der Feuerwehr schnell gelöscht werden.	Der Blitz ist hell.
+der Regenbogen	rainbow	3	b97a9cbf430a86a2d9828bcc614dd0b2	Der Regenbogen, der nach dem heftigen Gewitter am Himmel erschienen war, war besonders farbenprächtig.	Der Regenbogen hat sieben Farben.
+trocken	dry	3	f39ef16c69073fa0fbe33fc795883346	Der Sommer, der so trocken gewesen war, dass die Ernte auf den Feldern vertrocknete.	Es ist sehr trocken draußen.
+nass	wet	3	2732078fcca24175a77bfb05c1a42bee	Obwohl ich einen Regenschirm dabeigehabt hatte, wurde ich so nass, dass ich meine gesamte Kleidung wechseln musste.	Meine Schuhe sind nass.
+warm	warm	3	95fecb394cca66805332ca5e525c0fc7	Es wäre schön, wenn es morgen warm genug wäre, damit wir endlich im See schwimmen könnten.	Heute ist es warm.
+kalt	cold	3	95ec6dae487c512e8defd742810f2bea	Es war so kalt geworden, dass die Wasserleitungen einfroren und die Bewohner kein fließendes Wasser mehr hatten.	Im Winter ist es kalt.
+heiß	hot	3	5ec65799c0f6b1cc8fb444e52726e3dc	Es war so heiß, dass der Asphalt auf den Straßen zu schmelzen begann und die Behörden eine Hitzewarnung herausgaben.	Der Kaffee ist heiß.
+kühl	cool	3	49ebf90a73f6304ae32f1376a09d6c0c	Obwohl es tagsüber sommerlich warm gewesen war, wurde es abends so kühl, dass wir die Jacken anziehen mussten.	Heute Morgen ist es kühl.
+froh	glad, happy	3	13e9b6ef326005f0fae0a84f9e5bcc3c	Ich bin froh, dass wir die Reise nicht abgesagt haben, denn das Wetter, das zunächst schlecht vorhergesagt worden war.	Ich bin froh.
+traurig	sad	3	80d5528ab5fea43de37f9db374afefda	Sie war so traurig über den Verlust ihres Hundes.	Das Kind ist traurig.
+wütend	angry	3	c689ccaf832f64d33a08e209c5f93a83	Er wurde so wütend über die ungerechte Behandlung, dass er dem Chef einen Brief schrieb.	Der Mann ist wütend.
+ängstlich	anxious, fearful	3	f38a2c0f31db58492406f369f8c56e06	Das Kind, das schon immer ängstlich gewesen war und sich vor lauten Geräuschen fürchtete, weigerte sich.	Der Hund ist ängstlich.
+überrascht	surprised	3	b6f17e384c707ee10d5834bcaf8ff976	Wir waren so überrascht über die Nachricht, die uns völlig unerwartet erreicht hatte, dass wir zunächst sprachlos waren.	Ich bin überrascht.
+stolz	proud	3	9f640a395dbef65cf39417364a8485c3	Die Mutter, die auf die Leistungen ihrer Tochter unendlich stolz war, erzählte jedem davon, der es hören wollte.	Ich bin stolz auf dich.
+eifersüchtig	jealous	3	ae2500430164ed1371cf442439e73e42	Er wurde eifersüchtig, als er erfuhr, dass sein bester Freund die Beförderung erhalten hatte.	Sie ist eifersüchtig.
+dankbar	grateful	3	cf469f531f2808ccffbae42d521d0768	Ich bin dankbar für die Hilfe, die mir von meinen Nachbarn angeboten wurde.	Ich bin sehr dankbar.
+enttäuscht	disappointed	3	990fea091dc61120711b0f34876523a3	Obwohl sie zutiefst enttäuscht über das Ergebnis war, das weit hinter ihren Erwartungen zurückgeblieben war.	Er ist enttäuscht.
+einsam	lonely	3	d6bb8b04379d4943b2fbb6f7f2c79e82	Seitdem ihre Kinder ausgezogen waren, fühlte sie sich so einsam, dass sie beschloss, einem Verein beizutreten.	Die alte Frau ist einsam.
+müde	tired	3	86a06f35abfc2c14dcec1fa60b1b051d	Nachdem ich die ganze Nacht an dem Projekt gearbeitet hatte, war ich so müde, dass ich auf dem Schreibtisch einschlief.	Ich bin sehr müde.
+aufgeregt	excited, agitated	3	36cb8e108d018067022ffc85eab78e7b	Die Kinder waren so aufgeregt wegen des bevorstehenden Ausflugs, dass sie in der Nacht zuvor kaum schlafen konnten.	Das Kind ist aufgeregt.
+nervös	nervous	3	0176b14d9633ff7a141b3cc18bdf830e	Sie war so nervös vor dem Vorstellungsgespräch, dass sie die Nacht zuvor kaum geschlafen hatte und ihre Hände zitterten.	Ich bin nervös.
+zufrieden	satisfied, content	3	0daa748d094cad83418ab8e98dea7d79	Er war zufrieden mit dem Ergebnis seiner Arbeit.	Ich bin zufrieden.
+neugierig	curious	3	53c1129775381b868c16bb9b6eb5a7a6	Das Kind, das von Natur aus neugierig war und alles genau untersuchen wollte.	Das Kind ist neugierig.
+gelangweilt	bored	3	0daa748d094cad83418ab8e98dea7d80	Der Schüler, der so gelangweilt vom Unterricht war, dass er aus dem Fenster starrte.	Mir ist gelangweilt.
+der Arzt / die Ärztin	the doctor	3	c70aaf3e589faaab1336d903d3c699d7	Obwohl der Arzt, der seit zwanzig Jahren in der Notaufnahme arbeitet, die Symptome sofort erkannte.	Der Arzt hilft mir.
+das Krankenhaus	the hospital	3	67e2ebaed7193c1c26c3b4f1a626e6f1	Das Krankenhaus, das im letzten Jahr renoviert wurde, verfügt nun über eine moderne Intensivstation.	Das Krankenhaus ist groß.
+die Apotheke	the pharmacy	3	95b6ff95fe94b34c42cceb85b64e6add	Wenn die Apotheke, die sich an der Ecke befindet, geschlossen wäre, müsste man in die nächste Stadt fahren.	Ich gehe in die Apotheke.
+das Medikament	the medication	3	88aca4f0a0976c4cf8d7d5b313d6d59e	Das Medikament, dessen Nebenwirkungen erst nach jahrelanger Forschung vollständig verstanden wurden.	Das Medikament hilft gegen Schmerzen.
+die Tablette	the tablet / pill	3	47aa2baaad2f20828d4c0deb20b6a67f	Es wird empfohlen, dass die Tablette, die dreimal täglich eingenommen werden sollte.	Ich nehme eine Tablette.
+das Rezept	the prescription / recipe	3	b358eb29b390b19112830894509b7e29	Hätte der Patient das Rezept, das ihm vom Facharzt ausgestellt worden war, rechtzeitig eingelöst.	Ich brauche ein Rezept vom Arzt.
+die Krankheit	the illness / disease	3	9d642977ae13ce9f5f4ab7a640cc78a9	Die Krankheit, deren Ursache trotz intensiver Forschung noch nicht vollständig geklärt werden konnte.	Die Krankheit ist gefährlich.
+die Erkältung	the cold (illness)	3	e7a15f1831912a2627d249a2000d91b4	Obwohl eine Erkältung normalerweise harmlos ist, kann sie bei Menschen, deren Immunsystem geschwächt ist.	Ich habe eine Erkältung.
+das Fieber	the fever	3	4890e06bd6dc3787be93a4b6e4c5ba33	Das Fieber, das seit drei Tagen nicht gesunken war, hätte den Arzt dazu veranlassen sollen.	Das Kind hat Fieber.
+der Husten	the cough	3	b46319b85c23c514b2f8ce62de352a97	Der Husten, der trotz der verschriebenen Medikamente nicht nachließ.	Der Husten ist schlimm.
+der Schnupfen	the runny nose / cold	3	c381816663dddaaffda5c22cee006f8d	Wenn der Schnupfen, der ihn seit einer Woche plagte, nicht bald besser würde, müsste er einen Spezialisten aufsuchen.	Ich habe Schnupfen.
+die Schmerzen	the pain	3	feb1b07b3cf420e9b137be07838a1e27	Die Schmerzen, die nach der Operation aufgetreten waren, erforderten eine spezielle Therapie.	Ich habe starke Schmerzen.
+die Verletzung	the injury	3	73f839d491601ba5fb6834e4e8acc0df	Die Verletzung, die sich der Sportler während des Trainings zugezogen hatte, erwies sich als schwerwiegender.	Die Verletzung tut weh.
+die Wunde	the wound	3	7a21a17d7d3a27c79e4d6f8b70d778fa	Die Wunde, die sofort von einem erfahrenen Chirurgen versorgt wurde.	Die Wunde blutet.
+der Verband	the bandage	3	12baad90599794ba16f7eb05764dd915	Nachdem der Verband, der täglich gewechselt werden musste, von der Krankenschwester angelegt worden war.	Der Verband ist sauber.
+die Operation	the operation / surgery	3	f86059b8e96aca8b6b3f5313f6269592	Die Operation, die von einem renommierten Chirurgen durchgeführt wurde und über sechs Stunden dauerte.	Die Operation dauert zwei Stunden.
+die Untersuchung	the examination	3	b812e30a1a726b07cc5f60559cb360b6	Die Untersuchung, deren Ergebnisse erst nach einer Woche vorlagen, hätte früher durchgeführt werden sollen.	Die Untersuchung ist morgen.
+die Behandlung	the treatment	3	8604bdef9e4340987de921a97963b7e1	Obwohl die Behandlung, die mehrere Monate in Anspruch nahm, schmerzhaft war.	Die Behandlung war erfolgreich.
+gesund	healthy	3	5cc8ad533a78fb3c339fbf474dcfc2ef	Wer sich gesund ernährt und regelmäßig Sport treibt, dessen Risiko, an chronischen Krankheiten zu leiden.	Ich bin gesund.
+krank	sick / ill	3	9a3b03e04df597f997f56cf4b20f5687	Obwohl er so krank war, dass er kaum aufstehen konnte, weigerte er sich, zum Arzt zu gehen.	Er ist krank.
+heilen	to heal / to cure	3	e54a6d6cd92ea18affbd7351ce7cc5f8	Es wird angenommen, dass diese neue Therapie, die an mehreren Universitäten erforscht wird.	Die Wunde wird bald heilen.
+sich erholen	to recover	3	0c1cdc6d395a0baa090daeb634ed9de4	Nachdem sie sich von der schweren Grippe erholt hatte, die sie wochenlang ans Bett gefesselt hatte.	Er muss sich erholen.
+die Impfung	the vaccination	3	a2bb25aac95d67c69a6d776ac6cc8b26	Die Impfung, die von der Weltgesundheitsorganisation empfohlen wird, schützt vor schweren Verläufen.	Die Impfung tut nicht weh.
+der Notfall	the emergency	3	0c07406dcb9755e230365f4b7d6fa0f2	Im Falle eines Notfalls, der eine sofortige medizinische Versorgung erfordert.	Das ist ein Notfall!
+die Versicherung	the insurance	3	5afd34e296d3cd163b9b25e250665be7	Die Versicherung, die er vor Jahren abgeschlossen hatte, ohne die Bedingungen gründlich gelesen zu haben.	Die Versicherung zahlt alles.
+der Krankenwagen	the ambulance	3	6e3bd90028f94f75cebafc70de0aa5f3	Der Krankenwagen, der trotz des dichten Verkehrs innerhalb weniger Minuten am Unfallort eintraf.	Der Krankenwagen kommt schnell.
+der Rollstuhl	the wheelchair	3	3a38fc9c5b959f1ff4ce6f466b92c14a	Der Rollstuhl, auf den er nach dem Unfall angewiesen war, ermöglichte es ihm dennoch.	Er sitzt im Rollstuhl.
+die Allergie	the allergy	3	448a1871a98b27e1eb1435fea8d70979	Die Allergie, von der sie seit ihrer Kindheit betroffen ist, schränkt ihren Alltag erheblich ein.	Ich habe eine Allergie gegen Nüsse.
+der Zahnarzt	the dentist	3	f65cb6dddabe09f7955b53f6562335e6	Obwohl der Zahnarzt, bei dem sie seit Jahren in Behandlung war, ihr geraten hatte.	Ich gehe zum Zahnarzt.
+die Spritze	the injection / syringe	3	248c235b36490a2675c1c3322cff9dee	Die Spritze, die ihm von der Krankenschwester verabreicht wurde, linderte die akuten Schmerzen sofort.	Die Spritze war nicht schmerzhaft.
+die Universität	the university	3	14e7c96b48e7c4359599291a78347e7d	Die Universität, an der sie seit drei Semestern studiert, bietet zahlreiche internationale Austauschprogramme an.	Die Universität ist sehr alt.

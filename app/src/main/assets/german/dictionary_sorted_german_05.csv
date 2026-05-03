@@ -1,0 +1,193 @@
+die Daten	the data	5	368237b059d2f4e22794cf299668f8fe	Die Daten, die versehentlich gelöscht worden waren, konnten nur teilweise wiederhergestellt werden.	Meine Daten sind sicher gespeichert.
+das Passwort	the password	5	c87be069cfac7e48ba34e20624d370fd	Das Passwort, das mindestens zwölf Zeichen lang sein und sowohl Groß- als auch Kleinbuchstaben enthalten muss.	Ich habe mein Passwort vergessen.
+herunterladen	to download	5	efc7906c361e0aa09c85a9a5d66ad6f2	Die Datei, die ich gestern Abend herunterladen wollte, konnte nicht gespeichert werden.	Ich lade die Datei herunter.
+hochladen	to upload	5	f060cdb4bb303ec5821e1d19d36e4cd7	Die Fotos, die auf die Cloud hochgeladen werden mussten, waren so groß.	Ich lade das Foto auf die Webseite hoch.
+speichern	to save	5	b661fab537d298dc91710ad75a0b7d73	Hätte ich das Dokument rechtzeitig gespeichert, wäre die Arbeit von drei Stunden nicht verloren gegangen.	Vergiss nicht, die Datei zu speichern.
+löschen	to delete	5	713acb48009ebadd2398a81d312706c7	Die E-Mails, die aus Versehen gelöscht worden waren, enthielten wichtige Informationen.	Lösch die alten Dateien vom Computer.
+kopieren	to copy	5	63c804203e8d2f59a8a4d9f9516c044b	Der Text, der aus dem Internet kopiert worden war, musste noch überarbeitet werden.	Kopier den Text in das andere Dokument.
+einfügen	to paste / to insert	5	3c5328feadb346227aba91c120633cc8	Die Tabelle, die in den Bericht eingefügt werden sollte, hatte ein Format.	Füge das Bild hier ein.
+klicken	to click	5	3f1ea30b0e213e205d219ddc6bdc683a	Wenn Sie auf den Link klicken, der Ihnen per E-Mail zugesendet wurde, werden Sie auf eine Seite weitergeleitet.	Klick auf den blauen Button.
+aktualisieren	to update	5	e230e3f910d874a6855ab7a1287ba5eb	Das Betriebssystem, das dringend aktualisiert werden müsste, läuft immer langsamer.	Ich muss mein Handy aktualisieren.
+installieren	to install	5	98bce2a5e021d756ba2a699bb1cf2f71	Die Anwendung, die auf jedem Rechner der Abteilung installiert werden sollte, erforderte Administratorrechte.	Ich installiere eine neue App auf meinem Handy.
+das Update	the update	5	4995e80dcc63a02d221eef4f2dae0567	Das Update, das gestern Nacht automatisch heruntergeladen und installiert worden war.	Es gibt ein neues Update für die App.
+der Absturz	the crash	5	1809200ce6de5daa25249c8b4e418a82	Der Absturz des Systems, der durch einen Softwarefehler verursacht worden war, führte dazu.	Der Absturz meines Computers war ärgerlich.
+die Verbindung	the connection	5	a092a183cd052ea09d2eedaf23761a21	Die Verbindung zum Server, die während des wichtigen Videoanrufs unterbrochen worden war.	Die Verbindung ist sehr schlecht.
+das WLAN	the WiFi	5	faa8532e7c44df684be4736b542aad59	Das WLAN im Hotel, für das man eigentlich extra bezahlen musste, war so langsam.	Das WLAN-Passwort steht auf dem Tisch.
+die Beziehung	the relationship	5	eaf3aa8bb8082d22dadd7cce1fa948c7	Die Beziehung, die sie über mehrere Jahre aufgebaut hatten, zerbrach an den unterschiedlichen Vorstellungen.	Sie führen eine gute Beziehung.
+die Freundschaft	the friendship	5	96062a613b0d860c77cb5647bfa1a19b	Die Freundschaft, die während der Schulzeit entstanden war, hat all die Jahre überdauert.	Unsere Freundschaft ist mir sehr wichtig.
+die Liebe	the love	5	fb1420edeb38a9e40e3ed2fc97eb748b	Die Liebe, die er für sie empfand, war so tief, dass er bereit gewesen wäre, alles aufzugeben.	Die Liebe macht das Leben schön.
+die Ehe	the marriage	5	295761c6be236b4d09b56cbdcda0e5f6	Die Ehe, die anfangs von allen Seiten kritisiert worden war, erwies sich als eine der glücklichsten Verbindungen.	Sie führen eine glückliche Ehe.
+die Hochzeit	the wedding	5	b2858a54aa1e00ca697b2756d31865f7	Die Hochzeit, die im Schloss hätte stattfinden sollen.	Die Hochzeit findet im Juni statt.
+die Scheidung	the divorce	5	0080442351e994f955c2ff3e89d106f5	Die Scheidung, die nach langwierigen Verhandlungen endlich abgeschlossen worden war.	Die Scheidung war für alle schwer.
+der Ehemann	the husband	5	cb20b5eda30c024a1a0d9dd9e39c75eb	Ihr Ehemann, der seit Jahren im Ausland arbeitet, kommt nur an den Feiertagen nach Hause.	Mein Ehemann kocht heute Abend.
+die Ehefrau	the wife	5	900f56dd48efd95e4610c0e56bd52ea2	Seine Ehefrau, die als Ärztin in der Notaufnahme arbeitet, hätte niemals gedacht.	Seine Ehefrau arbeitet als Lehrerin.
+der Partner / die Partnerin	the partner	5	5025975664f2c2f6a3e3703e0e86b905	Der Partner, mit dem sie seit über zehn Jahren zusammenlebt, unterstützt sie in allen Entscheidungen.	Mein Partner kommt aus Berlin.
+der Großvater	the grandfather	5	a59f7d9de648fd0168e4d41e5796cee3	Mein Großvater, der im Krieg schwer verwundet worden war, erzählte nur selten von den Erlebnissen.	Mein Großvater ist achtzig Jahre alt.
+die Großmutter	the grandmother	5	c7e77a56e5c20e1e4b9b2c124fc833ae	Meine Großmutter, deren Apfelkuchen in der ganzen Nachbarschaft berühmt war, hätte sich gefreut, wenn sie gewusst hätte.	Meine Großmutter erzählt gerne Geschichten.
+die Großeltern	the grandparents	5	f38eb39a06947e2c2a812e097b01136f	Die Großeltern, die uns jeden Sommer auf ihrem Bauernhof empfingen, vermittelten uns Werte.	Meine Großeltern leben auf dem Land.
+der Enkel / die Enkelin	the grandson / the granddaughter	5	6e55663e8410eafa3efe53d98370c2c6	Der Enkel, der seine Großmutter jedes Wochenende im Pflegeheim besucht, ist der Einzige in der Familie.	Die Enkelin besucht ihre Oma jeden Sonntag.
+der Onkel	the uncle	5	68b0456ff20f69552fb54db1730ae0d8	Mein Onkel, der in Australien lebt, hat angekündigt, dass er nächsten Sommer zu Besuch kommen wird.	Mein Onkel spielt gerne Schach.
+die Tante	the aunt	5	24c87acb7902a66bb3c5490030923c14	Die Tante, bei der ich als Kind jeden Sommer verbracht hatte, war diejenige, die meinen Wunsch, Musiker zu werden.	Meine Tante wohnt in Hamburg.
+der Cousin / die Cousine	the cousin	5	49f164391bf607339f3b6a0f25747ed6	Mein Cousin, der in der Schweiz Medizin studiert, hätte gerne in Deutschland studiert.	Meine Cousine heiratet nächsten Monat.
+der Neffe	the nephew	5	a0cc0bf40684de846429060119f79cb8	Mein Neffe, dem ich vor Jahren das Schachspielen beigebracht hatte, ist inzwischen so gut geworden.	Mein Neffe ist sechs Jahre alt.
+die Nichte	the niece	5	d11791d20691e1cfd7c30198f8ecaa45	Meine Nichte, die gerade ihr Abitur gemacht hat, möchte im Ausland studieren.	Meine Nichte kommt morgen zu Besuch.
+der Schwiegervater	the father-in-law	5	233065a4214a80bc3a8bc128b6c5ebdf	Sein Schwiegervater, der anfangs gegen die Heirat gewesen war.	Mein Schwiegervater ist sehr nett.
+die Schwiegermutter	the mother-in-law	5	ca7d83d0f9778cd2aef588511d573d34	Die Schwiegermutter, mit der sie anfangs große Schwierigkeiten gehabt hatte, erwies sich als wertvolle Stütze.	Die Schwiegermutter kommt zum Abendessen.
+das Baby	the baby	5	9209bda517365bd31218875c9c9ed7f4	Das Baby, das mitten in der Nacht geboren wurde, brachte eine Freude in die Familie.	Das Baby schläft gerade.
+die Geburt	the birth	5	3009698edd1f1cc338a7fdde69698955	Die Geburt ihres ersten Kindes, die aufgrund unvorhergesehener Komplikationen per Kaiserschnitt erfolgen musste.	Die Geburt war um drei Uhr nachts.
+schwanger	pregnant	5	0103353c9be3ce2eed2307382c1ebd28	Als sie erfuhr, dass sie schwanger war, musste sie eine schwierige Entscheidung treffen.	Sie ist seit drei Monaten schwanger.
+erziehen	to raise / to educate	5	65f0cd9d3b6fb3180406fcb874f009e3	Kinder so zu erziehen, dass sie selbstständig und verantwortungsbewusst werden, ist eine Aufgabe.	Es ist nicht leicht, Kinder zu erziehen.
+die Kindheit	the childhood	5	9f61c4d55196bae764e8eca221ee6488	Die Kindheit, die er in einem kleinen Dorf am Meer verbracht hatte, prägte seine Persönlichkeit so stark.	Ich hatte eine schöne Kindheit.
+die Jugend	the youth	5	544e3b3568d6f18886e58cb8564f53c6	Die Jugend von heute steht vor Herausforderungen, die es in dieser Form noch nie gegeben hat.	In meiner Jugend habe ich viel Sport gemacht.
+das Alter	the age / old age	5	b6c96968ee069564178838b9bdca4ac2	Im Alter, das viele Menschen mit Einsamkeit verbinden, fand sie endlich die Zeit, all die Bücher zu lesen.	Das Alter spielt keine Rolle.
+der Erwachsene	the adult	5	57ed7ff18345fb024cf702a9e3cadc2b	Jeder Erwachsene, der behauptet, keine Fehler zu machen, vergisst.	Jeder Erwachsene braucht einen Ausweis.
+der Rentner / die Rentnerin	the retiree / the pensioner	5	289e66442f98d363a1deaf4b8057cc68	Der Rentner, der sein ganzes Berufsleben lang in derselben Fabrik gearbeitet hatte, genoss es.	Der Rentner geht jeden Tag im Park spazieren.
+die Generation	the generation	5	b30227d3ab18d60831fec68098db7369	Die Generation unserer Großeltern, die zwei Weltkriege überlebt hatte, besaß eine Widerstandsfähigkeit.	Jede Generation hat ihre eigenen Probleme.
+ehrlich	honest	5	a6c90d48ee4a471b6a4c393c10744b7d	Wenn er ehrlich gewesen wäre, wäre die Situation nicht so eskaliert, wie sie es letztendlich tat.	Er ist ein ehrlicher Mensch.
+freundlich	friendly	5	99cb9e6ed1036b963baa948fc9869742	Die Bedienung, die trotz des stressigen Abends stets freundlich geblieben war.	Die Nachbarn sind sehr freundlich.
+höflich	polite	5	e9ca63eff6c4342fd1fabf02b3819a3c	Es wird in der deutschen Geschäftskultur erwartet, dass man sich stets höflich ausdrückt.	Sei bitte höflich zu den Gästen.
+nett	nice / kind	5	22dfe614373ca439888515b5691d644e	Es war wirklich nett von ihr, dass sie mir geholfen hat.	Das ist sehr nett von dir.
+mutig	brave / courageous	5	50a401e7e84360101b12026a8ed8a243	Der Feuerwehrmann, der so mutig in das brennende Gebäude gerannt war.	Das war eine mutige Entscheidung.
+faul	lazy	5	9a18ff6def5755d410c41cadf13d499b	Obwohl er keineswegs faul war, wurde ihm vorgeworfen, er arbeite zu wenig.	Die Katze ist heute besonders faul.
+fleißig	hardworking / diligent	5	073e05fe773d3ed1917f24120db3a2de	Die Schülerin, die so fleißig gelernt hatte, dass sie jede Prüfung mit Bestnote bestand.	Er ist sehr fleißig in der Schule.
+geduldig	patient	5	f44751d11183b20cc08b58534b40f42a	Man müsste wesentlich geduldiger sein, als ich es bin, um dieses komplizierte Puzzle zu lösen.	Bitte sei geduldig, es dauert noch etwas.
+ungeduldig	impatient	5	1c7968ed0aa3c0a3e94896d2c81128ec	Die Kunden, die zunehmend ungeduldig wurden, beschwerten sich lautstark darüber.	Das Kind wird ungeduldig, wenn es warten muss.
+schüchtern	shy	5	7f94b0b0af52e3b45c01562a4ee706cc	Als Kind war sie so schüchtern gewesen, dass sie kein Wort mit Fremden wechselte.	Der neue Schüler ist etwas schüchtern.
+selbstbewusst	confident / self-assured	5	9e734aca90e26badd0fc7016f05afbd7	Die Bewerberin trat so selbstbewusst auf, dass der Personalchef sofort beeindruckt war.	Sie ist eine selbstbewusste Frau.
+großzügig	generous	5	7ae910ad6f6eeb0c1d54d2b45a595903	Der Spender, der so großzügig war, dass er die Hälfte seines Vermögens für wohltätige Zwecke gab, wollte anonym bleiben.	Mein Opa ist sehr großzügig.
+geizig	stingy / miserly	5	78f878c4e440048c79dfbce06c57cf13	Obwohl er als geizig galt.	Er ist so geizig, dass er nie etwas ausgibt.
+klug	clever / smart	5	0e78f390ee7de425e66e1789691c7244	Die kluge Entscheidung, die er damals getroffen hatte, erwies sich Jahre später als der Wendepunkt.	Das war eine kluge Idee.
+dumm	stupid / dumb	5	1d9bc60f8556186eb0d402c9d48d5525	Es wäre dumm gewesen, das Angebot abzulehnen, das ihm eine einmalige Chance geboten hätte.	Das war eine dumme Entscheidung.
+vernünftig	reasonable / sensible	5	2379aeaf5dcb64721fc9905d3d64c656	Es wäre vernünftig, wenn wir erst alle Fakten prüfen würden, bevor wir eine Entscheidung treffen.	Sei vernünftig und zieh eine Jacke an.
+verrückt	crazy	5	301b1949f683a48c96bd6d69fd6ac4e3	Die Idee, die anfangs als völlig verrückt abgetan worden war, stellte sich als die innovativste Lösung heraus.	Das ist ja verrückt!
+lustig	funny	5	9448bbefa0af3baf99ad2ddbe62a09aa	Die Geschichte, die er auf der Party erzählte, war so lustig.	Der Film war sehr lustig.
+ernst	serious	5	9a442b2d5f3a4fb95259a7e2e0eb004d	Die Situation wurde so ernst, dass der Bürgermeister eine Pressekonferenz einberufen musste.	Die Lage ist sehr ernst.
+streng	strict	5	5717a3fce4063363c8e18fccbbfff1da	Der Lehrer, der als besonders streng bekannt war, brachte seinen Schülern dennoch mehr bei als alle anderen.	Mein Vater ist manchmal sehr streng.
+sanft	gentle / soft	5	01bcb2c4d53fab2a61326bb84c4ba9f8	Mit einer Stimme, die so sanft war, dass sie jeden im Raum beruhigte, erklärte die Ärztin dem Patienten.	Sie hat eine sanfte Stimme.
+zuverlässig	reliable	5	425bf19c5c30542fd0b6d9517504131f	Ein Mitarbeiter, der als zuverlässig gilt.	Er ist ein sehr zuverlässiger Kollege.
+verantwortlich	responsible	5	7dc54739c788b6730fc1e832468e1aa9	Wer für einen solchen Fehler verantwortlich gemacht wird, muss damit rechnen.	Wer ist dafür verantwortlich?
+kreativ	creative	5	dc559f29e00e3a1a98621bb232eb2820	Die Lösung, die das Team vorschlug, war so kreativ, dass selbst die skeptischsten Vorgesetzten zugeben mussten.	Sie ist eine sehr kreative Künstlerin.
+stur	stubborn	5	d32a092c119d5380577b3a67df7fe5e8	Er war so stur, dass er seine Meinung nicht änderte.	Der Esel ist so stur wie immer.
+bescheiden	modest / humble	5	2a97e443b43a3a4270d6ed9d78de2902	Trotz seines enormen Erfolges blieb er so bescheiden, dass man ihm nicht anmerkte.	Sie ist sehr bescheiden und redet wenig über sich.
+arrogant	arrogant	5	e0f0b78e4bb546ccc6b402fa5e9353c8	Sein arrogantes Auftreten, das viele Kollegen als unerträglich empfanden, führte schließlich dazu.	Niemand mag ihn, weil er so arrogant ist.
+empfindlich	sensitive	5	99fdba0b26a44a48bb2c0ea22ded4b61	Die empfindliche Haut des Babys reagierte so stark auf die neue Creme.	Meine Haut ist sehr empfindlich.
+optimistisch	optimistic	5	3d96bf23dd51a294ad1a7e1fd5d67527	Obwohl die Lage aussichtslos erschien, blieb sie optimistisch und war fest davon überzeugt.	Ich bin optimistisch für die Zukunft.
+pessimistisch	pessimistic	5	5a80c3ab4c5415e2251b7316dd2cc8b0	Wer stets pessimistisch in die Zukunft blickt, verpasst die Chancen, die sich ergeben könnten.	Er ist immer so pessimistisch.
+der Sport	sport	5	fbedaad517976cd9d787c17f4b2e5e7d	Obwohl der Sport in seinem Leben immer eine zentrale Rolle gespielt hat, hätte er nie gedacht.	Der Sport macht mir Spaß.
+der Fußball	soccer, football	5	e3c4d3a701ab9ae40cd3612bb51caa1b	Wenn der Fußball nicht erfunden worden wäre, hätten Millionen von Menschen weltweit ein anderes Hobby finden müssen.	Der Fußball ist sehr beliebt.
+der Basketball	basketball	5	c48c349492fecf55190480dfad24f419	Der Basketball, der in den USA populär ist, wird inzwischen auch in Europa von immer mehr Jugendlichen gespielt.	Ich spiele gern Basketball.
+das Tennis	tennis	5	38e1b056ed040ef63afe6c378fa67f3d	Das Tennis, das sie seit ihrer Kindheit begeistert betrieben hatte, musste sie aufgeben.	Das Tennis ist anstrengend.
+das Schwimmen	swimming	5	dc3d555968d8463c555a43dad0692b30	Das Schwimmen, das sowohl die Ausdauer als auch die Muskulatur stärkt.	Das Schwimmen ist gesund.
+das Laufen	running	5	7c3715100808029fdfd61e79a52b242c	Das Laufen im Regen, das er früher gehasst hatte, wurde zu seiner liebsten Gewohnheit.	Das Laufen macht mich fit.
+das Fahrrad	bicycle	5	3573578cbde9f2898a390fefa413647c	Das Fahrrad, das ihm von seinem Großvater geschenkt worden war, hätte repariert werden müssen.	Das Fahrrad ist neu.
+die Mannschaft	team	5	227b93fe1a16be9338983433100f2b7d	Die Mannschaft, die in der vergangenen Saison fast abgestiegen wäre.	Die Mannschaft hat gewonnen.
+der Spieler / die Spielerin	player (m/f)	5	839e8d19cffcad0be00c71b46b1885b3	Der Spieler, dessen Vertrag nächsten Monat ausläuft, hätte längst verlängern sollen.	Der Spieler ist sehr schnell.
+das Spiel	game, match	5	109f9d62893cffc706b518b35fdadf0f	Das Spiel, das wegen des starken Regens beinahe abgesagt worden wäre, endete mit einem überraschenden Ergebnis.	Das Spiel war spannend.
+der Ball	ball	5	84709e6e5e85a88730f2ded33ba126f5	Der Ball, der vom Stürmer mit voller Wucht geschossen wurde, wäre beinahe im Tor gelandet.	Der Ball ist rund.
+das Tor	goal, gate	5	1ea87243cd8767bf348a785ce656a8fa	Das Tor, das in der letzten Minute geschossen wurde, hätte den Ausgang des gesamten Turniers verändern können.	Das Tor war schön.
+der Punkt	point, dot	5	2b2173b4e62e29bf1a256d33fb7e1f2b	Der entscheidende Punkt, der in der Verlängerung erzielt wurde, hätte nicht gezählt werden dürfen.	Wir brauchen noch einen Punkt.
+gewinnen	to win	5	37a0c57be530f0805dcc3f3ce7b923df	Obwohl niemand erwartet hätte, dass sie gewinnen würden.	Wir wollen gewinnen.
+verlieren	to lose	5	0706448c6cedb7f45f1d5f0550966ae3	Hätten sie nicht so viele Fehler gemacht, hätten sie das Spiel wahrscheinlich nicht verlieren müssen.	Ich will nicht verlieren.
+trainieren	to train, to practice	5	9e92ef5cbac7a60695a7e4fe18415b0c	Damit die Sportler optimal auf den Wettkampf vorbereitet werden.	Ich trainiere jeden Tag.
+der Trainer / die Trainerin	coach, trainer (m/f)	5	8792e6fb77cd393bf4ffd4c53934c96f	Der Trainer, der die Mannschaft seit drei Jahren betreut, hätte entlassen werden sollen.	Der Trainer ist streng.
+der Wettkampf	competition, contest	5	b992a6920b0b4a2935b7834d5faff578	Der Wettkampf, an dem über dreihundert Athleten aus verschiedenen Ländern teilgenommen haben.	Der Wettkampf beginnt morgen.
+die Meisterschaft	championship	5	a6f0ce4ba18559423669689a4dc1de89	Die Meisterschaft, die dieses Jahr zum ersten Mal in der neuen Halle ausgetragen wird.	Die Meisterschaft war aufregend.
+der Rekord	record	5	20bfb108a6f7929ffc6bd057c86899fd	Der Rekord, der seit zwanzig Jahren unangetastet geblieben war, wurde von einer jungen Athletin gebrochen.	Er hat einen neuen Rekord aufgestellt.
+das Hobby	hobby	5	dcbcf49d0b318ebc2a0514d9aacd4919	Das Hobby, dem sie sich nach ihrer Pensionierung gewidmet hatte, wurde so erfolgreich.	Mein Hobby ist Lesen.
+das Instrument	instrument	5	fb6229afd18b7fc52a3868425e63d6cd	Das Instrument, das er als Kind zu spielen begonnen hatte, hätte er nie aufgeben sollen.	Spielst du ein Instrument?
+die Gitarre	guitar	5	5898cdc9ed6135961b82690f8ba73e0b	Die Gitarre, die ihr von einer berühmten Musikerin signiert worden war, würde sie niemals verkaufen.	Ich spiele die Gitarre.
+das Klavier	piano	5	fad80abf6faa1dd7a9cc02c9916eef3d	Das Klavier, das seit Jahrzehnten im Wohnzimmer ihrer Großmutter gestanden hatte, müsste dringend gestimmt werden.	Das Klavier klingt schön.
+die Geige	violin	5	b10d2e14fff5775c15a45122f1e5dc6b	Die Geige, deren Klang so zart und eindringlich ist, dass er die Zuhörer zu Tränen rührt.	Sie spielt die Geige sehr gut.
+singen	to sing	5	f823604e98761754ae8287c56ed2045f	Obwohl sie nie professionellen Gesangsunterricht genommen hatte, konnte sie so schön singen.	Ich singe gern unter der Dusche.
+malen	to paint	5	eff9de3c5eb033dc5fd8900d86e130e6	Das Bild, das sie während eines Aufenthalts in der Provence zu malen begonnen hatte, wurde erst fertiggestellt.	Kinder malen gern bunte Bilder.
+zeichnen	to draw	5	b305d065bf8447efdb4e07f5a38ddedb	Wenn er nicht so gut zeichnen könnte, hätte er die Stelle als Illustrator bei dem renommierten Verlag niemals bekommen.	Ich kann gut zeichnen.
+fotografieren	to photograph	5	e64242e581fd092ad7c3bd6f4bde85c6	Die Landschaften, die er während seiner Reise durch Patagonien fotografieren konnte.	Ich fotografiere gern Blumen.
+sammeln	to collect	5	0acfca952e76e7b9de600e1ce077e33d	Die Briefmarken, die er über Jahrzehnte hinweg mit großer Leidenschaft gesammelt hatte.	Er sammelt alte Münzen.
+der Kindergarten	kindergarten, nursery	5	a0a44864787eb1f9919c88dd475a622c	Der Kindergarten, in dem ihre Tochter angemeldet worden war, hätte schon längst renoviert werden müssen.	Mein Kind geht in den Kindergarten.
+die Post	post office, mail	5	439347b02eb85c107a8d9018bd71f7dd	Die Post, die sie vor drei Wochen abgeschickt hatte, wäre schneller angekommen.	Ich gehe zur Post.
+die Bank	bank	5	a3c3c430e19a23e1fee5ee1f1578c97a	Die Bank, bei der er seit zwanzig Jahren Kunde ist, hätte ihm den Kredit nicht verweigern dürfen.	Die Bank ist um die Ecke.
+das Restaurant	restaurant	5	6b9fa482e384026ba6e9ceca73ebe8ca	Das Restaurant, das erst kürzlich von einem bekannten Koch eröffnet worden ist, wäre abends immer ausgebucht.	Das Restaurant ist sehr gut.
+das Café	café	5	d2b7507ec1030d5e2f08d835800cf3e6	Das Café, in dem sie sich seit Jahren jeden Freitagmorgen treffen, hätte beinahe geschlossen werden müssen.	Treffen wir uns im Café?
+das Hotel	hotel	5	373b3fe81a8b1b81f8637fde658a5e14	Das Hotel, das direkt am Strand gebaut worden war, hätte den Gästen einen besseren Service bieten müssen.	Das Hotel war sehr schön.
+das Museum	museum	5	51b3ccab8a69504ae5b68ea660f88027	Das Museum, dessen Sammlung durch großzügige Spenden erweitert worden ist.	Wir gehen ins Museum.
+das Theater	theater	5	35098aadd0f50339e4bf42f94a0489db	Das Theater, in dem gestern Abend eine moderne Inszenierung von Faust aufgeführt wurde, hätte mehr Zuschauer verdient.	Ich gehe gern ins Theater.
+das Kino	cinema	5	e480f5de11641e457b932bd79e9ccb6d	Das Kino, das vor kurzem komplett renoviert worden ist, hätte schon viel früher modernisiert werden sollen.	Gehen wir heute ins Kino?
+der Park	park	5	3fce0f557810ec9b1a646392022f7050	Der Park, der im neunzehnten Jahrhundert angelegt worden war.	Der Park ist sehr grün.
+der Spielplatz	playground	5	b0d51c2cceceed4c250ba27243a0f273	Der Spielplatz, auf dem die Kinder jeden Nachmittag spielen.	Die Kinder sind auf dem Spielplatz.
+der Dom	cathedral	5	d0e14b7083e5bd29615af7b6ad2a1178	Der Dom, dessen imposante Türme schon von Weitem sichtbar sind.	Der Dom ist sehr alt.
+das Rathaus	town hall, city hall	5	0f2d7075f0092947b4df18adfc224d0b	Das Rathaus, in dem die Bürgerversammlung abgehalten werden sollte, hätte vorher gründlich renoviert werden müssen.	Das Rathaus steht am Marktplatz.
+die Klinik	clinic, hospital	5	c470089bf8538955ac7db8ec41519dbf	Die Klinik, in der sie nach dem Unfall behandelt worden war, hätte mehr Personal einstellen müssen.	Die Klinik ist nicht weit.
+der Friedhof	cemetery	5	14ba4a44df57db6c979859bf7d2437ac	Der Friedhof, auf dem seit dem siebzehnten Jahrhundert Verstorbene beigesetzt werden, hätte erweitert werden müssen.	Der Friedhof ist sehr ruhig.
+der Parkplatz	parking lot	5	2ef2c6b45cbaa413cdf1c95dcbf356d8	Der Parkplatz, der vor dem Einkaufszentrum gebaut worden war, hätte größer geplant werden sollen.	Der Parkplatz ist voll.
+das Stadion	stadium	5	e93d707badeb6836d649586ab958116a	Das Stadion, das für die Weltmeisterschaft errichtet worden war, hätte nachhaltiger gebaut werden können.	Das Stadion fasst 50.000 Zuschauer.
+die Fabrik	factory	5	6e8684ec2ee2479786bac7696f7764b7	Die Fabrik, die vor hundert Jahren gegründet worden war, hätte modernisiert werden müssen.	Die Fabrik produziert Autos.
+das Schwimmbad	swimming pool	5	494224165f1a462d303b9b032f0f0cfb	Das Schwimmbad, das wegen Renovierungsarbeiten geschlossen worden war.	Das Schwimmbad hat heute geöffnet.
+der Hafen	harbor, port	5	2b3c3ffe1d096dcbf6f8ab92ddf544fb	Der Hafen, von dem aus jahrhundertelang Waren in alle Welt verschifft worden sind, hätte ausgebaut werden müssen.	Der Hafen ist groß und laut.
+der Flohmarkt	flea market	5	7e53e1e78c84e47fbace0ccb472df29b	Der Flohmarkt, der jeden Samstag auf dem Marktplatz veranstaltet wird, hätte abgesagt werden müssen.	Auf dem Flohmarkt gibt es alles.
+das Fitnessstudio	gym, fitness studio	5	e59a6fc72ee845d0ee24156863e86219	Das Fitnessstudio, in das sie sich vor einem Jahr eingeschrieben hatte, hätte bessere Öffnungszeiten anbieten sollen.	Ich gehe dreimal pro Woche ins Fitnessstudio.
+die Bäckerei	bakery	5	b26d683608cff42001e929f9417833e6	Die Bäckerei, die seit fünf Generationen von derselben Familie betrieben wird, hätte geschlossen werden müssen.	Die Bäckerei hat frisches Brot.
+die Metzgerei	butcher shop	5	03d0013f3c01bdc21238d6120ed1ea03	Die Metzgerei, die von den Bewohnern des Viertels seit Jahrzehnten geschätzt wird, hätte sich vergrößern müssen.	Die Metzgerei ist heute geschlossen.
+die Reinigung	dry cleaner's, cleaning	5	c267f133a37e8130faf9d4d7d7e15f8e	Die Reinigung, in die er seinen Anzug gebracht hatte, hätte den Fleck entfernen können.	Ich bringe den Mantel zur Reinigung.
+die Buchhandlung	bookshop	5	37080e481b284232a27b94b12c62545c	Die Buchhandlung, die trotz der wachsenden Konkurrenz durch den Onlinehandel überleben konnte.	Die Buchhandlung hat viele Bücher.
+der Friseur	hairdresser, barber	5	629f990b383781803eb4044ee5ceab10	Der Friseur, zu dem sie seit ihrer Jugend geht, hätte ihr von der neuen Haarfarbe abgeraten.	Ich muss zum Friseur gehen.
+der Zoo	zoo	5	a99d2b0357aa5345acbd1a2e4ad98af1	Der Zoo, in dem viele bedrohte Tierarten gezüchtet werden, hätte größere Gehege bauen müssen.	Die Kinder lieben den Zoo.
+das Aquarium	aquarium	5	52f8834913a1492dfdd15442d0b0eefe	Das Aquarium, das kürzlich um ein riesiges Haifischbecken erweitert worden ist, hätte mehr Besucher angezogen.	Das Aquarium ist sehr beeindruckend.
+die Galerie	gallery	5	f31f3d9d224347825654d40983d65367	Die Galerie, in der die Werke junger Künstler ausgestellt werden.	Die Galerie zeigt moderne Kunst.
+die Vereinbarung	agreement, arrangement	5	18c91c354428678837859f0075c929ac	Die Vereinbarung, die zwischen den beiden Parteien getroffen worden war, hätte schriftlich festgehalten werden müssen.	Wir haben eine Vereinbarung getroffen.
+das Dokument	document	5	0630cf513930f7a4b984de0c9d4cd7e0	Das Dokument, das für die Einreichung bei der Behörde benötigt wird, hätte beglaubigt werden müssen.	Bitte unterschreiben Sie das Dokument.
+die Unterschrift	signature	5	d905325cf51bd218b8aad04b1cc435de	Die Unterschrift, die auf dem Vertrag geleistet worden war, hätte für ungültig erklärt werden können.	Ihre Unterschrift fehlt noch.
+unterschreiben	to sign	5	4786b59bbcddc47b51a837de57171562	Den Vertrag, den er hätte unterschreiben sollen, hat er zurückgewiesen.	Bitte unterschreiben Sie hier.
+die Genehmigung	permission, permit	5	15169656e8ac6e363e37b26c6f7ff02f	Die Genehmigung, die für den Bau des neuen Gebäudes beantragt worden war, hätte schneller erteilt werden können.	Wir brauchen eine Genehmigung.
+beantragen	to apply for, to request	5	8efb683d0a44134889e2654bb75729f0	Den Zuschuss, den er bei der zuständigen Stelle hätte beantragen müssen, hat er nicht rechtzeitig eingereicht.	Ich möchte einen Pass beantragen.
+die Behörde	authority, government agency	5	49897ecc76280467300d711f1ed16df8	Die Behörde, die für die Erteilung der Aufenthaltsgenehmigung zuständig ist.	Die Behörde ist montags geschlossen.
+das Amt	office, authority	5	41e9d8019a775605b618510046ce5700	Das Amt, bei dem er seine Steuererklärung hätte einreichen müssen.	Ich muss zum Amt gehen.
+der Ausweis	ID card, identification	5	378ab277aea5311feba712387cdb4fd5	Der Ausweis, den er bei der Kontrolle hätte vorzeigen müssen, war leider abgelaufen.	Zeigen Sie bitte Ihren Ausweis.
+die Gebühr	fee, charge	5	34ef5ab71fec833fb6759ab72756b26b	Die Gebühr, die für die Verlängerung des Reisepasses erhoben wird, hätte nicht erhöht werden dürfen.	Die Gebühr beträgt zwanzig Euro.
+die Strafe	punishment, penalty, fine	5	9ee7cf0ecd3addd934ebc3af7a315794	Die Strafe, die ihm wegen wiederholter Verstöße gegen die Verkehrsordnung auferlegt worden war.	Die Strafe war zu hoch.
+verbieten	to forbid, to ban	5	348455051b153becfd2afa553845d5f2	Das Rauchen in öffentlichen Gebäuden zu verbieten, hätte schon viel früher beschlossen werden müssen.	Meine Eltern verbieten mir das.
+erlauben	to allow, to permit	5	350cebd945007806ad8e1e45c6e5864e	Wenn die Stadtverwaltung den Bürgern erlauben würde, die Grünflächen selbst zu gestalten.	Meine Mutter erlaubt es mir.
+die Erlaubnis	permission	5	6a07d4dee9a0cf1d81e128975a6751e9	Die Erlaubnis, die ihm erst nach monatelangem Warten erteilt worden war, hätte er viel schneller erhalten können.	Er hat keine Erlaubnis dafür.
+verpflichten	to oblige, to commit	5	d1dff155d31eb9b35cd98d2e2e6e161b	Der Vertrag, der die beiden Parteien dazu verpflichten sollte, bestimmte Standards einzuhalten.	Das Gesetz verpflichtet uns dazu.
+die Vorschrift	regulation, rule	5	9de915342d5d99160f654f4171238219	Die Vorschrift, die zum Schutz der Arbeitnehmer erlassen worden war, hätte strenger kontrolliert werden müssen.	Wir müssen die Vorschrift beachten.
+das Verbot	ban, prohibition	5	2025c863df23a6d0efa39bd0bc2050c0	Das Verbot, das von der Regierung worden war, hätte aufgehoben werden können, wenn die Umstände sich geändert hätten.	Es gibt ein Verbot für Handys.
+das Formular	form (document)	5	672fb74895840bb0d6824b14337df992	Das Formular, das online hätte ausgefüllt werden können, musste stattdessen persönlich bei der Behörde abgegeben werden.	Bitte füllen Sie das Formular aus.
+ausfüllen	to fill out	5	7f5f8a01eb91ed451c22f011e56ada09	Um den Antrag korrekt auszufüllen, hätte er sich vorher besser informieren müssen.	Können Sie bitte das Formular ausfüllen?
+der Antrag	application, request	5	0d489d07b5a7fd60eace2062b8e02cb3	Der Antrag, der fristgerecht eingereicht worden war, hätte nicht abgelehnt werden dürfen.	Der Antrag wurde genehmigt.
+die Forderung	demand, claim	5	d402d4335df667cf08d022a2e9a16c96	Die Forderung, die von der Gewerkschaft an die Geschäftsleitung gerichtet worden war.	Die Forderung ist berechtigt.
+der Anspruch	claim, entitlement	5	b4b35537349105603ef3ed3a714247f3	Der Anspruch auf Entschädigung, den die Betroffenen geltend gemacht hatten, hätte vom Gericht anerkannt werden müssen.	Sie hat einen Anspruch auf Urlaub.
+die Klage	lawsuit, complaint	5	79236da110b97663ac56b7df01003f27	Die Klage, die gegen das Unternehmen eingereicht worden war, hätte vermieden werden können.	Die Klage wurde eingereicht.
+klagen	to sue, to complain	5	2ee0835f35056ed5d904ded933ae793a	Obwohl er zunächst gezögert hatte, entschied er sich schließlich zu klagen.	Er will gegen die Firma klagen.
+die Verhandlung	negotiation, trial	5	1f564216169f8c58166c9f88eeaae058	Die Verhandlung, die vor dem Landgericht geführt worden war, hätte schneller abgeschlossen werden können.	Die Verhandlung dauerte drei Stunden.
+das Urteil	verdict, judgment	5	5dd5fd133a3f1b7c719e2676574affd5	Das Urteil, das nach einer langen und kontroversen Verhandlung gefällt worden war, hätte milder ausfallen können.	Das Urteil war gerecht.
+schuldig	guilty	5	9640136ce271326e33095470b8111ece	Obwohl er sich für schuldig erklärt hatte, bevor die Beweisaufnahme abgeschlossen war.	Er ist schuldig.
+unschuldig	innocent	5	5a451756de39b8c9abc67d83527d9b49	Obwohl er von der Öffentlichkeit bereits verurteilt worden war, stellte sich heraus, dass er völlig unschuldig war.	Er ist unschuldig.
+der Zeuge / die Zeugin	witness (m/f)	5	3a49ee4f9671d5e63261753b5cb6d86c	Der Zeuge, der zunächst gezögert hatte auszusagen, hätte viel früher befragt werden müssen.	Der Zeuge hat alles gesehen.
+aussagen	to testify, to state	5	be74ba88ac2d8f3781a8acf5a8475094	Obwohl sie unter Eid hätte aussagen müssen, weigerte sie sich, bestimmte Fragen zu beantworten.	Der Zeuge muss vor Gericht aussagen.
+die Wirtschaft	economy	5	6c16aa44cd7a34b11a0b65efd52c2b66	Die Wirtschaft, die sich nach der Krise langsam erholt hatte, hätte schneller wachsen können.	Die Wirtschaft wächst langsam.
+das Unternehmen	company, enterprise	5	25c8a2f039af990e704304bba1c06ac8	Das Unternehmen, das vor zehn Jahren gegründet worden war, hätte nicht so schnell expandieren können.	Das Unternehmen hat 200 Mitarbeiter.
+die Firma	firm, company	5	5ad8a8ea87795969bbacc180405661e7	Die Firma, für die sie seit ihrer Ausbildung arbeitet, hätte den Standort nicht verlagern dürfen.	Die Firma ist sehr bekannt.
+die Börse	stock exchange	5	a0b9733d976335d6936bfdd1ccfe990b	Die Börse, an der die Aktien des Unternehmens gehandelt werden.	Die Börse ist heute gefallen.
+die Aktie	share, stock	5	8a97e327108b98a6a09897530a5011de	Die Aktie, die er vor fünf Jahren zu einem niedrigen Preis gekauft hatte, hätte er verkaufen sollen.	Die Aktie ist gestiegen.
+die Investition	investment	5	cbed553a24dbf1ed22628c870a7da0a3	Die Investition in erneuerbare Energien, die von vielen Experten empfohlen worden war.	Die Investition hat sich gelohnt.
+investieren	to invest	5	399d7a387b14838424ecf75b171e5d33	Hätten sie früher in die Digitalisierung investieren können.	Wir wollen in Bildung investieren.
+der Gewinn	profit, gain	5	cd20654f01f060be63acec808545289d	Der Gewinn, der im letzten Quartal erzielt worden war, hätte höher ausfallen können.	Der Gewinn war dieses Jahr hoch.
+der Verlust	loss	5	02f32da3c3e1697dc86093f488ea4a19	Der Verlust, den das Unternehmen im vergangenen Jahr erlitten hatte, hätte vermieden werden können.	Der Verlust war sehr groß.
+der Umsatz	revenue, turnover	5	be06d625fcf64dfdbb7ffe45b2dfef10	Der Umsatz, der durch die Einführung des neuen Produkts erheblich gesteigert worden war, hätte noch höher sein können.	Der Umsatz ist gestiegen.
+die Konkurrenz	competition, competitors	5	ee46b742af15bed99f3bd1b748cfd6c1	Die Konkurrenz, die in den letzten Jahren immer stärker geworden ist, hätte das Unternehmen nicht unterschätzen dürfen.	Die Konkurrenz schläft nicht.
+der Kunde / die Kundin	customer (m/f)	5	9efbd553ac2c0587620bf60bb6cd56fb	Der Kunde, dessen Beschwerde wochenlang ignoriert worden war, hätte eine Entschädigung erhalten müssen.	Der Kunde ist zufrieden.
+die Ware	goods, merchandise	5	683f2bebee21b63a0a0c6e31d57192a9	Die Ware, die aus dem Ausland importiert worden war, hätte vor dem Verkauf gründlicher kontrolliert werden müssen.	Die Ware ist von guter Qualität.
+die Lieferung	delivery	5	1ddfab728e5cefbb7220a4aa025afd4b	Die Lieferung, die eigentlich gestern hätte ankommen sollen, wurde verzögert.	Die Lieferung kommt morgen.
+liefern	to deliver, to supply	5	0a873395d1cce75c4a4bbe225fe21e51	Die Firma hätte die bestellten Produkte pünktlich liefern können.	Wir liefern die Ware schnell.
+die Produktion	production	5	f8d90da1b8b089d686a21e6ac252c9a6	Die Produktion, die wegen eines Maschinendefekts für zwei Wochen unterbrochen worden war.	Die Produktion läuft rund um die Uhr.
+produzieren	to produce	5	4584b046f2780d9580199b8985a233d4	Wenn das Unternehmen umweltfreundlichere Materialien verwenden würde, könnte es nachhaltigere Produkte produzieren.	Die Fabrik produziert Elektronik.
+die Industrie	industry	5	fa68b522f3b2039fb57f547ac46414ba	Die Industrie, die in dieser Region seit dem neunzehnten Jahrhundert die Wirtschaft geprägt hat.	Die Industrie braucht Fachkräfte.
+der Handel	trade, commerce	5	fee5c6c5cb0c1c9a4705650544a0bf3e	Der Handel zwischen den beiden Ländern, der durch neue Zollbestimmungen erschwert worden war.	Der Handel mit China wächst.
+exportieren	to export	5	346737e7cea8c5669e63c37200db52a6	Wenn das Land mehr hochwertige Güter exportieren könnte, wäre die Handelsbilanz deutlich positiver, als sie derzeit ist.	Deutschland exportiert viele Autos.
+importieren	to import	5	dad7f0d2fa5a00091fa0ef47f73a5663	Die Rohstoffe, die das Unternehmen aus Übersee importieren muss, hätten günstiger beschafft werden können.	Wir importieren Kaffee aus Brasilien.
+die Bilanz	balance sheet, result	5	ddd18f7022e5bd71a396e5ea5460697b	Die Bilanz, die am Ende des Geschäftsjahres vorgelegt worden war, hätte positiver ausfallen können.	Die Bilanz sieht gut aus.
+das Konto	account	5	4a7dc89c0cf1e21dbd24a4e5848c7e81	Das Konto, das er bei der neuen Bank eröffnet hatte, hätte bessere Konditionen bieten können.	Mein Konto ist fast leer.
+die Überweisung	bank transfer	5	b8debbad7173e1cb0800893c52320a5b	Die Überweisung, die er am Freitag veranlasst hatte, hätte schneller bearbeitet werden können.	Die Überweisung ist angekommen.
+überweisen	to transfer (money)	5	f2eabbd93761a0b11df3ae11262fe1c8	Hätte er das Geld rechtzeitig überweisen können, wäre die Mahnung, die ihm erhebliche Zusatzkosten verursachte.	Ich muss das Geld noch überweisen.
+die Schulden	debts	5	9227f5e4fe12fb31333f0e2296f92fbe	Die Schulden, die sich über Jahre hinweg angehäuft hatten, hätten abbezahlt werden können.	Er hat viele Schulden.
+sparen	to save (money)	5	c1e25047b40cc19d5346f80e328e4b56	Wenn sie konsequenter hätte sparen können, wäre sie nicht in die finanzielle Notlage geraten.	Ich muss mehr Geld sparen.
+leihen	to lend, to borrow	5	0acaebc3b5e39ad3853cf7bf739a91bb	Das Buch, das er sich von seiner Kollegin hätte leihen wollen, war bereits an jemand anderen verliehen worden.	Kannst du mir zehn Euro leihen?
