@@ -11,7 +11,7 @@ microfono	microphone	8	8cea7d649a503d1d9fedea04e2d6351f	Il microfono del compute
 altoparlante	speaker	8	e7642ee17ab53c67d091ea82479f0410	L'altoparlante del salotto è collegato al computer per ascoltare la musica con un suono di alta qualità.	Un altoparlante potente.
 cuffie	headphones	8	7e75bd75425cf67fc2793cc5552c53b0	Indosso le cuffie quando ascolto la musica per non disturbare gli altri membri della famiglia in casa.	Cuffie senza fili.
 auricolari	earbuds	8	34033e38671b48675d9561b67e9c3227	Gli auricolari sono comodi durante le passeggiate al parco perché posso ascoltare i podcast preferiti camminando.	Auricolari bluetooth.
-webcam	webcam	8	86722fdb4bc3199d48c363a6f922a3c7	La webcam del computer è di alta risoluzione e perfetta per le videochiamate di lavoro con i clienti.	Una webcam HD.
+webcam	webcam	8	86722fdb4bc3199d48c363a6f922a3c7	La webcam del computer è di alta risoluzione e perfetta per le videochiamate di lavoro con i clienti.	Una webcam ad alta definizione.
 monitor	monitor	8	08b5411f848a2581a41672a759c87380	Il monitor da ventisette pollici è perfetto per lavorare al computer molte ore senza affaticare gli occhi.	Un monitor enorme.
 internet	internet	8	c3581516868fb3b71746931cac66390e	Senza internet non posso lavorare da casa perché tutti i miei strumenti sono basati sulla connessione veloce.	Naviga in internet.
 sito	website	8	3b4f5036466e6011ab1e485f9af10b29	Il sito dell'azienda è stato rinnovato di recente con un design moderno e una grafica accattivante.	Un sito web.
@@ -78,14 +78,14 @@ copiare	to copy	8	9ad14f33762a0392886911dba1aac978	Devo copiare il testo da un d
 incollare	to paste	8	bfcde772b6dcc68cf2fbac6e384e2615	Dopo aver copiato il testo bisogna incollarlo nel nuovo documento usando la combinazione di tasti corretta.	Incolla qui.
 stampare	to print	8	1045ec643bd1fcc489154971f5c1bc92	Devo stampare i biglietti dell'aereo prima di andare in aeroporto stasera per il viaggio internazionale.	Stampa il documento.
 cancellare	to delete / erase	8	ce42d1ae7483d528462b6819f682571c	Voglio cancellare tutti i file vecchi dal computer per liberare spazio sul disco rigido del computer.	Cancella tutto.
-collegare	to connect	8	4a64a76770d5d338276cbaf157c2c4d7	Devo collegare il computer al televisore con un cavo HDMI per guardare i film sul grande schermo.	Collega i cavi.
+collegare	to connect	8	4a64a76770d5d338276cbaf157c2c4d7	Devo collegare il computer al televisore con un cavo apposito per guardare i film sul grande schermo.	Collega i cavi.
 scollegare	to disconnect	8	821e27a1bca5cac58515fc12351a530d	Bisogna scollegare la presa elettrica prima di pulire l'apparecchio per evitare scosse pericolose o incidenti gravi.	Scollega tutto.
 connettere	to connect (network)	8	4880441cf03ec1c2341bc11bb0999f36	Voglio connettere il telefono alla rete wifi di casa per non consumare i giga del piano dati mobile.	Connettiti al wifi.
 disconnettere	to disconnect (network)	8	219ca0efc7633e0f72dc8652141114ee	Devo disconnettere il computer dalla rete prima di partire per il weekend al mare con tutta la famiglia.	Disconnetti l'utente.
 attivare	to activate	8	7eebdde2a2314a2852b53f36267787e5	Bisogna attivare la nuova carta SIM prima di poterla usare per fare chiamate e mandare messaggi.	Attiva il servizio.
 disattivare	to deactivate	8	859b5c63def7f4345b6b910c2f2fd00d	Voglio disattivare le notifiche dei social media perché mi distraggono troppo durante le ore di lavoro intenso.	Disattiva l'allarme.
 installare	to install	8	079b5711cb9641667722b241a63a2c4f	Devo installare il nuovo programma sul computer prima di poter iniziare a lavorare con esso al progetto importante.	Installa l'applicazione.
-disinstallare	to uninstall	8	ddaafb35e54d7b19f126230a9a9428dd	Voglio disinstallare i programmi inutili dal computer per liberare spazio sul disco rigido principale del PC.	Disinstalla il software.
+disinstallare	to uninstall	8	ddaafb35e54d7b19f126230a9a9428dd	Voglio disinstallare i programmi inutili dal computer per liberare spazio sul disco rigido principale del sistema.	Disinstalla il software.
 configurare	to configure	8	61bc5b76c4df8f596410098ddcaa9195	Bisogna configurare bene le impostazioni dell'email prima di poterla utilizzare in modo efficace per il lavoro quotidiano.	Configura il sistema.
 aggiornare	to update	8	6eac056634c5fbde08d88fc52e045b7f	Devo aggiornare il sistema operativo del computer per avere tutte le funzionalità nuove e maggiore sicurezza informatica.	Aggiorna l'app.
 pubblicare	to publish	8	c4ef8f493f5c97f3a5bd13bc570bd277	Lo scrittore ha deciso di pubblicare il suo nuovo romanzo con una grande casa editrice italiana di Milano.	Pubblica il libro.
@@ -149,7 +149,7 @@ concerto	concert	8	f1a2abfffd08c3f8e630bf1ac810508a	Il concerto di musica classi
 orchestra	orchestra	8	8f163b472e2164f66a5cd751098783f9	L'orchestra sinfonica suona stasera al teatro alla Scala di Milano con un programma di musica romantica intenso.	Una grande orchestra.
 banda	band	8	c157cd3cfba5c444f2f0e6378f3da47e	La banda musicale del paese suona durante la festa patronale tutti gli anni nella piazza principale del centro.	Una banda allegra.
 canale	channel	8	a55a0c980787d4669c1791cc80e9e08f	Il canale televisivo trasmette solo film d'autore per gli appassionati di cinema d'arte e cultura italiana.	Cambia canale.
-episodio	episode	8	558765b167901c0e7fde3bfa761ff6dd	L'ultimo episodio della serie TV è stato il più bello di tutta la stagione e ha lasciato a bocca aperta.	Un episodio finale.
+episodio	episode	8	558765b167901c0e7fde3bfa761ff6dd	L'ultimo episodio della serie televisiva è stato il più bello di tutta la stagione e ha lasciato a bocca aperta.	Un episodio finale.
 serie	series / TV show	8	f263d9a8b7cb4a9e573c18e5b9e15091	La serie televisiva americana ha vinto molti premi internazionali per la qualità della sceneggiatura e degli attori.	Una serie nuova.
 documentario	documentary	8	e77bc299c2553f2afbe58155a954a652	Il documentario sulla natura africana è stato girato in cinque anni di riprese in luoghi selvaggi e remoti.	Un documentario interessante.
 cortometraggio	short film	8	0501f137259a3f015f53eb80cdfae81a	Il cortometraggio di solo dieci minuti ha vinto un premio importante al festival cinematografico di Venezia internazionale.	Un bel cortometraggio.

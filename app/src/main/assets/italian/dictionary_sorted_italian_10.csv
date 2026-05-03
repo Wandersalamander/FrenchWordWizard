@@ -80,7 +80,7 @@ sassofono	saxophone	10	c55dc3740a79d41b8791443b940ae562	Il sassofono è lo strum
 mandolino	mandolin	10	0acc46d892983a71eeead4b7fe1c0f99	Il mandolino napoletano è uno strumento tipico della tradizione musicale italiana e si suona con un plettro come la chitarra.	Suona il mandolino.
 sport	sport	10	3823552b7a2b839259a831e3b7b349a3	Lo sport è importante per mantenere il corpo in forma e la mente lucida durante tutte le età della vita.	Praticare uno sport.
 calcio	soccer / football	10	657cd0659a8d7ccfd0793cbb6f1459f0	Il calcio è lo sport più popolare in Italia e ogni weekend milioni di tifosi vanno allo stadio a vedere la partita.	Una partita di calcio.
-basket	basketball	10	0f6cdb621b452ac6fb994d88e674e49f	Il basket americano è famoso in tutto il mondo grazie alla NBA che ha lanciato grandi campioni di livello internazionale.	Una palla da basket.
+basket	basketball	10	0f6cdb621b452ac6fb994d88e674e49f	Il basket americano è famoso in tutto il mondo grazie alla lega professionistica che ha lanciato grandi campioni di livello internazionale.	Una palla da basket.
 tennis	tennis	10	1fbfb23351e3580651395ab721f5e935	Il tennis è uno sport individuale che richiede grande concentrazione e preparazione atletica per competere a livelli professionali importanti.	Una racchetta da tennis.
 golf	golf	10	c6cf642b8f1cac1101e23a06aa63600e	Il golf è considerato uno sport elegante e si pratica su grandi campi verdi con buche distribuite secondo regole precise.	Un campo da golf.
 scherma	fencing	10	15d55c4c83e2e4d80bded5f25db58c25	La scherma è uno sport olimpico in cui l'Italia ha vinto molte medaglie d'oro nel corso della sua lunga storia sportiva.	Lezioni di scherma.
@@ -182,7 +182,7 @@ teorema	theorem	10	bcdb9477a7ec6b2673843d431fd5e8e1	Il teorema di Pitagora è un
 esperimento	experiment	10	21da3ee69c2b7aa5440214883ec25c60	L'esperimento scientifico ha confermato la teoria proposta dal famoso fisico italiano nel suo recente articolo pubblicato sulla rivista internazionale.	Un esperimento riuscito.
 ipotesi	hypothesis	10	3b50dcfb4ca2dfc90c0f6e7b5e25946a	L'ipotesi iniziale dello scienziato è stata confermata dai dati raccolti durante i lunghi mesi di esperimenti accurati e ripetuti.	Una nuova ipotesi.
 teoria	theory	10	5afe42a4f589d170f1dda59b43504070	La teoria della relatività di Einstein è una delle più importanti della fisica moderna e ha cambiato la nostra comprensione dell'universo.	Una teoria nuova.
-scoperta	discovery	10	a20f5e1ca1282db08fece1670c939941	La scoperta del DNA da parte di Watson e Crick è stata una delle più importanti del ventesimo secolo per la genetica moderna.	Una grande scoperta.
+scoperta	discovery	10	a20f5e1ca1282db08fece1670c939941	La scoperta del codice genetico da parte di Watson e Crick è stata una delle più importanti del ventesimo secolo per la genetica moderna.	Una grande scoperta.
 inferire	to infer	10	e0fdbcbdf4a13ba85b8050e8630064e2	Bisogna inferire le conclusioni dai dati raccolti durante l'esperimento per arrivare alla risposta corretta del problema scientifico.	Inferire dal contesto.
 dedurre	to deduce	10	8f3a3f8abb7d4338bb7184b49d67c921	Posso dedurre dal tuo silenzio che non sei d'accordo con quello che ho detto durante la riunione di stamattina.	Dedurre la verità.
 concludere	to conclude	10	2d1daf703f5545fb5e1a441635a5345a	Bisogna concludere il discorso prima di mezzogiorno perché poi tutti devono andare a pranzo nel ristorante della facoltà.	Concludere bene.

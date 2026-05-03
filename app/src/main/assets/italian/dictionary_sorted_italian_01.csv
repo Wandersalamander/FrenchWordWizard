@@ -1,15 +1,15 @@
 il / la	the	1	944ce1d14822db98ca7a5f3736505960	Il libro è sul tavolo e la rivista è sulla sedia accanto.	Il sole brilla.
 i / le	the (plural)	1	631276a78cbda978dcc92959091d2538	I bambini e le bambine giocano insieme nel cortile della scuola elementare.	I gatti dormono.
-lo / gli	the (m, special forms)	1	708de54dc79cf2c1913e6fb0b1d172cf	Lo zio e gli amici si incontrano ogni domenica al bar del paese.	Lo studente legge.
+lo / gli	the (masculine, special forms)	1	708de54dc79cf2c1913e6fb0b1d172cf	Lo zio e gli amici si incontrano ogni domenica al bar del paese.	Lo studente legge.
 un / una	a / an	1	7505673bc466fa166eebcf10fa51a230	Vorrei un caffè e una bottiglia d'acqua naturale, per favore.	C'è una macchina.
 questo / questa	this	1	aa5969a469efb65007feb6da0b3081ec	Questo libro e questa rivista sono molto interessanti per la mia ricerca.	Questo è bello.
 quello / quella	that	1	a176df6426da031a97e2d4a4ec6e44a9	Quello che hai detto e quella decisione mi hanno fatto riflettere a lungo.	Quella casa è grande.
 mio / mia	my	1	eab89131c35a3a78745aa698f8fe90a5	Il mio cane e la mia gatta vivono insieme in armonia da molti anni.	È mia.
-tuo / tua	your (sg informal)	1	7c4684008ac5e8a3a7a0b7f8cc8126b1	Il tuo lavoro e la tua passione mi ispirano davvero ogni giorno.	È tuo?
+tuo / tua	your (singular informal)	1	7c4684008ac5e8a3a7a0b7f8cc8126b1	Il tuo lavoro e la tua passione mi ispirano davvero ogni giorno.	È tuo?
 suo / sua	his / her / its	1	633e5078b0dc3e527745d26bf281ddc3	Il suo libro e la sua penna sono sempre sulla scrivania ordinata.	È suo.
 nostro / nostra	our	1	806a2eff49607bd9d9093156f97c09df	Il nostro paese e la nostra cultura sono ricchi di storia e tradizioni.	È nostra.
 io	I	1	f98ed07a4d5f50f7de1410d905f1477f	Io penso che tu abbia ragione su questo argomento delicato.	Io sono qui.
-tu	you (sg informal)	1	b6b4ce6df035dcfaa26f3bc32fb89e6a	Tu hai sempre saputo come farmi sorridere anche nei momenti difficili.	Tu cosa pensi?
+tu	you (singular informal)	1	b6b4ce6df035dcfaa26f3bc32fb89e6a	Tu hai sempre saputo come farmi sorridere anche nei momenti difficili.	Tu cosa pensi?
 lui	he	1	55681f25f2b5ce8a670140d1dff04da5	Lui è arrivato in ritardo perché il treno era stato cancellato all'ultimo momento.	Lui dorme.
 lei	she; you (formal)	1	688f227b9cad4edeed15f067e04d3764	Lei lavora in ospedale come medico da più di vent'anni ormai.	Lei è qui.
 noi	we	1	5585e79028e8d00e7a26a68b168739bd	Noi siamo amici da tanti anni e ci conosciamo molto bene a vicenda.	Noi mangiamo.
@@ -18,10 +18,10 @@ loro	they / them	1	b66f36de26d6b937e64d72f5a5fafac0	Loro vivono in una casa gran
 mi	me / myself	1	29bfe372865737fe2bfcfd3618b1da7d	Quando mi vedi triste, sai sempre come farmi tornare il sorriso.	Mi chiamo Marco.
 ti	you / yourself	1	e00fba6fedfb8a49e13346f7099a23fc	Ti aspetto da un'ora davanti al cinema, dimmi dove sei.	Ti amo.
 ci	us / there	1	35ea51baf1fe7f0142ad5f950855dde0	Ci sono molte persone alla festa stasera e ci stiamo divertendo tantissimo.	Ci vediamo.
-vi	you (pl) / yourselves	1	35b36b28916d38b34abddf832e286126	Vi scrivo per ringraziarvi del bellissimo regalo che mi avete fatto.	Vi saluto.
+vi	you (plural) / yourselves	1	35b36b28916d38b34abddf832e286126	Vi scrivo per ringraziarvi del bellissimo regalo che mi avete fatto.	Vi saluto.
 si	oneself / one	1	ac5585d98646d255299c359140537783	Si dice che il tempo cambierà nei prossimi giorni e che pioverà molto.	Si vede.
 me	me (stressed)	1	ab86a1e1ef70dff97959067b723c5c24	Per me è importante avere del tempo libero per dedicarmi ai miei hobby.	Vieni con me.
-te	you (stressed sg)	1	569ef72642be0fadd711d6a468d68ee1	Senza te non saprei come affrontare questa difficile situazione familiare.	Conto su di te.
+te	you (stressed singular)	1	569ef72642be0fadd711d6a468d68ee1	Senza te non saprei come affrontare questa difficile situazione familiare.	Conto su di te.
 chi	who	1	1e6086b705c7161eeb93a8b249a5ca7c	Chi ha lasciato la finestra aperta durante la notte mentre dormivamo?	Chi è?
 che	that / what / which	1	f81e986ee4c9f80d6002bf5302b3ea87	Il libro che mi hai consigliato è davvero interessante e ben scritto.	Che cosa fai?
 cosa	thing / what	1	12703dd1411c33587da2004a9434a400	C'è una cosa importante che devo dirti prima che parta domani mattina.	Cosa vuoi?
@@ -38,11 +38,11 @@ per	for / through / to	1	fe3838c7c11aa406dd956566e17360d5	Ho comprato un regalo 
 tra	between / among / in (time)	1	cfac4e0dc47d98414cf373a2f09d28a1	Tra le mie passioni preferite ci sono la lettura e la musica classica.	Tra noi due.
 fra	between / among (variant)	1	ffe7470430a737c4ce6dc74bea0155d5	Fra qualche giorno partirò per un viaggio molto importante in Asia.	Fra amici.
 senza	without	1	f2071e46b3595efa2e55c0bedfcf53a3	Non posso vivere senza la mia tazza di caffè ogni mattina presto.	Senza dubbio.
-e	and	1	e1671797c52e15f763380b45e841ec32	Ho comprato pane e latte e formaggio al supermercato vicino casa mia.	Tu e io.
-o	or	1	d95679752134a2d9eb61dbd7b91c4bcc	Vuoi un caffè o un tè caldo prima di uscire al lavoro?	Sì o no?
+e	and	1	e1671797c52e15f763380b45e841ec32	Ho comprato pane e latte e formaggio al supermercato vicino a casa mia.	Tu e io.
+o	or	1	d95679752134a2d9eb61dbd7b91c4bcc	Vuoi un caffè o un tè caldo prima di andare al lavoro?	Sì o no?
 ma	but	1	b74df323e3939b563635a2cba7a7afba	Volevo andare al mare ma il tempo non era proprio adatto per nuotare.	Ma certo!
 se	if / whether	1	efad7abb323e3d4016284c8a6da076a1	Se piove domani, non andremo al parco a fare la solita passeggiata.	Se vuoi.
-anche	also / too	1	b58edc74e6fc0df878c88e403a9f4045	Anche io vorrei venire alla festa stasera con voi tutti, se possibile.	Anche bene.
+anche	also / too	1	b58edc74e6fc0df878c88e403a9f4045	Anche io vorrei venire alla festa stasera con voi tutti, se possibile.	Anch'io.
 non	not	1	14b8f0494c6f1460c3720d0ce692dbca	Non ho ancora finito di leggere il libro che mi hai prestato la settimana scorsa.	Non lo so.
 sì	yes	1	62d08c707c0569f0482567ffb96a57e5	Sì, sono d'accordo con la tua proposta e voglio partecipare al progetto.	Sì, grazie.
 no	no	1	7fa3b767c460b54a2be4d49030b349c7	No, non posso venire stasera perché ho un altro impegno molto importante.	No, grazie.
@@ -51,7 +51,7 @@ quando	when	1	458c37724b07758259619017ccc86376	Quando arriverai a casa stasera, 
 dove	where	1	bc73b87e5b85cf9434103e0f7d80d798	Dove abiti adesso e dove lavori di solito durante la settimana?	Dove sei?
 perché	why / because	1	9ec9c29be21ecf2943988d3dc8ac5e69	Perché non sei venuto ieri sera alla festa di compleanno di Maria?	Perché no.
 molto	very / much	1	896d6f56dd084f43a240f393f7de5d82	Sono molto stanco oggi perché ho lavorato molto durante la giornata intera.	Molto bene.
-poco	little / few	1	9709638de74d20a5482f5e409f0a0b1e	Ho dormito poco stanotte perché ho avuto poco tempo per riposarmi davvero.	Un poco.
+poco	little / few	1	9709638de74d20a5482f5e409f0a0b1e	Ho dormito poco stanotte perché ho avuto poco tempo per riposarmi davvero.	Un po'.
 troppo	too much / too many	1	e393dd1705836e4f61f94d32944fe538	Hai mangiato troppo a pranzo e ora ti senti troppo stanco per uscire.	Troppo caro.
 abbastanza	enough / quite	1	981fecfbb9b6dbe3334ce10ea35a045a	Abbiamo abbastanza tempo per finire il progetto prima della scadenza fissata.	Abbastanza bene.
 ancora	still / yet / again	1	acc104f45c245c07b2e1aca153b4656a	Sei ancora sveglio? Non hai ancora finito di studiare per l'esame?	Ancora una volta.
@@ -76,8 +76,8 @@ essere	to be	1	56e1c1edb51514657dbb89ba27743ef0	Voglio essere felice nella vita 
 avere	to have	1	4f2e6aeeccce23ebf064305ea750d279	Ho avuto la fortuna di avere una famiglia che mi sostiene sempre.	Ho fame.
 fare	to do / to make	1	5767e107e42c7d1ab65abee3666cbd47	Devo fare la spesa e poi fare i compiti prima di cena.	Cosa fai?
 dire	to say / to tell	1	2fca68e97d6644dc3f3765f75953ba1e	Voglio dire la verità anche se è difficile dire certe cose ad alta voce.	Cosa dici?
-andare	to go	1	e86bb199de89d2d11238be94c3b89054	Mi piace andare al mare in estate per andare a nuotare ogni giorno.	Vado a casa.
-venire	to come	1	be5d76b2520f482d0fcdf466de915576	Puoi venire a casa mia stasera per venire a cena con noi?	Vieni qui!
+andare	to go	1	e86bb199de89d2d11238be94c3b89054	Mi piace andare al mare in estate per nuotare ogni giorno con gli amici.	Vado a casa.
+venire	to come	1	be5d76b2520f482d0fcdf466de915576	Puoi venire a casa mia stasera a cena con tutta la famiglia?	Vieni qui!
 potere	to be able / can	1	ae61e068da673474da51c219f997ebe8	Non posso venire stasera ma posso venire domani sera senza problemi.	Posso aiutarti?
 dovere	to have to / must	1	e25565431059c5ed0954ea1490bc3b78	Devo studiare molto per l'esame e devo finire tutti gli esercizi del libro.	Devo andare.
 volere	to want	1	0719e8fc7c3923b6608a609d828a948f	Voglio imparare l'italiano perché voglio viaggiare in Italia il prossimo anno.	Cosa vuoi?
@@ -92,7 +92,7 @@ parlare	to speak / to talk	1	c8536d95c98f5fcd0f0f5aac0b8fcc29	Mi piace parlare c
 portare	to bring / to wear	1	9275bb7698e5e6d5e31ba0f0fdb0b20f	Devo portare il regalo alla festa e portare anche una bottiglia di vino.	Porto io.
 mettere	to put	1	4353b9b87661ca1d641d7d849fe8611c	Dove devo mettere queste scatole pesanti? Le posso mettere in cantina.	Metti qui.
 credere	to believe	1	9dc988345b95eb716296e2b4540139eb	Credo che tu abbia ragione e credo anche che dovremmo provare insieme.	Ci credo.
-uscire	to go out	1	37b8e7f57592ee127a6c3d4daf65b19c	Stasera voglio uscire con gli amici per uscire un po' di casa.	Esco ora.
+uscire	to go out	1	37b8e7f57592ee127a6c3d4daf65b19c	Stasera voglio uscire con gli amici per stare un po' fuori casa.	Esco ora.
 capire	to understand	1	bebd675f39b534f516fb55c798205451	Non riesco a capire perché tu non riesca a capire la situazione attuale.	Ho capito.
 cercare	to look for	1	fa012d6fd325b4032943ce020aae244a	Sto cercando lavoro e devo cercare bene tra le offerte online disponibili.	Cerco lavoro.
 lavorare	to work	1	d579234e22927cad88dd69a24654b33c	Devo lavorare molto questa settimana perché lavoro a un progetto importante.	Lavoro qui.
@@ -102,7 +102,7 @@ dormire	to sleep	1	c82d316d37ac8baaaeaa3f01c1abbb28	Non riesco a dormire bene qu
 leggere	to read	1	ac98708af2596f77e08cffb7e6770ea1	Mi piace leggere prima di dormire e leggere libri di storia antica.	Leggo un libro.
 scrivere	to write	1	40f17263e89df5d466062418398f207d	Devo scrivere una lettera lunga e scrivere anche un'email importante al direttore.	Scrivo a mio padre.
 amare	to love	1	dc65e5f6d7faf6ec93cea9dbbd3a04d5	Voglio amare ed essere amato perché amare è la cosa più bella del mondo.	Ti amo.
-piacere	to like (lit. to please)	1	8a0f1475e29a96be10e9e625eeef8fcf	Mi piace molto la pizza e mi piacciono le città italiane storiche.	Piacere mio.
+piacere	to like (literally to please)	1	8a0f1475e29a96be10e9e625eeef8fcf	Mi piace molto la pizza e mi piacciono le città italiane storiche.	Piacere mio.
 comprare	to buy	1	c52b4fc0cbf98200d9a83806337df79a	Devo comprare il pane e voglio comprare anche un regalo per mia sorella.	Compro questo.
 aprire	to open	1	a82f4f4bb48eb914c734f5143feb87a5	Puoi aprire la finestra perché vorrei aprire anche la porta principale?	Apri la porta.
 chiudere	to close	1	e75da42968e1e140cf3d0257dc874d63	Devo chiudere la porta e chiudere bene tutte le finestre prima di uscire.	Chiudi la porta.
@@ -115,7 +115,7 @@ ricordare	to remember	1	ca0cc9a2827ab43ea94114890aad9f91	Devo ricordare di chiam
 dimenticare	to forget	1	0e45156f4b307899d6d8d5423ea1bf99	Non voglio dimenticare il tuo compleanno né dimenticare le cose veramente importanti.	Ho dimenticato.
 pensare	to think	1	7118df4903c33654656d0caf0f588eda	Devo pensare bene prima di prendere una decisione e pensare al mio futuro.	Cosa pensi?
 aspettare	to wait	1	1e4b5f10b86706cedc9bb56b46e99bfb	Devo aspettare il mio amico e aspettare anche la sua chiamata importante.	Aspetta un attimo.
-guardare	to look / to watch	1	07514fa152ecae73ac0dcf7e04abe410	Mi piace guardare film stranieri e guardare anche le serie TV moderne.	Guarda qui!
+guardare	to look / to watch	1	07514fa152ecae73ac0dcf7e04abe410	Mi piace guardare film stranieri e guardare anche le serie televisive moderne.	Guarda qui!
 ascoltare	to listen	1	e3c8ba2d0f326684801677c2ccb60e6b	Mi piace ascoltare musica classica e ascoltare anche i podcast educativi.	Ascolta bene.
 aiutare	to help	1	90629d256541ca1515bd562f3a94deb5	Voglio aiutare i miei amici e aiutare chi ha bisogno di me sempre.	Aiutami!
 imparare	to learn	1	3911e05fc3d97fb39b62e40ef9e71b9a	Voglio imparare l'italiano perché voglio imparare anche la cultura italiana profonda.	Imparo l'italiano.
@@ -140,7 +140,7 @@ donna	woman	1	32ff0880c7c75d751d0f9ef3a816eae2	Quella donna è mia zia e lavora 
 bambino	child / boy	1	77442076370331f02b814c1355ef0b26	Il bambino dei miei vicini gioca sempre nel cortile insieme agli altri bambini.	Un bambino piccolo.
 ragazzo	boy / young man	1	bb3cd60ad138f47e491b2a58b2725ad6	Quel ragazzo studia all'università e lavora part-time in un bar del centro.	Un bravo ragazzo.
 ragazza	girl / young woman	1	c7a43f9a5b2f0402ea0870329fad0c0d	La ragazza con cui parlavo è la sorella del mio migliore amico.	Una ragazza simpatica.
-amico	friend (m)	1	aa4b06f4ca05f7698dc583ba93b78767	Il mio amico Marco vive in Germania ma viene in Italia ogni estate.	Un caro amico.
+amico	friend (masculine)	1	aa4b06f4ca05f7698dc583ba93b78767	Il mio amico Marco vive in Germania ma viene in Italia ogni estate.	Un caro amico.
 famiglia	family	1	fe9d1b058669b3d631aff415b5ce8e74	La mia famiglia è grande e ci riuniamo tutti per Natale ogni anno.	Una bella famiglia.
 madre	mother	1	2309f522cab926b42f4463fc656bd87f	Mia madre cucina molto bene e mi insegna sempre nuove ricette tradizionali.	Mia madre è qui.
 padre	father	1	41409f34ee49036ad153fa10b374747e	Mio padre lavora in banca da molti anni e ama molto il suo lavoro.	Mio padre è alto.
@@ -162,29 +162,29 @@ libro	book	1	740f012345d61ecd008e19690ec193b7	Sto leggendo un libro molto intere
 macchina	car / machine	1	aff79667f4c3ec1e7c93114b947fdb9d	La mia macchina è vecchia ma funziona ancora bene per i viaggi brevi.	In macchina.
 mano	hand	1	5b4d762427d4dff75f6e5885cb380080	Mi sono fatto male alla mano destra mentre giocavo a pallone ieri sera.	Dammi la mano.
 occhio	eye	1	af5871c825d442b3dd03a90ac437d484	Ho un problema all'occhio sinistro e devo andare dall'oculista al più presto.	A occhio.
-testa	head	1	7a68f09bd992671bb3b19a5e70b7827e	Ho mal di testa stamattina, forse ho dormito troppo poco stanotte scorsa.	Mal di testa.
+testa	head	1	7a68f09bd992671bb3b19a5e70b7827e	Ho mal di testa stamattina, forse ho dormito troppo poco la notte scorsa.	Mal di testa.
 cuore	heart	1	8b784f8f08e36ba472c44b8d30917a88	Il mio cuore batte forte ogni volta che ti vedo entrare nella stanza.	Di cuore.
-nome	name	1	666ac576aa2666cff323f5d976d592a6	Qual è il tuo nome? Il mio nome è Marco, piacere di conoscerti finalmente.	Come ti chiami di nome?
+nome	name	1	666ac576aa2666cff323f5d976d592a6	Qual è il tuo nome? Il mio nome è Marco, piacere di conoscerti finalmente.	Come ti chiami?
 soldi	money	1	8ea6e5f2dd5b9d7458671b3ced7ea9da	Non ho abbastanza soldi questo mese per comprare un nuovo telefono di marca.	Hai soldi?
 vita	life	1	1116d70f3af1555dd95b361a7619eb1b	La vita è bella se la sai vivere con passione e curiosità ogni giorno.	La mia vita.
 modo	way / manner	1	b4bd3c0453ef20e66f2fcc026e3816ec	C'è sempre un modo per risolvere i problemi se ci credi davvero molto.	In ogni modo.
 parte	part	1	4d2aa37ecdd52b899359c0ffbaa8402a	Una parte di me vorrebbe partire ma un'altra parte vuole assolutamente restare.	La maggior parte.
 punto	point	1	dbf8386ad34c7bac0e3f5f712756bfae	Hai sollevato un punto interessante che merita di essere discusso a fondo.	Punto e basta.
 volta	time / occasion	1	a1423b7bbd7522605a6267121a91e6f1	C'era una volta una principessa che viveva in un castello sul mare.	Un'altra volta.
-grande	big / great	1	7a3e1c7c45a215a4cbd11d441e63ec4f	Vivo in una casa grande con un giardino bello dove i bambini giocano.	Una grande città.
+grande	big / great	1	7a3e1c7c45a215a4cbd11d441e63ec4f	Vivo in una casa grande con un bel giardino dove i bambini giocano.	Una grande città.
 piccolo	small / little	1	90319ea56263c86d6dbade1b0f34fab6	Il mio appartamento è piccolo ma molto accogliente e decisamente luminoso.	Un piccolo problema.
 nuovo	new	1	00777c83ed57889ec7c96acea333440a	Ho comprato un'auto nuova il mese scorso, dopo aver venduto quella vecchia.	Un nuovo amico.
 vecchio	old	1	ad01977d7d311d5b5898e274efeb211b	Mio nonno è molto vecchio ma ha ancora una mente lucida e attenta.	Un vecchio film.
 buono	good	1	db2d46512642abeb3113bb5d6982a07c	Questo cibo è davvero buono, mi piace molto la cucina di tua madre.	Buon appetito!
 cattivo	bad	1	37dc1567cd3a8896939c770f196fc9d7	Ha un carattere cattivo ma in fondo è una persona buona e generosa.	Un cattivo esempio.
-bello	beautiful / nice	1	5a4d5215fa1fb5435e5322dbeb60dd3c	Che bel tempo oggi, è una giornata bellissima per uscire al parco.	Una bella giornata.
+bello	beautiful / nice	1	5a4d5215fa1fb5435e5322dbeb60dd3c	Che bel tempo oggi, è una giornata bellissima per andare al parco.	Una bella giornata.
 brutto	ugly / bad	1	11735e1e14db3f61c60f93503504fb2b	Oggi è una brutta giornata perché piove e fa anche molto freddo fuori.	Un brutto film.
 alto	tall / high	1	329d0259b8f9da84744c10e4bf085dd6	Mio fratello è molto alto, è il più alto della famiglia di sicuro.	Una persona alta.
 basso	short / low	1	cbe8684acb6e764141832e9efcf1341e	Il prezzo è basso ma la qualità è alta, è un ottimo affare.	Un suono basso.
 lungo	long	1	48f44b18a95eca9a0642b05ee0d7d2fa	Ho fatto un viaggio molto lungo per arrivare qui ieri sera tardi.	Un lungo discorso.
 corto	short	1	a36a32406d0e37b877067699bfab78fd	Mi piacciono i racconti corti più dei romanzi lunghi e troppo complicati.	Capelli corti.
 caldo	hot / warm	1	52889ca2b8b1cb3dff5c0218658e1e01	Oggi fa molto caldo, è una giornata estiva bellissima ma faticosa da sopportare.	Caffè caldo.
-freddo	cold	1	219718c0c4677daf05fb19ebce6968d2	Fa freddo stasera, dovresti mettere un cappotto pesante prima di uscire fuori.	Acqua fredda.
+freddo	cold	1	219718c0c4677daf05fb19ebce6968d2	Fa freddo stasera, dovresti mettere un cappotto pesante prima di uscire.	Acqua fredda.
 facile	easy	1	fa7f68fe17fd2e04e80e5b6d81508b2f	L'esame è stato più facile del previsto e tutti sono stati promossi facilmente.	Una vita facile.
 difficile	difficult	1	b3b8114e406a232bd80aea2bbfc6138d	Questo problema è molto difficile da risolvere, mi serve davvero più tempo.	Una scelta difficile.
 importante	important	1	1f81809f0d655ffc985bdbed5dfef5da	È importante studiare ogni giorno per imparare bene una nuova lingua straniera.	Una persona importante.
@@ -195,6 +195,6 @@ triste	sad	1	535500fa8ed249a3c394dd6da143923d	Sono triste perché il mio amico �
 due	two	1	d6692dd335c3c6b2ad020e2758eed628	Ho due figli, un maschio e una femmina, di cinque e sette anni.	Due caffè, prego.
 tre	three	1	7e764aa6b7529530855f0373606d1886	Ci sono tre persone in fila davanti a noi al supermercato del quartiere.	Tre giorni fa.
 quattro	four	1	e8595e7b3eae894a2d9cebacedc417e8	Lavoro quattro giorni a settimana e ho tre giorni liberi per riposarmi.	Le quattro stagioni.
-cinque	five	1	9b6d488d7170bcedde6a36d059255b0f	I miei nonni sono sposati da cinquant'anni, sono cinque decenni di amore vero.	Sono le cinque.
+cinque	five	1	9b6d488d7170bcedde6a36d059255b0f	I miei nonni sono sposati da cinquant'anni e hanno avuto cinque figli insieme.	Sono le cinque.
 dieci	ten	1	9e562c10158fed39ce61f8e58eaf2905	Ho dieci minuti per arrivare al lavoro, devo correre subito alla stazione.	Dieci euro.
 mille	thousand	1	cd827c33216d4e6e46bc60699f3e18a1	Mille grazie per il bellissimo regalo che mi hai fatto a sorpresa.	Mille volte.
