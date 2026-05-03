@@ -9,22 +9,18 @@ import kotlin.random.Random
 
 fun openDictionaryStream(context: Context, language: String): InputStream {
     return when (language) {
-        "de" -> context.resources.openRawResource(R.raw.dictionary_sorted_german)
+        "de" -> context.assets.open("german/dictionary_sorted_german.csv")
         "it" -> openItalianDictionary(context)
-        else -> context.resources.openRawResource(R.raw.dictionary_sorted_2)
+        else -> context.assets.open("french/dictionary_sorted_2.csv")
     }
 }
 
 private fun openItalianDictionary(context: Context): InputStream {
-    val streams = mutableListOf<InputStream>()
-    var i = 1
-    while (true) {
-        val name = "dictionary_sorted_italian_%02d".format(i)
-        val resId = context.resources.getIdentifier(name, "raw", context.packageName)
-        if (resId == 0) break
-        streams.add(context.resources.openRawResource(resId))
-        i++
-    }
+    val files = context.assets.list("italian")
+        ?.filter { it.startsWith("dictionary_sorted_italian_") && it.endsWith(".csv") }
+        ?.sorted()
+        .orEmpty()
+    val streams = files.map { context.assets.open("italian/$it") }
     return SequenceInputStream(Collections.enumeration(streams))
 }
 
