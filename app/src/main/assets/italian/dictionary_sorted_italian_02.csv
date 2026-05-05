@@ -12,7 +12,7 @@ invitare	to invite	2	3a1d8eaa9f0e04506d7e3f5715c01192	Voglio invitare tutti i mi
 accettare	to accept	2	27992302d6af4f89cd248e439b2f32c8	Devo accettare il fatto che non tutto va sempre come vorrei nella vita.	Accetto la sfida.
 rifiutare	to refuse	2	7ac1304ecd15d39c3663d5a65a9feba0	Non posso rifiutare un invito così gentile da parte dei miei vecchi amici.	Ha rifiutato l'offerta.
 promettere	to promise	2	e2e3582f2b1eb35c612a2a6d3bc7f570	Ti devo promettere che starò più attento e che cercherò di non sbagliare più.	Te lo prometto.
-preferire	to prefer	2	e03d8d288d2da7ba0f5fab8bcaa63f21	Preferisco stare a casa stasera invece di uscire al cinema con tutti gli altri.	Cosa preferisci?
+preferire	to prefer	2	e03d8d288d2da7ba0f5fab8bcaa63f21	Preferisco stare a casa stasera invece di andare al cinema con tutti gli altri.	Cosa preferisci?
 preparare	to prepare	2	d9699f0a0a5de065bcc72f155666b50c	Devo preparare la cena per i miei ospiti che arriveranno tra circa un'ora.	Preparo tutto io.
 cucinare	to cook	2	541c7e7ea56e949ac611ad3187598c7a	Mia madre cucina sempre piatti tradizionali italiani che piacciono a tutta la famiglia.	Cucino la pasta.
 lavare	to wash	2	4a4748e9906e668aa4ca18f4de19c423	Devo lavare i piatti dopo cena prima di andare a dormire stanco morto.	Lava le mani.
@@ -68,7 +68,7 @@ nonno	grandfather	2	fb460460f62298cbd5b1735252fbe676	Mio nonno racconta sempre s
 nonna	grandmother	2	a5a609db42f1c2bd0a97aeb9958e3f87	Mia nonna abita in campagna e prepara dolci tradizionali ogni domenica per noi.	Nonna mi vuole bene.
 marito	husband	2	1261c03f1339c1fc319d5f1a34b2349d	Mio marito lavora come ingegnere in una grande azienda di Milano da molti anni.	Mio marito è alto.
 moglie	wife	2	38196118ff080bb86aa33e4304f42077	Mia moglie è insegnante di scuola elementare e ama molto il suo lavoro creativo.	Mia moglie è dottoressa.
-cugino	cousin (m)	2	145566e43c9c5bd68d3ebe2eaf2bf425	Mio cugino vive a Roma e ci vediamo solo durante le vacanze estive insieme.	Mio cugino è simpatico.
+cugino	cousin (masculine)	2	145566e43c9c5bd68d3ebe2eaf2bf425	Mio cugino vive a Roma e ci vediamo solo durante le vacanze estive insieme.	Mio cugino è simpatico.
 genitori	parents	2	ea67e0e3ca399c6a2ccec814fbb3a56e	I miei genitori vivono in campagna e sono molto felici della loro vita tranquilla.	I miei genitori arrivano.
 parente	relative	2	f1bd439e42cbdb4c9f4d17d9e49c852d	Ho un parente che vive in Australia e non lo vedo da molti anni ormai.	Un parente lontano.
 nipote	grandchild / nephew / niece	2	f3052ce72efc2bf2a36f1900674bd547	Mio nipote ha solo cinque anni ma è già molto intelligente e sempre curioso.	Mio nipote dorme.
@@ -179,7 +179,7 @@ quindici	fifteen	2	2afb85f9754ceb5ef967ea9453da82ee	Ho aspettato quindici minuti
 venti	twenty	2	b06393e3807f6e8c547e7153966ad247	Ho compiuto venti anni la settimana scorsa con una bellissima festa a casa con gli amici.	Venti minuti fa.
 cinquanta	fifty	2	a8f0336a55c5510472c48d686aadc95c	Mio padre ha cinquanta anni ed è ancora in ottima forma fisica e mentale davvero.	Cinquanta euro.
 cento	hundred	2	d46a7647d73ec84eaf1afa55d0461f01	Cento persone hanno partecipato alla manifestazione in piazza ieri sera tardi senza problemi.	Cento per cento.
-zero	zero	2	d02c4c4cde7ae76252540d116a40f23a	Stamattina la temperatura è sotto lo zero e bisogna vestirsi pesante per uscire al lavoro.	Sotto zero.
+zero	zero	2	d02c4c4cde7ae76252540d116a40f23a	Stamattina la temperatura è sotto lo zero e bisogna vestirsi pesante per andare al lavoro.	Sotto zero.
 molti	many	2	9965e4b71b9614a28386f9586f000d5d	Molti dei miei amici si sono sposati negli ultimi due anni con grande felicità reciproca.	Molti anni fa.
 pochi	few	2	07475af7ca64f9450efb2cfb1b1e9ba4	Pochi sanno che la mia città di origine ha una storia molto antica e affascinante davvero.	Pochi giorni.
 alcuni	some	2	74ac8c89b17702e1101eaf2a825e4621	Alcuni dei miei colleghi sono andati in vacanza questa settimana per riposarsi un po' finalmente.	Alcuni amici.
