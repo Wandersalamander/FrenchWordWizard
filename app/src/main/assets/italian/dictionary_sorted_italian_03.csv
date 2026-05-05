@@ -198,3 +198,33 @@ crudo	raw	3	58266a6ed9386318a4afdf356696fcaf	Il pesce crudo è una specialità d
 cotto	cooked	3	8fcb4ec3d7dc5d5eb9aaee8be82a71b4	Il pollo è cotto al punto giusto e profuma di rosmarino e olio d'oliva extra vergine ottimo.	Riso cotto.
 pulito	clean	3	87e12e9d29588c6368a25f8bf6847298	Il bagno è pulito e profumato dopo aver passato tutto il pomeriggio a fare le pulizie a fondo.	Aria pulita.
 sporco	dirty	3	dc4440853a6e577ba93791bcab005383	Il pavimento è sporco di fango perché i bambini sono entrati con le scarpe piene di terra del giardino.	Vestiti sporchi.
+io faccio	I do / I make	3	435a98c2dfb9ff3ab97041138ef2ac45	Io faccio sempre la spesa il sabato mattina al mercato del centro storico.	Faccio i compiti.
+tu fai	you do / you make	3	5798340da5fcb43e80837f892ed172c9	Tu fai sempre del tuo meglio in tutto quello che decidi di intraprendere nella vita.	Cosa fai?
+lui fa / lei fa	he does / she does	3	c2ab37bef4f48ee6909df0b15a24a041	Lui fa il medico in ospedale e lei fa l'insegnante alle scuole elementari del quartiere.	Fa caldo oggi.
+noi facciamo	we do / we make	3	e69b9c0a481d36f4ef9e2f5c6bf8730f	Noi facciamo una passeggiata al parco ogni domenica pomeriggio se il tempo è bello.	Facciamo presto.
+voi fate	you do / you make (pl)	3	8a4dbd9d39743817b4af6bafe8c710f9	Voi fate troppo rumore quando giocate tutti insieme nel cortile della scuola elementare.	Cosa fate stasera?
+loro fanno	they do / they make	3	a34a9aad042fdf16b984d375570b8a37	Loro fanno volontariato in un'associazione che aiuta i bambini in difficoltà economiche.	Fanno tardi.
+io vado	I go	3	b885ccb99eebe0790023a79ce22dc3cb	Io vado al lavoro in bicicletta ogni mattina anche quando piove leggermente sulla città.	Vado a casa.
+tu vai	you go	3	95372b0110dca8e1aec520b726e906f3	Tu vai sempre di fretta e non hai mai tempo per fermarti a chiacchierare un attimo.	Dove vai?
+lui va / lei va	he goes / she goes	3	dcf78ef058969e56ea936f1d9a354767	Lui va in palestra tre volte alla settimana e lei va a un corso di yoga.	Va a scuola.
+noi andiamo	we go	3	ac44b13cc17177e3c236cf5f61c162ff	Noi andiamo in vacanza al mare ogni estate da quando i bambini erano molto piccoli.	Andiamo via!
+voi andate	you go (pl)	3	958d09da8b65536f4abe0cd5faab2709	Voi andate al cinema stasera o preferite restare a casa a guardare un film?	Dove andate?
+loro vanno	they go	3	488e356c78cb1f34079d211a2bfbb26a	Loro vanno al ristorante italiano del centro tutti i venerdì sera con gli amici di sempre.	Vanno via.
+io dico	I say / I tell	3	570d2a618b28bf245ac4c5b54d8aa18f	Io dico sempre la verità anche quando è difficile e potrebbe ferire qualche sentimento.	Dico sì.
+tu dici	you say / you tell	3	5bec00a77d356cb3705fb5639a74f6c4	Tu dici cose molto interessanti ogni volta che parliamo di politica o di filosofia.	Cosa dici?
+lui dice / lei dice	he says / she says	3	abcac6ef33c37f59f1ce84f29051afd5	Lui dice che arriverà tardi e lei dice che ci raggiungerà direttamente al ristorante.	Lui dice di no.
+noi diciamo	we say / we tell	3	8abf7fe04dcd1d9288c1aedac104981f	Noi diciamo a tutti che la festa è stata un grande successo davvero divertente.	Diciamo basta.
+voi dite	you say / you tell (pl)	3	ff1c80b8e0f478bcf151ae6e166ffa6b	Voi dite sempre che dovremmo viaggiare di più ma poi non trovate mai il tempo libero.	Cosa dite?
+loro dicono	they say / they tell	3	27242c37bb1c72d5780418433a4c24b2	Loro dicono che il nuovo film del regista italiano è davvero molto bello e profondo.	Dicono bugie.
+io vengo	I come	3	2251055a4cacd36b765c3f896885034f	Io vengo da una piccola città del nord Italia molto vicino alle Alpi.	Vengo subito.
+tu vieni	you come	3	2bfe6288783d68a91c4e8e4c53e746b2	Tu vieni alla festa di compleanno di Marco sabato sera o hai altri impegni urgenti?	Vieni con me?
+lui viene / lei viene	he comes / she comes	3	afaa054d17978e5d29709697ad84f3b3	Lui viene a trovarmi ogni weekend e lei viene a cena ogni martedì sera.	Viene anche lui.
+noi veniamo	we come	3	9aa64e14c50b57488abd4043c1dc075b	Noi veniamo dall'Italia ma viviamo all'estero da più di dieci anni ormai.	Veniamo presto.
+voi venite	you come (pl)	3	c65ec554ef07b6e166111824e4d4e2a5	Voi venite con noi al concerto stasera o avete già altri programmi diversi?	Venite o no?
+loro vengono	they come	3	34a58d12545472f1a1c88d615c25e85a	Loro vengono a trovarci ogni estate e restano da noi per tutto il mese di agosto.	Vengono insieme.
+io parlo	I speak	3	b95e9caf05edf1b1feafaedb00152180	Io parlo italiano fluentemente e sto imparando il francese da circa due anni.	Parlo inglese.
+tu parli	you speak	3	6cee2d8f8cb49bd2e9bf7188bbd50f55	Tu parli sempre con grande passione di tutti gli argomenti che ti stanno a cuore.	Parli troppo.
+lui parla / lei parla	he speaks / she speaks	3	1144dc03cdab647bef2f8c94bf1f455b	Lui parla cinque lingue diverse e lei parla solo italiano e un po' di inglese.	Parla bene.
+noi parliamo	we speak	3	b59eae177ec6e09f547c3a1e3fe045b6	Noi parliamo spesso al telefono anche se viviamo in città molto lontane fra di loro.	Parliamo dopo.
+voi parlate	you speak (pl)	3	a52dd426cac9e2f86996490cbdf9252e	Voi parlate del progetto di lavoro o di qualcos'altro durante la pausa pranzo?	Parlate piano.
+loro parlano	they speak	3	39356a68028835f83aa682e33a242657	Loro parlano sempre molto velocemente e a volte è difficile capire ogni singola parola.	Parlano italiano.

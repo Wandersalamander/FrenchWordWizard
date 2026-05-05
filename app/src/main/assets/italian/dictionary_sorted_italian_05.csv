@@ -198,3 +198,21 @@ confine	border	5	aa1f6bc154e04ddf5e7e93f747e6e0f6	Il confine tra Italia e Franci
 dogana	customs	5	2790e02135dc8fcabba404c46350ac68	Alla dogana hanno controllato tutti i bagagli prima di farci entrare nel paese di destinazione.	Passare la dogana.
 bandiera	flag	5	7285ad0fb3ec06159995b47962cf6943	La bandiera italiana è verde, bianca e rossa e sventola sul palazzo del comune di Roma.	Una bandiera al vento.
 itinerario	itinerary / route	5	2f287f7e336c0de5edcabb01a6680e56	Abbiamo pianificato un itinerario di dieci giorni per visitare tutte le città principali della Toscana.	Un itinerario dettagliato.
+stato	been / stayed (past participle)	5	e0b406f5f41905283407a90f11da5549	Sono stato in Italia tre volte e ogni volta ho scoperto qualcosa di nuovo e affascinante.	Sono stato qui.
+fatto	done / made (past participle)	5	adeacd2682face4983d32dc869fbf8a7	Ho fatto i compiti e ora posso uscire con gli amici a giocare al parco vicino casa.	Ho fatto presto.
+detto	said / told (past participle)	5	db6110fbe0c9fd9f949cfc59fe9a1aaf	Mi ha detto la verità e gliene sono molto grato per la sua sincerità completa.	Ha detto sì.
+visto	seen (past participle)	5	90b7f3b0d1be9775e27d698bd3e25387	Ho visto un bellissimo film ieri sera al cinema del centro con mia moglie e i nostri amici.	Hai visto Marco?
+messo	put / placed (past participle)	5	24552a0c9ae30ecbecf56098100faa7a	Ho messo le chiavi sul tavolo della cucina ma adesso non riesco più a trovarle da nessuna parte.	L'ho messo lì.
+preso	taken (past participle)	5	59105c18fcede9f3f5c4f13bbc59a297	Ho preso il treno delle sette per arrivare in tempo alla riunione di lavoro importante.	L'ho preso.
+scritto	written (past participle)	5	a9e25abe4e5dff2b3037c6e1c14f2e1e	Ho scritto una lunga lettera a mia nonna che vive in un paese di montagna molto isolato.	Ho scritto tutto.
+letto (p.p.)	read (past participle)	5	5e96f69cba8960025b4aab5e5963e2ef	Ho letto tutto il libro in una sola notte perché era davvero molto coinvolgente e bello.	L'ho letto già.
+aperto	opened (past participle)	5	2fa2960ca359ecab34c604ead0555ae6	Ho aperto la finestra perché in casa c'era troppo caldo e si soffocava davvero molto.	L'ho aperto.
+chiuso	closed (past participle)	5	0842261b88150fc70b3c3e9b401a0117	Hanno chiuso il negozio perché il proprietario è andato in pensione il mese scorso.	L'hai chiuso?
+rotto	broken (past participle)	5	e059d340b3e8e660b5f043e1f0d5664e	Ho rotto il bicchiere mentre lavavo i piatti dopo cena ieri sera distrattamente.	L'ho rotto.
+perso	lost (past participle)	5	0ab6ada4533ecdef5ee5377eafddb0b5	Ho perso il portafoglio in metropolitana stamattina e non riesco più a trovarlo.	L'ho perso.
+scelto	chosen (past participle)	5	7920c6a413b488910dcc43964b1aaeda	Ho scelto il vestito blu per la festa di sabato sera perché mi sta proprio bene.	L'ho scelto io.
+rimasto	remained / stayed (past participle)	5	816c57260b4c7254a6a466756f30c71a	Sono rimasto a casa tutto il weekend per riposarmi dopo la stancante settimana di lavoro.	Sono rimasto qui.
+bevuto	drunk (past participle)	5	3b27a0818936a6b5ec53da37af221132	Ho bevuto troppo caffè stamattina e ora non riesco proprio a concentrarmi sul lavoro.	Ho bevuto poco.
+nato	born (past participle)	5	5a5f1259b4de9208c558125c91ab15c5	Sono nato a Milano nel mese di settembre di un anno particolarmente caldo e secco.	È nato ieri.
+morto	died (past participle)	5	3703a207dd8f1fde219278b82a053970	Il vecchio gatto del vicino è morto la scorsa settimana per una malattia improvvisa.	È morto ieri.
+vissuto	lived (past participle)	5	ae2b941e20613a4c43c03be74c2ff8d2	Ho vissuto in Francia per cinque anni prima di tornare definitivamente in Italia.	Ho vissuto lì.

@@ -198,3 +198,57 @@ backup	backup	8	402051f4be0cc3aad33bcf3ac3d6532b	Faccio un backup completo del c
 recupero	recovery	8	92e521fa4c5fdc66d3e5355a4c3568ca	Il recupero dei dati persi dopo il guasto del disco rigido è stato possibile grazie al backup recente fatto.	Il recupero crediti.
 archivio	archive	8	e9651b73a1b50b64e682b575f642e7c8	L'archivio storico della città conserva documenti antichi di grande valore culturale per gli studiosi e gli storici.	Un archivio enorme.
 certificato	certificate	8	cbef27f50f0abe27bde1f3e3c4cef231	Il certificato digitale garantisce l'autenticità del sito web e protegge gli utenti dalle frodi informatiche dannose esistenti.	Un certificato valido.
+sarei	I would be	8	d934d2598ba2f5aa515701f5a0826d76	Sarei felice di accettare il vostro gentile invito a cena per sabato sera prossimo.	Sarei felice.
+saresti	you would be	8	1620991e29babcce138b65764f881087	Saresti molto più tranquillo se prendessi le cose con più calma nella vita quotidiana.	Saresti pronto?
+sarebbe	he/she/it would be	8	255a11ff5f77bb529e0d36756759513d	Sarebbe meraviglioso poter passare un'intera settimana di vacanza in una bella isola greca.	Sarebbe bello.
+saremmo	we would be	8	86fc054942ec90ac72599e0e778b692c	Saremmo molto contenti se decideste di venire a trovarci durante le vacanze estive.	Saremmo felici.
+sareste	you would be (pl)	8	51c13d0f7a789ec0ac17b59f1243e21f	Sareste disponibili a partecipare al matrimonio di mia sorella il prossimo settembre?	Sareste contenti?
+sarebbero	they would be	8	ef9d3dc2616661921392a2ee0d8b3b62	I miei nonni sarebbero molto orgogliosi se vedessero quanto sei cresciuto in questi anni.	Sarebbero contenti.
+avrei	I would have	8	f2d732bdb766ed8474d3445d3d4af145	Avrei bisogno di un consiglio importante per una decisione difficile che devo prendere.	Avrei un'idea.
+avresti	you would have	8	c53c892c86050be06b628e372a623771	Avresti per caso qualche minuto per aiutarmi a finire questo lavoro complicato e urgente?	Avresti tempo?
+avrebbe	he/she would have	8	61df5828057aa1bd3553b540ae47555d	Mia madre avrebbe voluto fare la cantante lirica ma alla fine ha scelto un lavoro più sicuro.	Avrebbe ragione.
+avremmo	we would have	8	b9f10efe9791d5797d88580a8fd25888	Avremmo bisogno di più informazioni prima di prendere una decisione così importante.	Avremmo voluto.
+avreste	you would have (pl)	8	1ed625fc63ab470ca20915d7582bc104	Avreste mai immaginato che il vostro progetto avrebbe avuto un successo così grande?	Avreste tempo?
+avrebbero	they would have	8	f8caa979aa4c9c96f5b09fcb4d30826f	I bambini avrebbero voluto restare ancora un po' al parco prima di tornare a casa.	Avrebbero voluto.
+farei	I would do / would make	8	177ea5dca0da7f8f2f4e3be70f486ff4	Farei qualsiasi cosa per aiutare un amico in difficoltà nel momento del bisogno reale.	Lo farei volentieri.
+faresti	you would do / would make	8	d100554c998d3afbd962f4efd0c094e2	Cosa faresti se vincessi una grossa somma di denaro alla lotteria nazionale settimanale?	Cosa faresti?
+farebbe	he/she would do / would make	8	feb4483f08c81546217e2bc026d48a2f	Mio padre farebbe il giro del mondo se avesse abbastanza tempo libero a disposizione.	Lo farebbe.
+faremmo	we would do / would make	8	1c732138e7bb003f13e27578a0c7d9ae	Faremmo volentieri una passeggiata in campagna se il tempo fosse un po' più caldo.	Lo faremmo.
+fareste	you would do / would make (pl)	8	2e23e50e97e24d98f840a6f80f281bf4	Fareste meglio a prenotare il volo in anticipo prima che i prezzi salgano troppo.	Cosa fareste?
+farebbero	they would do / would make	8	822e70a378a2be139f4a90a924aaac98	Loro farebbero qualsiasi sacrificio per garantire un futuro migliore ai propri figli amati.	Lo farebbero.
+potrei	I could / would be able	8	4f34e591b8b2e47d31f4aab56df23438	Potrei venire con voi alla festa stasera se finissi il lavoro entro le otto di sera.	Potrei venire.
+potresti	you could / would be able	8	dcdec8e8de7dba02ab71432846b9074f	Potresti per favore passarmi il sale, è un po' lontano dalla mia parte del tavolo?	Potresti aiutarmi?
+potrebbe	he/she could / would be able	8	43b6c5b7874247441f4b71839f60f217	Mia sorella potrebbe accompagnarti all'aeroporto se non trovi nessun altro disponibile.	Potrebbe essere.
+potremmo	we could / would be able	8	3eecbeb1a2cbfb578f0df85d2acc88f9	Potremmo organizzare una cena tra amici sabato sera nel mio nuovo appartamento in centro.	Potremmo provare.
+potreste	you could / would be able (pl)	8	2773ea38ab4a4319b28e5edaa856c16d	Potreste dirmi gentilmente dove si trova la stazione centrale della città di Roma?	Potreste venire?
+potrebbero	they could / would be able	8	7f42995dcc300986b44fceb87898f22a	I miei genitori potrebbero venire a trovarci durante le prossime vacanze di Natale.	Potrebbero venire.
+vorrei	I would like	8	375ccac06259fc8bc225a83fbf7c5995	Vorrei un caffè macchiato e un cornetto alla crema per favore, gentile cameriere.	Vorrei un caffè.
+vorresti	you would like	8	7ad8a23f087370e884da6ad445acf4f5	Vorresti venire al cinema con me stasera a vedere quel film italiano nuovo del centro?	Cosa vorresti?
+vorrebbe	he/she would like	8	7075a8cb250a1b4704455b8cab30fd39	Mia figlia vorrebbe imparare il giapponese ma non sa ancora da dove cominciare seriamente.	Vorrebbe partire.
+vorremmo	we would like	8	1ae996117e5900440dba5112f2fe7ae9	Vorremmo prenotare una stanza doppia con vista mare per la prima settimana di agosto.	Vorremmo provare.
+vorreste	you would like (pl)	8	c8b76de91090a26585fc07f4922c8f4f	Vorreste qualcosa da bere prima di iniziare la cena, magari un buon aperitivo italiano?	Cosa vorreste?
+vorrebbero	they would like	8	4ca01234fc09bd7e068f914381b818ac	I miei figli vorrebbero un cane ma il nostro appartamento è davvero troppo piccolo.	Vorrebbero venire.
+dovrei	I should / ought to	8	8839f8e1e43599d5ca752c972ae4936b	Dovrei studiare di più per gli esami ma non riesco a concentrarmi proprio adesso.	Dovrei andare.
+dovresti	you should / ought to	8	c72af00b1dbd15c54d94ffb87973b87e	Dovresti riposarti di più e non lavorare così tante ore consecutive senza alcuna pausa.	Dovresti partire.
+dovrebbe	he/she should / ought to	8	c365c2a00450630b2c4a69a504d62c55	Mio fratello dovrebbe chiamare più spesso i nostri genitori che si preoccupano molto.	Dovrebbe venire.
+dovremmo	we should / ought to	8	3e55582958bf69d4b39248a1f7f52353	Dovremmo finire questo progetto entro la fine della settimana per rispettare la scadenza.	Dovremmo provare.
+dovreste	you should / ought to (pl)	8	e7d52a56c205f84c86486b7eb76fc98a	Dovreste prenotare il ristorante in anticipo perché di sabato sera è sempre pieno di gente.	Dovreste venire.
+dovrebbero	they should / ought to	8	5a4c515c9b041158351e4116fb9d37d4	I governi dovrebbero fare di più per proteggere l'ambiente e il clima del nostro pianeta.	Dovrebbero pagare.
+parlerei	I would speak	8	334ba520a31bfe05a03d2c9f378217aa	Parlerei volentieri con lui se solo avessi il suo numero di telefono o l'indirizzo.	Lo parlerei.
+parleresti	you would speak	8	82c8c8bddcd8b711524ece7a7307b82b	Parleresti con il direttore della tua situazione personale se avessi davvero il coraggio?	Con chi parleresti?
+parlerebbe	he/she would speak	8	056dfb8633bc141dc300b04d803f080f	Mio padre parlerebbe con tutti se avesse solo un po' più di tempo libero al giorno.	Parlerebbe italiano.
+parleremmo	we would speak	8	b6beefb381d83e774340869d13ba2ae2	Parleremmo per ore di tutti i nostri ricordi se solo ci incontrassimo più spesso.	Parleremmo dopo.
+parlereste	you would speak (pl)	8	7054167c6983eeba616ee60db68291be	Parlereste con il proprietario della casa per chiedergli uno sconto sull'affitto mensile?	Parlereste con lui?
+parlerebbero	they would speak	8	58f96562f55109ddc5e388d38e6838b2	I bambini parlerebbero per ore di tutti i loro giochi preferiti se nessuno li interrompesse.	Parlerebbero molto.
+temerei	I would fear	8	eb71dfe96cbd383a4ab8c016f3c0ef08	Temerei la solitudine se mi trovassi in un paese straniero senza nessuno che mi conosce.	Temerei tutto.
+temeresti	you would fear	8	5f4c42af9c98dc7c2182674d3cedb00b	Temeresti davvero di non farcela se ti dessero questa importante responsabilità nuova al lavoro?	Cosa temeresti?
+temerebbe	he/she would fear	8	e357358aa3edbcba313cad3c015188dc	Mio fratello temerebbe di sbagliare se dovesse parlare in pubblico davanti a tante persone.	Lo temerebbe.
+temeremmo	we would fear	8	23ed9a6c4ee5e3bfe8814d842e4a8256	Temeremmo per la nostra incolumità se questa zona della città non fosse davvero così sicura.	Lo temeremmo.
+temereste	you would fear (pl)	8	1f148a9a1aad23cfda61b12ea63bd595	Temereste di affrontare un viaggio così lungo in macchina con tutti i bambini piccoli a bordo?	Cosa temereste?
+temerebbero	they would fear	8	e6af3d3857a2c20b40f47765642f4f94	I miei nonni temerebbero molto di non rivedermi più se decidessi di emigrare lontano per sempre.	Temerebbero tutto.
+partirei	I would leave / would depart	8	d20ef7c5425b1ed2078fb59f8ecba92d	Partirei domani stesso per le vacanze se solo avessi finito tutti i lavori urgenti.	Partirei subito.
+partiresti	you would leave / would depart	8	f69b1b69d7f7336fdd47ea3371f659fc	Partiresti volentieri con noi questo weekend per una breve gita in montagna alpina?	Quando partiresti?
+partirebbe	he/she would leave / would depart	8	ee19820dd9d9b17925dbd005c4c3069b	Mio amico partirebbe immediatamente se gli offrissero quel posto di lavoro all'estero.	Partirebbe subito.
+partiremmo	we would leave / would depart	8	bc8d943cfc2983009af37953e20f9a02	Partiremmo molto volentieri per un viaggio in Asia se solo trovassimo il tempo necessario.	Partiremmo insieme.
+partireste	you would leave / would depart (pl)	8	016646988c6ee272d4740db57da7ff29	Partireste anche voi per il viaggio organizzato dall'agenzia il prossimo mese di luglio?	Quando partireste?
+partirebbero	they would leave / would depart	8	e6f5413e607c1633656c12e9d2c3d737	Loro partirebbero immediatamente se ricevessero la notizia di un'emergenza in famiglia.	Partirebbero subito.
