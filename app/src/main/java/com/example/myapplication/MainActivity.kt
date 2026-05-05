@@ -21,6 +21,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.getkeepsafe.taptargetview.TapTarget
+import com.getkeepsafe.taptargetview.TapTargetSequence
 import java.io.File
 import java.io.InputStream
 import java.util.*
@@ -337,6 +339,38 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         setupLearnedButton()
 
+        if (!sharedPreferences.getBoolean("tutorial_shown", false)) {
+            findViewById<View>(android.R.id.content).post { showTutorial() }
+        }
+
+    }
+
+    private fun showTutorial() {
+        fun target(view: View, title: String, description: String) =
+            TapTarget.forView(view, title, description)
+                .tintTarget(false)
+                .cancelable(true)
+
+        TapTargetSequence(this)
+            .targets(
+                target(textFr, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
+                target(buttonNext, "Next", "Tap when you have a guess. The answer is revealed, and occasionally you'll be asked to confirm whether you actually got it right."),
+                target(buttonFail, "I don't know", "Tap if you can't recall the meaning. The translation is revealed and you move on."),
+                target(buttonTip, "Tip", "Plays an example sentence using the word, to jog your memory."),
+                target(buttonNew, "A new word", "Skip the current word and pull a brand new one you haven't seen yet."),
+                target(buttonHard, "Flag as hard", "Marks this word as difficult so it appears more often."),
+                target(buttonLearned, "Mark as learned", "Tap once to reveal the answer, then tap again to confirm you've learned it and stop seeing it.")
+            )
+            .continueOnCancel(true)
+            .listener(object : TapTargetSequence.Listener {
+                override fun onSequenceFinish() {}
+                override fun onSequenceStep(target: TapTarget, targetClicked: Boolean) {}
+                override fun onSequenceCanceled(target: TapTarget) {}
+            })
+            .start()
+
+        getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
+            .edit().putBoolean("tutorial_shown", true).apply()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -348,6 +382,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         return when (item.itemId) {
             R.id.menu_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            R.id.menu_tutorial -> {
+                showTutorial()
                 true
             }
             else -> super.onOptionsItemSelected(item)
