@@ -384,6 +384,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 startActivity(Intent(this, SettingsActivity::class.java))
                 true
             }
+            R.id.menu_word_list -> {
+                startActivity(Intent(this, WordListActivity::class.java))
+                true
+            }
             R.id.menu_tutorial -> {
                 showTutorial()
                 true
