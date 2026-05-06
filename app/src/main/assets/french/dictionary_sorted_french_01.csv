@@ -1,5 +1,5 @@
 un / une	a / an / one	1	3ddaf0ef9f927195d42049a66d381714	J’ai vu une femme à l’hôpital ; un de ses bras était cassé.	Il acheta un livre à la librairie.
-à	to	1	76ba5492a6ddd9b86c84aacfc69f816e	Je vais à Paris avec mes parents et ma petite soeur cet été.	Je vais à l'école tous les matins.
+à	to	1	76ba5492a6ddd9b86c84aacfc69f816e	Je vais à Paris avec mes parents et ma petite sœur cet été.	Je vais à l'école tous les matins.
 en	in / by	1	cc00e3b66d89978ef45bc30cb73a2d3d	L’an prochain, je serai en Irlande. J’irai en train.	Nous voyageons en train pour Paris.
 le / la	the	1	3789b21403dd6ced7a2f049ab929e357	Je veux adopter le chat et la lapine que nous avons vus au refuge.	Le chat est sur le toit.
 et	and	1	6e81787944e04178a821d094bd6517ef	Nous sommes faits pour être ensemble, toi et moi.	Marie et Pierre sont amis depuis l'enfance.
@@ -50,7 +50,7 @@ cela	that	1	45215884ee8b0263bfbfae5348a4b996	De quoi parles-tu? Cela n’a aucun
 vous	you (formal)	1	878e9a8f890b2910b01cd786ec0df3db	Vous êtes la raison que je suis venue ici ce soir, madame.	Vous êtes invités à la fête ce soir.
 encore	again / yet	1	d4094f5f8d8a111892acba6050c3afa9	Oh non, pas encore! Nous ne sommes même pas encore partis!	J'aimerais bien revenir encore une fois.
 vouloir	to want	1	ce5fa7d11d975eb05d1ec5747be1cc27	Il est normal de vouloir être aimé.	Je veux une nouvelle voiture.
-nouveau / nouvelle	new	1	11f2434c7763ffcffa82b7694c8f47cb	J’ai besoin d’une nouvelle chemise pour le mariage de ma soeur.	J'ai acheté un téléphone portable tout nouveau.
+nouveau / nouvelle	new	1	11f2434c7763ffcffa82b7694c8f47cb	J’ai besoin d’une nouvelle chemise pour le mariage de ma sœur.	J'ai acheté un téléphone portable tout nouveau.
 aller	to go	1	d19ec7e5e823fcc97b1de28d90f243b7	Je t’amènerais jusqu’au bout du monde. Où veux-tu aller?	Nous allons au parc cet après-midi.
 entre	between	1	62d4cf0dcc32a02deea6691aa5ce60df	Il n’y a plus de magie entre nous.	Il est assis entre Pierre et Marie.
 premier / première	first	1	83312d083ba83c7cf574a040f2e04685	La compétition s’est très bien déroulée : Philippe a terminé premier.	C'est son premier jour à l'école.
@@ -72,14 +72,14 @@ sans	without	1	e8556b196fd38744bef927876744b1c3	Dites ce que vous voulez, mais j
 dont	whose / of which	1	8e7c7c77e27e7a5ff27144517c3331b6	Le voisin dont la femme est décédée l’an dernier vient de déménager.	Voici le livre dont je t'ai parlé.
 une raison	a reason	1	3eb88127dda2305ffacf394991e5a0a7	Donne-moi une raison de ne pas te jeter dehors!	Il a une bonne raison de ne pas venir.
 le monde	the world / people	1	7018e4cd6c93c90f4e456c4b38b65c23	Nous vivons dans un monde sur lequel le monde est trop centré sur lui-même.	Il veut changer le monde.
-non	no / not / non-	1	926e0f6fd0a74a23c99de19a38446c78	Non ! J’ai demandé de l’eau et non du soda ! Non gazéuse!	La réponse est non.
+non	no / not / non-	1	926e0f6fd0a74a23c99de19a38446c78	Non ! J’ai demandé de l’eau et non du soda ! Non gazeuse!	La réponse est non.
 monsieur	mister / sir	1	84b4727837a3577c3e42a69d176a4b1c	Monsieur, je crois que vous n’avez pas encore payé l’addition.	Bonjour, monsieur Dupont.
 un an	a year	1	1a4fa163b46e07effd85965584d99f1a	Ça fait déjà un an que j’ai vu ma cousine Sophie.	Nous avons vécu ici pendant un an.
 un jour	one day	1	20879345e7b36191771b8ff8a95a6149	Un jour, j’étudierai dans une université réputée.	Un jour, je visiterai tous les pays du monde.
 trouver	to find	1	f5f31be96e4effac06d9bab9544639e0	J’ai cherché partout, mais je n’arrive pas à trouver mes clés!	J'ai trouvé mes clés dans ma poche.
 demander	to ask	1	eb9fe9a348d7f2499aed014e8290c575	Je ne sais pas, va demander à ta mère !	Il lui a demandé de l'aider.
 alors	then	1	9c438e5057877b80b3c9071f72a13036	Le voyage est annulé ? Qu’est-ce qu’on va faire, alors?	Alors, qu'as-tu décidé de faire ?
-après	after	1	78fa13bdbcec3d742e14e33df0fd2aea	Je dois aller chercher ma petite soeur après l’école.	Nous allons prendre un café après le déjeuner.
+après	after	1	78fa13bdbcec3d742e14e33df0fd2aea	Je dois aller chercher ma petite sœur après l’école.	Nous allons prendre un café après le déjeuner.
 venir	to come	1	b6fffe8ac29cfea074f3bb807c8c061f	Sylvie a une intoxication alimentaire, elle ne pourra pas venir avec nous.	Il vient d'arriver à la gare.
 une personne	a person	1	2c09776b8b79324f33d39fbc1719cf69	Je connais une personne qui peut chanter l’opéra merveilleusement.	Elle est une personne très gentille.
 rendre	to give back	1	f9bc244026136176bb147f502a49319a	Gérard, tu dois lui rendre son téléphone portable avant qu’il se fâche.	Je dois rendre ce livre à la bibliothèque.
