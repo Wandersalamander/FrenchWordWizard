@@ -9,7 +9,6 @@ der Faktor	factor	10	fabf718676fb3eba44c41786d2510610	Das Wetter ist ein wichtig
 die Funktion	function / role	10	8ec721406747326fd49004c4904980b0	Die Hauptfunktion dieser Software ist es, große Datenmengen schnell zu analysieren.	Welche Funktion hat das?
 der Typ	type / guy	10	ceb14da4b960134a600bde03924cad0b	Was für ein Typ Auto fährt er? Ich habe es gestern in der Einfahrt gesehen.	Er ist ein netter Typ.
 die Sorte	sort / type / variety	10	9d6299137607a135d3e03fca3313daaa	In dieser Bäckerei gibt es über zwanzig verschiedene Sorten Brot.	Welche Sorte möchtest du?
-die Art	kind / type / way / manner	10	c390c22060c1626f94dcd8dfcc7806f1	Die Art und Weise, wie er das Problem löste, beeindruckte alle im Team.	Was für eine Art ist das?
 das Zubehör	accessories	10	f0e52cf82e924e0eaedc5a0af3736ba9	Im Geschäft gibt es auch passendes Zubehör für die Kamera.	Brauche ich Zubehör dazu?
 das Merkmal	feature / characteristic	10	73552cbdc0393e58845217cc44f7009f	Ein besonderes Merkmal dieses Hauses ist der wunderschöne Wintergarten.	Das ist ein wichtiges Merkmal.
 die Reaktion	reaction	10	f60b838b59fc6d6d53e6304dc67c88f5	Die Reaktion des Publikums auf seine Rede war überwältigend positiv.	Was war seine Reaktion?
@@ -49,11 +48,8 @@ abgesehen von	apart from / aside from	10	93ae3ad7e2078317b4c4b6796bc77305	Abgese
 im Vergleich zu	compared to	10	9bb7302a2df316303087c5733e2e99dc	Im Vergleich zum letzten Jahr sind die Preise deutlich gestiegen.	Im Vergleich zu dir bin ich groß.
 im Gegensatz zu	in contrast to / unlike	10	414058a5434912b84bd04b2f647078ab	Im Gegensatz zu seinem Bruder ist er eher ruhig und zurückhaltend.	Im Gegensatz zu gestern.
 in Bezug auf	with regard to / regarding	10	406ea5caa152a945094fa67dd7b9d1e3	In Bezug auf die Qualität gibt es zwischen den beiden Produkten kaum einen Unterschied.	In Bezug auf das Thema.
-zum Beispiel	for example	10	71652e536ab28d37557e64aabcd2f60f	Es gibt viele Möglichkeiten, fit zu bleiben, zum Beispiel Schwimmen, Radfahren oder Joggen.	Zum Beispiel das hier.
-vor allem	above all / especially	10	4f9cdddc57340514dd89659060f3a040	Vor allem im Winter sollte man auf warme Kleidung und rutschfestes Schuhwerk achten.	Vor allem das ist wichtig.
 im Allgemeinen	in general / generally	10	8e291e79c5527fae152105a880623c23	Im Allgemeinen sind die Menschen hier sehr gastfreundlich und hilfsbereit.	Im Allgemeinen stimmt das.
 unter anderem	among other things	10	1b9399836d34464b6fd097d31d7fe087	Die Stadt bietet unter anderem ein Schloss, mehrere Museen und einen wunderschönen Botanischen Garten.	Unter anderem deshalb.
-auf jeden Fall	in any case / definitely	10	d14f0db4a0cd270a0152a1afb0161428	Auf jeden Fall solltest du dir diesen Film ansehen, er ist wirklich sehenswert.	Auf jeden Fall!
 auf keinen Fall	under no circumstances	10	1ea8797d31871a2709b44e5cccc7e3ce	Du solltest auf keinen Fall alleine in den Wald gehen, wenn es schon dunkel ist.	Auf keinen Fall!
 bereit	ready / willing	10	ece11e9def7319e36e0fd0b2afb6db98	Bist du bereit für die Prüfung, die morgen stattfindet?	Ich bin bereit.
 vollständig	complete / completely	10	59d4aac6b5d8ae3c1480fee229fc485c	Die Unterlagen müssen vollständig ausgefüllt sein.	Das ist vollständig.

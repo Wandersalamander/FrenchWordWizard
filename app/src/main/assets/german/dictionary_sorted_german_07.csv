@@ -1,4 +1,3 @@
-die Handschuhe	gloves	7	be4c0f6fb69a51f71f4928117ffa36d1	Ohne Handschuhe wäre es unmöglich gewesen, bei dieser Kälte den Schneemann zu bauen.	Zieh deine Handschuhe an.
 anziehen	to put on / to dress	7	75a78599ea55eb1ff4c2e26635fdb02d	Sie zog sich schnell an, weil sie verschlafen hatte und den Bus auf keinen Fall verpassen wollte.	Zieh dich warm an.
 ausziehen	to take off / to undress	7	dd6c40036b6f5a2f8bebc3a10c81ab22	Als er nach Hause kam, zog er sofort die nassen Schuhe aus und stellte sie vor die Heizung.	Zieh bitte die Schuhe aus.
 der Verein	club / association	7	2b9a219a682704ba060cc3b0b1edb738	Der Sportverein feierte sein hundertjähriges Bestehen mit einem großen Fest.	Ich bin Mitglied im Verein.
@@ -23,9 +22,6 @@ wachsen	to grow	7	b040c5012e114e7b9a474e0139ecc958	Die Pflanze wuchs so schnell,
 meinen	to mean / to think	7	42c50e9229d59f8c3de55d1446aa9271	Was genau meinen Sie damit, wenn Sie sagen, dass das Projekt grundlegend überarbeitet werden muss?	Was meinst du?
 bedeuten	to mean / to signify	7	896cfe40233e4e40c2892855f2ebb1ef	Dieses alte Symbol, das an der Wand des Tempels eingraviert war, bedeutete ursprünglich Fruchtbarkeit und Wohlstand.	Was bedeutet dieses Wort?
 gehören	to belong to	7	82d311847bfb6b0c88378a719461d2e6	Das Fahrrad, das vor dem Haus steht und an dem seit Wochen niemand etwas verändert hat, gehört meinem Nachbarn.	Wem gehört dieses Buch?
-kennen	to know (a person/place)	7	bdaae99e7eb7928680b605cb356c9278	Ich kenne diese Stadt wie meine Westentasche, weil ich hier geboren und aufgewachsen bin.	Kennst du meinen Bruder?
-schauen	to look / to watch	7	933e65c70646cd9998e4c9a57c9fa7f7	Sie schaute aus dem Fenster und beobachtete, wie die Schneeflocken langsam auf die stille Straße fielen.	Schau mal, ein Regenbogen!
-hören	to hear / to listen	7	be04399e2f36b750f8c8a730ed145005	Von weitem konnte man die Kirchenglocken hören, deren Klang über die verschneiten Felder hallte.	Hörst du die Musik?
 riechen	to smell	7	ed7d8ab7e016b1df358f8caba91a7c82	Die frisch gebackenen Brötchen rochen so herrlich, dass sich vor der Bäckerei eine lange Schlange bildete.	Die Blumen riechen gut.
 berühren	to touch	7	4c190a9993574cd97a8157f854b1264a	Das Schild warnte die Besucher davor, die Kunstwerke zu berühren, da sie äußerst empfindlich sind.	Berühr das nicht.
 bitten	to ask / to request	7	2b2aa1282c7f5abc89d59b6a93c81931	Sie bat ihn eindringlich darum, niemandem von ihrem Geheimnis zu erzählen.	Ich bitte dich um Hilfe.
@@ -84,8 +80,6 @@ der Rauch	smoke	7	25a8274c0211c580ebd03aacd64782a5	Der Rauch, der aus dem Schorn
 die Welle	wave	7	0a74cb7e302a3385971eb9ccdc76003b	Die Wellen des Ozeans brachen mit solcher Kraft an die Felsen, dass die Gischt bis zur Klippe hinaufsprühte.	Die Wellen sind heute hoch.
 der Strand	beach	7	c8d3ad6a751ef7fd16d6785c31ead39b	Am Strand entlangzuspazieren, war für sie die beste Art, den Kopf freizubekommen.	Wir gehen an den Strand.
 das Handy	cell phone	7	1e1a000c583c3c67c9dacf9561982d0c	Heutzutage kann man sich ein Leben ohne Handy kaum noch vorstellen, obwohl es sie erst seit wenigen Jahrzehnten gibt.	Mein Handy klingelt.
-Weihnachten	Christmas	7	8be3b995ab7c0a28c9236497b4204f48	An Weihnachten versammelt sich die ganze Familie um den festlich geschmückten Baum und singt gemeinsam Lieder.	Frohe Weihnachten!
-Ostern	Easter	7	be22a608feef9fc601de8d108365cc22	Zu Ostern verstecken die Eltern bunte Eier im Garten, und die Kinder suchen sie voller Begeisterung.	Frohe Ostern!
 das Vertrauen	trust	7	a5884ed35d7b2db90f987bc5d908c973	Das Vertrauen, das über Jahre aufgebaut worden war, wurde durch eine einzige unüberlegte Handlung zerstört.	Ich habe Vertrauen in dich.
 die Schuld	guilt / debt / fault	7	9bf47ac04e185d46cf980bb724366034	Die Schuld an dem Unfall trug der Fahrer, der bei Rot über die Ampel gefahren war.	Es ist nicht deine Schuld.
 das Glück	luck / happiness	7	0fedda917ef5555b87ff13afac985d3f	Manchmal braucht man etwas Glück im Leben, um zur richtigen Zeit am richtigen Ort zu sein.	Viel Glück bei der Prüfung.
@@ -119,7 +113,6 @@ kämpfen	to fight / to struggle	7	4a20ace6a35873d4529b2f0399d2128e	Die Mannschaf
 retten	to save / to rescue	7	453ec63a37ed0c24f54944400a63be8a	Die Feuerwehr rettete die Familie aus dem brennenden Haus, bevor das Dach einstürzte.	Er hat ihr das Leben gerettet.
 stehlen	to steal	7	84eceb7d937690c6437024bb0e9a0bb1	Der Dieb stahl das Gemälde aus dem Museum, ohne dass die Sicherheitskameras etwas aufgezeichnet hatten.	Jemand hat mein Fahrrad gestohlen.
 lügen	to lie	7	29aa41ad9daa2692e09b575310ba618f	Er log so überzeugend, dass selbst seine engsten Freunde keinen Verdacht schöpften.	Du sollst nicht lügen.
-sich freuen	to be happy / to look forward to	7	71b90eae6ef47f7a20631e79f0224213	Sie freute sich so sehr auf den Urlaub, dass sie schon Wochen vorher ihre Koffer packen wollte.	Ich freue mich auf dich.
 sich beschweren	to complain	7	7c0ffdb09331607454be350ce530695c	Die Gäste beschwerten sich beim Hotelmanager über den Lärm, der bis spät in die Nacht aus der Bar drang.	Er beschwert sich über das Essen.
 sich gewöhnen	to get used to	7	0bf94ba98803c9a140338bcd281a3c3b	Es dauerte Monate, bis sie sich an das kalte Wetter in Skandinavien gewöhnt hatte.	Ich gewöhne mich daran.
 sich kümmern	to take care of	7	237fb791f8b806a066951e05e6cd351e	Die Nachbarin kümmerte sich liebevoll um die Katze, während die Familie im Urlaub war.	Wer kümmert sich um den Hund?
@@ -133,13 +126,7 @@ die Ahnung	idea / clue / hunch	7	27d20f203a30bf5f16f1357f7c77f4d8	Ich hatte kein
 der Ärger	anger / trouble	7	2c61e00ce7fde1f747a730ce75d250e8	Der Ärger über die Verspätung legte sich schnell, als er die wunderschöne Landschaft sah.	Es gibt Ärger.
 der Streit	argument / dispute	7	dd741f9b98c48a08294398136e298ad7	Der Streit zwischen den Nachbarn eskalierte so weit, dass schließlich ein Anwalt eingeschaltet werden musste.	Der Streit ist vorbei.
 der Zufall	coincidence	7	65c284ec573a21825866c928e4534b29	Was für ein Zufall, dass wir uns ausgerechnet hier treffen, tausende Kilometer von zu Hause entfernt!	Das ist kein Zufall.
-der Anfang	beginning	7	27cdb43dafab2cacc6e27a1269898280	Am Anfang war es schwierig, aber mit der Zeit wurde alles einfacher und machte sogar Spaß.	Aller Anfang ist schwer.
-das Ende	end	7	ab31c70c6606791e07a214db2888ece5	Am Ende des Films waren alle Zuschauer so gerührt, dass kaum jemand trockene Augen hatte.	Das ist das Ende.
-der Bus	bus	7	7fadd5b9c838ba0adfc354013f9fb601	Der Bus hatte zwanzig Minuten Verspätung, weil ein Unfall auf der Hauptstraße den Verkehr blockiert hatte.	Ich nehme den Bus zur Schule.
-die Straßenbahn	tram / streetcar	7	3515a6f676bd44190147cf2640a715b3	Die neue Straßenbahn verbindet den Hauptbahnhof mit dem Flughafen und fährt alle zehn Minuten.	Die Straßenbahn kommt gleich.
 die U-Bahn	subway / metro	7	fbd30577cca99aa78c500fb6c3d88c9e	Die U-Bahn in Berlin ist so gut ausgebaut, dass man fast jeden Ort der Stadt problemlos erreichen kann.	Ich fahre mit der U-Bahn.
-das Schiff	ship	7	b1543586d80e5a70eadda84b59c0c9d8	Das Schiff legte im Hafen an, nachdem es eine stürmische Überfahrt über den Atlantik hinter sich hatte.	Das Schiff ist sehr groß.
-das Boot	boat	7	3aacc0875b5d929a076b60b27a8a9120	Das kleine Boot schaukelte sanft auf den Wellen des Sees, während die Angler geduldig warteten.	Wir fahren mit dem Boot.
 das Motorrad	motorcycle	7	6568ad7f0b541ddfa69578cd274502a6	Das Motorrad, das er sich zum Geburtstag gekauft hatte, war sein ganzer Stolz.	Er fährt Motorrad.
 der Führerschein	driver's license	7	733f7ac4903c87af836c8b6f6b356a81	Um den Führerschein zu bekommen, muss man sowohl eine theoretische als auch eine praktische Prüfung bestehen.	Ich habe meinen Führerschein bestanden.
 der Unfall	accident	7	641c43dd204078fb6ca4b0d6587fb6fc	Bei dem schweren Unfall auf der Autobahn wurden glücklicherweise nur zwei Personen leicht verletzt.	Es gab einen Unfall.
@@ -147,12 +134,7 @@ ausgeben	to spend (money)	7	be57316f91fa1432ad9397e936906a61	Sie gab ihr gesamte
 üben	to practice	7	3fadedfbe5c8624a0954264092b8eeb6	Nur wer regelmäßig übt, kann seine Fähigkeiten verbessern und langfristig Fortschritte machen.	Ich übe jeden Tag Gitarre.
 der Kurs	course / class	7	b5d8f5f33c3cf2864f1a6b13abfd906b	Der Deutschkurs für Anfänger findet jeden Dienstag und Donnerstag von acht bis zehn Uhr statt.	Ich besuche einen Kurs.
 der Job	job	7	2ab32424e56278ad608a07dc19f9420a	Nach monatelanger Suche fand sie endlich einen Job, der zu ihren Qualifikationen und Interessen passte.	Ich suche einen Job.
-reden	to talk / to speak	7	fea6ff64dd7352a301d302ce1e30bae6	Sie redeten stundenlang miteinander und merkten gar nicht, wie schnell die Zeit verging.	Wir müssen reden.
-erzählen	to tell / to narrate	7	eae5166b31d910d34bb4d5b5c26cc809	Großvater erzählte den Kindern jeden Abend eine Geschichte, die er sich selbst ausgedacht hatte.	Erzähl mir von deinem Tag.
 schicken	to send	7	acdca4dbe259dda8c62777ae868ff60a	Sie schickte ihm eine Postkarte aus dem Urlaub, auf der sie von ihren Erlebnissen berichtete.	Ich schicke dir eine Nachricht.
-anrufen	to call (phone)	7	45c8dccf560ea9454964f62765e72fb3	Er rief seine Mutter jeden Sonntag an, um ihr zu erzählen, wie seine Woche gelaufen war.	Ich rufe dich morgen an.
-der Brief	letter	7	8d4f29ed50595f8206c1ab88aaa808ea	Der handgeschriebene Brief ihrer Großmutter war so rührend, dass sie ihn immer noch aufbewahrt.	Ich schreibe einen Brief.
-die Eltern	parents	7	48533e3702912422f48079bd56c89d47	Seine Eltern unterstützten ihn bei jedem Vorhaben, auch wenn sie manchmal Bedenken hatten.	Meine Eltern wohnen in Berlin.
 die Langeweile	boredom	7	725e7ca3a3be6ae0eaf7478dddc42e9e	Aus purer Langeweile begann er, Gitarre zu lernen, und entdeckte dabei eine echte Leidenschaft.	Mir ist vor Langeweile.
 die Wut	rage / anger	7	c53249d5e689246403369109983a1422	In seiner Wut schlug er mit der Faust auf den Tisch und erschreckte damit alle Anwesenden.	Er ist voller Wut.
 die Ecke	corner	7	49754e9315bc6942aef2d8fc6c925ba7	An der Ecke der Straße stand ein alter Mann, der Zeitungen verkaufte und jeden Passanten freundlich grüßte.	Das Café ist um die Ecke.

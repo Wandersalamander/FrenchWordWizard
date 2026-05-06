@@ -186,8 +186,19 @@ der Stiefel	boot	2	d7772302b0c726f27802afcd8d4a68d8	Der Stiefel, der aus hochwer
 der Hut	hat	2	ffaeaf0a7c0376d0f23021b30ec98cd1	Der Hut, den sein Großvater ihm vererbt hatte, war ein wertvolles Erinnerungsstück.	Der Hut steht dir gut.
 die Mütze	cap / beanie	2	3a732419b0166df8789abff5507357ad	Die Mütze, die sie selbst aus weicher Merinowolle gestrickt hatte.	Die Mütze ist rot.
 der Schal	scarf	2	28ae95cbc49b673ff727a8c76fa51e65	Der Schal, den sie im letzten Winter in einem kleinen Laden in Wien gekauft hatte.	Der Schal ist weich.
-die Handschuh	glove	2	3cdd854a515024839113711a9b1bbdab	Ohne die Handschuh, die sie glücklicherweise in ihrer Tasche gefunden hatte.	Die Handschuh ist warm.
+der Handschuh	glove	2	3cdd854a515024839113711a9b1bbdab	Ohne den Handschuh, den sie glücklicherweise in ihrer Tasche gefunden hatte.	Der Handschuh ist warm.
 der Anzug	suit	2	46a568c7351aa4fa0bc159d883e9f47b	Der Anzug, der für das wichtige Geschäftstreffen maßgeschneidert worden war, saß so perfekt.	Der Anzug ist elegant.
 die Krawatte	tie	2	e9eb06be78bd6e871baf10ebf120f324	Die Krawatte, die er von seinem Vater geschenkt bekommen hatte, trug er nur bei feierlichen Anlässen.	Die Krawatte ist gestreift.
 der Gürtel	belt	2	b0a954be793542c3374f65607a086424	Der Gürtel, der aus echtem italienischem Leder hergestellt wurde, war zwar teuer.	Der Gürtel ist braun.
 die Tasche	bag / pocket	2	c66ee063885842125940e0f312e66a99	Die Tasche, in der sie all ihre wichtigen Unterlagen aufbewahrte.	Meine Tasche ist schwer.
+null	zero	2	6acb9e7e963a18e936c5130349b41505	Bei null Grad gefriert das Wasser und wird zu Eis.	Es ist null Grad draußen.
+elf	eleven	2	4bda938e456425cbcb10ab53fc538204	Um elf Uhr beginnt die Vorlesung, also müssen wir uns beeilen.	Es ist elf Uhr.
+zwölf	twelve	2	dc623d40f906f93efee47a6c742daa5f	Das Jahr hat zwölf Monate und beginnt im Januar.	Es sind zwölf Uhr mittags.
+zwanzig	twenty	2	f2ae1f2b1d8e21971843fab40063259a	Vor zwanzig Jahren gab es hier noch keine Autobahn und der Ort war viel ruhiger.	Ich bin zwanzig Jahre alt.
+dreißig	thirty	2	70054bfc8fa2832fa724dfd1232e84b2	Mit dreißig Jahren beschloss er, noch einmal an die Universität zu gehen und etwas Neues zu studieren.	Es dauert dreißig Minuten.
+vierzig	forty	2	79f345385cf2fd01e84423adfc2e1163	Vierzig Prozent der Befragten gaben an, regelmäßig Sport zu treiben.	Er ist vierzig Jahre alt.
+fünfzig	fifty	2	a856445878a97360f33e91e7f7b9fc47	Das Ehepaar feierte seinen fünfzigsten Hochzeitstag mit einer großen Familienfeier.	Es kostet fünfzig Euro.
+kennen	to know (a person/place)	2	bdaae99e7eb7928680b605cb356c9278	Ich kenne diese Stadt wie meine Westentasche, weil ich hier geboren und aufgewachsen bin.	Kennst du meinen Bruder?
+hören	to hear / to listen	2	be04399e2f36b750f8c8a730ed145005	Von weitem konnte man die Kirchenglocken hören, deren Klang über die verschneiten Felder hallte.	Hörst du die Musik?
+die Eltern	parents	2	48533e3702912422f48079bd56c89d47	Seine Eltern unterstützten ihn bei jedem Vorhaben, auch wenn sie manchmal Bedenken hatten.	Meine Eltern wohnen in Berlin.
+hässlich	ugly	2	250cde5cca5ba210cd9f8db09e00312f	Das Gebäude, das von vielen als hässlich empfunden wurde, sollte abgerissen werden.	Das Bild ist hässlich.

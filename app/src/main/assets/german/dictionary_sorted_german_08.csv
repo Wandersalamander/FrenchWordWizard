@@ -5,7 +5,6 @@ nachdenken	to think about / to reflect	8	90c90eaf111a8c57346b8731d3e7d38b	Er dac
 vorbereiten	to prepare	8	8be95221556575b0fafe651d3f178ffe	Sie bereitete das Abendessen vor, während die Kinder ihre Hausaufgaben machten.	Ich bereite mich auf die Prüfung vor.
 teilnehmen	to participate / to take part	8	2745acef0accc152691b93c68b5ed45d	Über dreihundert Athleten nahmen an dem internationalen Wettkampf teil, der in diesem Jahr in Berlin stattfand.	Ich nehme am Kurs teil.
 stattfinden	to take place	8	19984c6458a50318631611056166ddac	Das Konzert findet trotz des schlechten Wetters wie geplant im Freien statt.	Wann findet die Prüfung statt?
-sich verabschieden	to say goodbye	8	30a3844e4dce7fd1e8b49a36d509b6dd	Er verabschiedete sich herzlich von seinen Kollegen, die ihm zum Abschied ein gemeinsames Geschenk überreichten.	Wir müssen uns verabschieden.
 sich beeilen	to hurry	8	55549a0152e8093dcfd821e9f064bc82	Beeil dich, sonst verpassen wir den Zug, der in zehn Minuten vom Bahnhof abfährt!	Wir müssen uns beeilen.
 zwingen	to force / to compel	8	e50c5c5923c7e681f9fbef8531549b7c	Niemand sollte gezwungen werden, etwas zu tun, das gegen seine Überzeugungen verstößt.	Du kannst mich nicht zwingen.
 beeinflussen	to influence	8	ab3012572fc5d792d9a0f67f2fe44491	Die sozialen Medien beeinflussen die Meinungsbildung der Menschen in einem Ausmaß.	Das beeinflusst meine Entscheidung.
@@ -80,11 +79,9 @@ daher	therefore / that's why	8	e497b82b4acc9aa3df25e292d02cd3c4	Er war krank und
 sowohl ... als auch	both ... and	8	0154b6fd410d2ed4090067a495386fc9	Sie spricht sowohl Deutsch als auch Französisch fließend, weil sie in beiden Ländern aufgewachsen ist.	Sowohl Kinder als auch Erwachsene.
 weder ... noch	neither ... nor	8	962a7b544330ba63a74fa18a6bea0f59	Er hat weder angerufen noch eine Nachricht geschrieben, was alle sehr beunruhigte.	Weder ja noch nein.
 ob	whether / if	8	e3dc5cffba97e06c94173a8283ff8e55	Ich bin mir nicht sicher, ob ich morgen kommen kann, weil ich vielleicht arbeiten muss.	Weißt du, ob er kommt?
-das Foto	photo / photograph	8	6c429f2631b1f40621c63ee434b20003	Das alte Foto von ihren Großeltern hing über dem Kamin und war ihr wertvollster Besitz.	Mach ein Foto von uns.
 der Kalender	calendar	8	2d71a975cc56698b9c7414147e790141	Ohne seinen Kalender wäre er völlig aufgeschmissen, weil er so viele Termine hat.	Steht es im Kalender?
 der Wecker	alarm clock	8	da0550403173ccf76117909e685a3b09	Der Wecker klingelte um sechs Uhr, aber er schlug auf die Schlummertaste und schlief noch einmal ein.	Stell den Wecker auf sieben.
 der Abfall	waste / garbage	8	655455277a4ac48994c6e05e7324ae24	Die getrennte Entsorgung von Abfall ist in Deutschland gesetzlich vorgeschrieben und wird streng kontrolliert.	Wirf den Abfall in den Mülleimer.
-der Spaß	fun	8	d1d0a60ab41128e6bdae47ebbb03464f	Die Kinder hatten so viel Spaß beim Schlittenfahren, dass sie erst bei Einbruch der Dunkelheit nach Hause kamen.	Das macht Spaß!
 das Abenteuer	adventure	8	3a9da6e6d5d53a792d15b0ab201c8756	Die Reise durch den Dschungel war ein Abenteuer, das sie ihr ganzes Leben lang nicht vergessen würde.	Ich suche ein Abenteuer.
 der Ausflug	excursion / outing	8	5a0a95afa251c5b6b3e52328882489d9	Am Wochenende machten wir einen Ausflug an den See und genossen das schöne Wetter.	Wir machen einen Ausflug.
 der Spaziergang	walk / stroll	8	4fcbc5f5f742c434824ddc042c9b0952	Ein Spaziergang am Abend durch den Park hilft mir, den Kopf freizubekommen und den Tag zu verarbeiten.	Lass uns einen Spaziergang machen.
@@ -131,13 +128,6 @@ der Mangel	shortage / deficiency / lack	8	d3a763d0d88d7aeb33e6b55f58d3809c	Der M
 der Wert	value / worth	8	8df8afa81d9c03524ee572c732cdfc86	Der ideelle Wert dieses alten Familienfotos ist für mich unschätzbar, auch wenn es materiell wertlos ist.	Das hat keinen Wert.
 die Rücksicht	consideration	8	0e0e117a0a3d068d3312aa7aee74f000	Man sollte immer Rücksicht auf seine Mitmenschen nehmen, besonders in öffentlichen Verkehrsmitteln.	Nimm Rücksicht.
 das Verhältnis	relationship / ratio	8	11cd98343c6aea742d5797348729b345	Das Verhältnis zwischen Preis und Leistung stimmt bei diesem Produkt nicht mehr.	Wir haben ein gutes Verhältnis.
-null	zero	8	6acb9e7e963a18e936c5130349b41505	Bei null Grad gefriert das Wasser und wird zu Eis.	Es ist null Grad draußen.
-elf	eleven	8	4bda938e456425cbcb10ab53fc538204	Um elf Uhr beginnt die Vorlesung, also müssen wir uns beeilen.	Es ist elf Uhr.
-zwölf	twelve	8	dc623d40f906f93efee47a6c742daa5f	Das Jahr hat zwölf Monate und beginnt im Januar.	Es sind zwölf Uhr mittags.
-zwanzig	twenty	8	f2ae1f2b1d8e21971843fab40063259a	Vor zwanzig Jahren gab es hier noch keine Autobahn und der Ort war viel ruhiger.	Ich bin zwanzig Jahre alt.
-dreißig	thirty	8	70054bfc8fa2832fa724dfd1232e84b2	Mit dreißig Jahren beschloss er, noch einmal an die Universität zu gehen und etwas Neues zu studieren.	Es dauert dreißig Minuten.
-vierzig	forty	8	79f345385cf2fd01e84423adfc2e1163	Vierzig Prozent der Befragten gaben an, regelmäßig Sport zu treiben.	Er ist vierzig Jahre alt.
-fünfzig	fifty	8	a856445878a97360f33e91e7f7b9fc47	Das Ehepaar feierte seinen fünfzigsten Hochzeitstag mit einer großen Familienfeier.	Es kostet fünfzig Euro.
 das Doppelte	double	8	7e2a2a1d5fe5d4c01ab9175b3b6b780c	Die Kosten für die Renovierung betrugen am Ende das Doppelte des ursprünglichen Voranschlags.	Das ist das Doppelte.
 das Verbrechen	crime	8	5a3c78702389003b2f3dad1c57fa569e	Das Verbrechen wurde erst nach mehreren Wochen aufgeklärt, als ein entscheidender Hinweis einging.	Das ist ein Verbrechen.
 der Dieb	thief	8	2554d31ffd8b3ec8ea8be90320da0e6e	Der Dieb wurde auf frischer Tat ertappt, als er versuchte, ein Gemälde aus dem Museum zu stehlen.	Der Dieb ist geflohen.
