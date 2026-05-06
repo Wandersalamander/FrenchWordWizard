@@ -57,7 +57,7 @@ ricevuta	receipt	6	201b1ff31eb40a2644e46dc25acc2af0	Conservo sempre la ricevuta 
 sconto	discount	6	11fdb22947ec16d739dbf63cd7fabe07	Mi hanno fatto uno sconto del venti per cento perché sono un cliente abituale del negozio.	Un grande sconto.
 offerta	offer / deal	6	faf46285a1e6d3429a26fa6907f6ef05	L'offerta speciale del supermercato finisce domani sera e devo correre a fare la spesa.	Un'offerta imperdibile.
 vendita	sale / selling	6	48f84ec95d9499e425590bbf1af27eff	La vendita di questo prodotto è stata un successo e abbiamo superato tutti gli obiettivi.	Una grande vendita.
-acquisto	purchase	6	f5c8bfa9510848a4d1ca518355d805a2	L'acquisto della casa è stata la decisione più importante della mia vita finanziaria personale.	Un acquisto importante.
+acquisto	purchase	6	f5c8bfa9510848a4d1ca518355d805a2	L'acquisto della casa è stato la decisione più importante della mia vita finanziaria personale.	Un acquisto importante.
 capitale	capital	6	2c336467a45cb7b3ae06fb6e0c749865	Servono molti capitali per avviare una nuova azienda di successo nel settore tecnologico moderno.	Una grande capitale.
 mutuo	mortgage	6	5c066b95e61bc7aef3bf1d5af0ed1b91	Il mutuo della casa lo pago da quindici anni e mi mancano altri quindici anni alla fine.	Un mutuo lungo.
 economia	economy	6	0dcbfa3e8507c240d9f372a0b8053885	L'economia italiana sta crescendo lentamente dopo la lunga crisi economica degli ultimi dieci anni difficili.	Una buona economia.
@@ -186,7 +186,7 @@ disponibile	available	6	0fdcda857572922f39c7a3c35533fdd0	Sono sempre disponibile
 orario	schedule / hours	6	f14f2f8695179071d03015da0630348f	L'orario di apertura del negozio è dalle nove alle diciannove dal lunedì al sabato escluse le feste.	Orario continuato.
 agenda	agenda / planner	6	d0dbdfd8edf8dd1608405055c26adc94	Scrivo tutti gli appuntamenti sulla mia agenda elettronica per non dimenticare nessun impegno importante della settimana.	Una fitta agenda.
 appuntamento	appointment	6	4dc75af5cf5729db73facdae141172e1	Ho un appuntamento dal medico domani mattina alle nove per la visita di controllo annuale prevista.	Prendo appuntamento.
-data	date	6	8d777f385d3dfec8815d20f7496026dc	Qual è la data del nostro prossimo incontro? Devo segnarmela sulla agenda per non dimenticare l'impegno.	La data di nascita.
+data	date	6	8d777f385d3dfec8815d20f7496026dc	Qual è la data del nostro prossimo incontro? Devo segnarmela sull'agenda per non dimenticare l'impegno.	La data di nascita.
 periodo	period	6	b98917264cbb9144fcf9ce9861bbcd37	Questo è un periodo difficile della mia vita ma sono sicuro che presto andrà tutto bene.	Un lungo periodo.
 durata	duration	6	1b68ae6f4069df2f5ff41a52454b535e	La durata del corso è di sei mesi e prevede tre lezioni alla settimana di due ore ciascuna.	Una breve durata.
 intervallo	interval / break	6	9b54f2510549e4899ba2ea04d48f9338	Durante l'intervallo fra le lezioni i bambini giocano nel cortile della scuola elementare con grande gioia.	Un breve intervallo.
