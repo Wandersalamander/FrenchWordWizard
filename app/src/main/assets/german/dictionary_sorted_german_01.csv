@@ -12,7 +12,7 @@ kommen	to come	1	a168e64f3ffb77ff04b882ec22bbff70	Wenn du morgen zur Party komme
 sehen	to see	1	7f17e4134eb905fe30076186b1078245	Als wir aus dem Fenster sahen, konnten wir den wunderschönen Sonnenuntergang sehen.	Ich sehe einen Vogel.
 geben	to give	1	e236a3a4277f7bafefec2225f2f46ee9	Obwohl es keine einfache Lösung zu geben schien, wurde beschlossen, den Betroffenen zusätzliche Unterstützung zu geben.	Er gibt mir das Buch.
 nehmen	to take	1	91c4bf91396a36ad498edc4e29292d70	Bevor wir eine endgültige Entscheidung treffen, sollten wir uns die Zeit nehmen.	Ich nehme den Bus.
-finden	to find	1	6fad90f33c53acfc3203203fbcc5cdd6	Obwohl viele Leute das Restaurant schwer zu finden scheinen, finden diejenigen, die es entdecken.	Ich finde meinen Schlüssel nicht.
+finden	to find	1	6fad90f33c53acfc3203203fbcc5cdd6	Obwohl viele Leute das Restaurant schwer zu finden scheinen, finden diejenigen, die es entdecken, hervorragendes Essen.	Ich finde meinen Schlüssel nicht.
 sagen	to say; to tell	1	aeb8592e73093aaf4ef065821e1fb48b	Es wird oft gesagt, dass man die Wahrheit sagen sollte, auch wenn es schwierig ist, das Richtige zu sagen.	Was willst du sagen?
 wissen	to know (a fact)	1	ea6ec600891e0725f08df6138d665ad5	Hätte ich gewusst, dass du das nicht wissen konntest, hätte ich es dir viel früher gesagt.	Ich weiß es nicht.
 lassen	to let; to leave	1	45c660170e8e9a005b7e57ba8c5a5070	Er ließ sich von niemandem davon abbringen, sein Auto in der Garage stehen zu lassen, obwohl das Wetter schön war.	Lass mich in Ruhe!
@@ -22,7 +22,7 @@ sprechen	to speak	1	edd5278911e28e9659ce53b513e25e4e	Obwohl sie noch nie zuvor �
 halten	to hold; to stop	1	83c71ca458ebab9af190d4c2ce9af217	Der Redner versuchte, die Aufmerksamkeit des Publikums zu halten, indem er eine spannende Geschichte erzählte.	Halt bitte das Glas fest!
 bringen	to bring	1	f561b04cce6656d8107392b3d6212177	Wenn du das nächste Mal zu Besuch kommst, könntest du mir bitte die Bücher mitbringen.	Bring mir bitte ein Glas Wasser.
 leben	to live	1	c7dc704a938e13594586dad9c8bc87a0	Obwohl sie in einer kleinen Stadt aufgewachsen war, träumte sie davon, eines Tages in einer großen Stadt zu leben.	Wir leben in Berlin.
-fahren	to drive; to travel	1	f547dc8a08150647805edfa195cba729	Da die Straßen wegen des Schneefalls gesperrt worden waren.	Ich fahre mit dem Fahrrad.
+fahren	to drive; to travel	1	f547dc8a08150647805edfa195cba729	Da die Straßen wegen des Schneefalls gesperrt worden waren, mussten wir zu Hause bleiben.	Ich fahre mit dem Fahrrad.
 essen	to eat	1	2f99cdee3aa3c7a283996504cc161ae3	Nachdem wir den ganzen Tag gewandert waren, wollten wir nur noch etwas Warmes essen, bevor wir ins Bett gingen.	Wir essen Pizza.
 trinken	to drink	1	cb8fc7de83cea06bf550e464740b111b	Obwohl der Arzt ihm geraten hatte, mehr Wasser zu trinken, vergaß er es immer wieder, weil er so beschäftigt war.	Ich trinke gern Tee.
 schreiben	to write	1	b5e39abb8e84f789d89e273d1e17347c	Nachdem der Brief geschrieben worden war, überlegte sie, ob sie noch etwas Wichtiges vergessen hatte zu schreiben.	Er schreibt einen Brief.
@@ -62,7 +62,7 @@ und	and	1	357d4950fcabdc73e9a1c7bff7760b80	Er kaufte Brot und Butter und ging na
 oder	or	1	5606beb71f365e8a6fedb85f3048c4a9	Ob wir mit dem Zug oder mit dem Auto fahren, hängt davon ab, ob es morgen regnet oder ob die Sonne scheint.	Tee oder Kaffee?
 aber	but; however	1	e81bb68621da6629cdded6562b5b5f86	Sie wollte eigentlich zu Hause bleiben, aber als ihre Freundin anrief und sie überredete, ging sie doch zur Party.	Es ist kalt, aber schön.
 denn	because; for	1	6cb984e49cd63687e35000d94467afd3	Er blieb zu Hause, denn er fühlte sich nicht wohl, und er wollte niemanden anstecken.	Ich bleibe hier, denn es regnet.
-weil	because	1	d26b2f1fcc7495ee47054cafd1978226	Weil der Zug Verspätung hatte und weil sie deshalb den Anschlussflug verpasste.	Ich bin müde, weil ich spät ins Bett gegangen bin.
+weil	because	1	d26b2f1fcc7495ee47054cafd1978226	Weil der Zug Verspätung hatte und sie deshalb den Anschlussflug verpasste, kam sie einen Tag zu spät an.	Ich bin müde, weil ich spät ins Bett gegangen bin.
 wenn	if; when; whenever	1	99a0863912d903a3e9fa31bd4cb83320	Wenn du mehr Zeit hättest und wenn das Wetter besser wäre, könnten wir einen langen Spaziergang durch den Wald machen.	Wenn es regnet, bleibe ich zu Hause.
 dass	that (conjunction)	1	376e9db76e28b21e10581ebedf4aaf71	Es wurde berichtet, dass die Regierung beschlossen hat, dass neue Gesetze zum Umweltschutz verabschiedet werden sollen.	Ich weiß, dass du recht hast.
 als	when (past); than	1	a99bbb46d5bbb6e08229e1fd26c5a2c6	Als er nach vielen Jahren in seine Heimatstadt zurückkehrte, war alles anders, als er es in Erinnerung hatte.	Als ich jung war, spielte ich viel.
@@ -74,16 +74,16 @@ schon	already	1	a369421e47acafb268c075a3b67e8bc2	Als wir ankamen, hatte der Film
 sehr	very	1	eca69c093f3bbd7aa06b1c56c9277976	Die Aufgabe war sehr viel schwieriger, als wir erwartet hatten, weshalb wir sehr lange brauchten, um sie zu lösen.	Das Essen ist sehr gut.
 nur	only; just	1	ad4450d08c7e2d50cfa55f6ffcc66244	Er wollte nur kurz vorbeischauen, aber am Ende blieb er den ganzen Abend, weil die Gespräche so interessant waren.	Ich habe nur fünf Euro.
 immer	always	1	440340462f89071021422ce05161d794	Egal was passiert, sie versucht immer, das Beste aus jeder Situation zu machen, auch wenn die Umstände schwierig sind.	Er kommt immer zu spät.
-wieder	again	1	dae9c3cf5b00b8d5870680d6ab46a359	Nachdem das alte Gebäude wieder aufgebaut worden war.	Versuch es noch einmal wieder.
+wieder	again	1	dae9c3cf5b00b8d5870680d6ab46a359	Nachdem das alte Gebäude wieder aufgebaut worden war, kehrten die Bewohner zurück.	Versuch es noch einmal.
 hier	here	1	e251f60de68683c633d92c487cd384ae	Hier, wo wir jetzt stehen, befand sich vor hundert Jahren ein großer Marktplatz.	Ich bin hier.
 dort	there	1	efe13725770fb026bbeb6e9e18ee301d	Dort, wo früher eine alte Fabrik gestanden hatte, wurde ein moderner Park angelegt, in dem die Kinder spielen können.	Das Buch liegt dort.
 jetzt	now	1	b7354f97a132d3ed96bf1d335678523a	Jetzt, wo alle Vorbereitungen abgeschlossen sind, können wir endlich mit dem Projekt beginnen.	Ich gehe jetzt.
-dann	then	1	35a45946ea3584450e21b219fd186965	Wenn du zuerst deine Hausaufgaben machst und dann dein Zimmer aufräumst.	Zuerst essen wir, dann gehen wir.
+dann	then	1	35a45946ea3584450e21b219fd186965	Wenn du zuerst deine Hausaufgaben machst und dann dein Zimmer aufräumst, darfst du fernsehen.	Zuerst essen wir, dann gehen wir.
 heute	today	1	d0259093e7b73ecc06dffdad53269b80	Heute wurde bekannt gegeben, dass die Schule, die seit Jahren renoviert werden sollte, endlich modernisiert wird.	Heute ist Montag.
 morgen	tomorrow	1	f5f3f4220e4c0a758fa0d99adbbda962	Obwohl wir gehofft hatten, morgen in den Urlaub zu fahren, müssen wir die Reise verschieben.	Morgen habe ich frei.
 gestern	yesterday	1	a8477ed16475ff35ffa77a904aabe170	Gestern Abend, als wir im Restaurant saßen, erzählte sie mir, was ihr gestern auf der Arbeit Seltsames passiert war.	Gestern war es kalt.
 vielleicht	maybe; perhaps	1	ef5e24e148e34582a6e48a4f1f1476dc	Vielleicht wäre es besser gewesen, wenn wir uns vorher informiert hätten.	Vielleicht komme ich morgen.
-zusammen	together	1	7419c06ffcbd83d741e4b4f1e4c9bd1f	Obwohl sie seit vielen Jahren nicht mehr zusammen gearbeitet hatten.	Wir gehen zusammen einkaufen.
+zusammen	together	1	7419c06ffcbd83d741e4b4f1e4c9bd1f	Obwohl sie seit vielen Jahren nicht mehr zusammen gearbeitet hatten, fanden sie sofort wieder einen gemeinsamen Rhythmus.	Wir gehen zusammen einkaufen.
 allein	alone	1	a3d09fac3028fc6dbb516964f5f274f0	Nachdem alle gegangen waren, saß sie allein in dem großen Haus und fragte sich, ob sie es schaffen würde.	Er lebt allein.
 eigentlich	actually; really	1	44514d25a302c04e57961c01e6cd041b	Eigentlich wollte ich heute zu Hause bleiben, aber dann rief mein Freund an und fragte, ob ich eigentlich Lust hätte.	Was willst du eigentlich?
 wirklich	really; truly	1	aeeef82dafc23c643adda68c7f416dcf	Obwohl es wirklich schwierig war, die Prüfung zu bestehen, hat sie es geschafft.	Das ist wirklich schön.
@@ -94,7 +94,7 @@ plötzlich	suddenly	1	e80ec01f2ed3eeae9a993479c5198a64	Als sie gerade einschlafe
 sofort	immediately; right away	1	6be28d020a2883b334a9d1c779a605e5	Als der Alarm ausgelöst wurde, verließen alle sofort das Gebäude, weil sie wussten, dass man sofort reagieren muss.	Komm bitte sofort her!
 trotzdem	nevertheless; anyway	1	73497b7da67e3ac90e99fe43a3d7bf38	Obwohl der Weg lang und beschwerlich war, gab sie trotzdem nicht auf, weil sie wusste, dass sich die Mühe lohnen würde.	Es regnet, aber ich gehe trotzdem raus.
 deshalb	therefore; that is why	1	065de4308939d9e7cf96746e35b2bb62	Der Zug hatte Verspätung, und deshalb verpasste er seinen Termin, was besonders ärgerlich war.	Ich bin müde, deshalb gehe ich ins Bett.
-zuerst	first; at first	1	21524dcc9a6c8cda5e4c3707c87f55fb	Zuerst schien alles gut zu laufen, aber dann stellte sich heraus, dass die Berechnungen.	Zuerst wasche ich mir die Hände.
+zuerst	first; at first	1	21524dcc9a6c8cda5e4c3707c87f55fb	Zuerst schien alles gut zu laufen, aber dann stellte sich heraus, dass die Berechnungen falsch waren.	Zuerst wasche ich mir die Hände.
 danach	after that; afterwards	1	e8ffd76169eb750dcfe699ebbbb2818b	Nachdem wir das Museum besucht hatten, gingen wir danach in ein kleines Café, das uns von Freunden empfohlen worden war.	Wir essen und danach gehen wir spazieren.
 außerdem	besides; moreover	1	cfd2b152eccaf72b967e213438abd39c	Außerdem wurde beschlossen, dass die neue Regelung nicht nur für Mitarbeiter gilt.	Das Essen ist lecker, und außerdem ist es gesund.
 besonders	especially; particularly	1	6d5bfdc281ff70c52aeeb62dc2558596	Besonders in den Wintermonaten, wenn die Tage kurz und dunkel sind, fällt es vielen Menschen schwer.	Dieses Buch ist besonders gut.
@@ -108,7 +108,7 @@ ihr	you (informal plural)	1	425940dae2dc7731db2087000c195216	Wenn ihr euch beeil
 der / die / das	the (definite article)	1	d52ccebeb847ee161aa271331b58c859	Der Mann, die Frau und das Kind, die an der Bushaltestelle warteten, wurden vom Regen überrascht.	Der Hund ist groß. Die Katze ist klein. Das Haus ist alt.
 ein / eine	a; an (indefinite article)	1	3e01c32ebc7d863401aa9d4b101569fc	Es war einmal ein kleiner Junge, der eine geheimnisvolle Tür entdeckte, hinter der sich eine völlig neue Welt verbarg.	Ich habe einen Hund und eine Katze.
 mein	my	1	87580ebcaf0a7cf1e15fc99699e6269e	Mein größter Wunsch war es schon immer, die Welt zu bereisen, weshalb mein erstes Reiseziel Japan sein wird.	Das ist mein Buch.
-dein	your (informal singular)	1	9d1995f293d518a217dc080153ff4c7c	Wenn dein Bruder und deine Schwester morgen kommen.	Wo ist dein Schlüssel?
+dein	your (informal singular)	1	9d1995f293d518a217dc080153ff4c7c	Wenn dein Bruder und deine Schwester morgen kommen, werden wir alle gemeinsam essen.	Wo ist dein Schlüssel?
 sein / ihr	his / her; their	1	2aa4cd74e352776384db97639b48e91c	Seine Mutter und ihr Vater hatten sich darauf geeinigt, dass sein Geburtstag bei ihr zu Hause gefeiert werden sollte.	Das ist sein Hund. Das ist ihr Auto.
 unser	our	1	c6faebe0d575bc9c2aa01581f9e867ed	Unser Lehrer erklärte uns, dass unser nächstes Projekt besonders wichtig sei.	Das ist unser Haus.
 euer	your (informal plural)	1	147f83d999f5fe6469d0fb250ffaaf89	Wenn euer Plan funktioniert und euer Team das Projekt rechtzeitig abschließt, werdet ihr sicher eine gute Note bekommen.	Ist das euer Auto?
@@ -138,7 +138,7 @@ neu	new	1	81344c9a94615b48bf87ec9f5de06057	Das neue System, das erst letzte Woch
 alt	old	1	39e17937789e91469f4d1bd472e4780e	Das alte Gebäude, das über zweihundert Jahre alt ist, soll unter Denkmalschutz gestellt werden, bevor es zu spät ist.	Die Kirche ist sehr alt.
 jung	young	1	751a943c721f0f8daa1cf02576de518a	Obwohl sie noch sehr jung war, zeigte sie ein Talent, das so beeindruckend war.	Sie ist noch jung.
 lang	long	1	338794a0e4fd90f8890e3ec1fcfe5c99	Der lange Weg, den wir durch den Wald gehen mussten, war so lang, dass wir mehrere Pausen einlegen mussten.	Die Straße ist lang.
-kurz	short; brief	1	2768482b296b98aa765f5255c80ea1da	Nachdem er eine kurze Pause gemacht hatte.	Die Pause ist kurz.
+kurz	short; brief	1	2768482b296b98aa765f5255c80ea1da	Nachdem er eine kurze Pause gemacht hatte, setzte er die Arbeit konzentriert fort.	Die Pause ist kurz.
 schnell	fast; quick	1	68e642845fb0f7a02df5557fe0cf9776	Er musste so schnell wie möglich zum Bahnhof laufen.	Das Auto fährt schnell.
 langsam	slow; slowly	1	753b06984640780d1a3fe5b7db63d189	Obwohl der Fortschritt nur langsam voranging, war es wichtig, langsam und sorgfältig zu arbeiten.	Bitte sprich langsam.
 schön	beautiful; nice	1	5c0c641b34bade63fb901b9b5bf2a415	Die Landschaft war so schön, dass wir stehen bleiben mussten, um den schönen Sonnenuntergang über dem Meer zu bewundern.	Das Wetter ist schön.
@@ -146,7 +146,7 @@ leicht	easy; light	1	3559b6fd48c216477091c3bf93384ac1	Obwohl die Aufgabe leicht 
 schwer	heavy; difficult	1	f6c9fe4ad413ff147475c86eaf53c554	Die Entscheidung fiel ihm besonders schwer, weil er wusste, dass die Konsequenzen schwer zu tragen sein würden.	Der Koffer ist schwer.
 wichtig	important	1	196203db8478e530fc14d85346ac0223	Es ist besonders wichtig, dass alle verstehen, wie wichtig es ist, rechtzeitig mit den Vorbereitungen zu beginnen.	Gesundheit ist wichtig.
 richtig	right; correct	1	532b1b5109bc71d545ef01332e6c0e30	Obwohl sie dachte, alles richtig gemacht zu haben, stellte sich heraus, dass die Berechnung nicht ganz richtig war.	Die Antwort ist richtig.
-falsch	wrong; false	1	7e395dc8a476d23574b7cff2296cb09b	Obwohl er überzeugt war, dass seine Entscheidung nicht falsch gewesen sei, erkannte er später.	Das ist falsch.
+falsch	wrong; false	1	7e395dc8a476d23574b7cff2296cb09b	Obwohl er überzeugt war, dass seine Entscheidung nicht falsch gewesen sei, erkannte er später seinen Irrtum.	Das ist falsch.
 in	in; into	1	1058770f125eb7196658e66deae218f0	In der kleinen Stadt, in der sie aufgewachsen war, hatte sich in den letzten Jahren so viel verändert.	Ich bin in der Schule.
 auf	on; upon; onto	1	d0fb53dda434bdb3b74d27c50403d562	Auf dem Tisch, der mitten auf dem Marktplatz stand, lagen verschiedene Waren, die auf Käufer warteten.	Das Buch liegt auf dem Tisch.
 an	at; on (vertical); to	1	2133bbbc59673647aca3056ca7785759	An dem Tag, an dem wir ankamen, war das Wetter so schlecht.	Das Bild hängt an der Wand.
@@ -173,13 +173,13 @@ während	while; during	1	b5d0e56ff067a0b7fd3a0c75d9665864	Während die einen dra
 statt	instead of	1	7b4ec94fa2775641511d18f8da49ee00	Statt mit dem Auto zu fahren, nahm er den Zug.	Statt Kaffee trinke ich Tee.
 wegen	because of; due to	1	6146e9c8808440974cfab92816548c18	Wegen des starken Regens, der wegen eines Tiefdruckgebiets über die Region gezogen war.	Wegen des Wetters bleiben wir zu Hause.
 die Schule	the school	1	a49b4530996e886bc3911423a8356223	Die Schule, die nach dem berühmten Dichter benannt worden war, wurde kürzlich renoviert.	Ich gehe in die Schule.
-der Lehrer / die Lehrerin	the teacher	1	d335bbdc144027be9beb8ed4013f48ea	Der Lehrer, der seit über zwanzig Jahren an dieser Schule unterrichtet,, die erst letztes Jahr angefangen hat.	Der Lehrer erklärt die Aufgabe.
+der Lehrer / die Lehrerin	the teacher	1	d335bbdc144027be9beb8ed4013f48ea	Der Lehrer, der seit über zwanzig Jahren an dieser Schule unterrichtet, ist bei den Schülern sehr beliebt.	Der Lehrer erklärt die Aufgabe.
 das Buch	the book	1	ce30bed818646e4fd0a075e2e3ae856e	Das Buch, das in mehr als dreißig Sprachen übersetzt worden ist, erzählt die Geschichte einer Familie.	Ich lese ein Buch.
 die Straße	the street; road	1	b581ae94c5e473f64f0eb7fe7513cf05	Die Straße, die durch das kleine Dorf führte, war so schmal, dass zwei Autos kaum aneinander vorbeifahren konnten.	Die Straße ist lang.
 das Auto	the car	1	e06f06cc09a8538a0d40be423d11e6df	Das Auto, das seit einer Woche in der Werkstatt repariert worden war, konnte endlich abgeholt werden.	Das Auto ist rot.
 der Zug	the train	1	04a1d262a5e3dfed531bfc605b58ce3b	Der Zug, der eigentlich um zehn Uhr hätte abfahren sollen, hatte eine Stunde Verspätung.	Der Zug kommt bald.
 das Flugzeug	the airplane	1	668cc51ba8829440b11a1f5aa4a67da5	Das Flugzeug, das wegen schlechten Wetters nicht hätte starten dürfen, wurde schließlich doch freigegeben.	Das Flugzeug fliegt nach Berlin.
-die Tür	the door	1	f34f2b678777640b977b96aa59f8c250	Nachdem die Tür von einem starken Windstoß zugeschlagen worden war, stellten wir fest.	Bitte schließ die Tür.
+die Tür	the door	1	f34f2b678777640b977b96aa59f8c250	Nachdem die Tür von einem starken Windstoß zugeschlagen worden war, stellten wir fest, dass der Schlüssel innen lag.	Bitte schließ die Tür.
 das Fenster	the window	1	4421a331fdaa9fd157a1d9730baccb98	Als das Fenster geöffnet wurde, strömte frische Luft herein, die so angenehm war.	Das Fenster ist offen.
 der Tisch	the table	1	1421ae7c4a0acb3b1201c544da9bc55d	Der Tisch, der in der Mitte des Raumes stand, war so groß, dass die ganze Familie bequem daran Platz fand.	Wir sitzen am Tisch.
 der Stuhl	the chair	1	bf9415f500bd13163e6c044a4a557575	Der alte Stuhl, der seit Generationen in der Familie war, wurde so sorgfältig restauriert, dass er wie neu aussah.	Der Stuhl steht am Tisch.

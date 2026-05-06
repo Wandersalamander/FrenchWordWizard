@@ -1,7 +1,7 @@
 der Kredit	credit, loan	6	fe8fecc5ade801a497129181fab83675	Der Kredit, den er bei der Bank aufgenommen hatte, hätte zu günstigeren Konditionen vergeben werden können.	Er hat einen Kredit aufgenommen.
-der Zinsen	interest (financial)	6	6ce17f597355325ffeb1854efd640f78	Der Zinsen, der auf das Sparguthaben gezahlt wird, hätte höher sein können.	Der Zinsen ist sehr niedrig.
+die Zinsen	interest (financial)	6	6ce17f597355325ffeb1854efd640f78	Die Zinsen, die auf das Sparguthaben gezahlt werden, hätten höher sein können.	Die Zinsen sind sehr niedrig.
 eintreten	to enter, to occur	6	b954d427c7d8edc48d77106f23b89ab8	Obwohl er nicht erwartet hätte, dass dieses Ereignis jemals eintreten würde.	Bitte eintreten und Platz nehmen.
-austreten	to step out, to resign	6	c68a8010d0f9396d2c36159f8c764a04	Nachdem er aus dem Verein hatte austreten müssen.	Er will aus dem Verein austreten.
+austreten	to step out, to resign	6	c68a8010d0f9396d2c36159f8c764a04	Nachdem er aus dem Verein hatte austreten müssen, fühlte er eine seltsame Mischung aus Erleichterung und Bedauern.	Er will aus dem Verein austreten.
 hinaufgehen	to go up	6	7a7cec60542088122940ee69f8f7a662	Obwohl die Treppe so steil war, dass kaum jemand hätte hinaufgehen wollen, stieg sie mutig die Stufen empor.	Wir müssen die Treppe hinaufgehen.
 hinuntergehen	to go down	6	2a3d7245fac677d56d893bbfceab031d	Den schmalen Pfad hinuntergehen zu müssen, wäre weniger gefährlich gewesen.	Gehen wir den Hügel hinunter.
 überqueren	to cross	6	91b91640fef684e030cd53fef862ed80	Die Straße, die sie jeden Morgen überqueren musste, hätte sicherer gemacht werden können.	Wir müssen die Straße überqueren.
@@ -17,8 +17,8 @@ kriechen	to crawl, to creep	6	6fdcab342a78f288261202e8a91b88d1	Obwohl die Höhle
 sich bücken	to bend down	6	15f8e2b0d919dfaab581a9e033b65876	Obwohl der Arzt ihm empfohlen hatte, sich nicht zu bücken, musste er es dennoch tun, um den Schlüssel aufzuheben.	Ich muss mich bücken, um es aufzuheben.
 sich strecken	to stretch	6	f8b812cb30cde0837b4d838bd07a94c8	Nachdem sie stundenlang am Schreibtisch gesessen hatte, musste sie sich strecken, um die Verspannungen zu lösen.	Nach dem Aufwachen muss ich mich strecken.
 nicken	to nod	6	612e3cee5e449dcce99acc431175795f	Obwohl er kein einziges Wort der Erklärung verstanden hatte, begann er zu nicken, damit sein Gegenüber nicht bemerkte.	Er konnte nur nicken.
-schütteln	to shake	6	0fa42bbca4da579b62c5073abe0b5ea1	Als sie den Kopf zu schütteln begann, wurde ihm klar, dass sein Vorschlag.	Sie schütteln den Kopf.
-winken	to wave	6	f0184787825ab23b56edf7e0c21b2d65	Obwohl er ihr vom Bahnsteig aus zugerufen und versucht hatte zu winken.	Die Kinder winken zum Abschied.
+schütteln	to shake	6	0fa42bbca4da579b62c5073abe0b5ea1	Als sie den Kopf zu schütteln begann, wurde ihm klar, dass sein Vorschlag nicht angenommen werden würde.	Sie schütteln den Kopf.
+winken	to wave	6	f0184787825ab23b56edf7e0c21b2d65	Obwohl er ihr vom Bahnsteig aus zugerufen und versucht hatte zu winken, bemerkte sie ihn nicht.	Die Kinder winken zum Abschied.
 zeigen	to show, to point	6	ce3aa63455b1042187a9408ecd3b98af	Um den Touristen den Weg zu zeigen, der sie am schnellsten zum Museum führen würde.	Kannst du mir das zeigen?
 oben	above, up, at the top	6	15b39cf06bb76df9e16a2aab6b9394a5	Das Zimmer, das sich ganz oben im Turm befand, hätte nur über eine steile Wendeltreppe erreicht werden können.	Die Tasse steht oben im Schrank.
 unten	below, down, at the bottom	6	fedb383aceedbf31d7134cbe7582394c	Der Koffer, der unten im Keller gelagert worden war, hätte viel früher heraufgeholt werden müssen.	Die Schuhe stehen unten an der Tür.
@@ -34,7 +34,7 @@ die Umwelt	the environment	6	f6452956bb440c42b91b3f9e77830f69	Obwohl die Umwelt 
 die Natur	nature	6	c7d60f6e96919f88be2c87f48dd0b6f8	Die Natur, deren Gleichgewicht durch menschliche Eingriffe empfindlich gestört wurde, könnte sich erholen.	Ich gehe gern in die Natur.
 die Landschaft	the landscape	6	e1d5c919afefd931271e4432eec246e0	Die Landschaft, die sich vor unseren Augen erstreckte, wäre noch beeindruckender gewesen.	Die Landschaft hier ist sehr schön.
 das Klima	the climate	6	c0e27101806e203a48b241e4d45cc194	Das Klima, das sich in den letzten Jahrzehnten dramatisch verändert hat.	Das Klima wird immer wärmer.
-der Klimawandel	climate change	6	b2f24ac7995338dfcca8593466e4e5ad	Wenn der Klimawandel nicht durch sofortige Maßnahmen gebremst würde.	Der Klimawandel ist ein großes Problem.
+der Klimawandel	climate change	6	b2f24ac7995338dfcca8593466e4e5ad	Wenn der Klimawandel nicht durch sofortige Maßnahmen gebremst würde, wären die Folgen für kommende Generationen verheerend.	Der Klimawandel ist ein großes Problem.
 die Verschmutzung	pollution	6	bdfaf170492a2b774e3fcacd1ce867d1	Die Verschmutzung, die durch den unkontrollierten Ausstoß von Chemikalien verursacht wird.	Die Verschmutzung des Flusses ist schlimm.
 der Müll	garbage, trash	6	65d3f3ca99d9efeda4c70fa398f13b7f	Der Müll, der in den Ozeanen treibt und von dem Millionen Meerestiere bedroht werden.	Bitte wirf den Müll in den Eimer.
 recyceln	to recycle	6	504c1c8c1ecb293a8743efd95aa178ad	Wenn alle Bürger konsequent recyceln würden, könnte die Menge an Abfall, die auf Deponien landet.	Wir recyceln Papier und Plastik.
@@ -80,7 +80,6 @@ der Durchschnitt	average	6	0cd39c950447a9bd0cb758a47e5dfad4	Der Durchschnitt der
 die Hälfte	half	6	f25c68eafa3150ccfbf25265282be8c7	Die Hälfte der Bevölkerung, die an der Umfrage teilgenommen hat, hätte sich für strengere Umweltgesetze ausgesprochen.	Die Hälfte des Kuchens ist schon weg.
 das Drittel	third	6	46891fbd5b7d842f80cd33b0bc32afe1	Ein Drittel der Befragten gab an, dass sie bereit wären, mehr für nachhaltige Produkte zu bezahlen.	Ein Drittel der Klasse fehlt heute.
 das Viertel	quarter	6	7294bc0c29f9366f8d984975ccfc626e	Ein Viertel des Budgets, das für die Renovierung vorgesehen war, wurde für unvorhergesehene Reparaturen ausgegeben.	Ein Viertel der Pizza ist übrig.
-die Prozent	percent	6	686cf39dbb6958298d3232a318971003	Obwohl fünfzig Prozent der Teilnehmer die Prüfung bestanden haben, wäre der Anteil höher gewesen.	Zwanzig Prozent der Schüler sind krank.
 die Statistik	statistics	6	3ca1ea393705beff00d8ee6de67bb87c	Die Statistik, die von unabhängigen Forschern erhoben wurde.	Die Statistik zeigt interessante Zahlen.
 die Chemie	chemistry	6	e140e8f608c323ad6d9bab35c93cb354	Die Chemie, die als Grundlagenwissenschaft in nahezu allen Bereichen der Industrie Anwendung findet.	Chemie ist mein Lieblingsfach.
 die Physik	physics	6	d5f6f61691f0e91073ba4ffc885509ed	Die Physik, deren Gesetze das Fundament unseres technologischen Fortschritts bilden.	Physik erklärt, wie die Welt funktioniert.
@@ -180,4 +179,4 @@ die Gerechtigkeit	justice	6	2a993f6f8836533c2cbc370e2fa9b8b3	Die Gerechtigkeit, 
 die Gleichheit	equality	6	2b15d339eeac514cbc70d6f1130c84a4	Die Gleichheit, die in der Verfassung garantiert wird und für deren Durchsetzung zahlreiche Bewegungen gekämpft haben.	Alle Menschen verdienen Gleichheit.
 die Würde	dignity	6	bca8d1955e1aee7f4a2385f9029dc6c9	Die Würde des Menschen, die als unantastbar gilt, wäre besser gewährleistet.	Die Würde des Menschen ist unantastbar.
 die Seele	soul	6	0c484dc64c4c58559ac56faa12beae60	Die Seele, deren Existenz von Philosophen seit der Antike diskutiert wird, wäre ein weniger umstrittenes Konzept.	Musik berührt die Seele.
-der Umweltschutz	environmental protection	6	b6fadaff2da5d8784d2ee2c688c7fac8	Der Umweltschutz, der in der Verfassung als Staatsziel verankert ist, waere effektiver.	Umweltschutz geht uns alle an.
+der Umweltschutz	environmental protection	6	b6fadaff2da5d8784d2ee2c688c7fac8	Der Umweltschutz, der in der Verfassung als Staatsziel verankert ist, wäre effektiver.	Umweltschutz geht uns alle an.

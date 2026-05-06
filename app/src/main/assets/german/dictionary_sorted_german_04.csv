@@ -48,7 +48,7 @@ der Krieg	the war	4	ba9da7324ff5e73edf33f934f98fa8b3	Der Krieg, der Millionen vo
 der Frieden	peace	4	84700468c544dcf79f371fbf0495911f	Der Frieden, um den so lange gerungen worden war, bleibt in der Region dennoch fragil.	Alle Menschen wünschen sich Frieden.
 die Armee	the army	4	d075e9928b74b2b95f8e8d21b9772169	Die Armee, die vom Parlament entsendet wurde, soll nach dem Friedensabkommen schrittweise abgezogen werden.	Die Armee schützt das Land.
 der Soldat / die Soldatin	the soldier	4	24b1910df0457d9632e9e251830fd31a	Der Soldat, der nach mehreren Auslandseinsätzen unter schweren psychischen Belastungen litt.	Der Soldat trägt eine Uniform.
-die Gewalt	the violence	4	ac3dc54d3b187cea419e35b7457a1335	Die Gewalt, die während der Ausschreitungen verübt wurde und gegen die sich zahlreiche Bürgerrechtsbewegungen haben.	Gewalt ist keine Lösung.
+die Gewalt	the violence	4	ac3dc54d3b187cea419e35b7457a1335	Die Gewalt, die während der Ausschreitungen verübt wurde, hat zahlreiche Bürgerrechtsbewegungen auf den Plan gerufen.	Gewalt ist keine Lösung.
 der Protest	the protest	4	c3764198239d1de2d23a8aea925417d1	Der Protest, an dem sich Tausende von Bürgern beteiligten, richtete sich gegen die geplante Gesetzesänderung.	Der Protest war friedlich.
 die Demonstration	the demonstration	4	f91c823ae9392b777051ed0287b12c68	Die Demonstration, zu der mehr Menschen kamen, als die Organisatoren erwartet hatten.	Die Demonstration beginnt um zehn Uhr.
 die Gesellschaft	society	4	ac9d9371440716939f0a5facbc7670c9	In einer Gesellschaft, die von Individualismus geprägt ist, wird Zusammenhalt zur Herausforderung.	Wir leben in einer offenen Gesellschaft.
@@ -74,8 +74,8 @@ veröffentlichen	to publish	4	4b6f51c8920a4881064369921d8e40c7	Der Verlag beschl
 die Information	the information	4	d3a0ee0e60f3f6a7d91076a347d49631	Die Information, die aus vertraulichen Quellen stammte, wurde schließlich der Öffentlichkeit zugänglich gemacht.	Ich brauche mehr Information darüber.
 die Meinung	the opinion	4	b7c20e143219a0c0da8fa9f165dcca77	Obwohl jeder das Recht hat, seine Meinung frei zu äußern, sollte man bedenken, dass die eigene Freiheit dort endet.	Das ist meine Meinung.
 diskutieren	to discuss	4	2ee06637656483af2776298a40f29c70	Anstatt das Problem sachlich zu diskutieren, wie es in einer demokratischen Gesellschaft üblich sein sollte.	Wir diskutieren das Thema morgen.
-streiten	to argue / to quarrel	4	64055466195879eab3e9aee8c5e5396c	Obwohl die beiden Geschwister ständig miteinander streiten und sich gegenseitig die Schuld geben.	Die Kinder streiten oft.
-zustimmen	to agree	4	48fc3802c7503664efd739fba168d001	Nachdem alle Beteiligten dem Vorschlag zugestimmt hatten.	Ich stimme dir zu.
+streiten	to argue / to quarrel	4	64055466195879eab3e9aee8c5e5396c	Obwohl die beiden Geschwister ständig miteinander streiten und sich gegenseitig die Schuld geben, stehen sie im Ernstfall füreinander ein.	Die Kinder streiten oft.
+zustimmen	to agree	4	48fc3802c7503664efd739fba168d001	Nachdem alle Beteiligten dem Vorschlag zugestimmt hatten, konnte das Projekt endlich beginnen.	Ich stimme dir zu.
 ablehnen	to reject / to decline	4	4bf7ca6a78f0ec549430474df17af1c9	Den Antrag, der trotz sorgfältiger Vorbereitung von der zuständigen Behörde abgelehnt worden war.	Er hat das Angebot abgelehnt.
 vorschlagen	to suggest / to propose	4	2651e7e93c321ed29b58fe4173eb6f85	Sie wollte eine Lösung vorschlagen, die allen Seiten gerecht werden würde.	Ich schlage einen Kompromiss vor.
 überzeugen	to convince	4	98ec67a6a68d58c9207efc956af6827b	Es gelang ihr, die skeptischen Vorstandsmitglieder von ihrem innovativen Konzept zu überzeugen.	Er konnte mich nicht überzeugen.
@@ -154,7 +154,7 @@ der Supermarkt	the supermarket	4	f2918d344e0f631ee4ea4964401b2d38	Obwohl der neu
 das Einkaufszentrum	the shopping center	4	7bf2288419dfc66ea9178dc114bbeb75	Das Einkaufszentrum, das am Stadtrand gebaut werden sollte, wurde von den Anwohnern abgelehnt.	Das Einkaufszentrum hat viele Geschäfte.
 die Kasse	the cash register / the checkout	4	0ec165da3e6e7977a30d023599b2a3eb	An der Kasse, an der sich eine lange Schlange gebildet hatte, musste ich zwanzig Minuten warten.	Bitte zahlen Sie an der Kasse.
 der Preis	the price	4	6a888ee3900ac71fb33bd8d44c28fa27	Der Preis, der für dieses handgefertigte Möbelstück verlangt wird, erscheint zunächst hoch.	Der Preis ist zu hoch für mich.
-das Angebot	the offer / the deal	4	93c58eae6e01172f5abec7b8e4cbecff	Das Angebot, das nur bis Ende der Woche gilt, wäre eine ausgezeichnete Gelegenheit, wenn man bedenkt.	Dieses Angebot ist wirklich gut.
+das Angebot	the offer / the deal	4	93c58eae6e01172f5abec7b8e4cbecff	Das Angebot, das nur bis Ende der Woche gilt, wäre eine ausgezeichnete Gelegenheit, wenn man bedenkt, wie schnell die Preise steigen.	Dieses Angebot ist wirklich gut.
 der Rabatt	the discount	4	6976303b9d3a9c3ce6f6ec016393026a	Den Rabatt, der normalerweise nur Stammkunden gewährt wird, bekam ich.	Gibt es einen Rabatt auf diesen Artikel?
 die Quittung	the receipt	4	d1c5cabc5d42fad5e1a8f906fce56b1e	Ohne die Quittung, die ich glücklicherweise noch in meiner Jackentasche gefunden hatte.	Kann ich bitte die Quittung haben?
 die Rechnung	the bill / the invoice	4	adaf158ad3e228b32cfdfb745061d896	Die Rechnung, die uns per Post zugeschickt worden war, enthielt mehrere Fehler, weshalb wir sie reklamieren mussten.	Die Rechnung beträgt fünfzig Euro.

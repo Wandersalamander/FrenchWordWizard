@@ -7,7 +7,7 @@ die Kette	chain / necklace	3	4b4d0ad190b48c23aeee0fae379924e6	Die Kette, die sie
 der Schmuck	jewelry	3	08bf1ee35577d169ddb4eac5b4e14261	Der Schmuck, der seit Generationen in der Familie weitergegeben worden war.	Der Schmuck glänzt.
 die Socke	sock	3	fe6fc4fd5b8fe8e8f63c50759526b8dd	Die Socke, die nach dem Waschen einzeln aus der Maschine kam, fand erst Tage später ihr Gegenstück hinter der Trommel.	Die Socke hat ein Loch.
 die Unterwäsche	underwear	3	e685ae2ac3a0faddfea562a9ff0c062f	Die Unterwäsche, die aus einem weichen und atmungsaktiven Material hergestellt wurde.	Die Unterwäsche ist bequem.
-der Ärmel	sleeve	3	4e1ac481f1755753817909220a7709c4	Da der Ärmel seines Hemdes beim Kochen versehentlich in die Soße geraten war.	Der Ärmel ist zu kurz.
+der Ärmel	sleeve	3	4e1ac481f1755753817909220a7709c4	Da der Ärmel seines Hemdes beim Kochen versehentlich in die Soße geraten war, musste er sich umziehen.	Der Ärmel ist zu kurz.
 der Knopf	button	3	500417e22d72c449a148052f3c6e4540	Der Knopf, der sich beim Anziehen von seinem Lieblingshemd gelöst hatte, musste dringend wieder angenäht werden.	Der Knopf fehlt.
 der Reißverschluss	zipper	3	e1d2e82beec113b9480aa4dc301f2cc1	Der Reißverschluss ihrer Winterjacke klemmte ausgerechnet an dem Tag, als die Temperaturen unter minus zehn Grad fielen.	Der Reißverschluss klemmt.
 die Größe	size	3	e45a8f172710f86ed3b0efe4db6bba99	Obwohl sie ihre genaue Größe kannte, bestellte sie vorsichtshalber zwei verschiedene Nummern.	Welche Größe tragen Sie?
@@ -135,7 +135,7 @@ die Temperatur	temperature	3	959774eca3720f0f83ccd2efec97eb3a	Die Temperatur, di
 der Nebel	fog	3	56702c828b392fac1b7caece8f387eea	Der Nebel, der sich am frühen Morgen über dem Tal ausgebreitet hatte, löste sich erst gegen Mittag auf.	Der Nebel ist sehr dicht.
 das Eis	ice	3	cf4cf9f2743dd3d4c93677f794b1336a	Das Eis, das sich über Nacht auf den Straßen gebildet hatte, führte zu zahlreichen Unfällen.	Das Eis ist glatt.
 der Sturm	storm	3	c3f6dc457f964a2b289a49cb0e2f5634	Der Sturm, der in der Nacht über die Küstenregion hinweggefegt war, hatte Bäume entwurzelt und Stromleitungen gekappt.	Der Sturm war sehr stark.
-der Donner	thunder	3	19159fc4954e805a79730d02f21c114e	Der Donner, der unmittelbar nach dem Blitz erklang, dass die Fenster klirrten, erschreckte die Kinder.	Der Donner ist laut.
+der Donner	thunder	3	19159fc4954e805a79730d02f21c114e	Der Donner, der unmittelbar nach dem Blitz so laut erklang, dass die Fenster klirrten, erschreckte die Kinder.	Der Donner ist laut.
 der Blitz	lightning	3	f57ca89829461cf64c59492477fb13e1	Der Blitz, der in den alten Kirchturm eingeschlagen hatte, konnte von der Feuerwehr schnell gelöscht werden.	Der Blitz ist hell.
 der Regenbogen	rainbow	3	b97a9cbf430a86a2d9828bcc614dd0b2	Der Regenbogen, der nach dem heftigen Gewitter am Himmel erschienen war, war besonders farbenprächtig.	Der Regenbogen hat sieben Farben.
 trocken	dry	3	f39ef16c69073fa0fbe33fc795883346	Der Sommer, der so trocken gewesen war, dass die Ernte auf den Feldern vertrocknete.	Es ist sehr trocken draußen.
@@ -159,7 +159,7 @@ aufgeregt	excited, agitated	3	36cb8e108d018067022ffc85eab78e7b	Die Kinder waren 
 nervös	nervous	3	0176b14d9633ff7a141b3cc18bdf830e	Sie war so nervös vor dem Vorstellungsgespräch, dass sie die Nacht zuvor kaum geschlafen hatte und ihre Hände zitterten.	Ich bin nervös.
 zufrieden	satisfied, content	3	0daa748d094cad83418ab8e98dea7d79	Er war zufrieden mit dem Ergebnis seiner Arbeit.	Ich bin zufrieden.
 neugierig	curious	3	53c1129775381b868c16bb9b6eb5a7a6	Das Kind, das von Natur aus neugierig war und alles genau untersuchen wollte.	Das Kind ist neugierig.
-gelangweilt	bored	3	0daa748d094cad83418ab8e98dea7d80	Der Schüler, der so gelangweilt vom Unterricht war, dass er aus dem Fenster starrte.	Mir ist gelangweilt.
+gelangweilt	bored	3	0daa748d094cad83418ab8e98dea7d80	Der Schüler, der so gelangweilt vom Unterricht war, dass er aus dem Fenster starrte.	Ich bin gelangweilt.
 der Arzt / die Ärztin	the doctor	3	c70aaf3e589faaab1336d903d3c699d7	Obwohl der Arzt, der seit zwanzig Jahren in der Notaufnahme arbeitet, die Symptome sofort erkannte.	Der Arzt hilft mir.
 das Krankenhaus	the hospital	3	67e2ebaed7193c1c26c3b4f1a626e6f1	Das Krankenhaus, das im letzten Jahr renoviert wurde, verfügt nun über eine moderne Intensivstation.	Das Krankenhaus ist groß.
 die Apotheke	the pharmacy	3	95b6ff95fe94b34c42cceb85b64e6add	Wenn die Apotheke, die sich an der Ecke befindet, geschlossen wäre, müsste man in die nächste Stadt fahren.	Ich gehe in die Apotheke.
@@ -186,7 +186,7 @@ die Impfung	the vaccination	3	a2bb25aac95d67c69a6d776ac6cc8b26	Die Impfung, die 
 der Notfall	the emergency	3	0c07406dcb9755e230365f4b7d6fa0f2	Im Falle eines Notfalls, der eine sofortige medizinische Versorgung erfordert.	Das ist ein Notfall!
 die Versicherung	the insurance	3	5afd34e296d3cd163b9b25e250665be7	Die Versicherung, die er vor Jahren abgeschlossen hatte, ohne die Bedingungen gründlich gelesen zu haben.	Die Versicherung zahlt alles.
 der Krankenwagen	the ambulance	3	6e3bd90028f94f75cebafc70de0aa5f3	Der Krankenwagen, der trotz des dichten Verkehrs innerhalb weniger Minuten am Unfallort eintraf.	Der Krankenwagen kommt schnell.
-der Rollstuhl	the wheelchair	3	3a38fc9c5b959f1ff4ce6f466b92c14a	Der Rollstuhl, auf den er nach dem Unfall angewiesen war, ermöglichte es ihm dennoch.	Er sitzt im Rollstuhl.
+der Rollstuhl	the wheelchair	3	3a38fc9c5b959f1ff4ce6f466b92c14a	Der Rollstuhl, auf den er nach dem Unfall angewiesen war, ermöglichte es ihm dennoch, weitgehend selbstständig zu leben.	Er sitzt im Rollstuhl.
 die Allergie	the allergy	3	448a1871a98b27e1eb1435fea8d70979	Die Allergie, von der sie seit ihrer Kindheit betroffen ist, schränkt ihren Alltag erheblich ein.	Ich habe eine Allergie gegen Nüsse.
 der Zahnarzt	the dentist	3	f65cb6dddabe09f7955b53f6562335e6	Obwohl der Zahnarzt, bei dem sie seit Jahren in Behandlung war, ihr geraten hatte.	Ich gehe zum Zahnarzt.
 die Spritze	the injection / syringe	3	248c235b36490a2675c1c3322cff9dee	Die Spritze, die ihm von der Krankenschwester verabreicht wurde, linderte die akuten Schmerzen sofort.	Die Spritze war nicht schmerzhaft.

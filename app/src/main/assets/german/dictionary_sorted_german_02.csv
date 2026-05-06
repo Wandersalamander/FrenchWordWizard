@@ -5,10 +5,10 @@ der Regen	the rain	2	292e2322fb430a0ce2e62b95d18931d9	Der Regen, der seit drei T
 der Schnee	the snow	2	36f13aa5d6a88cd8e61ecdf495bb7b63	Der Schnee, der über Nacht gefallen war, hatte die ganze Landschaft in ein weißes Winterwunderland verwandelt.	Der Schnee ist weiß.
 der Wind	the wind	2	24b3a1d8dcbcbf13bea522f78bf25acf	Der starke Wind, der aus dem Norden kam und immer stärker wurde, zwang die Segler, sofort in den Hafen zurückzukehren.	Der Wind ist kalt heute.
 die Luft	the air	2	a253aa512c28449bddf0c95c1e047ff1	Die frische Luft in den Bergen tat ihr so gut, dass sie beschloss, öfter in die Berge zu fahren.	Die Luft ist frisch.
-die Farbe	the color	2	f609bcf04b9973c400c449b465230f25	Die Farbe der Wände wurde so oft gewechselt, dass niemand mehr wusste.	Welche Farbe magst du?
+die Farbe	the color	2	f609bcf04b9973c400c449b465230f25	Die Farbe der Wände wurde so oft gewechselt, dass niemand mehr wusste, welcher Ton der ursprüngliche war.	Welche Farbe magst du?
 rot	red	2	f5a9810f4a1a3e5524048e86b541ef42	Die roten Rosen, die er ihr zum Valentinstag geschenkt hatte, waren so leuchtend rot.	Die Rose ist rot.
 blau	blue	2	23d9ed5f5069027232acfd6ca2b29608	Der blaue Himmel, der sich nach dem langen Regen endlich zeigte, war so strahlend blau, dass alle nach draußen gingen.	Der Himmel ist blau.
-grün	green	2	4b89b3e5f768fef681612195aa8ff3d4	Die grünen Wiesen, die sich bis zum Horizont erstreckten, leuchteten so intensiv grün, dass man glaubte.	Das Gras ist grün.
+grün	green	2	4b89b3e5f768fef681612195aa8ff3d4	Die grünen Wiesen, die sich bis zum Horizont erstreckten, leuchteten so intensiv grün, dass man glaubte, in einem Gemälde zu stehen.	Das Gras ist grün.
 gelb	yellow	2	4f98a62c559543927a1d9ec92dc33837	Die gelben Blätter, die von den Bäumen fielen, bedeckten den Boden so dicht, dass alles gelb aussah.	Die Banane ist gelb.
 weiß	white	2	1287c2713e5039643b4154a2911016a2	Das weiße Kleid, das sie für die Hochzeit ausgesucht hatte, war so strahlend weiß, dass alle Gäste beeindruckt waren.	Der Schnee ist weiß.
 schwarz	black	2	db03988f8f62323ced879daaa0dc650d	Die schwarze Katze, die jede Nacht durch den Garten schlich, wurde von den Nachbarn oft gesehen.	Die Katze ist schwarz.
@@ -24,12 +24,12 @@ fünf	five	2	aba750fce33ffe5424e13b00c6629631	Obwohl fünf Bewerber eingeladen w
 sechs	six	2	a4884f64e94ad09446451b0813b31574	Seit sechs Wochen arbeitet er an dem Projekt, und es werden wohl noch mindestens sechs weitere Wochen vergehen.	Es ist sechs Uhr.
 sieben	seven	2	6fbcba0cba99c109fc97cedd256dc4f9	Das Märchen von den sieben Zwergen, das seit Generationen erzählt wird, begeistert noch heute Kinder.	In einer Woche sind sieben Tage.
 acht	eight	2	3066ba982cda353a69bfd1755dd75f0d	Der Kurs, der um acht Uhr morgens beginnt, dauert bis acht Uhr abends, was für die Teilnehmer sehr anstrengend ist.	Ich stehe um acht Uhr auf.
-neun	nine	2	a9d7640563503093dc268ecaa3b6bec8	Als die Uhr neun schlug und neun Kinder immer noch auf dem Spielplatz spielten.	Es ist neun Uhr.
+neun	nine	2	a9d7640563503093dc268ecaa3b6bec8	Als die Uhr neun schlug und neun Kinder immer noch auf dem Spielplatz spielten, rief die Mutter sie endlich nach Hause.	Es ist neun Uhr.
 zehn	ten	2	8cc96689cdc0f6e629e0a40e75748fed	Zehn Jahre sind vergangen, seit wir uns das letzte Mal gesehen haben.	Ich zähle bis zehn.
 hundert	hundred	2	62dd03635aa032a2a49f3a3845d93632	Obwohl hundert Gäste eingeladen worden waren, kamen am Ende über hundert Personen.	Es kostet hundert Euro.
 tausend	thousand	2	db9d64eb403ae22843e0ed2eee1656ea	Die Stadt, die bereits vor tausend Jahren gegründet worden war.	Tausend Dank für deine Hilfe!
 der Morgen	the morning	2	116fd8f8a7f4ab1eb54bdc0aed3958dd	Am Morgen, als die ersten Sonnenstrahlen durch das Fenster fielen, genoss er den ruhigen Morgen mit einer Tasse Kaffee.	Am Morgen trinke ich Kaffee.
-der Mittag	noon; midday	2	6e7b8e120f5b082c13cfa4b936d40c9a	Am Mittag wurde es so heiß, dass alle beschlossen.	Wir essen um Mittag.
+der Mittag	noon; midday	2	6e7b8e120f5b082c13cfa4b936d40c9a	Am Mittag wurde es so heiß, dass alle beschlossen, eine längere Pause im Schatten einzulegen.	Wir essen um Mittag.
 der Abend	the evening	2	9231067c6950adeb453a199bd7f543a3	Am Abend, nachdem die Sonne untergegangen war, versammelten sich alle auf der Terrasse.	Guten Abend!
 die Stunde	the hour	2	7e50b783c57756a906dbb00fc06dbfef	Nachdem eine ganze Stunde vergangen war, ohne dass jemand gekommen wäre, beschloss sie.	Die Stunde hat sechzig Minuten.
 die Minute	the minute	2	260fd193f01be02ed491d3f405c33f7d	In der letzten Minute des Spiels erzielte er das entscheidende Tor, das keine Minute zu früh kam.	Warte bitte eine Minute.
@@ -40,7 +40,7 @@ der Dienstag	Tuesday	2	0ca6e151dae54ce0e9ff1f71caee545e	Am Dienstag soll die Bes
 der Mittwoch	Wednesday	2	b5eebe81ae04184bd2e95782b928b4cc	Am Mittwoch, der genau in der Mitte der Woche liegt, findet traditionell die Sitzung statt.	Am Mittwoch ist Mitte der Woche.
 der Donnerstag	Thursday	2	28b0e02fbbe10478ebf7a366c470ba74	Am Donnerstag wurde beschlossen, dass die Veranstaltung, um eine Woche verschoben wird.	Am Donnerstag gehe ich schwimmen.
 der Freitag	Friday	2	7d51b9bcbff47a2886f01c567a865c9c	Am Freitag freuen sich alle auf das Wochenende, weil dieser Freitag der letzte Arbeitstag vor dem langen Urlaub ist.	Am Freitag gehen wir ins Kino.
-der Samstag	Saturday	2	29f81285779de225422064e53101dbce	Am Samstag wollten wir eigentlich ausschlafen, aber dann erinnerten wir uns, dass der Flohmarkt.	Am Samstag schlafe ich lange.
+der Samstag	Saturday	2	29f81285779de225422064e53101dbce	Am Samstag wollten wir eigentlich ausschlafen, aber dann erinnerten wir uns, dass der Flohmarkt schon früh beginnt.	Am Samstag schlafe ich lange.
 der Sonntag	Sunday	2	15b6d4a313f2eb2ef1c81f2a43410899	Am Sonntag, dem einzigen Tag, an dem die ganze Familie zusammenkommt.	Am Sonntag haben wir frei.
 der Frühling	spring	2	78e3d68dc9ba1e3fc55f7c295801829c	Im Frühling, wenn die Tage wieder länger werden, fühlen sich viele Menschen von der Energie des Frühlings inspiriert.	Im Frühling blühen die Blumen.
 der Sommer	summer	2	56793f46ef7a19bcad9028061de3bda6	Im Sommer, als die Temperaturen über dreißig Grad stiegen, verbrachten wir jeden Tag des Sommers am See.	Im Sommer ist es warm.
@@ -67,7 +67,7 @@ der Zucker	sugar	2	dd62be6ddc182429b79d1dd4b650507d	Der Zucker, dessen Konsum in
 das Salz	salt	2	17ba3e33078c6dc4bcc40da13537767b	Obwohl das Salz bereits hinzugefügt worden war, fehlte der Suppe immer noch der richtige Geschmack.	Das Salz steht auf dem Tisch.
 der Pfeffer	pepper	2	edfce0e10c43144b2e94a45b771c4457	Der Pfeffer, der frisch aus der Mühle gemahlen wird.	Der Pfeffer ist scharf.
 das Öl	oil	2	6415880efe4d6ca387e44cdfbfb4a097	Das Öl, das zum Braten verwendet werden soll, muss zunächst auf die richtige Temperatur erhitzt werden.	Das Öl ist heiß.
-der Tee	tea	2	74da51b5e8b1532ceddf33c5da573978	Nachdem der Tee mindestens fünf Minuten gezogen hatte.	Der Tee ist warm.
+der Tee	tea	2	74da51b5e8b1532ceddf33c5da573978	Nachdem der Tee mindestens fünf Minuten gezogen hatte, schmeckte er besonders aromatisch.	Der Tee ist warm.
 der Kaffee	coffee	2	362c7ecdb24ef00b1fa1ed5a0d8c1483	Der Kaffee, der jeden Morgen frisch aufgebrüht wird.	Der Kaffee schmeckt bitter.
 der Saft	juice	2	1c3946573fca6d21e048e95288e958b9	Hätte man den Saft rechtzeitig in den Kühlschrank gestellt, wäre er jetzt angenehm kühl gewesen.	Der Saft ist kalt.
 das Bier	beer	2	9ff9f716877686b4ff5f12e0460eb5ae	Das Bier, das nach dem deutschen Reinheitsgebot gebraut wird, darf nur aus Wasser, Hopfen, Malz und Hefe bestehen.	Das Bier ist kalt.
@@ -86,10 +86,10 @@ die Pfanne	pan	2	44f20fd0138cdf95200849c12cb4b663	Nachdem die Pfanne auf höchst
 der Topf	pot	2	9fbf153006fd09c7341a1930cdf0eb30	Der Topf, in dem die Suppe seit dem frühen Morgen vor sich hin köchelte.	Der Topf steht auf dem Herd.
 der Kühlschrank	refrigerator	2	586666455935d824165885e64968fcea	Der Kühlschrank, der letzte Woche repariert werden musste.	Der Kühlschrank ist kalt.
 arbeiten	to work	2	81de5b03b147c83d488afbb12c8a4b5f	Obwohl sie den ganzen Tag hart gearbeitet hatte, musste sie abends noch an einem dringenden Projekt arbeiten.	Ich arbeite jeden Tag.
-lernen	to learn	2	dad5e071bfbec46bf71f20068a410b1a	Wenn man eine Fremdsprache wirklich gut lernen möchte.	Ich lerne Deutsch.
+lernen	to learn	2	dad5e071bfbec46bf71f20068a410b1a	Wenn man eine Fremdsprache wirklich gut lernen möchte, sollte man jeden Tag etwas üben.	Ich lerne Deutsch.
 studieren	to study	2	9eb0cc7157718c8a332414bfafc26b7a	Nachdem sie jahrelang in München studiert hatte, zog sie nach Berlin, um dort ihre Karriere als Ingenieurin zu beginnen.	Sie studiert Medizin.
 lehren	to teach	2	1edab3cfccffcd75455b56745579149c	Der Professor, der seit dreißig Jahren an der Universität lehrt.	Er lehrt Mathematik.
-verstehen	to understand	2	856ba18deb901636b7535b7d1efa8478	Obwohl er den Text mehrmals gelesen hatte.	Ich verstehe dich.
+verstehen	to understand	2	856ba18deb901636b7535b7d1efa8478	Obwohl er den Text mehrmals gelesen hatte, konnte er den Sinn immer noch nicht verstehen.	Ich verstehe dich.
 erklären	to explain	2	654a0e2f31915ad453ebece16ae9bdc6	Könnten Sie mir bitte erklären, warum dieses komplizierte Verfahren in drei verschiedene Phasen unterteilt werden muss?	Kannst du das erklären?
 fragen	to ask	2	9da5e55a0d47eeffae2c2149da377bfd	Bevor man eine wichtige Entscheidung trifft, sollte man sich fragen.	Ich möchte etwas fragen.
 antworten	to answer	2	7eed6161d06b7e19498a9d4f6a5ae7d9	Da er auf die schwierige Frage nicht sofort antworten konnte, bat er um etwas Bedenkzeit, um seine Gedanken zu ordnen.	Bitte antworten Sie mir.
@@ -97,10 +97,10 @@ helfen	to help	2	393b7ad19b7ae051c9bcbdbeee4cbaae	Wenn du mir beim Umzug helfen 
 brauchen	to need	2	d6367b0c46b5be3ba9f190c6b4c9c3a6	Die Schüler brauchen nicht nur gute Lehrbücher, sondern auch engagierte Lehrer.	Ich brauche Hilfe.
 kaufen	to buy	2	6cbe617ebfa87ead67d629791ed13757	Bevor wir das Auto kaufen, sollten wir unbedingt einen unabhängigen Mechaniker beauftragen.	Ich möchte Brot kaufen.
 verkaufen	to sell	2	492d5989a9230686c9eb60e96fb32052	Das Haus, das meine Großeltern vor fünfzig Jahren gebaut hatten, musste leider verkauft werden.	Er will sein Auto verkaufen.
-bezahlen	to pay	2	162e678c700ecca2dd3f8eb621a93a8a	Obwohl die Rechnung bereits vor drei Monaten hätte bezahlt werden müssen.	Ich muss die Rechnung bezahlen.
+bezahlen	to pay	2	162e678c700ecca2dd3f8eb621a93a8a	Obwohl die Rechnung bereits vor drei Monaten hätte bezahlt werden müssen, ist sie immer noch offen.	Ich muss die Rechnung bezahlen.
 kosten	to cost	2	d2d849ff946f1b8894b7c9ddbe6186ee	Wenn man bedenkt, wie viel die Renovierung des alten Gebäudes kosten wird, fragt man sich, ob es nicht günstiger wäre.	Wie viel wird das kosten?
 öffnen	to open	2	cb1c6b7e3c2ab5749ffe5b9a0c244507	Nachdem alle Sicherheitsvorkehrungen getroffen worden waren, durfte der Museumsdirektor endlich die Vitrine öffnen.	Bitte öffnen Sie die Tür.
-schließen	to close	2	e281559372b820e20a57ed56d32f2c49	Da das Geschäft wegen Renovierungsarbeiten vorübergehend schließen musste.	Wir müssen das Fenster schließen.
+schließen	to close	2	e281559372b820e20a57ed56d32f2c49	Da das Geschäft wegen Renovierungsarbeiten vorübergehend schließen musste, gingen die Kunden zur Konkurrenz.	Wir müssen das Fenster schließen.
 anfangen	to start	2	86e73a0d2de7b380bf2029738a58f45f	Sobald alle Teilnehmer ihre Plätze eingenommen haben, können wir mit der Präsentation anfangen.	Wann sollen wir anfangen?
 aufhören	to stop	2	8e9a7696ae16c5851fee6f1ad988b0ef	Der Arzt empfahl ihm dringend, mit dem Rauchen aufzuhören, bevor seine gesundheitlichen Probleme noch schlimmer würden.	Du musst damit aufhören.
 beginnen	to begin	2	af70f7537e7ac13d760370c196bd4f61	Die Bauarbeiten, wurden wegen unvorhergesehener Probleme auf den Herbst verschoben.	Die Schule wird bald beginnen.
@@ -127,7 +127,7 @@ freuen	to be happy / to look forward to	2	1098d50bc7f78a4e87b5ff7f90668c7d	Ich f
 lachen	to laugh	2	7c6454c7d0e079943fb8d4560baf494e	Als der Komiker seinen besten Witz erzählte, musste das gesamte Publikum so laut lachen.	Die Kinder lachen viel.
 weinen	to cry	2	07468e648398e40c6eb62c6bcdd42c71	Das kleine Mädchen begann bitterlich zu weinen, als es erfuhr, dass sein geliebter Hamster in der Nacht gestorben war.	Das Baby fängt an zu weinen.
 schlafen	to sleep	2	a62b2d9deed4826129f859301d2ca5b2	Obwohl er versuchte zu schlafen, hielten ihn die Sorgen um die bevorstehende Prüfung die ganze Nacht lang wach.	Ich möchte jetzt schlafen.
-aufwachen	to wake up	2	14e2d862f10a9ebc6e31b487515e016c	Nachdem der Wecker zum dritten Mal geklingelt hatte.	Ich wache um sechs Uhr auf.
+aufwachen	to wake up	2	14e2d862f10a9ebc6e31b487515e016c	Nachdem der Wecker zum dritten Mal geklingelt hatte, entschloss er sich endlich aufzuwachen.	Ich wache um sechs Uhr auf.
 aufstehen	to get up	2	ec74abcc2ae7c2760effa94080600233	Obwohl es ihr an kalten Wintermorgen besonders schwerfällt aufzustehen, zwingt sie sich dazu.	Ich muss früh aufstehen.
 setzen	to sit down / to put	2	26d1efabe4ec92787b36d01c41356b13	Nachdem alle Gäste eingetroffen waren, bat der Gastgeber sie höflich, sich an den festlich gedeckten Tisch zu setzen.	Bitte setzen Sie sich.
 legen	to lay / to put	2	9bf1a05b485f7867ff3f8b5c2254881f	Bevor sie das Baby vorsichtig in sein Bettchen legen konnte, musste sie erst die weiche Decke zurechtlegen.	Ich lege das Buch auf den Tisch.
@@ -151,21 +151,21 @@ die Träne	tear	2	22f077424a08906979b5ce222a2c9773	Als die Träne langsam über 
 das Gehirn	brain	2	cd25a20b4e4556776415f4cb9b0004a1	Das Gehirn, das nur etwa zwei Prozent des Körpergewichts ausmacht.	Das Gehirn ist sehr komplex.
 das Gesicht	face	2	f913238241389aed26f9506eb34be08e	Obwohl sie versuchte, ein fröhliches Gesicht zu machen, konnte man ihr deutlich ansehen.	Sein Gesicht ist freundlich.
 die Nase	nose	2	0df911b77e97f7857eac1c9aca6fa131	Die Nase, die nicht nur zum Riechen dient, sondern auch die eingeatmete Luft filtert und erwärmt.	Meine Nase ist kalt.
-der Mund	mouth	2	0fa225a8554175c4fe7b3bd39aa112f3	Bevor der Zahnarzt mit der Behandlung beginnen konnte.	Öffne deinen Mund bitte.
+der Mund	mouth	2	0fa225a8554175c4fe7b3bd39aa112f3	Bevor der Zahnarzt mit der Behandlung beginnen konnte, musste der Patient den Mund weit öffnen.	Öffne deinen Mund bitte.
 das Ohr	ear	2	1e31bde320e8241071d9d0c8d9fffc61	Das Ohr, das nicht nur für das Hören zuständig ist, sondern auch den Gleichgewichtssinn steuert.	Mein Ohr tut weh.
 der Zahn	tooth	2	464d15b12a9db4814bb383ddbe75788e	Wenn ein Zahn nicht rechtzeitig behandelt wird.	Der Zahn ist weiß.
 die Zunge	tongue	2	7c866718a616e0ef7b9571b34338a1c6	Die Zunge, die über tausende von Geschmacksknospen verfügt, ermöglicht es uns, zwischen süß, sauer, salzig.	Die Zunge schmeckt das Essen.
 der Hals	neck / throat	2	44311174fb8ffb1048c63ac33f785f92	Nachdem sie stundenlang in der Kälte gestanden hatte, bekam sie starke Schmerzen im Hals und konnte kaum noch schlucken.	Mein Hals tut weh.
 die Schulter	shoulder	2	584f269882bd56b0bf861b17ff493a11	Als er die schwere Tasche stundenlang auf der Schulter getragen hatte, verspürte er einen stechenden Schmerz.	Meine Schulter schmerzt.
-der Arm	arm	2	f64c69e895560949f78b5ce65ca5672f	Nachdem er sich beim Sport den Arm gebrochen hatte.	Mein Arm ist gebrochen.
+der Arm	arm	2	f64c69e895560949f78b5ce65ca5672f	Nachdem er sich beim Sport den Arm gebrochen hatte, musste er sechs Wochen einen Gips tragen.	Mein Arm ist gebrochen.
 der Ellbogen	elbow	2	107ca0bd75b2efaa0ebda0dd9b6113bf	Als er versehentlich seinen Ellbogen gegen die Tischkante stieß, durchfuhr ihn ein unangenehmes Kribbeln.	Mein Ellbogen tut weh.
 der Atem	breath	2	5520f1fade2d583f83ab195e21f1433e	Nachdem er die steile Treppe hinaufgerannt war, musste er erst einmal anhalten und seinen Atem beruhigen.	Sein Atem ist ruhig.
-der Finger	finger	2	b32338580a210748d8211fae4fedc4f2	Als der Finger in der Autotür eingeklemmt wurde.	Mein Finger blutet.
-der Daumen	thumb	2	69b33bbe9dfb334b69920ae2514f788e	Obwohl er sich den Daumen beim Heimwerken verletzt hatte, versuchte er tapfer.	Der Daumen ist geschwollen.
+der Finger	finger	2	b32338580a210748d8211fae4fedc4f2	Als der Finger in der Autotür eingeklemmt wurde, schrie sie laut vor Schmerz auf.	Mein Finger blutet.
+der Daumen	thumb	2	69b33bbe9dfb334b69920ae2514f788e	Obwohl er sich den Daumen beim Heimwerken verletzt hatte, versuchte er tapfer, die Arbeit zu Ende zu bringen.	Der Daumen ist geschwollen.
 der Rücken	back	2	7a9bda9031989dc3fed1cb49b9dc7e52	Seit er den ganzen Tag vor dem Computer sitzt, hat er chronische Schmerzen im Rücken.	Mein Rücken schmerzt.
 die Brust	chest / breast	2	e35256b0e231d8adb6958df8dec43f2a	Als er die steile Bergstraße hinauflief, spürte er ein unangenehmes Drücken in der Brust, das ihn zum Anhalten zwang.	Die Brust tut weh.
 der Bauch	belly / stomach	2	6fc8ce50f87dc1a4730666d7aa865e2c	Nachdem er viel zu viel auf der Feier gegessen hatte, lag er den ganzen Abend mit einem aufgeblähten Bauch auf dem Sofa.	Mein Bauch ist voll.
-das Bein	leg	2	c0c5cca0a58546ce19564b45a51cacb5	Als sie beim Skifahren stürzte und sich das Bein brach.	Mein Bein tut weh.
+das Bein	leg	2	c0c5cca0a58546ce19564b45a51cacb5	Als sie beim Skifahren stürzte und sich das Bein brach, musste sie sofort ins Krankenhaus gebracht werden.	Mein Bein tut weh.
 das Knie	knee	2	055b00add30dbc3515e5a1b59f749665	Nach der Operation am Knie musste er monatelang eine spezielle Therapie durchführen.	Mein Knie ist geschwollen.
 der Fuß	foot	2	e0ac55695e552592adc8bb4eee39129a	Obwohl der Fuß nach dem langen Wandertag sehr schmerzte, weigerte sie sich, eine Pause einzulegen.	Mein Fuß ist müde.
 die Haut	skin	2	4ed4f1680f9f3bd4012997491fa110b4	Die Haut, die das größte Organ des menschlichen Körpers ist.	Die Haut ist empfindlich.
@@ -193,7 +193,7 @@ der Gürtel	belt	2	b0a954be793542c3374f65607a086424	Der Gürtel, der aus echtem 
 die Tasche	bag / pocket	2	c66ee063885842125940e0f312e66a99	Die Tasche, in der sie all ihre wichtigen Unterlagen aufbewahrte.	Meine Tasche ist schwer.
 null	zero	2	6acb9e7e963a18e936c5130349b41505	Bei null Grad gefriert das Wasser und wird zu Eis.	Es ist null Grad draußen.
 elf	eleven	2	4bda938e456425cbcb10ab53fc538204	Um elf Uhr beginnt die Vorlesung, also müssen wir uns beeilen.	Es ist elf Uhr.
-zwölf	twelve	2	dc623d40f906f93efee47a6c742daa5f	Das Jahr hat zwölf Monate und beginnt im Januar.	Es sind zwölf Uhr mittags.
+zwölf	twelve	2	dc623d40f906f93efee47a6c742daa5f	Das Jahr hat zwölf Monate und beginnt im Januar.	Es ist zwölf Uhr mittags.
 zwanzig	twenty	2	f2ae1f2b1d8e21971843fab40063259a	Vor zwanzig Jahren gab es hier noch keine Autobahn und der Ort war viel ruhiger.	Ich bin zwanzig Jahre alt.
 dreißig	thirty	2	70054bfc8fa2832fa724dfd1232e84b2	Mit dreißig Jahren beschloss er, noch einmal an die Universität zu gehen und etwas Neues zu studieren.	Es dauert dreißig Minuten.
 vierzig	forty	2	79f345385cf2fd01e84423adfc2e1163	Vierzig Prozent der Befragten gaben an, regelmäßig Sport zu treiben.	Er ist vierzig Jahre alt.
