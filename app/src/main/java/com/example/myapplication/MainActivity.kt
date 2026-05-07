@@ -271,37 +271,69 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             buttonTip.isEnabled = false
             buttonTip.isClickable = false
             latch = CountDownLatch(1)
-            val capturedSentence = textGuessLong.text
 
-            Thread {
-                if (currentVocab != null) {
-                    runOnUiThread {
-                        textEn.visibility = View.VISIBLE
-                        textGuessLong.visibility = View.VISIBLE
+            lifecycleScope.launch {
+                val vocab = currentVocab ?: return@launch
+
+                // User tapped "I don't know" — reveal the English translation
+                // and the example sentence immediately.
+                textEn.visibility = View.VISIBLE
+                textGuessLong.visibility = View.VISIBLE
+
+                // Speak the English word right away — the user just admitted
+                // they don't know it, so they want to HEAR the answer
+                // immediately. Don't make this wait for the LLM.
+                Thread {
+                    speakText(vocab, en = true, fr = false, exampleSentence = false)
+                }.start()
+
+                // In parallel, regenerate the example sentence with the LLM
+                // (same behaviour as showTip). Falls back to the CSV sentence
+                // already sitting in textGuessLong.text from updateVocab() if
+                // the LLM isn't ready or generation fails/times out.
+                if (LlmService.isReady) {
+                    textGuessLong.text = "…"
+                    val generated = LlmService.generate(
+                        word = vocab.french,
+                        translation = vocab.english,
+                        recent = recentWords.toList(),
+                        lang = currentLanguage
+                    )
+                    textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
+                }
+
+                val capturedSentence = textGuessLong.text
+
+                // Speak the example sentence. The TTS engine queues this
+                // after the English word — if the LLM took longer than
+                // pronouncing "book", the queue may already be empty and it
+                // plays immediately; otherwise it follows naturally. This
+                // utterance carries "yourUtteranceIdEn" which releases the
+                // latch on completion (advances to next word).
+                Thread {
+                    speakText(vocab, en = false, fr = false, exampleSentence = true, sentenceText = capturedSentence)
+                }.start()
+                Thread {
+                    latch.await()
+                    Thread.sleep(1000)
+                    if (showNextVocab) {
+                        updateVocab(2000, false)
+                        Thread.sleep(100)
                     }
-                    speakText(currentVocab!!, en = true, fr = false, exampleSentence = true, sentenceText = capturedSentence)
-                }
-            }.start()
-            Thread {
-                latch.await()
-                Thread.sleep(1000)
-                if (showNextVocab) {
-                    updateVocab(2000, false)
-                    Thread.sleep(100)
-                }
-                runOnUiThread {
-                    buttonFail.isEnabled = true
-                    buttonFail.isClickable = true
+                    runOnUiThread {
+                        buttonFail.isEnabled = true
+                        buttonFail.isClickable = true
 
-                    buttonNext.isEnabled = true
-                    buttonNext.isClickable = true
+                        buttonNext.isEnabled = true
+                        buttonNext.isClickable = true
 
 
 
-                    buttonTip.isEnabled = true
-                    buttonTip.isClickable = true
-                }
-            }.start()
+                        buttonTip.isEnabled = true
+                        buttonTip.isClickable = true
+                    }
+                }.start()
+            }
         }
 
         fun exitSpotCheck(wasWrong: Boolean) {
