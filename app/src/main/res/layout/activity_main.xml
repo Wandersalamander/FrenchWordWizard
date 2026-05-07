@@ -42,17 +42,15 @@
         app:layout_constraintStart_toStartOf="@+id/textGuess"
         app:layout_constraintTop_toBottomOf="@+id/textReal" />
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/thinking_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="2dp"
+    <ImageView
+        android:id="@+id/thinking_sparkle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="-4dp"
+        android:contentDescription="@null"
+        android:src="@drawable/thinking_sparkle"
         android:visibility="gone"
-        app:indicatorSize="26dp"
-        app:trackThickness="3dp"
-        app:indicatorColor="?attr/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/textGuessLong"
         app:layout_constraintTop_toTopOf="@+id/textGuessLong" />
 

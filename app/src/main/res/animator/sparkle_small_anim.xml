@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+    <objectAnimator
+        android:propertyName="rotation"
+        android:duration="2200"
+        android:valueFrom="360"
+        android:valueTo="0"
+        android:repeatCount="infinite"
+        android:interpolator="@android:anim/linear_interpolator" />
+    <objectAnimator
+        android:propertyName="scaleX"
+        android:duration="900"
+        android:valueFrom="0.4"
+        android:valueTo="1.1"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator" />
+    <objectAnimator
+        android:propertyName="scaleY"
+        android:duration="900"
+        android:valueFrom="0.4"
+        android:valueTo="1.1"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator" />
+</set>

@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
+import android.graphics.drawable.Animatable
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
@@ -17,9 +18,9 @@ import android.view.View
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.google.android.material.progressindicator.CircularProgressIndicator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var textGuessLong: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var progressBarFinished: ProgressBar
-    private lateinit var thinkingIndicator: CircularProgressIndicator
+    private lateinit var thinkingSparkle: ImageView
     private lateinit var serviceIntent: Intent
     private var soundPool: SoundPool? = null
     private var successSoundId: Int = 0
@@ -167,7 +168,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         textGuessLong = findViewById(R.id.textGuessLong)
         progressBar = findViewById(R.id.progressBar)
         progressBarFinished = findViewById(R.id.progressBarFinished)
-        thinkingIndicator = findViewById(R.id.thinking_indicator)
+        thinkingSparkle = findViewById(R.id.thinking_sparkle)
 
 
         val sharedPreferences: SharedPreferences = getSharedPreferences(
@@ -688,19 +689,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         }
 
-        // Use Material's CircularProgressIndicator instead of a custom animation.
-        // Reason: the LLM runs on the GPU (LiteRT-LM Backend.GPU), and rendering
-        // shares the same hardware. A custom ValueAnimator/ObjectAnimator on the
-        // main-thread Choreographer drops frames whenever inference saturates the
-        // GPU, which made the dots feel choppy. Material's indeterminate indicator
-        // is designed to look acceptable under contention and the show()/hide()
-        // calls give us free fade-in/out transitions.
+        // AnimatedVectorDrawable with two twinkling sparkles. Vector path
+        // animations run via the same hardware-accelerated path as Material's
+        // progress indicators (matrix transforms on cached path geometry, one
+        // drawable redraw per frame), so they stay smooth even while the LLM
+        // is hammering the GPU. Animation logic lives entirely in the XML
+        // (drawable/thinking_sparkle.xml + animator/sparkle_*_anim.xml).
         private fun startThinkingAnimation() {
-            thinkingIndicator.show()
+            thinkingSparkle.visibility = View.VISIBLE
+            (thinkingSparkle.drawable as? Animatable)?.start()
         }
 
         private fun stopThinkingAnimation() {
-            thinkingIndicator.hide()
+            (thinkingSparkle.drawable as? Animatable)?.stop()
+            thinkingSparkle.visibility = View.GONE
         }
 
         private fun playSpotCheckSound() {
