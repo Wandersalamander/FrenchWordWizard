@@ -242,8 +242,18 @@ object LlmService {
             "it" -> "Italian"
             else -> "French"
         }
-        val recentClause = if (recent.isNotEmpty()) {
-            " You may also naturally include one of these recently studied words if it fits: ${recent.joinToString(", ")}."
+        // Pass at most 3 random words sampled from the most recent 10. Two
+        // reasons:
+        //   1. If we send the full recent list, common short words ("libro",
+        //      "libre", "haus") dominate every generation — the model is
+        //      literally being asked to consider including them, so it does,
+        //      and they then stay in the recent list and get re-suggested
+        //      next call. A self-reinforcing loop.
+        //   2. With fewer candidates the model is less tempted to squeeze
+        //      multiple recent words into one sentence.
+        val sampledRecent = recent.takeLast(10).shuffled().take(3)
+        val recentClause = if (sampledRecent.isNotEmpty()) {
+            " You may also naturally include AT MOST ONE of these recently studied words if it fits: ${sampledRecent.joinToString(", ")}."
         } else ""
         val prompt = "Write one short example sentence in $langName " +
                 "(about 10 words) using the word \"$word\" (English meaning: \"$translation\")." +
