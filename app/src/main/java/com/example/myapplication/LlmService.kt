@@ -262,7 +262,8 @@ object LlmService {
 
         return mutex.withLock {
             withContext(Dispatchers.Default) {
-                withTimeoutOrNull(timeoutMs) {
+                val started = System.currentTimeMillis()
+                val result = withTimeoutOrNull(timeoutMs) {
                     try {
                         // Each generate() call is independent — open a fresh
                         // conversation so prior prompts don't bias the output.
@@ -298,6 +299,15 @@ object LlmService {
                         null
                     }
                 }
+                val elapsed = System.currentTimeMillis() - started
+                if (result != null) {
+                    Log.i(TAG, "generate ok in ${elapsed}ms (word=$word) -> $result")
+                } else {
+                    val timedOut = elapsed >= timeoutMs
+                    val tag = if (timedOut) "TIMEOUT" else "FAIL"
+                    Log.w(TAG, "generate returned null ($tag) in ${elapsed}ms (word=$word) — caller will fall back to CSV sentence")
+                }
+                result
             }
         }
     }
