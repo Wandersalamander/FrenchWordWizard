@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import android.animation.ValueAnimator
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -17,13 +16,10 @@ import android.speech.tts.UtteranceProgressListener
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
-import android.view.animation.LinearInterpolator
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import kotlin.math.floor
-import kotlin.math.sin
+import com.google.android.material.progressindicator.CircularProgressIndicator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -68,8 +64,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var textGuessLong: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var progressBarFinished: ProgressBar
-    private lateinit var thinkingDots: LinearLayout
-    private var pulseAnimator: ValueAnimator? = null
+    private lateinit var thinkingIndicator: CircularProgressIndicator
     private lateinit var serviceIntent: Intent
     private var soundPool: SoundPool? = null
     private var successSoundId: Int = 0
@@ -172,7 +167,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         textGuessLong = findViewById(R.id.textGuessLong)
         progressBar = findViewById(R.id.progressBar)
         progressBarFinished = findViewById(R.id.progressBarFinished)
-        thinkingDots = findViewById(R.id.thinking_dots)
+        thinkingIndicator = findViewById(R.id.thinking_indicator)
 
 
         val sharedPreferences: SharedPreferences = getSharedPreferences(
@@ -693,58 +688,19 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         }
 
-        // Three dots that breathe with a continuous sine wave, each offset by
-        // a third of the cycle so a soft ripple appears to flow across them.
-        // Driven by a single ValueAnimator (vs. 12 ObjectAnimators) so cancel
-        // is atomic and there are no per-dot cycle-boundary glitches.
+        // Use Material's CircularProgressIndicator instead of a custom animation.
+        // Reason: the LLM runs on the GPU (LiteRT-LM Backend.GPU), and rendering
+        // shares the same hardware. A custom ValueAnimator/ObjectAnimator on the
+        // main-thread Choreographer drops frames whenever inference saturates the
+        // GPU, which made the dots feel choppy. Material's indeterminate indicator
+        // is designed to look acceptable under contention and the show()/hide()
+        // calls give us free fade-in/out transitions.
         private fun startThinkingAnimation() {
-            stopThinkingAnimation()
-
-            val dots = listOf(
-                findViewById<View>(R.id.thinking_dot1),
-                findViewById<View>(R.id.thinking_dot2),
-                findViewById<View>(R.id.thinking_dot3)
-            )
-            dots.forEach {
-                it.scaleX = 1f
-                it.scaleY = 1f
-                it.alpha = 1f
-            }
-
-            thinkingDots.alpha = 0f
-            thinkingDots.visibility = View.VISIBLE
-            thinkingDots.animate()
-                .alpha(1f)
-                .setDuration(160L)
-                .start()
-
-            pulseAnimator = ValueAnimator.ofFloat(0f, 1f).apply {
-                duration = 1300L
-                repeatCount = ValueAnimator.INFINITE
-                interpolator = LinearInterpolator()
-                addUpdateListener { va ->
-                    val t = va.animatedValue as Float
-                    dots.forEachIndexed { index, dot ->
-                        // Offset each dot by 1/3 of the cycle so the wave ripples through.
-                        val raw = t - index / 3f
-                        val phase = raw - floor(raw)
-                        val wave = (sin(phase * 2.0 * Math.PI).toFloat() + 1f) / 2f
-                        dot.alpha = 0.3f + 0.7f * wave
-                        val scale = 0.7f + 0.4f * wave
-                        dot.scaleX = scale
-                        dot.scaleY = scale
-                    }
-                }
-                start()
-            }
+            thinkingIndicator.show()
         }
 
         private fun stopThinkingAnimation() {
-            pulseAnimator?.cancel()
-            pulseAnimator = null
-            thinkingDots.animate().cancel()
-            thinkingDots.visibility = View.GONE
-            thinkingDots.alpha = 1f
+            thinkingIndicator.hide()
         }
 
         private fun playSpotCheckSound() {
