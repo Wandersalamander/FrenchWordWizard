@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.NOTIFICATION_POLICY_CONTROL" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
 
         android:allowBackup="true"
@@ -18,6 +19,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <!-- Required by LiteRT-LM's GPU backend (OpenCL acceleration via
+             vendor libraries). Without these, GPU init fails and we fall back
+             to CPU — which still works but defeats the purpose of picking
+             Gemma 4. android:required="false" so the app still installs on
+             devices that lack these libs. -->
+        <uses-native-library android:name="libvndksupport.so" android:required="false"/>
+        <uses-native-library android:name="libOpenCL.so" android:required="false"/>
         <service
             android:name=".MyForegroundService"
             android:foregroundServiceType="specialUse"

@@ -2,9 +2,17 @@ package com.example.myapplication
 
 import android.content.Context
 import android.os.Bundle
+import android.text.format.Formatter
+import android.view.View
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.launch
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,5 +42,66 @@ class SettingsActivity : AppCompatActivity() {
             }
             prefs.edit().putString("app_language", lang).apply()
         }
+
+        // AI status — kick off init in case the user opened settings before MainActivity ran,
+        // then mirror the status flow into the views.
+        LlmService.warmup(applicationContext)
+
+        val statusText = findViewById<TextView>(R.id.aiStatusText)
+        val statusDetail = findViewById<TextView>(R.id.aiStatusDetail)
+        val downloadButton = findViewById<Button>(R.id.aiDownloadButton)
+        val cancelButton = findViewById<Button>(R.id.aiCancelButton)
+        val retryButton = findViewById<Button>(R.id.aiRetryButton)
+        val deleteButton = findViewById<Button>(R.id.aiDeleteButton)
+
+        downloadButton.setOnClickListener { LlmService.startDownload(applicationContext) }
+        cancelButton.setOnClickListener { LlmService.cancelDownload() }
+        retryButton.setOnClickListener { LlmService.retry(applicationContext) }
+        deleteButton.setOnClickListener { LlmService.deleteModel(applicationContext) }
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                LlmService.status.collect { status ->
+                    statusText.text = renderStatus(status)
+
+                    val detail = (status as? LlmService.Status.Unavailable)?.reason
+                    if (detail != null) {
+                        statusDetail.text = detail
+                        statusDetail.visibility = View.VISIBLE
+                    } else {
+                        statusDetail.visibility = View.GONE
+                    }
+
+                    downloadButton.visibility =
+                        if (status is LlmService.Status.NotDownloaded) View.VISIBLE else View.GONE
+                    cancelButton.visibility =
+                        if (status is LlmService.Status.Downloading) View.VISIBLE else View.GONE
+                    retryButton.visibility =
+                        if (status is LlmService.Status.Unavailable) View.VISIBLE else View.GONE
+                    deleteButton.visibility =
+                        if (status is LlmService.Status.Ready ||
+                            status is LlmService.Status.Unavailable
+                        ) View.VISIBLE else View.GONE
+                }
+            }
+        }
+    }
+
+    private fun renderStatus(status: LlmService.Status): String = when (status) {
+        is LlmService.Status.Unknown -> "AI sentences: checking…"
+        is LlmService.Status.NotDownloaded -> "AI sentences: model not downloaded"
+        is LlmService.Status.Downloading -> {
+            val downloaded = Formatter.formatShortFileSize(this, status.bytesDownloaded)
+            if (status.totalBytes > 0L) {
+                val total = Formatter.formatShortFileSize(this, status.totalBytes)
+                val pct = (100L * status.bytesDownloaded / status.totalBytes).toInt()
+                "AI sentences: downloading — $downloaded / $total ($pct%)"
+            } else {
+                "AI sentences: downloading — $downloaded"
+            }
+        }
+        is LlmService.Status.Initializing -> "AI sentences: loading model…"
+        is LlmService.Status.Ready -> "AI sentences: ready ✓"
+        is LlmService.Status.Unavailable -> "AI sentences: unavailable"
     }
 }

@@ -48,4 +48,78 @@
             android:textSize="18sp"
             android:padding="8dp" />
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On-device AI"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/aiStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AI sentences: checking…"
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/aiStatusDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:fontFamily="monospace"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="8dp">
+
+        <Button
+            android:id="@+id/aiDownloadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download model"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/aiCancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginStart="8dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/aiRetryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retry"
+            android:layout_marginStart="8dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/aiDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete model"
+            android:layout_marginStart="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="When available, the Tip button generates fresh example sentences on-device using a small LLM via MediaPipe (default: Qwen 2.5 1.5B, ~1.6 GB, GPU-accelerated). Downloaded once. Otherwise the built-in CSV sentences are used."
+        android:textSize="13sp"
+        android:textColor="#666666"
+        android:padding="8dp" />
 </LinearLayout>

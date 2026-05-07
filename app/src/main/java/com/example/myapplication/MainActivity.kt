@@ -21,8 +21,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
+import kotlinx.coroutines.launch
 import java.io.File
 import java.io.InputStream
 import java.util.*
@@ -41,6 +43,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var timeElapsed: Long? = null
     @Volatile
     private var latch = CountDownLatch(1)
+
+    private val recentWords = ArrayDeque<String>()
+    private val recentWordsCapacity = 5
 
     private lateinit var buttonFail: Button
     private lateinit var buttonNext: Button
@@ -103,6 +108,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
         setContentView(R.layout.activity_main)
+
+        // Kick off Gemini Nano init in the background.
+        // No-op on devices without AICore; isReady stays false and Tip silently uses CSV sentences.
+        LlmService.warmup(applicationContext)
+
         // Initialize TextToSpeech
         textToSpeech = TextToSpeech(this, this)
         textToSpeech.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
@@ -209,28 +219,41 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             buttonTip.isEnabled = false
             buttonTip.isClickable = false
             latch = CountDownLatch(1)
-            val capturedSentence = textGuessLong.text
 
-            Thread {
-                if (currentVocab != null) {
+            lifecycleScope.launch {
+                val vocab = currentVocab ?: return@launch
+
+                if (LlmService.isReady) {
+                    textGuessLong.text = "…"
+                    textGuessLong.visibility = View.VISIBLE
+                    val generated = LlmService.generate(
+                        word = vocab.french,
+                        translation = vocab.english,
+                        recent = recentWords.toList(),
+                        lang = currentLanguage
+                    )
+                    textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
+                } else {
+                    textGuessLong.visibility = View.VISIBLE
+                }
+
+                val capturedSentence = textGuessLong.text
+
+                Thread {
+                    speakText(vocab, en = false, fr = false, exampleSentence = true, sentenceText = capturedSentence)
+                }.start()
+                Thread {
+                    latch.await()
+                    Thread.sleep(1000)
                     runOnUiThread {
-                        textGuessLong.visibility = View.VISIBLE
+                        buttonFail.isEnabled = true
+                        buttonFail.isClickable = true
+
+                        buttonNext.isEnabled = true
+                        buttonNext.isClickable = true
                     }
-                    speakText(currentVocab!!, en = false, fr = false, exampleSentence=true, sentenceText=capturedSentence)
-                }
-            }.start()
-            Thread {
-                latch.await()
-                Thread.sleep(1000)
-                runOnUiThread {
-                    buttonFail.isEnabled = true
-                    buttonFail.isClickable = true
-
-                    buttonNext.isEnabled = true
-                    buttonNext.isClickable = true
-                }
-            }.start()
-
+                }.start()
+            }
         }
 
         fun revealAllVocabData(showNextVocab: Boolean) {
@@ -486,6 +509,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 currentVocab!!.viewTimeMilli = (alpha * timeElapsed!! + (1.0 - alpha) * currentVocab!!.viewTimeMilli).toLong()
                 currentVocab!!.lastDisplayed = System.currentTimeMillis()
                 currentVocab!!.savePreferences()
+
+                val justFinished = currentVocab!!.french
+                recentWords.remove(justFinished)
+                recentWords.addLast(justFinished)
+                while (recentWords.size > recentWordsCapacity) {
+                    recentWords.removeFirst()
+                }
+
                 if (currentVocab!!.failureProbability() < 0.1 && prevFailureProbability >= 0.1) {
                     // Play the success sound
                     playSuccessSound()
