@@ -67,6 +67,18 @@ object LlmService {
 
     val isReady: Boolean get() = _status.value is Status.Ready
 
+    // Sliding window of recently generated sentences. We pass these back to
+    // the model as a "do NOT produce these" list. Without it, common words
+    // (e.g. "essere" → always "Io sono felice.") collapse to the same output
+    // every call regardless of seed/temperature, because the probability mass
+    // for short sentences is too concentrated.
+    //
+    // Cross-language and cross-word — small enough (5 entries) that mixing
+    // languages is harmless. Lost on app restart, which is fine; the goal is
+    // anti-repetition within a session, not a permanent record.
+    private const val RECENT_SENTENCES_CAPACITY = 5
+    private val recentSentences = ArrayDeque<String>()
+
     fun modelFile(context: Context): File {
         // External app-specific storage so the model can be sideloaded via
         // `adb push` without root:
@@ -251,13 +263,23 @@ object LlmService {
         //      next call. A self-reinforcing loop.
         //   2. With fewer candidates the model is less tempted to squeeze
         //      multiple recent words into one sentence.
-        val sampledRecent = recent.takeLast(10).shuffled().take(3)
+        val sampledRecent = recent.takeLast(20).shuffled().take(3)
         val recentClause = if (sampledRecent.isNotEmpty()) {
             " You may also naturally include AT MOST ONE of these recently studied words if it fits: ${sampledRecent.joinToString(", ")}."
         } else ""
+        // Anti-repetition: tell the model the last few sentences it produced
+        // and ask for a clearly different one. Snapshot under lock so we
+        // don't race with a concurrent successful generation appending below.
+        val avoidClause = synchronized(recentSentences) {
+            if (recentSentences.isEmpty()) "" else {
+                val list = recentSentences.joinToString("; ") { "\"$it\"" }
+                " IMPORTANT: do NOT produce any of these previously generated sentences (or trivial paraphrases). Make a clearly different one: $list."
+            }
+        }
         val prompt = "Write one short example sentence in $langName " +
-                "(about 10 words) using the word \"$word\" (English meaning: \"$translation\")." +
+                " using the word \"$word\" (English meaning: \"$translation\")." +
                 recentClause +
+                avoidClause +
                 " Output ONLY the sentence, no quotes, no translation, no explanation."
 
         return mutex.withLock {
@@ -282,11 +304,13 @@ object LlmService {
                         // the concatenated Contents text (verified against
                         // litert-lm source: Message.kt overrides
                         // toString() = contents.toString()).
+                        Log.i(TAG, "generating with LLM (prompt=$prompt)")
+
                         val convConfig = ConversationConfig(
                             samplerConfig = SamplerConfig(
-                                topK = 40,
-                                topP = 0.95,
-                                temperature = 0.9,
+                                topK = 80,
+                                topP = 0.98,
+                                temperature = 1.15,
                                 seed = Random.nextInt(),
                             )
                         )
@@ -302,6 +326,14 @@ object LlmService {
                 val elapsed = System.currentTimeMillis() - started
                 if (result != null) {
                     Log.i(TAG, "generate ok in ${elapsed}ms (word=$word) -> $result")
+                    // Remember this output so the next call's prompt can ask
+                    // the model to avoid it. Bounded to RECENT_SENTENCES_CAPACITY.
+                    synchronized(recentSentences) {
+                        recentSentences.addLast(result)
+                        while (recentSentences.size > RECENT_SENTENCES_CAPACITY) {
+                            recentSentences.removeFirst()
+                        }
+                    }
                 } else {
                     val timedOut = elapsed >= timeoutMs
                     val tag = if (timedOut) "TIMEOUT" else "FAIL"

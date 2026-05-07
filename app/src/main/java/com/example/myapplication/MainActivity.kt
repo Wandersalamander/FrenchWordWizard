@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var latch = CountDownLatch(1)
 
     private val recentWords = ArrayDeque<String>()
-    private val recentWordsCapacity = 10
+    private val recentWordsCapacity = 20
 
     private lateinit var buttonFail: Button
     private lateinit var buttonNext: Button
