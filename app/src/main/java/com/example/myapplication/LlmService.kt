@@ -3,8 +3,11 @@ package com.example.myapplication
 import android.content.Context
 import android.util.Log
 import com.google.ai.edge.litertlm.Backend
+import com.google.ai.edge.litertlm.ConversationConfig
 import com.google.ai.edge.litertlm.Engine
 import com.google.ai.edge.litertlm.EngineConfig
+import com.google.ai.edge.litertlm.SamplerConfig
+import kotlin.random.Random
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -253,11 +256,30 @@ object LlmService {
                     try {
                         // Each generate() call is independent — open a fresh
                         // conversation so prior prompts don't bias the output.
-                        // Message has no .text/.content accessor; toString()
-                        // returns the concatenated Contents text. Confirmed
-                        // against litert-lm source (Message.kt overrides
+                        //
+                        // Sampling config notes:
+                        //   - SamplerConfig.seed defaults to 0 in the SDK,
+                        //     which makes generation deterministic — same
+                        //     prompt + seed = same sentence every time. We
+                        //     randomize the seed per call so the user sees
+                        //     genuinely fresh sentences, not a hidden cache.
+                        //   - temperature 0.9 + topK 40 + topP 0.95 are
+                        //     standard "creative but coherent" values; tune
+                        //     down to ~0.7 if outputs drift off-topic.
+                        //
+                        // Message has no .text accessor; toString() returns
+                        // the concatenated Contents text (verified against
+                        // litert-lm source: Message.kt overrides
                         // toString() = contents.toString()).
-                        val responseText: String = e.createConversation().use { conv ->
+                        val convConfig = ConversationConfig(
+                            samplerConfig = SamplerConfig(
+                                topK = 40,
+                                topP = 0.95,
+                                temperature = 0.9,
+                                seed = Random.nextInt(),
+                            )
+                        )
+                        val responseText: String = e.createConversation(convConfig).use { conv ->
                             conv.sendMessage(prompt).toString()
                         }
                         cleanup(responseText)
