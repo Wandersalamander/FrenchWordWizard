@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -16,7 +18,9 @@ import android.speech.tts.UtteranceProgressListener
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -63,6 +67,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var textGuessLong: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var progressBarFinished: ProgressBar
+    private lateinit var thinkingDots: LinearLayout
+    private val thinkingAnimators = mutableListOf<ObjectAnimator>()
     private lateinit var serviceIntent: Intent
     private var soundPool: SoundPool? = null
     private var successSoundId: Int = 0
@@ -165,6 +171,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         textGuessLong = findViewById(R.id.textGuessLong)
         progressBar = findViewById(R.id.progressBar)
         progressBarFinished = findViewById(R.id.progressBarFinished)
+        thinkingDots = findViewById(R.id.thinking_dots)
 
 
         val sharedPreferences: SharedPreferences = getSharedPreferences(
@@ -224,15 +231,19 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 val vocab = currentVocab ?: return@launch
 
                 if (LlmService.isReady) {
-                    textGuessLong.text = "…"
-                    textGuessLong.visibility = View.VISIBLE
+                    textGuessLong.visibility = View.INVISIBLE
+                    startThinkingAnimation()
                     val generated = LlmService.generate(
                         word = vocab.french,
                         translation = vocab.english,
                         recent = recentWords.toList(),
                         lang = currentLanguage
                     )
+                    stopThinkingAnimation()
                     textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
+                    textGuessLong.alpha = 0f
+                    textGuessLong.visibility = View.VISIBLE
+                    textGuessLong.animate().alpha(1f).setDuration(220).start()
                 } else {
                     textGuessLong.visibility = View.VISIBLE
                 }
@@ -278,7 +289,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 // User tapped "I don't know" — reveal the English translation
                 // and the example sentence immediately.
                 textEn.visibility = View.VISIBLE
-                textGuessLong.visibility = View.VISIBLE
 
                 // Speak the English word right away — the user just admitted
                 // they don't know it, so they want to HEAR the answer
@@ -292,14 +302,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 // already sitting in textGuessLong.text from updateVocab() if
                 // the LLM isn't ready or generation fails/times out.
                 if (LlmService.isReady) {
-                    textGuessLong.text = "…"
+                    textGuessLong.visibility = View.INVISIBLE
+                    startThinkingAnimation()
                     val generated = LlmService.generate(
                         word = vocab.french,
                         translation = vocab.english,
                         recent = recentWords.toList(),
                         lang = currentLanguage
                     )
+                    stopThinkingAnimation()
                     textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
+                    textGuessLong.alpha = 0f
+                    textGuessLong.visibility = View.VISIBLE
+                    textGuessLong.animate().alpha(1f).setDuration(220).start()
+                } else {
+                    textGuessLong.visibility = View.VISIBLE
                 }
 
                 val capturedSentence = textGuessLong.text
@@ -512,6 +529,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 textToSpeech.stop()
                 textToSpeech.shutdown()
             }
+            stopThinkingAnimation()
             stopService(serviceIntent)
             releaseSoundPool()
             super.onDestroy()
@@ -677,6 +695,58 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         private fun playSuccessSound() {
             soundPool?.play(successSoundId, 1f, 1f, 1, 0, 1f)
+        }
+
+        private fun startThinkingAnimation() {
+            stopThinkingAnimation()
+            thinkingDots.visibility = View.VISIBLE
+            val bouncePx = -resources.displayMetrics.density * 10f
+            val dots = listOf<View>(
+                findViewById(R.id.thinking_dot1),
+                findViewById(R.id.thinking_dot2),
+                findViewById(R.id.thinking_dot3)
+            )
+            dots.forEachIndexed { index, dot ->
+                dot.translationY = 0f
+                dot.scaleX = 0.7f
+                dot.scaleY = 0.7f
+                dot.alpha = 0.4f
+                val stagger = (index * 140L)
+                val bounce = ObjectAnimator.ofFloat(dot, View.TRANSLATION_Y, 0f, bouncePx, 0f).apply {
+                    duration = 720
+                    startDelay = stagger
+                    repeatCount = ValueAnimator.INFINITE
+                    interpolator = AccelerateDecelerateInterpolator()
+                }
+                val scaleX = ObjectAnimator.ofFloat(dot, View.SCALE_X, 0.7f, 1.1f, 0.7f).apply {
+                    duration = 720
+                    startDelay = stagger
+                    repeatCount = ValueAnimator.INFINITE
+                    interpolator = AccelerateDecelerateInterpolator()
+                }
+                val scaleY = ObjectAnimator.ofFloat(dot, View.SCALE_Y, 0.7f, 1.1f, 0.7f).apply {
+                    duration = 720
+                    startDelay = stagger
+                    repeatCount = ValueAnimator.INFINITE
+                    interpolator = AccelerateDecelerateInterpolator()
+                }
+                val alpha = ObjectAnimator.ofFloat(dot, View.ALPHA, 0.4f, 1f, 0.4f).apply {
+                    duration = 720
+                    startDelay = stagger
+                    repeatCount = ValueAnimator.INFINITE
+                    interpolator = AccelerateDecelerateInterpolator()
+                }
+                listOf(bounce, scaleX, scaleY, alpha).forEach {
+                    thinkingAnimators.add(it)
+                    it.start()
+                }
+            }
+        }
+
+        private fun stopThinkingAnimation() {
+            thinkingAnimators.forEach { it.cancel() }
+            thinkingAnimators.clear()
+            thinkingDots.visibility = View.GONE
         }
 
         private fun playSpotCheckSound() {
