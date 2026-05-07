@@ -118,13 +118,28 @@ class WordListActivity : AppCompatActivity() {
             0 -> words.sortedBy { it.french.lowercase() }
             1 -> words.sortedByDescending { it.french.lowercase() }
             2 -> words.sortedBy { it.english.lowercase() }
-            3 -> words.sortedByDescending { it.failureProbability() }
-            4 -> words.sortedBy { it.failureProbability() }
+            // Words the user marked "I know it" (ignore=true) are not struggling
+            // regardless of failureProbability, which is high after only 1 view.
+            // Push them to the bottom of the struggling sort.
+            3 -> words.sortedWith(
+                compareBy<Vocab> { it.ignore }
+                    .thenByDescending { it.failureProbability() }
+            )
+            // Inverse: ignored words are the most mastered, so put them on top.
+            4 -> words.sortedWith(
+                compareByDescending<Vocab> { it.ignore }
+                    .thenBy { it.failureProbability() }
+            )
             5 -> words.sortedByDescending { it.lastDisplayed }
             6 -> words.sortedBy { it.lastDisplayed }
             7 -> words.sortedByDescending { it.nTimesViewed }
             8 -> words.sortedByDescending { it.viewTimeMilli }
-            9 -> words.sortedBy { it.importance }
+            // Importance: surface the most-important *unknown* words first;
+            // push ignored ("I know it") words to the bottom.
+            9 -> words.sortedWith(
+                compareBy<Vocab> { it.ignore }
+                    .thenBy { it.importance }
+            )
             10 -> words.sortedByDescending { it.flaggedHard }
             else -> words
         }
