@@ -47,30 +47,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="14dp"
-        android:paddingStart="2dp"
+        android:gravity="center_vertical"
+        android:paddingTop="16dp"
+        android:paddingStart="4dp"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/textGuessLong"
         app:layout_constraintTop_toTopOf="@+id/textGuessLong">
 
         <View
             android:id="@+id/thinking_dot1"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:background="@drawable/thinking_dot" />
 
         <View
             android:id="@+id/thinking_dot2"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="14dp"
             android:background="@drawable/thinking_dot" />
 
         <View
             android:id="@+id/thinking_dot3"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="14dp"
             android:background="@drawable/thinking_dot" />
     </LinearLayout>
 

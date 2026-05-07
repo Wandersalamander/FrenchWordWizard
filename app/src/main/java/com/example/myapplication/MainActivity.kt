@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -18,11 +17,13 @@ import android.speech.tts.UtteranceProgressListener
 import android.view.View
 import android.view.Menu
 import android.view.MenuItem
-import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import kotlin.math.floor
+import kotlin.math.sin
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var progressBar: ProgressBar
     private lateinit var progressBarFinished: ProgressBar
     private lateinit var thinkingDots: LinearLayout
-    private val thinkingAnimators = mutableListOf<ObjectAnimator>()
+    private var pulseAnimator: ValueAnimator? = null
     private lateinit var serviceIntent: Intent
     private var soundPool: SoundPool? = null
     private var successSoundId: Int = 0
@@ -666,20 +667,23 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
 
         // Shared by Tip and "I don't know": run the LLM to produce an example
-        // sentence while the bouncing-dots animation plays in textGuessLong's
-        // place, then fade the generated text in. If the LLM isn't ready, just
-        // show whatever CSV-fallback text is already in textGuessLong.
+        // sentence while the dots animate in textGuessLong's place, then fade
+        // the generated text in. If the LLM isn't ready, just show whatever
+        // CSV-fallback text is already in textGuessLong.
         private suspend fun generateAndShowExampleSentence(vocab: Vocab) {
             if (LlmService.isReady) {
                 textGuessLong.visibility = View.INVISIBLE
                 startThinkingAnimation()
-                val generated = LlmService.generate(
-                    word = vocab.french,
-                    translation = vocab.english,
-                    recent = recentWords.toList(),
-                    lang = currentLanguage
-                )
-                stopThinkingAnimation()
+                val generated = try {
+                    LlmService.generate(
+                        word = vocab.french,
+                        translation = vocab.english,
+                        recent = recentWords.toList(),
+                        lang = currentLanguage
+                    )
+                } finally {
+                    stopThinkingAnimation()
+                }
                 textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
                 textGuessLong.alpha = 0f
                 textGuessLong.visibility = View.VISIBLE
@@ -689,56 +693,58 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         }
 
+        // Three dots that breathe with a continuous sine wave, each offset by
+        // a third of the cycle so a soft ripple appears to flow across them.
+        // Driven by a single ValueAnimator (vs. 12 ObjectAnimators) so cancel
+        // is atomic and there are no per-dot cycle-boundary glitches.
         private fun startThinkingAnimation() {
             stopThinkingAnimation()
-            thinkingDots.visibility = View.VISIBLE
-            val bouncePx = -resources.displayMetrics.density * 10f
-            val dots = listOf<View>(
-                findViewById(R.id.thinking_dot1),
-                findViewById(R.id.thinking_dot2),
-                findViewById(R.id.thinking_dot3)
+
+            val dots = listOf(
+                findViewById<View>(R.id.thinking_dot1),
+                findViewById<View>(R.id.thinking_dot2),
+                findViewById<View>(R.id.thinking_dot3)
             )
-            dots.forEachIndexed { index, dot ->
-                dot.translationY = 0f
-                dot.scaleX = 0.7f
-                dot.scaleY = 0.7f
-                dot.alpha = 0.4f
-                val stagger = (index * 140L)
-                val bounce = ObjectAnimator.ofFloat(dot, View.TRANSLATION_Y, 0f, bouncePx, 0f).apply {
-                    duration = 720
-                    startDelay = stagger
-                    repeatCount = ValueAnimator.INFINITE
-                    interpolator = AccelerateDecelerateInterpolator()
+            dots.forEach {
+                it.scaleX = 1f
+                it.scaleY = 1f
+                it.alpha = 1f
+            }
+
+            thinkingDots.alpha = 0f
+            thinkingDots.visibility = View.VISIBLE
+            thinkingDots.animate()
+                .alpha(1f)
+                .setDuration(160L)
+                .start()
+
+            pulseAnimator = ValueAnimator.ofFloat(0f, 1f).apply {
+                duration = 1300L
+                repeatCount = ValueAnimator.INFINITE
+                interpolator = LinearInterpolator()
+                addUpdateListener { va ->
+                    val t = va.animatedValue as Float
+                    dots.forEachIndexed { index, dot ->
+                        // Offset each dot by 1/3 of the cycle so the wave ripples through.
+                        val raw = t - index / 3f
+                        val phase = raw - floor(raw)
+                        val wave = (sin(phase * 2.0 * Math.PI).toFloat() + 1f) / 2f
+                        dot.alpha = 0.3f + 0.7f * wave
+                        val scale = 0.7f + 0.4f * wave
+                        dot.scaleX = scale
+                        dot.scaleY = scale
+                    }
                 }
-                val scaleX = ObjectAnimator.ofFloat(dot, View.SCALE_X, 0.7f, 1.1f, 0.7f).apply {
-                    duration = 720
-                    startDelay = stagger
-                    repeatCount = ValueAnimator.INFINITE
-                    interpolator = AccelerateDecelerateInterpolator()
-                }
-                val scaleY = ObjectAnimator.ofFloat(dot, View.SCALE_Y, 0.7f, 1.1f, 0.7f).apply {
-                    duration = 720
-                    startDelay = stagger
-                    repeatCount = ValueAnimator.INFINITE
-                    interpolator = AccelerateDecelerateInterpolator()
-                }
-                val alpha = ObjectAnimator.ofFloat(dot, View.ALPHA, 0.4f, 1f, 0.4f).apply {
-                    duration = 720
-                    startDelay = stagger
-                    repeatCount = ValueAnimator.INFINITE
-                    interpolator = AccelerateDecelerateInterpolator()
-                }
-                listOf(bounce, scaleX, scaleY, alpha).forEach {
-                    thinkingAnimators.add(it)
-                    it.start()
-                }
+                start()
             }
         }
 
         private fun stopThinkingAnimation() {
-            thinkingAnimators.forEach { it.cancel() }
-            thinkingAnimators.clear()
+            pulseAnimator?.cancel()
+            pulseAnimator = null
+            thinkingDots.animate().cancel()
             thinkingDots.visibility = View.GONE
+            thinkingDots.alpha = 1f
         }
 
         private fun playSpotCheckSound() {
