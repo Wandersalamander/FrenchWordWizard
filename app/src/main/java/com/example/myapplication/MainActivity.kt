@@ -230,23 +230,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             lifecycleScope.launch {
                 val vocab = currentVocab ?: return@launch
 
-                if (LlmService.isReady) {
-                    textGuessLong.visibility = View.INVISIBLE
-                    startThinkingAnimation()
-                    val generated = LlmService.generate(
-                        word = vocab.french,
-                        translation = vocab.english,
-                        recent = recentWords.toList(),
-                        lang = currentLanguage
-                    )
-                    stopThinkingAnimation()
-                    textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
-                    textGuessLong.alpha = 0f
-                    textGuessLong.visibility = View.VISIBLE
-                    textGuessLong.animate().alpha(1f).setDuration(220).start()
-                } else {
-                    textGuessLong.visibility = View.VISIBLE
-                }
+                generateAndShowExampleSentence(vocab)
 
                 val capturedSentence = textGuessLong.text
 
@@ -301,23 +285,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 // (same behaviour as showTip). Falls back to the CSV sentence
                 // already sitting in textGuessLong.text from updateVocab() if
                 // the LLM isn't ready or generation fails/times out.
-                if (LlmService.isReady) {
-                    textGuessLong.visibility = View.INVISIBLE
-                    startThinkingAnimation()
-                    val generated = LlmService.generate(
-                        word = vocab.french,
-                        translation = vocab.english,
-                        recent = recentWords.toList(),
-                        lang = currentLanguage
-                    )
-                    stopThinkingAnimation()
-                    textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
-                    textGuessLong.alpha = 0f
-                    textGuessLong.visibility = View.VISIBLE
-                    textGuessLong.animate().alpha(1f).setDuration(220).start()
-                } else {
-                    textGuessLong.visibility = View.VISIBLE
-                }
+                generateAndShowExampleSentence(vocab)
 
                 val capturedSentence = textGuessLong.text
 
@@ -695,6 +663,30 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         private fun playSuccessSound() {
             soundPool?.play(successSoundId, 1f, 1f, 1, 0, 1f)
+        }
+
+        // Shared by Tip and "I don't know": run the LLM to produce an example
+        // sentence while the bouncing-dots animation plays in textGuessLong's
+        // place, then fade the generated text in. If the LLM isn't ready, just
+        // show whatever CSV-fallback text is already in textGuessLong.
+        private suspend fun generateAndShowExampleSentence(vocab: Vocab) {
+            if (LlmService.isReady) {
+                textGuessLong.visibility = View.INVISIBLE
+                startThinkingAnimation()
+                val generated = LlmService.generate(
+                    word = vocab.french,
+                    translation = vocab.english,
+                    recent = recentWords.toList(),
+                    lang = currentLanguage
+                )
+                stopThinkingAnimation()
+                textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
+                textGuessLong.alpha = 0f
+                textGuessLong.visibility = View.VISIBLE
+                textGuessLong.animate().alpha(1f).setDuration(220).start()
+            } else {
+                textGuessLong.visibility = View.VISIBLE
+            }
         }
 
         private fun startThinkingAnimation() {
