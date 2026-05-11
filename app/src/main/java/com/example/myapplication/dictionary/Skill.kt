@@ -18,7 +18,7 @@ enum class Skill(
 ) {
     READ("", "Reading", 0.0f),  // empty prefix preserves legacy SharedPreferences keys — never rename
     LISTEN("listen_", "Listening", 0.4f),  // unlocks at 3 stars on READ
-    // INVERT("invert_", "Inversion", 0.2f),  // unlocks at 4 stars on LISTEN
+    INVERT("invert_", "Inversion", 0.2f),  // unlocks at 4 stars on LISTEN
     ;
 
     companion object {
@@ -27,7 +27,7 @@ enum class Skill(
         val ladder: List<Skill> = listOf(
             READ,
             LISTEN,
-            // INVERT,
+            INVERT,
         )
     }
 }

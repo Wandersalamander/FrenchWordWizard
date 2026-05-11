@@ -139,7 +139,11 @@ class QuizController(
         views.buttonLearned.text = "✓"
         views.buttonLearned.setOnClickListener {
             val vocab = currentVocab ?: return@setOnClickListener
+            // First tap reveals everything so the user can verify they
+            // actually know the word before committing on the second tap.
+            revealCurrentForeignWord()
             views.textEn.visibility = View.VISIBLE
+            currentSentence?.let { renderSentence(it, mask = false) }
             views.textGuessLong.visibility = View.VISIBLE
             views.buttonLearned.text = "✓?"
             views.buttonLearned.setOnClickListener {
@@ -174,12 +178,17 @@ class QuizController(
         setQuizButtonsEnabled(false)
 
         activity.lifecycleScope.launch {
-            // User admitted they don't know — reveal the English and speak it
-            // right away, in parallel with the LLM example-sentence generation.
-            // Also unmask the foreign word if it was hidden for listening practice.
+            // User admitted they don't know. Reveal whichever side was hidden
+            // for this skill: foreign-was-hidden in INVERT, English-was-hidden
+            // in READ / LISTEN. TTS speaks the side that was previously kept
+            // out of earshot.
             revealCurrentForeignWord()
             views.textEn.visibility = View.VISIBLE
-            tts.speakEnglishWord(vocab)
+            if (currentSkill == Skill.INVERT) {
+                tts.speakForeignWord(vocab, flush = true)
+            } else {
+                tts.speakEnglishWord(vocab)
+            }
 
             // In a listening round, the user has already been hearing the
             // example sentence (from Tip, masked). Reveal that exact sentence
@@ -194,13 +203,9 @@ class QuizController(
                 updateVocab(2000, newCandidates = false)
                 delay(100)
             }
-
-            views.buttonFail.isEnabled = true
-            views.buttonFail.isClickable = true
-            views.buttonNext.isEnabled = true
-            views.buttonNext.isClickable = true
-            views.buttonTip.isEnabled = true
-            views.buttonTip.isClickable = true
+            // setQuizButtonsEnabled honours the per-skill Tip rule, so an
+            // INVERT round won't accidentally re-enable the Tip button here.
+            setQuizButtonsEnabled(true)
         }
     }
 
@@ -287,7 +292,9 @@ class QuizController(
             views.textProgressTotal.translationX = targetX.coerceIn(0f, maxX)
         }
         displayForeignWord(vocab)
-        views.textEn.visibility = View.INVISIBLE
+        // INVERT shows the English as the prompt; other skills keep it hidden
+        // until reveal / spot check.
+        views.textEn.visibility = if (currentSkill == Skill.INVERT) View.VISIBLE else View.INVISIBLE
         views.textEn.text = vocab.english
         views.textGuessLong.visibility = View.INVISIBLE
         // Seed the per-word sentence cache with the CSV fallback so a reveal
@@ -302,7 +309,13 @@ class QuizController(
         setupLearnedButton()
 
         startTime = System.currentTimeMillis()
-        tts.speakForeignWord(vocab, flush = true)
+        // In INVERT the foreign word is the answer the user has to produce, so
+        // speak the English prompt instead; other skills speak the foreign word.
+        if (currentSkill == Skill.INVERT) {
+            tts.speakEnglishWord(vocab)
+        } else {
+            tts.speakForeignWord(vocab, flush = true)
+        }
     }
 
     private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> =
@@ -412,20 +425,36 @@ class QuizController(
         views.buttonNext.isClickable = enabled
         views.buttonNew.isEnabled = enabled
         views.buttonNew.isClickable = enabled
-        views.buttonTip.isEnabled = enabled
-        views.buttonTip.isClickable = enabled
+        // Tip would normally show an example sentence containing the foreign
+        // word, which gives away the answer in an INVERT round. Keep it
+        // disabled regardless of the [enabled] flag while inverting.
+        val tipApplicable = enabled && currentSkill != Skill.INVERT
+        views.buttonTip.isEnabled = tipApplicable
+        views.buttonTip.isClickable = tipApplicable
     }
 
     private fun displayForeignWord(vocab: Vocab) {
         val isListeningRound = currentSkill == Skill.LISTEN && listeningEnabled
-        if (isListeningRound) {
-            views.textFr.text = maskWord(vocab.french)
-            views.textFr.setOnClickListener { onMaskedWordTapped() }
-            views.textFr.isClickable = true
-        } else {
-            views.textFr.text = vocab.french
-            views.textFr.setOnClickListener(null)
-            views.textFr.isClickable = false
+        val isInvertRound = currentSkill == Skill.INVERT
+        when {
+            isInvertRound -> {
+                // English is the prompt; the foreign word is what the user must
+                // produce. Show a "?" placeholder rather than the word itself
+                // and don't leak word length.
+                views.textFr.text = "?"
+                views.textFr.setOnClickListener(null)
+                views.textFr.isClickable = false
+            }
+            isListeningRound -> {
+                views.textFr.text = maskWord(vocab.french)
+                views.textFr.setOnClickListener { onMaskedWordTapped() }
+                views.textFr.isClickable = true
+            }
+            else -> {
+                views.textFr.text = vocab.french
+                views.textFr.setOnClickListener(null)
+                views.textFr.isClickable = false
+            }
         }
     }
 
