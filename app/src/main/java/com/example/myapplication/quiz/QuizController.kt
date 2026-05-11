@@ -14,7 +14,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
@@ -42,6 +41,8 @@ data class QuizViews(
 interface TtsHelper {
     fun speakForeignWord(vocab: Vocab, flush: Boolean = false)
     fun speakEnglishWord(vocab: Vocab)
+    /** Speaks [sentence] in the foreign locale, flushing any in-flight speech. */
+    fun speakSentence(sentence: CharSequence)
     /**
      * Speaks [sentence] in the foreign locale and suspends until TTS has
      * finished playing it. Replaces the previous CountDownLatch-based pattern
@@ -77,11 +78,14 @@ class QuizController(
     // when a new word is picked and used for all stat writes during the round.
     private var currentSkill: Skill = Skill.READ
 
-    // Session-scoped state for the LISTEN masking flow. The user is asked on the
-    // first ⬤ tap whether they want to reveal individual words or stop masking
-    // entirely (e.g. on a train without headphones).
-    private enum class ListenMode { ASK_ON_TAP, TAP_REVEALS, DISABLED }
-    private var listenMode: ListenMode = ListenMode.ASK_ON_TAP
+    // Session-scoped: when false, LISTEN words and their tip sentences are
+    // shown unmasked (e.g. the user is on a train without headphones).
+    // Toggled via the menu; the next word picks up the new state.
+    private var listeningEnabled: Boolean = true
+
+    // Unmasked sentence kept around so the tap-to-re-read handler can speak
+    // the original even when [QuizViews.textGuessLong] displays the masked form.
+    private var currentSentence: String? = null
 
     fun onFailClick() {
         if (inSpotCheck) exitSpotCheck(wasWrong = true)
@@ -100,6 +104,15 @@ class QuizController(
 
     fun onNewClick() = updateVocab(0, newCandidates = true)
     fun onTipClick() = showTip()
+
+    /** True when listening practice is active (masking happens for LISTEN words). */
+    fun isListeningModeEnabled(): Boolean = listeningEnabled
+
+    /** Toggle session-scoped listening mode and refresh the current word's display. */
+    fun setListeningModeEnabled(enabled: Boolean) {
+        listeningEnabled = enabled
+        currentVocab?.let { displayForeignWord(it) }
+    }
 
     fun onHardClick() {
         val vocab = currentVocab ?: return
@@ -136,8 +149,7 @@ class QuizController(
         setQuizButtonsEnabled(false)
 
         activity.lifecycleScope.launch {
-            generateAndShowExampleSentence(vocab)
-            val sentence = views.textGuessLong.text
+            val sentence = generateAndShowExampleSentence(vocab, maskWhenListening = true)
             tts.speakSentenceAndAwait(sentence)
             delay(1000)
             views.buttonFail.isEnabled = true
@@ -161,10 +173,9 @@ class QuizController(
             tts.speakEnglishWord(vocab)
 
             // Regenerate example sentence with the LLM (falls back to CSV in
-            // generateAndShowExampleSentence on timeout/failure).
-            generateAndShowExampleSentence(vocab)
-
-            val sentence = views.textGuessLong.text
+            // generateAndShowExampleSentence on timeout/failure). User gave up,
+            // so show the sentence in full rather than masking it.
+            val sentence = generateAndShowExampleSentence(vocab)
             // TTS queues this after the English word — by the time the LLM
             // finishes, the English may already have played and the sentence
             // plays immediately; otherwise it follows naturally.
@@ -305,8 +316,19 @@ class QuizController(
         }
     }
 
-    private suspend fun generateAndShowExampleSentence(vocab: Vocab) {
-        if (LlmService.isReady) {
+    /**
+     * Generates (or falls back to) the example sentence, displays it in
+     * [QuizViews.textGuessLong], and returns the unmasked text so the caller
+     * can hand it to TTS. When [maskWhenListening] is true and the current
+     * round is a listening one, the on-screen text is replaced with bullets
+     * — the user must rely on audio rather than reading the word inside the
+     * sentence.
+     */
+    private suspend fun generateAndShowExampleSentence(
+        vocab: Vocab,
+        maskWhenListening: Boolean = false,
+    ): String {
+        val sentence: String = if (LlmService.isReady) {
             views.textGuessLong.visibility = View.INVISIBLE
             startThinkingAnimation()
             val generated = try {
@@ -319,14 +341,29 @@ class QuizController(
             } finally {
                 stopThinkingAnimation()
             }
-            views.textGuessLong.text = generated ?: vocab.getSomeFrenchLong()
-            views.textGuessLong.alpha = 0f
-            views.textGuessLong.visibility = View.VISIBLE
-            views.textGuessLong.animate().alpha(1f).setDuration(220).start()
+            generated ?: vocab.getSomeFrenchLong()
         } else {
-            views.textGuessLong.visibility = View.VISIBLE
+            views.textGuessLong.text.toString()
         }
+        currentSentence = sentence
+        val maskNow = currentSkill == Skill.LISTEN && listeningEnabled && maskWhenListening
+        if (maskNow) {
+            views.textGuessLong.text = maskSentence(sentence)
+            views.textGuessLong.setOnClickListener { onMaskedSentenceTapped() }
+            views.textGuessLong.isClickable = true
+        } else {
+            views.textGuessLong.text = sentence
+            views.textGuessLong.setOnClickListener(null)
+            views.textGuessLong.isClickable = false
+        }
+        views.textGuessLong.alpha = 0f
+        views.textGuessLong.visibility = View.VISIBLE
+        views.textGuessLong.animate().alpha(1f).setDuration(220).start()
+        return sentence
     }
+
+    private fun maskSentence(sentence: String): String =
+        "•".repeat(sentence.length)
 
     private fun startThinkingAnimation() {
         views.thinkingSparkle.visibility = View.VISIBLE
@@ -350,8 +387,8 @@ class QuizController(
     }
 
     private fun displayForeignWord(vocab: Vocab) {
-        val shouldMask = currentSkill == Skill.LISTEN && listenMode != ListenMode.DISABLED
-        if (shouldMask) {
+        val isListeningRound = currentSkill == Skill.LISTEN && listeningEnabled
+        if (isListeningRound) {
             views.textFr.text = maskWord(vocab.french)
             views.textFr.setOnClickListener { onMaskedWordTapped() }
             views.textFr.isClickable = true
@@ -365,33 +402,29 @@ class QuizController(
     private fun maskWord(word: String): String =
         word.map { if (it.isLetter()) '⬤' else it }.joinToString("")
 
+    /** Replay the foreign word (with a small penalty) when the mask is tapped. */
     private fun onMaskedWordTapped() {
-        when (listenMode) {
-            ListenMode.ASK_ON_TAP -> showListenPrompt()
-            ListenMode.TAP_REVEALS -> revealCurrentForeignWord()
-            ListenMode.DISABLED -> Unit
-        }
+        val vocab = currentVocab ?: return
+        vocab.stats(currentSkill).nTimesFailed += 0.1f
+        tts.speakForeignWord(vocab, flush = true)
     }
 
+    /** Replay the example sentence (with a small penalty) when its mask is tapped. */
+    private fun onMaskedSentenceTapped() {
+        val vocab = currentVocab ?: return
+        val sentence = currentSentence ?: return
+        vocab.stats(currentSkill).nTimesFailed += 0.1f
+        tts.speakSentence(sentence)
+    }
+
+    /**
+     * Called by [revealAllVocabData] when the user gives up: unmask the
+     * foreign word and detach its tap-to-replay handler.
+     */
     private fun revealCurrentForeignWord() {
         val vocab = currentVocab ?: return
         views.textFr.text = vocab.french
         views.textFr.setOnClickListener(null)
         views.textFr.isClickable = false
-    }
-
-    private fun showListenPrompt() {
-        AlertDialog.Builder(activity)
-            .setTitle("Listening practice")
-            .setMessage("Tap to reveal the word, or disable listening mode for this session if you can't listen now.")
-            .setPositiveButton("Reveal this word") { _, _ ->
-                listenMode = ListenMode.TAP_REVEALS
-                revealCurrentForeignWord()
-            }
-            .setNegativeButton("Can't listen — disable for session") { _, _ ->
-                listenMode = ListenMode.DISABLED
-                revealCurrentForeignWord()
-            }
-            .show()
     }
 }

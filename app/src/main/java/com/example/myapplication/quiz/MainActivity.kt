@@ -217,8 +217,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         return true
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        menu.findItem(R.id.menu_listening_mode)?.isChecked =
+            quizController.isListeningModeEnabled()
+        return super.onPrepareOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_listening_mode -> {
+                val newState = !item.isChecked
+                quizController.setListeningModeEnabled(newState)
+                item.isChecked = newState
+                true
+            }
             R.id.menu_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
                 true
@@ -264,6 +276,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         val word = vocab.pronounceableEn()
         textToSpeech.language = Locale.ENGLISH
         textToSpeech.speak(word, TextToSpeech.QUEUE_ADD, null, null)
+    }
+
+    override fun speakSentence(sentence: CharSequence) {
+        textToSpeech.language = language.locale
+        textToSpeech.speak(sentence, TextToSpeech.QUEUE_FLUSH, null, null)
     }
 
     override suspend fun speakSentenceAndAwait(sentence: CharSequence) {
