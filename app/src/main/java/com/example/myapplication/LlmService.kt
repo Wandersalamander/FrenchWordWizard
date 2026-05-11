@@ -263,9 +263,9 @@ object LlmService {
         //      next call. A self-reinforcing loop.
         //   2. With fewer candidates the model is less tempted to squeeze
         //      multiple recent words into one sentence.
-        val sampledRecent = recent.takeLast(20).shuffled().take(3)
+        val sampledRecent = recent.takeLast(20).shuffled().take(5)
         val recentClause = if (sampledRecent.isNotEmpty()) {
-            " You may also naturally include AT MOST ONE of these recently studied words if it fits: ${sampledRecent.joinToString(", ")}."
+            " You may also naturally include some recently studied words if it fits: ${sampledRecent.joinToString(", ")}."
         } else ""
         // Anti-repetition: tell the model the last few sentences it produced
         // and ask for a clearly different one. Snapshot under lock so we
