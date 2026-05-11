@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.quiz
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,6 +13,15 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.myapplication.R
+import com.example.myapplication.dictionary.Language
+import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.Vocab
+import com.example.myapplication.dictionary.openDictionaryStream
+import com.example.myapplication.llm.LlmService
+import com.example.myapplication.service.MyForegroundService
+import com.example.myapplication.settings.SettingsActivity
+import com.example.myapplication.wordlist.WordListActivity
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
 import kotlinx.coroutines.CancellationException

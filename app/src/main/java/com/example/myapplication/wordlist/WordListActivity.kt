@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.wordlist
 
 import android.content.Context
 import android.os.Bundle
@@ -11,6 +11,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
+import com.example.myapplication.dictionary.Language
+import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.Vocab
+import com.example.myapplication.dictionary.openDictionaryStream
 
 class WordListActivity : AppCompatActivity() {
     private lateinit var dictionary: MyDictionary

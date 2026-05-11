@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.settings
 
 import android.content.Context
 import android.os.Bundle
@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.myapplication.R
+import com.example.myapplication.dictionary.Language
+import com.example.myapplication.llm.LlmService
 import kotlinx.coroutines.launch
 
 class SettingsActivity : AppCompatActivity() {

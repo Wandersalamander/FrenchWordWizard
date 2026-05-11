@@ -27,20 +27,20 @@
         <uses-native-library android:name="libvndksupport.so" android:required="false"/>
         <uses-native-library android:name="libOpenCL.so" android:required="false"/>
         <service
-            android:name=".MyForegroundService"
+            android:name=".service.MyForegroundService"
             android:foregroundServiceType="specialUse"
             android:enabled="true"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".settings.SettingsActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".WordListActivity"
+            android:name=".wordlist.WordListActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".quiz.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
 

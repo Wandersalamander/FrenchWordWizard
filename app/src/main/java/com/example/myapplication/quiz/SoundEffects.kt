@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.quiz
 
 import android.content.Context
 import android.media.AudioAttributes

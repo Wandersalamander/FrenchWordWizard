@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.dictionary
 
 import android.content.SharedPreferences
 import java.util.concurrent.TimeUnit

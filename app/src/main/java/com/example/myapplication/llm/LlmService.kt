@@ -1,7 +1,8 @@
-package com.example.myapplication
+package com.example.myapplication.llm
 
 import android.content.Context
 import android.util.Log
+import com.example.myapplication.dictionary.Language
 import com.google.ai.edge.litertlm.Backend
 import com.google.ai.edge.litertlm.ConversationConfig
 import com.google.ai.edge.litertlm.Engine

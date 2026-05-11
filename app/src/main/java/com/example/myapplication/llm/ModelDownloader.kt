@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.llm
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ensureActive

@@ -1,7 +1,11 @@
-package com.example.myapplication
+package com.example.myapplication.quiz
 
 import android.content.Context
 import android.graphics.drawable.Animatable
+import com.example.myapplication.dictionary.Language
+import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.Vocab
+import com.example.myapplication.llm.LlmService
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
