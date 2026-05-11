@@ -101,7 +101,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             .setMaxStreams(2)
             .setAudioAttributes(audioAttrs)
             .build()
-        successSoundId = soundPool!!.load(this, R.raw.duolingo_sucess, 1)
+
+        // Generate a short ascending chime as the success sound (copyright-free, synthesized).
+        val chimeFile = File(cacheDir, "success_chime.wav")
+        generateSuccessChimeWav(chimeFile)
+        successSoundId = soundPool!!.load(chimeFile.absolutePath, 1)
 
         // Generate a short "blub" tone as a WAV file and load into SoundPool
         val blubFile = File(cacheDir, "blub.wav")
@@ -707,6 +711,64 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         private fun playSpotCheckSound() {
             soundPool?.play(spotCheckSoundId, 0.7f, 0.7f, 1, 0, 1f)
+        }
+
+        private fun generateSuccessChimeWav(file: File) {
+            val sampleRate = 22050
+            // Two ascending notes — perfect fourth (G5 -> C6): bright, positive, distinct from the
+            // low spotcheck "blub" so users can tell success apart at a glance.
+            val note1Freq = 783.99 // G5
+            val note2Freq = 1046.50 // C6
+            val note1DurMs = 110
+            val note2DurMs = 380
+            val totalDurMs = note1DurMs + note2DurMs
+            val numSamples = sampleRate * totalDurMs / 1000
+            val note1Samples = sampleRate * note1DurMs / 1000
+            val attackSamples = sampleRate * 5 / 1000
+            val note2DecaySamples = numSamples - note1Samples
+            val samples = ShortArray(numSamples)
+            for (i in 0 until numSamples) {
+                var s = 0.0
+                // Note 1: decays across the full buffer so it overlaps with note 2 like a real chime.
+                val t1 = i.toDouble() / sampleRate
+                val env1 = if (i < attackSamples) i.toDouble() / attackSamples
+                    else Math.exp(-4.0 * (i - attackSamples) / numSamples)
+                val fund1 = Math.sin(2.0 * Math.PI * note1Freq * t1)
+                val harm1 = 0.25 * Math.sin(2.0 * Math.PI * note1Freq * 2.0 * t1)
+                s += 0.45 * env1 * (fund1 + harm1)
+                // Note 2: starts after note 1 begins; longer tail.
+                if (i >= note1Samples) {
+                    val li = i - note1Samples
+                    val lt = li.toDouble() / sampleRate
+                    val env2 = if (li < attackSamples) li.toDouble() / attackSamples
+                        else Math.exp(-3.0 * (li - attackSamples) / note2DecaySamples)
+                    val fund2 = Math.sin(2.0 * Math.PI * note2Freq * lt)
+                    val harm2 = 0.25 * Math.sin(2.0 * Math.PI * note2Freq * 2.0 * lt)
+                    s += 0.55 * env2 * (fund2 + harm2)
+                }
+                val intSample = (s * Short.MAX_VALUE * 0.9).toInt()
+                samples[i] = intSample.coerceIn(Short.MIN_VALUE.toInt(), Short.MAX_VALUE.toInt()).toShort()
+            }
+            val dataSize = numSamples * 2
+            file.outputStream().use { out ->
+                out.write("RIFF".toByteArray())
+                out.write(intToBytes(36 + dataSize))
+                out.write("WAVE".toByteArray())
+                out.write("fmt ".toByteArray())
+                out.write(intToBytes(16))
+                out.write(shortToBytes(1))
+                out.write(shortToBytes(1))
+                out.write(intToBytes(sampleRate))
+                out.write(intToBytes(sampleRate * 2))
+                out.write(shortToBytes(2))
+                out.write(shortToBytes(16))
+                out.write("data".toByteArray())
+                out.write(intToBytes(dataSize))
+                for (sample in samples) {
+                    out.write(sample.toInt() and 0xFF)
+                    out.write((sample.toInt() shr 8) and 0xFF)
+                }
+            }
         }
 
         private fun generateBlubWav(file: File) {
