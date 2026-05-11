@@ -14,6 +14,7 @@ import android.speech.tts.UtteranceProgressListener
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -163,16 +164,26 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 .tintTarget(false)
                 .cancelable(true)
 
-        TapTargetSequence(this)
-            .targets(
-                target(views.textFr, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
-                target(views.buttonNext, "Next", "Tap when you have a guess. The answer is revealed, and occasionally you'll be asked to confirm whether you actually got it right."),
-                target(views.buttonFail, "I don't know", "Tap if you can't recall the meaning. The translation is revealed and you move on."),
-                target(views.buttonTip, "Tip", "Plays an example sentence using the word, to jog your memory."),
-                target(views.buttonNew, "A new word", "Skip the current word and pull a brand new one you haven't seen yet."),
-                target(views.buttonHard, "Flag as hard", "Marks this word as difficult so it appears more often."),
-                target(views.buttonLearned, "Mark as learned", "Tap once to reveal the answer, then tap again to confirm you've learned it and stop seeing it.")
+        val steps = mutableListOf(
+            target(views.textFr, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
+            target(views.buttonNext, "Next", "Tap when you have a guess. The answer is revealed, and occasionally you'll be asked to confirm whether you actually got it right."),
+            target(views.buttonFail, "I don't know", "Tap if you can't recall the meaning. The translation is revealed and you move on."),
+            target(views.buttonTip, "Tip", "Plays an example sentence using the word, to jog your memory."),
+            target(views.buttonNew, "A new word", "Skip the current word and pull a brand new one you haven't seen yet."),
+            target(views.buttonHard, "Flag as hard", "Marks this word as difficult so it appears more often."),
+            target(views.buttonLearned, "Mark as learned", "Tap once to reveal the answer, then tap again to confirm you've learned it and stop seeing it.")
+        )
+
+        findOverflowMenuButton()?.let { overflow ->
+            steps += target(
+                overflow,
+                "Settings & more",
+                "Open this menu to reach Settings, where you can download an advanced on-device AI that writes richer Tip sentences."
             )
+        }
+
+        TapTargetSequence(this)
+            .targets(steps)
             .continueOnCancel(true)
             .listener(object : TapTargetSequence.Listener {
                 override fun onSequenceFinish() {}
@@ -183,6 +194,22 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
         getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
             .edit().putBoolean("tutorial_shown", true).apply()
+    }
+
+    private fun findOverflowMenuButton(): View? {
+        val root = window.decorView as? ViewGroup ?: return null
+        return findOverflowMenuButton(root)
+    }
+
+    private fun findOverflowMenuButton(group: ViewGroup): View? {
+        for (i in 0 until group.childCount) {
+            val child = group.getChildAt(i)
+            if (child.javaClass.simpleName == "OverflowMenuButton") return child
+            if (child is ViewGroup) {
+                findOverflowMenuButton(child)?.let { return it }
+            }
+        }
+        return null
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
