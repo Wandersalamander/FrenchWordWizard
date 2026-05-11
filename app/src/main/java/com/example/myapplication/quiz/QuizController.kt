@@ -30,11 +30,9 @@ data class QuizViews(
     val textScore: TextView,
     val textEn: TextView,
     val textGuessLong: TextView,
-    val textProgressFinished: TextView,
-    val textProgressActive: TextView,
-    val textProgressUnseen: TextView,
-    val progressBar: ProgressBar,
-    val progressBarFinished: ProgressBar,
+    val textProgressTotal: TextView,
+    val progressBars: Map<Skill, ProgressBar>,
+    val progressBarsFinished: Map<Skill, ProgressBar>,
     val thinkingSparkle: ImageView,
 )
 
@@ -172,13 +170,12 @@ class QuizController(
             views.textEn.visibility = View.VISIBLE
             tts.speakEnglishWord(vocab)
 
-            // Regenerate example sentence with the LLM (falls back to CSV in
-            // generateAndShowExampleSentence on timeout/failure). User gave up,
-            // so show the sentence in full rather than masking it.
-            val sentence = generateAndShowExampleSentence(vocab)
-            // TTS queues this after the English word — by the time the LLM
-            // finishes, the English may already have played and the sentence
-            // plays immediately; otherwise it follows naturally.
+            // In a listening round, the user has already been hearing the
+            // example sentence (from Tip, masked). Reveal that exact sentence
+            // unmasked instead of regenerating — keeps the audio/text
+            // consistent. In other rounds, fall through to a fresh LLM call.
+            val isListeningRound = currentSkill == Skill.LISTEN && listeningEnabled
+            val sentence = generateAndShowExampleSentence(vocab, useExisting = isListeningRound)
             tts.speakSentenceAndAwait(sentence)
             delay(1000)
 
@@ -249,34 +246,47 @@ class QuizController(
         inSpotCheck = false
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
-        val totalSize = vocabDictionary.csvData.size.toFloat()
-        views.progressBar.progress = (vocabDictionary.getActiveDataSize().toFloat() / totalSize * 100).toInt()
-        views.progressBarFinished.progress = (vocabDictionary.getFinishedDataSize().toFloat() / totalSize * 100).toInt()
+        val total = vocabDictionary.csvData.size
+        val totalF = total.toFloat()
+        for (skill in Skill.ladder) {
+            val introduced = vocabDictionary.getActiveDataSize(skill)
+            val skillFinished = vocabDictionary.getFinishedDataSize(skill)
+            views.progressBars[skill]?.progress = (introduced / totalF * 100).toInt()
+            views.progressBarsFinished[skill]?.progress = (skillFinished / totalF * 100).toInt()
+        }
         val currentStats = vocab.stats(currentSkill)
         views.textScore.text = if (currentStats.meanTimeViewedMilli() == (10 * 1e3)) "A new word!"
             else currentStats.getInfoString()
         setQuizButtonsEnabled(true)
 
-        val total = vocabDictionary.csvData.size
-        val finished = vocabDictionary.getFinishedDataSize()
-        val active = vocabDictionary.getActiveDataSize() - finished
-        val unseen = total - vocabDictionary.getActiveDataSize()
-        views.textProgressFinished.text = finished.toString()
-        views.textProgressActive.text = active.toString()
-        views.textProgressUnseen.text = unseen.toString()
-        views.progressBar.post {
-            val totalF = total.toFloat()
-            val finishedFraction = finished.toFloat() / totalF
-            val seenFraction = vocabDictionary.getActiveDataSize().toFloat() / totalF
-            val barWidth = views.progressBar.width
-            val center = (finishedFraction + seenFraction) / 2f * barWidth
-            views.textProgressActive.translationX = center - views.textProgressActive.width / 2f
+        // Single readout above the stack: how many words have been introduced
+        // via the first ladder skill (READ). Other skills' counts are conveyed
+        // visually by the stacked bar lengths. The label is positioned over
+        // the right edge of READ's progress fill so it tracks visually.
+        val readSkill = Skill.ladder.first()
+        val readIntroduced = vocabDictionary.getActiveDataSize(readSkill)
+        views.textProgressTotal.text = readIntroduced.toString()
+        val readBar = views.progressBars[readSkill]
+        readBar?.post {
+            val barWidth = readBar.width
+            val labelWidth = views.textProgressTotal.width
+            val progressFraction = readIntroduced / totalF
+            val targetX = progressFraction * barWidth - labelWidth / 2f
+            val maxX = (barWidth - labelWidth).coerceAtLeast(0).toFloat()
+            views.textProgressTotal.translationX = targetX.coerceIn(0f, maxX)
         }
         displayForeignWord(vocab)
         views.textEn.visibility = View.INVISIBLE
         views.textEn.text = vocab.english
         views.textGuessLong.visibility = View.INVISIBLE
-        views.textGuessLong.text = vocab.getSomeFrenchLong()
+        // Seed the per-word sentence cache with the CSV fallback so a reveal
+        // (Fail) without a prior Tip still has something to display without
+        // burning an LLM call.
+        val seedSentence = vocab.getSomeFrenchLong()
+        views.textGuessLong.text = seedSentence
+        views.textGuessLong.setOnClickListener(null)
+        views.textGuessLong.isClickable = false
+        currentSentence = seedSentence
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
         setupLearnedButton()
 
@@ -322,28 +332,32 @@ class QuizController(
      * can hand it to TTS. When [maskWhenListening] is true and the current
      * round is a listening one, the on-screen text is replaced with bullets
      * — the user must rely on audio rather than reading the word inside the
-     * sentence.
+     * sentence. When [useExisting] is true (reveal flow), the cached
+     * [currentSentence] is reused instead of calling the LLM again.
      */
     private suspend fun generateAndShowExampleSentence(
         vocab: Vocab,
         maskWhenListening: Boolean = false,
+        useExisting: Boolean = false,
     ): String {
-        val sentence: String = if (LlmService.isReady) {
-            views.textGuessLong.visibility = View.INVISIBLE
-            startThinkingAnimation()
-            val generated = try {
-                LlmService.generate(
-                    word = vocab.french,
-                    translation = vocab.english,
-                    recent = recentWords.toList(),
-                    language = language,
-                )
-            } finally {
-                stopThinkingAnimation()
+        val sentence: String = when {
+            useExisting -> currentSentence ?: vocab.getSomeFrenchLong()
+            LlmService.isReady -> {
+                views.textGuessLong.visibility = View.INVISIBLE
+                startThinkingAnimation()
+                val generated = try {
+                    LlmService.generate(
+                        word = vocab.french,
+                        translation = vocab.english,
+                        recent = recentWords.toList(),
+                        language = language,
+                    )
+                } finally {
+                    stopThinkingAnimation()
+                }
+                generated ?: vocab.getSomeFrenchLong()
             }
-            generated ?: vocab.getSomeFrenchLong()
-        } else {
-            views.textGuessLong.text.toString()
+            else -> views.textGuessLong.text.toString()
         }
         currentSentence = sentence
         val maskNow = currentSkill == Skill.LISTEN && listeningEnabled && maskWhenListening
@@ -363,7 +377,7 @@ class QuizController(
     }
 
     private fun maskSentence(sentence: String): String =
-        "•".repeat(sentence.length)
+        sentence.map { if (it.isWhitespace()) it else '_' }.joinToString("")
 
     private fun startThinkingAnimation() {
         views.thinkingSparkle.visibility = View.VISIBLE

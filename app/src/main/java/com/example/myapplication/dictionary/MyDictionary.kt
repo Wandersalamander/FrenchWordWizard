@@ -27,15 +27,23 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         csvData.forEach { it.loadPreferences() }
     }
 
-    fun getActiveDataSize(): Int {
-        return csvData.filter { it.hasBeenIntroduced() }.size
-    }
+    fun getActiveDataSize(): Int = getActiveDataSize(Skill.ladder.first())
 
-    fun getFinishedDataSize(): Int {
-        return csvData.filter {
-            it.hasBeenIntroduced() && (it.ignore || it.isFullyLearned())
-        }.size
-    }
+    fun getFinishedDataSize(): Int = getFinishedDataSize(Skill.ladder.first())
+
+    /** Words where [skill] has been practiced at least once. */
+    fun getActiveDataSize(skill: Skill): Int =
+        csvData.count { it.stats(skill).nTimesViewed > 0 }
+
+    /**
+     * Words considered "done" for [skill]: either marked learned, or the
+     * skill's failureProbability has dropped below the retirement threshold.
+     */
+    fun getFinishedDataSize(skill: Skill): Int =
+        csvData.count {
+            it.stats(skill).nTimesViewed > 0 &&
+                (it.ignore || it.stats(skill).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD)
+        }
 
     fun getIgnoredDataSize(): Int {
         return csvData.filter { it.ignore }.size

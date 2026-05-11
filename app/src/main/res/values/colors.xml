@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Monokai palette — used to colour per-skill progress bars. -->
+    <color name="monokai_green">#A6E22E</color>
+    <color name="monokai_cyan">#66D9EF</color>
+    <color name="monokai_orange">#FD971F</color>
+    <color name="monokai_pink">#F92672</color>
+    <color name="monokai_purple">#AE81FF</color>
+    <color name="monokai_yellow">#E6DB74</color>
 </resources>

@@ -16,11 +16,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import android.widget.FrameLayout
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.dictionary.openDictionaryStream
 import com.example.myapplication.llm.LlmService
@@ -94,6 +97,33 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
         createNotificationChannel()
 
+        val progressBarsContainer = findViewById<FrameLayout>(R.id.progressBarsContainer)
+        val progressBars = mutableMapOf<Skill, ProgressBar>()
+        val progressBarsFinished = mutableMapOf<Skill, ProgressBar>()
+        // Monokai palette cycled by ladder index — each skill gets a distinct fill colour.
+        val skillColorResIds = listOf(
+            R.color.monokai_green,
+            R.color.monokai_cyan,
+            R.color.monokai_orange,
+            R.color.monokai_pink,
+            R.color.monokai_purple,
+        )
+        for ((index, skill) in Skill.ladder.withIndex()) {
+            val row = layoutInflater.inflate(R.layout.item_progress_bars, progressBarsContainer, false)
+            val bar = row.findViewById<ProgressBar>(R.id.progressBarSkill)
+            val barFinished = row.findViewById<ProgressBar>(R.id.progressBarSkillFinished)
+            val colorRes = skillColorResIds[index % skillColorResIds.size]
+            bar.progressTintList = ContextCompat.getColorStateList(this, colorRes)
+            // Later skills are more transparent so the layers behind remain visible
+            // where they extend beyond the upper skill's progress.
+            val alpha = 1f / (index + 1)
+            bar.alpha = alpha
+            barFinished.alpha = alpha
+            progressBars[skill] = bar
+            progressBarsFinished[skill] = barFinished
+            progressBarsContainer.addView(row)
+        }
+
         views = QuizViews(
             buttonFail = findViewById(R.id.button_fail),
             buttonNext = findViewById(R.id.button_next),
@@ -105,11 +135,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textScore = findViewById(R.id.textScore),
             textEn = findViewById(R.id.textReal),
             textGuessLong = findViewById(R.id.textGuessLong),
-            textProgressFinished = findViewById(R.id.textProgressFinished),
-            textProgressActive = findViewById(R.id.textProgressActive),
-            textProgressUnseen = findViewById(R.id.textProgressUnseen),
-            progressBar = findViewById(R.id.progressBar),
-            progressBarFinished = findViewById(R.id.progressBarFinished),
+            textProgressTotal = findViewById(R.id.textProgressTotal),
+            progressBars = progressBars,
+            progressBarsFinished = progressBarsFinished,
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
 
@@ -124,9 +152,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         language = Language.fromCode(sharedPreferences.getString("app_language", null))
         val inputStream = openDictionaryStream(this, language)
 
-        views.textProgressFinished.text = ""
-        views.textProgressActive.text = ""
-        views.textProgressUnseen.text = ""
+        views.textProgressTotal.text = ""
         views.textScore.text = ""
         views.textGuessLong.text = ""
         views.textFr.text = language.greeting
@@ -134,8 +160,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
         vocabDictionary = MyDictionary(inputStream, sharedPreferences)
         val initTotalSize = vocabDictionary.csvData.size.toFloat()
-        views.progressBar.progress = (vocabDictionary.getActiveDataSize().toFloat() / initTotalSize * 100).toInt()
-        views.progressBarFinished.progress = (vocabDictionary.getFinishedDataSize().toFloat() / initTotalSize * 100).toInt()
+        for (skill in Skill.ladder) {
+            views.progressBars[skill]?.progress =
+                (vocabDictionary.getActiveDataSize(skill) / initTotalSize * 100).toInt()
+            views.progressBarsFinished[skill]?.progress =
+                (vocabDictionary.getFinishedDataSize(skill) / initTotalSize * 100).toInt()
+        }
 
         quizController = QuizController(
             activity = this,

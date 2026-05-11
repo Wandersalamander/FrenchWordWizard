@@ -85,32 +85,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/textScore"
         app:layout_constraintStart_toEndOf="@+id/textGuess" />
 
-    <TextView
-        android:id="@+id/textProgressFinished"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <TextView
-        android:id="@+id/textProgressUnseen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/progressBar"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <TextView
-        android:id="@+id/textProgressActive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar" />
 
     <Button
         android:id="@+id/button_next"
@@ -162,26 +136,28 @@
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="123dp" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <LinearLayout
+        android:id="@+id/progressContainer"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-
+        android:orientation="vertical"
         android:layout_marginBottom="32dp"
-        android:progress="10"
         app:layout_constraintBottom_toTopOf="@+id/button_fail"
-        app:layout_constraintStart_toStartOf="@+id/button_fail" />
+        app:layout_constraintStart_toStartOf="@+id/button_fail">
 
-    <ProgressBar
-        android:id="@+id/progressBarFinished"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:progress="0"
-        android:progressTint="#FFFFFF"
-        android:progressBackgroundTint="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+        <TextView
+            android:id="@+id/textProgressTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="14sp" />
+
+        <!-- Per-skill bar rows are inflated into here at runtime, one per Skill.ladder
+             entry. FrameLayout makes them share the same Y position so they appear
+             stacked rather than tiled. -->
+        <FrameLayout
+            android:id="@+id/progressBarsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
