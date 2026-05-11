@@ -106,10 +106,21 @@ class QuizController(
     /** True when listening practice is active (masking happens for LISTEN words). */
     fun isListeningModeEnabled(): Boolean = listeningEnabled
 
-    /** Toggle session-scoped listening mode and refresh the current word's display. */
+    /**
+     * Toggle session-scoped listening mode and refresh the current word's
+     * display. Both [QuizViews.textFr] and [QuizViews.textGuessLong] (if
+     * currently visible) are re-rendered so masking stays consistent
+     * across the two views.
+     */
     fun setListeningModeEnabled(enabled: Boolean) {
         listeningEnabled = enabled
-        currentVocab?.let { displayForeignWord(it) }
+        val vocab = currentVocab ?: return
+        displayForeignWord(vocab)
+        if (views.textGuessLong.visibility == View.VISIBLE) {
+            val sentence = currentSentence ?: return
+            val maskNow = currentSkill == Skill.LISTEN && listeningEnabled
+            renderSentence(sentence, maskNow)
+        }
     }
 
     fun onHardClick() {
@@ -361,7 +372,16 @@ class QuizController(
         }
         currentSentence = sentence
         val maskNow = currentSkill == Skill.LISTEN && listeningEnabled && maskWhenListening
-        if (maskNow) {
+        renderSentence(sentence, maskNow)
+        views.textGuessLong.alpha = 0f
+        views.textGuessLong.visibility = View.VISIBLE
+        views.textGuessLong.animate().alpha(1f).setDuration(220).start()
+        return sentence
+    }
+
+    /** Sets [QuizViews.textGuessLong]'s text and tap-handler based on [mask]. */
+    private fun renderSentence(sentence: String, mask: Boolean) {
+        if (mask) {
             views.textGuessLong.text = maskSentence(sentence)
             views.textGuessLong.setOnClickListener { onMaskedSentenceTapped() }
             views.textGuessLong.isClickable = true
@@ -370,10 +390,6 @@ class QuizController(
             views.textGuessLong.setOnClickListener(null)
             views.textGuessLong.isClickable = false
         }
-        views.textGuessLong.alpha = 0f
-        views.textGuessLong.visibility = View.VISIBLE
-        views.textGuessLong.animate().alpha(1f).setDuration(220).start()
-        return sentence
     }
 
     private fun maskSentence(sentence: String): String =
