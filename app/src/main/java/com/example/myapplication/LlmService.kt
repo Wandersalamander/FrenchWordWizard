@@ -243,17 +243,13 @@ object LlmService {
         word: String,
         translation: String,
         recent: List<String>,
-        lang: String,
+        language: Language,
         timeoutMs: Long = 5000L
     ): String? {
         val e = engine ?: return null
         if (!isReady) return null
 
-        val langName = when (lang) {
-            "de" -> "German"
-            "it" -> "Italian"
-            else -> "French"
-        }
+        val langName = language.englishName
         // Pass at most 3 random words sampled from the most recent 10. Two
         // reasons:
         //   1. If we send the full recent list, common short words ("libro",

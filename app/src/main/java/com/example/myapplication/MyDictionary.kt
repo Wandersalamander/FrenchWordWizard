@@ -9,12 +9,8 @@ import kotlin.random.Random
 
 private val tierFileRegex = Regex("""dictionary_sorted_.+_\d{2}\.csv""")
 
-fun openDictionaryStream(context: Context, language: String): InputStream {
-    val folder = when (language) {
-        "de" -> "german"
-        "it" -> "italian"
-        else -> "french"
-    }
+fun openDictionaryStream(context: Context, language: Language): InputStream {
+    val folder = language.assetFolder
     val files = context.assets.list(folder)
         ?.filter { tierFileRegex.matches(it) }
         ?.sorted()

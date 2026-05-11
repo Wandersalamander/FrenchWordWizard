@@ -74,8 +74,8 @@ class MyForegroundService : Service() {
         val sharedPreferences: SharedPreferences = getSharedPreferences(
             "vocabulary_preferences", Context.MODE_PRIVATE
         )
-        val currentLanguage = sharedPreferences.getString("app_language", "fr") ?: "fr"
-        val inputStream: InputStream = openDictionaryStream(this, currentLanguage)
+        val language = Language.fromCode(sharedPreferences.getString("app_language", null))
+        val inputStream: InputStream = openDictionaryStream(this, language)
         vocabDictionary = MyDictionary(inputStream, sharedPreferences)
 
         startForeground(

@@ -43,9 +43,8 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
     // LiteRT-LM SDK — used to load .litertlm model files (Gemma 4 family).
     // We migrated off com.google.mediapipe:tasks-genai because Gemma 4 only
-    // ships in the .litertlm format. Pin to a specific version once you know
-    // the latest release (e.g. '0.1.0').
-    implementation 'com.google.ai.edge.litertlm:litertlm-android:latest.release'
+    // ships in the .litertlm format.
+    implementation 'com.google.ai.edge.litertlm:litertlm-android:0.11.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

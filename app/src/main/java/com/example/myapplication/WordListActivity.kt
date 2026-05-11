@@ -46,7 +46,7 @@ class WordListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_word_list)
 
         val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-        val language = prefs.getString("app_language", "fr") ?: "fr"
+        val language = Language.fromCode(prefs.getString("app_language", null))
         sortIndex = prefs.getInt("wordlist_sort_index", 0).coerceIn(0, sortOptions.lastIndex)
 
         dictionary = MyDictionary(openDictionaryStream(this, language), prefs)

@@ -5,65 +5,6 @@ import java.util.concurrent.TimeUnit
 import kotlin.math.ln
 import kotlin.random.Random
 
-val abbreviationDictionaryFr = mapOf(
-    "Jr." to "Junior",
-    "qc." to "quelque chose",
-    "Dr." to "Docteur",
-    "M." to "Monsieur",
-    "etc." to "et cetera",
-    "sec." to "seconde",
-    "qn." to "quelqu'un",
-    "St." to "Saint",
-)
-
-val abbreviationDictionaryDe = mapOf(
-    "z.B." to "zum Beispiel",
-    "usw." to "und so weiter",
-    "d.h." to "das heißt",
-    "bzw." to "beziehungsweise",
-    "Dr." to "Doktor",
-    "etc." to "et cetera",
-    "St." to "Sankt",
-    "Nr." to "Nummer",
-    "ca." to "circa",
-)
-
-val abbreviationDictionaryIt = mapOf(
-    "Sig." to "Signor",
-    "Sig.ra" to "Signora",
-    "Sig.na" to "Signorina",
-    "Dr." to "Dottore",
-    "Prof." to "Professore",
-    "ecc." to "eccetera",
-    "etc." to "eccetera",
-    "es." to "esempio",
-    "pag." to "pagina",
-    "St." to "Santo",
-)
-
-val abbreviationDictionaryEn = mapOf(
-    "vs." to "versus",
-    "sth." to "something",
-    "stb." to "somebody",
-    "Mr." to "Mister",
-    "Jr." to "junior",
-    "etc." to "etcetera",
-    "Dr." to "Doctor",
-    "qn." to "someone",
-    "qc." to "something",
-    "sb." to "somebody",
-    "Ms." to "Miss",
-    "Mrs." to "Misses",
-    "St." to "Saint",
-    "Ph.D." to "P H D ",
-)
-
-val regExPatternFr = abbreviationDictionaryFr.keys.joinToString("|") { Regex.escape(it) }.toRegex()
-val regExPatternEn = abbreviationDictionaryEn.keys.joinToString("|") { Regex.escape(it) }.toRegex()
-val regExPatternDe = abbreviationDictionaryDe.keys.joinToString("|") { Regex.escape(it) }.toRegex()
-val regExPatternIt = abbreviationDictionaryIt.keys.joinToString("|") { Regex.escape(it) }.toRegex()
-
-
 data class Vocab(
     val french: String,
     val english: String,
@@ -194,44 +135,9 @@ data class Vocab(
     }
 
 
-    fun replaceMultiplePhrasesRegexFr(input: String): String {
-        return regExPatternFr.replace(input) {
-            abbreviationDictionaryFr[it.value] ?: it.value
-        }.replace("(", "").replace(")", "")
-    }
+    fun pronounceableEn(): String = EnglishAbbreviations.expand(english)
 
-    fun replaceMultiplePhrasesRegexEn(input: String): String {
-        return regExPatternEn.replace(input) {
-            abbreviationDictionaryEn[it.value] ?: it.value
-        }.replace("(", "").replace(")", "")
-    }
-
-    fun replaceMultiplePhrasesRegexDe(input: String): String {
-        return regExPatternDe.replace(input) {
-            abbreviationDictionaryDe[it.value] ?: it.value
-        }.replace("(", "").replace(")", "")
-    }
-
-    fun replaceMultiplePhrasesRegexIt(input: String): String {
-        return regExPatternIt.replace(input) {
-            abbreviationDictionaryIt[it.value] ?: it.value
-        }.replace("(", "").replace(")", "")
-    }
-
-    fun pronounceableFr(): String {
-        return replaceMultiplePhrasesRegexFr(french)
-    }
-
-    fun pronounceableEn(): String {
-        return replaceMultiplePhrasesRegexEn(english)
-    }
-
-    fun pronounceableForeign(lang: String): String {
-        return when (lang) {
-            "de" -> replaceMultiplePhrasesRegexDe(french)
-            "it" -> replaceMultiplePhrasesRegexIt(french)
-            else -> replaceMultiplePhrasesRegexFr(french)
-        }
-    }
+    fun pronounceableForeign(language: Language): String =
+        language.expandAbbreviations(french)
 }
 

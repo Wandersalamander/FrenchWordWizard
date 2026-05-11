@@ -20,27 +20,29 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-        val currentLang = prefs.getString("app_language", "fr") ?: "fr"
+        val currentLanguage = Language.fromCode(prefs.getString("app_language", null))
 
         val radioGroup = findViewById<RadioGroup>(R.id.languageRadioGroup)
         val radioFrench = findViewById<RadioButton>(R.id.radioFrench)
         val radioGerman = findViewById<RadioButton>(R.id.radioGerman)
         val radioItalian = findViewById<RadioButton>(R.id.radioItalian)
 
-        when (currentLang) {
-            "fr" -> radioFrench.isChecked = true
-            "de" -> radioGerman.isChecked = true
-            "it" -> radioItalian.isChecked = true
-        }
+        val radioByLanguage = mapOf(
+            Language.FRENCH to radioFrench,
+            Language.GERMAN to radioGerman,
+            Language.ITALIAN to radioItalian,
+        )
+        val languageByRadioId = mapOf(
+            R.id.radioFrench to Language.FRENCH,
+            R.id.radioGerman to Language.GERMAN,
+            R.id.radioItalian to Language.ITALIAN,
+        )
+
+        radioByLanguage[currentLanguage]?.isChecked = true
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            val lang = when (checkedId) {
-                R.id.radioFrench -> "fr"
-                R.id.radioGerman -> "de"
-                R.id.radioItalian -> "it"
-                else -> "fr"
-            }
-            prefs.edit().putString("app_language", lang).apply()
+            val language = languageByRadioId[checkedId] ?: Language.DEFAULT
+            prefs.edit().putString("app_language", language.code).apply()
         }
 
         // AI status — kick off init in case the user opened settings before MainActivity ran,
