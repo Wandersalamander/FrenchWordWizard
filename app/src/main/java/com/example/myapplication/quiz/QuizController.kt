@@ -5,6 +5,7 @@ import android.graphics.drawable.Animatable
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.Skill
+import com.example.myapplication.dictionary.SkillStats
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.llm.LlmService
 import android.os.VibrationEffect
@@ -85,6 +86,13 @@ class QuizController(
     // the original even when [QuizViews.textGuessLong] displays the masked form.
     private var currentSentence: String? = null
 
+    // Snapshot of the active skill's stats at round start. Used to roll back
+    // any mid-round mutations if the round is later flagged as compromised
+    // (e.g. listening toggled off in a LISTEN round — user could read the
+    // foreign word so the round shouldn't count toward LISTEN's stats).
+    private var roundStartSnapshot: SkillStats? = null
+    private var roundCompromised: Boolean = false
+
     fun onFailClick() {
         if (inSpotCheck) exitSpotCheck(wasWrong = true)
         else revealAllVocabData(showNextVocab = true)
@@ -114,6 +122,11 @@ class QuizController(
      */
     fun setListeningModeEnabled(enabled: Boolean) {
         listeningEnabled = enabled
+        // Disabling mid-round means the user can now read the foreign word
+        // straight off the screen — flag the round so stats don't get credit.
+        if (!enabled && currentSkill == Skill.LISTEN) {
+            roundCompromised = true
+        }
         val vocab = currentVocab ?: return
         displayForeignWord(vocab)
         if (views.textGuessLong.visibility == View.VISIBLE) {
@@ -211,7 +224,15 @@ class QuizController(
 
     private fun startSpotCheck() {
         inSpotCheck = true
-        views.textEn.visibility = View.VISIBLE
+        if (currentSkill == Skill.INVERT) {
+            // English is already on screen as the prompt; reveal the foreign
+            // answer so the user can verify their mental production.
+            revealCurrentForeignWord()
+        } else {
+            // READ / LISTEN: foreign is what the user has been working with;
+            // show the English meaning so they can verify recall.
+            views.textEn.visibility = View.VISIBLE
+        }
 
         views.buttonFail.text = "✗ Wrong"
         views.buttonNext.text = "✓ Correct"
@@ -259,6 +280,11 @@ class QuizController(
         }
 
         val vocab = currentVocab!!
+        // Snapshot the active skill's stats so we can roll back if the round
+        // turns out to be compromised. A LISTEN round started with listening
+        // already off counts as compromised from the start.
+        roundStartSnapshot = vocab.stats(currentSkill).copy()
+        roundCompromised = currentSkill == Skill.LISTEN && !listeningEnabled
         inSpotCheck = false
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
@@ -324,6 +350,32 @@ class QuizController(
 
     private fun saveCurrentVocab(penalty: Long) {
         val vocab = currentVocab ?: return
+
+        // Always update recent-words: the user has seen this word regardless
+        // of whether the round counts, and we don't want to surface it again
+        // back-to-back.
+        val justFinished = vocab.french
+        recentWords.remove(justFinished)
+        recentWords.addLast(justFinished)
+        while (recentWords.size > recentWordsCapacity) {
+            recentWords.removeFirst()
+        }
+
+        val snapshot = roundStartSnapshot
+        if (roundCompromised && snapshot != null) {
+            // Listening was off at some point during a LISTEN round — the
+            // user could read the foreign word, so roll back any in-memory
+            // mutations from the round and persist the rolled-back state.
+            val stats = vocab.stats(currentSkill)
+            stats.viewTimeMilli = snapshot.viewTimeMilli
+            stats.viewTimeMilli_prev = snapshot.viewTimeMilli_prev
+            stats.nTimesViewed = snapshot.nTimesViewed
+            stats.nTimesFailed = snapshot.nTimesFailed
+            stats.lastDisplayed = snapshot.lastDisplayed
+            vocab.savePreferences()
+            return
+        }
+
         val endTime = System.currentTimeMillis()
         val timeElapsed = endTime - startTime + penalty
 
@@ -335,13 +387,6 @@ class QuizController(
         stats.viewTimeMilli = (alpha * timeElapsed + (1.0 - alpha) * stats.viewTimeMilli).toLong()
         stats.lastDisplayed = System.currentTimeMillis()
         vocab.savePreferences()
-
-        val justFinished = vocab.french
-        recentWords.remove(justFinished)
-        recentWords.addLast(justFinished)
-        while (recentWords.size > recentWordsCapacity) {
-            recentWords.removeFirst()
-        }
 
         if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
