@@ -1,7 +1,6 @@
 package com.example.myapplication.dictionary
 
 import android.content.SharedPreferences
-import java.util.concurrent.TimeUnit
 import kotlin.math.ln
 import kotlin.random.Random
 
@@ -25,9 +24,6 @@ data class Vocab(
     var viewTimeMilli: Long
         get() = skillStats.getValue(Skill.READ).viewTimeMilli
         set(value) { skillStats.getValue(Skill.READ).viewTimeMilli = value }
-    var viewTimeMilli_prev: Long
-        get() = skillStats.getValue(Skill.READ).viewTimeMilli_prev
-        set(value) { skillStats.getValue(Skill.READ).viewTimeMilli_prev = value }
     var nTimesViewed: Int
         get() = skillStats.getValue(Skill.READ).nTimesViewed
         set(value) { skillStats.getValue(Skill.READ).nTimesViewed = value }
@@ -71,14 +67,15 @@ data class Vocab(
 
     fun debugSortValue(): String {
         // high value for low nTimesViewed, high viewTimeMilli, high lastSeenHours
-        val lastSeenHours = viewedMiutesAgo() / 60.0
-        val a = viewedMiutesAgo()
+        val s = stats(Skill.READ)
+        val lastSeenHours = s.viewedMiutesAgo() / 60.0
+        val a = s.viewedMiutesAgo()
         val b = ((ln(1.0f + lastSeenHours) + 1.0f))
-        var c = (failureProbability())
+        var c = s.failureProbability()
         if (c < 0.1) {
             c = 0.0F  // ignore words that are learned well enough
         }
-        val d = (meanTimeViewedMilli()) / 10e3
+        val d = s.meanTimeViewedMilli() / 10e3
         val z = sortValue()
         return String.format("$french\t$a\t$b\t$c\t$d\t$z")
     }
@@ -100,54 +97,55 @@ data class Vocab(
         editor.apply()
     }
 
-    fun failureProbability(): Float {
-        return if (nTimesViewed == 0) {
-            1.0f
-        } else {
-            val base = 0.5f / nTimesViewed.toFloat()
-            val raw = base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
-            raw.coerceIn(0.0f, 1.0f)
-        }
+    fun stats(skill: Skill): SkillStats = skillStats.getValue(skill)
+
+    /**
+     * True once this word has entered the rotation via its first ladder skill.
+     * All other skills' (word, skill) pairs only enter the active pool once
+     * this is true — first exposure always happens through the first skill.
+     */
+    fun hasBeenIntroduced(): Boolean = stats(Skill.ladder.first()).nTimesViewed > 0
+
+    /**
+     * Sticky per-word unlock: a skill is unlocked once its predecessor in the
+     * ladder has been mastered below [Skill.unlockThreshold], and stays unlocked
+     * thereafter (even if the predecessor's stats later regress). The first
+     * ladder skill is always unlocked.
+     */
+    fun isSkillUnlocked(skill: Skill): Boolean {
+        val idx = Skill.ladder.indexOf(skill)
+        if (idx == 0) return true
+        if (stats(skill).nTimesViewed > 0) return true  // sticky: once practiced, always unlocked
+        val predecessor = Skill.ladder[idx - 1]
+        return stats(predecessor).failureProbability() < skill.unlockThreshold
     }
 
-    fun getInfoString(): String {
-        return getTimeString() + "\n" + getStarsString()
-    }
+    /** True when every skill in the ladder is retired below the finished threshold. */
+    fun isFullyLearned(): Boolean =
+        Skill.ladder.all { stats(it).failureProbability() < SKILL_FINISHED_THRESHOLD }
 
-    fun getTimeString(): String {
-        return String.format("⧖ %.1f s", (meanTimeViewedMilli() / 1e3))
-    }
+    // Facades targeting the READ skill — let pre-skill-split call sites keep working.
+    // Skill-aware code should call methods on stats(skill) directly.
+    fun failureProbability(): Float = stats(Skill.READ).failureProbability()
+    fun getInfoString(): String = stats(Skill.READ).getInfoString()
+    fun meanTimeViewedMilli(): Double = stats(Skill.READ).meanTimeViewedMilli()
 
-    fun getStarsString(): String {
-        var sucessProbability: Float = 1.0f - failureProbability() // 0 to 1
-        if (sucessProbability > 1.0f) {
-            sucessProbability = 1.0f
-        }
-        if (sucessProbability < 0.0f) {
-            sucessProbability = 0.0f
-        }
-        val star_number = 5
-        val n_full_stars: Int = ((star_number * sucessProbability).toInt())
-
-        val remainder: Int = star_number - n_full_stars
-        return "★".repeat(n_full_stars) + "☆".repeat(remainder)
-    }
-
-    fun meanTimeViewedMilli() = viewTimeMilli.toDouble()
-
-    fun viewedMiutesAgo() =
-        TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - lastDisplayed)
-
-
-    fun sortValue(): Double {
-        val fpb = failureProbability()
-        if (fpb < 0.1) {
+    fun sortValue(skill: Skill = Skill.READ): Double {
+        val s = stats(skill)
+        val fpb = s.failureProbability()
+        if (fpb < SKILL_FINISHED_THRESHOLD) {
             return 0.0
         }
-        val lastSeenHours = viewedMiutesAgo() / 60.0
+        val lastSeenHours = if (s.nTimesViewed == 0) {
+            // Newly-active skill pair — lastDisplayed is the epoch (1970), which
+            // would make viewedMiutesAgo absurd. Treat as "due now-ish" instead.
+            24.0
+        } else {
+            s.viewedMiutesAgo() / 60.0
+        }
         val hardMultiplier = if (flaggedHard) 3.0 else 1.0
         // Time as a gentle multiplier: 5s -> 1.0, 2s -> 0.7, 15s -> 1.4, clamped to [0.5, 2.0]
-        val timeFactor = (0.4 + 0.12 * meanTimeViewedMilli() / 1000.0).coerceIn(0.5, 2.0)
+        val timeFactor = (0.4 + 0.12 * s.meanTimeViewedMilli() / 1000.0).coerceIn(0.5, 2.0)
         return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) * fpb * timeFactor * hardMultiplier
     }
 
@@ -156,5 +154,11 @@ data class Vocab(
 
     fun pronounceableForeign(language: Language): String =
         language.expandAbbreviations(french)
+
+    companion object {
+        // Below this failure probability, a (word, skill) pair is retired — it
+        // never appears in the quiz pool again.
+        const val SKILL_FINISHED_THRESHOLD = 0.1f
+    }
 }
 

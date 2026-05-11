@@ -6,11 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
 import java.util.concurrent.TimeUnit
 
 class WordListAdapter(
     private var items: List<Vocab>,
+    private var skill: Skill,
 ) : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
 
     class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,15 +31,16 @@ class WordListAdapter(
 
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         val v = items[position]
+        val s = v.stats(skill)
         holder.foreign.text = v.french
         holder.english.text = v.english
-        holder.stars.text = v.getStarsString()
-        val avgTimeS = v.meanTimeViewedMilli() / 1000.0
+        holder.stars.text = s.getStarsString()
+        val avgTimeS = s.meanTimeViewedMilli() / 1000.0
         holder.meta.text = String.format(
             "%d views  •  ⧖ %.1fs  •  %s",
-            v.nTimesViewed,
+            s.nTimesViewed,
             avgTimeS,
-            formatLastSeen(v.lastDisplayed),
+            formatLastSeen(s.lastDisplayed),
         )
         val flagBits = mutableListOf<String>()
         if (v.flaggedHard) flagBits.add("Hard")
@@ -54,6 +57,12 @@ class WordListAdapter(
 
     fun update(newItems: List<Vocab>) {
         items = newItems
+        notifyDataSetChanged()
+    }
+
+    fun setSkill(newSkill: Skill) {
+        if (newSkill == skill) return
+        skill = newSkill
         notifyDataSetChanged()
     }
 

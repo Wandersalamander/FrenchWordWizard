@@ -107,7 +107,7 @@ class MyForegroundService : Service() {
 
     private fun updateNotification() {
         vocabDictionary.reloadPreferences()
-        val localVocab = vocabDictionary.getActiveVocabWeightened()
+        val (localVocab, _) = vocabDictionary.getActiveVocabWeightened()
         val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this,

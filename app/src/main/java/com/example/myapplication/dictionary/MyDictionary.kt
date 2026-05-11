@@ -28,11 +28,13 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     }
 
     fun getActiveDataSize(): Int {
-        return csvData.filter { it.nTimesViewed > 0 }.size
+        return csvData.filter { it.hasBeenIntroduced() }.size
     }
 
     fun getFinishedDataSize(): Int {
-        return csvData.filter { it.nTimesViewed > 0 && (it.ignore || it.failureProbability() < 0.1f) }.size
+        return csvData.filter {
+            it.hasBeenIntroduced() && (it.ignore || it.isFullyLearned())
+        }.size
     }
 
     fun getIgnoredDataSize(): Int {
@@ -40,7 +42,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     }
 
     fun debugDictionary() {
-        val activeData = csvData.filter { it.nTimesViewed != 0 }.iterator()
+        val activeData = csvData.filter { it.hasBeenIntroduced() }.iterator()
         while (activeData.hasNext()) {
             val vocab = activeData.next()
             println(vocab.debugSortValue())
@@ -71,41 +73,67 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         }
     }
 
-    fun getInactiveVocab(): Vocab {
-        val inactiveCsvData = csvData.filter { it.nTimesViewed == 0 && !it.ignore }
+    fun getInactiveVocab(): Pair<Vocab, Skill> {
+        val firstSkill = Skill.ladder.first()
+        val inactiveCsvData = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
         if (inactiveCsvData.isEmpty()) {
             return getActiveVocabWeightened()
         }
         val minImportance = inactiveCsvData.minOf { it.importance }
         val candidates = inactiveCsvData.filter { it.importance == minImportance }
-        return candidates[Random.nextInt(candidates.size)]
+        return candidates[Random.nextInt(candidates.size)] to firstSkill
     }
 
-    fun getActiveVocabWeightened(): Vocab {
-        val activeData = csvData.filter { (it.nTimesViewed != 0) && !it.ignore && (it.sortValue() > 0.0) }
-        if (activeData.size < 20) {
-            val inactive = csvData.filter { it.nTimesViewed == 0 && !it.ignore }
+    /**
+     * Selection pool is every (word, skill) pair where the word has been
+     * introduced and the skill is not yet retired (sortValue > 0). Each pair
+     * is independently weighted by its own sortValue, so a word with two
+     * still-active skills appears twice — that's intentional: more unfinished
+     * skills means more practice needed.
+     */
+    fun getActiveVocabWeightened(): Pair<Vocab, Skill> {
+        val firstSkill = Skill.ladder.first()
+        val activePairs: List<Pair<Vocab, Skill>> = csvData.flatMap { vocab ->
+            if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
+            Skill.ladder.mapNotNull { skill ->
+                if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
+                if (vocab.sortValue(skill) > 0.0) vocab to skill else null
+            }
+        }
+        if (activePairs.size < 20) {
+            val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
             if (inactive.isNotEmpty()) {
                 val minImportance = inactive.minOf { it.importance }
                 val candidates = inactive.filter { it.importance == minImportance }
-                return candidates[Random.nextInt(candidates.size)]
+                return candidates[Random.nextInt(candidates.size)] to firstSkill
             }
-            val available = csvData.filter { !it.ignore && !(it.nTimesViewed > 0 && it.failureProbability() < 0.1f) }
-            if (available.isEmpty()) return csvData[Random.nextInt(csvData.size)]
-            return available[Random.nextInt(available.size)]
+            val available = csvData.filter {
+                !it.ignore && !(it.hasBeenIntroduced() && it.isFullyLearned())
+            }
+            if (available.isEmpty()) {
+                return csvData[Random.nextInt(csvData.size)] to firstSkill
+            }
+            val pickedVocab = available[Random.nextInt(available.size)]
+            // The vocab may have one or more skills retired; pick the first one
+            // that's actually active so we don't waste a round on a retired skill.
+            val pickedSkill = Skill.ladder.firstOrNull {
+                pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
+            } ?: firstSkill
+            return pickedVocab to pickedSkill
         }
-        val totalChance = activeData.sumOf { it.sortValue() }
+        val totalChance = activePairs.sumOf { (vocab, skill) -> vocab.sortValue(skill) }
         val randomValue = Random.nextDouble(0.0, totalChance)
         var sum = 0.0
         var idx = 0
-        for (i in 0 until activeData.size) {
-            sum += activeData[i].sortValue()
+        for (i in 0 until activePairs.size) {
+            val (vocab, skill) = activePairs[i]
+            sum += vocab.sortValue(skill)
             idx = i
             if (sum >= randomValue) {
                 break
             }
         }
-        return activeData[idx]
+        return activePairs[idx]
     }
 
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Animatable
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.llm.LlmService
 import android.os.VibrationEffect
@@ -13,6 +14,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
@@ -71,6 +73,16 @@ class QuizController(
     private var inSpotCheck = false
     private val spotCheckProbability = 0.2
 
+    // Skill being practiced for the currently-displayed word. Set in updateVocab
+    // when a new word is picked and used for all stat writes during the round.
+    private var currentSkill: Skill = Skill.READ
+
+    // Session-scoped state for the LISTEN masking flow. The user is asked on the
+    // first ⬤ tap whether they want to reveal individual words or stop masking
+    // entirely (e.g. on a train without headphones).
+    private enum class ListenMode { ASK_ON_TAP, TAP_REVEALS, DISABLED }
+    private var listenMode: ListenMode = ListenMode.ASK_ON_TAP
+
     fun onFailClick() {
         if (inSpotCheck) exitSpotCheck(wasWrong = true)
         else revealAllVocabData(showNextVocab = true)
@@ -119,7 +131,7 @@ class QuizController(
 
     private fun showTip() {
         val vocab = currentVocab ?: return
-        vocab.nTimesFailed += 0.25f
+        vocab.stats(currentSkill).nTimesFailed += 0.25f
 
         setQuizButtonsEnabled(false)
 
@@ -143,6 +155,8 @@ class QuizController(
         activity.lifecycleScope.launch {
             // User admitted they don't know — reveal the English and speak it
             // right away, in parallel with the LLM example-sentence generation.
+            // Also unmask the foreign word if it was hidden for listening practice.
+            revealCurrentForeignWord()
             views.textEn.visibility = View.VISIBLE
             tts.speakEnglishWord(vocab)
 
@@ -193,7 +207,7 @@ class QuizController(
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
         if (wasWrong) {
-            currentVocab?.nTimesFailed = (currentVocab?.nTimesFailed ?: 0f) + 1.0f
+            currentVocab?.let { it.stats(currentSkill).nTimesFailed += 1.0f }
             updateVocab(2000, newCandidates = false)
         } else {
             updateVocab(0, newCandidates = false)
@@ -202,17 +216,21 @@ class QuizController(
 
     fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
         if (penalty > 0 && currentVocab != null) {
-            currentVocab!!.nTimesFailed += 1.0f
+            currentVocab!!.stats(currentSkill).nTimesFailed += 1.0f
         }
         if (saveVocab) saveCurrentVocab(penalty)
 
         if (currentVocab == null) {
-            currentVocab = pickNextVocab(newCandidates)
+            val (v, s) = pickNextVocab(newCandidates)
+            currentVocab = v
+            currentSkill = s
         }
         val previousVocabFrench = currentVocab!!.french
         var attempts = 0
         while (currentVocab!!.french == previousVocabFrench && attempts < 50) {
-            currentVocab = pickNextVocab(newCandidates)
+            val (v, s) = pickNextVocab(newCandidates)
+            currentVocab = v
+            currentSkill = s
             attempts++
         }
 
@@ -223,8 +241,9 @@ class QuizController(
         val totalSize = vocabDictionary.csvData.size.toFloat()
         views.progressBar.progress = (vocabDictionary.getActiveDataSize().toFloat() / totalSize * 100).toInt()
         views.progressBarFinished.progress = (vocabDictionary.getFinishedDataSize().toFloat() / totalSize * 100).toInt()
-        views.textScore.text = if (vocab.meanTimeViewedMilli() == (10 * 1e3)) "A new word!"
-            else vocab.getInfoString()
+        val currentStats = vocab.stats(currentSkill)
+        views.textScore.text = if (currentStats.meanTimeViewedMilli() == (10 * 1e3)) "A new word!"
+            else currentStats.getInfoString()
         setQuizButtonsEnabled(true)
 
         val total = vocabDictionary.csvData.size
@@ -242,7 +261,7 @@ class QuizController(
             val center = (finishedFraction + seenFraction) / 2f * barWidth
             views.textProgressActive.translationX = center - views.textProgressActive.width / 2f
         }
-        views.textFr.text = vocab.french
+        displayForeignWord(vocab)
         views.textEn.visibility = View.INVISIBLE
         views.textEn.text = vocab.english
         views.textGuessLong.visibility = View.INVISIBLE
@@ -254,7 +273,7 @@ class QuizController(
         tts.speakForeignWord(vocab, flush = true)
     }
 
-    private fun pickNextVocab(newCandidates: Boolean): Vocab =
+    private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> =
         if (newCandidates) vocabDictionary.getInactiveVocab()
         else vocabDictionary.getActiveVocabWeightened()
 
@@ -263,12 +282,13 @@ class QuizController(
         val endTime = System.currentTimeMillis()
         val timeElapsed = endTime - startTime + penalty
 
-        val prevFailureProbability = vocab.failureProbability()
+        val stats = vocab.stats(currentSkill)
+        val prevFailureProbability = stats.failureProbability()
 
-        vocab.nTimesViewed += 1
+        stats.nTimesViewed += 1
         val alpha = 0.3
-        vocab.viewTimeMilli = (alpha * timeElapsed + (1.0 - alpha) * vocab.viewTimeMilli).toLong()
-        vocab.lastDisplayed = System.currentTimeMillis()
+        stats.viewTimeMilli = (alpha * timeElapsed + (1.0 - alpha) * stats.viewTimeMilli).toLong()
+        stats.lastDisplayed = System.currentTimeMillis()
         vocab.savePreferences()
 
         val justFinished = vocab.french
@@ -278,7 +298,9 @@ class QuizController(
             recentWords.removeFirst()
         }
 
-        if (vocab.failureProbability() < 0.1 && prevFailureProbability >= 0.1) {
+        if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
+            prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
+        ) {
             sounds.playSuccess()
         }
     }
@@ -325,5 +347,51 @@ class QuizController(
         views.buttonNew.isClickable = enabled
         views.buttonTip.isEnabled = enabled
         views.buttonTip.isClickable = enabled
+    }
+
+    private fun displayForeignWord(vocab: Vocab) {
+        val shouldMask = currentSkill == Skill.LISTEN && listenMode != ListenMode.DISABLED
+        if (shouldMask) {
+            views.textFr.text = maskWord(vocab.french)
+            views.textFr.setOnClickListener { onMaskedWordTapped() }
+            views.textFr.isClickable = true
+        } else {
+            views.textFr.text = vocab.french
+            views.textFr.setOnClickListener(null)
+            views.textFr.isClickable = false
+        }
+    }
+
+    private fun maskWord(word: String): String =
+        word.map { if (it.isLetter()) '⬤' else it }.joinToString("")
+
+    private fun onMaskedWordTapped() {
+        when (listenMode) {
+            ListenMode.ASK_ON_TAP -> showListenPrompt()
+            ListenMode.TAP_REVEALS -> revealCurrentForeignWord()
+            ListenMode.DISABLED -> Unit
+        }
+    }
+
+    private fun revealCurrentForeignWord() {
+        val vocab = currentVocab ?: return
+        views.textFr.text = vocab.french
+        views.textFr.setOnClickListener(null)
+        views.textFr.isClickable = false
+    }
+
+    private fun showListenPrompt() {
+        AlertDialog.Builder(activity)
+            .setTitle("Listening practice")
+            .setMessage("Tap to reveal the word, or disable listening mode for this session if you can't listen now.")
+            .setPositiveButton("Reveal this word") { _, _ ->
+                listenMode = ListenMode.TAP_REVEALS
+                revealCurrentForeignWord()
+            }
+            .setNegativeButton("Can't listen — disable for session") { _, _ ->
+                listenMode = ListenMode.DISABLED
+                revealCurrentForeignWord()
+            }
+            .show()
     }
 }
