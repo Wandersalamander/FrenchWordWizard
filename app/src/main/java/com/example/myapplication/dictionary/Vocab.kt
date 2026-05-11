@@ -15,13 +15,28 @@ data class Vocab(
     val sharedPreferences: SharedPreferences? = null,
 
     ) {
-    var viewTimeMilli: Long = 10000
-    var viewTimeMilli_prev: Long = 10000
-    var nTimesViewed: Int = 0
-    var nTimesFailed: Float = 0.0f
+    val skillStats: Map<Skill, SkillStats> = Skill.ladder.associateWith { SkillStats() }
+
     var ignore: Boolean = false
     var flaggedHard: Boolean = false
-    var lastDisplayed: Long = 0
+
+    // Facades on the READ skill — existing call sites read/write through these.
+    // Code that targets another skill should access [skillStats] directly.
+    var viewTimeMilli: Long
+        get() = skillStats.getValue(Skill.READ).viewTimeMilli
+        set(value) { skillStats.getValue(Skill.READ).viewTimeMilli = value }
+    var viewTimeMilli_prev: Long
+        get() = skillStats.getValue(Skill.READ).viewTimeMilli_prev
+        set(value) { skillStats.getValue(Skill.READ).viewTimeMilli_prev = value }
+    var nTimesViewed: Int
+        get() = skillStats.getValue(Skill.READ).nTimesViewed
+        set(value) { skillStats.getValue(Skill.READ).nTimesViewed = value }
+    var nTimesFailed: Float
+        get() = skillStats.getValue(Skill.READ).nTimesFailed
+        set(value) { skillStats.getValue(Skill.READ).nTimesFailed = value }
+    var lastDisplayed: Long
+        get() = skillStats.getValue(Skill.READ).lastDisplayed
+        set(value) { skillStats.getValue(Skill.READ).lastDisplayed = value }
 
 
     init {
@@ -38,19 +53,20 @@ data class Vocab(
     }
 
     fun loadPreferences() {
-        if (sharedPreferences == null) {
-            return
+        if (sharedPreferences == null) return
+        for (skill in Skill.ladder) {
+            val stats = skillStats.getValue(skill)
+            val p = "${hash}${skill.storagePrefix}"
+            stats.viewTimeMilli =
+                sharedPreferences.getString("${p}viewTimeMilli", "10000")!!.toLong()
+            stats.viewTimeMilli_prev =
+                sharedPreferences.getString("${p}viewTimeMilli_prev", "10000")!!.toLong()
+            stats.nTimesViewed = sharedPreferences.getString("${p}nTimesViewed", "0")!!.toInt()
+            stats.nTimesFailed = sharedPreferences.getString("${p}nTimesFailed", "0")!!.toFloat()
+            stats.lastDisplayed = sharedPreferences.getString("${p}lastDisplayed", "0")!!.toLong()
         }
-        viewTimeMilli =
-            sharedPreferences.getString("${hash}viewTimeMilli", 10000.toString())!!.toLong()
-        viewTimeMilli_prev =
-            sharedPreferences.getString("${hash}viewTimeMilli_prev", 10000.toString())!!.toLong()
-        nTimesViewed = sharedPreferences.getString("${hash}nTimesViewed", "0")!!.toInt()
-        nTimesFailed =
-            sharedPreferences.getString("${hash}nTimesFailed", "0")!!.toFloat()
         ignore = sharedPreferences.getString("${hash}ignore", "false")!!.toBoolean()
         flaggedHard = sharedPreferences.getString("${hash}flaggedHard", "false")!!.toBoolean()
-        lastDisplayed = sharedPreferences.getString("${hash}lastDisplayed", "0")!!.toLong()
     }
 
     fun debugSortValue(): String {
@@ -68,18 +84,19 @@ data class Vocab(
     }
 
     fun savePreferences() {
-        if (sharedPreferences == null) {
-            return
-        }
+        if (sharedPreferences == null) return
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
-
-        editor.putString("${hash}viewTimeMilli", viewTimeMilli.toString())
-        editor.putString("${hash}viewTimeMilli_prev", viewTimeMilli_prev.toString())
-        editor.putString("${hash}nTimesViewed", nTimesViewed.toString())
-        editor.putString("${hash}nTimesFailed", nTimesFailed.toString())
+        for (skill in Skill.ladder) {
+            val stats = skillStats.getValue(skill)
+            val p = "${hash}${skill.storagePrefix}"
+            editor.putString("${p}viewTimeMilli", stats.viewTimeMilli.toString())
+            editor.putString("${p}viewTimeMilli_prev", stats.viewTimeMilli_prev.toString())
+            editor.putString("${p}nTimesViewed", stats.nTimesViewed.toString())
+            editor.putString("${p}nTimesFailed", stats.nTimesFailed.toString())
+            editor.putString("${p}lastDisplayed", stats.lastDisplayed.toString())
+        }
         editor.putString("${hash}ignore", ignore.toString())
         editor.putString("${hash}flaggedHard", flaggedHard.toString())
-        editor.putString("${hash}lastDisplayed", lastDisplayed.toString())
         editor.apply()
     }
 
