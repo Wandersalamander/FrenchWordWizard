@@ -9,6 +9,7 @@ import com.google.ai.edge.litertlm.Engine
 import com.google.ai.edge.litertlm.EngineConfig
 import com.google.ai.edge.litertlm.SamplerConfig
 import kotlin.random.Random
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -22,6 +23,10 @@ import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import java.io.File
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
+import javax.net.ssl.SSLException
 
 object LlmService {
     private const val TAG = "LlmService"
@@ -140,9 +145,9 @@ object LlmService {
                 _status.value = Status.Ready
                 Log.i(TAG, "LiteRT-LM engine ready")
             } catch (t: Throwable) {
-                val reason = "${t.javaClass.simpleName}: ${t.message ?: "unknown error"}"
-                Log.e(TAG, "Engine init failed — $reason", t)
-                _status.value = Status.Unavailable(reason)
+                if (t is CancellationException) throw t
+                Log.e(TAG, "Engine init failed — ${t.javaClass.simpleName}: ${t.message ?: "unknown error"}", t)
+                _status.value = Status.Unavailable(friendlyEngineError(t))
             } finally {
                 initInFlight = false
             }
@@ -200,10 +205,12 @@ object LlmService {
                 _status.value = Status.NotDownloaded
                 warmup(appContext)
             } catch (t: Throwable) {
-                val reason = "${t.javaClass.simpleName}: ${t.message ?: "unknown error"}"
-                Log.e(TAG, "Model download failed — $reason", t)
                 if (target.exists()) target.delete()
-                _status.value = Status.Unavailable(reason)
+                // Re-throw cancellation so cancelDownload's NotDownloaded state
+                // isn't overwritten with an Unavailable("CancellationException…").
+                if (t is CancellationException) throw t
+                Log.e(TAG, "Model download failed — ${t.javaClass.simpleName}: ${t.message ?: "unknown error"}", t)
+                _status.value = Status.Unavailable(friendlyDownloadError(t))
             }
         }
     }
@@ -352,5 +359,43 @@ object LlmService {
         )
         val s = firstLine.trim(*quoteChars)
         return s.ifBlank { null }
+    }
+
+    // Translates download failures into something the user can actually read
+    // in the AI Status section of Settings. Keeps the technical exception
+    // string in logs (see Log.e in startDownload) for debugging.
+    private fun friendlyDownloadError(t: Throwable): String {
+        val msg = t.message.orEmpty()
+        return when {
+            t is UnknownHostException ->
+                "No internet connection. Connect and try again."
+            t is SocketTimeoutException ->
+                "The download timed out. Try again on a faster or more stable network."
+            t is ConnectException ->
+                "Couldn't reach the download server. Try again later."
+            t is SSLException ->
+                "Secure connection failed. Try again later."
+            // FileOutputStream surfaces ENOSPC as IOException with this text on
+            // Android/Linux. Model is 2.59 GB so this is the common failure.
+            msg.contains("No space left", ignoreCase = true) ||
+                msg.contains("ENOSPC", ignoreCase = true) ->
+                "Not enough storage on this device. Free up about 3 GB and try again."
+            // ModelDownloader throws IOException("HTTP $code from $url") on non-2xx.
+            msg.startsWith("HTTP 4") ->
+                "The model file is no longer available at the configured URL."
+            msg.startsWith("HTTP 5") ->
+                "The download server is temporarily unavailable. Try again later."
+            else -> "Download failed. Tap retry to try again."
+        }
+    }
+
+    // LiteRT-LM doesn't expose typed exceptions for "device too weak" — GPU
+    // init failure, CPU fallback failure, missing native libs, OOM, and
+    // unsupported tensor shapes all surface as generic throwables. We collapse
+    // them to one message because the user's recourse is the same: live
+    // without the offline model. The quiz falls back to CSV sentences.
+    private fun friendlyEngineError(@Suppress("UNUSED_PARAMETER") t: Throwable): String {
+        return "This device can't run the offline language model. " +
+                "The app will keep working with built-in example sentences."
     }
 }
