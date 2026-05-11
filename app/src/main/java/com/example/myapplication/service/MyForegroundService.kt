@@ -14,67 +14,56 @@ import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.openDictionaryStream
 import com.example.myapplication.quiz.MainActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import java.io.InputStream
 
 class MyForegroundService : Service() {
-    lateinit var vocabDictionary: MyDictionary
-    var updateThread: Thread? = null
-    @Volatile
-    var threadRunning = false
+    private lateinit var vocabDictionary: MyDictionary
+
+    // Scope tied to the service lifecycle. Cancelled in onDestroy so any
+    // in-flight delay()/update unwinds cleanly instead of leaking a thread.
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+    private var updateJob: Job? = null
 
     companion object {
-        const val NOTIFICATION_CHANNEL_ID =
-            "ForegroundServiceChannel"
+        const val NOTIFICATION_CHANNEL_ID = "ForegroundServiceChannel"
         const val NOTIFICATION_ID = 1
+
+        // Cadence for refreshing the notification's vocab. The notification is
+        // for passive glancing — refreshing every few seconds wastes battery
+        // and forces a full per-word pref reload across the dictionary on
+        // every tick. 30s is a comfortable balance.
+        private const val UPDATE_INTERVAL_MS = 30_000L
     }
 
-    override fun onBind(intent: Intent?): IBinder? {
-        println("MyForegroundService.onBind")
-        return null
-    }
+    override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        println("MyForegroundService.onStartCommand")
-
-        if (!threadRunning) {
-            updateThread = Thread {
-                while (true) {
-                    try {
-                        Thread.sleep(5_000) // TODO increase time
-                        updateNotification()
-                    } catch (e: InterruptedException) {
-                        break
-                    }
+        if (updateJob?.isActive != true) {
+            updateJob = scope.launch {
+                while (isActive) {
+                    updateNotification()
+                    delay(UPDATE_INTERVAL_MS)
                 }
             }
-            updateThread!!.start()
-            threadRunning = true
         }
         return super.onStartCommand(intent, flags, startId)
     }
 
-    override fun onUnbind(intent: Intent?): Boolean {
-        println("MyForegroundService.onUnbind")
-        return super.onUnbind(intent)
-    }
-
-    override fun onTaskRemoved(rootIntent: Intent?) {
-        println("MyForegroundService.onTaskRemoved")
-        super.onTaskRemoved(rootIntent)
-    }
-
     override fun onDestroy() {
-        println("MyForegroundService.onDestroy")
-        if (threadRunning) {
-            updateThread?.interrupt()
-            threadRunning = false
-        }
+        scope.cancel()
+        updateJob = null
         super.onDestroy()
-
     }
 
     override fun onCreate() {
-        println("MyForegroundService.onCreate")
         super.onCreate()
         val sharedPreferences: SharedPreferences = getSharedPreferences(
             "vocabulary_preferences", Context.MODE_PRIVATE
@@ -83,31 +72,21 @@ class MyForegroundService : Service() {
         val inputStream: InputStream = openDictionaryStream(this, language)
         vocabDictionary = MyDictionary(inputStream, sharedPreferences)
 
-        startForeground(
-            NOTIFICATION_ID,
-            createNotification().build()
-        )
+        startForeground(NOTIFICATION_ID, createNotification().build())
     }
 
     private fun createNotification(): NotificationCompat.Builder {
-        println("MyForegroundService.createNotification")
         createNotificationChannel()
 
-        val notificationIntent = Intent(
-            this,
-            MainActivity::class.java
-        )
+        val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this,
             0,
             notificationIntent,
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_IMMUTABLE,
         )
 
-        return NotificationCompat.Builder(
-            this,
-            NOTIFICATION_CHANNEL_ID
-        )
+        return NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setContentTitle("Foreground Service Example")
             .setContentText("This is a foreground service.")
             .setSmallIcon(R.drawable.ic_notification)
@@ -115,47 +94,36 @@ class MyForegroundService : Service() {
     }
 
     private fun createNotificationChannel() {
-        println("MyForegroundService.createNotificationChannel")
         val channel = NotificationChannel(
             NOTIFICATION_CHANNEL_ID,
             "Foreground Service Channel",
-            NotificationManager.IMPORTANCE_MIN
+            NotificationManager.IMPORTANCE_MIN,
         )
 
         val notificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE)
-                    as NotificationManager
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(channel)
     }
 
     private fun updateNotification() {
         vocabDictionary.reloadPreferences()
         val localVocab = vocabDictionary.getActiveVocabWeightened()
-        val notificationIntent = Intent(
-            this,
-            MainActivity::class.java
-        )
+        val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this,
             0,
             notificationIntent,
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_IMMUTABLE,
         )
 
-        val builder = NotificationCompat.Builder(
-            this,
-            NOTIFICATION_CHANNEL_ID
-        )
+        val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(pendingIntent)
             .setContentTitle("${localVocab.french} | ${localVocab.english}")
             .setContentText(localVocab.getSomeFrenchLong())
 
-
         val notificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE)
-                    as NotificationManager
-
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(NOTIFICATION_ID, builder.build())
     }
 }
