@@ -1,16 +1,20 @@
 package com.example.myapplication.quiz
 
+import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.media.AudioAttributes
+import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
@@ -48,10 +52,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     private val channelId = MyForegroundService.NOTIFICATION_CHANNEL_ID
 
+    private val requestNotificationPermission = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted -> if (granted) startVocabService() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         serviceIntent = Intent(this, MyForegroundService::class.java)
-        ContextCompat.startForegroundService(this, serviceIntent)
+        ensureNotificationPermissionThenStartService()
 
         // Fix a bug seen via the AndroidStudio IDE that prevented the
         // application from running several times without uninstalling first.
@@ -271,6 +279,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             return
         }
         quizController.markResumed()
+    }
+
+    private fun ensureNotificationPermissionThenStartService() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+            ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                == PackageManager.PERMISSION_GRANTED
+        ) {
+            startVocabService()
+            return
+        }
+        requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+    }
+
+    private fun startVocabService() {
+        ContextCompat.startForegroundService(this, serviceIntent)
     }
 
     private fun createNotificationChannel() {
