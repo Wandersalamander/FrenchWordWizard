@@ -69,14 +69,14 @@
 早上好 (zǎoshang hǎo)	good morning	1	eba4352e2c0b8e8f9fdb57bee0a439f0	早上好,昨晚睡得还好吗？	早上好。
 晚上好 (wǎnshang hǎo)	good evening	1	6cefe7010cf1765d51d3eb10511133e9	晚上好,欢迎大家来参加今晚的派对。	晚上好。
 晚安 (wǎn'ān)	good night	1	3c43b852ce5e19340c139b0b603ed54b	时间不早了,大家早点休息,晚安。	晚安。
-的 (de)	's; of (particle)	1	5bb37173c91bbe153ccb126594d4b290	这是我的电脑,请不要随便动里面的文件。	我的书。
-了 (le)	did; now (particle)	1	fddf72b3dd7ff5c305c2bb8e3356d36d	我已经吃过饭了,谢谢你的邀请。	我懂了。
-着 (zhe)	-ing (particle)	1	2988ebcf25a250cc5e42d3cb63c1c6b5	他在沙发上躺着看电视,看得很入迷。	开着门。
-过 (guo)	ever; have done (particle)	1	c723a47cbf52e8b38655765e213a3c72	我去过上海好几次,那里的小笼包很有名。	吃过了。
-吗 (ma)	? (particle)	1	ef33bc5a4e0d5040de3ce556d19fdba5	你今天会来参加我的生日聚会吗？	好吗？
-呢 (ne)	and...? (particle)	1	5b5f629838fa89fe77775d40a83dfc80	我喝咖啡,你呢,你想喝点什么？	你呢？
-吧 (ba)	let's; right? (particle)	1	7536d9f248884a13e42c6ce1641b3389	我们一起去看电影吧,听说这部口碑很好。	走吧。
-啊 (a)	! (particle)	1	463ff05f5f9090eac98019eada278058	这个风景真美啊,我以前没注意过。	好啊。
+的 (de)	's; of	1	5bb37173c91bbe153ccb126594d4b290	这是我的电脑,请不要随便动里面的文件。	我的书。
+了 (le)	did; now (completed / changed)	1	fddf72b3dd7ff5c305c2bb8e3356d36d	我已经吃过饭了,谢谢你的邀请。	我懂了。
+着 (zhe)	-ing (ongoing)	1	2988ebcf25a250cc5e42d3cb63c1c6b5	他在沙发上躺着看电视,看得很入迷。	开着门。
+过 (guo)	ever; have done (experience)	1	c723a47cbf52e8b38655765e213a3c72	我去过上海好几次,那里的小笼包很有名。	吃过了。
+吗 (ma)	? (yes/no question)	1	ef33bc5a4e0d5040de3ce556d19fdba5	你今天会来参加我的生日聚会吗？	好吗？
+呢 (ne)	and...? (follow-up question)	1	5b5f629838fa89fe77775d40a83dfc80	我喝咖啡,你呢,你想喝点什么？	你呢？
+吧 (ba)	let's; right? (suggestion)	1	7536d9f248884a13e42c6ce1641b3389	我们一起去看电影吧,听说这部口碑很好。	走吧。
+啊 (a)	! (exclamation)	1	463ff05f5f9090eac98019eada278058	这个风景真美啊,我以前没注意过。	好啊。
 不 (bù)	not	1	4b6cbba39545883bbfe5e8f613f4eba6	不行,这个时间我已经有安排了。	不要。
 没 (méi)	not (past); have not	1	f5110eb0d5885fd91bfd763c4d1d0a72	我今天没吃早饭,现在饿得头晕。	没事。
 别 (bié)	don't	1	50923859203b1ac78c7e7987e388ce7f	别担心,事情没你想象的那么严重。	别走。
