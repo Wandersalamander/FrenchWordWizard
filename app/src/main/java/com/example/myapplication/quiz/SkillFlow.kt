@@ -41,12 +41,21 @@ internal sealed interface SkillFlow {
      */
     val englishIsPrompt: Boolean
 
-    /** Set up [QuizViews.textFr] for the start of a round. */
+    /**
+     * Set up [QuizViews.textFr] for the start of a round.
+     *
+     * [onMaskedWordTapped] — invoked when the user taps a *masked* foreign word
+     * to reveal it via TTS. This is a hint and costs a small failure increment.
+     *
+     * [onWordReplayed] — invoked when the user taps an *already visible*
+     * foreign word to hear it spoken again. No penalty; pure convenience.
+     */
     fun setupTextFr(
         vocab: Vocab,
         views: QuizViews,
         listeningEnabled: Boolean,
         onMaskedWordTapped: () -> Unit,
+        onWordReplayed: () -> Unit,
     )
 
     /** Speak the prompt side at round start. */
@@ -87,10 +96,12 @@ internal object ReadFlow : SkillFlow {
         views: QuizViews,
         listeningEnabled: Boolean,
         onMaskedWordTapped: () -> Unit,
+        onWordReplayed: () -> Unit,
     ) {
         views.textFr.text = vocab.french
-        views.textFr.setOnClickListener(null)
-        views.textFr.isClickable = false
+        // Tap the visible foreign word to hear it again (no penalty).
+        views.textFr.setOnClickListener { onWordReplayed() }
+        views.textFr.isClickable = true
     }
 
     override fun ttsAtRoundStart(vocab: Vocab, tts: TtsHelper) =
@@ -117,15 +128,17 @@ internal object ListenFlow : SkillFlow {
         views: QuizViews,
         listeningEnabled: Boolean,
         onMaskedWordTapped: () -> Unit,
+        onWordReplayed: () -> Unit,
     ) {
         if (listeningEnabled) {
             views.textFr.text = maskWord(vocab.french)
             views.textFr.setOnClickListener { onMaskedWordTapped() }
             views.textFr.isClickable = true
         } else {
+            // Listening disabled → word is shown like in READ. Allow no-penalty replays.
             views.textFr.text = vocab.french
-            views.textFr.setOnClickListener(null)
-            views.textFr.isClickable = false
+            views.textFr.setOnClickListener { onWordReplayed() }
+            views.textFr.isClickable = true
         }
     }
 
@@ -169,7 +182,10 @@ internal object InvertFlow : SkillFlow {
         views: QuizViews,
         listeningEnabled: Boolean,
         onMaskedWordTapped: () -> Unit,
+        onWordReplayed: () -> Unit,
     ) {
+        // INVERT keeps the foreign word fully masked until progressive reveal —
+        // tapping it must not leak audio of the answer.
         views.textFr.text = maskWord(vocab.french, MASK_CHAR)
         views.textFr.setOnClickListener(null)
         views.textFr.isClickable = false

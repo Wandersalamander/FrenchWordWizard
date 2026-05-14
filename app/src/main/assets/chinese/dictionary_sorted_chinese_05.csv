@@ -1,0 +1,214 @@
+汽车 (qìchē)	car	5	a7b430349d5ca86940610922ee89526f	我打算买一辆新汽车。	小汽车。
+出租车 (chūzūchē)	taxi	5	5ce5c8db501a09fd3f4a76bdb99ff813	我们打个出租车回家吧。	叫出租车。
+公交车 (gōngjiāochē)	bus	5	1bd3881ed74af6a725c771e9437717ce	公交车上人很多。	坐公交车。
+地铁 (dìtiě)	subway	5	2989a2c739d23c370c4fcd6bb3c31ba0	北京地铁线路特别多。	坐地铁。
+火车 (huǒchē)	train	5	03536a00a24a70d273f3b98201e04a84	去外地我喜欢坐火车。	慢火车。
+高铁 (gāotiě)	high-speed train	5	aa0ec7b5e94861f74bd36a012ffb18fa	高铁让出行越来越方便。	高铁。
+飞机 (fēijī)	plane	5	acef708ca4b17a5f0551b255a30b19c2	飞机马上要起飞了。	大飞机。
+轮船 (lúnchuán)	ship	5	38ee7e735acad76487ba37300ef1020c	我们坐轮船去香港。	大轮船。
+船 (chuán)	boat; ship	5	bc08dbc964d9b5990b59c1885b501eb5	这条河上有很多游船。	小船。
+自行车 (zìxíngchē)	bicycle	5	ee66104d7cc92eeb882d548118bfa607	很多上班族骑自行车通勤。	新自行车。
+摩托车 (mótuōchē)	motorcycle	5	4b4f7e77e16fe58a973da98d58a6a558	深圳禁止摩托车上路。	大摩托车。
+电动车 (diàndòngchē)	electric scooter	5	1a7d402a602659323d7d8637a9a0995b	电动车是外卖小哥的主力车。	电动车。
+卡车 (kǎchē)	truck	5	356c299e8bc7a366356b6ea24be8ed4f	这条路上禁止卡车通行。	大卡车。
+面包车 (miànbāochē)	minivan	5	e7513b06565e4e3a590725ef0f1cad3c	搬家请了一辆面包车。	面包车。
+站台 (zhàntái)	platform	5	f04c40f1ab3910d83e2b7d43a412ea8c	请在站台上等车。	火车站台。
+车票 (chēpiào)	ticket	5	6828e6cdac9dd6ba62cc78f30d98a451	买车票要排队。	火车车票。
+售票处 (shòupiàochù)	ticket office	5	5f21290c9d930cecd8ac66458278d4be	售票处人很多,等了很久。	售票处。
+路口 (lùkǒu)	intersection	5	67bf46a97c5f4a2b30560c6ea763a281	到路口右转就到了。	十字路口。
+红绿灯 (hónglǜdēng)	traffic light	5	9b3608e606ebece0c2abbfe676c7fec2	过马路要看红绿灯。	红绿灯。
+人行道 (rénxíngdào)	sidewalk	5	6643b4ee5aa6b4d3c5ed986d548dad76	请走人行道,安全第一。	人行道。
+人行横道 (rénxíng héngdào)	crosswalk	5	de1e0c709586f66ad762b24f4aea631b	走人行横道过马路。	人行横道。
+桥 (qiáo)	bridge	5	34fa0440dafb472d8c86f9fca111b3cb	深圳湾大桥很壮观。	大桥。
+隧道 (suìdào)	tunnel	5	61f9aceda2c4a437f6340c86e68c52e5	这条隧道有十公里长。	大隧道。
+高速 (gāosù)	highway	5	af883e52fcebd0291cfcaf1bcbf8949a	高速上不能停车。	走高速。
+高速公路 (gāosù gōnglù)	expressway	5	a3e414c5deb1b405501077b97bcc9afe	走高速公路最快。	高速公路。
+加油站 (jiāyóuzhàn)	gas station	5	11e10252030fbb7c4796d0d9f1fe039f	前面有加油站,我们去加油。	加油站。
+停车场 (tíngchēchǎng)	parking lot	5	351506c3c5177c3a31d9b7018716c1f0	停车场里没有空位。	大停车场。
+车位 (chēwèi)	parking spot	5	ddeebaea7bcddc174793eca0970642dd	这个小区车位特别紧张。	车位。
+方向 (fāngxiàng)	direction	5	e307fa9ec7d2102d01cc61f67625eb01	我们走错方向了。	方向。
+方向盘 (fāngxiàngpán)	steering wheel	5	ae9d6a381bdf387d007108e030b547cd	握紧方向盘集中注意力。	方向盘。
+轮胎 (lúntāi)	tire	5	019bc87d039ec3091120e0ece408f0c9	这辆车的轮胎该换了。	新轮胎。
+发动机 (fādòngjī)	engine	5	b3c6055c9cfd522ec6c09f7a49e25d44	发动机声音很大,可能要修。	发动机。
+刹车 (shāchē)	brake	5	f02a0bee54dab4015eb91087c27967f2	急刹车很危险。	踩刹车。
+油门 (yóumén)	gas pedal	5	67543bffa15122d8d1b1621ed9d33fde	踩油门要轻一点。	油门。
+喇叭 (lǎba)	horn	5	b7a20f2055075c967d69d49a8b9e368b	城里禁止鸣喇叭。	大喇叭。
+车牌 (chēpái)	license plate	5	ee477cbee80afe748ea2f8523d9b1e3c	这辆车的车牌是粤B。	车牌号。
+驾照 (jiàzhào)	driver's license	5	4a3ad95be8ed68f8fb25858b71b2a3c1	开车要带驾照。	驾照。
+导航 (dǎoháng)	navigation	5	c284f44d114e683dacc95a570a314c49	请打开导航走最近的路。	手机导航。
+地图 (dìtú)	map	5	479f9a273826a998428ffb3fb80f04fa	我们看地图找一下路。	大地图。
+路线 (lùxiàn)	route	5	8daa8e9d5043ea1ed42961682ef0aa07	这条路线最近。	新路线。
+方位 (fāngwèi)	direction; orientation	5	8c1e81c7d6ff0400b57244dc8d24aa37	请问东南方位怎么走？	方位。
+东 (dōng)	east	5	526493bcd46fc397ea654022c7c8a2bb	太阳从东边升起。	东边。
+南 (nán)	south	5	a45cf575c10caeb69866871bbf9ee4df	深圳在中国的南方。	南方。
+西 (xī)	west	5	2d9e2c4cc66cdc35c43164d94db5b43c	西藏在中国的西部。	西边。
+北 (běi)	north	5	51e9b286576818af6f7cb21a075cf1d5	北京在中国的北方。	北方。
+旅游 (lǚyóu)	travel	5	45eab1ed70f8e0a3b721fccf9495bd24	假期我喜欢出去旅游。	出国旅游。
+旅行 (lǚxíng)	travel	5	8a51e87316fd8f0d92bb3e70f586faab	我去过很多国家旅行。	长途旅行。
+游客 (yóukè)	tourist	5	67a64c3c21c4cfcaf74dc565d54db630	这个景区每天接待很多游客。	游客。
+导游 (dǎoyóu)	tour guide	5	02f2bcefebc6941c6f07111fbbd4e3b3	导游讲解很专业。	导游。
+行李 (xíngli)	luggage	5	e4ca0ff55cf13fcefa6303406744b4dc	行李丢了真的很麻烦。	行李箱。
+箱子 (xiāngzi)	suitcase	5	b7c0dfa9695efc0c053890bed3d39807	这个箱子是我新买的。	大箱子。
+背包 (bēibāo)	backpack	5	cd1269b5587df3df6abb73f30d307fae	学生都喜欢用双肩背包。	大背包。
+风景 (fēngjǐng)	scenery	5	1e81535fb648fa01090399931a4137ac	这里的风景太美了。	好风景。
+景点 (jǐngdiǎn)	tourist spot	5	c6d2ff759054c4250f13455e8cfd73a2	北京有很多有名景点。	好景点。
+观光 (guānguāng)	sightseeing	5	f57645a532e81633bdc3221584854cf4	观光车带我们游览全景。	观光巴士。
+名胜 (míngshèng)	famous site	5	b2e226cfb76fd4ebb2ed5ec37c06f624	长城是世界著名名胜。	历史名胜。
+古迹 (gǔjì)	historical site	5	3e55692f2bf359b3d757922a342a2105	故宫是著名古迹。	古迹。
+寺庙 (sìmiào)	temple	5	f411fc785b527e2133c9a2804267b7d0	这座寺庙很有名。	大寺庙。
+教堂 (jiàotáng)	church	5	76f2ee38dfd04bfe75f1df24e1c9f9ab	这座教堂是哥特式建筑。	大教堂。
+故宫 (Gùgōng)	Forbidden City	5	a49b77058a00b4317d2b27312f8025d9	故宫是必去景点。	故宫。
+长城 (Chángchéng)	Great Wall	5	2a10adba453529dc4023babf72e04eaf	长城是中国的象征。	万里长城。
+天安门 (Tiān'ānmén)	Tiananmen	5	85a5680cd05a961ab01845e859134cb8	天安门是中国的标志。	天安门。
+外滩 (Wàitān)	The Bund	5	97c73b35c195aab62aa9414ec44add7d	上海外滩夜景很美。	外滩。
+东方明珠 (Dōngfāng Míngzhū)	Oriental Pearl	5	1a7084d3a7f853be41e21bf8c018e6f9	东方明珠是上海地标。	东方明珠。
+世界之窗 (Shìjiè zhī Chuāng)	Window of the World	5	6e611c34ae0b75d314d0d9ce3cdf4aed	深圳的世界之窗很有名。	世界之窗。
+迪士尼 (Díshìní)	Disney	5	9713c2622f3ee09acda9d84e47ea2b7c	上海迪士尼乐园很热门。	迪士尼乐园。
+长江 (Cháng Jiāng)	Yangtze River	5	8f3f777c03e06158807e0b71cde18c19	长江是中国第一大河。	长江。
+黄河 (Huáng Hé)	Yellow River	5	57899ab288b50ef971aeef991d93ae8c	黄河是中华民族的母亲河。	黄河。
+泰山 (Tài Shān)	Mount Tai	5	36621c08209ee03af6e2728267957881	泰山是五岳之首。	爬泰山。
+黄山 (Huáng Shān)	Mount Huang	5	f9395d1387de3ada3d6c8376813fd4cb	黄山的风景特别美。	黄山。
+西湖 (Xī Hú)	West Lake	5	ef31c91c522893cc9f0ed74572f61244	杭州西湖是世界文化遗产。	西湖。
+长江三峡 (Cháng Jiāng Sān Xiá)	Three Gorges	5	036860640dd70ecce62cea281b28849e	长江三峡是著名景观。	三峡。
+广东 (Guǎngdōng)	Guangdong	5	501c87753aed6ff14f6ff1e043532c66	广东人喜欢喝早茶。	广东省。
+北京 (Běijīng)	Beijing	5	a486ac5272e13209d01315286f75f380	北京是中国的首都。	北京市。
+上海 (Shànghǎi)	Shanghai	5	216e29bad5f4026b504c18232be54c2b	上海是中国的金融中心。	上海市。
+深圳 (Shēnzhèn)	Shenzhen	5	fd33b7b93066dd10e43a5617de9cc974	深圳是科技创新之城。	深圳市。
+广州 (Guǎngzhōu)	Guangzhou	5	3e4ceb066f7b9e140c71c0701ca74de1	广州是岭南文化中心。	广州市。
+香港 (Xiānggǎng)	Hong Kong	5	73ec312eedca01f60fe8cf82a8d348de	香港是国际大都市。	香港。
+台湾 (Táiwān)	Taiwan	5	aed4c2b7130ac3d1f88443f98d68a112	台湾的小吃很有名。	台湾。
+澳门 (Àomén)	Macau	5	0b52a4312a08049a2ead6b7c8c2dd7e9	澳门有很多博彩酒店。	澳门。
+省 (shěng)	province	5	ad8e81508e0d20c56ac0653dfd5f2da9	中国有二十三个省。	江苏省。
+市 (shì)	city	5	4cc8e8bc289eb1d56234c2ab1fe55d90	这个市的人口超过千万。	深圳市。
+区 (qū)	district	5	380b1a9e0e24f8b7f8cdb16cf36d2484	福田区是深圳市中心。	南山区。
+街道 (jiēdào)	street; neighborhood	5	40da44a951cc74f9eb7632f5b6c38daa	这条街道很安静。	大街道。
+胡同 (hútòng)	hutong (alley)	5	ae7f513f3951d596217dd0e0416f00f1	北京的胡同很有特色。	老胡同。
+弄堂 (lòngtáng)	lane (Shanghai)	5	51365b78b3b9cd0df2f18e4de1aaac49	上海老弄堂里很有味道。	弄堂。
+山脉 (shānmài)	mountain range	5	6580c444b0e562d12325b95cd0857131	喜马拉雅山脉很雄伟。	山脉。
+平原 (píngyuán)	plain	5	da43988ef85c8610f1a7ede69e90da64	华北平原很广阔。	平原。
+沙漠 (shāmò)	desert	5	887a1c37b9a1f1e1c0dcbbb523978e05	沙漠里的生活很艰苦。	大沙漠。
+森林 (sēnlín)	forest	5	4dee162912435be117e213302a97bcd8	森林里空气很好。	大森林。
+草原 (cǎoyuán)	grassland	5	1716e498f66387e68c733cb3eedbac04	内蒙古的草原一望无际。	大草原。
+河流 (héliú)	river	5	e8987e64d68713f4cf3a09a7ffb1ed3d	这条河流很长。	大河流。
+海洋 (hǎiyáng)	ocean	5	9c5ec296cd3def54f439bc4433584492	海洋占地球表面的百分之七十。	大海洋。
+湖泊 (húpō)	lake	5	88f27b4294d15c5f4b987db4cd560fda	太湖是中国第三大湖泊。	大湖泊。
+岛屿 (dǎoyǔ)	island	5	5230f0cc46d6104c682483bc8950f4fb	海南岛是中国最大的热带岛屿。	海南岛屿。
+海岛 (hǎidǎo)	sea island	5	8a9d88a0943d27180b5f00efeb2f0c96	这个海岛风景很美。	海岛。
+半岛 (bàndǎo)	peninsula	5	6f52b88c6d07fd7d3acfd72ffe8cab14	山东半岛三面环海。	半岛。
+湾 (wān)	bay	5	4a7b25a8626a8a3d10c38b3c5685f207	深圳湾的夜景很美。	大海湾。
+港口 (gǎngkǒu)	port; harbor	5	536161bb936365201af7530791692631	深圳是一个重要港口。	大港口。
+码头 (mǎtou)	dock; pier	5	640f78139f41f8776675af36329584ab	码头上停着很多船。	老码头。
+海滩 (hǎitān)	beach	5	83d47a963802c8cef3c8f1be47c47188	夏天我们去海滩游泳。	大海滩。
+沙滩 (shātān)	sandy beach	5	9df15cdcf1122c83d0174f1afe3aca49	这个沙滩很干净。	白沙滩。
+气候 (qìhòu)	climate	5	6e41983eebe66e1b16c22cc812e61abe	深圳气候温暖湿润。	好气候。
+环境 (huánjìng)	environment	5	a07fff72575e62cb5674158303280aea	保护环境人人有责。	好环境。
+污染 (wūrǎn)	pollution	5	d4e21946bb16b8b0a743438725ad4ed7	空气污染影响身体健康。	大气污染。
+垃圾 (lājī)	garbage	5	4f1fba236ad49dddbdd29187a8f4779d	请把垃圾扔进垃圾桶。	生活垃圾。
+回收 (huíshōu)	recycle	5	ac63ec612193ac2394cf8859e50179f0	可回收物要分类放。	回收。
+分类 (fēnlèi)	sort; classify	5	d5fae8db79c7670b48ee2e124087faf2	垃圾要分类处理。	分类。
+节能 (jiéněng)	energy saving	5	b4df555d8ef85e68b6adbdce986fddae	节能减排很重要。	节能。
+环保 (huánbǎo)	environmental protection	5	26bcf596fb1c4a0c7cfbc1b83f9e8c93	环保是大家的责任。	环保。
+预订 (yùdìng)	reservation	5	0ef58a5e0fb527db6181ce4bc5ca03d9	我提前预订了酒店房间。	预订。
+预约 (yùyuē)	appointment	5	14ece2dd9a9a5a3fa07ac7c4244237c7	看病要先预约。	预约。
+入住 (rùzhù)	check in	5	c8b5711ab904f6b8499ec3b5de291ed2	请到前台办理入住。	入住时间。
+退房 (tuìfáng)	check out	5	d4b16f0ed3aa0c20f770b07024ea78a9	十二点之前要退房。	办退房。
+单人间 (dānrénjiān)	single room	5	2f1a4d8ff97b4d69746a1d782189d298	我订了一间单人间。	单人间。
+双人间 (shuāngrénjiān)	double room	5	8ec7c1e606a5cc2b975b59276be893a0	出差出双人间。	大双人间。
+标准间 (biāozhǔnjiān)	standard room	5	fc380b6c54454acdfb07fae250f7337f	标准间价格适中。	标准间。
+套房 (tàofáng)	suite	5	9fa4f49d1e3cc3556d181c924a5a1891	这家酒店有总统套房。	豪华套房。
+前台 (qiántái)	front desk	5	076fa0a19daf61233c4ccccb309efa95	请到前台办理手续。	酒店前台。
+服务台 (fúwùtái)	service desk	5	358b505dc47ec066b198bd8cf69f8cd7	有问题请到服务台咨询。	服务台。
+大堂 (dàtáng)	lobby	5	db1984ea0d917d60689cb1d7c4dd5063	酒店大堂很气派。	大堂经理。
+房卡 (fángkǎ)	room card	5	7dbd78a210f66777b3111695206274fb	电梯需要刷房卡。	房卡。
+小费 (xiǎofèi)	tip	5	b3d67c992eae87330c98500e3d38dccc	国外吃饭要付小费。	小费。
+车 (chē)	vehicle; car	5	055e3967ce4c5372962a99fe9099d159	我每天开车上下班。	好车。
+长途 (chángtú)	long distance	5	4ea96531132f10df2f3935f148828d20	长途旅行很累。	长途车。
+短途 (duǎntú)	short distance	5	1a926983f9902689f4d4d65a0b8b5e2c	短途旅行最适合周末。	短途游。
+中转 (zhōngzhuǎn)	transfer; layover	5	ac3218493ed776c81fe24bd5f0689f88	这趟航班要中转。	中转站。
+航班 (hángbān)	flight	5	0f89e635b4961e7659fba73bb1a42378	这个航班晚点了。	国际航班。
+登机 (dēngjī)	board (a plane)	5	3b491ca597b84dfec06dcdbd47029a80	请准时到登机口。	登机牌。
+托运 (tuōyùn)	check (luggage)	5	1aaa4f767f6a34a692851d65f9b75e5f	这个箱子要托运。	托运行李。
+安检 (ānjiǎn)	security check	5	103898126b9168652383e0b48a7f015e	过安检要排队。	过安检。
+海关 (hǎiguān)	customs	5	9fb4e63d64eb78a411f893bfb9958a8d	过海关要检查行李。	大海关。
+出入境 (chūrùjìng)	entry-exit	5	4ad0f79ff5ee7025b6961ffef176f626	出入境要查护照。	出入境。
+免税 (miǎnshuì)	duty-free	5	9bf4fb559fce3142a13b154108d0549c	机场有免税店。	免税商店。
+开车 (kāichē)	drive	5	8c1a7dc4e164060545e108af53a2316b	开车要注意安全。	开车去。
+骑车 (qíchē)	ride a bike	5	8b1a55e40c475f39ecd2871d57833a5a	我每天骑车去公司。	骑自行车。
+打车 (dǎchē)	hail a taxi	5	c93b13bcd86334d7d8a1d48d803c87c7	这个时间打车很难。	打车回家。
+坐车 (zuòchē)	take a vehicle	5	90374af89043fc371e682a5e747f5d88	坐车要系安全带。	坐车去。
+下车 (xiàchē)	get off	5	fe8d2929e9f30fcec847b1fd2417bce4	到站请按铃下车。	请下车。
+上车 (shàngchē)	get on	5	d97e9a122d191670a8abb8100e148f45	请刷卡上车。	上车了。
+转车 (zhuǎnchē)	transfer (bus/train)	5	92db1a6c0555749dbaee66f4831a21fa	下一站要转车。	转车。
+迟到 (chídào)	be late	5	b0bfc440e4f373d484f948fcee710872	堵车让我迟到了。	经常迟到。
+早到 (zǎodào)	be early	5	64d5eb2e361870094ab5506d2432f587	她总是早到三十分钟。	早到。
+准时 (zhǔnshí)	on time	5	2e98b100dd6143c52ba401892180f1d2	请准时参加会议。	很准时。
+晚点 (wǎndiǎn)	be delayed	5	6f970c54205a5608aaa610d7f00b3a65	这趟航班晚点了。	列车晚点。
+到达 (dàodá)	arrive	5	7e94161e36c89250e24782aa8bd4b57a	列车到达终点站。	到达。
+出发 (chūfā)	depart	5	2fb9c6acaa09e8e323f0c1c182e86d74	我们明天早上出发。	准时出发。
+公里 (gōnglǐ)	kilometer	5	704ba68de0e84c07635dd8f4017b78fc	我家离公司十公里。	几公里？
+米 (mǐ)	meter	5	3a436971aafd6e4bbf71680afb4e1444	这条路有五百米长。	几米？
+英里 (yīnglǐ)	mile	5	51121fa13110bc2c87da72a2822f4428	美国用英里。	英里。
+速度 (sùdù)	speed	5	0670e23646aa3c14fa7ec24de609bc57	这辆车的速度真快。	高速度。
+距离 (jùlí)	distance	5	f80754882066b44558ea28545390daaa	这段距离不远,走路就行。	长距离。
+里程 (lǐchéng)	mileage	5	ea5e0d06cc9ab37e55a2621e5bd0c736	这辆车的里程数很低。	里程数。
+检查 (jiǎnchá)	inspection; check	5	da9d5712051f5ae4dbc619c3c384ab19	警察在路边检查车辆。	做检查。
+警察 (jǐngchá)	police	5	d177cf5eb547493cf824c7e96961372c	警察叔叔很负责。	好警察。
+罚款 (fákuǎn)	fine	5	7d6c940351fb81859bb875bdecd18205	违章停车要罚款。	罚款。
+路费 (lùfèi)	travel expenses	5	f7faccadf42a0e9842a9eeba9fdd0ada	这点路费没多少钱。	路费。
+车费 (chēfèi)	fare	5	c38e6da1f951e4f2f6bcef971b6c4e26	出租车车费贵。	车费。
+餐费 (cānfèi)	meal cost	5	a583a9f58eb1c82ddaed700cb2931519	出差有餐费补贴。	餐费。
+住宿费 (zhùsùfèi)	lodging fee	5	9b9e6426ff73489b0d5451552446a258	住宿费报销。	住宿费。
+导览 (dǎolǎn)	guided tour	5	8089a521961d47103a6502c36def68b7	博物馆有专业导览服务。	导览。
+请假 (qǐngjià)	ask for leave	5	3657bd480a3a06795678c3f715987477	生病了要请假。	请假条。
+休假 (xiūjià)	on leave	5	840aed83877e6312a1c7a94bc6779f63	我下周休假去旅游。	带薪休假。
+出差 (chūchāi)	business trip	5	89b06b9745b6e0f98c79d69dd2be4761	经常出差比较辛苦。	去出差。
+回国 (huíguó)	return to one's country	5	f15c545f1769f48d0f9449b4c3b0d6d3	她明年要回国发展。	回国。
+出国 (chūguó)	go abroad	5	2c75b2d72bc0a3a0257afda58417ce4b	出国留学很流行。	出国。
+跨海大桥 (kuàhǎi dàqiáo)	sea-crossing bridge	5	c6d6b52d3173b6bfe2d4afbc8c50509e	港珠澳跨海大桥很壮观。	大跨海大桥。
+桥头 (qiáotóu)	bridgehead	5	50f01df6dee48c4e689ca6b816512e86	桥头有警察。	桥头。
+车道 (chēdào)	lane	5	07311f1e0a33dace793b43a7a9a27ef2	请走右车道。	大车道。
+慢车道 (mànchēdào)	slow lane	5	c8ba4857cae62d24bfd111b9c1a14d99	慢车道行驶。	慢车道。
+快车道 (kuàichēdào)	fast lane	5	168504e4e949559e09e8dc4a7925f9de	快车道开快点。	快车道。
+应急车道 (yìngjí chēdào)	emergency lane	5	85d830d87c2ad86f8be00b5f3e6755f6	应急车道禁停。	应急车道。
+服务区 (fúwùqū)	service area	5	5d560dee97c83e73407521bb1fc6353c	高速服务区休息。	大服务区。
+收费站 (shōufèizhàn)	toll station	5	a473bacaada0fb6ac2fe4a66d70461a2	收费站要交钱。	收费站。
+票务厅 (piàowùtīng)	ticket hall	5	55e7c75025cc3f56ba1cd2116535fd5e	票务厅人很多。	票务厅。
+候车室 (hòuchēshì)	waiting room	5	34a4a103d3ee9f6f7b94fd176a4223cf	候车室坐下等车。	大候车室。
+候机厅 (hòujītīng)	departure lounge	5	32075888433b9fbec3c4c86b0a7794f9	候机厅有免税店。	大候机厅。
+安检口 (ānjiǎnkǒu)	security check	5	0c74516bd3b1c22263734ab59b6d9ce9	安检口排长队。	安检口。
+登机口 (dēngjīkǒu)	boarding gate	5	9657b7c37d263c65f199d17f9b95bebc	请到登机口候机。	登机口。
+出发大厅 (chūfā dàtīng)	departure hall	5	80e8102c4e23074d68c77e4a1a64d10c	出发大厅在二楼。	出发大厅。
+到达大厅 (dàodá dàtīng)	arrival hall	5	c425f8d5e636fe46a8b6fd82b9187eac	到达大厅接人。	到达大厅。
+出关 (chūguān)	clear customs (exit)	5	e5b081e60b759d1bf6072c23af8760d4	出关检查行李。	出关。
+入关 (rùguān)	clear customs (entry)	5	f9c91df33f47f66636fadb88faa84c5a	入关填申报单。	入关。
+一日游 (yírìyóu)	one-day tour	5	5c27bf33700f706d2b8473f1c27ad1dd	报名参加一日游。	一日游。
+跟团游 (gēntuán yóu)	group tour	5	00f5cdd6c0f7d4fab6e52560f93a5d52	跟团游比较方便。	跟团游。
+自由行 (zìyóuxíng)	independent travel	5	618519d27be67cbbaf7b729bfe418383	我喜欢自由行。	自由行。
+半自助 (bàn zìzhù)	semi-self-service	5	49c63139d4a819096adcd50ad4cd5164	半自助游划算。	半自助。
+当地导游 (dāngdì dǎoyóu)	local guide	5	272d0dcf10475ff5ed2b4a9a5b13150c	请位当地导游。	当地导游。
+行程 (xíngchéng)	itinerary	5	9cb4661f14f6b6febb60fbd8891ef398	请安排好行程。	大行程。
+旅行社 (lǚxíngshè)	travel agency	5	1633184e72e27e169f469d7d37c4fb01	找旅行社订机票。	大旅行社。
+团费 (tuánfèi)	tour fee	5	1fcb945a1377e52d2dbf4da34864c09e	这次团费三千。	团费。
+中餐厅 (zhōngcāntīng)	Chinese restaurant	5	c798bf20e0843556b9b8da39d2d31a32	这家中餐厅地道。	大中餐厅。
+夜市 (yèshì)	night market	5	dce89acbf13c58ca7275ccf7f6102c37	深圳夜市很热闹。	大夜市。
+自助餐 (zìzhùcān)	buffet	5	2988e3504cc14c1315eb441d4136c82a	这家自助餐丰盛。	自助餐。
+包间 (bāojiān)	private room	5	144e91d0df410605e8b48e3ddac511a6	订个包间吧。	大包间。
+露台 (lùtái)	terrace	5	aad7a0d7c3fb0ecc18eedda0030d8cdd	露台上喝茶。	大露台。
+鸡尾酒 (jīwěijiǔ)	cocktail	5	2b2e60316074b8b0b7d9d4c751e38427	点杯鸡尾酒。	鸡尾酒。
+红酒 (hóngjiǔ)	red wine	5	0459e12e57bf09d96f8e7d604628cf70	搭配牛排喝红酒。	红酒。
+白葡萄酒 (bái pútáojiǔ)	white wine	5	725c787306a8b833fd97ac072dcea893	白葡萄酒配海鲜。	白葡萄酒。
+香槟 (xiāngbīn)	champagne	5	1bf9c5800e0f502d703d86fb86fd9c8b	庆祝喝香槟。	香槟。
+威士忌 (wēishìjì)	whisky	5	2bd8596856e7cfe8824a57c7eaaf594e	威士忌很烈。	威士忌。
+洋酒 (yángjiǔ)	foreign liquor	5	511adee1f2b9e519f0f9dd034a04e176	洋酒种类多。	洋酒。
+本地 (běndì)	local	5	4ebdc95be11437cca2a77da7430c23da	尝尝本地特色。	本地人。
+特色 (tèsè)	specialty	5	4ff967e1b541320eab04a9488643e582	这是本地特色菜。	大特色。
+风味 (fēngwèi)	flavor	5	5be6146a7195bc3023868f6bd72702b3	四川风味很有名。	地方风味。
+小酒馆 (xiǎojiǔguǎn)	small bar; tavern	5	b9f40e388753f56478408c430c40c2d5	老式小酒馆。	小酒馆。
+夜店 (yèdiàn)	nightclub	5	1b3b04b9550cece8b36b685db3984a9a	周末去夜店。	大夜店。
+KTV (KTV)	karaoke	5	6eda4e941ff92423e1b52ae80d03016b	约朋友去KTV。	KTV。
+按摩 (ànmó)	massage	5	c8e1eec98efc8446333e822357d58727	按摩很放松。	按摩。
+足疗 (zúliáo)	foot massage	5	ed104f0112c9861a2f61974a9476d19d	做个足疗。	足疗店。
+SPA (SPA)	spa	5	785860ab894aa66109c0e25da32f18bd	女生喜欢SPA。	SPA。
+美甲 (měijiǎ)	manicure	5	9e01ac71f735ef7e917cb7de6dd042b0	做个美甲。	美甲。
+理发 (lǐfà)	haircut	5	70e4c72af9f8c1ce13aa62c264cee5bd	下班去理发。	理发店。
+洗澡 (xǐzǎo)	bathe	5	935399edde186a94a094cabbf5b73fac	睡前洗澡。	洗个澡。

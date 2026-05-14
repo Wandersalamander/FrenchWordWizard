@@ -1,0 +1,208 @@
+科学 (kēxué)	science	10	c3dc6ca68455cab3e8d07703e0b726f5	科学发展改变生活。	大科学。
+数学 (shùxué)	mathematics	10	f3731c66d1364940d2fe786ec645e1b5	数学很重要。	学数学。
+物理 (wùlǐ)	physics	10	8b8cfe117cb0ccb53bab32f016f61225	物理课很有趣。	物理学。
+化学 (huàxué)	chemistry	10	249b731f1ad3472964df55945931019f	化学实验很神奇。	化学。
+生物 (shēngwù)	biology	10	105555c36d246f5c82f36dc2cbf38f43	生物学研究生命。	生物学。
+天文 (tiānwén)	astronomy	10	4b2642d92dafc005b5539c46265cec35	天文学家研究星空。	天文学。
+地理 (dìlǐ)	geography	10	8dadae118a7ac9f327c872c6af915f96	地理课讲世界各地。	地理学。
+语文 (yǔwén)	Chinese language (subject)	10	6c80b4c0f8dae04b97e6dc37773b972a	语文是基础课。	语文课。
+英语 (Yīngyǔ)	English	10	6bd84885a1aed829b5d2eec1c780188a	英语是世界语言。	学英语。
+法语 (Fǎyǔ)	French	10	ff07a79f827b04869d9d5c0d71a63429	法语很优美。	学法语。
+德语 (Déyǔ)	German	10	ea202b8c345d813f824192e92d3140ee	德语语法复杂。	学德语。
+日语 (Rìyǔ)	Japanese	10	96e688879953bf858502f69b35fd2fe6	日语写法像中文。	学日语。
+中文 (Zhōngwén)	Chinese	10	423025a2615fe7a2c589ea928db5d971	中文很难学。	学中文。
+汉语 (Hànyǔ)	Mandarin Chinese	10	7def98423a596a939f14ba4b06a03e6b	汉语是普通话。	学汉语。
+方言 (fāngyán)	dialect	10	6ef5861724750fdafa799a543b8f360e	各地有自己的方言。	地方方言。
+普通话 (pǔtōnghuà)	Mandarin	10	42df2231625c83bec9e0353c20d6f620	普通话是标准语。	说普通话。
+粤语 (Yuèyǔ)	Cantonese	10	0f2c02483d7dde2ad4fe31a7f91fcf8a	粤语在广东流行。	学粤语。
+上海话 (Shànghǎihuà)	Shanghainese	10	b63477e5ebc0ca9ae2522395c0328468	上海话有自己特色。	上海话。
+绘画 (huìhuà)	painting	10	502b4fcffedb6eb92d9bd3fc9001141e	她喜欢绘画。	绘画。
+书法 (shūfǎ)	calligraphy	10	19ed8da2e6fc17b8df780e602f07871b	书法是中国艺术。	练书法。
+雕塑 (diāosù)	sculpture	10	bd4a69e0d90cdfd2882e9f8fbfe6dcee	这件雕塑很美。	大雕塑。
+建筑 (jiànzhù)	architecture	10	86600fc5ae82f72e09c58faa36cd3501	这栋建筑很特别。	大建筑。
+设计 (shèjì)	design	10	1a4abd414d1608589d3d6caea4946fae	她做服装设计。	大设计。
+音乐 (yīnyuè)	music	10	a301cb7cc91a0d23e6820a485c030062	她喜欢听音乐。	好音乐。
+歌曲 (gēqǔ)	song	10	e0b9c16b510d407455e96fa071ac96ff	这首歌曲很流行。	新歌曲。
+歌词 (gēcí)	lyrics	10	08002fa78a5c4655070027fff35abf7a	这首歌歌词很美。	好歌词。
+旋律 (xuánlǜ)	melody	10	5a303d09a71996f8298a200241bf2dd0	这段旋律很动听。	动人旋律。
+节奏 (jiézòu)	rhythm	10	cfee977dc7c8054e09bfdfbf57043088	这首歌节奏快。	快节奏。
+和声 (héshēng)	harmony	10	f17a1b05eca95b279ff5ea40e1d721e9	合唱要注重和声。	和声。
+乐器 (yuèqì)	musical instrument	10	f25dffed38f26a552c4e36e19338ac6f	她会弹很多乐器。	大乐器。
+钢琴 (gāngqín)	piano	10	cb130e9c2df9c2d2a62918f43c58712d	她钢琴弹得好。	弹钢琴。
+吉他 (jítā)	guitar	10	6c75ab110f5f4d3d64c873066df3f620	弹吉他很酷。	弹吉他。
+小提琴 (xiǎotíqín)	violin	10	9b0f73dd2c0cf62c6da30ff9f564cb7a	小提琴音色优美。	拉小提琴。
+鼓 (gǔ)	drum	10	18606d25ce71b8b6c251455e8507af69	打鼓节奏感强。	大鼓。
+笛子 (dízi)	flute	10	6f2d6da2453aeb033300c1b7625b81af	笛子是中国乐器。	吹笛子。
+古筝 (gǔzhēng)	guzheng	10	f197b4e56991a59abc68d815c1897f9b	古筝声音清脆。	弹古筝。
+二胡 (èrhú)	erhu	10	ca1cbc1b2391ecf5c31c50bc55f88582	二胡是民族乐器。	拉二胡。
+乐队 (yuèduì)	band	10	907ba0469e399a40855f0451130450e5	这支乐队很有名。	大乐队。
+演唱会 (yǎnchànghuì)	concert	10	fb389573269d363bd0bdcef19adcafc9	她要开演唱会。	大演唱会。
+舞蹈 (wǔdǎo)	dance	10	c79d4b47b81ecfdced1b1db540d9c068	舞蹈是艺术。	学舞蹈。
+跳舞 (tiàowǔ)	dance (verb)	10	b0506e407bc9bc1416b17a5cd8eda8b5	她在跳舞。	跳舞。
+芭蕾舞 (bālěiwǔ)	ballet	10	724ae97e1ab3ceb4c8ff2e949d1ee141	芭蕾舞优雅。	芭蕾舞。
+民族舞 (mínzúwǔ)	folk dance	10	421f069572146f5602902f1b9614e4d6	民族舞热情。	民族舞。
+戏剧 (xìjù)	drama; theater	10	6967b126e3f109e63f88ad03a069e7cc	戏剧表演真好。	大戏剧。
+京剧 (jīngjù)	Beijing opera	10	40f73f892031020ac18cad471901199a	京剧是国粹。	看京剧。
+小说 (xiǎoshuō)	novel	10	227b632735c9b92289ff85d5c1385361	这本小说好看。	长小说。
+诗歌 (shīgē)	poetry	10	e5fac75774c5e26989b254a42c95f107	诗歌富有意境。	古诗歌。
+散文 (sǎnwén)	prose; essay	10	6fc5e9430ab2781cf1817b875b7f85f9	散文文笔好。	散文集。
+散步 (sànbù)	walking	10	10e37947c7ab7141b60c87d9e489d6e9	饭后散步消化好。	去散步。
+运动 (yùndòng)	exercise; sport	10	2dae2782caed187f1dcf821118597a4e	每天运动健身。	大运动。
+体育 (tǐyù)	sports; PE	10	0c12bf7cf4296b584ea07e6054f2a33f	体育课很有趣。	体育课。
+足球 (zúqiú)	soccer	10	705d789200886f12caf254853af5ba0c	足球世界第一运动。	踢足球。
+篮球 (lánqiú)	basketball	10	a62e80fbd54ed145ee6f80633ed52b06	NBA篮球精彩。	打篮球。
+乒乓球 (pīngpāngqiú)	table tennis	10	47a5294c87c89cf899fcb31f56aab30e	中国乒乓球世界第一。	打乒乓球。
+羽毛球 (yǔmáoqiú)	badminton	10	3efbd203b71d188a607243f61d57bd72	周末打羽毛球。	打羽毛球。
+网球 (wǎngqiú)	tennis	10	0513d5d08b28a3c50a86bf6cd9fb0207	网球场地大。	打网球。
+排球 (páiqiú)	volleyball	10	6fc599e8c752a571daeb4f8ef7ff9acf	中国女排很棒。	打排球。
+游泳 (yóuyǒng)	swimming	10	a686bad8ba576df0a01195fb4d98be0e	夏天游泳凉快。	游泳池。
+跑步 (pǎobù)	running	10	a5bba57332f7e96892337c58bcf8eb2a	每天跑步健身。	大跑步。
+登山 (dēngshān)	climbing	10	40faa8e6914c81c275feeb825dcd2bde	登山锻炼体力。	登山。
+滑雪 (huáxuě)	skiing	10	09b2441e3feb3054e065686935cf179d	冬天滑雪很爽。	滑雪场。
+滑冰 (huábīng)	ice skating	10	ec86930adb8a91b58d0a739ba02a1274	冰场上滑冰。	滑冰。
+高尔夫 (gāo'ěrfū)	golf	10	8068789f760c13ef559159706885f489	高尔夫是绅士运动。	打高尔夫。
+瑜伽 (yújiā)	yoga	10	68e017b43a03e780c915bee63a2427a1	瑜伽放松身心。	做瑜伽。
+太极拳 (tàijíquán)	tai chi	10	05bb7f715666087a4513801d676bb053	太极拳老人爱练。	打太极拳。
+武术 (wǔshù)	martial arts	10	5fc7ef6c1a3fb7a816c7d52129e632f2	武术是中国国粹。	练武术。
+功夫 (gōngfu)	kung fu	10	9864d44c954293240063cdb93a010174	李小龙功夫好。	大功夫。
+比赛 (bǐsài)	competition; match	10	b2400594b10c5c013f72fe7a0b07d8bf	这场比赛精彩。	大比赛。
+冠军 (guànjūn)	champion	10	ab5a80252fc008e61600da4c06d02235	她拿了冠军。	大冠军。
+亚军 (yàjūn)	runner-up	10	6ab16ec582c6833d7f50d014a23057d3	这次得了亚军。	亚军。
+季军 (jìjūn)	third place	10	7f64354b9348ffc330858a2c350ead5f	季军也不错。	季军。
+奖杯 (jiǎngbēi)	trophy	10	0e1aa5ce8f71cd629406a5109741214e	奖杯沉甸甸的。	大奖杯。
+奖牌 (jiǎngpái)	medal	10	ce786748ecb6729659768b33e93a0546	金奖牌最闪耀。	金奖牌。
+金牌 (jīnpái)	gold medal	10	11d276baf94d579a7cd0355130f227c1	她拿了金牌。	金牌。
+银牌 (yínpái)	silver medal	10	7cae7bd589d65694906caa406298c248	银牌也很好。	银牌。
+铜牌 (tóngpái)	bronze medal	10	c4d412c37869cd9fa79257a1d446bc2b	铜牌也是荣誉。	铜牌。
+奥运会 (Àoyùnhuì)	Olympics	10	2dee118940a9d3db6bd716de875e002c	奥运会四年一次。	大奥运会。
+世界杯 (Shìjièbēi)	World Cup	10	313125b38b06260e96f4f32499342590	世界杯举世瞩目。	世界杯。
+器官 (qìguān)	organ	10	ec1d78c554e6e7c459cb5ebda97ba1f4	心脏是重要器官。	大器官。
+肌肉 (jīròu)	muscle	10	ac63461f5112af4da6657f9185cc9ff8	锻炼可以长肌肉。	大肌肉。
+骨骼 (gǔgé)	skeleton	10	85f29dbaa41fa114979f10f4c63f652a	骨骼支撑身体。	骨骼。
+神经 (shénjīng)	nerve	10	ba73f17bb7f2e60661d85702f20f3885	神经很敏感。	大神经。
+血管 (xuèguǎn)	blood vessel	10	1760ad5c5884e0dc07bd28289093a73d	血管堵塞会出问题。	大血管。
+心脏 (xīnzàng)	heart	10	b89e5ac4c22153e8d4109828d5ed0f4c	心脏一直在跳动。	大心脏。
+肺 (fèi)	lung	10	e1e2fc1d3d2ffb5023b19f062f5095d2	吸烟伤肺。	大肺。
+肝 (gān)	liver	10	4d3fa5ee9c1db4b6e9e4bf844d3d73cc	喝酒伤肝。	大肝。
+胃 (wèi)	stomach	10	bb6b71bdab1da9a1a6d167536f3ffa88	胃要好好保养。	大胃。
+肠 (cháng)	intestine	10	095fe0c4f5f34c06422b5120b3f8a3dd	肠胃要健康。	大肠。
+肾 (shèn)	kidney	10	6d0484984e4b20c69d590c9a82984168	肾脏过滤血液。	大肾。
+大脑 (dànǎo)	brain	10	d5a8c96ef6778e8468649d4ef83a119a	大脑控制思维。	大脑。
+牙医 (yáyī)	dentist	10	c50b5a23a783e0bee65538835cdc8c91	牙医检查牙齿。	大牙医。
+诊所 (zhěnsuǒ)	clinic	10	03f27c5d70de0625f0aba0f607c7f60e	小诊所看小病。	小诊所。
+门诊 (ménzhěn)	outpatient	10	325e506933f9efca9093e2937f754d3d	门诊看病要挂号。	门诊。
+急诊 (jízhěn)	emergency	10	d3a0f488915d523f8309197fa0f436c4	急诊抢救生命。	大急诊。
+手术 (shǒushù)	surgery	10	166e78870a75d4538292d3d26f97bac2	这是大手术。	大手术。
+治疗 (zhìliáo)	treatment	10	b8e84a0464786ba49037cb05aac578fa	治疗需要时间。	大治疗。
+打针 (dǎzhēn)	injection	10	7681f66ce4c44959931ba8b7fa5354a9	孩子怕打针。	打针。
+吃药 (chīyào)	take medicine	10	075fd19d2cf26ba35a20f22271f70ce0	记得按时吃药。	吃药。
+体检 (tǐjiǎn)	health check	10	0f7166f5601aada8f191f17bb5ab7367	每年要体检一次。	做体检。
+化验 (huàyàn)	lab test	10	63b8a3ebd70cfc5198ed72c280080adc	做血液化验。	大化验。
+化疗 (huàliáo)	chemotherapy	10	f81be19a08a3b6e232a57411823d1547	化疗很痛苦。	化疗。
+放疗 (fàngliáo)	radiotherapy	10	c80785e471aa653a6a77b07faf58feda	放疗治疗癌症。	放疗。
+癌症 (áizhèng)	cancer	10	43f7cdd91a030d7485bc6b299bb0ea26	癌症是大敌。	大癌症。
+糖尿病 (tángniàobìng)	diabetes	10	a6bbdf0ccb0a1339e2cb95695edb69b9	糖尿病要控糖。	糖尿病。
+高血压 (gāoxuèyā)	high blood pressure	10	a2e251e63d406191a4fb5d5f15bf471c	高血压要吃药。	高血压。
+心脏病 (xīnzàngbìng)	heart disease	10	6832e826f79b2f4e846821ff5af68327	心脏病要小心。	心脏病。
+中风 (zhòngfēng)	stroke	10	c726afd8306a91b54de84fe4bc4a1d68	中风很危险。	大中风。
+过敏 (guòmǐn)	allergy	10	81e0ff08f1273841c3210c305619579e	对花粉过敏。	过敏。
+疫苗 (yìmiáo)	vaccine	10	40e35fe5ec9cd2b965deaad359358a81	打疫苗很重要。	新疫苗。
+细菌 (xìjūn)	bacteria	10	95bdab72119af13a529a8618fc1c1a8e	抗生素杀细菌。	大细菌。
+实验 (shíyàn)	experiment	10	816a1c7925b2f8363c5852714702ca4c	做实验要小心。	大实验。
+理论 (lǐlùn)	theory	10	c73dfbbc78946b6f481b0178653cd051	理论联系实际。	大理论。
+公式 (gōngshì)	formula	10	f8903eb85ac58d940770daef662f901e	数学公式要记。	新公式。
+方程 (fāngchéng)	equation	10	81d7bda0ffed22a4c5de95a6e36676e8	方程求解。	大方程。
+计算 (jìsuàn)	calculate	10	334d8a286c0a47e5de9e8163dc517960	计算结果对吗？	大计算。
+数字 (shùzì)	number; digit	10	b07dd4d041cfd06c8a11d3dc26705c97	这个数字很大。	大数字。
+加法 (jiāfǎ)	addition	10	45e3a6d2851c84d1415023b9758c4519	学加法。	加法。
+减法 (jiǎnfǎ)	subtraction	10	3321437815a5889ae0d8fd71e4dc1286	学减法。	减法。
+乘法 (chéngfǎ)	multiplication	10	b728f789ca4ec25353fcd3f0669d6f48	学乘法表。	乘法。
+除法 (chúfǎ)	division	10	04087774a0fd66f87be45f4966259db4	学除法。	除法。
+百分比 (bǎifēnbǐ)	percentage	10	3323214df9fdd2f6ce22d8ac41300d2b	这是百分比。	百分比。
+几何 (jǐhé)	geometry	10	ed1709a26a7475078b0e9cd34b8c2955	几何图形。	学几何。
+代数 (dàishù)	algebra	10	45b3356698f868e5a3aa10ce431daf99	代数难学。	学代数。
+分析 (fēnxī)	analyze	10	89541bfa287a85f8dad89c2197a49ddc	分析问题。	大分析。
+统计 (tǒngjì)	statistics	10	301c570e9abca1bfcf9da78985330ee6	统计数据。	大统计。
+观察 (guānchá)	observe	10	15a19cfe3dcd5e9a0e8c4a287dc9cb3d	仔细观察。	大观察。
+发现 (fāxiàn)	discovery; find	10	a6ee741ff96264486b276e8f9f1cdcf3	新发现。	大发现。
+发明 (fāmíng)	invention	10	c6869d7e555bf6845c3f34c8538974bb	大发明家。	大发明。
+创造 (chuàngzào)	create	10	616c5920cff1fa29b3cb0633a39783c3	创造价值。	大创造。
+创新 (chuàngxīn)	innovate	10	6a4e8eb516e532effb7aeeaf98e3e602	创新是动力。	大创新。
+变化 (biànhuà)	change	10	9fe764dabf4b3b7de947df6c8626b3ea	时代在变化。	大变化。
+影响 (yǐngxiǎng)	influence	10	322d757ca8ff7ffe87d0fef1ce19e148	影响很大。	大影响。
+原子 (yuánzǐ)	atom	10	2ad19e0f740be99654a4be3add4637f9	原子很微小。	大原子。
+分子 (fēnzǐ)	molecule	10	2e0c6a92bb21bb0e9a2689c2af13bef0	分子结构。	大分子。
+能量 (néngliàng)	energy	10	52e3c9bbb4579e118a5ba023602f9d81	能量守恒。	大能量。
+电能 (diànnéng)	electrical energy	10	29b0d2cbaa5a8ccbdc33f5db91892349	电能转化。	电能。
+太阳能 (tàiyángnéng)	solar energy	10	f2b4a52bb4b9ef15d7853f36a4e42ce6	太阳能环保。	太阳能。
+风能 (fēngnéng)	wind energy	10	7e03633c98f811f1ccbcde994daa6bba	风能发电。	风能。
+水能 (shuǐnéng)	hydropower	10	23bc76df7e77270162e23af09a93acd5	水能发电。	水能。
+核能 (hénéng)	nuclear energy	10	9a99e9abdb51b4795a4cdae516e6cce7	核能要安全。	核能。
+气候变化 (qìhòu biànhuà)	climate change	10	15f4fad7fb93297bb36d9dacb5919bf9	气候变化严重。	气候变化。
+全球变暖 (quánqiú biànnuǎn)	global warming	10	594b8004f53695d384f156d05cf5696a	全球变暖加剧。	全球变暖。
+地球 (dìqiú)	Earth	10	16d21fcb50696ae58a8aa3019254876f	地球是家园。	大地球。
+月球 (yuèqiú)	moon	10	7c928cbeff978c4add3998c8dedd4949	月球绕地球转。	大月球。
+太阳系 (tàiyángxì)	solar system	10	22d34d2dd0801337f3fda4820879395f	太阳系有八大行星。	太阳系。
+银河系 (yínhéxì)	Milky Way	10	5dec973e97e2619d7916af3924f16d45	银河系无比辽阔。	银河系。
+宇宙 (yǔzhòu)	universe	10	7bf97b8081365015062e1be540dbaec8	宇宙无边无际。	大宇宙。
+量子 (liàngzǐ)	quantum	10	c73fabf47a0572f96f9ecda993564419	量子计算。	量子。
+量子力学 (liàngzǐ lìxué)	quantum mechanics	10	3c060e720b281e8536d59daa6ad3d753	量子力学难懂。	量子力学。
+相对论 (xiāngduìlùn)	relativity	10	1976df5c06e76997b8bcda22d642d04c	爱因斯坦相对论。	相对论。
+万有引力 (wànyǒu yǐnlì)	gravitation	10	afec4755d5889442e7d97353e537ccf9	万有引力定律。	万有引力。
+光速 (guāngsù)	speed of light	10	96c158d1a62a95dc32800b299a6b0cd6	光速最快。	光速。
+重力 (zhònglì)	gravity	10	004f28c722bb0a4390af3c8444ff378d	地球重力。	重力。
+摩擦力 (mócālì)	friction	10	b437f950967bd6eb2132ac52b51c701b	摩擦力大。	摩擦力。
+弹力 (tánlì)	elasticity	10	a2702358b81ddc5df5ee336f452c622f	弹簧弹力。	弹力。
+浮力 (fúlì)	buoyancy	10	1d1fa973895c1424630e5618d5aa2e1a	水的浮力。	浮力。
+压强 (yāqiáng)	pressure	10	7a47bb62bc33be4784e95d4660d367da	大气压强。	高压强。
+密度 (mìdù)	density	10	63673052ec93a3409e9c105c6757008f	水的密度。	高密度。
+体积 (tǐjī)	volume	10	b8a295e6290b227b0bade8eb8eb9f784	计算体积。	大体积。
+长度 (chángdù)	length	10	771dcdcb5a752150c98a8efb80f9c947	测量长度。	长度。
+宽度 (kuāndù)	width	10	111521eabe9f70d1a230f1dac8f34079	桌子宽度。	大宽度。
+高度 (gāodù)	height	10	522027fc9bc9bdd95ebd658fa02bf079	建筑高度。	大高度。
+空间 (kōngjiān)	space	10	bd13bbd40306dcaa74410f432d775c1e	储物空间。	大空间。
+立方米 (lìfāngmǐ)	cubic meter	10	dab94ca9fa79b4b337e3878d506434b3	房间立方米。	立方米。
+平方米 (píngfāngmǐ)	square meter	10	e142365668d0aeb801f91f5a14b02123	面积平方米。	平方米。
+元素 (yuánsù)	element	10	6571bb5121093b65f7de9610aba637e2	化学元素。	化学元素。
+化合物 (huàhéwù)	compound	10	c07e7e1d9f6afffac695e14b61be7300	有机化合物。	化合物。
+反应 (fǎnyìng)	reaction	10	d80f07d9125ce8ec88ca913bb60eba01	化学反应。	化学反应。
+燃烧 (ránshāo)	burn	10	f02667e48d8a5db7b473af0f083365a3	物体燃烧。	大燃烧。
+爆炸 (bàozhà)	explosion	10	02d6d8790048eccc68e3aa3afdd63a54	炸药爆炸。	大爆炸。
+融化 (rónghuà)	melt	10	6ccb20b338cccfd4dbd844ad1efe8623	冰雪融化。	融化。
+凝固 (nínggù)	solidify	10	e341899e67a3678836cb74c8242bfa76	液体凝固。	凝固。
+蒸发 (zhēngfā)	evaporate	10	86e5cad3c76c6db47257a8a3a91bd5e4	水蒸发了。	蒸发。
+溶解 (róngjiě)	dissolve	10	7ded164b52fbdd4c0e920c5a8f93ab8e	糖溶解了。	溶解。
+沸腾 (fèiténg)	boil	10	ab5e8c2a7a238e02fd7d226325e98d4f	水沸腾了。	大沸腾。
+冷却 (lěngquè)	cool down	10	6a10959f7d4bb062287488b35eb319a1	发动机冷却。	冷却。
+加热 (jiārè)	heat	10	c195d3b9063de602748669807f61a10e	加热食物。	加热。
+电压 (diànyā)	voltage	10	4aa476f610511a8db39333b32a4359c4	高电压危险。	电压。
+电流 (diànliú)	current	10	73b8b2c9cc3ef89cdf5a7235287f22b9	电流过大。	电流。
+电阻 (diànzǔ)	resistance	10	59b9be483810e42730f861ed9976007b	电阻大。	电阻。
+磁场 (cíchǎng)	magnetic field	10	2ee3e254a44e8f01f6000b625eaa6cf2	地球磁场。	磁场。
+磁铁 (cítiě)	magnet	10	b099dddd012b336c1028170716760deb	小磁铁。	大磁铁。
+显微镜 (xiǎnwēijìng)	microscope	10	df36583a9afa1ce01a3d90d0abeba551	用显微镜看。	显微镜。
+望远镜 (wàngyuǎnjìng)	telescope	10	b89e171864deb3ddd18256b08b443f6c	望远镜看星星。	望远镜。
+卫星 (wèixīng)	satellite	10	971b4c7c40bdf975f686dbd15a89f0c8	人造卫星。	大卫星。
+火箭 (huǒjiàn)	rocket	10	af91956f36d78c55ac56e17cef4c3a25	发射火箭。	大火箭。
+宇航员 (yǔhángyuán)	astronaut	10	9f2d6ada9a0e5f8b95bc04745d93aabe	宇航员训练。	宇航员。
+飞船 (fēichuán)	spacecraft	10	80c715a8a838b02a4dc511c63a307bed	载人飞船。	大飞船。
+空间站 (kōngjiānzhàn)	space station	10	cea6c3617eef72ce59405a2a0f96e9b4	国际空间站。	空间站。
+行星 (xíngxīng)	planet	10	23daccb9c35e5cdc9559af4721c8b176	八大行星。	大行星。
+恒星 (héngxīng)	fixed star	10	399029ea11730c288f1675c656a3703a	恒星发光。	恒星。
+银河 (yínhé)	Milky Way	10	6ea3612d2e2658fe7e332df63c46c12a	银河璀璨。	银河。
+黑洞 (hēidòng)	black hole	10	3a05d95a6528b4c03dda8a5ba20d2757	黑洞神秘。	大黑洞。
+基因 (jīyīn)	gene	10	465e20bf48249a58863834696af3f8a9	基因遗传。	基因。
+DNA (DNA)	DNA	10	c46673dc84edb39f429d442e2a8dddf2	DNA测序。	DNA。
+细胞 (xìbāo)	cell	10	14441d4983a204b620149dd2f7ae8af8	细胞分裂。	大细胞。
+克隆 (kèlóng)	clone	10	fcb67c1d2ea97e4f2a6f2b5b7e584fed	克隆技术。	克隆。
+进化论 (jìnhuàlùn)	evolution theory	10	4c476aaac0a64dafe294f5208ce634d6	达尔文进化论。	进化论。
+钓鱼 (diàoyú)	fishing	10	350ab535fa9247c71d276c4f131849ea	周末去钓鱼。	钓鱼。
+打猎 (dǎliè)	hunting	10	975c1c6942bdabba9f08887c076c1e45	古人打猎。	打猎。
+徒步 (túbù)	hiking	10	005a4b58e1590871ed5757ec56f8adcf	周末徒步。	徒步。
+野营 (yěyíng)	camping	10	49dae30c63a003decf066e7a6bafd35c	夏天去野营。	野营。
+潜水 (qiánshuǐ)	diving	10	8167c8c5f032c5ca861a709793dc026c	潜水看珊瑚。	潜水。
+冲浪 (chōnglàng)	surfing	10	a456275c8afc6544f54f8ce43ccf121d	海边冲浪。	冲浪。
+赛车 (sàichē)	car racing	10	6fc512d5edc39a76f7683d315f2ce5d5	赛车比赛。	大赛车。
+拳击 (quánjī)	boxing	10	87406a2649f57b9174ae02042cc38f4d	拳击运动。	大拳击。
+跆拳道 (táiquándào)	taekwondo	10	88c5ac48801f082a8b34bbb26e4cc902	学跆拳道。	跆拳道。
+柔道 (róudào)	judo	10	1cba1b7b9595e7f69a3ae849e9e625dd	柔道比赛。	柔道。

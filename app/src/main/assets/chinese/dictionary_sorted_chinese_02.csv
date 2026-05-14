@@ -1,0 +1,202 @@
+头 (tóu)	head	2	1850f6e85fb3572eb7a1ddfb38a44599	我昨天没睡好,今天头很痛。	头疼。
+脸 (liǎn)	face	2	c82c3ddbd60306e4099e6bd300c04807	她脸上总是带着温暖的笑容。	洗脸。
+眼睛 (yǎnjīng)	eye	2	432c74902e7b9fdfbefcc663e1b59e7f	她有一双很大很漂亮的眼睛。	大眼睛。
+鼻子 (bízi)	nose	2	6f4eca0aee3d1827db9fbbb71c60eafa	感冒了,我的鼻子塞得难受。	鼻子痒。
+嘴 (zuǐ)	mouth	2	dcf1d6ffd68ef59be1fc50eb31ee6d84	这个孩子嘴很甜,见到长辈就问好。	嘴巴。
+嘴巴 (zuǐba)	mouth	2	43e9461e669070ed5372b0a52c5b0322	请张开嘴巴,医生要检查你的喉咙。	小嘴巴。
+耳朵 (ěrduo)	ear	2	177c887cd28cd6b213a5a00dc0a7cb9c	他的耳朵很灵,小声说话都能听见。	耳朵痛。
+牙齿 (yáchǐ)	tooth	2	600a71d44defe3f2c53d9ab2e1dd93e8	每天早晚都要刷牙保护牙齿。	白牙齿。
+舌头 (shétou)	tongue	2	2e2b352c378ae1be89e018808e360593	喝热汤的时候我不小心烫到了舌头。	伸舌头。
+脖子 (bózi)	neck	2	5251c7f42cff4219969e5ec2160a95eb	我昨天睡落枕了,今天脖子很痛。	长脖子。
+肩膀 (jiānbǎng)	shoulder	2	13ad46d900aae6589862c5c6ee0e1ac4	她肩膀上背着一个很重的双肩包。	肩膀疼。
+背 (bèi)	back	2	cff7701974b01c115a193e61b3a379c3	长时间坐着工作,我的背很酸。	背痛。
+胸 (xiōng)	chest	2	29a600fb64262566b40618afc65f54ee	跑了五公里,我感觉胸口有点闷。	胸口。
+肚子 (dùzi)	stomach; belly	2	3b8e6a03f16eb2fa6aa84ba6c3e572e6	我肚子饿了,我们去吃饭吧。	肚子疼。
+腰 (yāo)	waist	2	936584ee7c89ebf54db22a709d580140	我搬东西的时候不小心扭到了腰。	腰疼。
+手 (shǒu)	hand	2	7980029b6eb8b51901aae9fef0e57b34	请把你的手洗干净再吃饭。	手心。
+手指 (shǒuzhǐ)	finger	2	2687b21a06efea1deb103965f0ee7c8e	她手指很灵活,弹钢琴特别好听。	十个手指。
+胳膊 (gēbo)	arm	2	50b724be3d71ca1c6ccdaafb8c1bc3dd	打疫苗后我的胳膊酸了一整天。	胳膊酸。
+腿 (tuǐ)	leg	2	4d81f6713662978708b706a81864c063	这条裤子腿部有点紧,要不要换一条？	腿疼。
+脚 (jiǎo)	foot	2	4ca0c971bfd7c302fcaaf574d0536e9a	走了一天的路,我的脚都肿了。	脚疼。
+脚趾 (jiǎozhǐ)	toe	2	54343d1becdae3c8dd87ebbd38b2640e	我洗澡时不小心撞到了脚趾。	脚趾甲。
+膝盖 (xīgài)	knee	2	a885c05f0e7769b3b7ba8d435b452cb7	跑步要小心,不要伤到膝盖。	膝盖伤。
+头发 (tóufa)	hair	2	ebf115a072414e6f5adec21f656b5921	她的头发又长又黑,非常漂亮。	长头发。
+皮肤 (pífū)	skin	2	8e3cf621264ef47e3b2b3c9851908b9e	她的皮肤又白又嫩,看起来很年轻。	皮肤好。
+心 (xīn)	heart	2	49679fedadc12129cbf68999d5962bc6	听到这个好消息,我心里特别高兴。	心情。
+血 (xuè)	blood	2	96924b46467f74ab75c51f7bb059e0bc	他不小心切到手指流了点血。	出血。
+骨头 (gǔtou)	bone	2	1f21b8e1a83da1ae4acfaceaa6c2b1f7	老人的骨头比较脆,要小心摔倒。	骨头汤。
+身体 (shēntǐ)	body; health	2	74e952f1dda30749d2ad6c7d11073e91	经常锻炼对身体很有好处。	身体好。
+个子 (gèzi)	height; stature	2	04fd99350d5ab2cb5cfa4dfadc3c4886	她个子高,适合打篮球。	高个子。
+力气 (lìqi)	strength	2	65bad3df6db64c1b4475b5176c2ac525	搬这个箱子需要点力气,你能帮我吗？	没力气。
+爸爸 (bàba)	dad; father	2	0dc9bc672a9b4dad74b470b9f5ede340	我爸爸是个工程师,在国企工作了三十年。	爸爸。
+妈妈 (māma)	mom; mother	2	f6ff748ca69738efc2f687c07c63680f	我妈妈做的红烧肉特别好吃。	妈妈。
+父亲 (fùqīn)	father (formal)	2	7a41dd5716810eae1f1f5ffe6cce2d81	我父亲是一位退休的大学教授。	父亲节。
+母亲 (mǔqīn)	mother (formal)	2	dada6d1e93184bc934201a2617a950bf	母亲节我打算回家陪妈妈过。	母亲节。
+哥哥 (gēge)	older brother	2	0bf509112cf33fc8bd4f2de491395c59	我哥哥比我大三岁,他已经结婚了。	大哥。
+弟弟 (dìdi)	younger brother	2	08876e27a9fe2518f9dafde18f805eab	我弟弟还在上大学,正在准备考研。	小弟。
+姐姐 (jiějie)	older sister	2	e1bfe0ab16c18543627e5c1f88e71e11	我姐姐在上海工作,我们好久没见了。	大姐。
+妹妹 (mèimei)	younger sister	2	eca862d1cbbf924cd3603b6e8f938b45	我妹妹今年刚高考完,正在等录取结果。	小妹。
+儿子 (érzi)	son	2	3f0a9cc6b70972c67e704863f9f0e74e	我儿子刚学会走路,跑得到处都是。	大儿子。
+女儿 (nǚ'ér)	daughter	2	4db9d2fad13127f22495557bfc8a49ef	我女儿今年五岁,特别喜欢画画。	小女儿。
+孩子 (háizi)	child; kid	2	1e3ebb310701aaf82efdffbc02479f3c	这个孩子很懂事,从小就帮家里做事。	几个孩子。
+丈夫 (zhàngfu)	husband	2	fcf9d68cb845815a1840a78aa3286517	我丈夫是位医生,经常加班到很晚。	丈夫。
+妻子 (qīzi)	wife	2	b6c7f9e989b6222d57c4407e57c7ee92	我妻子是我大学时的同班同学。	妻子。
+老公 (lǎogōng)	hubby; husband	2	441bafbef5bb04cf8092cd235d843281	我老公每天早上都给我做早餐。	老公。
+老婆 (lǎopó)	wifey; wife	2	a7e844060dea7b34d248bcad71bce438	周末我老婆喜欢和朋友一起去逛街。	老婆。
+爷爷 (yéye)	grandpa (paternal)	2	fed728bb079ba11633c77e9750b303d6	我爷爷今年八十多岁了,身体还很硬朗。	爷爷。
+奶奶 (nǎinai)	grandma (paternal)	2	2bf1beac3e50faf331fa4d9758e1c27d	我奶奶做的饺子特别好吃,我永远忘不了。	奶奶。
+外公 (wàigōng)	grandpa (maternal)	2	51223d0737630ba9cf7154ac9554c97a	我外公以前是位老中医,医术很高明。	外公。
+外婆 (wàipó)	grandma (maternal)	2	838a796fc8d409c9fa680e76bcd20176	小时候每年暑假我都去外婆家住。	外婆。
+叔叔 (shūshu)	uncle (father's younger brother)	2	15957f82946a83dde489ff679ae11bed	我叔叔在深圳开了一家公司。	叔叔。
+阿姨 (āyí)	aunt; auntie	2	41050c7f6408bba58cb47765e867a115	这位阿姨是我们家的钟点工,人特别好。	阿姨。
+舅舅 (jiùjiu)	uncle (mother's brother)	2	3253bf924e973254b806b8fbd09ec010	我舅舅在政府部门工作了二十多年。	舅舅。
+表哥 (biǎogē)	cousin (older male)	2	f7d0b5cda416028008c62ebeeb21536d	我表哥今年三十岁,在银行工作。	表哥。
+家人 (jiārén)	family member	2	0dcc934e5d10d1ff593bf3b399d03320	我每个月都会和家人视频聊天一两次。	家人。
+家庭 (jiātíng)	family; household	2	58a50eb64d9008042302f9b08114f7ef	幸福的家庭是每个人最大的财富。	家庭好。
+亲戚 (qīnqi)	relative	2	adc70ab5a39e6cefdf1c4fb83ee1908e	过年的时候,我们要去拜访很多亲戚。	亲戚。
+父母 (fùmǔ)	parents	2	328b174585d69e5deab0f77182cfa7d6	我父母都已经退休了,在老家享受生活。	父母。
+桌子 (zhuōzi)	table; desk	2	80611bcf0d3b8dfe8031614fbb36e787	请把书放到桌子上,不要乱扔。	大桌子。
+椅子 (yǐzi)	chair	2	979b540d52eb3c1e2483dba515dd2b68	这把椅子坐起来特别舒服。	椅子。
+床 (chuáng)	bed	2	8b36db6795d40f8c350f81265747f868	我新买了一张床,睡着特别舒服。	睡在床上。
+门 (mén)	door	2	d5c61b35e14795b6e18f2599889a15aa	请把门关好,外面太吵了。	开门。
+窗户 (chuānghu)	window	2	5b50251d15c8e8535cf8dad2848556f9	打开窗户透透气,屋里太闷了。	关窗户。
+房间 (fángjiān)	room	2	c1c6cf7402e3485b4390ada572f51c25	这个房间朝南,采光特别好。	房间号。
+厨房 (chúfáng)	kitchen	2	540839761837eba879fa5f196e1897a5	我们家的厨房很大,做饭很方便。	厨房用品。
+浴室 (yùshì)	bathroom	2	b1350f47115f95a49e1e6619e720a344	浴室里的水龙头坏了,需要找人来修。	浴室。
+卫生间 (wèishēngjiān)	toilet; bathroom	2	347b166ca4fcee021a31d80a3a1404f5	请问卫生间在哪里？我急着用。	卫生间。
+洗手间 (xǐshǒujiān)	restroom	2	700a3aa440bef58ef1ee651c161e8287	女洗手间在二楼的最右边。	洗手间。
+卧室 (wòshì)	bedroom	2	3314e8dd1bcb7ff9bf7d452ccc1f7c82	我的卧室不大,但是布置得很温馨。	主卧。
+客厅 (kètīng)	living room	2	a73a1c83c054026ab7fe60662bea32c7	客厅里摆了一张大沙发和一个茶几。	大客厅。
+阳台 (yángtái)	balcony	2	0eb28b6eb0735b65c17b65d946f230ff	我家阳台上种了很多花花草草。	阳台。
+花园 (huāyuán)	garden	2	e477db661a85126405ff763f3ff37748	这个小区有个很漂亮的花园。	后花园。
+院子 (yuànzi)	courtyard	2	9a9eda6dcdae1dbbe810b0e3621fc2cf	老北京的四合院都有个小院子。	大院子。
+墙 (qiáng)	wall	2	d1d9f6b568de21e2e8527aad8bf302c5	墙上挂着一幅他自己画的油画。	墙壁。
+地板 (dìbǎn)	floor	2	d3c9b9af5b1cf9cb05f584871fe0adb5	请把地板擦干净,客人马上要来了。	木地板。
+屋顶 (wūdǐng)	roof	2	e08fbd1c768888325515ba36b384f2ef	古老的房子屋顶都是青砖瓦盖的。	屋顶。
+楼梯 (lóutī)	stairs	2	e38a05269fefec898729201ce4dbcbcd	电梯坏了,我们只能爬楼梯。	楼梯口。
+楼 (lóu)	floor; building	2	24e3ad663694a8a7e3f2997027f7ca5d	我家在十二楼,景观很不错。	高楼。
+房子 (fángzi)	house	2	cf1e5da58264074f2268ce6b0ecd3d4a	深圳的房子真的越来越贵了。	买房子。
+公寓 (gōngyù)	apartment	2	e9ad5d9bdf8fc2a698d552449c20e354	我和朋友合租了一个两居室的公寓。	公寓。
+电梯 (diàntī)	elevator	2	8721f13b99a4a3a7f170c254d3adeea5	这栋楼有四部电梯,上下班高峰还是会等。	坐电梯。
+车库 (chēkù)	garage	2	1eab00db6154cb24fe35d909798d0169	车库在地下二层,有充电桩。	停车库。
+信箱 (xìnxiāng)	mailbox	2	23204508ffbd9140a273468bc0346064	请把这封信投到门口的信箱里。	信箱。
+钥匙 (yàoshi)	key	2	aa2d24380e52c2bbd2dd5ad3b69af9b9	我把家里的钥匙忘在公司了,糟糕。	拿钥匙。
+锁 (suǒ)	lock; to lock	2	512a3a249db8a78a6d53028f7318ce4b	出门前别忘了把门锁好。	锁门。
+灯 (dēng)	lamp; light	2	68ac85921bc947c6fbbc8bbea07041b3	请把灯打开,屋里太暗了。	开灯。
+空调 (kōngtiáo)	air conditioner	2	3954834f73ec960230fec3c96ad78f0d	深圳夏天没有空调真的活不下去。	开空调。
+电视 (diànshì)	TV	2	c951ce5758b9e1481da3b8361e7b3372	我爸喜欢晚饭后边看电视边喝茶。	看电视。
+冰箱 (bīngxiāng)	refrigerator	2	6d6027fc1ca4395c4425e07d5a298560	冰箱里还有点剩菜,可以热一下吃。	冰箱里。
+洗衣机 (xǐyījī)	washing machine	2	07c834b419c7f3d48a085896559dc130	这台洗衣机用了十年还很好用。	洗衣机。
+微波炉 (wēibōlú)	microwave	2	feec2a2ea1161a05d0486b14c85e9202	用微波炉热饭只要两分钟。	微波炉。
+风扇 (fēngshàn)	fan	2	3f6fab182e6e7e783b25b9e103f85f5d	电风扇坏了,这屋里真的很闷热。	电风扇。
+沙发 (shāfā)	sofa	2	1e93d0ef0202cee40c6323c6afe0d4e9	这个沙发很舒服,坐上去就不想起来。	大沙发。
+书架 (shūjià)	bookshelf	2	d94867027ba6ea6aa4002b4cd695a581	我的书架上摆满了各种各样的书。	书架。
+衣柜 (yīguì)	wardrobe	2	45568861ef2684ad523ae6ed26ae63c8	衣柜里有我四季的衣服。	衣柜。
+镜子 (jìngzi)	mirror	2	500e1adff9e9c7b28696917419f63f17	出门前我习惯照一下镜子。	照镜子。
+想法 (xiǎngfa)	idea; thought	2	9b8d37b31c388b725f7b70c85f7a3e1f	关于这个项目,你有什么好的想法？	想法。
+问题 (wèntí)	question; problem	2	2d13e191ad645f65f34a82d4d0dabcd2	这个问题比较复杂,我们需要讨论一下。	没问题。
+答案 (dá'àn)	answer	2	f9df25ecc47020f478e7cd34d4fbc9f2	这道题的答案,老师明天会公布。	正确答案。
+意思 (yìsi)	meaning	2	8211e39c0c71fc05ce96d74c5dafb9da	这句话是什么意思,我有点不太理解。	什么意思？
+道理 (dàoli)	reason; sense	2	9a9da02c53e628ccab5a072fc53e7544	妈妈说的话很有道理,我应该听。	讲道理。
+原因 (yuányīn)	cause; reason	2	3819ce1cc4393ff9c76660961b021622	迟到的原因是路上堵车太严重。	原因。
+结果 (jiéguǒ)	result	2	9423b8f869ed1b168367cb617d058f98	努力学习是会有好结果的。	结果。
+方法 (fāngfǎ)	method; way	2	d02fee3bc77dd83975fa16c3fc29f3d3	学外语没有捷径,要找适合自己的方法。	好方法。
+计划 (jìhuà)	plan	2	ab970da050224febf35b6e6724010968	我们要先制定一个详细的计划。	做计划。
+主意 (zhǔyi)	idea; plan	2	2467a30a5c5cf8d18a4d6fdd8d55db88	这个主意听起来不错,我们可以试试。	好主意。
+真理 (zhēnlǐ)	truth	2	925ab6997c93c25550537ab23e56a362	追求真理是科学家的使命。	真理。
+谎言 (huǎngyán)	lie	2	d8c4ad1d34bd1fc2f595d78f406210fd	谎言迟早会被揭穿,做人要诚实。	谎言。
+秘密 (mìmì)	secret	2	b0883d6947ae55bb4303a188010c96c5	这是我们之间的秘密,不要告诉别人。	秘密。
+经验 (jīngyàn)	experience	2	0cd2e352a0b9e343500325dcc0211219	他在这个行业有十多年的工作经验。	有经验。
+感觉 (gǎnjué)	feeling; sense	2	962664940c0d8465782d2956ad6c8d82	这件衣服穿上去感觉很舒服。	好感觉。
+心情 (xīnqíng)	mood	2	b0c518e959310bbb08db8abd74ca5717	听了这首歌,我的心情好多了。	心情好。
+关系 (guānxi)	relationship; connection	2	f1eb165ca70fb187eaa277ed59a21eb6	我和他的关系很好,经常一起出去玩。	关系好。
+信任 (xìnrèn)	trust	2	99e07037b6c49d29d395c41a09a60034	夫妻之间最重要的就是互相信任。	信任。
+希望 (xīwàng)	hope	2	ea86e5250ead5b7507161305d6581e60	我希望明年能去欧洲旅游一次。	希望。
+梦想 (mèngxiǎng)	dream	2	8bb7b32ca5134eefc1a81318bf1c5e1b	实现梦想需要努力和坚持。	梦想。
+现实 (xiànshí)	reality	2	e3624728b0133cfb5bf210641a668a79	梦想很美好,但现实需要面对。	现实。
+机会 (jīhuì)	opportunity	2	61b990e3e03d752ccc5ecf05194f1329	这次出差是一个难得的好机会。	好机会。
+选择 (xuǎnzé)	choice; to choose	2	ce4427543fb04fa7736d5150f79c4280	人生就是不断地做选择。	选择。
+决定 (juédìng)	decision; to decide	2	9cf4d4261d2610ed25ff3717e7133a86	这个决定是我深思熟虑过的。	做决定。
+责任 (zérèn)	responsibility	2	1d22f8643e753d28839844e91b330942	做父母的要对孩子负起责任。	责任心。
+能力 (nénglì)	ability	2	01a4b9f21288f7b02023edee4b02359a	她的能力很强,工作做得非常出色。	有能力。
+压力 (yālì)	pressure; stress	2	15708d0b7cbfb3f3a8ed54d7618238d3	最近工作压力很大,我快撑不住了。	有压力。
+目标 (mùbiāo)	goal; target	2	845d425e376a9a9b325cd796c36e16b3	我的目标是三十岁前买一套房。	目标。
+办法 (bànfǎ)	way; solution	2	f7a0ca06a5c5691b134829ad45da99d0	我想了一个办法解决这个问题。	好办法。
+建议 (jiànyì)	suggestion	2	1025ecd23ff80c2477ac3d3f1ae0aca8	您能给我一些专业建议吗？	提建议。
+意见 (yìjiàn)	opinion	2	950bf6380c7cce0db51379db75831249	大家有什么意见可以随时提出。	好意见。
+习惯 (xíguàn)	habit	2	643e1261c109cb9804688fb2c154705d	早睡早起是个很好的习惯。	好习惯。
+性格 (xìnggé)	personality	2	de5dfdc6152a2cb032064b1befe5aa59	她性格开朗,很容易和人相处。	好性格。
+脾气 (píqi)	temper	2	9899eb34969e8b83ee7f50c2a7655775	他脾气有点大,你不要跟他计较。	好脾气。
+早晨 (zǎochén)	early morning	2	1a427e64879862060b37086f001e5b19	早晨的空气特别清新,适合晨练。	早晨好。
+黄昏 (huánghūn)	dusk	2	bc28c25dfcba1759eabd005c5ff932a1	夕阳西下,黄昏的景色特别美。	黄昏。
+半夜 (bànyè)	midnight	2	231686f7d40efb50697ec1b0df298f29	半夜被电话吵醒,真的很不爽。	半夜。
+凌晨 (língchén)	pre-dawn	2	f92f1cfeb91a915b85ddeac5442f211e	凌晨三点我还在赶项目报告。	凌晨。
+时刻 (shíkè)	moment; juncture	2	66d533baa23d724102533eaa070ed338	这是一个重要的历史时刻。	关键时刻。
+周末 (zhōumò)	weekend	2	a0aa280c22f4691759dd41a230d2630a	周末我打算去爬山放松一下。	周末。
+假期 (jiàqī)	vacation; holiday	2	3f9500664357b14d98a09dc903f7fd3e	国庆假期我准备去云南旅游。	长假期。
+节日 (jiérì)	festival; holiday	2	11b54aa5b7c08733b2d33da2892213c3	春节是中国最重要的传统节日。	节日。
+春天 (chūntiān)	spring	2	9955fe84fe41be77bcf678b9ef0dbdce	春天来了,公园里花都开了。	春天。
+夏天 (xiàtiān)	summer	2	610563a6eb79f8eb7e029be8fe1893d1	夏天我最喜欢去海边度假。	夏天。
+秋天 (qiūtiān)	autumn; fall	2	a640dc7720d193d5993bd5778e47485c	北京的秋天天高云淡,特别美。	秋天。
+冬天 (dōngtiān)	winter	2	d183a577b6297edcb26362702d2059b5	北方冬天会下雪,南方很少。	冬天。
+一月 (yīyuè)	January	2	7105594a1431eb322ec67c19b2ee8254	一月份是春节前最忙碌的时候。	一月。
+二月 (èryuè)	February	2	1a3d6c3553cb1fa49e1903c4769c6f7d	二月通常很冷,要注意保暖。	二月。
+三月 (sānyuè)	March	2	52b7207808fbfd0643bc7c430d1339d4	三月的桃花开得最美。	三月。
+四月 (sìyuè)	April	2	c8fa9fb5ea9b8bb8aa7c1955a7bbf16d	四月正是赏花的好季节。	四月。
+五月 (wǔyuè)	May	2	7617e2c9f9c09b5e097ffc04fe370014	五月一日是劳动节,有三天假期。	五月。
+六月 (liùyuè)	June	2	348d54553a95c08e32824043ad6c60de	六月一日是儿童节,孩子们最开心。	六月。
+七月 (qīyuè)	July	2	3a47f68e394e6095c6aeb59a25fb52ad	七月的天气特别炎热。	七月。
+八月 (bāyuè)	August	2	a0e6dc53c7fa54fbdd58139092d073c6	八月份的雨水比较多。	八月。
+九月 (jiǔyuè)	September	2	5f3e8a99fbe35ce24aa5affe6098075d	九月开学,孩子们又要回到学校了。	九月。
+十月 (shíyuè)	October	2	c6a05eeb5b130946ca26433c575bf450	十月份是出游的黄金时间。	十月。
+十一月 (shíyīyuè)	November	2	e170178a010d178f362d5d772c66992b	十一月的早晚温差比较大。	十一月。
+十二月 (shí'èryuè)	December	2	ef89aea025be30d0cf8429952b05d251	十二月底大家都在准备过年。	十二月。
+今年 (jīnnián)	this year	2	e756c7713576a75bedac50d1dc97bfbb	今年公司的业绩比去年好很多。	今年。
+明年 (míngnián)	next year	2	5ac7131e1b02b5e252eace544cd9a39e	明年我打算换一份新工作。	明年。
+去年 (qùnián)	last year	2	d80ad38eb535b81582f78e70519de63c	去年我去了三个不同的国家旅行。	去年。
+后年 (hòunián)	year after next	2	2831c199b2e7995b8bdede626f298bc7	后年是我们结婚十周年。	后年。
+前年 (qiánnián)	year before last	2	1744e2835b5d09d73d2369cb093c43bf	前年我从北京搬到了深圳。	前年。
+将来 (jiānglái)	future	2	554714e289d689df50af5ce7313322a9	对将来我有很多美好的期待。	将来。
+过去 (guòqù)	past	2	a6cc7b1d869d63dda4fd46a9192d6f3e	过去的事就让它过去吧,向前看。	过去。
+未来 (wèilái)	future	2	f3a9503b31064ccfb5afd6f75b912644	未来的科技会改变我们的生活。	未来。
+开始 (kāishǐ)	to begin; beginning	2	bc7bdaee51613d95ba80eee224f06eb8	让我们开始今天的会议吧。	开始了。
+结束 (jiéshù)	to end; ending	2	c2b5d9e039875436a45a6c29b78f1ff3	电影结束了,我们去吃宵夜吧。	结束。
+继续 (jìxù)	to continue	2	e024fe40a0bee813edf6fdfff6b6b7e6	我们继续讨论下一个议题。	继续做。
+停止 (tíngzhǐ)	to stop	2	7cb02fd13bea9dc776e6bb19fefb940a	请立刻停止这种危险的行为。	停止。
+出来 (chūlái)	come out	2	d7f3b9f53a37444292637905fa0ef937	你出来一下,我有事跟你说。	出来。
+进去 (jìnqù)	go in	2	a7b3d26030adc96c5aedd4b0da36f272	请大家排队进去,不要拥挤。	进去。
+回来 (huílái)	come back	2	5ffaed10ef348e72ea41b81f60b0d1cb	他下个月就要回来度假了。	回来。
+回去 (huíqù)	go back	2	8d2f3da98770204871d0f8de86038f23	太晚了,我得回去了。	回去。
+上 (shàng)	up; on; to go up	2	0aaf22f2b46fcda93068bb5c9252467c	请把行李放到上面的架子上。	上来。
+下 (xià)	down; below; to go down	2	4370eec97f4b5ce98849f00b6b56497e	请从前门下车,小心台阶。	下来。
+左 (zuǒ)	left	2	904963497fe8bf2b07fe7b941cfe9bd2	到了路口请向左转。	左边。
+右 (yòu)	right	2	f2592c5b49b302ac65a34f051a864713	请把车停在右边的车位。	右边。
+前 (qián)	front; before	2	e32bcd61208146066af51183428f670f	我家就在前面那栋楼里。	前面。
+后 (hòu)	behind; after	2	e8b595ffa444744ca8ba132fc51f3d99	请排到队伍的后面。	后面。
+里 (lǐ)	inside	2	77da02481054ab3d05746ea3468cf2e2	我把钥匙放在抽屉里了。	里面。
+外 (wài)	outside	2	390248ae3c2d4e6230604f4f97b09a6a	外面下雨了,记得带伞。	外面。
+中间 (zhōngjiān)	middle	2	024834d03e6949f5212cb61173eed272	请把花瓶放在桌子中间。	中间。
+旁边 (pángbiān)	beside; next to	2	8d1e3f1565c9116ca5f3e7abd3df5189	她就坐在我旁边的位置。	旁边。
+对面 (duìmiàn)	opposite	2	9a5464cd2e7db79d45fd7782348e3157	学校对面是一家很大的超市。	对面。
+附近 (fùjìn)	nearby	2	71715faed1eb7c5d83aa2803ea3e2b86	这附近有什么好吃的餐厅吗？	附近。
+智慧 (zhìhuì)	wisdom	2	39c9305d058b4f68511fda6e18de7bf7	老人的智慧值得学习。	大智慧。
+智力 (zhìlì)	intelligence	2	c375035a60a3c06d054f26a940897346	这道题考智力。	智力题。
+才能 (cáinéng)	talent; ability	2	a4ee6f52f29a320e5fc7c1de240ac5cd	她很有音乐才能。	大才能。
+天赋 (tiānfù)	gift; innate talent	2	188092701031916894c71aa31b265530	这孩子有画画天赋。	天赋好。
+年龄 (niánlíng)	age	2	f3fb18ed14029d89b6387770ff21809e	您年龄多大了？	年龄。
+年纪 (niánjì)	age	2	f336c9d14d1322917022b3992f5f4385	她年纪不大经验丰富。	年纪。
+体重 (tǐzhòng)	body weight	2	acaf59dd169cf7eb5c413a7db65d4989	最近体重又涨了。	体重。
+身高 (shēngāo)	height	2	f962c4369a41ed8f726c662f34b30b5a	她身高一米七。	身高。
+心理 (xīnlǐ)	psychology; mentality	2	b13f3723d44d8c1ae771e58e91683152	心理健康很重要。	心理学。
+个性 (gèxìng)	individuality	2	88b707c961125225f5465058bb7ca3cb	每个人个性不同。	大个性。
+思维 (sīwéi)	thinking	2	88ddab64e1ef5779d3f3175ba81f294c	逻辑思维很重要。	大思维。
+印象 (yìnxiàng)	impression	2	947e92323a5e830a2d9f3a38862c3e76	第一印象很重要。	好印象。
+记忆 (jìyì)	memory	2	b18b18b473b21e1f3f773feb23f64537	这段记忆很美好。	好记忆。
+想象 (xiǎngxiàng)	imagination	2	5ff05f73e800271c3fe6e69523c8655a	孩子想象力丰富。	大想象。
+怀疑 (huáiyí)	doubt; suspect	2	a469d31e5abaa329bc90c2883d076098	我对此表示怀疑。	大怀疑。
+误会 (wùhuì)	misunderstanding	2	b738affb6aaca28e8dcfbd201344f145	这只是个误会。	大误会。
+解释 (jiěshì)	explain	2	41b3450ddbb75b595fa4ab30f6abb98f	请解释一下原因。	大解释。
+理由 (lǐyóu)	reason	2	15aa6bf1a7ff5900f12d8ebce81f74ae	请给我一个理由。	好理由。
+借口 (jièkǒu)	excuse	2	d5af81c5aaa1d2c25ebb571510f6fd38	不要找借口。	大借口。
+表情 (biǎoqíng)	facial expression	2	82a89702bc5e8d4705bddfe1b41b3d71	她表情很严肃。	严肃表情。
+情绪 (qíngxù)	emotion; mood	2	76ec435ea36851b362502f39769bf938	控制好自己的情绪。	大情绪。

@@ -2,6 +2,8 @@ package com.example.myapplication.dictionary
 
 import java.util.Locale
 
+private val pinyinParenRegex = Regex("""\s*\([^)]*\)""")
+
 enum class Language(
     val code: String,
     val locale: Locale,
@@ -92,13 +94,24 @@ enum class Language(
             "N.B." to "Nota Bene",
             "P.S." to "Post Scriptum",
         ),
-    );
+    ),
+    CHINESE(
+        code = "zh",
+        locale = Locale.SIMPLIFIED_CHINESE,
+        assetFolder = "chinese",
+        greeting = "学习中文吧！",
+        englishName = "Chinese",
+        abbreviations = emptyMap(),
+    ) {
+        override fun expandAbbreviations(input: String): String =
+            input.replace(pinyinParenRegex, "").trim()
+    };
 
     private val abbreviationRegex: Regex by lazy {
         abbreviations.keys.joinToString("|") { Regex.escape(it) }.toRegex()
     }
 
-    fun expandAbbreviations(input: String): String =
+    open fun expandAbbreviations(input: String): String =
         abbreviationRegex.replace(input) { abbreviations[it.value] ?: it.value }
             .replace("(", "")
             .replace(")", "")

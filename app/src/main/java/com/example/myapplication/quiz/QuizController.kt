@@ -487,13 +487,29 @@ class QuizController(
     }
 
     private fun displayForeignWord(vocab: Vocab) {
-        currentSkill.flow.setupTextFr(vocab, views, listeningEnabled, ::onMaskedWordTapped)
+        currentSkill.flow.setupTextFr(
+            vocab,
+            views,
+            listeningEnabled,
+            ::onMaskedWordTapped,
+            ::onWordReplayed,
+        )
     }
 
     /** Replay the foreign word (with a small penalty) when the mask is tapped. */
     private fun onMaskedWordTapped() {
         val vocab = currentVocab ?: return
         vocab.stats(currentSkill).nTimesFailed += 0.1f
+        tts.speakForeignWord(vocab, flush = true)
+    }
+
+    /**
+     * Replay the foreign word when the user taps the already-visible word —
+     * e.g. in READ, or in LISTEN with listening disabled. No penalty: the
+     * answer was on screen anyway, the tap is just a "say it again" convenience.
+     */
+    private fun onWordReplayed() {
+        val vocab = currentVocab ?: return
         tts.speakForeignWord(vocab, flush = true)
     }
 
