@@ -51,6 +51,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     private lateinit var serviceIntent: Intent
     private lateinit var views: QuizViews
 
+    // Snapshot of the per-language wipe timestamp at startup. If the user wipes
+    // this language from Settings, the stored timestamp moves forward and we
+    // recreate() on resume so the dictionary reflects the cleared state.
+    private var languageWipeTimestampAtStart: Long = 0L
+
     // Completed by the TTS UtteranceProgressListener when the awaitable
     // utterance finishes. Each call to speakSentenceAndAwait creates its own
     // deferred; the field just gives onDone something to call into.
@@ -158,6 +163,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
         val sharedPreferences = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
         language = Language.fromCode(sharedPreferences.getString("app_language", null))
+        languageWipeTimestampAtStart =
+            sharedPreferences.getLong("progress_wiped_at_${language.code}", 0L)
         val inputStream = openDictionaryStream(this, language)
 
         views.textProgressTotal.text = ""
@@ -358,6 +365,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
         val savedLanguage = Language.fromCode(prefs.getString("app_language", null))
         if (savedLanguage != language) {
+            recreate()
+            return
+        }
+        val savedWipeTimestamp = prefs.getLong("progress_wiped_at_${language.code}", 0L)
+        if (savedWipeTimestamp > languageWipeTimestampAtStart) {
             recreate()
             return
         }

@@ -227,5 +227,47 @@
         android:textSize="13sp"
         android:textColor="#666666"
         android:padding="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset progress"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language to reset"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp" />
+
+    <Spinner
+        android:id="@+id/resetLanguageSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/resetProgressButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Reset progress"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#D32F2F" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Permanently deletes all learned/hard flags and quiz stats for the chosen language. This cannot be undone."
+        android:textSize="13sp"
+        android:textColor="#666666"
+        android:padding="8dp" />
 </LinearLayout>
 </ScrollView>

@@ -2,13 +2,18 @@ package com.example.myapplication.settings
 
 import android.app.TimePickerDialog
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.text.format.Formatter
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.lifecycle.Lifecycle
@@ -18,10 +23,13 @@ import com.example.myapplication.R
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.SentenceSource
+import com.example.myapplication.dictionary.openDictionaryStream
 import com.example.myapplication.llm.LlmService
 import com.example.myapplication.streak.StreakAlarmScheduler
 import com.example.myapplication.streak.StreakTracker
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.Locale
 
 class SettingsActivity : AppCompatActivity() {
@@ -138,6 +146,7 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         setupStreakSection()
+        setupResetProgressSection()
     }
 
     private fun setupStreakSection() {
@@ -184,6 +193,77 @@ class SettingsActivity : AppCompatActivity() {
                 true,  // 24-hour view; matches the "21:00" default semantics
             ).show()
         }
+    }
+
+    private fun setupResetProgressSection() {
+        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
+        val spinner = findViewById<Spinner>(R.id.resetLanguageSpinner)
+        val button = findViewById<Button>(R.id.resetProgressButton)
+
+        val languages = Language.values().toList()
+        val labels = languages.map { it.englishName }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
+        val current = Language.fromCode(prefs.getString("app_language", null))
+        spinner.setSelection(languages.indexOf(current).coerceAtLeast(0))
+
+        button.setDebouncedOnClickListener {
+            val language = languages.getOrNull(spinner.selectedItemPosition) ?: return@setDebouncedOnClickListener
+            val dialog = AlertDialog.Builder(this)
+                .setTitle("Reset ${language.englishName} progress?")
+                .setMessage(
+                    "All learned/hard flags and quiz stats for ${language.englishName} " +
+                        "will be permanently deleted. This cannot be undone."
+                )
+                .setNegativeButton("Cancel", null)
+                .setPositiveButton("Delete") { _, _ ->
+                    lifecycleScope.launch {
+                        val removed = wipeProgressFor(language)
+                        Toast.makeText(
+                            this@SettingsActivity,
+                            "Reset ${language.englishName} progress ($removed entries cleared).",
+                            Toast.LENGTH_SHORT,
+                        ).show()
+                    }
+                }
+                .create()
+            dialog.setOnShowListener {
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(Color.parseColor("#D32F2F"))
+            }
+            dialog.show()
+        }
+    }
+
+    private suspend fun wipeProgressFor(language: Language): Int = withContext(Dispatchers.IO) {
+        val hashes = collectHashes(language)
+        if (hashes.isEmpty()) return@withContext 0
+        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        var removed = 0
+        // Vocab hashes in the CSVs are 32-char MD5s; per-word keys are stored
+        // as "<hash><suffix>" by Vocab.savePreferences. Match by hash prefix.
+        for (key in prefs.all.keys) {
+            if (key.length >= 32 && hashes.contains(key.substring(0, 32))) {
+                editor.remove(key)
+                removed++
+            }
+        }
+        editor.putLong("progress_wiped_at_${language.code}", System.currentTimeMillis())
+        editor.apply()
+        removed
+    }
+
+    private fun collectHashes(language: Language): Set<String> {
+        val hashes = mutableSetOf<String>()
+        openDictionaryStream(this, language).bufferedReader().use { reader ->
+            reader.lineSequence().forEach { line ->
+                val parts = line.split('\t', limit = 6)
+                if (parts.size >= 6) hashes.add(parts[3].trim())
+            }
+        }
+        return hashes
     }
 
     private fun plural(n: Int): String = if (n == 1) "" else "s"
