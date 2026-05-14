@@ -126,51 +126,51 @@ partire	to leave / to depart	1	2746791a7d90439c27371c1b4827131c	Devo partire pre
 arrivare	to arrive	1	258c350634ea8098789d1bff827a71f0	Quando arriva il treno? Voglio arrivare puntuale all'appuntamento di lavoro.	Sono arrivato.
 diventare	to become	1	496441ab14e293244268496372bda8b7	Voglio diventare medico e diventare una persona migliore con il tempo.	È diventato grande.
 vivere	to live	1	52f7accef9eab1db5ed275640454a4f4	Voglio vivere a Roma e vivere una vita piena di esperienze nuove.	Vivo a Milano.
-casa	house / home	1	202447d5d44ce12531f7207cb33b6bf7	La mia casa è piccola ma è sempre piena di amici a casa mia.	Sono a casa.
-anno	year	1	ddc70b20eb1ff09fea808f51cc6d5295	Quest'anno ho compiuto trent'anni e l'anno prossimo voglio cambiare lavoro completamente.	Buon anno!
-giorno	day	1	c08507a6f6dea640ddef54debd9616ae	Ogni giorno è un nuovo giorno per imparare qualcosa di interessante e utile.	Buongiorno!
-tempo	time / weather	1	e34c64a05273012b2868d8b04b812089	Non ho tempo oggi e il tempo è brutto, quindi resto a casa volentieri.	Che tempo fa?
-mese	month	1	5c716ee3c544a4701f65c7f3b2f9d3e4	Il mese scorso sono andato a Roma e questo mese andrò a Firenze.	Tra un mese.
-settimana	week	1	eae4c9ac9c51b3f3291e442545fd7c68	Questa settimana lavoro molto ma la settimana prossima sarò finalmente in vacanza.	Buona settimana!
-notte	night	1	2393f5455954eec0386b7d02faf9ff01	Stanotte non riesco a dormire perché penso al lavoro importante di domani.	Buonanotte!
-mattina	morning	1	69dc13fcff0367a35a79f624fff729e3	Ogni mattina mi alzo presto per fare colazione con tutta la famiglia riunita.	Di mattina.
-sera	evening	1	2ed42562c28e8f500f50f18642a80c51	Ogni sera dopo cena guardiamo un film insieme sul divano del salotto.	Buonasera!
-uomo	man	1	774e9d4f7300a5a6fa2ce0447d28f27e	Quell'uomo è il mio vicino di casa ed è una persona molto gentile.	Un uomo buono.
-donna	woman	1	32ff0880c7c75d751d0f9ef3a816eae2	Quella donna è mia zia e lavora come medico in un grande ospedale.	Una donna forte.
-bambino	child / boy	1	77442076370331f02b814c1355ef0b26	Il bambino dei miei vicini gioca sempre nel cortile insieme agli altri bambini.	Un bambino piccolo.
-ragazzo	boy / young man	1	bb3cd60ad138f47e491b2a58b2725ad6	Quel ragazzo studia all'università e lavora part-time in un bar del centro.	Un bravo ragazzo.
-ragazza	girl / young woman	1	c7a43f9a5b2f0402ea0870329fad0c0d	La ragazza con cui parlavo è la sorella del mio migliore amico.	Una ragazza simpatica.
-amico	friend (masculine)	1	aa4b06f4ca05f7698dc583ba93b78767	Il mio amico Marco vive in Germania ma viene in Italia ogni estate.	Un caro amico.
-famiglia	family	1	fe9d1b058669b3d631aff415b5ce8e74	La mia famiglia è grande e ci riuniamo tutti per Natale ogni anno.	Una bella famiglia.
-madre	mother	1	2309f522cab926b42f4463fc656bd87f	Mia madre cucina molto bene e mi insegna sempre nuove ricette tradizionali.	Mia madre è qui.
-padre	father	1	41409f34ee49036ad153fa10b374747e	Mio padre lavora in banca da molti anni e ama molto il suo lavoro.	Mio padre è alto.
-figlio	son / child	1	33da09c39001c9ab716070b07a0d7f51	Mio figlio ha cinque anni e va alla scuola materna del nostro quartiere.	Un figlio unico.
-figlia	daughter	1	dcb4fcc0e7ab417ecc239414c62f6bb7	Mia figlia ama leggere libri e scrivere storie nel suo diario personale.	Una figlia brava.
-fratello	brother	1	94cf09e7f0b7ee742cd54236a4a1940f	Mio fratello è più grande di me di tre anni e vive a Roma.	Mio fratello viene.
-sorella	sister	1	4e9a8a80593aa4d9902705a9cad3fc8d	Ho una sorella minore che studia medicina all'università di Bologna.	Mia sorella è dottoressa.
-acqua	water	1	7e84b7b8d1c678647abafd23449a1db1	L'acqua del mare è ancora fredda in primavera anche con il sole.	Un bicchiere d'acqua.
-pane	bread	1	c6c6ce72f4dff102e38d74f7143a2ea8	Il pane fresco del mattino è il mio cibo preferito a colazione con il burro.	Pane e burro.
-vino	wine	1	69bb23ca275704f46c65d8ed4ac3b5d7	Il vino italiano è famoso in tutto il mondo per la sua qualità eccellente.	Un bicchiere di vino.
-caffè	coffee	1	c9d8bbe90b0114f9fc5cad3a3b589aea	Il caffè italiano è il migliore del mondo, soprattutto al mattino presto.	Un caffè, per favore.
-città	city	1	d0e058a46b9757a25501d627425c7c2e	La città di Roma è ricca di storia e di monumenti antichi da visitare.	Vivo in città.
-paese	country / village	1	4a74bcd0ead122a9c00cc15d33be5f37	Il mio paese è piccolo ma molto bello, immerso nella natura verdeggiante.	Un piccolo paese.
-strada	street / road	1	e18dc7afd27f3a31380e6238edc6226b	La strada principale del paese è chiusa per i lavori in corso.	Per strada.
-via	street / way	1	14f1f9729a8142e82600dac241e82fe2	Abito in una via tranquilla del centro storico della città vecchia.	Via Roma.
-lavoro	work / job	1	6a3da2a08043e7232c22c43d75544e49	Il mio lavoro è interessante ma richiede molte ore al giorno e tanta concentrazione.	Vado al lavoro.
-scuola	school	1	9c8e13d0166d740b34bff739fe461afb	La scuola dei miei figli è vicino a casa nostra, in fondo alla via.	A scuola.
-libro	book	1	740f012345d61ecd008e19690ec193b7	Sto leggendo un libro molto interessante che mi è stato consigliato dal professore.	Un buon libro.
-macchina	car / machine	1	aff79667f4c3ec1e7c93114b947fdb9d	La mia macchina è vecchia ma funziona ancora bene per i viaggi brevi.	In macchina.
-mano	hand	1	5b4d762427d4dff75f6e5885cb380080	Mi sono fatto male alla mano destra mentre giocavo a pallone ieri sera.	Dammi la mano.
-occhio	eye	1	af5871c825d442b3dd03a90ac437d484	Ho un problema all'occhio sinistro e devo andare dall'oculista al più presto.	A occhio.
-testa	head	1	7a68f09bd992671bb3b19a5e70b7827e	Ho mal di testa stamattina, forse ho dormito troppo poco la notte scorsa.	Mal di testa.
-cuore	heart	1	8b784f8f08e36ba472c44b8d30917a88	Il mio cuore batte forte ogni volta che ti vedo entrare nella stanza.	Di cuore.
-nome	name	1	666ac576aa2666cff323f5d976d592a6	Qual è il tuo nome? Il mio nome è Marco, piacere di conoscerti finalmente.	Come ti chiami?
-soldi	money	1	8ea6e5f2dd5b9d7458671b3ced7ea9da	Non ho abbastanza soldi questo mese per comprare un nuovo telefono di marca.	Hai soldi?
-vita	life	1	1116d70f3af1555dd95b361a7619eb1b	La vita è bella se la sai vivere con passione e curiosità ogni giorno.	La mia vita.
-modo	way / manner	1	b4bd3c0453ef20e66f2fcc026e3816ec	C'è sempre un modo per risolvere i problemi se ci credi davvero molto.	In ogni modo.
-parte	part	1	4d2aa37ecdd52b899359c0ffbaa8402a	Una parte di me vorrebbe partire ma un'altra parte vuole assolutamente restare.	La maggior parte.
-punto	point	1	dbf8386ad34c7bac0e3f5f712756bfae	Hai sollevato un punto interessante che merita di essere discusso a fondo.	Punto e basta.
-volta	time / occasion	1	a1423b7bbd7522605a6267121a91e6f1	C'era una volta una principessa che viveva in un castello sul mare.	Un'altra volta.
+la casa	house / home	1	202447d5d44ce12531f7207cb33b6bf7	La mia casa è piccola ma è sempre piena di amici a casa mia.	Sono a casa.
+l'anno	year	1	ddc70b20eb1ff09fea808f51cc6d5295	Quest'anno ho compiuto trent'anni e l'anno prossimo voglio cambiare lavoro completamente.	Buon anno!
+il giorno	day	1	c08507a6f6dea640ddef54debd9616ae	Ogni giorno è un nuovo giorno per imparare qualcosa di interessante e utile.	Buongiorno!
+il tempo	time / weather	1	e34c64a05273012b2868d8b04b812089	Non ho tempo oggi e il tempo è brutto, quindi resto a casa volentieri.	Che tempo fa?
+il mese	month	1	5c716ee3c544a4701f65c7f3b2f9d3e4	Il mese scorso sono andato a Roma e questo mese andrò a Firenze.	Tra un mese.
+la settimana	week	1	eae4c9ac9c51b3f3291e442545fd7c68	Questa settimana lavoro molto ma la settimana prossima sarò finalmente in vacanza.	Buona settimana!
+la notte	night	1	2393f5455954eec0386b7d02faf9ff01	Stanotte non riesco a dormire perché penso al lavoro importante di domani.	Buonanotte!
+la mattina	morning	1	69dc13fcff0367a35a79f624fff729e3	Ogni mattina mi alzo presto per fare colazione con tutta la famiglia riunita.	Di mattina.
+la sera	evening	1	2ed42562c28e8f500f50f18642a80c51	Ogni sera dopo cena guardiamo un film insieme sul divano del salotto.	Buonasera!
+l'uomo	man	1	774e9d4f7300a5a6fa2ce0447d28f27e	Quell'uomo è il mio vicino di casa ed è una persona molto gentile.	Un uomo buono.
+la donna	woman	1	32ff0880c7c75d751d0f9ef3a816eae2	Quella donna è mia zia e lavora come medico in un grande ospedale.	Una donna forte.
+il bambino	child / boy	1	77442076370331f02b814c1355ef0b26	Il bambino dei miei vicini gioca sempre nel cortile insieme agli altri bambini.	Un bambino piccolo.
+il ragazzo	boy / young man	1	bb3cd60ad138f47e491b2a58b2725ad6	Quel ragazzo studia all'università e lavora part-time in un bar del centro.	Un bravo ragazzo.
+la ragazza	girl / young woman	1	c7a43f9a5b2f0402ea0870329fad0c0d	La ragazza con cui parlavo è la sorella del mio migliore amico.	Una ragazza simpatica.
+l'amico	friend (masculine)	1	aa4b06f4ca05f7698dc583ba93b78767	Il mio amico Marco vive in Germania ma viene in Italia ogni estate.	Un caro amico.
+la famiglia	family	1	fe9d1b058669b3d631aff415b5ce8e74	La mia famiglia è grande e ci riuniamo tutti per Natale ogni anno.	Una bella famiglia.
+la madre	mother	1	2309f522cab926b42f4463fc656bd87f	Mia madre cucina molto bene e mi insegna sempre nuove ricette tradizionali.	Mia madre è qui.
+il padre	father	1	41409f34ee49036ad153fa10b374747e	Mio padre lavora in banca da molti anni e ama molto il suo lavoro.	Mio padre è alto.
+il figlio	son / child	1	33da09c39001c9ab716070b07a0d7f51	Mio figlio ha cinque anni e va alla scuola materna del nostro quartiere.	Un figlio unico.
+la figlia	daughter	1	dcb4fcc0e7ab417ecc239414c62f6bb7	Mia figlia ama leggere libri e scrivere storie nel suo diario personale.	Una figlia brava.
+il fratello	brother	1	94cf09e7f0b7ee742cd54236a4a1940f	Mio fratello è più grande di me di tre anni e vive a Roma.	Mio fratello viene.
+la sorella	sister	1	4e9a8a80593aa4d9902705a9cad3fc8d	Ho una sorella minore che studia medicina all'università di Bologna.	Mia sorella è dottoressa.
+l'acqua	water	1	7e84b7b8d1c678647abafd23449a1db1	L'acqua del mare è ancora fredda in primavera anche con il sole.	Un bicchiere d'acqua.
+il pane	bread	1	c6c6ce72f4dff102e38d74f7143a2ea8	Il pane fresco del mattino è il mio cibo preferito a colazione con il burro.	Pane e burro.
+il vino	wine	1	69bb23ca275704f46c65d8ed4ac3b5d7	Il vino italiano è famoso in tutto il mondo per la sua qualità eccellente.	Un bicchiere di vino.
+il caffè	coffee	1	c9d8bbe90b0114f9fc5cad3a3b589aea	Il caffè italiano è il migliore del mondo, soprattutto al mattino presto.	Un caffè, per favore.
+la città	city	1	d0e058a46b9757a25501d627425c7c2e	La città di Roma è ricca di storia e di monumenti antichi da visitare.	Vivo in città.
+il paese	country / village	1	4a74bcd0ead122a9c00cc15d33be5f37	Il mio paese è piccolo ma molto bello, immerso nella natura verdeggiante.	Un piccolo paese.
+la strada	street / road	1	e18dc7afd27f3a31380e6238edc6226b	La strada principale del paese è chiusa per i lavori in corso.	Per strada.
+la via	street / way	1	14f1f9729a8142e82600dac241e82fe2	Abito in una via tranquilla del centro storico della città vecchia.	Via Roma.
+il lavoro	work / job	1	6a3da2a08043e7232c22c43d75544e49	Il mio lavoro è interessante ma richiede molte ore al giorno e tanta concentrazione.	Vado al lavoro.
+la scuola	school	1	9c8e13d0166d740b34bff739fe461afb	La scuola dei miei figli è vicino a casa nostra, in fondo alla via.	A scuola.
+il libro	book	1	740f012345d61ecd008e19690ec193b7	Sto leggendo un libro molto interessante che mi è stato consigliato dal professore.	Un buon libro.
+la macchina	car / machine	1	aff79667f4c3ec1e7c93114b947fdb9d	La mia macchina è vecchia ma funziona ancora bene per i viaggi brevi.	In macchina.
+la mano	hand	1	5b4d762427d4dff75f6e5885cb380080	Mi sono fatto male alla mano destra mentre giocavo a pallone ieri sera.	Dammi la mano.
+l'occhio	eye	1	af5871c825d442b3dd03a90ac437d484	Ho un problema all'occhio sinistro e devo andare dall'oculista al più presto.	A occhio.
+la testa	head	1	7a68f09bd992671bb3b19a5e70b7827e	Ho mal di testa stamattina, forse ho dormito troppo poco la notte scorsa.	Mal di testa.
+il cuore	heart	1	8b784f8f08e36ba472c44b8d30917a88	Il mio cuore batte forte ogni volta che ti vedo entrare nella stanza.	Di cuore.
+il nome	name	1	666ac576aa2666cff323f5d976d592a6	Qual è il tuo nome? Il mio nome è Marco, piacere di conoscerti finalmente.	Come ti chiami?
+i soldi	money	1	8ea6e5f2dd5b9d7458671b3ced7ea9da	Non ho abbastanza soldi questo mese per comprare un nuovo telefono di marca.	Hai soldi?
+la vita	life	1	1116d70f3af1555dd95b361a7619eb1b	La vita è bella se la sai vivere con passione e curiosità ogni giorno.	La mia vita.
+il modo	way / manner	1	b4bd3c0453ef20e66f2fcc026e3816ec	C'è sempre un modo per risolvere i problemi se ci credi davvero molto.	In ogni modo.
+la parte	part	1	4d2aa37ecdd52b899359c0ffbaa8402a	Una parte di me vorrebbe partire ma un'altra parte vuole assolutamente restare.	La maggior parte.
+il punto	point	1	dbf8386ad34c7bac0e3f5f712756bfae	Hai sollevato un punto interessante che merita di essere discusso a fondo.	Punto e basta.
+la volta	time / occasion	1	a1423b7bbd7522605a6267121a91e6f1	C'era una volta una principessa che viveva in un castello sul mare.	Un'altra volta.
 grande	big / great	1	7a3e1c7c45a215a4cbd11d441e63ec4f	Vivo in una casa grande con un bel giardino dove i bambini giocano.	Una grande città.
 piccolo	small / little	1	90319ea56263c86d6dbade1b0f34fab6	Il mio appartamento è piccolo ma molto accogliente e decisamente luminoso.	Un piccolo problema.
 nuovo	new	1	00777c83ed57889ec7c96acea333440a	Ho comprato un'auto nuova il mese scorso, dopo aver venduto quella vecchia.	Un nuovo amico.

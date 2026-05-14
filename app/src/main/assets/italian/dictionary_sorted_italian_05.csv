@@ -1,65 +1,65 @@
-treno	train	5	8bdc50808848f2a91b6d538febf0d9a3	Il treno per Roma parte tra dieci minuti dal binario sette della stazione centrale.	Prendo il treno.
-aereo	airplane	5	4c82c6dc4475b5d35c8bfe37dd0d6c24	L'aereo per Parigi decolla alle sette di mattina dall'aeroporto internazionale di Milano.	Un aereo veloce.
-autobus	bus	5	4bff2b649206a5609914986c92d06e12	L'autobus numero ventitré passa ogni quindici minuti davanti alla mia casa di campagna.	Salgo sull'autobus.
-metropolitana	subway	5	0733e1007510ea3b4951a79ad43cee0f	La metropolitana di Milano è molto efficiente e collega tutti i quartieri principali della città.	Prendi la metropolitana.
-taxi	taxi	5	35e768d3043c55b5540979da7feaf81c	Ho chiamato un taxi per andare all'aeroporto perché ho troppe valigie pesanti da portare.	Chiamo un taxi.
-nave	ship	5	bfe4b52ca21163798a2a7dafc73ad021	La nave da crociera salpa stasera al tramonto dal porto di Genova diretta in Grecia.	Una grande nave.
-barca	boat	5	0c60d47dde8a2565c6185f85b0196ddc	Andiamo in barca a vela sul lago di Garda durante il fine settimana di luglio.	Una piccola barca.
-bicicletta	bicycle	5	8cd4ff50ceacb55f3f525ad6df705130	Vado al lavoro in bicicletta ogni mattina perché preferisco fare un po' di sport quotidiano.	Una bicicletta nuova.
-moto	motorcycle	5	fc6b46fe888f1cbebf4f01552c7ebac5	Mio fratello ha una moto sportiva e ogni domenica fa un giro tra le colline toscane.	Una moto veloce.
-camion	truck	5	c2ae0b5ba085cb33fbee01aafc391538	Il camion delle consegne è arrivato in ritardo a causa del traffico in autostrada stamattina.	Un grosso camion.
-furgone	van	5	549ec2d4f6507359499c510496ef71e2	Abbiamo noleggiato un furgone per il trasloco perché abbiamo troppi mobili da spostare.	Un furgone bianco.
-traghetto	ferry	5	29a34b39f99c31ae1bea0f6d9f001bfd	Prendiamo il traghetto da Napoli per andare a Capri durante le vacanze estive di agosto.	Il traghetto è in ritardo.
-stazione	station	5	20db9614b8698070a0f46e39ed1581b4	La stazione di Milano centrale è una delle più belle e importanti d'Italia.	Vado alla stazione.
-aeroporto	airport	5	0a14edb2680b1507c2004ab3094f4567	L'aeroporto è affollato di turisti che partono per le vacanze estive ogni mattina.	Un grande aeroporto.
-porto	port / harbor	5	71d6c631e36a3432a5899bb09c51d52a	Il porto di Genova è uno dei più importanti del Mediterraneo per il commercio internazionale.	Un porto turistico.
-fermata	stop (bus/tram)	5	c0434bddf417275a86f9c9a7fc13d3da	La fermata dell'autobus è proprio davanti casa mia, è molto comodo per andare al lavoro.	La prossima fermata.
-binario	platform / track	5	fb86e12c75abe4261435115ebbe23668	Il treno parte dal binario undici tra cinque minuti, sbrigati ad arrivare in tempo.	Cambio binario.
-pista	runway / track	5	47c3da0dc1d88b7721e3905d8a4b5f76	L'aereo è atterrato sulla pista bagnata dopo un lungo volo intercontinentale dall'America.	Una pista da sci.
-autostrada	highway	5	ca0bbc086471a1fc7248a0815b9fc52a	L'autostrada è bloccata per un grave incidente avvenuto stamattina presto vicino al casello.	Sull'autostrada.
-ponte	bridge	5	e90ebfad8baefc3da69fc539a1555cce	Il ponte di Rialto a Venezia è uno dei monumenti più famosi d'Italia nel mondo.	Un bel ponte.
-tunnel	tunnel	5	13621569c04c27dde4aa00c3ef3ddbac	Il tunnel sotto le Alpi collega l'Italia con la Francia e si chiama traforo del Frejus.	Un tunnel buio.
-galleria	gallery / tunnel	5	f4b42eeb38aba2a855b6d59693c5d87e	La galleria d'arte moderna ospita una bellissima mostra di pittori italiani contemporanei.	Una galleria d'arte.
-distributore	gas station	5	2e141864d9a72708ac45411d179b7dc5	Mi fermo al distributore per fare benzina prima di partire per il lungo viaggio in macchina.	Al distributore.
-parcheggio	parking lot	5	9719c747895460cb0ac8a446ebdf47c5	Il parcheggio del centro commerciale è sempre pieno il sabato pomeriggio per gli acquisti settimanali.	Trovo parcheggio.
-semaforo	traffic light	5	a7d52543df743e02dc801695ecfa3c73	Il semaforo è diventato rosso e ho dovuto fermarmi per non fare un incidente grave.	Al semaforo verde.
-marciapiede	sidewalk	5	2bda2acab19bfa5890e1e182ae038ef7	Cammino sul marciapiede per sicurezza e per non disturbare le auto che passano veloci.	Sul marciapiede.
-incrocio	intersection	5	154084ce2df69214f1325cb9ae5c1780	All'incrocio devi girare a destra per arrivare alla casa di mia zia in centro.	Un incrocio pericoloso.
-ufficio	office	5	893abe130a54e3f160c110f32fb2932b	Il mio ufficio è al quinto piano del palazzo di vetro nel centro direzionale.	Vado in ufficio.
-farmacia	pharmacy	5	dbc3c50848d0018bc557251940feade3	Vado in farmacia a comprare la medicina per il mal di testa che mi tormenta da giorni.	Una farmacia di turno.
-libreria	bookstore	5	9fc4d038880d95838f3a819f4df65f0d	La libreria del centro vende sia libri nuovi che usati a prezzi molto convenienti.	Una grande libreria.
-edicola	newsstand	5	e2fff65b3236d83edf8efb15d61484a5	Compro il giornale all'edicola sotto casa ogni mattina prima di andare al lavoro presto.	Un'edicola chiusa.
-bar	bar / café	5	37b51d194a7513e45b56f6524f2d51f2	Faccio colazione al bar tutti i giorni con un cappuccino e un cornetto al cioccolato.	Andiamo al bar.
-hotel	hotel	5	e919c49d5f0cd737285367810a3394d0	Abbiamo prenotato un hotel a quattro stelle per le nostre vacanze estive in Sicilia.	Un hotel di lusso.
-albergo	hotel / inn	5	4b5190b1e0c0cb8aa1843edddb61e918	L'albergo nel centro storico è molto accogliente e il personale è gentile e disponibile.	Un buon albergo.
-ostello	hostel	5	167150fdfc32be3bec3a12d235c35384	Ho dormito in un ostello durante il mio viaggio in Spagna per risparmiare sui costi.	Un ostello della gioventù.
-stadio	stadium	5	04c9a039e37e2b84dab22ffda733cf7e	Lo stadio di calcio della mia città può ospitare fino a settantamila tifosi appassionati.	Allo stadio.
-palestra	gym	5	46473cad7ada6cc2192c6e2f065f816d	Vado in palestra tre volte alla settimana per mantenermi in forma e in salute.	Una palestra moderna.
-posta	post office	5	70e51d4814a636acca332fe911da1c28	Devo andare alla posta a spedire questo pacco a mia sorella che vive in Germania.	Vado alla posta.
-biblioteca	library	5	686d4ba6996ab7e2bd626c9a3cc965c6	Studio in biblioteca tutti i pomeriggi prima dell'esame di fine semestre dell'università.	In biblioteca.
-panetteria	bakery	5	e49870f2ba069d070d86372f4d27101c	Compro il pane fresco alla panetteria sotto casa ogni mattina prima di colazione.	Una buona panetteria.
-museo	museum	5	1e96672940df940377381ac3d4cf1890	Il museo egizio di Torino è uno dei più importanti al mondo per la storia antica.	Visito il museo.
-monumento	monument	5	1d6e523d4c105067cb3dcf9443d1aabb	Il monumento ai caduti è al centro della piazza principale della mia città di nascita.	Un grande monumento.
-chiesa	church	5	513aa116e2841524cea1f365b412671c	La chiesa del paese è del dodicesimo secolo ed è ricca di affreschi medievali bellissimi.	Vado in chiesa.
-castello	castle	5	c9038eac3ff69bbf2cd0d224bc8d6d42	Il castello sulla collina è del medioevo ed è aperto ai visitatori durante l'estate.	Un vecchio castello.
-parco	park	5	93ba12005058ddb7063870090f28ec79	Vado al parco a fare jogging la domenica mattina con la mia squadra di amici sportivi.	Un grande parco.
-piazza	square / plaza	5	4558aac7b93717f32323b02d2db1f28b	La piazza del paese è il cuore della comunità e ci si incontra tutti la sera tardi.	In piazza.
-palazzo	building / palace	5	18a1351a1461663a0ef7a34871f67e21	Il palazzo storico nel centro città è stato restaurato di recente con grande maestria.	Un palazzo nobile.
-fontana	fountain	5	b1233b4654bae701b1993a56c4494636	La fontana di Trevi a Roma è una delle più famose al mondo e attira milioni di turisti.	Una bella fontana.
-torre	tower	5	2a54c96a018815eecba59519c81c6009	La torre di Pisa è famosa in tutto il mondo per la sua caratteristica pendenza inclinata.	Una torre alta.
-teatro	theater	5	4c16f83f480928bb12fc21f7fb0e85ec	Andiamo a teatro stasera a vedere uno spettacolo di Shakespeare con attori italiani famosi.	Al teatro.
-cinema	cinema / movies	5	4870f9d3a6299578edcc3e6c954baeba	Andiamo al cinema stasera a vedere il nuovo film d'azione che è uscito venerdì scorso.	Al cinema.
-basilica	basilica	5	9691a80601c24739e6c31740c81f5aef	La basilica di San Pietro a Roma è il più importante luogo di culto della cristianità mondiale.	Una grande basilica.
-chiosco	kiosk	5	a341fba2bd1734af22b37d1fde1b4338	Compro il gelato al chiosco sulla spiaggia ogni pomeriggio durante le vacanze estive d'agosto.	Un piccolo chiosco.
-gelateria	ice cream shop	5	76c301f8cea4e2a740ae9e8e5fce0ef8	La gelateria del centro fa il miglior pistacchio di tutta la città secondo i miei amici.	Una buona gelateria.
-pasticceria	pastry shop	5	74ed3faaed2fb81a0be4a0b7bc5a1220	Compro le paste alla pasticceria di mio cugino la domenica mattina per la colazione speciale.	Una pasticceria famosa.
-pizzeria	pizzeria	5	04d387db103c7e4cf19f0b2cedecddf8	Andiamo alla pizzeria del quartiere stasera a mangiare la pizza più buona della città.	Una pizzeria napoletana.
-macelleria	butcher shop	5	9481baff6e6ceec08d32531deefe2ae3	Vado in macelleria a comprare la carne fresca per il pranzo della domenica con la famiglia.	Una macelleria di fiducia.
-pescheria	fish market	5	6820a72a023220402092727c1d8c2391	La pescheria del porto vende il pesce appena pescato la mattina presto direttamente dai pescatori.	Una pescheria fresca.
-alimentari	grocery store	5	dee780ccaf694689d15de2ca912a3882	Vado all'alimentari sotto casa quando dimentico qualcosa per la cena della sera.	Negozio di alimentari.
-tabaccheria	tobacco shop	5	cec613bcc0234ed08c86d1d123b37910	Compro i biglietti dell'autobus alla tabaccheria all'angolo della strada principale del centro.	Vado in tabaccheria.
-cartoleria	stationery shop	5	3dc725f03c0fb79435b18d87ede7862d	I bambini comprano il materiale scolastico alla cartoleria vicino alla scuola elementare.	Una grande cartoleria.
-fioraio	florist	5	caaabdb5c0706c366f3d1511bd47c4a5	Ho comprato un mazzo di rose rosse al fioraio per il compleanno di mia moglie.	Dal fioraio.
+il treno	train	5	8bdc50808848f2a91b6d538febf0d9a3	Il treno per Roma parte tra dieci minuti dal binario sette della stazione centrale.	Prendo il treno.
+l'aereo	airplane	5	4c82c6dc4475b5d35c8bfe37dd0d6c24	L'aereo per Parigi decolla alle sette di mattina dall'aeroporto internazionale di Milano.	Un aereo veloce.
+l'autobus	bus	5	4bff2b649206a5609914986c92d06e12	L'autobus numero ventitré passa ogni quindici minuti davanti alla mia casa di campagna.	Salgo sull'autobus.
+la metropolitana	subway	5	0733e1007510ea3b4951a79ad43cee0f	La metropolitana di Milano è molto efficiente e collega tutti i quartieri principali della città.	Prendi la metropolitana.
+il taxi	taxi	5	35e768d3043c55b5540979da7feaf81c	Ho chiamato un taxi per andare all'aeroporto perché ho troppe valigie pesanti da portare.	Chiamo un taxi.
+la nave	ship	5	bfe4b52ca21163798a2a7dafc73ad021	La nave da crociera salpa stasera al tramonto dal porto di Genova diretta in Grecia.	Una grande nave.
+la barca	boat	5	0c60d47dde8a2565c6185f85b0196ddc	Andiamo in barca a vela sul lago di Garda durante il fine settimana di luglio.	Una piccola barca.
+la bicicletta	bicycle	5	8cd4ff50ceacb55f3f525ad6df705130	Vado al lavoro in bicicletta ogni mattina perché preferisco fare un po' di sport quotidiano.	Una bicicletta nuova.
+la moto	motorcycle	5	fc6b46fe888f1cbebf4f01552c7ebac5	Mio fratello ha una moto sportiva e ogni domenica fa un giro tra le colline toscane.	Una moto veloce.
+il camion	truck	5	c2ae0b5ba085cb33fbee01aafc391538	Il camion delle consegne è arrivato in ritardo a causa del traffico in autostrada stamattina.	Un grosso camion.
+il furgone	van	5	549ec2d4f6507359499c510496ef71e2	Abbiamo noleggiato un furgone per il trasloco perché abbiamo troppi mobili da spostare.	Un furgone bianco.
+il traghetto	ferry	5	29a34b39f99c31ae1bea0f6d9f001bfd	Prendiamo il traghetto da Napoli per andare a Capri durante le vacanze estive di agosto.	Il traghetto è in ritardo.
+la stazione	station	5	20db9614b8698070a0f46e39ed1581b4	La stazione di Milano centrale è una delle più belle e importanti d'Italia.	Vado alla stazione.
+l'aeroporto	airport	5	0a14edb2680b1507c2004ab3094f4567	L'aeroporto è affollato di turisti che partono per le vacanze estive ogni mattina.	Un grande aeroporto.
+il porto	port / harbor	5	71d6c631e36a3432a5899bb09c51d52a	Il porto di Genova è uno dei più importanti del Mediterraneo per il commercio internazionale.	Un porto turistico.
+la fermata	stop (bus/tram)	5	c0434bddf417275a86f9c9a7fc13d3da	La fermata dell'autobus è proprio davanti casa mia, è molto comodo per andare al lavoro.	La prossima fermata.
+il binario	platform / track	5	fb86e12c75abe4261435115ebbe23668	Il treno parte dal binario undici tra cinque minuti, sbrigati ad arrivare in tempo.	Cambio binario.
+la pista	runway / track	5	47c3da0dc1d88b7721e3905d8a4b5f76	L'aereo è atterrato sulla pista bagnata dopo un lungo volo intercontinentale dall'America.	Una pista da sci.
+l'autostrada	highway	5	ca0bbc086471a1fc7248a0815b9fc52a	L'autostrada è bloccata per un grave incidente avvenuto stamattina presto vicino al casello.	Sull'autostrada.
+il ponte	bridge	5	e90ebfad8baefc3da69fc539a1555cce	Il ponte di Rialto a Venezia è uno dei monumenti più famosi d'Italia nel mondo.	Un bel ponte.
+il tunnel	tunnel	5	13621569c04c27dde4aa00c3ef3ddbac	Il tunnel sotto le Alpi collega l'Italia con la Francia e si chiama traforo del Frejus.	Un tunnel buio.
+la galleria	gallery / tunnel	5	f4b42eeb38aba2a855b6d59693c5d87e	La galleria d'arte moderna ospita una bellissima mostra di pittori italiani contemporanei.	Una galleria d'arte.
+il distributore	gas station	5	2e141864d9a72708ac45411d179b7dc5	Mi fermo al distributore per fare benzina prima di partire per il lungo viaggio in macchina.	Al distributore.
+il parcheggio	parking lot	5	9719c747895460cb0ac8a446ebdf47c5	Il parcheggio del centro commerciale è sempre pieno il sabato pomeriggio per gli acquisti settimanali.	Trovo parcheggio.
+il semaforo	traffic light	5	a7d52543df743e02dc801695ecfa3c73	Il semaforo è diventato rosso e ho dovuto fermarmi per non fare un incidente grave.	Al semaforo verde.
+il marciapiede	sidewalk	5	2bda2acab19bfa5890e1e182ae038ef7	Cammino sul marciapiede per sicurezza e per non disturbare le auto che passano veloci.	Sul marciapiede.
+l'incrocio	intersection	5	154084ce2df69214f1325cb9ae5c1780	All'incrocio devi girare a destra per arrivare alla casa di mia zia in centro.	Un incrocio pericoloso.
+l'ufficio	office	5	893abe130a54e3f160c110f32fb2932b	Il mio ufficio è al quinto piano del palazzo di vetro nel centro direzionale.	Vado in ufficio.
+la farmacia	pharmacy	5	dbc3c50848d0018bc557251940feade3	Vado in farmacia a comprare la medicina per il mal di testa che mi tormenta da giorni.	Una farmacia di turno.
+la libreria	bookstore	5	9fc4d038880d95838f3a819f4df65f0d	La libreria del centro vende sia libri nuovi che usati a prezzi molto convenienti.	Una grande libreria.
+l'edicola	newsstand	5	e2fff65b3236d83edf8efb15d61484a5	Compro il giornale all'edicola sotto casa ogni mattina prima di andare al lavoro presto.	Un'edicola chiusa.
+il bar	bar / café	5	37b51d194a7513e45b56f6524f2d51f2	Faccio colazione al bar tutti i giorni con un cappuccino e un cornetto al cioccolato.	Andiamo al bar.
+l'hotel	hotel	5	e919c49d5f0cd737285367810a3394d0	Abbiamo prenotato un hotel a quattro stelle per le nostre vacanze estive in Sicilia.	Un hotel di lusso.
+l'albergo	hotel / inn	5	4b5190b1e0c0cb8aa1843edddb61e918	L'albergo nel centro storico è molto accogliente e il personale è gentile e disponibile.	Un buon albergo.
+l'ostello	hostel	5	167150fdfc32be3bec3a12d235c35384	Ho dormito in un ostello durante il mio viaggio in Spagna per risparmiare sui costi.	Un ostello della gioventù.
+lo stadio	stadium	5	04c9a039e37e2b84dab22ffda733cf7e	Lo stadio di calcio della mia città può ospitare fino a settantamila tifosi appassionati.	Allo stadio.
+la palestra	gym	5	46473cad7ada6cc2192c6e2f065f816d	Vado in palestra tre volte alla settimana per mantenermi in forma e in salute.	Una palestra moderna.
+la posta	post office	5	70e51d4814a636acca332fe911da1c28	Devo andare alla posta a spedire questo pacco a mia sorella che vive in Germania.	Vado alla posta.
+la biblioteca	library	5	686d4ba6996ab7e2bd626c9a3cc965c6	Studio in biblioteca tutti i pomeriggi prima dell'esame di fine semestre dell'università.	In biblioteca.
+la panetteria	bakery	5	e49870f2ba069d070d86372f4d27101c	Compro il pane fresco alla panetteria sotto casa ogni mattina prima di colazione.	Una buona panetteria.
+il museo	museum	5	1e96672940df940377381ac3d4cf1890	Il museo egizio di Torino è uno dei più importanti al mondo per la storia antica.	Visito il museo.
+il monumento	monument	5	1d6e523d4c105067cb3dcf9443d1aabb	Il monumento ai caduti è al centro della piazza principale della mia città di nascita.	Un grande monumento.
+la chiesa	church	5	513aa116e2841524cea1f365b412671c	La chiesa del paese è del dodicesimo secolo ed è ricca di affreschi medievali bellissimi.	Vado in chiesa.
+il castello	castle	5	c9038eac3ff69bbf2cd0d224bc8d6d42	Il castello sulla collina è del medioevo ed è aperto ai visitatori durante l'estate.	Un vecchio castello.
+il parco	park	5	93ba12005058ddb7063870090f28ec79	Vado al parco a fare jogging la domenica mattina con la mia squadra di amici sportivi.	Un grande parco.
+la piazza	square / plaza	5	4558aac7b93717f32323b02d2db1f28b	La piazza del paese è il cuore della comunità e ci si incontra tutti la sera tardi.	In piazza.
+il palazzo	building / palace	5	18a1351a1461663a0ef7a34871f67e21	Il palazzo storico nel centro città è stato restaurato di recente con grande maestria.	Un palazzo nobile.
+la fontana	fountain	5	b1233b4654bae701b1993a56c4494636	La fontana di Trevi a Roma è una delle più famose al mondo e attira milioni di turisti.	Una bella fontana.
+la torre	tower	5	2a54c96a018815eecba59519c81c6009	La torre di Pisa è famosa in tutto il mondo per la sua caratteristica pendenza inclinata.	Una torre alta.
+il teatro	theater	5	4c16f83f480928bb12fc21f7fb0e85ec	Andiamo a teatro stasera a vedere uno spettacolo di Shakespeare con attori italiani famosi.	Al teatro.
+il cinema	cinema / movies	5	4870f9d3a6299578edcc3e6c954baeba	Andiamo al cinema stasera a vedere il nuovo film d'azione che è uscito venerdì scorso.	Al cinema.
+la basilica	basilica	5	9691a80601c24739e6c31740c81f5aef	La basilica di San Pietro a Roma è il più importante luogo di culto della cristianità mondiale.	Una grande basilica.
+il chiosco	kiosk	5	a341fba2bd1734af22b37d1fde1b4338	Compro il gelato al chiosco sulla spiaggia ogni pomeriggio durante le vacanze estive d'agosto.	Un piccolo chiosco.
+la gelateria	ice cream shop	5	76c301f8cea4e2a740ae9e8e5fce0ef8	La gelateria del centro fa il miglior pistacchio di tutta la città secondo i miei amici.	Una buona gelateria.
+la pasticceria	pastry shop	5	74ed3faaed2fb81a0be4a0b7bc5a1220	Compro le paste alla pasticceria di mio cugino la domenica mattina per la colazione speciale.	Una pasticceria famosa.
+la pizzeria	pizzeria	5	04d387db103c7e4cf19f0b2cedecddf8	Andiamo alla pizzeria del quartiere stasera a mangiare la pizza più buona della città.	Una pizzeria napoletana.
+la macelleria	butcher shop	5	9481baff6e6ceec08d32531deefe2ae3	Vado in macelleria a comprare la carne fresca per il pranzo della domenica con la famiglia.	Una macelleria di fiducia.
+la pescheria	fish market	5	6820a72a023220402092727c1d8c2391	La pescheria del porto vende il pesce appena pescato la mattina presto direttamente dai pescatori.	Una pescheria fresca.
+gli alimentari	grocery store	5	dee780ccaf694689d15de2ca912a3882	Vado all'alimentari sotto casa quando dimentico qualcosa per la cena della sera.	Negozio di alimentari.
+la tabaccheria	tobacco shop	5	cec613bcc0234ed08c86d1d123b37910	Compro i biglietti dell'autobus alla tabaccheria all'angolo della strada principale del centro.	Vado in tabaccheria.
+la cartoleria	stationery shop	5	3dc725f03c0fb79435b18d87ede7862d	I bambini comprano il materiale scolastico alla cartoleria vicino alla scuola elementare.	Una grande cartoleria.
+il fioraio	florist	5	caaabdb5c0706c366f3d1511bd47c4a5	Ho comprato un mazzo di rose rosse al fioraio per il compleanno di mia moglie.	Dal fioraio.
 prenotare	to book / reserve	5	4177aab25ce6a09121b1d8a182e122fb	Devo prenotare il volo per Parigi prima che i prezzi aumentino di molto a giugno.	Ho prenotato l'hotel.
 atterrare	to land	5	cdb8016744d3558a0120c207dbaba2a2	L'aereo è atterrato in perfetto orario all'aeroporto di Fiumicino di Roma.	Atterriamo presto.
 decollare	to take off	5	4ee11bf58560b2135915e749e517a968	L'aereo decolla tra venti minuti, dobbiamo affrettarci a passare i controlli di sicurezza.	Decolliamo subito.
@@ -75,49 +75,49 @@ smarrirsi	to get lost	5	7af3cf33e10fe48191ac00172177b913	È facile smarrirsi nel
 percorrere	to travel along	5	30875789250e38b8e50d080d382274e6	Voglio percorrere tutta la costa amalfitana in macchina per ammirare i panorami mozzafiato.	Percorro la strada.
 esplorare	to explore	5	1708f57184d5bbcd8e5735abf646c308	Mi piace esplorare nuove città a piedi per scoprire angoli nascosti e particolari unici.	Esploriamo insieme.
 accompagnare	to accompany	5	d0951bf4e6f590a84af2cf91196d287b	Devo accompagnare mia madre dal medico domani mattina alle nove in punto come d'accordo.	Ti accompagno io.
-bagaglio	luggage	5	730476e0b81c010616edbcc645ffc12f	Il mio bagaglio è andato perso dalla compagnia aerea durante l'ultimo volo intercontinentale.	Un bagaglio leggero.
-zaino	backpack	5	972b48402f42006e1b07c128e9f4d492	Porto sempre uno zaino comodo durante le mie escursioni in montagna estive e invernali.	Uno zaino pesante.
-mappa	map	5	2e7c775ac7dcec1e317d77e3b5a5c980	Studio la mappa della città prima di uscire per non perdermi tra le strade strette.	Una mappa antica.
-passaporto	passport	5	38d84675a71c9e2be97f577e3d8c9bde	Devo rinnovare il passaporto prima di partire per il mio viaggio in Giappone il mese prossimo.	Mostra il passaporto.
-documento	document	5	34240997a16763c011134c570fcc149e	Bisogna avere sempre un documento d'identità con sé quando si viaggia in aereo o treno.	Un documento valido.
-ombrello	umbrella	5	000df3d6ebb6c3e7dbe5e6328a3eaede	Porto sempre l'ombrello in borsa perché non si sa mai quando può iniziare a piovere.	Un ombrello rosso.
-occhiali	glasses	5	5c2166d59a309aabf3d9c1fb77192189	Ho dimenticato gli occhiali da sole a casa e ora il sole mi acceca davvero molto.	Occhiali da sole.
-foto	photo	5	66c9eed121277d8be2df09ce25c4687a	Ho fatto tante foto durante il mio viaggio in Italia per ricordare ogni momento speciale vissuto.	Una bella foto.
-ruota	wheel	5	2bd01c7bb1d53e454cb7e866c1ba5764	La ruota della macchina si è bucata in autostrada e ho dovuto chiamare il carro attrezzi.	Una ruota nuova.
-motore	engine	5	e48554f589468b6d0810a2dca5794e4e	Il motore della macchina fa un rumore strano e devo portarla dal meccanico domani presto.	Un motore potente.
-benzina	gasoline	5	1382b1fde863d09e8dce2b1dd230fb3b	La benzina costa sempre di più e devo cercare di usare meno la macchina ogni mese.	Faccio benzina.
-freno	brake	5	6461d07ff5e49025197d4ebeaa5f3305	Il freno della bicicletta non funziona bene e devo ripararlo prima del prossimo lungo viaggio.	Tira il freno.
-mare	sea	5	34c119dc749297336f7a1c8b54290123	Il mare della Sardegna è cristallino e perfetto per nuotare durante l'estate calda di luglio.	Vado al mare.
-montagna	mountain	5	8517a0e22e6cec8ddf9ab4507e8318a4	La montagna in inverno è coperta di neve e perfetta per chi ama lo sci alpino veloce.	In montagna.
-fiume	river	5	1d331ace2d328fc47a1b80d9021e3a60	Il fiume Po attraversa molte città del nord Italia e sfocia nel mare Adriatico calmo.	Un grande fiume.
-lago	lake	5	f9397c0b3e304f4906529b2922644cd2	Il lago di Como è circondato da ville storiche e bellissimi giardini fioriti in primavera.	Un lago tranquillo.
-isola	island	5	a7e8f5485addf5caf92ce6a86459322f	L'isola di Capri è una delle mete turistiche più famose della costa amalfitana incantevole.	Una piccola isola.
-spiaggia	beach	5	cdd0efac3d9aa935f586321890af40da	Andiamo in spiaggia ogni giorno durante le vacanze estive per nuotare e prendere il sole.	Una spiaggia libera.
-foresta	forest	5	2ac48d62d7f7adad41f82e6b38c6c7ae	La foresta dell'Aspromonte è ricca di lupi, cinghiali e tanti altri animali selvatici protetti.	Una foresta densa.
-deserto	desert	5	dfd867d0e72b98144e4d08ec7c241ea8	Il deserto del Sahara è il più grande deserto caldo del mondo e affascina ogni viaggiatore.	Un deserto vasto.
-valle	valley	5	4621dd08d8452ad13df5b30b29e5b9b7	La valle d'Aosta è famosa per le sue montagne maestose e i suoi castelli medievali ben conservati.	Una valle profonda.
-collina	hill	5	dc8c7511e645dca9a735f82245e5c49f	Le colline toscane sono famose nel mondo per i loro vigneti e gli oliveti tradizionali.	Su una collina.
-bosco	wood / woods	5	13036a5c965bb73653a5de95b89ae4c2	Mi piace passeggiare nel bosco in autunno per raccogliere i funghi freschi e le castagne.	Un bosco fitto.
-prato	meadow / lawn	5	c02c36007bbcda72eb765ddb8f5fc70e	Il prato del giardino è verde e ben curato grazie al lavoro costante del giardiniere esperto.	Su un prato verde.
-campagna	countryside	5	54c7b1c2b0bfb40ffa5ad1a596cfe55c	Vivere in campagna è bellissimo perché si respira aria pulita e si è circondati dalla natura.	In campagna.
-costa	coast	5	2fe44044f40217387daaf299f2eb7340	La costa amalfitana è patrimonio dell'umanità per la sua bellezza paesaggistica unica al mondo.	Una costa rocciosa.
-oceano	ocean	5	e3de2cf8ac892a0d8616eefc4a4f59bd	L'oceano Atlantico separa l'Europa dalle Americhe ed è attraversato da molte rotte commerciali.	L'oceano profondo.
-continente	continent	5	a91e4e0cf303cb9b16316ffd896a914c	L'Italia si trova nel continente europeo e confina con quattro paesi diversi del nord.	Un grande continente.
-regione	region	5	5d3c7293f6defc00756c838567a671ad	La regione Toscana è una delle mete turistiche più famose d'Italia per la sua cultura.	La mia regione.
-nazione	nation	5	7922116829c3ffcebb4edebad2f3ae4a	L'Italia è una nazione ricca di storia, arte e tradizioni culinarie famose nel mondo intero.	Una grande nazione.
-mondo	world	5	86b2e38dcc055a4d9458c2a2b19f00ca	Il mondo è pieno di posti meravigliosi che vorrei visitare prima di diventare troppo vecchio.	Il mondo intero.
-terra	earth / land	5	76cebb2c444d72118969791fc106cde2	La terra del mio paese è fertile e adatta alla coltivazione del grano e dell'uva da vino.	Sulla terra.
-pianeta	planet	5	7e02c88159a785f686222453223c87d1	Dobbiamo proteggere il nostro pianeta dalle conseguenze del cambiamento climatico globale e attuale.	Il pianeta blu.
-ambiente	environment	5	0149c3083ec080ee00b622bd2495525d	L'ambiente naturale di queste montagne è protetto dal parco nazionale dell'Abruzzo da decenni.	Un bell'ambiente.
-clima	climate	5	091bdc9e09a07e55e7bb14c8f4348ecf	Il clima mediterraneo è mite tutto l'anno con estati calde e inverni miti e piovosi.	Un clima caldo.
-paesaggio	landscape	5	eb7fb6546fb530af17ecc39dc870224a	Il paesaggio toscano è famoso in tutto il mondo per le sue colline ondulate e i cipressi.	Un paesaggio mozzafiato.
-vetta	summit / peak	5	b4cd15660ee365ff6d65b1778c8e714b	Abbiamo raggiunto la vetta della montagna dopo cinque ore di cammino faticoso ma esaltante.	La vetta innevata.
-nord	north	5	a4c6e989698f253a890b9173e7f052e5	Vivo nel nord Italia, vicino al confine con la Svizzera, in una bella città storica.	Vado a nord.
-sud	south	5	57f6fd9c0e6da61c1f802233d83277fc	Il sud Italia è famoso per il sole, il mare cristallino e la cucina mediterranea tradizionale.	Verso il sud.
-est	east	5	1c52bdae8bad70e82da799843bb4e831	Il sole sorge a est e illumina la mia camera ogni mattina presto durante l'alba.	A est di Roma.
-ovest	west	5	c69f2f9dfb838a3373fdb0a48d29ec5b	Il sole tramonta a ovest creando spettacolari colori rossi e arancioni nel cielo limpido.	Verso ovest.
-destra	right	5	2dc34addc96265664c569dee51149048	Gira a destra al prossimo incrocio per arrivare al centro storico della bella città.	A destra.
-sinistra	left	5	c98417c1d76c3493826d5037296e868d	La farmacia è sulla sinistra dopo il semaforo, accanto alla panetteria del quartiere.	A sinistra.
+il bagaglio	luggage	5	730476e0b81c010616edbcc645ffc12f	Il mio bagaglio è andato perso dalla compagnia aerea durante l'ultimo volo intercontinentale.	Un bagaglio leggero.
+lo zaino	backpack	5	972b48402f42006e1b07c128e9f4d492	Porto sempre uno zaino comodo durante le mie escursioni in montagna estive e invernali.	Uno zaino pesante.
+la mappa	map	5	2e7c775ac7dcec1e317d77e3b5a5c980	Studio la mappa della città prima di uscire per non perdermi tra le strade strette.	Una mappa antica.
+il passaporto	passport	5	38d84675a71c9e2be97f577e3d8c9bde	Devo rinnovare il passaporto prima di partire per il mio viaggio in Giappone il mese prossimo.	Mostra il passaporto.
+il documento	document	5	34240997a16763c011134c570fcc149e	Bisogna avere sempre un documento d'identità con sé quando si viaggia in aereo o treno.	Un documento valido.
+l'ombrello	umbrella	5	000df3d6ebb6c3e7dbe5e6328a3eaede	Porto sempre l'ombrello in borsa perché non si sa mai quando può iniziare a piovere.	Un ombrello rosso.
+gli occhiali	glasses	5	5c2166d59a309aabf3d9c1fb77192189	Ho dimenticato gli occhiali da sole a casa e ora il sole mi acceca davvero molto.	Occhiali da sole.
+la foto	photo	5	66c9eed121277d8be2df09ce25c4687a	Ho fatto tante foto durante il mio viaggio in Italia per ricordare ogni momento speciale vissuto.	Una bella foto.
+la ruota	wheel	5	2bd01c7bb1d53e454cb7e866c1ba5764	La ruota della macchina si è bucata in autostrada e ho dovuto chiamare il carro attrezzi.	Una ruota nuova.
+il motore	engine	5	e48554f589468b6d0810a2dca5794e4e	Il motore della macchina fa un rumore strano e devo portarla dal meccanico domani presto.	Un motore potente.
+la benzina	gasoline	5	1382b1fde863d09e8dce2b1dd230fb3b	La benzina costa sempre di più e devo cercare di usare meno la macchina ogni mese.	Faccio benzina.
+il freno	brake	5	6461d07ff5e49025197d4ebeaa5f3305	Il freno della bicicletta non funziona bene e devo ripararlo prima del prossimo lungo viaggio.	Tira il freno.
+il mare	sea	5	34c119dc749297336f7a1c8b54290123	Il mare della Sardegna è cristallino e perfetto per nuotare durante l'estate calda di luglio.	Vado al mare.
+la montagna	mountain	5	8517a0e22e6cec8ddf9ab4507e8318a4	La montagna in inverno è coperta di neve e perfetta per chi ama lo sci alpino veloce.	In montagna.
+il fiume	river	5	1d331ace2d328fc47a1b80d9021e3a60	Il fiume Po attraversa molte città del nord Italia e sfocia nel mare Adriatico calmo.	Un grande fiume.
+il lago	lake	5	f9397c0b3e304f4906529b2922644cd2	Il lago di Como è circondato da ville storiche e bellissimi giardini fioriti in primavera.	Un lago tranquillo.
+l'isola	island	5	a7e8f5485addf5caf92ce6a86459322f	L'isola di Capri è una delle mete turistiche più famose della costa amalfitana incantevole.	Una piccola isola.
+la spiaggia	beach	5	cdd0efac3d9aa935f586321890af40da	Andiamo in spiaggia ogni giorno durante le vacanze estive per nuotare e prendere il sole.	Una spiaggia libera.
+la foresta	forest	5	2ac48d62d7f7adad41f82e6b38c6c7ae	La foresta dell'Aspromonte è ricca di lupi, cinghiali e tanti altri animali selvatici protetti.	Una foresta densa.
+il deserto	desert	5	dfd867d0e72b98144e4d08ec7c241ea8	Il deserto del Sahara è il più grande deserto caldo del mondo e affascina ogni viaggiatore.	Un deserto vasto.
+la valle	valley	5	4621dd08d8452ad13df5b30b29e5b9b7	La valle d'Aosta è famosa per le sue montagne maestose e i suoi castelli medievali ben conservati.	Una valle profonda.
+la collina	hill	5	dc8c7511e645dca9a735f82245e5c49f	Le colline toscane sono famose nel mondo per i loro vigneti e gli oliveti tradizionali.	Su una collina.
+il bosco	wood / woods	5	13036a5c965bb73653a5de95b89ae4c2	Mi piace passeggiare nel bosco in autunno per raccogliere i funghi freschi e le castagne.	Un bosco fitto.
+il prato	meadow / lawn	5	c02c36007bbcda72eb765ddb8f5fc70e	Il prato del giardino è verde e ben curato grazie al lavoro costante del giardiniere esperto.	Su un prato verde.
+la campagna	countryside	5	54c7b1c2b0bfb40ffa5ad1a596cfe55c	Vivere in campagna è bellissimo perché si respira aria pulita e si è circondati dalla natura.	In campagna.
+la costa	coast	5	2fe44044f40217387daaf299f2eb7340	La costa amalfitana è patrimonio dell'umanità per la sua bellezza paesaggistica unica al mondo.	Una costa rocciosa.
+l'oceano	ocean	5	e3de2cf8ac892a0d8616eefc4a4f59bd	L'oceano Atlantico separa l'Europa dalle Americhe ed è attraversato da molte rotte commerciali.	L'oceano profondo.
+il continente	continent	5	a91e4e0cf303cb9b16316ffd896a914c	L'Italia si trova nel continente europeo e confina con quattro paesi diversi del nord.	Un grande continente.
+la regione	region	5	5d3c7293f6defc00756c838567a671ad	La regione Toscana è una delle mete turistiche più famose d'Italia per la sua cultura.	La mia regione.
+la nazione	nation	5	7922116829c3ffcebb4edebad2f3ae4a	L'Italia è una nazione ricca di storia, arte e tradizioni culinarie famose nel mondo intero.	Una grande nazione.
+il mondo	world	5	86b2e38dcc055a4d9458c2a2b19f00ca	Il mondo è pieno di posti meravigliosi che vorrei visitare prima di diventare troppo vecchio.	Il mondo intero.
+la terra	earth / land	5	76cebb2c444d72118969791fc106cde2	La terra del mio paese è fertile e adatta alla coltivazione del grano e dell'uva da vino.	Sulla terra.
+il pianeta	planet	5	7e02c88159a785f686222453223c87d1	Dobbiamo proteggere il nostro pianeta dalle conseguenze del cambiamento climatico globale e attuale.	Il pianeta blu.
+l'ambiente	environment	5	0149c3083ec080ee00b622bd2495525d	L'ambiente naturale di queste montagne è protetto dal parco nazionale dell'Abruzzo da decenni.	Un bell'ambiente.
+il clima	climate	5	091bdc9e09a07e55e7bb14c8f4348ecf	Il clima mediterraneo è mite tutto l'anno con estati calde e inverni miti e piovosi.	Un clima caldo.
+il paesaggio	landscape	5	eb7fb6546fb530af17ecc39dc870224a	Il paesaggio toscano è famoso in tutto il mondo per le sue colline ondulate e i cipressi.	Un paesaggio mozzafiato.
+la vetta	summit / peak	5	b4cd15660ee365ff6d65b1778c8e714b	Abbiamo raggiunto la vetta della montagna dopo cinque ore di cammino faticoso ma esaltante.	La vetta innevata.
+il nord	north	5	a4c6e989698f253a890b9173e7f052e5	Vivo nel nord Italia, vicino al confine con la Svizzera, in una bella città storica.	Vado a nord.
+il sud	south	5	57f6fd9c0e6da61c1f802233d83277fc	Il sud Italia è famoso per il sole, il mare cristallino e la cucina mediterranea tradizionale.	Verso il sud.
+l'est	east	5	1c52bdae8bad70e82da799843bb4e831	Il sole sorge a est e illumina la mia camera ogni mattina presto durante l'alba.	A est di Roma.
+l'ovest	west	5	c69f2f9dfb838a3373fdb0a48d29ec5b	Il sole tramonta a ovest creando spettacolari colori rossi e arancioni nel cielo limpido.	Verso ovest.
+la destra	right	5	2dc34addc96265664c569dee51149048	Gira a destra al prossimo incrocio per arrivare al centro storico della bella città.	A destra.
+la sinistra	left	5	c98417c1d76c3493826d5037296e868d	La farmacia è sulla sinistra dopo il semaforo, accanto alla panetteria del quartiere.	A sinistra.
 dritto	straight	5	a533bdf9d00f8831ec18961c47d9d04a	Vai sempre dritto per due chilometri e troverai il museo sulla tua destra dopo il ponte.	Dritto avanti.
 indietro	back / backward	5	06fcf5dd580317d3e93ec16a96366219	Devo tornare indietro perché ho dimenticato le chiavi di casa sul tavolo della cucina.	Faccio un passo indietro.
 davanti	in front of	5	3cd778f9d1f9fb5e1b3492da95538601	La macchina davanti a noi va troppo lenta e non posso sorpassare a causa del traffico.	Davanti alla porta.
@@ -126,78 +126,78 @@ sopra	above / over	5	bab071431e87ad98532779a8503911fc	Il mio appartamento è sop
 sotto	below / under	5	e1404d494477d7dbc77719c2706c3c74	C'è una cantina sotto la casa dove conserviamo il vino e i prodotti dell'orto in inverno.	Sotto il letto.
 vicino	near / close	5	ddfc27db1de6bf1d3a6f7038fbc9b78e	Abito vicino al centro della città e posso andare a piedi al lavoro ogni mattina presto.	Vicino a casa.
 lontano	far / distant	5	17a1ac7c8eef1d0638d28f5d13da11ae	Mio fratello vive lontano, in Australia, e lo vedo solo una volta ogni due anni.	Lontano da qui.
-centro	center / downtown	5	9484c73d200423b79f02cf29d55aedb7	Lavoro nel centro della città e vado al lavoro a piedi tutti i giorni per fare movimento.	In centro.
-pianta	plant	5	8b0ff9f7684fbc4de319f77f8eb20544	Ho una pianta di basilico sul balcone e la uso per cucinare la pasta al pesto.	Una pianta verde.
-foglia	leaf	5	dd0546096924984278fb9cdb79594a39	La foglia gialla è caduta dall'albero del giardino con il primo vento freddo dell'autunno.	Una foglia secca.
-erba	grass	5	469e999152ade59ac432643b2a54996e	L'erba del giardino deve essere tagliata almeno una volta alla settimana durante l'estate calda.	Erba alta.
-ramo	branch	5	a732722c6f24131348e05a0a6f9542b1	Il ramo dell'albero si è spezzato durante il temporale violento di ieri sera tardi.	Un ramo rotto.
-radice	root	5	d3a6cdf239ef3b7f4ce8ed76a8dae8e7	Le radici di questo albero sono talmente profonde da raggiungere la falda acquifera sotterranea.	Una radice forte.
-frutto	fruit (single)	5	213689dd0114868b3c5c816749aeeab8	Questo frutto esotico viene importato direttamente dal Brasile e ha un sapore davvero unico al palato.	Un frutto raro.
-seme	seed	5	713ef8d58cbf1c1dabb51f8fbe73a92f	Il seme di girasole è ottimo da mangiare come spuntino sano durante la pausa pranzo.	Un piccolo seme.
-sasso	stone / rock	5	e49ac6c6e682533038e20a59aa2e008a	Ho trovato un bel sasso colorato sulla spiaggia durante la passeggiata con i miei nipoti.	Un sasso liscio.
-pietra	stone (material)	5	2fb74eed31df38eead96278c6349b8fe	La casa antica del paese è costruita interamente di pietra locale grigia e resistente al tempo.	Una pietra preziosa.
-sabbia	sand	5	06cafd1b41873052b72f3ee650254fe0	La sabbia bianca della spiaggia caraibica è famosa in tutto il mondo per la sua morbidezza unica.	Sabbia fine.
-fango	mud	5	a47b7b91ab5175f88c08167eeb4c7859	Dopo la forte pioggia il sentiero di montagna è diventato pieno di fango scivoloso e difficile.	Pieno di fango.
-polvere	dust	5	e3e8e9c02d94bd67a5a886328d74b6ca	C'è troppa polvere sui mobili del salotto e devo fare le pulizie a fondo questo weekend.	Polvere ovunque.
-tronco	trunk	5	166c93396b10c5be319c5acd8122f020	Il tronco del vecchio albero è cavo dentro e diventa la casa di tanti piccoli uccelli.	Un tronco antico.
-corteccia	bark	5	7f1464d009cd54506a8718f31e368f06	La corteccia di questa quercia secolare è ruvida e screpolata dal tempo e dalle intemperie.	Corteccia secca.
-cespuglio	bush	5	57e251e0612c0757ed1938cece87cd4e	Il cespuglio di rose vicino al cancello è in fiore e profuma tutto il giardino di primavera.	Un cespuglio fiorito.
-mosca	fly	5	d3e863b4c91bff6d3a274e923e9e5968	C'è una mosca fastidiosa nella stanza che continua a girare intorno alla lampada accesa.	Una piccola mosca.
-zanzara	mosquito	5	d6357156427b771d48be156c6fc637f3	Le zanzare di sera ci impediscono di stare in giardino e ci pungono senza tregua.	Una zanzara fastidiosa.
-formica	ant	5	b7c4e64409b9c1d16c83d53ee7376740	Una colonna di formiche operose sta trasportando briciole di pane verso il loro formicaio.	Una formica nera.
-ragno	spider	5	b78c0c8f8ac12fbd7cd28c077e7d894d	Ho paura dei ragni anche se so che la maggior parte di loro è completamente innocua per gli umani.	Un ragno grande.
-serpente	snake	5	24a01b7054fb08f559cc4f717359bee0	Abbiamo visto un serpente nel bosco durante l'escursione di domenica e abbiamo avuto paura davvero.	Un serpente velenoso.
-tartaruga	turtle	5	01c860da53e2e7ebd2ae0b30b62eb762	La tartaruga di mare nuota lentamente nelle acque cristalline dell'oceano tropicale calmo.	Una tartaruga marina.
-delfino	dolphin	5	9dc0f68943dc922da76d73c91a254ff3	Abbiamo visto un gruppo di delfini saltare felici accanto alla nostra barca durante la gita estiva.	Un delfino giocoso.
-balena	whale	5	611dc8f8b3418e5bf5820abd832fb232	La balena è il più grande mammifero del mondo e vive negli oceani profondi e freddi.	Una grande balena.
-squalo	shark	5	0ff1e54ff978a2a565bcba6ea9134b81	Lo squalo bianco è temuto da tutti i bagnanti delle spiagge australiane e sudafricane famose.	Uno squalo enorme.
-aquila	eagle	5	92127b4483830b255a7f0615711607cd	L'aquila reale vola maestosa sopra le montagne dell'Abruzzo e caccia piccoli mammiferi del bosco.	Una grande aquila.
-pinguino	penguin	5	b08484b5b62902dcd1b059c4f51177d8	Il pinguino imperatore vive nell'Antartide e affronta le temperature più rigide del pianeta intero.	Un piccolo pinguino.
-gufo	owl	5	8e1df76b1abbfb4a2a1014e9de2a777d	Il gufo caccia di notte nel bosco e ha occhi enormi che vedono benissimo nell'oscurità.	Un gufo saggio.
-avventura	adventure	5	e578c904507c4d5571908c17cd22b63d	Ogni viaggio è una nuova avventura piena di sorprese e di incontri inaspettati con nuove persone.	Una grande avventura.
-destinazione	destination	5	2ab6240bef8140b28277f912b86342bf	La nostra destinazione finale è una piccola isola greca lontana dalle rotte turistiche affollate.	Una destinazione esotica.
-meta	destination / goal	5	e9a23cbc455158951716b440c3d165e0	La meta del nostro viaggio è il sud Italia, dove visiteremo la Sicilia e la Calabria.	Una meta turistica.
-vacanza	vacation / holiday	5	8a6352748ea57fb7a35fcc6d469893bf	Vado in vacanza a luglio per due settimane in una bellissima isola greca con tutta la famiglia.	Buona vacanza!
-ferie	holidays / leave	5	03bde55d1cc1261fec90a849226ff774	Ho preso due settimane di ferie ad agosto per andare al mare con la mia famiglia.	Sono in ferie.
-alloggio	accommodation / lodging	5	14f34f9759ddfa07bd25766503382fbc	Abbiamo prenotato un alloggio per una settimana in un agriturismo toscano con piscina riscaldata.	Un buon alloggio.
-gita	day trip / excursion	5	4cb6903c6f8b22d7f191aff3e137dbef	Abbiamo organizzato una gita scolastica al museo egizio di Torino per la prossima settimana.	Una gita in montagna.
-crociera	cruise	5	c9f385021b7884c03f8eaf6a52455274	Andiamo in crociera nel Mediterraneo a settembre con una nave da diecimila passeggeri di lusso.	Una crociera di lusso.
-escursione	hike / excursion	5	5f3e3d6b809a0e50e1b0b5cef0d697a5	Domani facciamo un'escursione di sei ore in montagna per ammirare i laghi alpini cristallini.	Una bella escursione.
-ricordo	memory	5	c840b69d696126ea000e2dfc6acdbee4	Ho un bel ricordo del mio primo viaggio in Italia con i miei nonni quando ero bambino.	Un dolce ricordo.
-arrivo	arrival	5	95360875e562442e4ea63e1e019ad640	L'arrivo del treno è previsto per le tre del pomeriggio alla stazione centrale del paese.	Tempo di arrivo.
-partenza	departure	5	5f42a70b8e11aac3a2836aa4a66e5d4a	La partenza dell'aereo è alle dieci e dobbiamo essere in aeroporto due ore prima.	Buona partenza!
-ritorno	return	5	b8833f77c8423cb01d8c5ed359a37034	Il ritorno dalle vacanze è sempre un momento difficile perché bisogna riprendere la routine quotidiana.	Il viaggio di ritorno.
-ospite	guest	5	fec59f79a07eb89b3d9d2d6de8bb128f	Mio cugino sarà nostro ospite per una settimana intera durante le vacanze natalizie di dicembre.	Un ospite gradito.
-accoglienza	welcome / reception	5	864f5a89e0eb470391ee056042ea61b8	L'accoglienza in questo hotel è davvero calorosa e il personale è disponibile e professionale.	Una calda accoglienza.
-passeggiata	walk / stroll	5	d2adb6bec620661b6ce9ff7620004244	Faccio una lunga passeggiata in centro ogni domenica mattina con il mio fedele cane Rocky.	Una piacevole passeggiata.
-picnic	picnic	5	7ca6c5076bb01c621993eaf8aba35c41	Abbiamo fatto un picnic sul prato con tanto cibo, vino rosso e bei colori della natura.	Un picnic in campagna.
-campeggio	camping	5	8efaadda8b0e403f5194dd4fe2bce455	In estate andiamo in campeggio in montagna con la tenda e i sacchi a pelo per due settimane.	Un campeggio attrezzato.
-sci	ski / skiing	5	a76f2c01be007dbd8c7fdb01a4ec6115	Vado a sciare ogni inverno sulle Dolomiti con un gruppo di amici sportivi e appassionati.	Sci alpino.
-surf	surfing	5	353c8773694fbf1251dec54d98b614a1	Mio nipote ama il surf e ogni estate va in California per cavalcare le onde dell'oceano.	Tavola da surf.
-equitazione	horse riding	5	401588735989669fc4a82647a739486a	L'equitazione è il mio sport preferito e cavalco tutte le settimane in un maneggio in campagna.	Lezione di equitazione.
-alpinismo	mountaineering	5	48f0fabd05ec594d6dbf216cb2ce3697	L'alpinismo richiede grande preparazione fisica, mentale e attrezzatura adeguata per affrontare la montagna.	Alpinismo estremo.
-pesca	fishing	5	221a18f5d29952fd78b05bd25afd6d47	La pesca è un'attività rilassante che pratico la domenica mattina al lago vicino a casa.	Andiamo a pesca.
-caccia	hunting	5	dfa6fd91317e9d937dda65074f924f46	La caccia è regolamentata da leggi severe per proteggere gli animali e l'ambiente naturale.	Apertura della caccia.
-nuoto	swimming	5	388d661e9ccf0e365bd48ecec563650c	Il nuoto è uno degli sport più completi perché coinvolge tutti i muscoli del corpo.	Lezioni di nuoto.
+il centro	center / downtown	5	9484c73d200423b79f02cf29d55aedb7	Lavoro nel centro della città e vado al lavoro a piedi tutti i giorni per fare movimento.	In centro.
+la pianta	plant	5	8b0ff9f7684fbc4de319f77f8eb20544	Ho una pianta di basilico sul balcone e la uso per cucinare la pasta al pesto.	Una pianta verde.
+la foglia	leaf	5	dd0546096924984278fb9cdb79594a39	La foglia gialla è caduta dall'albero del giardino con il primo vento freddo dell'autunno.	Una foglia secca.
+l'erba	grass	5	469e999152ade59ac432643b2a54996e	L'erba del giardino deve essere tagliata almeno una volta alla settimana durante l'estate calda.	Erba alta.
+il ramo	branch	5	a732722c6f24131348e05a0a6f9542b1	Il ramo dell'albero si è spezzato durante il temporale violento di ieri sera tardi.	Un ramo rotto.
+la radice	root	5	d3a6cdf239ef3b7f4ce8ed76a8dae8e7	Le radici di questo albero sono talmente profonde da raggiungere la falda acquifera sotterranea.	Una radice forte.
+il frutto	fruit (single)	5	213689dd0114868b3c5c816749aeeab8	Questo frutto esotico viene importato direttamente dal Brasile e ha un sapore davvero unico al palato.	Un frutto raro.
+il seme	seed	5	713ef8d58cbf1c1dabb51f8fbe73a92f	Il seme di girasole è ottimo da mangiare come spuntino sano durante la pausa pranzo.	Un piccolo seme.
+il sasso	stone / rock	5	e49ac6c6e682533038e20a59aa2e008a	Ho trovato un bel sasso colorato sulla spiaggia durante la passeggiata con i miei nipoti.	Un sasso liscio.
+la pietra	stone (material)	5	2fb74eed31df38eead96278c6349b8fe	La casa antica del paese è costruita interamente di pietra locale grigia e resistente al tempo.	Una pietra preziosa.
+la sabbia	sand	5	06cafd1b41873052b72f3ee650254fe0	La sabbia bianca della spiaggia caraibica è famosa in tutto il mondo per la sua morbidezza unica.	Sabbia fine.
+il fango	mud	5	a47b7b91ab5175f88c08167eeb4c7859	Dopo la forte pioggia il sentiero di montagna è diventato pieno di fango scivoloso e difficile.	Pieno di fango.
+la polvere	dust	5	e3e8e9c02d94bd67a5a886328d74b6ca	C'è troppa polvere sui mobili del salotto e devo fare le pulizie a fondo questo weekend.	Polvere ovunque.
+il tronco	trunk	5	166c93396b10c5be319c5acd8122f020	Il tronco del vecchio albero è cavo dentro e diventa la casa di tanti piccoli uccelli.	Un tronco antico.
+la corteccia	bark	5	7f1464d009cd54506a8718f31e368f06	La corteccia di questa quercia secolare è ruvida e screpolata dal tempo e dalle intemperie.	Corteccia secca.
+il cespuglio	bush	5	57e251e0612c0757ed1938cece87cd4e	Il cespuglio di rose vicino al cancello è in fiore e profuma tutto il giardino di primavera.	Un cespuglio fiorito.
+la mosca	fly	5	d3e863b4c91bff6d3a274e923e9e5968	C'è una mosca fastidiosa nella stanza che continua a girare intorno alla lampada accesa.	Una piccola mosca.
+la zanzara	mosquito	5	d6357156427b771d48be156c6fc637f3	Le zanzare di sera ci impediscono di stare in giardino e ci pungono senza tregua.	Una zanzara fastidiosa.
+la formica	ant	5	b7c4e64409b9c1d16c83d53ee7376740	Una colonna di formiche operose sta trasportando briciole di pane verso il loro formicaio.	Una formica nera.
+il ragno	spider	5	b78c0c8f8ac12fbd7cd28c077e7d894d	Ho paura dei ragni anche se so che la maggior parte di loro è completamente innocua per gli umani.	Un ragno grande.
+il serpente	snake	5	24a01b7054fb08f559cc4f717359bee0	Abbiamo visto un serpente nel bosco durante l'escursione di domenica e abbiamo avuto paura davvero.	Un serpente velenoso.
+la tartaruga	turtle	5	01c860da53e2e7ebd2ae0b30b62eb762	La tartaruga di mare nuota lentamente nelle acque cristalline dell'oceano tropicale calmo.	Una tartaruga marina.
+il delfino	dolphin	5	9dc0f68943dc922da76d73c91a254ff3	Abbiamo visto un gruppo di delfini saltare felici accanto alla nostra barca durante la gita estiva.	Un delfino giocoso.
+la balena	whale	5	611dc8f8b3418e5bf5820abd832fb232	La balena è il più grande mammifero del mondo e vive negli oceani profondi e freddi.	Una grande balena.
+lo squalo	shark	5	0ff1e54ff978a2a565bcba6ea9134b81	Lo squalo bianco è temuto da tutti i bagnanti delle spiagge australiane e sudafricane famose.	Uno squalo enorme.
+l'aquila	eagle	5	92127b4483830b255a7f0615711607cd	L'aquila reale vola maestosa sopra le montagne dell'Abruzzo e caccia piccoli mammiferi del bosco.	Una grande aquila.
+il pinguino	penguin	5	b08484b5b62902dcd1b059c4f51177d8	Il pinguino imperatore vive nell'Antartide e affronta le temperature più rigide del pianeta intero.	Un piccolo pinguino.
+il gufo	owl	5	8e1df76b1abbfb4a2a1014e9de2a777d	Il gufo caccia di notte nel bosco e ha occhi enormi che vedono benissimo nell'oscurità.	Un gufo saggio.
+l'avventura	adventure	5	e578c904507c4d5571908c17cd22b63d	Ogni viaggio è una nuova avventura piena di sorprese e di incontri inaspettati con nuove persone.	Una grande avventura.
+la destinazione	destination	5	2ab6240bef8140b28277f912b86342bf	La nostra destinazione finale è una piccola isola greca lontana dalle rotte turistiche affollate.	Una destinazione esotica.
+la meta	destination / goal	5	e9a23cbc455158951716b440c3d165e0	La meta del nostro viaggio è il sud Italia, dove visiteremo la Sicilia e la Calabria.	Una meta turistica.
+la vacanza	vacation / holiday	5	8a6352748ea57fb7a35fcc6d469893bf	Vado in vacanza a luglio per due settimane in una bellissima isola greca con tutta la famiglia.	Buona vacanza!
+le ferie	holidays / leave	5	03bde55d1cc1261fec90a849226ff774	Ho preso due settimane di ferie ad agosto per andare al mare con la mia famiglia.	Sono in ferie.
+l'alloggio	accommodation / lodging	5	14f34f9759ddfa07bd25766503382fbc	Abbiamo prenotato un alloggio per una settimana in un agriturismo toscano con piscina riscaldata.	Un buon alloggio.
+la gita	day trip / excursion	5	4cb6903c6f8b22d7f191aff3e137dbef	Abbiamo organizzato una gita scolastica al museo egizio di Torino per la prossima settimana.	Una gita in montagna.
+la crociera	cruise	5	c9f385021b7884c03f8eaf6a52455274	Andiamo in crociera nel Mediterraneo a settembre con una nave da diecimila passeggeri di lusso.	Una crociera di lusso.
+l'escursione	hike / excursion	5	5f3e3d6b809a0e50e1b0b5cef0d697a5	Domani facciamo un'escursione di sei ore in montagna per ammirare i laghi alpini cristallini.	Una bella escursione.
+il ricordo	memory	5	c840b69d696126ea000e2dfc6acdbee4	Ho un bel ricordo del mio primo viaggio in Italia con i miei nonni quando ero bambino.	Un dolce ricordo.
+l'arrivo	arrival	5	95360875e562442e4ea63e1e019ad640	L'arrivo del treno è previsto per le tre del pomeriggio alla stazione centrale del paese.	Tempo di arrivo.
+la partenza	departure	5	5f42a70b8e11aac3a2836aa4a66e5d4a	La partenza dell'aereo è alle dieci e dobbiamo essere in aeroporto due ore prima.	Buona partenza!
+il ritorno	return	5	b8833f77c8423cb01d8c5ed359a37034	Il ritorno dalle vacanze è sempre un momento difficile perché bisogna riprendere la routine quotidiana.	Il viaggio di ritorno.
+l'ospite	guest	5	fec59f79a07eb89b3d9d2d6de8bb128f	Mio cugino sarà nostro ospite per una settimana intera durante le vacanze natalizie di dicembre.	Un ospite gradito.
+l'accoglienza	welcome / reception	5	864f5a89e0eb470391ee056042ea61b8	L'accoglienza in questo hotel è davvero calorosa e il personale è disponibile e professionale.	Una calda accoglienza.
+la passeggiata	walk / stroll	5	d2adb6bec620661b6ce9ff7620004244	Faccio una lunga passeggiata in centro ogni domenica mattina con il mio fedele cane Rocky.	Una piacevole passeggiata.
+il picnic	picnic	5	7ca6c5076bb01c621993eaf8aba35c41	Abbiamo fatto un picnic sul prato con tanto cibo, vino rosso e bei colori della natura.	Un picnic in campagna.
+il campeggio	camping	5	8efaadda8b0e403f5194dd4fe2bce455	In estate andiamo in campeggio in montagna con la tenda e i sacchi a pelo per due settimane.	Un campeggio attrezzato.
+lo sci	ski / skiing	5	a76f2c01be007dbd8c7fdb01a4ec6115	Vado a sciare ogni inverno sulle Dolomiti con un gruppo di amici sportivi e appassionati.	Sci alpino.
+il surf	surfing	5	353c8773694fbf1251dec54d98b614a1	Mio nipote ama il surf e ogni estate va in California per cavalcare le onde dell'oceano.	Tavola da surf.
+l'equitazione	horse riding	5	401588735989669fc4a82647a739486a	L'equitazione è il mio sport preferito e cavalco tutte le settimane in un maneggio in campagna.	Lezione di equitazione.
+l'alpinismo	mountaineering	5	48f0fabd05ec594d6dbf216cb2ce3697	L'alpinismo richiede grande preparazione fisica, mentale e attrezzatura adeguata per affrontare la montagna.	Alpinismo estremo.
+la pesca	fishing	5	221a18f5d29952fd78b05bd25afd6d47	La pesca è un'attività rilassante che pratico la domenica mattina al lago vicino a casa.	Andiamo a pesca.
+la caccia	hunting	5	dfa6fd91317e9d937dda65074f924f46	La caccia è regolamentata da leggi severe per proteggere gli animali e l'ambiente naturale.	Apertura della caccia.
+il nuoto	swimming	5	388d661e9ccf0e365bd48ecec563650c	Il nuoto è uno degli sport più completi perché coinvolge tutti i muscoli del corpo.	Lezioni di nuoto.
 locale	local	5	fb216d9e8791e63c8d12bdc420956839	Ho mangiato in un ristorante locale dove servono solo prodotti tipici della regione siciliana.	Cucina locale.
 straniero	foreign	5	41d312f0b9b3883d5aa107e248388b80	Mio cugino ha sposato una straniera che viene dal Canada e parlano inglese in casa.	Un turista straniero.
-estero	abroad	5	3137e26fa0c82a9c2076064d3f79b21f	Voglio andare all'estero a studiare l'inglese per migliorare le mie competenze linguistiche professionali.	Vivere all'estero.
+l'estero	abroad	5	3137e26fa0c82a9c2076064d3f79b21f	Voglio andare all'estero a studiare l'inglese per migliorare le mie competenze linguistiche professionali.	Vivere all'estero.
 turistico	touristic	5	7e945b3e52c248d23d4c0879b9808f45	La zona turistica del centro storico è sempre affollata di visitatori durante l'estate calda.	Un menù turistico.
 nazionale	national	5	20fe6b03bcb5e7b30bd6ab4931ed5f16	Il parco nazionale d'Abruzzo è uno dei più grandi e antichi d'Italia, ricco di fauna selvatica.	Strada nazionale.
 internazionale	international	5	482702b7b847de7246442b2b8bf4cb26	L'aeroporto internazionale di Milano serve voli per tutto il mondo con molte compagnie aeree.	Volo internazionale.
 urbano	urban	5	dfa821187342baf21d89f3b56dc620d9	Il trasporto urbano di Milano è efficiente e collega tutti i quartieri della città in modo capillare.	Centro urbano.
 rurale	rural	5	86251a37ddd5112c9a64f0c2428322a4	La vita rurale in campagna è molto diversa da quella stressante delle grandi città italiane moderne.	Zona rurale.
 esotico	exotic	5	57e54ee1007d85a8093acd051a656cef	Vorrei visitare un paese esotico come la Thailandia o il Vietnam per vivere un'esperienza unica.	Un frutto esotico.
-panorama	panorama / view	5	cf09357b4563390045b2ace07a561f8d	Il panorama dalla cima della montagna è davvero mozzafiato e si vede tutto fino al mare.	Un bel panorama.
-vista	view / sight	5	a6460deaf1ed731e0389556d7ca9e662	L'appartamento ha una bellissima vista sul mare e sulla costa amalfitana incantevole e famosa.	Una vista mozzafiato.
-orizzonte	horizon	5	7fdcbddb0a674f7a35ca75adba927738	All'orizzonte si vede una grande nave che si avvicina lentamente al porto di Genova.	Verso l'orizzonte.
-cima	summit / top	5	e1f9687880b950f344615b747a30da72	Abbiamo raggiunto la cima della montagna dopo molte ore di cammino faticoso e impegnativo.	In cima.
-dintorni	surroundings	5	466a1240285f033b4ba1702e70443e93	Nei dintorni della città ci sono molti borghi medievali da visitare durante il weekend libero.	Nei dintorni.
-frontiera	border / frontier	5	00ad2a8cbe5dd78be1bb231cf4e73dcd	La frontiera tra Italia e Svizzera è aperta tutto l'anno e si attraversa facilmente.	Una frontiera aperta.
-confine	border	5	aa1f6bc154e04ddf5e7e93f747e6e0f6	Il confine tra Italia e Francia passa per le Alpi occidentali tra i ghiacciai eterni.	Al confine.
-dogana	customs	5	2790e02135dc8fcabba404c46350ac68	Alla dogana hanno controllato tutti i bagagli prima di farci entrare nel paese di destinazione.	Passare la dogana.
-bandiera	flag	5	7285ad0fb3ec06159995b47962cf6943	La bandiera italiana è verde, bianca e rossa e sventola sul palazzo del comune di Roma.	Una bandiera al vento.
-itinerario	itinerary / route	5	2f287f7e336c0de5edcabb01a6680e56	Abbiamo pianificato un itinerario di dieci giorni per visitare tutte le città principali della Toscana.	Un itinerario dettagliato.
+il panorama	panorama / view	5	cf09357b4563390045b2ace07a561f8d	Il panorama dalla cima della montagna è davvero mozzafiato e si vede tutto fino al mare.	Un bel panorama.
+la vista	view / sight	5	a6460deaf1ed731e0389556d7ca9e662	L'appartamento ha una bellissima vista sul mare e sulla costa amalfitana incantevole e famosa.	Una vista mozzafiato.
+l'orizzonte	horizon	5	7fdcbddb0a674f7a35ca75adba927738	All'orizzonte si vede una grande nave che si avvicina lentamente al porto di Genova.	Verso l'orizzonte.
+la cima	summit / top	5	e1f9687880b950f344615b747a30da72	Abbiamo raggiunto la cima della montagna dopo molte ore di cammino faticoso e impegnativo.	In cima.
+i dintorni	surroundings	5	466a1240285f033b4ba1702e70443e93	Nei dintorni della città ci sono molti borghi medievali da visitare durante il weekend libero.	Nei dintorni.
+la frontiera	border / frontier	5	00ad2a8cbe5dd78be1bb231cf4e73dcd	La frontiera tra Italia e Svizzera è aperta tutto l'anno e si attraversa facilmente.	Una frontiera aperta.
+il confine	border	5	aa1f6bc154e04ddf5e7e93f747e6e0f6	Il confine tra Italia e Francia passa per le Alpi occidentali tra i ghiacciai eterni.	Al confine.
+la dogana	customs	5	2790e02135dc8fcabba404c46350ac68	Alla dogana hanno controllato tutti i bagagli prima di farci entrare nel paese di destinazione.	Passare la dogana.
+la bandiera	flag	5	7285ad0fb3ec06159995b47962cf6943	La bandiera italiana è verde, bianca e rossa e sventola sul palazzo del comune di Roma.	Una bandiera al vento.
+l'itinerario	itinerary / route	5	2f287f7e336c0de5edcabb01a6680e56	Abbiamo pianificato un itinerario di dieci giorni per visitare tutte le città principali della Toscana.	Un itinerario dettagliato.
 stato	been / stayed (past participle)	5	e0b406f5f41905283407a90f11da5549	Sono stato in Italia tre volte e ogni volta ho scoperto qualcosa di nuovo e affascinante.	Sono stato qui.
 fatto	done / made (past participle)	5	adeacd2682face4983d32dc869fbf8a7	Ho fatto i compiti e ora posso uscire con gli amici a giocare al parco vicino casa.	Ho fatto presto.
 detto	said / told (past participle)	5	db6110fbe0c9fd9f949cfc59fe9a1aaf	Mi ha detto la verità e gliene sono molto grato per la sua sincerità completa.	Ha detto sì.

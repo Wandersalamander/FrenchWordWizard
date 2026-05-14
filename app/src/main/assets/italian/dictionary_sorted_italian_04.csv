@@ -1,93 +1,93 @@
-forchetta	fork	4	24133013a85d8c67c4fa0293adcda850	Mangio la pasta con la forchetta e cerco di non sporcarmi la camicia bianca.	Una forchetta pulita.
-coltello	knife	4	6a1096952f5b990a528f5aed8c1f4996	Devo affilare il coltello prima di tagliare la carne dura del pranzo della domenica.	Un coltello affilato.
-cucchiaio	spoon	4	de71f2773a4b1613114d81416869b631	Mescolo lo zucchero nel caffè con il cucchiaio piccolo che mi ha regalato mia nonna.	Un cucchiaio d'argento.
-cucchiaino	teaspoon	4	9f6bf11b332b8e49a5978cad9a32159d	Aggiungo solo un cucchiaino di zucchero al tè caldo per non renderlo troppo dolce.	Un cucchiaino da tè.
-pentola	pot	4	27eeee92ad1b6f31af9720c72a1c9505	La pentola dell'acqua bolle sul fornello e posso finalmente buttare la pasta dentro.	Una pentola grande.
-padella	pan	4	2183336ba1e78b9caacc38b4d2473168	Friggo le uova in una padella antiaderente con un po' di olio extra vergine.	Una padella calda.
-forno	oven	4	734dd0e23560035c8a31e3b6ad5278ab	Metto la torta nel forno a centottanta gradi per circa quaranta minuti precisi.	Pollo al forno.
-frigorifero	refrigerator	4	fd6aec8e8a6ca2dd9e7e0382d67427fb	Il frigorifero è pieno di cibo perché ieri ho fatto la spesa al supermercato grande.	Apri il frigorifero.
-lavandino	sink	4	f4b5fb29e4abddee373a9696efc15faa	Il lavandino della cucina è pieno di piatti sporchi che devo lavare adesso.	Un lavandino pulito.
-coperchio	lid	4	5c8446298bfcbbb825af714d03e33058	Metti il coperchio sulla pentola per far cuocere la zuppa più velocemente al fuoco.	Un coperchio pesante.
-mestolo	ladle	4	8590dc6cfe7bea5e2eedc6c418d3f7ed	Servi la minestra con il mestolo grande nel piatto fondo che ho preparato per te.	Un mestolo di legno.
-tagliere	cutting board	4	25f97a1569a7766517b3716bae5b3d8f	Uso il tagliere di legno per tagliare le verdure fresche per la cena di stasera.	Un tagliere di legno.
-ciotola	bowl	4	798a705329fa1dfaf26d0bb4a4008198	Mangio i cereali in una ciotola grande con un po' di latte freddo a colazione.	Una ciotola di legno.
-vassoio	tray	4	39852d0d1c9f59b8748eb1613b3da7c8	Servo il caffè agli ospiti su un vassoio elegante che apparteneva a mia bisnonna.	Un vassoio d'argento.
-tovagliolo	napkin	4	b7ab05dbd2e8ffbbb8bda846da80eb03	Metto sempre un tovagliolo di stoffa accanto al piatto quando preparo la tavola per gli ospiti.	Un tovagliolo di carta.
-tovaglia	tablecloth	4	e17416d701e655b02efafe8fea7ff0ca	Stendi la tovaglia bianca sul tavolo prima di apparecchiare per la cena di domenica.	Una tovaglia ricamata.
-caffettiera	coffee maker	4	c9d6433417567c58c1955ca6e9476b0e	Preparo il caffè ogni mattina con la caffettiera napoletana che mi ha regalato mia madre.	Una caffettiera grande.
-fornello	stove burner	4	228377bd3e6b93a16e2e37a382a7bf59	Accendo il fornello a gas per mettere a bollire l'acqua della pasta della cena.	Un fornello a gas.
-lavastoviglie	dishwasher	4	b3653cfa304a6e263b9fa443162489b9	Carico la lavastoviglie ogni sera dopo cena con tutti i piatti sporchi del giorno.	Apri la lavastoviglie.
-cassetto	drawer	4	6cc9318e1508e230718e6cfa6ba98818	Le posate sono nel cassetto in alto a destra della cucina, vicino al lavandino.	Apri il cassetto.
-doccia	shower	4	aeaab06d8992d77baf29424801208300	Faccio la doccia ogni mattina prima di andare al lavoro per svegliarmi del tutto.	Una doccia calda.
-vasca	bathtub	4	be4135df4856ec6349ba73c03fb96995	Mi rilasso nella vasca con i sali profumati dopo una lunga giornata di lavoro stancante.	Una vasca da bagno.
-sapone	soap	4	dbbc77d94c4f8e76e986f46a63c2e0d3	Mi lavo le mani con il sapone profumato prima di mangiare la cena con la famiglia.	Un sapone delicato.
-asciugamano	towel	4	cfe7439af22ce261a82535e039967361	Mi asciugo i capelli con un asciugamano morbido dopo aver fatto la doccia calda.	Un asciugamano pulito.
-spazzolino	toothbrush	4	18b5e4718b375f21903bef74e216e542	Mi lavo i denti con lo spazzolino elettrico due volte al giorno per mantenerli sani.	Uno spazzolino nuovo.
-dentifricio	toothpaste	4	b76c43cc3d1496125f7858c8fd91f745	Compro sempre il dentifricio alla menta perché lascia un sapore fresco in bocca a lungo.	Dentifricio alla menta.
-pettine	comb	4	b27b77ce2590b7ad82fe4288bcdf458a	Uso il pettine per sistemare i capelli prima di uscire di casa la mattina presto.	Un pettine fine.
-specchio	mirror	4	bdafe5cdff00be8d1ebe5bce0ee0f1c0	Mi guardo nello specchio del bagno mentre mi pettino i capelli prima di uscire.	Uno specchio rotondo.
-shampoo	shampoo	4	186764a607df448c2172d6fc8a701381	Compro sempre lo shampoo delicato perché ho i capelli sensibili e si rovinano facilmente.	Uno shampoo nuovo.
-rasoio	razor	4	6786953a24f96612a6b6c9efb7c4f69c	Mi rado la barba con il rasoio elettrico ogni mattina prima di andare al lavoro.	Un rasoio affilato.
-spazzola	brush	4	a5eed11ebc5ae9766762f03d7ff03ffd	Spazzolo i capelli con la spazzola di legno prima di legarli a coda di cavallo.	Una spazzola morbida.
-crema	cream	4	d4e94fde850af13e8278f0a91d4e2060	Mi metto la crema idratante sul viso ogni sera prima di andare a dormire stanca.	Una crema profumata.
-profumo	perfume	4	db66bb9cdb55a56e76277b98583776fe	Metto sempre un po' di profumo prima di uscire di casa per andare alla festa di compleanno.	Un profumo intenso.
-trucco	makeup	4	8b539642e0350eb5f984a91736330b73	Mia sorella si mette il trucco ogni mattina prima di uscire per andare al lavoro presto.	Trucco leggero.
-rossetto	lipstick	4	2ad57258dc3c12cf2a67629c048b9d32	Il rossetto rosso è perfetto per le occasioni eleganti come la festa di domani sera.	Un rossetto rosso.
-armadio	wardrobe	4	74375bf4601178f3206b4b3bc16fc225	Tengo tutti i miei vestiti nell'armadio grande della camera da letto al primo piano.	Un armadio pieno.
-comodino	bedside table	4	b8b2efdfb2fc9295d0ff2766a2cfd379	Sul comodino ho una lampada e un libro che leggo prima di dormire ogni notte.	Un comodino piccolo.
-cuscino	pillow	4	619bb02d9b80ca16f4098cd629ebef44	Dormo sempre con due cuscini morbidi sotto la testa per stare più comodo durante la notte.	Un cuscino morbido.
-coperta	blanket	4	6c71fe2ef4cec48d6b3fab52fdfb820e	Metto una coperta calda sul letto in inverno perché fa molto freddo nella mia camera.	Una coperta di lana.
-lenzuolo	sheet	4	cb934dc1a1e02967af2496b06eff8a34	Cambio il lenzuolo del letto ogni settimana per mantenere la camera pulita e profumata.	Un lenzuolo bianco.
-materasso	mattress	4	e2aa1954b81e08c499ab2b32ebf4b0a5	Il mio materasso nuovo è molto comodo e finalmente riesco a dormire bene la notte.	Un materasso comodo.
-divano	sofa	4	db35a5a686e1765105fc1af1e627dc44	Guardo la televisione sul divano del soggiorno mentre i bambini giocano sul pavimento accanto.	Un divano comodo.
-poltrona	armchair	4	6daba363d792d8aa954c941fd02d9693	Mi siedo sulla poltrona davanti al camino a leggere un buon libro la sera tardi.	Una poltrona elegante.
-scrivania	desk	4	9d72e4660a4464dbb048070e3b58b15e	Lavoro al computer alla scrivania nella mia camera fino a tardi tutte le sere.	Una scrivania ordinata.
-mobile	piece of furniture	4	532c28d5412dd75bf975fb951c740a30	Ho comprato un nuovo mobile per il salotto per mettere i libri e le foto di famiglia.	Un mobile antico.
-tappeto	rug / carpet	4	bf711980950024ac4f279baa0894db94	Il tappeto persiano del salotto è bellissimo ma bisogna pulirlo con cura ogni mese.	Un tappeto colorato.
-tenda	curtain	4	3fcac6dc983ad963d2a68870ee686592	Apro la tenda della finestra ogni mattina per far entrare il sole nella stanza.	Una tenda pesante.
-quadro	picture / painting	4	0ab752018f8bd7b0408bb88b36f3f5aa	Ho appeso un quadro antico nel salotto per dare un tocco elegante alla stanza grande.	Un quadro famoso.
-vaso	vase	4	dffa97e9dd82533832f4c58bc285dc5c	Metto i fiori freschi nel vaso di cristallo sul tavolo della sala da pranzo elegante.	Un vaso di fiori.
-lampada	lamp	4	b5f1a02b8672668cff7df399682147d3	Accendo la lampada sul comodino per leggere prima di addormentarmi ogni sera tardi.	Una lampada accesa.
-tetto	roof	4	13f9c35b321dc00124cbecfe486543b2	Il tetto della casa è coperto di tegole rosse tradizionali tipiche della regione toscana.	Sotto il tetto.
-soffitto	ceiling	4	466c28487c585844bb8879910ec6a01d	Il soffitto del salone è alto e decorato con affreschi del diciassettesimo secolo italiano.	Un soffitto basso.
-scala	stairs	4	baad2c48e66fbc14c61337d0b2578221	Salgo la scala fino al secondo piano per andare nella mia camera da letto.	Una scala ripida.
-corridoio	hallway	4	30f2985dd1dadc42a83576f365deef79	Il corridoio lungo della casa porta alla camera da letto e al bagno principale.	Un corridoio buio.
-ingresso	entrance	4	e0cb6de44312d6f41c66024b54e5c59e	Lasciamo le scarpe all'ingresso prima di entrare nelle stanze principali della casa nuova.	L'ingresso principale.
-cantina	basement / cellar	4	4c07bd2a577a89bba4b13d6eeb8237ac	Conservo le bottiglie di vino in cantina perché è fresca anche d'estate calda e umida.	Vino in cantina.
-soffitta	attic	4	0bc2155f9112a0903a10105f063d8de6	In soffitta ho conservato vecchie foto di famiglia e tanti ricordi dell'infanzia felice.	Una soffitta polverosa.
-balcone	balcony	4	50005b3b9e7ab52e54a5184ee56aa8e0	Bevo il caffè sul balcone ogni mattina ammirando il panorama della città dall'alto.	Un balcone fiorito.
-terrazzo	terrace	4	d495d9607dc011e18682a9e14d6ad829	Sul terrazzo abbiamo un giardino con tanti fiori e un piccolo orto di verdure fresche.	Un terrazzo grande.
-cancello	gate	4	6e676af0fa0a53f47882bf94fb0a7ad5	Apro il cancello del giardino per far entrare gli ospiti che vengono a cena stasera.	Un cancello chiuso.
-campanello	doorbell	4	b9035b19610e5bc556618f4c1929914e	Suona il campanello e vado ad aprire la porta agli ospiti appena arrivati alla festa.	Suona il campanello.
-ascensore	elevator	4	7a2b80380b2ee4d60f5095015d70b2c3	Prendo l'ascensore per salire al settimo piano dove abita la mia amica del cuore.	Un ascensore moderno.
-garage	garage	4	3824795e4e1fbf0f72f1cf99ee90d861	Parcheggio la macchina nel garage sotto casa per proteggerla dalla pioggia e dal sole.	Un garage doppio.
-cortile	courtyard	4	bc5ef0be1331b7b20c60e9f3c1d9b1b1	I bambini giocano nel cortile della scuola durante l'intervallo di mezzogiorno ogni giorno.	Un cortile interno.
-piano	floor (of building)	4	d113f1c3f9ed8019288f4e8ddecfb8ec	Abito al terzo piano di un palazzo antico nel centro storico della città vecchia.	Al primo piano.
-lampadina	lightbulb	4	110da42957e0aa82e6e0ea99edbafdf5	La lampadina del bagno è bruciata e devo cambiarla prima che faccia buio stasera.	Una lampadina nuova.
-interruttore	switch	4	a6de0df29c50711baa7f714f68c0014f	Premi l'interruttore vicino alla porta per accendere la luce della stanza principale.	Un interruttore rotto.
-presa	outlet	4	73f7aae1f17ce26f84cb002c61ca43a5	Collego il computer alla presa elettrica vicino alla scrivania per ricaricare la batteria.	Una presa libera.
-spina	plug	4	d81b99dfe39463cd5789150f243424ab	Stacca la spina del ferro da stiro quando hai finito di stirare i vestiti puliti.	Stacca la spina.
-candela	candle	4	650310509971348bc6fbaab05d3d6178	Accendo una candela profumata in salotto per creare un'atmosfera romantica per la cena.	Una candela accesa.
-torcia	torch / flashlight	4	865584c1134f749e00fceb10f28daf5f	Tengo sempre una torcia in cucina in caso di blackout improvviso durante la notte.	Una torcia potente.
-cavo	cable	4	5474b6884a407343aae5ba182690160c	Il cavo del caricatore del telefono è rotto e devo comprarne uno nuovo presto.	Un cavo lungo.
-stufa	heater / stove	4	eb5fe0aa392f970fbd493b67f4e79fce	La stufa a legna riscalda il salotto durante le fredde serate invernali della montagna.	Una stufa calda.
-ventilatore	fan	4	e0dcab232faa5c44a05093c823d1e4bc	Accendo il ventilatore d'estate quando fa troppo caldo per dormire senza problemi.	Un ventilatore acceso.
-orologio	clock / watch	4	f5e852552deb0ff9a3899938e77cccde	L'orologio del salotto suona ogni ora e mi ricorda che è quasi tempo di cena.	Che ore fa l'orologio?
-sveglia	alarm clock	4	d00165968bddd4cc7dfa39a4ffb39331	Metto la sveglia alle sette di mattina per andare al lavoro in tempo ogni giorno.	Suona la sveglia.
-radio	radio	4	a398fb77df76e6153df57cd65fd0a7c5	Ascolto la radio in macchina mentre vado al lavoro per sentire le notizie del mattino.	Accendi la radio.
-televisione	television	4	a0f4e7dd07cd8b27c8178cb89efedb85	Guardo la televisione la sera dopo cena per rilassarmi sul divano del salotto.	La televisione è accesa.
-computer	computer	4	df53ca268240ca76670c8566ee54568a	Lavoro al computer otto ore al giorno e poi mi fanno male gli occhi e la testa.	Un computer nuovo.
-asciugacapelli	hair dryer	4	276218b6ed28441c3f142160e413742f	Uso l'asciugacapelli ogni mattina dopo la doccia per asciugare i capelli velocemente.	Un asciugacapelli potente.
-scopa	broom	4	0ac3998de371a5ca4819dbff57bba1b4	Spazzo il pavimento della cucina con la scopa nuova che ho comprato la settimana scorsa.	Una scopa di paglia.
-straccio	rag	4	cafd58843a8979fd7debdcd1f9a5fdaa	Pulisco il tavolo con uno straccio umido dopo ogni pasto per mantenerlo sempre pulito.	Uno straccio bagnato.
-detersivo	detergent	4	1bd4b703413f26d2a65380eed5c7aeb2	Compro sempre il detersivo per i piatti al supermercato del quartiere ogni settimana.	Un detersivo forte.
-spugna	sponge	4	53902e7ba26ed5da120b103808ef5a18	Lavo i piatti con una spugna morbida e detersivo profumato dopo ogni pasto in cucina.	Una spugna gialla.
-secchio	bucket	4	0bfc1fb23674df53709f6d3c58cf798e	Riempio il secchio d'acqua calda con detersivo per lavare il pavimento del corridoio.	Un secchio rosso.
-aspirapolvere	vacuum cleaner	4	c1f5b70f2fadb2a3c282a7a8cbee0564	Passo l'aspirapolvere su tutti i tappeti del salotto ogni sabato mattina con calma.	L'aspirapolvere è rotto.
-ferro	iron	4	d8a1238ea725543b45d0154c5be0cd11	Stiro le camicie con il ferro caldo per renderle perfette per il lavoro di domani.	Un ferro da stiro.
-cestino	wastebasket	4	26761b684e25756d171239c33abf2ba3	Butto la carta nel cestino della carta sotto la scrivania del mio ufficio piccolo.	Un cestino pieno.
-spazzatura	garbage	4	457205d6621505d2bee4ed7bbad44784	Porto fuori la spazzatura ogni sera prima di andare a dormire stanco morto.	Sacco della spazzatura.
-lavatrice	washing machine	4	634584d40eeec8403763a8d76c746280	Faccio la lavatrice due volte alla settimana con i vestiti sporchi di tutta la famiglia.	La lavatrice è rotta.
+la forchetta	fork	4	24133013a85d8c67c4fa0293adcda850	Mangio la pasta con la forchetta e cerco di non sporcarmi la camicia bianca.	Una forchetta pulita.
+il coltello	knife	4	6a1096952f5b990a528f5aed8c1f4996	Devo affilare il coltello prima di tagliare la carne dura del pranzo della domenica.	Un coltello affilato.
+il cucchiaio	spoon	4	de71f2773a4b1613114d81416869b631	Mescolo lo zucchero nel caffè con il cucchiaio piccolo che mi ha regalato mia nonna.	Un cucchiaio d'argento.
+il cucchiaino	teaspoon	4	9f6bf11b332b8e49a5978cad9a32159d	Aggiungo solo un cucchiaino di zucchero al tè caldo per non renderlo troppo dolce.	Un cucchiaino da tè.
+la pentola	pot	4	27eeee92ad1b6f31af9720c72a1c9505	La pentola dell'acqua bolle sul fornello e posso finalmente buttare la pasta dentro.	Una pentola grande.
+la padella	pan	4	2183336ba1e78b9caacc38b4d2473168	Friggo le uova in una padella antiaderente con un po' di olio extra vergine.	Una padella calda.
+il forno	oven	4	734dd0e23560035c8a31e3b6ad5278ab	Metto la torta nel forno a centottanta gradi per circa quaranta minuti precisi.	Pollo al forno.
+il frigorifero	refrigerator	4	fd6aec8e8a6ca2dd9e7e0382d67427fb	Il frigorifero è pieno di cibo perché ieri ho fatto la spesa al supermercato grande.	Apri il frigorifero.
+il lavandino	sink	4	f4b5fb29e4abddee373a9696efc15faa	Il lavandino della cucina è pieno di piatti sporchi che devo lavare adesso.	Un lavandino pulito.
+il coperchio	lid	4	5c8446298bfcbbb825af714d03e33058	Metti il coperchio sulla pentola per far cuocere la zuppa più velocemente al fuoco.	Un coperchio pesante.
+il mestolo	ladle	4	8590dc6cfe7bea5e2eedc6c418d3f7ed	Servi la minestra con il mestolo grande nel piatto fondo che ho preparato per te.	Un mestolo di legno.
+il tagliere	cutting board	4	25f97a1569a7766517b3716bae5b3d8f	Uso il tagliere di legno per tagliare le verdure fresche per la cena di stasera.	Un tagliere di legno.
+la ciotola	bowl	4	798a705329fa1dfaf26d0bb4a4008198	Mangio i cereali in una ciotola grande con un po' di latte freddo a colazione.	Una ciotola di legno.
+il vassoio	tray	4	39852d0d1c9f59b8748eb1613b3da7c8	Servo il caffè agli ospiti su un vassoio elegante che apparteneva a mia bisnonna.	Un vassoio d'argento.
+il tovagliolo	napkin	4	b7ab05dbd2e8ffbbb8bda846da80eb03	Metto sempre un tovagliolo di stoffa accanto al piatto quando preparo la tavola per gli ospiti.	Un tovagliolo di carta.
+la tovaglia	tablecloth	4	e17416d701e655b02efafe8fea7ff0ca	Stendi la tovaglia bianca sul tavolo prima di apparecchiare per la cena di domenica.	Una tovaglia ricamata.
+la caffettiera	coffee maker	4	c9d6433417567c58c1955ca6e9476b0e	Preparo il caffè ogni mattina con la caffettiera napoletana che mi ha regalato mia madre.	Una caffettiera grande.
+il fornello	stove burner	4	228377bd3e6b93a16e2e37a382a7bf59	Accendo il fornello a gas per mettere a bollire l'acqua della pasta della cena.	Un fornello a gas.
+la lavastoviglie	dishwasher	4	b3653cfa304a6e263b9fa443162489b9	Carico la lavastoviglie ogni sera dopo cena con tutti i piatti sporchi del giorno.	Apri la lavastoviglie.
+il cassetto	drawer	4	6cc9318e1508e230718e6cfa6ba98818	Le posate sono nel cassetto in alto a destra della cucina, vicino al lavandino.	Apri il cassetto.
+la doccia	shower	4	aeaab06d8992d77baf29424801208300	Faccio la doccia ogni mattina prima di andare al lavoro per svegliarmi del tutto.	Una doccia calda.
+la vasca	bathtub	4	be4135df4856ec6349ba73c03fb96995	Mi rilasso nella vasca con i sali profumati dopo una lunga giornata di lavoro stancante.	Una vasca da bagno.
+il sapone	soap	4	dbbc77d94c4f8e76e986f46a63c2e0d3	Mi lavo le mani con il sapone profumato prima di mangiare la cena con la famiglia.	Un sapone delicato.
+l'asciugamano	towel	4	cfe7439af22ce261a82535e039967361	Mi asciugo i capelli con un asciugamano morbido dopo aver fatto la doccia calda.	Un asciugamano pulito.
+lo spazzolino	toothbrush	4	18b5e4718b375f21903bef74e216e542	Mi lavo i denti con lo spazzolino elettrico due volte al giorno per mantenerli sani.	Uno spazzolino nuovo.
+il dentifricio	toothpaste	4	b76c43cc3d1496125f7858c8fd91f745	Compro sempre il dentifricio alla menta perché lascia un sapore fresco in bocca a lungo.	Dentifricio alla menta.
+il pettine	comb	4	b27b77ce2590b7ad82fe4288bcdf458a	Uso il pettine per sistemare i capelli prima di uscire di casa la mattina presto.	Un pettine fine.
+lo specchio	mirror	4	bdafe5cdff00be8d1ebe5bce0ee0f1c0	Mi guardo nello specchio del bagno mentre mi pettino i capelli prima di uscire.	Uno specchio rotondo.
+lo shampoo	shampoo	4	186764a607df448c2172d6fc8a701381	Compro sempre lo shampoo delicato perché ho i capelli sensibili e si rovinano facilmente.	Uno shampoo nuovo.
+il rasoio	razor	4	6786953a24f96612a6b6c9efb7c4f69c	Mi rado la barba con il rasoio elettrico ogni mattina prima di andare al lavoro.	Un rasoio affilato.
+la spazzola	brush	4	a5eed11ebc5ae9766762f03d7ff03ffd	Spazzolo i capelli con la spazzola di legno prima di legarli a coda di cavallo.	Una spazzola morbida.
+la crema	cream	4	d4e94fde850af13e8278f0a91d4e2060	Mi metto la crema idratante sul viso ogni sera prima di andare a dormire stanca.	Una crema profumata.
+il profumo	perfume	4	db66bb9cdb55a56e76277b98583776fe	Metto sempre un po' di profumo prima di uscire di casa per andare alla festa di compleanno.	Un profumo intenso.
+il trucco	makeup	4	8b539642e0350eb5f984a91736330b73	Mia sorella si mette il trucco ogni mattina prima di uscire per andare al lavoro presto.	Trucco leggero.
+il rossetto	lipstick	4	2ad57258dc3c12cf2a67629c048b9d32	Il rossetto rosso è perfetto per le occasioni eleganti come la festa di domani sera.	Un rossetto rosso.
+l'armadio	wardrobe	4	74375bf4601178f3206b4b3bc16fc225	Tengo tutti i miei vestiti nell'armadio grande della camera da letto al primo piano.	Un armadio pieno.
+il comodino	bedside table	4	b8b2efdfb2fc9295d0ff2766a2cfd379	Sul comodino ho una lampada e un libro che leggo prima di dormire ogni notte.	Un comodino piccolo.
+il cuscino	pillow	4	619bb02d9b80ca16f4098cd629ebef44	Dormo sempre con due cuscini morbidi sotto la testa per stare più comodo durante la notte.	Un cuscino morbido.
+la coperta	blanket	4	6c71fe2ef4cec48d6b3fab52fdfb820e	Metto una coperta calda sul letto in inverno perché fa molto freddo nella mia camera.	Una coperta di lana.
+il lenzuolo	sheet	4	cb934dc1a1e02967af2496b06eff8a34	Cambio il lenzuolo del letto ogni settimana per mantenere la camera pulita e profumata.	Un lenzuolo bianco.
+il materasso	mattress	4	e2aa1954b81e08c499ab2b32ebf4b0a5	Il mio materasso nuovo è molto comodo e finalmente riesco a dormire bene la notte.	Un materasso comodo.
+il divano	sofa	4	db35a5a686e1765105fc1af1e627dc44	Guardo la televisione sul divano del soggiorno mentre i bambini giocano sul pavimento accanto.	Un divano comodo.
+la poltrona	armchair	4	6daba363d792d8aa954c941fd02d9693	Mi siedo sulla poltrona davanti al camino a leggere un buon libro la sera tardi.	Una poltrona elegante.
+la scrivania	desk	4	9d72e4660a4464dbb048070e3b58b15e	Lavoro al computer alla scrivania nella mia camera fino a tardi tutte le sere.	Una scrivania ordinata.
+il mobile	piece of furniture	4	532c28d5412dd75bf975fb951c740a30	Ho comprato un nuovo mobile per il salotto per mettere i libri e le foto di famiglia.	Un mobile antico.
+il tappeto	rug / carpet	4	bf711980950024ac4f279baa0894db94	Il tappeto persiano del salotto è bellissimo ma bisogna pulirlo con cura ogni mese.	Un tappeto colorato.
+la tenda	curtain	4	3fcac6dc983ad963d2a68870ee686592	Apro la tenda della finestra ogni mattina per far entrare il sole nella stanza.	Una tenda pesante.
+il quadro	picture / painting	4	0ab752018f8bd7b0408bb88b36f3f5aa	Ho appeso un quadro antico nel salotto per dare un tocco elegante alla stanza grande.	Un quadro famoso.
+il vaso	vase	4	dffa97e9dd82533832f4c58bc285dc5c	Metto i fiori freschi nel vaso di cristallo sul tavolo della sala da pranzo elegante.	Un vaso di fiori.
+la lampada	lamp	4	b5f1a02b8672668cff7df399682147d3	Accendo la lampada sul comodino per leggere prima di addormentarmi ogni sera tardi.	Una lampada accesa.
+il tetto	roof	4	13f9c35b321dc00124cbecfe486543b2	Il tetto della casa è coperto di tegole rosse tradizionali tipiche della regione toscana.	Sotto il tetto.
+il soffitto	ceiling	4	466c28487c585844bb8879910ec6a01d	Il soffitto del salone è alto e decorato con affreschi del diciassettesimo secolo italiano.	Un soffitto basso.
+la scala	stairs	4	baad2c48e66fbc14c61337d0b2578221	Salgo la scala fino al secondo piano per andare nella mia camera da letto.	Una scala ripida.
+il corridoio	hallway	4	30f2985dd1dadc42a83576f365deef79	Il corridoio lungo della casa porta alla camera da letto e al bagno principale.	Un corridoio buio.
+l'ingresso	entrance	4	e0cb6de44312d6f41c66024b54e5c59e	Lasciamo le scarpe all'ingresso prima di entrare nelle stanze principali della casa nuova.	L'ingresso principale.
+la cantina	basement / cellar	4	4c07bd2a577a89bba4b13d6eeb8237ac	Conservo le bottiglie di vino in cantina perché è fresca anche d'estate calda e umida.	Vino in cantina.
+la soffitta	attic	4	0bc2155f9112a0903a10105f063d8de6	In soffitta ho conservato vecchie foto di famiglia e tanti ricordi dell'infanzia felice.	Una soffitta polverosa.
+il balcone	balcony	4	50005b3b9e7ab52e54a5184ee56aa8e0	Bevo il caffè sul balcone ogni mattina ammirando il panorama della città dall'alto.	Un balcone fiorito.
+il terrazzo	terrace	4	d495d9607dc011e18682a9e14d6ad829	Sul terrazzo abbiamo un giardino con tanti fiori e un piccolo orto di verdure fresche.	Un terrazzo grande.
+il cancello	gate	4	6e676af0fa0a53f47882bf94fb0a7ad5	Apro il cancello del giardino per far entrare gli ospiti che vengono a cena stasera.	Un cancello chiuso.
+il campanello	doorbell	4	b9035b19610e5bc556618f4c1929914e	Suona il campanello e vado ad aprire la porta agli ospiti appena arrivati alla festa.	Suona il campanello.
+l'ascensore	elevator	4	7a2b80380b2ee4d60f5095015d70b2c3	Prendo l'ascensore per salire al settimo piano dove abita la mia amica del cuore.	Un ascensore moderno.
+il garage	garage	4	3824795e4e1fbf0f72f1cf99ee90d861	Parcheggio la macchina nel garage sotto casa per proteggerla dalla pioggia e dal sole.	Un garage doppio.
+il cortile	courtyard	4	bc5ef0be1331b7b20c60e9f3c1d9b1b1	I bambini giocano nel cortile della scuola durante l'intervallo di mezzogiorno ogni giorno.	Un cortile interno.
+il piano	floor (of building)	4	d113f1c3f9ed8019288f4e8ddecfb8ec	Abito al terzo piano di un palazzo antico nel centro storico della città vecchia.	Al primo piano.
+la lampadina	lightbulb	4	110da42957e0aa82e6e0ea99edbafdf5	La lampadina del bagno è bruciata e devo cambiarla prima che faccia buio stasera.	Una lampadina nuova.
+l'interruttore	switch	4	a6de0df29c50711baa7f714f68c0014f	Premi l'interruttore vicino alla porta per accendere la luce della stanza principale.	Un interruttore rotto.
+la presa	outlet	4	73f7aae1f17ce26f84cb002c61ca43a5	Collego il computer alla presa elettrica vicino alla scrivania per ricaricare la batteria.	Una presa libera.
+la spina	plug	4	d81b99dfe39463cd5789150f243424ab	Stacca la spina del ferro da stiro quando hai finito di stirare i vestiti puliti.	Stacca la spina.
+la candela	candle	4	650310509971348bc6fbaab05d3d6178	Accendo una candela profumata in salotto per creare un'atmosfera romantica per la cena.	Una candela accesa.
+la torcia	torch / flashlight	4	865584c1134f749e00fceb10f28daf5f	Tengo sempre una torcia in cucina in caso di blackout improvviso durante la notte.	Una torcia potente.
+il cavo	cable	4	5474b6884a407343aae5ba182690160c	Il cavo del caricatore del telefono è rotto e devo comprarne uno nuovo presto.	Un cavo lungo.
+la stufa	heater / stove	4	eb5fe0aa392f970fbd493b67f4e79fce	La stufa a legna riscalda il salotto durante le fredde serate invernali della montagna.	Una stufa calda.
+il ventilatore	fan	4	e0dcab232faa5c44a05093c823d1e4bc	Accendo il ventilatore d'estate quando fa troppo caldo per dormire senza problemi.	Un ventilatore acceso.
+l'orologio	clock / watch	4	f5e852552deb0ff9a3899938e77cccde	L'orologio del salotto suona ogni ora e mi ricorda che è quasi tempo di cena.	Che ore fa l'orologio?
+la sveglia	alarm clock	4	d00165968bddd4cc7dfa39a4ffb39331	Metto la sveglia alle sette di mattina per andare al lavoro in tempo ogni giorno.	Suona la sveglia.
+la radio	radio	4	a398fb77df76e6153df57cd65fd0a7c5	Ascolto la radio in macchina mentre vado al lavoro per sentire le notizie del mattino.	Accendi la radio.
+la televisione	television	4	a0f4e7dd07cd8b27c8178cb89efedb85	Guardo la televisione la sera dopo cena per rilassarmi sul divano del salotto.	La televisione è accesa.
+il computer	computer	4	df53ca268240ca76670c8566ee54568a	Lavoro al computer otto ore al giorno e poi mi fanno male gli occhi e la testa.	Un computer nuovo.
+l'asciugacapelli	hair dryer	4	276218b6ed28441c3f142160e413742f	Uso l'asciugacapelli ogni mattina dopo la doccia per asciugare i capelli velocemente.	Un asciugacapelli potente.
+la scopa	broom	4	0ac3998de371a5ca4819dbff57bba1b4	Spazzo il pavimento della cucina con la scopa nuova che ho comprato la settimana scorsa.	Una scopa di paglia.
+lo straccio	rag	4	cafd58843a8979fd7debdcd1f9a5fdaa	Pulisco il tavolo con uno straccio umido dopo ogni pasto per mantenerlo sempre pulito.	Uno straccio bagnato.
+il detersivo	detergent	4	1bd4b703413f26d2a65380eed5c7aeb2	Compro sempre il detersivo per i piatti al supermercato del quartiere ogni settimana.	Un detersivo forte.
+la spugna	sponge	4	53902e7ba26ed5da120b103808ef5a18	Lavo i piatti con una spugna morbida e detersivo profumato dopo ogni pasto in cucina.	Una spugna gialla.
+il secchio	bucket	4	0bfc1fb23674df53709f6d3c58cf798e	Riempio il secchio d'acqua calda con detersivo per lavare il pavimento del corridoio.	Un secchio rosso.
+l'aspirapolvere	vacuum cleaner	4	c1f5b70f2fadb2a3c282a7a8cbee0564	Passo l'aspirapolvere su tutti i tappeti del salotto ogni sabato mattina con calma.	L'aspirapolvere è rotto.
+il ferro	iron	4	d8a1238ea725543b45d0154c5be0cd11	Stiro le camicie con il ferro caldo per renderle perfette per il lavoro di domani.	Un ferro da stiro.
+il cestino	wastebasket	4	26761b684e25756d171239c33abf2ba3	Butto la carta nel cestino della carta sotto la scrivania del mio ufficio piccolo.	Un cestino pieno.
+la spazzatura	garbage	4	457205d6621505d2bee4ed7bbad44784	Porto fuori la spazzatura ogni sera prima di andare a dormire stanco morto.	Sacco della spazzatura.
+la lavatrice	washing machine	4	634584d40eeec8403763a8d76c746280	Faccio la lavatrice due volte alla settimana con i vestiti sporchi di tutta la famiglia.	La lavatrice è rotta.
 svegliare	to wake (someone) up	4	f34c7ca840a7d009eb285db736b0c4d6	Devo svegliare i bambini alle sette per portarli a scuola in tempo come sempre.	Svegliami presto.
 addormentarsi	to fall asleep	4	bc08cac4aceaba7f6e0efd3fba66066d	Faccio fatica ad addormentarmi quando bevo troppi caffè durante il pomeriggio al lavoro.	Mi addormento subito.
 lavarsi	to wash oneself	4	f60857947c2f9fbf492d5cb19b71be9f	Devo lavarmi le mani prima di mettermi a tavola per cenare con la famiglia.	Lavati le mani.
@@ -123,26 +123,26 @@ dipendere	to depend	4	4845c14501cb86c911fcecaf1ad61a91	Tutto dipende da quanto t
 apparire	to appear	4	4a64c9daa0c7ff5461d20bf2137fc7c0	Il sole è apparso dietro le nuvole dopo una giornata intera di pioggia continua e fastidiosa.	Appare ogni tanto.
 sparire	to disappear	4	f415fa0e319999ad1a8797efa6044290	Le mie chiavi sono sparite e non riesco a trovarle da nessuna parte in tutta la casa.	È sparito tutto.
 nascondere	to hide	4	7f93b02790826babb296e0c8aa5b93cd	Devo nascondere i regali di Natale in soffitta prima che i bambini li trovino per caso.	Mi nascondo qui.
-chiave	key	4	b7e7164aa84801216b27f56a2e80840a	Ho perso la chiave di casa stamattina e devo chiamare un fabbro per aprire la porta.	Una chiave d'oro.
-serratura	lock	4	1c5aa342d352cd3530f83d8416f128a5	La serratura della porta principale è rotta e devo cambiarla prima di partire per le vacanze.	Una serratura nuova.
-fuoco	fire	4	bdf285cd31b6f7a94e3e02f9b4c16e1b	Il fuoco del camino riscalda tutto il salotto durante le fredde sere d'inverno gelido.	Accendi il fuoco.
-legno	wood	4	8b6d4253f59fa190a249c01627a32da3	Il tavolo di legno massello della cucina è stato fatto a mano da mio nonno falegname.	Una sedia di legno.
-metallo	metal	4	4a75afbf4a0764d81c180ee39c5fe1c2	La porta del garage è di metallo pesante e bisogna spingerla con forza per aprirla.	Un metallo prezioso.
-plastica	plastic	4	94f19b0fc602982cbe8090bdc149b363	Cerco di evitare la plastica perché inquina molto l'ambiente e gli oceani del mondo.	Una bottiglia di plastica.
-vetro	glass (material)	4	fd43100af76ae7bd69219aab2030336b	La finestra è fatta di vetro spesso per isolare la casa dal freddo invernale rigido.	Un vetro rotto.
-tessuto	fabric / tissue	4	6f5dbd7191569ae8fc3de6fb3628fc22	Questo tessuto è morbido e perfetto per fare una camicia elegante per le occasioni importanti.	Un tessuto morbido.
-odore	smell / odor	4	e221ccb8b0b1b9ac4ebedd21a10d44f6	Sento un buon odore di pasta al pomodoro che viene dalla cucina di mia nonna.	Un odore strano.
-sapore	taste / flavor	4	f5be50782155a2055636a118f32a8d63	Questo dolce ha un sapore unico che non ho mai assaggiato prima d'ora in vita mia.	Un sapore dolce.
-rumore	noise	4	0171803cac9ff0acd03e7c8a2026aee5	Sento un rumore strano in cucina e vado a controllare cosa sta succedendo lì dentro.	Un forte rumore.
-silenzio	silence	4	8a0889d2ef888558c084eeb48ea8cbbb	Il silenzio della notte è interrotto solo dal canto degli uccelli al primo mattino.	Fai silenzio!
-pace	peace	4	5ba1c4ecf208b1757df653813416a886	Voglio vivere in pace con tutti i miei vicini e i parenti più stretti di famiglia.	Lasciami in pace.
-guerra	war	4	789a98094d69826637ffdef7ba575fee	La guerra ha cambiato la vita di milioni di persone in modo drammatico e doloroso.	Una grande guerra.
-pericolo	danger	4	5639714ff33f3b34d8a131c59e108856	C'è pericolo di pioggia stasera e dovremmo portare l'ombrello per ogni evenienza imprevista.	Stai attento al pericolo.
-rischio	risk	4	9976e17cd207bd7e96031568b02b5ea4	C'è il rischio di perdere il treno se non ci affrettiamo a uscire di casa subito.	Un grande rischio.
-sicurezza	safety / security	4	55704bbe8a38410e44bbc37c60f27e4b	La sicurezza dei bambini è la priorità più importante per ogni genitore responsabile.	Per sicurezza.
-cura	care	4	6a618ea0f7ee3f41f7c1b4f4cb767794	La cura del giardino richiede tempo e pazienza tutti i giorni durante la primavera.	Con cura.
-controllo	control	4	48ca4a6f8ae3120a5c8140de426ec7a9	Il controllo della macchina è fondamentale per guidare in modo sicuro su queste strade strette.	Sotto controllo.
-ordine	order	4	858e361db046ee7b72c5f340cc978553	Devo mettere in ordine la mia stanza prima dell'arrivo dei miei amici di sera.	In ordine alfabetico.
+la chiave	key	4	b7e7164aa84801216b27f56a2e80840a	Ho perso la chiave di casa stamattina e devo chiamare un fabbro per aprire la porta.	Una chiave d'oro.
+la serratura	lock	4	1c5aa342d352cd3530f83d8416f128a5	La serratura della porta principale è rotta e devo cambiarla prima di partire per le vacanze.	Una serratura nuova.
+il fuoco	fire	4	bdf285cd31b6f7a94e3e02f9b4c16e1b	Il fuoco del camino riscalda tutto il salotto durante le fredde sere d'inverno gelido.	Accendi il fuoco.
+il legno	wood	4	8b6d4253f59fa190a249c01627a32da3	Il tavolo di legno massello della cucina è stato fatto a mano da mio nonno falegname.	Una sedia di legno.
+il metallo	metal	4	4a75afbf4a0764d81c180ee39c5fe1c2	La porta del garage è di metallo pesante e bisogna spingerla con forza per aprirla.	Un metallo prezioso.
+la plastica	plastic	4	94f19b0fc602982cbe8090bdc149b363	Cerco di evitare la plastica perché inquina molto l'ambiente e gli oceani del mondo.	Una bottiglia di plastica.
+il vetro	glass (material)	4	fd43100af76ae7bd69219aab2030336b	La finestra è fatta di vetro spesso per isolare la casa dal freddo invernale rigido.	Un vetro rotto.
+il tessuto	fabric / tissue	4	6f5dbd7191569ae8fc3de6fb3628fc22	Questo tessuto è morbido e perfetto per fare una camicia elegante per le occasioni importanti.	Un tessuto morbido.
+l'odore	smell / odor	4	e221ccb8b0b1b9ac4ebedd21a10d44f6	Sento un buon odore di pasta al pomodoro che viene dalla cucina di mia nonna.	Un odore strano.
+il sapore	taste / flavor	4	f5be50782155a2055636a118f32a8d63	Questo dolce ha un sapore unico che non ho mai assaggiato prima d'ora in vita mia.	Un sapore dolce.
+il rumore	noise	4	0171803cac9ff0acd03e7c8a2026aee5	Sento un rumore strano in cucina e vado a controllare cosa sta succedendo lì dentro.	Un forte rumore.
+il silenzio	silence	4	8a0889d2ef888558c084eeb48ea8cbbb	Il silenzio della notte è interrotto solo dal canto degli uccelli al primo mattino.	Fai silenzio!
+la pace	peace	4	5ba1c4ecf208b1757df653813416a886	Voglio vivere in pace con tutti i miei vicini e i parenti più stretti di famiglia.	Lasciami in pace.
+la guerra	war	4	789a98094d69826637ffdef7ba575fee	La guerra ha cambiato la vita di milioni di persone in modo drammatico e doloroso.	Una grande guerra.
+il pericolo	danger	4	5639714ff33f3b34d8a131c59e108856	C'è pericolo di pioggia stasera e dovremmo portare l'ombrello per ogni evenienza imprevista.	Stai attento al pericolo.
+il rischio	risk	4	9976e17cd207bd7e96031568b02b5ea4	C'è il rischio di perdere il treno se non ci affrettiamo a uscire di casa subito.	Un grande rischio.
+la sicurezza	safety / security	4	55704bbe8a38410e44bbc37c60f27e4b	La sicurezza dei bambini è la priorità più importante per ogni genitore responsabile.	Per sicurezza.
+la cura	care	4	6a618ea0f7ee3f41f7c1b4f4cb767794	La cura del giardino richiede tempo e pazienza tutti i giorni durante la primavera.	Con cura.
+il controllo	control	4	48ca4a6f8ae3120a5c8140de426ec7a9	Il controllo della macchina è fondamentale per guidare in modo sicuro su queste strade strette.	Sotto controllo.
+l'ordine	order	4	858e361db046ee7b72c5f340cc978553	Devo mettere in ordine la mia stanza prima dell'arrivo dei miei amici di sera.	In ordine alfabetico.
 comodo	comfortable	4	c793999d3f73992115370af74c2b349a	Il divano del salotto è molto comodo e adatto per rilassarsi dopo una lunga giornata.	Un letto comodo.
 scomodo	uncomfortable	4	a955473500f71d8fb66780134e17c8c9	Questa sedia è davvero scomoda e mi fa male la schiena dopo un'ora di lavoro intenso.	Un viaggio scomodo.
 morbido	soft	4	5f7af6385b086c04339affa39071cd42	Il letto della camera degli ospiti ha un materasso morbido e profumato di lavanda.	Un cuscino morbido.
@@ -173,8 +173,8 @@ sessanta	sixty	4	7306bce6ff8e3648042276c08d0b0b42	Mio nonno ha sessant'anni e st
 settanta	seventy	4	1f375bc8130731242fa78130c3afb86b	Mia zia ha settant'anni e viaggia ancora per il mondo con grande entusiasmo e curiosità.	Settanta anni.
 ottanta	eighty	4	a6d30bd7bdef107f25446034ce2096ef	Mio bisnonno ha ottant'anni ed è ancora in ottima forma sia fisica che mentale davvero.	Ottanta gradi.
 novanta	ninety	4	13c7425f4805aca6c5c1ac398b96b734	La mia bisnonna ha novant'anni e racconta sempre storie meravigliose dei tempi passati.	Novanta minuti.
-milione	million	4	98b742e043d9689363bd6c966b0ace30	Sogno di vincere un milione di euro alla lotteria per realizzare tutti i miei sogni.	Un milione di stelle.
-miliardo	billion	4	13f805b42e77f4d31fe6573566b37219	Ci sono miliardi di stelle nel cielo notturno che brillano sopra le nostre teste tranquille.	Un miliardo di euro.
+il milione	million	4	98b742e043d9689363bd6c966b0ace30	Sogno di vincere un milione di euro alla lotteria per realizzare tutti i miei sogni.	Un milione di stelle.
+il miliardo	billion	4	13f805b42e77f4d31fe6573566b37219	Ci sono miliardi di stelle nel cielo notturno che brillano sopra le nostre teste tranquille.	Un miliardo di euro.
 terzo	third	4	16d47ae5f4fb01553d0036dd5e339b9a	Sono il terzo figlio della mia famiglia e ho due fratelli maggiori entrambi sposati felicemente.	Il terzo posto.
 quarto	fourth	4	3deea690609707279ac05a533aea9ffc	Abito al quarto piano di un palazzo storico nel centro storico della bella città vecchia.	Un quarto d'ora.
 ciao	hi / bye	4	6e6bc4e49dd477ebc98ef4046c067b5f	Ciao, come stai? Non ti vedevo da molto tempo, mi sei davvero mancato tanto.	Ciao, a domani!
@@ -184,9 +184,9 @@ buonanotte	good night	4	9b2b7f3e4d7ccb0163356833fdffc5a9	Buonanotte, cara, sogni
 arrivederci	goodbye	4	586815c0bf51ed32a7f9f7258b4d5350	Arrivederci, è stato davvero un piacere averti conosciuto durante questa bella serata trascorsa insieme.	Arrivederci a presto.
 scusa	excuse me / sorry	4	938d9da3a4cd05fde69821bcef0cdf23	Scusa per il ritardo, c'era molto traffico in autostrada questa mattina presto.	Scusami tanto.
 prego	please / you're welcome	4	395b1881bb417b7594c493286581b45d	Prego, accomodati pure sul divano del salotto, ti porto subito un caffè caldo.	Prego, si figuri.
-saluto	greeting	4	057c12fa28cee0b0727eeb500cba3afd	Mando un caloroso saluto a tutta la mia famiglia che vive lontano dall'Italia in America.	Un caro saluto.
-abbraccio	hug (noun)	4	f02cc64bb4a1df09763aef71921bced8	Ti mando un grande abbraccio e spero di vederti presto in Italia per le vacanze estive.	Un forte abbraccio.
-bacio	kiss (noun)	4	64c657efe255318d42c9df4cdf923a0f	Le ho dato un bacio sulla guancia prima di partire per il lungo viaggio in America.	Un bacio dolce.
+il saluto	greeting	4	057c12fa28cee0b0727eeb500cba3afd	Mando un caloroso saluto a tutta la mia famiglia che vive lontano dall'Italia in America.	Un caro saluto.
+l'abbraccio	hug (noun)	4	f02cc64bb4a1df09763aef71921bced8	Ti mando un grande abbraccio e spero di vederti presto in Italia per le vacanze estive.	Un forte abbraccio.
+il bacio	kiss (noun)	4	64c657efe255318d42c9df4cdf923a0f	Le ho dato un bacio sulla guancia prima di partire per il lungo viaggio in America.	Un bacio dolce.
 perciò	therefore	4	74e34017649b38ce39f2115a0f2bf054	Pioveva forte stamattina, perciò ho preso l'ombrello prima di uscire di casa per il lavoro.	Perciò sono qui.
 quindi	so / therefore	4	0d9245218a018b623645b7d6213236fd	Avevo molta fame, quindi ho mangiato due piatti di pasta a pranzo dalla zia.	Quindi cosa facciamo?
 infatti	in fact / indeed	4	230065fddaa6f014e43736f333223562	Diceva di sapere tutto e infatti ha risposto correttamente a tutte le domande dell'esame.	Infatti hai ragione.
