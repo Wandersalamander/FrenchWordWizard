@@ -313,7 +313,7 @@ class QuizController(
             views.progressBarsFinished[skill]?.progress = (skillFinished / totalF * 100).toInt()
         }
         val currentStats = vocab.stats(currentSkill)
-        views.textScore.text = if (currentStats.meanTimeViewedMilli() == (10 * 1e3)) {
+        views.textScore.text = if (currentStats.nTimesViewed == 0) {
             if (currentSkill == Skill.ladder.first()) "A new word!"
             else "${currentSkill.displayName} exercise unlocked!"
         } else currentStats.getInfoString()

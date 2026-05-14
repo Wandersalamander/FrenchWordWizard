@@ -55,10 +55,12 @@ class SettingsActivity : AppCompatActivity() {
         // Sentence-source preference: easy / hard / LLM. Defaults to EASY for
         // fresh installs so new users get the gentlest material out of the box.
         val sentenceGroup = findViewById<RadioGroup>(R.id.sentenceSourceRadioGroup)
+        val radioSentenceEasy = findViewById<RadioButton>(R.id.radioSentenceEasy)
+        val radioSentenceLlm = findViewById<RadioButton>(R.id.radioSentenceLlm)
         val radioByPosition = mapOf(
-            SentenceSource.EASY to findViewById<RadioButton>(R.id.radioSentenceEasy),
+            SentenceSource.EASY to radioSentenceEasy,
             SentenceSource.HARD to findViewById<RadioButton>(R.id.radioSentenceHard),
-            SentenceSource.LLM to findViewById<RadioButton>(R.id.radioSentenceLlm),
+            SentenceSource.LLM to radioSentenceLlm,
         )
         val sourceByRadioId = mapOf(
             R.id.radioSentenceEasy to SentenceSource.EASY,
@@ -66,6 +68,8 @@ class SettingsActivity : AppCompatActivity() {
             R.id.radioSentenceLlm to SentenceSource.LLM,
         )
         radioByPosition[SentenceSource.fromPrefs(prefs)]?.isChecked = true
+        // Start disabled — the status flow below re-enables once the model is Ready.
+        radioSentenceLlm.isEnabled = false
         sentenceGroup.setOnCheckedChangeListener { _, checkedId ->
             val source = sourceByRadioId[checkedId] ?: SentenceSource.DEFAULT
             prefs.edit().putString(SentenceSource.PREF_KEY, source.storageValue).apply()
@@ -110,6 +114,19 @@ class SettingsActivity : AppCompatActivity() {
                         if (status is LlmService.Status.Ready ||
                             status is LlmService.Status.Unavailable
                         ) View.VISIBLE else View.GONE
+
+                    // Only let the user pick LLM sentences when the model is
+                    // actually usable. If the model is definitively gone
+                    // (NotDownloaded / Unavailable) but the persisted pref was
+                    // LLM, fall back to EASY so we don't sit on a broken
+                    // selection. During Initializing/Downloading we don't yank
+                    // an existing selection — the model is on its way.
+                    radioSentenceLlm.isEnabled = status is LlmService.Status.Ready
+                    val modelGone = status is LlmService.Status.NotDownloaded ||
+                        status is LlmService.Status.Unavailable
+                    if (modelGone && radioSentenceLlm.isChecked) {
+                        radioSentenceEasy.isChecked = true
+                    }
                 }
             }
         }
