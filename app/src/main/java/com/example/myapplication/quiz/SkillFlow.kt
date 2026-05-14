@@ -17,9 +17,22 @@ import com.example.myapplication.dictionary.Vocab
  *      compiler point you at the missing case.
  * No edits to [QuizController] needed.
  */
+/** What the Tip button does for a given skill. */
+internal sealed interface TipBehavior {
+    /** Tip button is hidden/disabled. */
+    object None : TipBehavior
+    /** Tip shows an example sentence (with optional masking). */
+    object Sentence : TipBehavior
+    /** Tip reveals one more letter of the foreign word. */
+    object ProgressiveReveal : TipBehavior
+}
+
 internal sealed interface SkillFlow {
-    /** Whether the Tip button is meaningful for this skill. */
-    val tipAllowed: Boolean
+    /** What pressing Tip does for this skill. */
+    val tipBehavior: TipBehavior
+
+    /** Convenience flag derived from [tipBehavior]. */
+    val tipAllowed: Boolean get() = tipBehavior !is TipBehavior.None
 
     /**
      * True when the English meaning is the prompt at round start (the user
@@ -56,10 +69,17 @@ internal sealed interface SkillFlow {
      * [listeningEnabled] state. Drives the rollback in `saveCurrentVocab`.
      */
     fun isCompromisedByListening(listeningEnabled: Boolean): Boolean
+
+    /**
+     * Render the foreign word with [revealedLetters] letters unmasked, the
+     * rest still hidden. Only meaningful when [tipBehavior] is
+     * [TipBehavior.ProgressiveReveal]; default is a no-op.
+     */
+    fun applyProgressiveReveal(vocab: Vocab, views: QuizViews, revealedLetters: Int) {}
 }
 
 internal object ReadFlow : SkillFlow {
-    override val tipAllowed = true
+    override val tipBehavior = TipBehavior.Sentence
     override val englishIsPrompt = false
 
     override fun setupTextFr(
@@ -89,7 +109,7 @@ internal object ReadFlow : SkillFlow {
 }
 
 internal object ListenFlow : SkillFlow {
-    override val tipAllowed = true
+    override val tipBehavior = TipBehavior.Sentence
     override val englishIsPrompt = false
 
     override fun setupTextFr(
@@ -124,12 +144,25 @@ internal object ListenFlow : SkillFlow {
     override fun isCompromisedByListening(listeningEnabled: Boolean): Boolean = !listeningEnabled
 }
 
-private fun maskWord(word: String): String =
-    word.map { if (it.isLetter()) '⬤' else it }.joinToString("")
+private fun maskWord(word: String, maskChar: Char = '⬤'): String =
+    word.map { if (it.isLetter()) maskChar else it }.joinToString("")
+
+private fun revealLetterPrefix(word: String, revealedLetters: Int, maskChar: Char): String {
+    var remaining = revealedLetters
+    return word.map { c ->
+        when {
+            !c.isLetter() -> c
+            remaining > 0 -> { remaining--; c }
+            else -> maskChar
+        }
+    }.joinToString("")
+}
 
 internal object InvertFlow : SkillFlow {
-    override val tipAllowed = false
+    override val tipBehavior = TipBehavior.ProgressiveReveal
     override val englishIsPrompt = true
+
+    private const val MASK_CHAR = '◉'
 
     override fun setupTextFr(
         vocab: Vocab,
@@ -137,7 +170,7 @@ internal object InvertFlow : SkillFlow {
         listeningEnabled: Boolean,
         onMaskedWordTapped: () -> Unit,
     ) {
-        views.textFr.text = maskWord(vocab.french)
+        views.textFr.text = maskWord(vocab.french, MASK_CHAR)
         views.textFr.setOnClickListener(null)
         views.textFr.isClickable = false
     }
@@ -156,6 +189,10 @@ internal object InvertFlow : SkillFlow {
     override fun shouldMaskSentenceOnTip(listeningEnabled: Boolean): Boolean = false
     override fun reuseSentenceOnReveal(listeningEnabled: Boolean): Boolean = false
     override fun isCompromisedByListening(listeningEnabled: Boolean): Boolean = false
+
+    override fun applyProgressiveReveal(vocab: Vocab, views: QuizViews, revealedLetters: Int) {
+        views.textFr.text = revealLetterPrefix(vocab.french, revealedLetters, MASK_CHAR)
+    }
 }
 
 internal val Skill.flow: SkillFlow

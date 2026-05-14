@@ -93,6 +93,10 @@ class QuizController(
     private var roundStartSnapshot: SkillStats? = null
     private var roundCompromised: Boolean = false
 
+    // Number of letters already revealed via Tip in the current round; only
+    // meaningful when the active skill has ProgressiveReveal tip behavior.
+    private var progressiveRevealCount: Int = 0
+
     fun onFailClick() {
         if (inSpotCheck) exitSpotCheck(wasWrong = true)
         else revealAllVocabData(showNextVocab = true)
@@ -169,6 +173,14 @@ class QuizController(
 
     private fun showTip() {
         val vocab = currentVocab ?: return
+        when (currentSkill.flow.tipBehavior) {
+            TipBehavior.Sentence -> showSentenceTip(vocab)
+            TipBehavior.ProgressiveReveal -> showProgressiveRevealTip(vocab)
+            TipBehavior.None -> Unit
+        }
+    }
+
+    private fun showSentenceTip(vocab: Vocab) {
         vocab.stats(currentSkill).nTimesFailed += 0.25f
 
         setQuizButtonsEnabled(false)
@@ -182,6 +194,23 @@ class QuizController(
             views.buttonNext.isEnabled = true
             views.buttonNext.isClickable = true
             // Tip stays disabled — one tip per word.
+        }
+    }
+
+    private fun showProgressiveRevealTip(vocab: Vocab) {
+        val letterCount = vocab.french.count { it.isLetter() }
+        if (progressiveRevealCount >= letterCount) return
+        progressiveRevealCount++
+        // Triangular weighting: the i-th of N reveals costs
+        // 2(N - i + 1) / (N(N+1)), so first reveal is the most expensive and
+        // the total over a full unmask is exactly 1.0 (≈ one Fail).
+        val penalty = 2f * (letterCount - progressiveRevealCount + 1) /
+            (letterCount * (letterCount + 1))
+        vocab.stats(currentSkill).nTimesFailed += penalty
+        currentSkill.flow.applyProgressiveReveal(vocab, views, progressiveRevealCount)
+        if (progressiveRevealCount >= letterCount) {
+            views.buttonTip.isEnabled = false
+            views.buttonTip.isClickable = false
         }
     }
 
@@ -270,6 +299,7 @@ class QuizController(
         // listening already off — the user could read the foreign word).
         roundStartSnapshot = vocab.stats(currentSkill).copy()
         roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
+        progressiveRevealCount = 0
         inSpotCheck = false
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
