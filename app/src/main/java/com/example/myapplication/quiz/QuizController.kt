@@ -313,8 +313,10 @@ class QuizController(
             views.progressBarsFinished[skill]?.progress = (skillFinished / totalF * 100).toInt()
         }
         val currentStats = vocab.stats(currentSkill)
-        views.textScore.text = if (currentStats.meanTimeViewedMilli() == (10 * 1e3)) "A new word!"
-            else currentStats.getInfoString()
+        views.textScore.text = if (currentStats.meanTimeViewedMilli() == (10 * 1e3)) {
+            if (currentSkill == Skill.ladder.first()) "A new word!"
+            else "${currentSkill.displayName} exercise unlocked!"
+        } else currentStats.getInfoString()
         setQuizButtonsEnabled(true)
 
         // Single readout above the stack: how many words have been introduced
