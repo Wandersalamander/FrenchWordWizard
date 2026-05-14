@@ -222,6 +222,7 @@ class QuizController(
         if (progressiveRevealCount >= letterCount) {
             views.buttonTip.isEnabled = false
             views.buttonTip.isClickable = false
+            onFailClick()
         }
     }
 
