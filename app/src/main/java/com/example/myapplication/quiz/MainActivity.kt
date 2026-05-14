@@ -30,6 +30,8 @@ import com.example.myapplication.dictionary.openDictionaryStream
 import com.example.myapplication.llm.LlmService
 import com.example.myapplication.service.MyForegroundService
 import com.example.myapplication.settings.SettingsActivity
+import com.example.myapplication.streak.StreakAlarmScheduler
+import com.example.myapplication.streak.StreakNotifications
 import com.example.myapplication.wordlist.WordListActivity
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
@@ -97,6 +99,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         })
 
         createNotificationChannel()
+        StreakNotifications.ensureChannel(this)
+        // Idempotent — re-arms today if the alarm exists, or schedules a fresh
+        // one on first launch / after the user re-enabled the reminder.
+        StreakAlarmScheduler.schedule(this)
 
         val progressBarsContainer = findViewById<FrameLayout>(R.id.progressBarsContainer)
         val progressBars = mutableMapOf<Skill, ProgressBar>()
@@ -137,6 +143,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textEn = findViewById(R.id.textReal),
             textGuessLong = findViewById(R.id.textGuessLong),
             textProgressTotal = findViewById(R.id.textProgressTotal),
+            textStreak = findViewById(R.id.textStreak),
             progressBars = progressBars,
             progressBarsFinished = progressBarsFinished,
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
@@ -183,6 +190,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         views.buttonTip.setDebouncedOnClickListener { quizController.onTipClick() }
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
+        quizController.refreshStreakBadge()
 
         if (!sharedPreferences.getBoolean("tutorial_shown", false)) {
             findViewById<View>(android.R.id.content).post { showTutorial() }
@@ -354,6 +362,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             return
         }
         quizController.markResumed()
+        quizController.refreshStreakBadge()
     }
 
     private fun ensureNotificationPermissionThenStartService() {

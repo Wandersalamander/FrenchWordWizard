@@ -10,6 +10,7 @@ import com.example.myapplication.dictionary.SkillStats
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.llm.LlmService
 import com.example.myapplication.setDebouncedOnClickListener
+import com.example.myapplication.streak.StreakTracker
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
@@ -34,6 +35,7 @@ data class QuizViews(
     val textEn: TextView,
     val textGuessLong: TextView,
     val textProgressTotal: TextView,
+    val textStreak: TextView,
     val progressBars: Map<Skill, ProgressBar>,
     val progressBarsFinished: Map<Skill, ProgressBar>,
     val thinkingSparkle: ImageView,
@@ -320,6 +322,7 @@ class QuizController(
             views.progressBars[skill]?.progress = (introduced / totalF * 100).toInt()
             views.progressBarsFinished[skill]?.progress = (skillFinished / totalF * 100).toInt()
         }
+        refreshStreakBadge()
         val currentStats = vocab.stats(currentSkill)
         views.textScore.text = if (currentStats.nTimesViewed == 0) {
             if (currentSkill == Skill.ladder.first()) "A new word!"
@@ -413,11 +416,27 @@ class QuizController(
         stats.lastDisplayed = System.currentTimeMillis()
         vocab.savePreferences()
 
+        // A committed (non-compromised) round is what counts for the daily
+        // streak. Idempotent within a day — first round of the day bumps the
+        // count, subsequent rounds are no-ops.
+        StreakTracker.recordPracticeToday(activity.applicationContext)
+
         if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
         ) {
             sounds.playSuccess()
         }
+    }
+
+    /**
+     * Refresh the streak badge from persistent state. Cheap: just a prefs
+     * read + LocalDate comparison. Public so MainActivity.onResume can poke it
+     * after returning from Settings (where the user may have toggled or reset
+     * the streak indirectly via reminder changes).
+     */
+    fun refreshStreakBadge() {
+        val streak = StreakTracker.currentStreak(activity.applicationContext)
+        views.textStreak.text = if (streak > 0) "🔥 $streak" else ""
     }
 
     /**

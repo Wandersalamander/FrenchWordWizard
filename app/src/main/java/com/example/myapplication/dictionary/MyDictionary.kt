@@ -104,6 +104,14 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
 
     companion object {
         const val ESSENTIALS_IMPORTANCE: Int = 0
+
+        // Auto-pull a fresh inactive word whenever the active (word, skill)
+        // pool falls below this. For a brand-new user this is roughly the
+        // number of distinct words introduced before the system stops adding
+        // more on its own — keeping it low avoids overwhelming beginners.
+        // Past the early stage, every word contributes >1 pair as more skills
+        // unlock, so the threshold stops gating new introductions naturally.
+        const val AUTO_INTRODUCE_THRESHOLD: Int = 5
     }
 
     /**
@@ -130,7 +138,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
                 if (vocab.sortValue(skill) > 0.0) vocab to skill else null
             }
         }
-        if (activePairs.size < 20) {
+        if (activePairs.size < AUTO_INTRODUCE_THRESHOLD) {
             val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
             if (inactive.isNotEmpty()) {
                 val minImportance = inactive.minOf { it.importance }

@@ -1,5 +1,6 @@
 package com.example.myapplication.settings
 
+import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Bundle
 import android.text.format.Formatter
@@ -9,6 +10,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -17,7 +19,10 @@ import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.SentenceSource
 import com.example.myapplication.llm.LlmService
+import com.example.myapplication.streak.StreakAlarmScheduler
+import com.example.myapplication.streak.StreakTracker
 import kotlinx.coroutines.launch
+import java.util.Locale
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,7 +136,57 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
         }
+
+        setupStreakSection()
     }
+
+    private fun setupStreakSection() {
+        val statsView = findViewById<TextView>(R.id.streakStatsText)
+        val switchView = findViewById<SwitchCompat>(R.id.streakReminderSwitch)
+        val timeButton = findViewById<Button>(R.id.streakReminderTimeButton)
+
+        fun renderStats() {
+            val current = StreakTracker.currentStreak(this)
+            val longest = StreakTracker.longestStreak(this)
+            statsView.text = "Current: $current day${plural(current)} · Best: $longest day${plural(longest)}"
+        }
+
+        fun renderTime() {
+            val h = StreakTracker.reminderHour(this)
+            val m = StreakTracker.reminderMinute(this)
+            timeButton.text = String.format(Locale.US, "%02d:%02d", h, m)
+        }
+
+        renderStats()
+        renderTime()
+        switchView.isChecked = StreakTracker.isReminderEnabled(this)
+        timeButton.isEnabled = switchView.isChecked
+
+        switchView.setOnCheckedChangeListener { _, isChecked ->
+            StreakTracker.setReminderEnabled(this, isChecked)
+            timeButton.isEnabled = isChecked
+            // schedule() handles both arming and cancelling based on the flag.
+            StreakAlarmScheduler.schedule(this)
+        }
+
+        timeButton.setDebouncedOnClickListener {
+            val hour = StreakTracker.reminderHour(this)
+            val minute = StreakTracker.reminderMinute(this)
+            TimePickerDialog(
+                this,
+                { _, h, m ->
+                    StreakTracker.setReminderTime(this, h, m)
+                    renderTime()
+                    StreakAlarmScheduler.schedule(this)
+                },
+                hour,
+                minute,
+                true,  // 24-hour view; matches the "21:00" default semantics
+            ).show()
+        }
+    }
+
+    private fun plural(n: Int): String = if (n == 1) "" else "s"
 
     private fun renderStatus(status: LlmService.Status): String = when (status) {
         is LlmService.Status.Unknown -> "AI sentences: checking…"

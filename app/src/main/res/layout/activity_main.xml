@@ -63,6 +63,20 @@
         app:layout_constraintBottom_toTopOf="@+id/textGuess"
         app:layout_constraintStart_toStartOf="@+id/textGuess" />
 
+    <TextView
+        android:id="@+id/textStreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/monokai_orange"
+        android:contentDescription="Current practice streak in days"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button_hard"
         style="?android:attr/buttonBarButtonStyle"
