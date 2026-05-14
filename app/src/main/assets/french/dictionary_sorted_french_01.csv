@@ -42,7 +42,6 @@ donner	to give	1	0e0300b2978a96a05d9b833419dc29b1	Maman va donner ses vieux livr
 deux	two	1	83759f0128492772d90b098cf2295288	Mes deux soeurs travaillent ensemble dans le meme hopital depuis longtemps.	Il a acheté deux billets pour le concert.
 même	same / even	1	653acab9f3d1494f43e89205249d3098	Nous prenons toujours le meme chemin pour aller au marche.	Elle porte la même robe que hier.
 prendre	to take	1	56b3bd1281794ac39631b5c68353620b	N'oublie pas de prendre un parapluie, le ciel est gris.	Nous allons prendre le train pour Bordeaux.
-où	where	1	e5ddf301e468c1280b53849d9667a968	Ou veux-tu fixer le rendez-vous pour le diner de ce soir ?	Où est le musée d'art moderne ?
 aussi	also / as … as	1	043115fc7ac171603a571a6d48f14307	Le frere cadet est aussi grand que son aine maintenant.	Elle est aussi intelligente que sa sœur.
 celui / celle	the one	1	b7094e0909bde9fb8580062bf1eae80e	Parmi tous ces gateaux, celui au chocolat semble le plus tentant.	Celui qui arrive en premier gagne le prix.
 bien	well	1	44aa4bdb210b368d9d195d90f10f010f	Cette voiture roule encore tres bien malgre son age avance.	Il parle bien français.
@@ -72,7 +71,6 @@ sans	without	1	e8556b196fd38744bef927876744b1c3	Je suis arrive au bureau sans mo
 dont	whose / of which	1	8e7c7c77e27e7a5ff27144517c3331b6	L'ecrivain dont tu parles a gagne plusieurs prix litteraires importants.	Voici le livre dont je t'ai parlé.
 une raison	a reason	1	3eb88127dda2305ffacf394991e5a0a7	Donne-moi une raison valable pour expliquer ton retard de ce matin.	Il a une bonne raison de ne pas venir.
 le monde	the world / people	1	7018e4cd6c93c90f4e456c4b38b65c23	Ma fille reve de faire le tour du monde en bateau.	Il veut changer le monde.
-non	no / not / non-	1	926e0f6fd0a74a23c99de19a38446c78	Non, je ne veux pas de sucre dans mon cafe.	La réponse est non.
 monsieur	mister / sir	1	84b4727837a3577c3e42a69d176a4b1c	Excusez-moi monsieur, savez-vous ou se trouve la gare centrale ?	Bonjour, monsieur Dupont.
 un an	a year	1	1a4fa163b46e07effd85965584d99f1a	Mon fils fete son anniversaire dans un an exactement aujourd'hui.	Nous avons vécu ici pendant un an.
 un jour	one day	1	20879345e7b36191771b8ff8a95a6149	Un jour, j'aimerais ouvrir ma propre boulangerie dans ce quartier.	Un jour, je visiterai tous les pays du monde.
@@ -114,7 +112,6 @@ la fin	the end	1	cf95313fe4cbe5485360e595a1f5b6d7	A la fin du film, tout le mond
 penser	to think	1	806aeca24d15a53f25f7f4b102a2891f	Laisse-moi penser a ta proposition avant de te donner ma reponse.	Que penses-tu de cette idée ?
 un lieu	a place	1	e8addb84e5a13a8e6d73a7d74b6feb86	Mon grand-pere connait un lieu secret pour cueillir des fraises sauvages.	C'est un lieu tranquille pour se reposer.
 une partie	a part	1	ada635a0518992d3c451427485fb1f23	Une partie de la maison a ete renovee l'annee derniere.	Une grande partie des élèves a réussi l'examen.
-quand	when	1	7ab498bdceb46ffb8ae96f3557060b70	Quand vas-tu enfin me presenter ta nouvelle petite amie ?	Quand est-ce que tu pars en vacances ?
 trois	three	1	1203501d261519be6ff88be268475a82	Mes trois cousins viennent dejeuner a la maison ce dimanche.	Il a trois chiens et deux chats.
 contre	against	1	17147585000455f2467fb70de172da34	Le chien aboie contre tous les inconnus qui passent devant la maison.	Ils ont voté contre le projet de loi.
 sous	under	1	9019327989728a1b270f9e960cdc6715	Sous l'arbre, on a installe une petite table pour le gouter.	Il a trouvé ses clés sous le tapis.
@@ -187,8 +184,6 @@ un problème	a problem	1	982ab673be5fe898c003d990884e9377	Le voisin a un problem
 un rapport	a report	1	4f8450a97d75328b037a4ee485c57d08	Le journaliste prepare un rapport important sur les inondations recentes.	Il a rédigé un rapport détaillé sur le projet.
 dès que	as soon as	1	88e84265a9ba61f3d9a3f1bc33b218ba	Dis-moi des que tu as des nouvelles de ton frere aine.	Dès que tu seras prêt, nous partirons.
 peut-être	maybe	1	14f71dbef6048b42c7552240c79e2e31	Peut-etre que nous irons a la mer ce week-end si possible.	Peut-être viendront-ils à la fête ce soir.
-maintenant	now	1	2a1da4e82059682b264af8b26cd2e494	Maintenant je comprends pourquoi mon frere etait si fache hier soir.	Maintenant, il est temps de se détendre.
-pourquoi	why	1	59ec74350e281cb3fb84385dcc8651f7	Pourquoi as-tu choisi cette destination pour les vacances cette annee ?	Pourquoi n'êtes-vous pas venu hier ?
 meilleur / meilleure	better / best	1	01a9ab653b4c15ca42dc3fd4ad2686cf	Nous esperons obtenir de meilleures notes au prochain examen de mathematiques.	C'est le meilleur restaurant de la ville.
 une vue	a view	1	628b2a504b0e51527d26bf69324f4a70	Cet appartement offre une vue magnifique sur les toits de Paris.	De cette montagne, on a une vue magnifique.
 trop	too much / too many	1	26aaf7bc311903f68fb75f186671f6e1	Cette boulangerie utilise toujours trop de sel dans son pain frais.	Il y a trop de monde ici, partons.

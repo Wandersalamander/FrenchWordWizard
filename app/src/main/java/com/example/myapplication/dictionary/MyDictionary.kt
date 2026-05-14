@@ -89,7 +89,21 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         }
         val minImportance = inactiveCsvData.minOf { it.importance }
         val candidates = inactiveCsvData.filter { it.importance == minImportance }
-        return candidates[Random.nextInt(candidates.size)] to firstSkill
+        return pickNextInactive(candidates, minImportance) to firstSkill
+    }
+
+    /**
+     * Tier 0 (essentials) is introduced in strict CSV order — the canonical 50
+     * survival phrases need to come up in a fixed sequence regardless of
+     * shuffle. Higher tiers stay random within the tier so practice still feels
+     * varied.
+     */
+    private fun pickNextInactive(candidates: List<Vocab>, minImportance: Int): Vocab =
+        if (minImportance == ESSENTIALS_IMPORTANCE) candidates.first()
+        else candidates[Random.nextInt(candidates.size)]
+
+    companion object {
+        const val ESSENTIALS_IMPORTANCE: Int = 0
     }
 
     /**
@@ -113,7 +127,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
             if (inactive.isNotEmpty()) {
                 val minImportance = inactive.minOf { it.importance }
                 val candidates = inactive.filter { it.importance == minImportance }
-                return candidates[Random.nextInt(candidates.size)] to firstSkill
+                return pickNextInactive(candidates, minImportance) to firstSkill
             }
             val available = csvData.filter {
                 !it.ignore && !(it.hasBeenIntroduced() && it.isFullyLearned())

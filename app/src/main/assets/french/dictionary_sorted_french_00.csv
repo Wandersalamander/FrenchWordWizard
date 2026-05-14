@@ -1,0 +1,50 @@
+bonjour	hello / good day	0	f02368945726d5fc2a14eb576f7276c0	Bonjour madame, je voudrais une baguette et deux croissants au beurre s'il vous plaît.	Bonjour à tous.
+au revoir	goodbye	0	9f1c99e34b6e402f175708a71e428a09	Au revoir et merci pour cette merveilleuse soirée passée en votre agréable compagnie.	Au revoir, à demain.
+bonjour matinal	good morning	0	58d64387e5041847df8e4e816dd4ea22	Bonjour matinal à toute la famille, le café est déjà prêt sur la table de la cuisine.	Bonjour, bien dormi ?
+bonsoir	good evening	0	b9a6d02f68947ddf2edc86a59c3af4ca	Bonsoir, je suis ravi de vous voir ici ce soir, comment allez-vous depuis notre dernière rencontre ?	Bonsoir, monsieur.
+bonne nuit	good night	0	d76344f7082251a2dc67141567ef1fd3	Bonne nuit les enfants, faites de beaux rêves et à demain matin pour le petit-déjeuner en famille.	Bonne nuit, à demain.
+s'il vous plaît	please (formal)	0	d3aa362aa1cd2dda10927df8b5bc31b1	Pourriez-vous m'indiquer le chemin vers la gare, s'il vous plaît, je suis un peu perdu dans cette ville.	Un café, s'il vous plaît.
+merci	thank you	0	8e105cee0ab7650cc3a3751bd986dbf5	Merci beaucoup pour votre aide précieuse, sans vous je n'aurais jamais pu terminer ce travail à temps.	Merci beaucoup.
+de rien	you're welcome	0	6d0458bf07aaa4865b9b8251f14273f9	De rien, c'était vraiment un plaisir de pouvoir vous aider avec ce petit problème technique.	De rien, voyons.
+excusez-moi	excuse me	0	b9d525b7e4bdf6290efbdf54bc88dcf2	Excusez-moi, pourriez-vous m'indiquer où se trouve la sortie la plus proche s'il vous plaît ?	Excusez-moi, monsieur.
+désolé	sorry	0	25b7e9dc03fd6618168a97e6a68dc47f	Je suis vraiment désolé pour ce qui s'est passé hier, ce n'était pas mon intention de te blesser.	Désolé, vraiment.
+oui	yes	0	b2a5abfeef9e36964281a31e17b57c97	Oui, je suis tout à fait d'accord avec votre proposition et je voudrais participer au projet.	Oui, merci.
+non	no / not	0	14b8f0494c6f1460c3720d0ce692dbca	Non, je ne peux malheureusement pas venir ce soir parce que j'ai déjà un autre engagement.	Non, merci.
+comment ça va ?	how are you?	0	fbb2125e8584886c9745148b0f7ca439	Salut Pierre, comment ça va depuis la dernière fois que nous nous sommes vus à Paris ?	Comment ça va ?
+ça va bien	I'm fine	0	ac21b7a4c2b85d01994389ae514a43b4	Ça va bien, merci de demander, même si je suis un peu fatigué à cause du travail.	Ça va bien, merci.
+comment tu t'appelles ?	what's your name? (informal)	0	36a1a1f0e560484863755d6d7de49bc6	Enchanté de faire ta connaissance, comment tu t'appelles et d'où viens-tu ?	Tu t'appelles comment ?
+je m'appelle	my name is	0	644147fc01e366b2cdf3a4f80dd9086c	Je m'appelle Pierre et je viens de Lyon, mais maintenant je vis à Paris pour mon travail.	Je m'appelle Marie.
+enchanté	nice to meet you	0	fd4027cd22f2eeb9bf020881e4e73a44	Enchanté de faire votre connaissance, j'ai beaucoup entendu parler de vous par nos amis communs.	Enchanté, madame.
+parlez-vous anglais ?	do you speak English? (formal)	0	00ad2b19024c53c750cd665f6fdfca39	Excusez-moi, parlez-vous anglais par hasard ? Mon français n'est pas encore très bon.	Parlez-vous anglais ?
+je ne comprends pas	I don't understand	0	966cc1aacc93503ff668938f9e89a753	Excusez-moi, je ne comprends pas ce que vous me dites, pourriez-vous parler plus lentement ?	Je ne comprends pas.
+je ne sais pas	I don't know	0	304772e972672de09f0cbaac1bf62ea8	Je ne sais vraiment pas, désolé, mais tu peux essayer de demander à quelqu'un d'autre qui pourrait savoir.	Je ne sais pas.
+au secours !	help!	0	f5f0e2cb2da7b5e4a20e40939746cb17	Au secours ! Il y a eu un accident sur la route principale, appelez vite une ambulance !	Au secours, vite !
+parlez plus lentement, s'il vous plaît	speak more slowly, please	0	28f019e0318ffb25a902b949c26a6d66	Excusez-moi, parlez plus lentement, s'il vous plaît, j'apprends encore le français.	Plus lentement, svp.
+pouvez-vous répéter ?	can you repeat? (formal)	0	d43b895586ebcc15f876c8265cebbaa1	Excusez-moi, pouvez-vous répéter ce que vous venez de dire ? Je n'ai pas bien entendu à cause du bruit.	Pouvez-vous répéter ?
+comment dit-on ?	how do you say?	0	f9152d8252c19963a316c7de527563b5	Excusez-moi, comment dit-on ce mot en français ? Je n'arrive pas à le trouver dans mon dictionnaire.	Comment dit-on ?
+où	where	0	5ac527522f4d8e3e7a8f23920df2ffa3	Où habites-tu maintenant et où travailles-tu d'habitude pendant la semaine ?	Tu es où ?
+quand	when	0	ece2020cb3497ce4ad568a00231d9624	Quand tu rentreras à la maison ce soir, je te préparerai ton plat préféré.	Quand pars-tu ?
+pourquoi	why	0	09f5f30a7389ef0a978d313fc9543185	Pourquoi n'es-tu pas venu hier soir à la fête d'anniversaire de Marie ?	Pourquoi pas ?
+comment	how	0	06d4cd63bde972fc66a0aed41d2f5c51	Comment vas-tu aujourd'hui et comment s'est passée ta journée de travail ?	Comment ça va ?
+combien ça coûte ?	how much does it cost?	0	3640e1e9744022e27ce7e46db55b80e0	Excusez-moi, combien ça coûte ce livre que j'ai vu dans la vitrine ? Je voudrais l'acheter en cadeau.	Combien ça coûte ?
+où sont les toilettes ?	where is the bathroom?	0	a347c156ec439584958c72082ab282b0	Excusez-moi, où sont les toilettes s'il vous plaît ? Je viens ici pour la première fois.	Où sont les toilettes ?
+je voudrais	I would like	0	c901fde6cd464d5299612117b5f7ab45	Je voudrais un café et un croissant à la crème, s'il vous plaît, et aussi un verre d'eau.	Je voudrais un café.
+l'addition, s'il vous plaît	the bill, please	0	5862049fb0fd0e277da8461d408b216a	Excusez-moi, l'addition, s'il vous plaît. Nous avons fini de manger et nous voudrions payer.	L'addition, svp.
+l'eau	water	0	6b33d767d7f29fbcc372167f68ca3c4d	L'eau du robinet dans cette ville est très bonne et on peut la boire sans aucun problème.	Je bois de l'eau.
+la nourriture	food	0	65766dbf8e39be2461f89ea652c7142f	La nourriture française est célèbre dans le monde entier pour sa qualité et ses saveurs authentiques.	Bonne nourriture.
+j'ai faim	I'm hungry	0	0f25e1b38ce881522d376c839525fe45	J'ai très faim, je n'ai rien mangé depuis le petit-déjeuner ce matin, on va manger quelque chose ?	J'ai faim.
+j'ai soif	I'm thirsty	0	75ab42e90fae1014bd3def9674428a5c	J'ai très soif après cette longue marche au soleil, je voudrais un grand verre d'eau fraîche.	J'ai soif.
+santé !	cheers!	0	85e139ba74a9adef303f32048785d309	Santé à tous pour cette belle soirée que nous allons passer ensemble entre vieux amis !	À votre santé !
+aujourd'hui	today	0	874cedf40bfc41e7f813449a995b2534	Aujourd'hui c'est une très belle journée ensoleillée, parfaite pour faire une longue promenade.	C'est aujourd'hui.
+demain	tomorrow	0	2fdb30a5f61f865b5262f67c8bb25c34	Demain matin je pars très tôt pour un voyage d'affaires en Allemagne.	À demain !
+hier	yesterday	0	24072372acf322fe3f6b1ed476750b44	Hier soir nous avons dîné avec mes parents dans un excellent restaurant italien.	Hier il pleuvait.
+maintenant	now	0	66b37b6043c2c178270e0945493c460a	Maintenant je ne peux pas parler, je te rappelle plus tard quand je serai libre.	Maintenant je pars.
+à droite	to the right	0	dc61148fa991c78f2536f58a8e7274d9	Tourne à droite au prochain feu rouge et puis va toujours tout droit jusqu'à la place principale.	Va à droite.
+à gauche	to the left	0	0806a7d86c1938c2701e30d25f10d8b2	Tourne à gauche au prochain carrefour et puis tu trouveras la gare sur ta droite.	Va à gauche.
+tout droit	straight ahead	0	d86e96ad200b1c59dd9f6cd09de21cfd	Va tout droit pendant deux kilomètres et tu trouveras le musée sur ta droite après le pont.	Tout droit.
+arrête !	stop! (informal)	0	1eee6f899b9c908db383493c3667f0c3	Arrête tout de suite ! Tu cours beaucoup trop vite et tu pourrais te faire mal sur la route mouillée.	Arrête-toi !
+ouvert	open	0	03de5489371ed1ac93da59daa3392b01	Le magasin est ouvert de neuf heures du matin à huit heures du soir, même le dimanche.	C'est ouvert.
+fermé	closed	0	639574f73aa51e0fdf06c7466c78e2ce	Le musée est fermé le lundi, mais il est ouvert tous les autres jours de la semaine.	C'est fermé.
+je t'aime	I love you	0	9a1be3967faa1ee1dbc22faafd32c3ef	Je t'aime de tout mon cœur et je veux passer le reste de ma vie à tes côtés.	Je t'aime très fort.
+bienvenue	welcome	0	a8072a7da49c0915dce4645767377319	Bienvenue chez nous, nous t'attendions depuis longtemps, installe-toi et bois quelque chose.	Bienvenue à tous !
+bonne chance	good luck	0	858401cefa440b20859236d48e6bbd56	Bonne chance pour ton examen demain matin, je suis sûr que tout va très bien se passer.	Bonne chance !

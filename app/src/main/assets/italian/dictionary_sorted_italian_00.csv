@@ -1,0 +1,50 @@
+ciao	hello / hi / bye	0	6e6bc4e49dd477ebc98ef4046c067b5f	Ciao, come stai? Non ti vedevo da molto tempo, mi sei davvero mancato tanto.	Ciao, a domani!
+arrivederci	goodbye	0	586815c0bf51ed32a7f9f7258b4d5350	Arrivederci, è stato davvero un piacere averti conosciuto durante questa bella serata trascorsa insieme.	Arrivederci a presto.
+buongiorno	good morning / good day	0	7b4de9723f22e1be23b658e025250a5e	Buongiorno, vorrei un caffè e un cornetto al cioccolato, per favore, grazie mille.	Buongiorno a tutti.
+buonasera	good evening	0	4e9c20975aa8b6f8db39b43215ad5b82	Buonasera, signore, posso aiutarla con qualcosa di particolare per la sua serata speciale?	Buonasera, signora.
+buonanotte	good night	0	9b2b7f3e4d7ccb0163356833fdffc5a9	Buonanotte, cara, sogni d'oro e a domani mattina presto per fare colazione insieme.	Buonanotte, dormi bene.
+per favore	please	0	926264b17767595777e464b38603e7fe	Mi può passare il sale, per favore, e anche il pepe nero che è lì accanto al pane?	Un caffè, per favore.
+grazie	thank you	0	717173381d01dc6f05834dc3e65a8f60	Grazie mille per il tuo aiuto, non avrei mai potuto finire questo lavoro senza di te.	Grazie tante.
+prego	you're welcome / please go ahead	0	395b1881bb417b7594c493286581b45d	Prego, accomodati pure sul divano del salotto, ti porto subito un caffè caldo.	Prego, si figuri.
+scusi	excuse me (formal)	0	014a8af9022bfc823eb52a5961bfa187	Scusi, mi può dire dov'è la stazione dei treni più vicina, sono nuovo in questa città?	Scusi, che ore sono?
+mi dispiace	I'm sorry	0	d45710c880704d694c738a3a226b8046	Mi dispiace molto per quello che è successo ieri, non era mia intenzione farti del male.	Mi dispiace tanto.
+sì	yes	0	62d08c707c0569f0482567ffb96a57e5	Sì, sono d'accordo con la tua proposta e voglio partecipare al progetto.	Sì, grazie.
+no	no	0	7fa3b767c460b54a2be4d49030b349c7	No, non posso venire stasera perché ho un altro impegno molto importante.	No, grazie.
+come stai?	how are you? (informal)	0	87fc65b0922ed1cb846445077d5c66e3	Ciao Marco, come stai? Non ci vediamo da molto tempo, dimmi tutto della tua vita.	Ciao, come stai?
+sto bene	I'm fine / I'm well	0	b7e23d2e11494c587ceca61b2d20795b	Sto bene, grazie per avermi chiesto, anche se sono un po' stanco per via del lavoro.	Sto bene, grazie.
+come ti chiami?	what's your name? (informal)	0	f7db43231892c6b72f702afa22f0cb0d	Piacere di conoscerti, come ti chiami e da dove vieni se posso chiedere?	Come ti chiami?
+mi chiamo	my name is	0	6c44d6b543407364cf36e5be4bab9a5b	Mi chiamo Luca e vengo da Milano, ma adesso vivo a Roma per motivi di lavoro.	Mi chiamo Anna.
+piacere	nice to meet you / pleasure	0	8a0f1475e29a96be10e9e625eeef8fcf	Piacere di conoscerti, ho sentito parlare tanto di te dai nostri amici comuni.	Piacere mio.
+parli inglese?	do you speak English? (informal)	0	50eb9e1f84cba69ed134e8ab064b4933	Scusa, parli inglese per caso? Il mio italiano non è ancora molto buono.	Parli inglese?
+non capisco	I don't understand	0	4a148e5f2e6db4ccc4546c78dfd8f8cc	Mi scusi, non capisco quello che mi sta dicendo, può parlare un po' più lentamente?	Non capisco, scusa.
+non lo so	I don't know	0	bf0bcb9b90787ba1be23515111446bc0	Non lo so davvero, mi dispiace, ma puoi provare a chiedere a qualcun altro che potrebbe sapere.	Non lo so.
+aiuto!	help!	0	15234f62ec962e0d49a9b34df0922c31	Aiuto! C'è stato un incidente sulla strada principale e qualcuno è ferito, chiamate un'ambulanza!	Aiuto, presto!
+parla più lentamente, per favore	speak more slowly, please	0	461d08fb0fdbc46f6095fc6b12ac2072	Mi scusi, parla più lentamente, per favore, sto ancora imparando l'italiano.	Più lentamente, prego.
+puoi ripetere?	can you repeat?	0	d3c4d6c9b90f4095cf315d7caa3f2161	Scusa, puoi ripetere quello che hai appena detto? Non ho capito bene a causa del rumore.	Puoi ripetere?
+come si dice?	how do you say?	0	4a759ff8c1d84fe15dd2e6c6f12575a2	Scusa, come si dice questa parola in italiano? Non riesco a trovarla sul mio dizionario.	Come si dice?
+dove	where	0	bc73b87e5b85cf9434103e0f7d80d798	Dove abiti adesso e dove lavori di solito durante la settimana?	Dove sei?
+quando	when	0	458c37724b07758259619017ccc86376	Quando arriverai a casa stasera, ti preparerò la cena che ti piace.	Quando parti?
+perché	why / because	0	9ec9c29be21ecf2943988d3dc8ac5e69	Perché non sei venuto ieri sera alla festa di compleanno di Maria?	Perché no.
+come	how / like / as	0	12de3a4dab98ef8a7d67aace8150b540	Come stai oggi e come è andata la tua giornata di lavoro?	Come va?
+quanto costa?	how much does it cost?	0	41ec0ccaf4c92993078234fb1383fe98	Mi scusi, quanto costa questo libro che ho visto in vetrina? Vorrei comprarlo come regalo.	Quanto costa?
+dov'è il bagno?	where is the bathroom?	0	88669d00e587cb9a4546d0910f57d2c2	Mi scusi, dov'è il bagno per favore? Sono qui per la prima volta e non conosco questo posto.	Dov'è il bagno?
+vorrei	I would like	0	375ccac06259fc8bc225a83fbf7c5995	Vorrei un caffè e un cornetto alla crema, per favore, e poi anche un bicchiere d'acqua.	Vorrei un caffè.
+il conto, per favore	the bill, please	0	b6f164eb0ff79f25601c05baffaacee0	Mi scusi, il conto, per favore. Abbiamo finito di mangiare e adesso vorremmo pagare.	Il conto, prego.
+l'acqua	water	0	1decb709afa2838c239dbea27b231074	L'acqua del rubinetto in questa città è molto buona e si può bere senza alcun problema.	Bevo l'acqua.
+il cibo	food	0	c7921b4b38cc41cb598c335a5fc5cb0a	Il cibo italiano è famoso in tutto il mondo per la sua qualità e i suoi sapori autentici.	Buon cibo.
+ho fame	I'm hungry	0	1b80fbe742e35316d3e263aea56b9427	Ho molta fame, non mangio dalla colazione di questa mattina, andiamo a mangiare qualcosa?	Ho fame.
+ho sete	I'm thirsty	0	129b1cd5ff265b0cd1c9369063ee6a5e	Ho molta sete dopo questa lunga camminata sotto il sole, vorrei un bicchiere d'acqua fresca.	Ho sete.
+salute!	cheers! / bless you!	0	746c0c377d7774e1465ce37e4bce114b	Salute a tutti per questa serata speciale che passeremo insieme con i nostri cari amici!	Cin cin, salute!
+oggi	today	0	beef4039b5e78a23e80aa6560b93f429	Oggi è una bellissima giornata di sole, perfetta per fare una lunga passeggiata.	Oggi è lunedì.
+domani	tomorrow	0	cf2b980bf4f5b680e37148f1cc1594ab	Domani mattina partirò presto per un viaggio di lavoro in Germania.	A domani!
+ieri	yesterday	0	cef3d1b1862f28d5502f08740ff6534b	Ieri sera abbiamo cenato con i miei genitori in un ottimo ristorante italiano.	Ieri pioveva.
+adesso	now	0	32c117cd529791e63ca0966a0b3b81f3	Adesso non posso parlare, ti chiamo più tardi quando sarò libero.	Adesso vado.
+a destra	to the right	0	d1c37b01307ccea8001d4c0bfc722dde	Gira a destra al prossimo semaforo e poi vai sempre dritto fino alla piazza principale.	Vai a destra.
+a sinistra	to the left	0	fc42d33d065158a47534a6c8da95a99c	Gira a sinistra al prossimo incrocio e poi troverai la stazione sulla tua destra.	Vai a sinistra.
+sempre dritto	straight ahead	0	6de5130e26ed432a267dd38a88449ca3	Vai sempre dritto per due chilometri e troverai il museo sulla tua destra dopo il ponte.	Sempre dritto.
+fermati!	stop! (informal)	0	57951a4852710af40cb169de6610e5bc	Fermati subito! Stai correndo troppo veloce e potresti farti molto male sulla strada bagnata.	Fermati qui!
+aperto	open	0	2fa2960ca359ecab34c604ead0555ae6	Il negozio è aperto dalle nove di mattina fino alle otto di sera, anche la domenica.	È aperto.
+chiuso	closed	0	0842261b88150fc70b3c3e9b401a0117	Il museo è chiuso il lunedì, ma è aperto tutti gli altri giorni della settimana.	È chiuso oggi.
+ti amo	I love you (romantic)	0	f49f740b9c2fa400ddd6d436c873ef3e	Ti amo con tutto il cuore e voglio passare il resto della mia vita insieme a te.	Ti amo tanto.
+benvenuto	welcome	0	ef69dcb034640470c76234b3de9eec95	Benvenuto a casa nostra, ti aspettavamo da molto tempo, accomodati pure e bevi qualcosa.	Benvenuto a tutti!
+buona fortuna	good luck	0	0d875b6f8a527efc4004efde728b6443	Buona fortuna per il tuo esame domani mattina, sono sicuro che andrà tutto benissimo.	Buona fortuna!

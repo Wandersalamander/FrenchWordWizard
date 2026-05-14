@@ -54,7 +54,6 @@ der Bruder	the brother	1	cb0197fc5461362ec43bca7ab2eca1e5	Mein älterer Bruder, 
 die Schwester	the sister	1	3b5cd06a5eca39c9cb7eb57c989e2fd4	Meine Schwester, die als Krankenschwester in einem großen Krankenhaus arbeitet.	Meine Schwester singt gern.
 der Sohn	the son	1	a988d5d95d9b6162ab1c614e4c8c358b	Der Sohn, auf den die Eltern so stolz waren.	Ihr Sohn geht zur Schule.
 die Tochter	the daughter	1	89b2649a2066081a6dd1bc9c9a55b3b7	Die Tochter, die sich immer gewünscht hatte, Lehrerin zu werden.	Die Tochter hilft der Mutter.
-das Wasser	the water	1	d5a3d86070428e1287e600b3300dc68c	Obwohl das Wasser im See kristallklar aussah, wurde davor gewarnt, es zu trinken, weil es nicht getestet worden war.	Das Wasser ist kalt.
 das Geld	the money	1	75bba46a063efa11f2eddde5c4b068fb	Das Geld, das für das Projekt bereitgestellt worden war, reichte nicht aus.	Ich habe kein Geld.
 die Frage	the question	1	b88712d05a412528ee274f4ab47d6e4b	Die Frage, ob man den Fortschritt aufhalten kann, wurde in der Diskussion so hitzig debattiert.	Das ist eine gute Frage.
 die Antwort	the answer	1	e6a981166dfe21475fb0dd78d5c73ce0	Die Antwort auf diese komplizierte Frage konnte erst gefunden werden.	Ich kenne die Antwort.
@@ -66,7 +65,6 @@ weil	because	1	d26b2f1fcc7495ee47054cafd1978226	Weil der Zug Verspätung hatte u
 wenn	if; when; whenever	1	99a0863912d903a3e9fa31bd4cb83320	Wenn du mehr Zeit hättest und wenn das Wetter besser wäre, könnten wir einen langen Spaziergang durch den Wald machen.	Wenn es regnet, bleibe ich zu Hause.
 dass	that (conjunction)	1	376e9db76e28b21e10581ebedf4aaf71	Es wurde berichtet, dass die Regierung beschlossen hat, dass neue Gesetze zum Umweltschutz verabschiedet werden sollen.	Ich weiß, dass du recht hast.
 als	when (past); than	1	a99bbb46d5bbb6e08229e1fd26c5a2c6	Als er nach vielen Jahren in seine Heimatstadt zurückkehrte, war alles anders, als er es in Erinnerung hatte.	Als ich jung war, spielte ich viel.
-wie	how; like; as	1	e3ad81d0ae9c3638ea7782430598712b	Er fragte sich, wie es möglich war, dass alles so schnell ging, wie es in dem Bericht beschrieben worden war.	Wie heißt du?
 nicht	not	1	380fbbf7d6a14f32c176d6ec618b8bbf	Obwohl er versprochen hatte, nicht zu spät zu kommen, schaffte er es wieder nicht, pünktlich zu sein.	Ich verstehe das nicht.
 auch	also; too	1	b228127f96a5bd519b898f1246afa81e	Auch wenn viele Menschen anderer Meinung sind, glaube ich.	Ich komme auch mit.
 noch	still; yet	1	fc43371b8d7ffb1986631774aca29f7a	Obwohl sie noch nie zuvor in Deutschland gewesen war, sprach sie die Sprache so gut.	Er schläft noch.
@@ -77,11 +75,7 @@ immer	always	1	440340462f89071021422ce05161d794	Egal was passiert, sie versucht 
 wieder	again	1	dae9c3cf5b00b8d5870680d6ab46a359	Nachdem das alte Gebäude wieder aufgebaut worden war, kehrten die Bewohner zurück.	Versuch es noch einmal.
 hier	here	1	e251f60de68683c633d92c487cd384ae	Hier, wo wir jetzt stehen, befand sich vor hundert Jahren ein großer Marktplatz.	Ich bin hier.
 dort	there	1	efe13725770fb026bbeb6e9e18ee301d	Dort, wo früher eine alte Fabrik gestanden hatte, wurde ein moderner Park angelegt, in dem die Kinder spielen können.	Das Buch liegt dort.
-jetzt	now	1	b7354f97a132d3ed96bf1d335678523a	Jetzt, wo alle Vorbereitungen abgeschlossen sind, können wir endlich mit dem Projekt beginnen.	Ich gehe jetzt.
 dann	then	1	35a45946ea3584450e21b219fd186965	Wenn du zuerst deine Hausaufgaben machst und dann dein Zimmer aufräumst, darfst du fernsehen.	Zuerst essen wir, dann gehen wir.
-heute	today	1	d0259093e7b73ecc06dffdad53269b80	Heute wurde bekannt gegeben, dass die Schule, die seit Jahren renoviert werden sollte, endlich modernisiert wird.	Heute ist Montag.
-morgen	tomorrow	1	f5f3f4220e4c0a758fa0d99adbbda962	Obwohl wir gehofft hatten, morgen in den Urlaub zu fahren, müssen wir die Reise verschieben.	Morgen habe ich frei.
-gestern	yesterday	1	a8477ed16475ff35ffa77a904aabe170	Gestern Abend, als wir im Restaurant saßen, erzählte sie mir, was ihr gestern auf der Arbeit Seltsames passiert war.	Gestern war es kalt.
 vielleicht	maybe; perhaps	1	ef5e24e148e34582a6e48a4f1f1476dc	Vielleicht wäre es besser gewesen, wenn wir uns vorher informiert hätten.	Vielleicht komme ich morgen.
 zusammen	together	1	7419c06ffcbd83d741e4b4f1e4c9bd1f	Obwohl sie seit vielen Jahren nicht mehr zusammen gearbeitet hatten, fanden sie sofort wieder einen gemeinsamen Rhythmus.	Wir gehen zusammen einkaufen.
 allein	alone	1	a3d09fac3028fc6dbb516964f5f274f0	Nachdem alle gegangen waren, saß sie allein in dem großen Haus und fragte sich, ob sie es schaffen würde.	Er lebt allein.

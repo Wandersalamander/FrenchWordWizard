@@ -44,12 +44,6 @@ ma	but	1	b74df323e3939b563635a2cba7a7afba	Volevo andare al mare ma il tempo non 
 se	if / whether	1	efad7abb323e3d4016284c8a6da076a1	Se piove domani, non andremo al parco a fare la solita passeggiata.	Se vuoi.
 anche	also / too	1	b58edc74e6fc0df878c88e403a9f4045	Anche io vorrei venire alla festa stasera con voi tutti, se possibile.	Anch'io.
 non	not	1	14b8f0494c6f1460c3720d0ce692dbca	Non ho ancora finito di leggere il libro che mi hai prestato la settimana scorsa.	Non lo so.
-sì	yes	1	62d08c707c0569f0482567ffb96a57e5	Sì, sono d'accordo con la tua proposta e voglio partecipare al progetto.	Sì, grazie.
-no	no	1	7fa3b767c460b54a2be4d49030b349c7	No, non posso venire stasera perché ho un altro impegno molto importante.	No, grazie.
-come	how / like / as	1	12de3a4dab98ef8a7d67aace8150b540	Come stai oggi e come è andata la tua giornata di lavoro?	Come ti chiami?
-quando	when	1	458c37724b07758259619017ccc86376	Quando arriverai a casa stasera, ti preparerò la cena che ti piace.	Quando parti?
-dove	where	1	bc73b87e5b85cf9434103e0f7d80d798	Dove abiti adesso e dove lavori di solito durante la settimana?	Dove sei?
-perché	why / because	1	9ec9c29be21ecf2943988d3dc8ac5e69	Perché non sei venuto ieri sera alla festa di compleanno di Maria?	Perché no.
 molto	very / much	1	896d6f56dd084f43a240f393f7de5d82	Sono molto stanco oggi perché ho lavorato molto durante la giornata intera.	Molto bene.
 poco	little / few	1	9709638de74d20a5482f5e409f0a0b1e	Ho dormito poco stanotte perché ho avuto poco tempo per riposarmi davvero.	Un po'.
 troppo	too much / too many	1	e393dd1705836e4f61f94d32944fe538	Hai mangiato troppo a pranzo e ora ti senti troppo stanco per uscire.	Troppo caro.
@@ -63,11 +57,7 @@ bene	well	1	bfe379567e3fe8c3326892a4faa7fb7c	Tutto è andato bene durante l'esam
 male	badly	1	07cf4f8f5d8b76282917320715dda2ad	Ho dormito male stanotte e ora mi sento male e molto stanco.	Mi sento male.
 qui	here	1	9d24420082d450cb81caf59e2b173279	Vieni qui un momento, devo dirti una cosa molto importante per noi.	Sono qui.
 là	there (over there)	1	7c9ac3d17e5ae0a5124619689e48de10	Là in fondo alla strada c'è una bellissima piazza con una fontana antica.	Guarda là.
-oggi	today	1	beef4039b5e78a23e80aa6560b93f429	Oggi è una bellissima giornata di sole, perfetta per fare una lunga passeggiata.	Oggi è lunedì.
-ieri	yesterday	1	cef3d1b1862f28d5502f08740ff6534b	Ieri sera abbiamo cenato con i miei genitori in un ottimo ristorante italiano.	Ieri pioveva.
-domani	tomorrow	1	cf2b980bf4f5b680e37148f1cc1594ab	Domani mattina partirò presto per un viaggio di lavoro in Germania.	A domani!
 ora	now / hour	1	d41fe446faeb9c02909aa61b34736059	Ora devo andare a lavorare perché tra un'ora ho una riunione importante.	Che ora è?
-adesso	now	1	32c117cd529791e63ca0966a0b3b81f3	Adesso non posso parlare, ti chiamo più tardi quando sarò libero.	Adesso vado.
 dopo	after / afterwards	1	ac4c777a9b80627bcd4b2cab4ec016f2	Dopo cena guardiamo un film insieme sul divano del salotto comodo.	Dopo di te.
 prima	before / first	1	3c00ab9ee5f47c8afc7ab4fc62342ef4	Prima di uscire devo finire questo lavoro importante per il mio capo.	Prima o poi.
 presto	early / soon	1	1e954771813210da5673f51da7e4394c	Mi alzo sempre presto la mattina per fare colazione con calma prima del lavoro.	A presto!
@@ -102,7 +92,6 @@ dormire	to sleep	1	c82d316d37ac8baaaeaa3f01c1abbb28	Non riesco a dormire bene qu
 leggere	to read	1	ac98708af2596f77e08cffb7e6770ea1	Mi piace leggere prima di dormire e leggere libri di storia antica.	Leggo un libro.
 scrivere	to write	1	40f17263e89df5d466062418398f207d	Devo scrivere una lettera lunga e scrivere anche un'email importante al direttore.	Scrivo a mio padre.
 amare	to love	1	dc65e5f6d7faf6ec93cea9dbbd3a04d5	Voglio amare ed essere amato perché amare è la cosa più bella del mondo.	Ti amo.
-piacere	to like (literally to please)	1	8a0f1475e29a96be10e9e625eeef8fcf	Mi piace molto la pizza e mi piacciono le città italiane storiche.	Piacere mio.
 comprare	to buy	1	c52b4fc0cbf98200d9a83806337df79a	Devo comprare il pane e voglio comprare anche un regalo per mia sorella.	Compro questo.
 aprire	to open	1	a82f4f4bb48eb914c734f5143feb87a5	Puoi aprire la finestra perché vorrei aprire anche la porta principale?	Apri la porta.
 chiudere	to close	1	e75da42968e1e140cf3d0257dc874d63	Devo chiudere la porta e chiudere bene tutte le finestre prima di uscire.	Chiudi la porta.
@@ -126,7 +115,7 @@ partire	to leave / to depart	1	2746791a7d90439c27371c1b4827131c	Devo partire pre
 arrivare	to arrive	1	258c350634ea8098789d1bff827a71f0	Quando arriva il treno? Voglio arrivare puntuale all'appuntamento di lavoro.	Sono arrivato.
 diventare	to become	1	496441ab14e293244268496372bda8b7	Voglio diventare medico e diventare una persona migliore con il tempo.	È diventato grande.
 vivere	to live	1	52f7accef9eab1db5ed275640454a4f4	Voglio vivere a Roma e vivere una vita piena di esperienze nuove.	Vivo a Milano.
-la casa	house / home	1	202447d5d44ce12531f7207cb33b6bf7	La mia casa è piccola ma è sempre piena di amici a casa mia.	Sono a casa.
+la casa	house / home	1	202447d5d44ce12531f7207cb33b6bf7	La mia casa è piccola ma è sempre piena di amici che vengono a trovarmi.	Sono a casa.
 l'anno	year	1	ddc70b20eb1ff09fea808f51cc6d5295	Quest'anno ho compiuto trent'anni e l'anno prossimo voglio cambiare lavoro completamente.	Buon anno!
 il giorno	day	1	c08507a6f6dea640ddef54debd9616ae	Ogni giorno è un nuovo giorno per imparare qualcosa di interessante e utile.	Buongiorno!
 il tempo	time / weather	1	e34c64a05273012b2868d8b04b812089	Non ho tempo oggi e il tempo è brutto, quindi resto a casa volentieri.	Che tempo fa?
@@ -148,7 +137,6 @@ il figlio	son / child	1	33da09c39001c9ab716070b07a0d7f51	Mio figlio ha cinque an
 la figlia	daughter	1	dcb4fcc0e7ab417ecc239414c62f6bb7	Mia figlia ama leggere libri e scrivere storie nel suo diario personale.	Una figlia brava.
 il fratello	brother	1	94cf09e7f0b7ee742cd54236a4a1940f	Mio fratello è più grande di me di tre anni e vive a Roma.	Mio fratello viene.
 la sorella	sister	1	4e9a8a80593aa4d9902705a9cad3fc8d	Ho una sorella minore che studia medicina all'università di Bologna.	Mia sorella è dottoressa.
-l'acqua	water	1	7e84b7b8d1c678647abafd23449a1db1	L'acqua del mare è ancora fredda in primavera anche con il sole.	Un bicchiere d'acqua.
 il pane	bread	1	c6c6ce72f4dff102e38d74f7143a2ea8	Il pane fresco del mattino è il mio cibo preferito a colazione con il burro.	Pane e burro.
 il vino	wine	1	69bb23ca275704f46c65d8ed4ac3b5d7	Il vino italiano è famoso in tutto il mondo per la sua qualità eccellente.	Un bicchiere di vino.
 il caffè	coffee	1	c9d8bbe90b0114f9fc5cad3a3b589aea	Il caffè italiano è il migliore del mondo, soprattutto al mattino presto.	Un caffè, per favore.

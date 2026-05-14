@@ -8,7 +8,6 @@
 他们 (tāmen)	they; them	1	7ee53505b282cea751aaefba1e87585d	他们刚从上海出差回来,带了很多礼物。	他们在哪儿？
 自己 (zìjǐ)	oneself; self	1	5a3f3258c7a0fbf0750496c7d9ee5a69	你要相信自己,不要总是依赖别人的帮助。	靠自己。
 大家 (dàjiā)	everyone	1	988349993e28965baae2eefe1c0b4ca7	大家都来了,我们可以开始今天的会议了。	大家好。
-是 (shì)	to be (am, is, are)	1	5f6236190bca45d269c5b39da5277e41	这是我第一次来中国,一切都让我感到新奇。	我是老师。
 不是 (búshì)	to not be	1	77e2fbb10166160ccd9f1c42fc349a87	这不是我的手机,我的应该是黑色的那一个。	这不是。
 有 (yǒu)	to have; there is	1	137daaa990ee4fbfb4779c8e577be96c	你有时间帮我看一下这份合同吗？	我有钱。
 没有 (méiyǒu)	to not have	1	3ac830c3a68963e619d449be67ed0498	对不起,我今天没有带现金,可以刷卡吗？	没有问题。
@@ -53,22 +52,15 @@
 告诉 (gàosu)	to tell	1	f24a2acd0deaeef0a066fdf653277440	请告诉他我下午会去办公室找他。	告诉我。
 问 (wèn)	to ask	1	755ac0bea59eae808bc80bfaf50f9736	我想问您一下,这附近哪里有地铁站？	问问题。
 回答 (huídá)	to answer	1	555655e7b444ad659486011616c0d567	请认真回答下面的问题,不要漏掉。	回答我。
-开 (kāi)	to open; to drive; to turn on	1	7d90697a419c4557be9b491898f9df59	请把窗户打开,屋里太闷了。	开门。
-关 (guān)	to close; to turn off	1	a52dc054582167a21d9b23aa82bb55b2	出门前记得把空调关掉,省点电费。	关门。
 找 (zhǎo)	to look for; to find	1	3f8f8c2f28436ce1cdd6ab6c94aeb501	你在找什么？我帮你一起找吧。	找东西。
 等 (děng)	to wait	1	0745a6f4d3e3b1eaab80bbed7e1fe0ab	请等我一下,我马上就好。	等一下。
 帮 (bāng)	to help	1	e7e32e31cc110c85a360e73eb7563248	谢谢你今天帮我搬家,真的太辛苦你了。	帮忙。
 让 (ràng)	to let; to allow; to make	1	421d075d4fcb32f3ed5b13095a86180e	妈妈让我多吃点蔬菜,说对身体好。	让一让。
-请 (qǐng)	please; to invite	1	6716c40123d5f9a6307f7fd943eb445f	请坐下,服务员马上过来为您点单。	请进。
 谢谢 (xièxiè)	thank you	1	6b3bdae94e8fb5ffee1361f8033d58e9	谢谢你的礼物,我真的非常喜欢。	谢谢你。
 不客气 (búkèqi)	you're welcome	1	6672019332abf303e515c7fa192d3fb3	不客气,这都是我应该做的小事。	不客气。
 对不起 (duìbùqǐ)	sorry	1	3e3cce4f2d7ac3de88ec49fedf220df8	对不起,我迟到了,路上堵车太严重。	对不起。
 没关系 (méiguānxi)	it doesn't matter	1	77237e9dacec776bbd17ce4c6d9da4f2	没关系,我也是刚到没几分钟。	没关系。
 你好 (nǐhǎo)	hello	1	77a408274f812eec8bde7e7a1ef34e4e	你好,我是新来的同事,请多多指教。	你好。
-再见 (zàijiàn)	goodbye	1	8be74e27d084f8df2e8b6efea086a308	时间不早了,我先走了,我们改天再见。	再见。
-早上好 (zǎoshang hǎo)	good morning	1	eba4352e2c0b8e8f9fdb57bee0a439f0	早上好,昨晚睡得还好吗？	早上好。
-晚上好 (wǎnshang hǎo)	good evening	1	6cefe7010cf1765d51d3eb10511133e9	晚上好,欢迎大家来参加今晚的派对。	晚上好。
-晚安 (wǎn'ān)	good night	1	3c43b852ce5e19340c139b0b603ed54b	时间不早了,大家早点休息,晚安。	晚安。
 的 (de)	's; of	1	5bb37173c91bbe153ccb126594d4b290	这是我的电脑,请不要随便动里面的文件。	我的书。
 了 (le)	did; now (completed / changed)	1	fddf72b3dd7ff5c305c2bb8e3356d36d	我已经吃过饭了,谢谢你的邀请。	我懂了。
 着 (zhe)	-ing (ongoing)	1	2988ebcf25a250cc5e42d3cb63c1c6b5	他在沙发上躺着看电视,看得很入迷。	开着门。
@@ -77,7 +69,6 @@
 呢 (ne)	and...? (follow-up question)	1	5b5f629838fa89fe77775d40a83dfc80	我喝咖啡,你呢,你想喝点什么？	你呢？
 吧 (ba)	let's; right? (suggestion)	1	7536d9f248884a13e42c6ce1641b3389	我们一起去看电影吧,听说这部口碑很好。	走吧。
 啊 (a)	! (exclamation)	1	463ff05f5f9090eac98019eada278058	这个风景真美啊,我以前没注意过。	好啊。
-不 (bù)	not	1	4b6cbba39545883bbfe5e8f613f4eba6	不行,这个时间我已经有安排了。	不要。
 没 (méi)	not (past); have not	1	f5110eb0d5885fd91bfd763c4d1d0a72	我今天没吃早饭,现在饿得头晕。	没事。
 别 (bié)	don't	1	50923859203b1ac78c7e7987e388ce7f	别担心,事情没你想象的那么严重。	别走。
 一 (yī)	one	1	7b70ee2abf4ee19f06e71aa3efa23675	我每天早上吃一个鸡蛋和一杯牛奶。	一个人。
@@ -101,12 +92,8 @@
 什么 (shénme)	what	1	18d3970c6fbe98336ab5e62be4bd7a07	你周末一般做什么,有什么爱好吗？	什么？
 谁 (shéi)	who	1	f88b4b580851576372665e67924fdbad	这本书是谁的？我刚才在桌子上看到的。	是谁？
 哪 (nǎ)	which	1	9be1857cf7aa71e2c31d574c2e38d3d2	这几件衣服你比较喜欢哪一件？	哪个？
-哪里 (nǎlǐ)	where	1	d7282f3d23498533e9e9b10bf8217c93	请问最近的地铁站在哪里？	哪里？
 哪儿 (nǎr)	where	1	ecad12cba7b2ce8949cf1509785fc827	你昨天晚上去哪儿了,我打你电话没人接。	去哪儿？
-怎么 (zěnme)	how	1	8ffae31c2be0654fcfcbd94e1ee25a11	这个字怎么读？我查字典也没找到。	怎么了？
 怎么样 (zěnmeyàng)	how about; how is it	1	6bf53e0feeda1a47cb7a77f564a804de	这家餐厅怎么样,你觉得味道好吗？	怎么样？
-为什么 (wèishénme)	why	1	34a3fd5cf91524a3988bee973fc78410	你为什么这么晚才回家,我担心死了。	为什么？
-什么时候 (shénme shíhou)	when	1	ffc9fb2313dc94f88d81b42c9e5874b8	我们什么时候开始这个新项目？	什么时候？
 这 (zhè)	this	1	385e5dceefff66dd1b7c44e5bf777ced	这是我新买的手机,屏幕特别清晰。	这是。
 那 (nà)	that	1	8e41e9b1f0f6ecc29f95e4195da9d8b1	那是我同事,我们一起工作了五年。	那是。
 这个 (zhège)	this one	1	9c5c9c094e9ff353df76825cf589d152	这个苹果看起来很新鲜,我尝一个。	这个好。
@@ -115,10 +102,6 @@
 那里 (nàlǐ)	there	1	a7954c2a259a41559b209e07197e36b2	那里有家不错的咖啡馆,我们去坐坐。	在那里。
 这些 (zhèxiē)	these	1	e8136b9b236641b69f3beb28ea0a306c	这些文件你帮我整理一下,谢谢。	这些人。
 那些 (nàxiē)	those	1	d37853549b5033a14e8d8bf0d6331246	那些是我大学时的老照片,很有纪念意义。	那些事。
-现在 (xiànzài)	now	1	858e233a9bae41b4942c3f10ee97926f	现在已经九点了,我们应该出发了。	现在去。
-今天 (jīntiān)	today	1	a7ea62fa2d540aa0d9f28d938ea39964	今天天气很好,我们出去走走吧。	今天。
-明天 (míngtiān)	tomorrow	1	de7d83b77a5e2cd5de10315f93b753d4	明天早上八点我们在公司门口见。	明天见。
-昨天 (zuótiān)	yesterday	1	778c2bce7758fad24386432b93411c5f	昨天我和朋友一起去看了电影。	昨天来。
 后天 (hòutiān)	day after tomorrow	1	c119bd0462f0d4059be0e6286aa17074	后天是我的生日,你能来吗？	后天到。
 前天 (qiántiān)	day before yesterday	1	d16ed1de579dfe657983cf505cb25d7d	前天我刚从香港出差回来。	前天去。
 早上 (zǎoshang)	morning	1	c81fdcd4f2884e6228e676bf46fe2531	早上的空气很新鲜,适合跑步。	早上好。

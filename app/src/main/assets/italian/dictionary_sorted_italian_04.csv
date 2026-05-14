@@ -72,7 +72,7 @@ la torcia	torch / flashlight	4	865584c1134f749e00fceb10f28daf5f	Tengo sempre una
 il cavo	cable	4	5474b6884a407343aae5ba182690160c	Il cavo del caricatore del telefono è rotto e devo comprarne uno nuovo presto.	Un cavo lungo.
 la stufa	heater / stove	4	eb5fe0aa392f970fbd493b67f4e79fce	La stufa a legna riscalda il salotto durante le fredde serate invernali della montagna.	Una stufa calda.
 il ventilatore	fan	4	e0dcab232faa5c44a05093c823d1e4bc	Accendo il ventilatore d'estate quando fa troppo caldo per dormire senza problemi.	Un ventilatore acceso.
-l'orologio	clock / watch	4	f5e852552deb0ff9a3899938e77cccde	L'orologio del salotto suona ogni ora e mi ricorda che è quasi tempo di cena.	Che ore fa l'orologio?
+l'orologio	clock / watch	4	f5e852552deb0ff9a3899938e77cccde	L'orologio del salotto suona ogni ora e mi ricorda che è quasi tempo di cena.	Che ora segna l'orologio?
 la sveglia	alarm clock	4	d00165968bddd4cc7dfa39a4ffb39331	Metto la sveglia alle sette di mattina per andare al lavoro in tempo ogni giorno.	Suona la sveglia.
 la radio	radio	4	a398fb77df76e6153df57cd65fd0a7c5	Ascolto la radio in macchina mentre vado al lavoro per sentire le notizie del mattino.	Accendi la radio.
 la televisione	television	4	a0f4e7dd07cd8b27c8178cb89efedb85	Guardo la televisione la sera dopo cena per rilassarmi sul divano del salotto.	La televisione è accesa.
@@ -177,13 +177,7 @@ il milione	million	4	98b742e043d9689363bd6c966b0ace30	Sogno di vincere un milion
 il miliardo	billion	4	13f805b42e77f4d31fe6573566b37219	Ci sono miliardi di stelle nel cielo notturno che brillano sopra le nostre teste tranquille.	Un miliardo di euro.
 terzo	third	4	16d47ae5f4fb01553d0036dd5e339b9a	Sono il terzo figlio della mia famiglia e ho due fratelli maggiori entrambi sposati felicemente.	Il terzo posto.
 quarto	fourth	4	3deea690609707279ac05a533aea9ffc	Abito al quarto piano di un palazzo storico nel centro storico della bella città vecchia.	Un quarto d'ora.
-ciao	hi / bye	4	6e6bc4e49dd477ebc98ef4046c067b5f	Ciao, come stai? Non ti vedevo da molto tempo, mi sei davvero mancato tanto.	Ciao, a domani!
-buongiorno	good morning	4	7b4de9723f22e1be23b658e025250a5e	Buongiorno, vorrei un caffè e un cornetto al cioccolato, per favore, grazie mille.	Buongiorno a tutti.
-buonasera	good evening	4	4e9c20975aa8b6f8db39b43215ad5b82	Buonasera, signore, posso aiutarla con qualcosa di particolare per la sua serata speciale?	Buonasera, signora.
-buonanotte	good night	4	9b2b7f3e4d7ccb0163356833fdffc5a9	Buonanotte, cara, sogni d'oro e a domani mattina presto per fare colazione insieme.	Buonanotte, dormi bene.
-arrivederci	goodbye	4	586815c0bf51ed32a7f9f7258b4d5350	Arrivederci, è stato davvero un piacere averti conosciuto durante questa bella serata trascorsa insieme.	Arrivederci a presto.
 scusa	excuse me / sorry	4	938d9da3a4cd05fde69821bcef0cdf23	Scusa per il ritardo, c'era molto traffico in autostrada questa mattina presto.	Scusami tanto.
-prego	please / you're welcome	4	395b1881bb417b7594c493286581b45d	Prego, accomodati pure sul divano del salotto, ti porto subito un caffè caldo.	Prego, si figuri.
 il saluto	greeting	4	057c12fa28cee0b0727eeb500cba3afd	Mando un caloroso saluto a tutta la mia famiglia che vive lontano dall'Italia in America.	Un caro saluto.
 l'abbraccio	hug (noun)	4	f02cc64bb4a1df09763aef71921bced8	Ti mando un grande abbraccio e spero di vederti presto in Italia per le vacanze estive.	Un forte abbraccio.
 il bacio	kiss (noun)	4	64c657efe255318d42c9df4cdf923a0f	Le ho dato un bacio sulla guancia prima di partire per il lungo viaggio in America.	Un bacio dolce.
