@@ -112,12 +112,20 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
      * is independently weighted by its own sortValue, so a word with two
      * still-active skills appears twice — that's intentional: more unfinished
      * skills means more practice needed.
+     *
+     * [skillFilter] excludes skills from the selection pool — e.g. callers can
+     * skip [Skill.LISTEN] when the user has muted listening mode. The first
+     * skill ([Skill.READ]) is still used as the no-candidate fallback even if
+     * filtered out, since something has to be returned.
      */
-    fun getActiveVocabWeightened(): Pair<Vocab, Skill> {
+    fun getActiveVocabWeightened(
+        skillFilter: (Skill) -> Boolean = { true },
+    ): Pair<Vocab, Skill> {
         val firstSkill = Skill.ladder.first()
         val activePairs: List<Pair<Vocab, Skill>> = csvData.flatMap { vocab ->
             if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
             Skill.ladder.mapNotNull { skill ->
+                if (!skillFilter(skill)) return@mapNotNull null
                 if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
                 if (vocab.sortValue(skill) > 0.0) vocab to skill else null
             }
@@ -139,7 +147,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
             // The vocab may have one or more skills retired; pick the first one
             // that's actually active so we don't waste a round on a retired skill.
             val pickedSkill = Skill.ladder.firstOrNull {
-                pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
+                skillFilter(it) && pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
             } ?: firstSkill
             return pickedVocab to pickedSkill
         }

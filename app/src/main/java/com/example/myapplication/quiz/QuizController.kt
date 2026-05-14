@@ -133,6 +133,13 @@ class QuizController(
         if (currentSkill.flow.isCompromisedByListening(enabled)) {
             roundCompromised = true
         }
+        // Listening turned off mid-LISTEN-round: discard the current word and
+        // pick a new (non-LISTEN) one. updateVocab honours roundCompromised so
+        // the LISTEN stats are rolled back before advancing.
+        if (!enabled && currentSkill == Skill.LISTEN && currentVocab != null) {
+            updateVocab(0, newCandidates = false)
+            return
+        }
         val vocab = currentVocab ?: return
         displayForeignWord(vocab)
         if (views.textGuessLong.visibility == View.VISIBLE) {
@@ -357,9 +364,14 @@ class QuizController(
         currentSkill.flow.ttsAtRoundStart(vocab, tts)
     }
 
-    private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> =
-        if (newCandidates) vocabDictionary.getInactiveVocab()
-        else vocabDictionary.getActiveVocabWeightened()
+    private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> {
+        // When listening is off the LISTEN skill is excluded from the pool —
+        // getInactiveVocab always returns READ so it doesn't need the filter.
+        val skillFilter: (Skill) -> Boolean =
+            if (listeningEnabled) ({ true }) else ({ it != Skill.LISTEN })
+        return if (newCandidates) vocabDictionary.getInactiveVocab()
+        else vocabDictionary.getActiveVocabWeightened(skillFilter)
+    }
 
     private fun saveCurrentVocab(penalty: Long) {
         val vocab = currentVocab ?: return
