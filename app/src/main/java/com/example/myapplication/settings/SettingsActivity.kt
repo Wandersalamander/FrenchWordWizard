@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
+import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.SentenceSource
 import com.example.myapplication.llm.LlmService
@@ -86,10 +87,10 @@ class SettingsActivity : AppCompatActivity() {
         val retryButton = findViewById<Button>(R.id.aiRetryButton)
         val deleteButton = findViewById<Button>(R.id.aiDeleteButton)
 
-        downloadButton.setOnClickListener { LlmService.startDownload(applicationContext) }
-        cancelButton.setOnClickListener { LlmService.cancelDownload() }
-        retryButton.setOnClickListener { LlmService.retry(applicationContext) }
-        deleteButton.setOnClickListener { LlmService.deleteModel(applicationContext) }
+        downloadButton.setDebouncedOnClickListener { LlmService.startDownload(applicationContext) }
+        cancelButton.setDebouncedOnClickListener { LlmService.cancelDownload() }
+        retryButton.setDebouncedOnClickListener { LlmService.retry(applicationContext) }
+        deleteButton.setDebouncedOnClickListener { LlmService.deleteModel(applicationContext) }
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

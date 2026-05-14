@@ -3,6 +3,7 @@ package com.example.myapplication.quiz
 import android.view.View
 import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
+import com.example.myapplication.setDebouncedOnClickListener
 
 /**
  * Per-skill behavior strategy. Centralizes every place the quiz flow has to
@@ -100,7 +101,7 @@ internal object ReadFlow : SkillFlow {
     ) {
         views.textFr.text = vocab.french
         // Tap the visible foreign word to hear it again (no penalty).
-        views.textFr.setOnClickListener { onWordReplayed() }
+        views.textFr.setDebouncedOnClickListener { onWordReplayed() }
         views.textFr.isClickable = true
     }
 
@@ -132,12 +133,12 @@ internal object ListenFlow : SkillFlow {
     ) {
         if (listeningEnabled) {
             views.textFr.text = maskWord(vocab.french)
-            views.textFr.setOnClickListener { onMaskedWordTapped() }
+            views.textFr.setDebouncedOnClickListener { onMaskedWordTapped() }
             views.textFr.isClickable = true
         } else {
             // Listening disabled → word is shown like in READ. Allow no-penalty replays.
             views.textFr.text = vocab.french
-            views.textFr.setOnClickListener { onWordReplayed() }
+            views.textFr.setDebouncedOnClickListener { onWordReplayed() }
             views.textFr.isClickable = true
         }
     }

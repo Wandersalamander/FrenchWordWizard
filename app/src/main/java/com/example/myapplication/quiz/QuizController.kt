@@ -9,6 +9,7 @@ import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.SkillStats
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.llm.LlmService
+import com.example.myapplication.setDebouncedOnClickListener
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
@@ -154,8 +155,8 @@ class QuizController(
 
     fun setupLearnedButton() {
         views.buttonLearned.text = "✓"
-        views.buttonLearned.setOnClickListener {
-            val vocab = currentVocab ?: return@setOnClickListener
+        views.buttonLearned.setDebouncedOnClickListener {
+            val vocab = currentVocab ?: return@setDebouncedOnClickListener
             // First tap reveals everything so the user can verify they
             // actually know the word before committing on the second tap.
             revealCurrentForeignWord()
@@ -163,7 +164,7 @@ class QuizController(
             currentSentence?.let { renderSentence(it, mask = false) }
             views.textGuessLong.visibility = View.VISIBLE
             views.buttonLearned.text = "✓?"
-            views.buttonLearned.setOnClickListener {
+            views.buttonLearned.setDebouncedOnClickListener {
                 vocab.ignore = true
                 vocab.savePreferences()
                 setupLearnedButton()
@@ -455,7 +456,7 @@ class QuizController(
     private fun renderSentence(sentence: String, mask: Boolean) {
         if (mask) {
             views.textGuessLong.text = maskSentence(sentence)
-            views.textGuessLong.setOnClickListener { onMaskedSentenceTapped() }
+            views.textGuessLong.setDebouncedOnClickListener { onMaskedSentenceTapped() }
             views.textGuessLong.isClickable = true
         } else {
             views.textGuessLong.text = sentence

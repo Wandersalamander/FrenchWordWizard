@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.Skill
@@ -137,13 +138,13 @@ class WordListActivity : AppCompatActivity() {
             }
         }
 
-        prevButton.setOnClickListener {
+        prevButton.setDebouncedOnClickListener {
             if (currentPage > 0) {
                 currentPage--
                 showPage()
             }
         }
-        nextButton.setOnClickListener {
+        nextButton.setDebouncedOnClickListener {
             if (currentPage < totalPages() - 1) {
                 currentPage++
                 showPage()

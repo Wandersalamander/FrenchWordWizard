@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
+import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.Skill
@@ -176,11 +177,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             language = language,
         )
 
-        views.buttonFail.setOnClickListener { quizController.onFailClick() }
-        views.buttonNext.setOnClickListener { quizController.onNextClick() }
-        views.buttonNew.setOnClickListener { quizController.onNewClick() }
-        views.buttonTip.setOnClickListener { quizController.onTipClick() }
-        views.buttonHard.setOnClickListener { quizController.onHardClick() }
+        views.buttonFail.setDebouncedOnClickListener { quizController.onFailClick() }
+        views.buttonNext.setDebouncedOnClickListener { quizController.onNextClick() }
+        views.buttonNew.setDebouncedOnClickListener { quizController.onNewClick() }
+        views.buttonTip.setDebouncedOnClickListener { quizController.onTipClick() }
+        views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
 
         if (!sharedPreferences.getBoolean("tutorial_shown", false)) {
