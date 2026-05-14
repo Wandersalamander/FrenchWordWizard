@@ -122,17 +122,16 @@ class QuizController(
      */
     fun setListeningModeEnabled(enabled: Boolean) {
         listeningEnabled = enabled
-        // Disabling mid-round means the user can now read the foreign word
-        // straight off the screen — flag the round so stats don't get credit.
-        if (!enabled && currentSkill == Skill.LISTEN) {
+        // If the new state compromises the current round, latch the flag so
+        // toggling back on later doesn't un-void what the user already saw.
+        if (currentSkill.flow.isCompromisedByListening(enabled)) {
             roundCompromised = true
         }
         val vocab = currentVocab ?: return
         displayForeignWord(vocab)
         if (views.textGuessLong.visibility == View.VISIBLE) {
             val sentence = currentSentence ?: return
-            val maskNow = currentSkill == Skill.LISTEN && listeningEnabled
-            renderSentence(sentence, maskNow)
+            renderSentence(sentence, currentSkill.flow.shouldMaskSentenceOnTip(listeningEnabled))
         }
     }
 
@@ -197,18 +196,12 @@ class QuizController(
             // out of earshot.
             revealCurrentForeignWord()
             views.textEn.visibility = View.VISIBLE
-            if (currentSkill == Skill.INVERT) {
-                tts.speakForeignWord(vocab, flush = true)
-            } else {
-                tts.speakEnglishWord(vocab)
-            }
+            currentSkill.flow.ttsOnReveal(vocab, tts)
 
-            // In a listening round, the user has already been hearing the
-            // example sentence (from Tip, masked). Reveal that exact sentence
-            // unmasked instead of regenerating — keeps the audio/text
-            // consistent. In other rounds, fall through to a fresh LLM call.
-            val isListeningRound = currentSkill == Skill.LISTEN && listeningEnabled
-            val sentence = generateAndShowExampleSentence(vocab, useExisting = isListeningRound)
+            // Some skills (LISTEN with listening on) reveal the cached sentence
+            // for consistency with what the user just heard; others regenerate.
+            val useExisting = currentSkill.flow.reuseSentenceOnReveal(listeningEnabled)
+            val sentence = generateAndShowExampleSentence(vocab, useExisting = useExisting)
             tts.speakSentenceAndAwait(sentence)
             delay(1000)
 
@@ -224,15 +217,7 @@ class QuizController(
 
     private fun startSpotCheck() {
         inSpotCheck = true
-        if (currentSkill == Skill.INVERT) {
-            // English is already on screen as the prompt; reveal the foreign
-            // answer so the user can verify their mental production.
-            revealCurrentForeignWord()
-        } else {
-            // READ / LISTEN: foreign is what the user has been working with;
-            // show the English meaning so they can verify recall.
-            views.textEn.visibility = View.VISIBLE
-        }
+        currentSkill.flow.setupSpotCheck(views, ::revealCurrentForeignWord)
 
         views.buttonFail.text = "✗ Wrong"
         views.buttonNext.text = "✓ Correct"
@@ -281,10 +266,10 @@ class QuizController(
 
         val vocab = currentVocab!!
         // Snapshot the active skill's stats so we can roll back if the round
-        // turns out to be compromised. A LISTEN round started with listening
-        // already off counts as compromised from the start.
+        // turns out to be compromised (e.g. a LISTEN round started with
+        // listening already off — the user could read the foreign word).
         roundStartSnapshot = vocab.stats(currentSkill).copy()
-        roundCompromised = currentSkill == Skill.LISTEN && !listeningEnabled
+        roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
         inSpotCheck = false
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
@@ -318,9 +303,8 @@ class QuizController(
             views.textProgressTotal.translationX = targetX.coerceIn(0f, maxX)
         }
         displayForeignWord(vocab)
-        // INVERT shows the English as the prompt; other skills keep it hidden
-        // until reveal / spot check.
-        views.textEn.visibility = if (currentSkill == Skill.INVERT) View.VISIBLE else View.INVISIBLE
+        views.textEn.visibility =
+            if (currentSkill.flow.englishIsPrompt) View.VISIBLE else View.INVISIBLE
         views.textEn.text = vocab.english
         views.textGuessLong.visibility = View.INVISIBLE
         // Seed the per-word sentence cache with the CSV fallback so a reveal
@@ -335,13 +319,7 @@ class QuizController(
         setupLearnedButton()
 
         startTime = System.currentTimeMillis()
-        // In INVERT the foreign word is the answer the user has to produce, so
-        // speak the English prompt instead; other skills speak the foreign word.
-        if (currentSkill == Skill.INVERT) {
-            tts.speakEnglishWord(vocab)
-        } else {
-            tts.speakForeignWord(vocab, flush = true)
-        }
+        currentSkill.flow.ttsAtRoundStart(vocab, tts)
     }
 
     private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> =
@@ -429,7 +407,8 @@ class QuizController(
             else -> views.textGuessLong.text.toString()
         }
         currentSentence = sentence
-        val maskNow = currentSkill == Skill.LISTEN && listeningEnabled && maskWhenListening
+        val maskNow = maskWhenListening &&
+            currentSkill.flow.shouldMaskSentenceOnTip(listeningEnabled)
         renderSentence(sentence, maskNow)
         views.textGuessLong.alpha = 0f
         views.textGuessLong.visibility = View.VISIBLE
@@ -470,41 +449,16 @@ class QuizController(
         views.buttonNext.isClickable = enabled
         views.buttonNew.isEnabled = enabled
         views.buttonNew.isClickable = enabled
-        // Tip would normally show an example sentence containing the foreign
-        // word, which gives away the answer in an INVERT round. Keep it
-        // disabled regardless of the [enabled] flag while inverting.
-        val tipApplicable = enabled && currentSkill != Skill.INVERT
+        // Tip's applicability is skill-dependent — e.g. INVERT disables it
+        // because the example sentence would contain the answer word.
+        val tipApplicable = enabled && currentSkill.flow.tipAllowed
         views.buttonTip.isEnabled = tipApplicable
         views.buttonTip.isClickable = tipApplicable
     }
 
     private fun displayForeignWord(vocab: Vocab) {
-        val isListeningRound = currentSkill == Skill.LISTEN && listeningEnabled
-        val isInvertRound = currentSkill == Skill.INVERT
-        when {
-            isInvertRound -> {
-                // English is the prompt; the foreign word is what the user must
-                // produce. Show a "?" placeholder rather than the word itself
-                // and don't leak word length.
-                views.textFr.text = "?"
-                views.textFr.setOnClickListener(null)
-                views.textFr.isClickable = false
-            }
-            isListeningRound -> {
-                views.textFr.text = maskWord(vocab.french)
-                views.textFr.setOnClickListener { onMaskedWordTapped() }
-                views.textFr.isClickable = true
-            }
-            else -> {
-                views.textFr.text = vocab.french
-                views.textFr.setOnClickListener(null)
-                views.textFr.isClickable = false
-            }
-        }
+        currentSkill.flow.setupTextFr(vocab, views, listeningEnabled, ::onMaskedWordTapped)
     }
-
-    private fun maskWord(word: String): String =
-        word.map { if (it.isLetter()) '⬤' else it }.joinToString("")
 
     /** Replay the foreign word (with a small penalty) when the mask is tapped. */
     private fun onMaskedWordTapped() {
