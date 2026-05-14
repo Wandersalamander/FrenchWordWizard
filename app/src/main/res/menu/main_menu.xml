@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_listening_mode"
-        android:title="Listening mode"
+        android:title="Listening exercises"
         android:checkable="true"
         app:showAsAction="never" />
     <item
