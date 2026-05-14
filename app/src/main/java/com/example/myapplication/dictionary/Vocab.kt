@@ -48,6 +48,23 @@ data class Vocab(
         return frenchLong // fallback option
     }
 
+    /** Short CSV example — used when the user opts for easy sentences. */
+    fun easySentence(): String = frenchLong2
+
+    /** Long CSV example — used when the user opts for hard sentences. */
+    fun hardSentence(): String = frenchLong
+
+    /**
+     * Resolve which built-in CSV sentence to use based on [source]. For
+     * [SentenceSource.LLM] this returns the easy CSV sentence as a fallback —
+     * callers wanting LLM output should call the LLM directly and fall through
+     * to this only when generation is unavailable.
+     */
+    fun csvSentenceFor(source: SentenceSource): String = when (source) {
+        SentenceSource.EASY, SentenceSource.LLM -> frenchLong2
+        SentenceSource.HARD -> frenchLong
+    }
+
     fun loadPreferences() {
         if (sharedPreferences == null) return
         for (skill in Skill.ladder) {

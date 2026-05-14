@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
 import com.example.myapplication.dictionary.Language
+import com.example.myapplication.dictionary.SentenceSource
 import com.example.myapplication.llm.LlmService
 import kotlinx.coroutines.launch
 
@@ -49,6 +50,25 @@ class SettingsActivity : AppCompatActivity() {
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             val language = languageByRadioId[checkedId] ?: Language.DEFAULT
             prefs.edit().putString("app_language", language.code).apply()
+        }
+
+        // Sentence-source preference: easy / hard / LLM. Defaults to EASY for
+        // fresh installs so new users get the gentlest material out of the box.
+        val sentenceGroup = findViewById<RadioGroup>(R.id.sentenceSourceRadioGroup)
+        val radioByPosition = mapOf(
+            SentenceSource.EASY to findViewById<RadioButton>(R.id.radioSentenceEasy),
+            SentenceSource.HARD to findViewById<RadioButton>(R.id.radioSentenceHard),
+            SentenceSource.LLM to findViewById<RadioButton>(R.id.radioSentenceLlm),
+        )
+        val sourceByRadioId = mapOf(
+            R.id.radioSentenceEasy to SentenceSource.EASY,
+            R.id.radioSentenceHard to SentenceSource.HARD,
+            R.id.radioSentenceLlm to SentenceSource.LLM,
+        )
+        radioByPosition[SentenceSource.fromPrefs(prefs)]?.isChecked = true
+        sentenceGroup.setOnCheckedChangeListener { _, checkedId ->
+            val source = sourceByRadioId[checkedId] ?: SentenceSource.DEFAULT
+            prefs.edit().putString(SentenceSource.PREF_KEY, source.storageValue).apply()
         }
 
         // AI status — kick off init in case the user opened settings before MainActivity ran,

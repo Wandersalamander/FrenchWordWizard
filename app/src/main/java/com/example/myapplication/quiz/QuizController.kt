@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Animatable
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.SentenceSource
 import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.SkillStats
 import com.example.myapplication.dictionary.Vocab
@@ -339,8 +340,9 @@ class QuizController(
         views.textGuessLong.visibility = View.INVISIBLE
         // Seed the per-word sentence cache with the CSV fallback so a reveal
         // (Fail) without a prior Tip still has something to display without
-        // burning an LLM call.
-        val seedSentence = vocab.getSomeFrenchLong()
+        // burning an LLM call. Honour the user's easy/hard preference so the
+        // seed matches what they'd see if Tip were pressed.
+        val seedSentence = vocab.csvSentenceFor(SentenceSource.fromContext(activity))
         views.textGuessLong.text = seedSentence
         views.textGuessLong.setOnClickListener(null)
         views.textGuessLong.isClickable = false
@@ -417,9 +419,10 @@ class QuizController(
         maskWhenListening: Boolean = false,
         useExisting: Boolean = false,
     ): String {
+        val source = SentenceSource.fromContext(activity)
         val sentence: String = when {
-            useExisting -> currentSentence ?: vocab.getSomeFrenchLong()
-            LlmService.isReady -> {
+            useExisting -> currentSentence ?: vocab.csvSentenceFor(source)
+            source == SentenceSource.LLM && LlmService.isReady -> {
                 views.textGuessLong.visibility = View.INVISIBLE
                 startThinkingAnimation()
                 val generated = try {
@@ -432,9 +435,9 @@ class QuizController(
                 } finally {
                     stopThinkingAnimation()
                 }
-                generated ?: vocab.getSomeFrenchLong()
+                generated ?: vocab.csvSentenceFor(source)
             }
-            else -> views.textGuessLong.text.toString()
+            else -> vocab.csvSentenceFor(source)
         }
         currentSentence = sentence
         val maskNow = maskWhenListening &&
