@@ -197,7 +197,7 @@ class QuizController(
     }
 
     private fun showSentenceTip(vocab: Vocab) {
-        vocab.stats(currentSkill).nTimesFailed += 0.25f
+        vocab.stats(currentSkill).recordFailure(0.25f)
 
         setQuizButtonsEnabled(false)
 
@@ -222,7 +222,7 @@ class QuizController(
         // the total over a full unmask is exactly 1.0 (≈ one Fail).
         val penalty = 2f * (letterCount - progressiveRevealCount + 1) /
             (letterCount * (letterCount + 1))
-        vocab.stats(currentSkill).nTimesFailed += penalty
+        vocab.stats(currentSkill).recordFailure(penalty)
         currentSkill.flow.applyProgressiveReveal(vocab, views, progressiveRevealCount)
         if (progressiveRevealCount >= letterCount) {
             views.buttonTip.isEnabled = false
@@ -283,7 +283,7 @@ class QuizController(
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
         if (wasWrong) {
-            currentVocab?.let { it.stats(currentSkill).nTimesFailed += 1.0f }
+            currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
             updateVocab(2000, newCandidates = false)
         } else {
             updateVocab(0, newCandidates = false)
@@ -316,7 +316,7 @@ class QuizController(
 
     private fun applyFailurePenaltyAndPersist(penalty: Long, saveVocab: Boolean) {
         if (penalty > 0) {
-            currentVocab?.let { it.stats(currentSkill).nTimesFailed += 1.0f }
+            currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
         }
         if (saveVocab) saveCurrentVocab(penalty)
     }
@@ -578,7 +578,7 @@ class QuizController(
     /** Replay the foreign word (with a small penalty) when the mask is tapped. */
     private fun onMaskedWordTapped() {
         val vocab = currentVocab ?: return
-        vocab.stats(currentSkill).nTimesFailed += 0.1f
+        vocab.stats(currentSkill).recordFailure(0.1f)
         tts.speakForeignWord(vocab, flush = true)
     }
 
@@ -596,7 +596,7 @@ class QuizController(
     private fun onMaskedSentenceTapped() {
         val vocab = currentVocab ?: return
         val sentence = currentSentence ?: return
-        vocab.stats(currentSkill).nTimesFailed += 0.1f
+        vocab.stats(currentSkill).recordFailure(0.1f)
         tts.speakSentence(sentence)
     }
 
@@ -619,4 +619,5 @@ private fun SkillStats.copyFrom(other: SkillStats) {
     nTimesViewed = other.nTimesViewed
     nTimesFailed = other.nTimesFailed
     lastDisplayed = other.lastDisplayed
+    lastTimeFailed = other.lastTimeFailed
 }

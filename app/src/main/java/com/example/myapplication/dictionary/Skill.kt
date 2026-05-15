@@ -38,7 +38,14 @@ data class SkillStats(
     var nTimesViewed: Int = 0,
     var nTimesFailed: Float = 0.0f,
     var lastDisplayed: Long = 0L,
+    var lastTimeFailed: Long = 0L,
 ) {
+    /** Single entry point for failure events so the counter and timestamp stay in sync. */
+    fun recordFailure(amount: Float) {
+        nTimesFailed += amount
+        lastTimeFailed = System.currentTimeMillis()
+    }
+
     fun failureProbability(): Float {
         if (nTimesViewed == 0) return 1.0f
         val base = 0.5f / nTimesViewed.toFloat()

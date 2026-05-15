@@ -67,6 +67,7 @@ data class Vocab(
             stats.nTimesViewed = prefs.readInt("${p}nTimesViewed", 0)
             stats.nTimesFailed = prefs.readFloat("${p}nTimesFailed", 0f)
             stats.lastDisplayed = prefs.readLong("${p}lastDisplayed", 0L)
+            stats.lastTimeFailed = prefs.readLong("${p}lastTimeFailed", 0L)
         }
         ignore = prefs.readBoolean("${hash}ignore", false)
         flaggedHard = prefs.readBoolean("${hash}flaggedHard", false)
@@ -83,6 +84,7 @@ data class Vocab(
             editor.putString("${p}nTimesViewed", stats.nTimesViewed.toString())
             editor.putString("${p}nTimesFailed", stats.nTimesFailed.toString())
             editor.putString("${p}lastDisplayed", stats.lastDisplayed.toString())
+            editor.putString("${p}lastTimeFailed", stats.lastTimeFailed.toString())
         }
         editor.putString("${hash}ignore", ignore.toString())
         editor.putString("${hash}flaggedHard", flaggedHard.toString())
