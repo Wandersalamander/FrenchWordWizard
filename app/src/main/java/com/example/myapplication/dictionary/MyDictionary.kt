@@ -91,7 +91,11 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
                 if (vocab.sortValue(skill) > 0.0) vocab to skill else null
             }
         }
-        if (activePairs.size < AUTO_INTRODUCE_THRESHOLD) {
+        // Gate on distinct *words*, not (word, skill) pair count — otherwise
+        // LISTEN/INVERT unlocks inflate the pool from 3 distinct words and
+        // freeze new-word intake.
+        val distinctActiveWords = activePairs.distinctBy { it.first.hash }.size
+        if (distinctActiveWords < AUTO_INTRODUCE_THRESHOLD) {
             return pickFallback(skillFilter)
         }
         return pickWeighted(activePairs)
@@ -131,15 +135,43 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         return pairs.last()
     }
 
+    /**
+     * Pick a mastered (word, skill) pair whose recall has likely decayed past
+     * its stability window, weighted by how overdue it is. Returns null when
+     * no mastered pair is due yet (e.g. early users with mostly active words,
+     * or right after every mastered pair has been refreshed). [skillFilter]
+     * excludes skills the same way [getActiveVocabWeighted] does.
+     */
+    fun pickMasteredVocabToRefresh(
+        skillFilter: (Skill) -> Boolean = { true },
+    ): Pair<Vocab, Skill>? {
+        val now = System.currentTimeMillis()
+        val candidates: List<Pair<Pair<Vocab, Skill>, Double>> = csvData.flatMap { vocab ->
+            if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
+            Skill.ladder.mapNotNull { skill ->
+                if (!skillFilter(skill)) return@mapNotNull null
+                if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
+                val score = vocab.failureProbabilityMasteredWords(skill, now)
+                if (score > 0.0) (vocab to skill) to score else null
+            }
+        }
+        if (candidates.isEmpty()) return null
+        val total = candidates.sumOf { it.second }
+        val randomValue = Random.nextDouble(0.0, total)
+        var sum = 0.0
+        for ((pair, weight) in candidates) {
+            sum += weight
+            if (sum >= randomValue) return pair
+        }
+        return candidates.last().first
+    }
+
     companion object {
         const val ESSENTIALS_IMPORTANCE: Int = 0
 
-        // Auto-pull a fresh inactive word whenever the active (word, skill)
-        // pool falls below this. For a brand-new user this is roughly the
-        // number of distinct words introduced before the system stops adding
-        // more on its own — keeping it low avoids overwhelming beginners.
-        // Past the early stage, every word contributes >1 pair as more skills
-        // unlock, so the threshold stops gating new introductions naturally.
+        // Auto-pull a fresh inactive word whenever the count of distinct
+        // currently-drilling words falls below this — keeps the rotation
+        // varied for beginners without overwhelming them.
         const val AUTO_INTRODUCE_THRESHOLD: Int = 5
     }
 }

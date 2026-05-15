@@ -122,12 +122,14 @@ data class Vocab(
         val s = stats(skill)
         val fpb = s.failureProbability()
         if (fpb < SKILL_FINISHED_THRESHOLD) {
-            return refreshSortValue(s)
+            return REFRESH_WEIGHT * failureProbabilityMasteredWords(skill)
         }
         val lastSeenHours = if (s.nTimesViewed == 0) {
             // Newly-active skill pair — lastDisplayed is the epoch (1970), which
-            // would make viewedMinutesAgo absurd. Treat as "due now-ish" instead.
-            24.0
+            // would make viewedMinutesAgo absurd. Seed at a few hours so the
+            // unlock is noticed without dominating the picker for a stretch of
+            // consecutive rounds.
+            2.0
         } else {
             s.viewedMinutesAgo() / 60.0
         }
@@ -138,16 +140,20 @@ data class Vocab(
     }
 
     /**
-     * Post-mastery refresh weight. Stability grows with each pass (clean
-     * streak lengthens because lastTimeFailed stays put) and the next
-     * interval lengthens automatically. A fail bumps lastTimeFailed and
-     * nTimesFailed — over enough fails the pair's failureProbability rises
-     * back above [SKILL_FINISHED_THRESHOLD] and it returns to active drilling.
+     * For a (word, skill) pair that has already been mastered, an
+     * approximation of how likely the user has forgotten it: 0.0 while still
+     * comfortably within the pair's expected stability window, then climbing
+     * with the overdue ratio (1.0 = just past due, capped at [OVERDUE_CAP]).
+     * Returns 0.0 for pairs that aren't yet mastered. Shared by the refresh
+     * weight blended into the active picker and by the guaranteed-cadence
+     * mastered-refresh slot.
      */
-    private fun refreshSortValue(
-        s: SkillStats,
+    fun failureProbabilityMasteredWords(
+        skill: Skill,
         now: Long = System.currentTimeMillis(),
     ): Double {
+        val s = stats(skill)
+        if (s.failureProbability() >= SKILL_FINISHED_THRESHOLD) return 0.0
         val daysSinceLastDisplayed = (now - s.lastDisplayed) / MILLIS_PER_DAY
         val cleanStreakDays = if (s.lastTimeFailed > 0L && s.lastDisplayed > s.lastTimeFailed) {
             (s.lastDisplayed - s.lastTimeFailed) / MILLIS_PER_DAY
@@ -159,8 +165,7 @@ data class Vocab(
         val stabilityDays = (cleanStreakDays + REFRESH_FLOOR_DAYS)
             .coerceIn(REFRESH_FLOOR_DAYS, REFRESH_CAP_DAYS)
         if (daysSinceLastDisplayed < stabilityDays) return 0.0
-        val overdueRatio = (daysSinceLastDisplayed / stabilityDays).coerceAtMost(OVERDUE_CAP)
-        return REFRESH_WEIGHT * overdueRatio
+        return (daysSinceLastDisplayed / stabilityDays).coerceAtMost(OVERDUE_CAP)
     }
 
     fun pronounceableEn(): String = EnglishAbbreviations.expand(english)
@@ -170,10 +175,12 @@ data class Vocab(
 
     companion object {
         // Below this failure probability, a (word, skill) pair exits active
-        // drilling and is handed off to the refresh pool (refreshSortValue).
+        // drilling and is handed off to the refresh pool via
+        // [failureProbabilityMasteredWords].
         const val SKILL_FINISHED_THRESHOLD = 0.1f
 
-        // Refresh pool tuning. See [refreshSortValue] for how these combine.
+        // Refresh pool tuning. See [failureProbabilityMasteredWords] for how
+        // these combine.
         private const val REFRESH_WEIGHT = 0.1
         private const val REFRESH_FLOOR_DAYS = 7.0
         private const val REFRESH_CAP_DAYS = 180.0

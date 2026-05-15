@@ -58,9 +58,15 @@ interface TtsHelper {
 
 private const val SPOT_CHECK_PROBABILITY = 0.2
 private const val RECENT_WORDS_CAPACITY = 20
+private const val RECENT_FOREIGN_AVOID_COUNT = 4
 private const val VIEW_TIME_EMA_ALPHA = 0.3
 private const val WRONG_VOCAB_PICK_ATTEMPTS = 50
 private const val SENTENCE_FADE_IN_DURATION_MS = 220L
+// Every Nth displayed round (counting committed words, not picker retries) is
+// granted to a due mastered (word, skill) pair, so post-mastery retention gets
+// a guaranteed slot regardless of how crowded the active pool is. Skipped when
+// no mastered pair has gone stale.
+private const val MASTERED_REFRESH_INTERVAL = 20
 
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
@@ -105,6 +111,10 @@ class QuizController(
     // Number of letters already revealed via Tip in the current round; only
     // meaningful when the active skill has ProgressiveReveal tip behavior.
     private var progressiveRevealCount: Int = 0
+
+    // Ticks once per active-pool pick; when it hits [MASTERED_REFRESH_INTERVAL]
+    // the next pick is forced through the mastered-refresh picker.
+    private var picksSinceMasteredRefresh: Int = 0
 
     fun onFailClick() {
         if (inSpotCheck) exitSpotCheck(wasWrong = true)
@@ -327,20 +337,43 @@ class QuizController(
      * in place and returns the new vocab non-null.
      */
     private fun advanceToNextDistinctVocab(newCandidates: Boolean): Vocab {
+        // Tick the cadence once per displayed round (NOT once per pickNextVocab
+        // call) so the anti-repeat retries below don't race the counter past
+        // threshold faster than every Nth round.
+        val allowMasteredRefresh = !newCandidates && tickMasteredCadence()
         if (currentVocab == null) {
-            val (v, s) = pickNextVocab(newCandidates)
+            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh)
             currentVocab = v
             currentSkill = s
         }
-        val previousForeign = currentVocab!!.foreign
+        // Avoid the last few foreign words so a heavy-weight pair can't
+        // ping-pong (X-Y-X-Y) within a small active pool. The just-displayed
+        // word is in [recentWords] (added by saveCurrentVocab), but include
+        // currentVocab defensively for the first-ever pick when the deque
+        // is empty.
+        val avoidForeign = recentWords.toList()
+            .takeLast(RECENT_FOREIGN_AVOID_COUNT)
+            .toSet() + currentVocab!!.foreign
         var attempts = 0
-        while (currentVocab!!.foreign == previousForeign && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
-            val (v, s) = pickNextVocab(newCandidates)
+        while (currentVocab!!.foreign in avoidForeign && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
+            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh)
             currentVocab = v
             currentSkill = s
             attempts++
         }
         return currentVocab!!
+    }
+
+    /**
+     * Bumps the once-per-round cadence counter and reports whether this round
+     * should attempt a mastered-refresh pick. The counter is only reset by
+     * [pickNextVocab] when the slot is actually granted — a round with no
+     * eligible mastered pair leaves the counter past threshold so the next
+     * round retries.
+     */
+    private fun tickMasteredCadence(): Boolean {
+        picksSinceMasteredRefresh++
+        return picksSinceMasteredRefresh >= MASTERED_REFRESH_INTERVAL
     }
 
     private fun resetRoundState(vocab: Vocab) {
@@ -411,13 +444,25 @@ class QuizController(
         currentSentence = seed
     }
 
-    private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> {
+    private fun pickNextVocab(
+        newCandidates: Boolean,
+        allowMasteredRefresh: Boolean,
+    ): Pair<Vocab, Skill> {
         // When listening is off the LISTEN skill is excluded from the pool —
         // getInactiveVocab always returns READ so it doesn't need the filter.
         val skillFilter: (Skill) -> Boolean =
             if (listeningEnabled) ({ true }) else ({ it != Skill.LISTEN })
-        return if (newCandidates) vocabDictionary.getInactiveVocab()
-        else vocabDictionary.getActiveVocabWeighted(skillFilter)
+        if (newCandidates) return vocabDictionary.getInactiveVocab()
+        if (allowMasteredRefresh) {
+            val mastered = vocabDictionary.pickMasteredVocabToRefresh(skillFilter)
+            if (mastered != null) {
+                picksSinceMasteredRefresh = 0
+                return mastered
+            }
+            // No mastered pair is due — leave the counter past threshold so
+            // the next round tries again instead of waiting a full cycle.
+        }
+        return vocabDictionary.getActiveVocabWeighted(skillFilter)
     }
 
     private fun saveCurrentVocab(penalty: Long) {
