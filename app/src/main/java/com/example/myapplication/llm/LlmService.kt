@@ -251,6 +251,7 @@ object LlmService {
         word: String,
         translation: String,
         recent: List<String>,
+        everSeen: List<String>,
         language: Language,
         timeoutMs: Long = 5000L
     ): String? {
@@ -258,18 +259,23 @@ object LlmService {
         if (!isReady) return null
 
         val langName = language.englishName
-        // Pass at most 3 random words sampled from the most recent 10. Two
-        // reasons:
-        //   1. If we send the full recent list, common short words ("libro",
-        //      "libre", "haus") dominate every generation — the model is
-        //      literally being asked to consider including them, so it does,
-        //      and they then stay in the recent list and get re-suggested
-        //      next call. A self-reinforcing loop.
-        //   2. With fewer candidates the model is less tempted to squeeze
-        //      multiple recent words into one sentence.
+        // Pool of "previously studied" words we offer the model as optional
+        // ingredients: 5 sampled from the recent sliding window + 5 sampled
+        // from everything ever introduced. The split keeps freshness (recent)
+        // alongside breadth (long-tail vocabulary) so sentences don't just
+        // recycle the last 20 words. We deliberately sub-sample rather than
+        // pass the full lists — sending too many candidates makes the model
+        // squeeze several of them into one sentence and locks common short
+        // words ("libro", "haus") into a self-reinforcing loop.
         val sampledRecent = recent.takeLast(20).shuffled().take(5)
-        val recentClause = if (sampledRecent.isNotEmpty()) {
-            " You may also naturally include some recently studied words if it fits: ${sampledRecent.joinToString(", ")}."
+        val recentSet = sampledRecent.toSet()
+        val sampledEverSeen = everSeen
+            .filter { it != word && it !in recentSet }
+            .shuffled()
+            .take(5)
+        val sampledWords = sampledRecent + sampledEverSeen
+        val recentClause = if (sampledWords.isNotEmpty()) {
+            " You may also naturally include some previously studied words if it fits: ${sampledWords.joinToString(", ")}."
         } else ""
         // Anti-repetition: tell the model the last few sentences it produced
         // and ask for a clearly different one. Snapshot under lock so we

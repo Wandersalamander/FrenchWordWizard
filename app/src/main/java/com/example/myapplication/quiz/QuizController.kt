@@ -562,6 +562,11 @@ class QuizController(
                 word = vocab.foreign,
                 translation = vocab.english,
                 recent = recentWords.toList(),
+                everSeen = vocabDictionary.csvData
+                    .asSequence()
+                    .filter { it.hasBeenIntroduced() }
+                    .map { it.foreign }
+                    .toList(),
                 language = language,
             )
         } finally {
