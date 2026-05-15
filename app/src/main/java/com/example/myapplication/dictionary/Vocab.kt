@@ -122,7 +122,10 @@ data class Vocab(
         val s = stats(skill)
         val fpb = s.failureProbability()
         if (fpb < SKILL_FINISHED_THRESHOLD) {
-            return REFRESH_WEIGHT * failureProbabilityMasteredWords(skill)
+            // Mastered pairs sit outside the active picker entirely; the
+            // cadence-based mastered-refresh slot in QuizController pulls them
+            // via pickMasteredVocabToRefresh, so the two paths don't double-dip.
+            return 0.0
         }
         val lastSeenHours = if (s.nTimesViewed == 0) {
             // Newly-active skill pair — lastDisplayed is the epoch (1970), which
@@ -144,9 +147,8 @@ data class Vocab(
      * approximation of how likely the user has forgotten it: 0.0 while still
      * comfortably within the pair's expected stability window, then climbing
      * with the overdue ratio (1.0 = just past due, capped at [OVERDUE_CAP]).
-     * Returns 0.0 for pairs that aren't yet mastered. Shared by the refresh
-     * weight blended into the active picker and by the guaranteed-cadence
-     * mastered-refresh slot.
+     * Returns 0.0 for pairs that aren't yet mastered. Used by the cadence-based
+     * mastered-refresh picker to weight the candidate pool.
      */
     fun failureProbabilityMasteredWords(
         skill: Skill,
@@ -181,7 +183,6 @@ data class Vocab(
 
         // Refresh pool tuning. See [failureProbabilityMasteredWords] for how
         // these combine.
-        private const val REFRESH_WEIGHT = 0.1
         private const val REFRESH_FLOOR_DAYS = 7.0
         private const val REFRESH_CAP_DAYS = 180.0
         private const val VIEW_AS_STREAK_DAYS = 3.0
