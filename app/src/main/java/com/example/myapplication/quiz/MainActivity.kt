@@ -5,12 +5,14 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.media.AudioAttributes
 import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -21,6 +23,7 @@ import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
+import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
@@ -40,7 +43,17 @@ import kotlinx.coroutines.CompletableDeferred
 import java.io.File
 import java.util.Locale
 
+private const val TAG = "MainActivity"
 private const val UTTERANCE_AWAITABLE = "awaitable_sentence"
+
+// Monokai palette cycled by ladder index — each skill gets a distinct fill colour.
+private val SKILL_COLOR_RES_IDS = listOf(
+    R.color.monokai_green,
+    R.color.monokai_cyan,
+    R.color.monokai_orange,
+    R.color.monokai_pink,
+    R.color.monokai_purple,
+)
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper {
     private lateinit var textToSpeech: TextToSpeech
@@ -62,8 +75,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     @Volatile
     private var pendingTtsDone: CompletableDeferred<Unit>? = null
 
-    private val channelId = MyForegroundService.NOTIFICATION_CHANNEL_ID
-
     private val requestNotificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { granted -> if (granted) startVocabService() }
@@ -72,14 +83,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         super.onCreate(savedInstanceState)
         serviceIntent = Intent(this, MyForegroundService::class.java)
         ensureNotificationPermissionThenStartService()
-
-        // Fix a bug seen via the AndroidStudio IDE that prevented the
-        // application from running several times without uninstalling first.
-        val dexOutputDir: File = codeCacheDir
-        dexOutputDir.setReadOnly()
+        workAroundDexReloadBug()
 
         sounds = SoundEffects(this)
-
         setContentView(R.layout.activity_main)
 
         // Kick off LLM init in the background. No-op on devices without a
@@ -87,6 +93,41 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // sentences.
         LlmService.warmup(applicationContext)
 
+        setupTextToSpeech()
+        setupNotificationChannels()
+
+        val prefs = AppPrefs.get(this)
+        language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        languageWipeTimestampAtStart = prefs.getLong(AppPrefs.progressWipedAtKey(language.code), 0L)
+        vocabDictionary = MyDictionary(openDictionaryStream(this, language), prefs)
+
+        views = bindViews()
+        disableQuizButtonsUntilFirstWord()
+        renderInitialIdleState()
+        renderInitialProgressBars()
+
+        quizController = QuizController(
+            activity = this,
+            views = views,
+            sounds = sounds,
+            tts = this,
+            vocabDictionary = vocabDictionary,
+            language = language,
+        )
+        wireQuizControllerListeners()
+        quizController.refreshStreakBadge()
+
+        maybeShowTutorial(prefs)
+    }
+
+    private fun workAroundDexReloadBug() {
+        // Fix a bug seen via the AndroidStudio IDE that prevented the
+        // application from running several times without uninstalling first.
+        val dexOutputDir: File = codeCacheDir
+        dexOutputDir.setReadOnly()
+    }
+
+    private fun setupTextToSpeech() {
         textToSpeech = TextToSpeech(this, this)
         textToSpeech.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
             override fun onStart(utteranceId: String) {}
@@ -98,33 +139,29 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             }
 
             override fun onError(p0: String?) {
-                println("TTS error: $p0")
+                Log.w(TAG, "TTS error: $p0")
                 pendingTtsDone?.complete(Unit)
             }
         })
+    }
 
-        createNotificationChannel()
+    private fun setupNotificationChannels() {
+        createForegroundServiceChannel()
         StreakNotifications.ensureChannel(this)
         // Idempotent — re-arms today if the alarm exists, or schedules a fresh
         // one on first launch / after the user re-enabled the reminder.
         StreakAlarmScheduler.schedule(this)
+    }
 
+    private fun bindViews(): QuizViews {
         val progressBarsContainer = findViewById<FrameLayout>(R.id.progressBarsContainer)
         val progressBars = mutableMapOf<Skill, ProgressBar>()
         val progressBarsFinished = mutableMapOf<Skill, ProgressBar>()
-        // Monokai palette cycled by ladder index — each skill gets a distinct fill colour.
-        val skillColorResIds = listOf(
-            R.color.monokai_green,
-            R.color.monokai_cyan,
-            R.color.monokai_orange,
-            R.color.monokai_pink,
-            R.color.monokai_purple,
-        )
         for ((index, skill) in Skill.ladder.withIndex()) {
             val row = layoutInflater.inflate(R.layout.item_progress_bars, progressBarsContainer, false)
             val bar = row.findViewById<ProgressBar>(R.id.progressBarSkill)
             val barFinished = row.findViewById<ProgressBar>(R.id.progressBarSkillFinished)
-            val colorRes = skillColorResIds[index % skillColorResIds.size]
+            val colorRes = SKILL_COLOR_RES_IDS[index % SKILL_COLOR_RES_IDS.size]
             bar.progressTintList = ContextCompat.getColorStateList(this, colorRes)
             // Later skills are more transparent so the layers behind remain visible
             // where they extend beyond the upper skill's progress.
@@ -136,14 +173,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             progressBarsContainer.addView(row)
         }
 
-        views = QuizViews(
+        return QuizViews(
             buttonFail = findViewById(R.id.button_fail),
             buttonNext = findViewById(R.id.button_next),
             buttonNew = findViewById(R.id.button_new),
             buttonTip = findViewById(R.id.button_tip),
             buttonHard = findViewById(R.id.button_hard),
             buttonLearned = findViewById(R.id.button_learned),
-            textFr = findViewById(R.id.textGuess),
+            textForeign = findViewById(R.id.textGuess),
             textScore = findViewById(R.id.textScore),
             textEn = findViewById(R.id.textReal),
             textGuessLong = findViewById(R.id.textGuessLong),
@@ -153,55 +190,49 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             progressBarsFinished = progressBarsFinished,
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
+    }
 
-        views.buttonFail.isClickable = false
-        views.buttonFail.isEnabled = false
-        views.buttonNew.isClickable = false
-        views.buttonNew.isEnabled = false
-        views.buttonTip.isClickable = false
-        views.buttonTip.isEnabled = false
+    private fun disableQuizButtonsUntilFirstWord() {
+        // These three are click-triggered actions that need an active vocab to
+        // operate on. QuizController re-enables them via setQuizButtonsEnabled
+        // once updateVocab has installed the first word.
+        listOf(views.buttonFail, views.buttonNew, views.buttonTip).forEach {
+            it.isClickable = false
+            it.isEnabled = false
+        }
+    }
 
-        val sharedPreferences = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-        language = Language.fromCode(sharedPreferences.getString("app_language", null))
-        languageWipeTimestampAtStart =
-            sharedPreferences.getLong("progress_wiped_at_${language.code}", 0L)
-        val inputStream = openDictionaryStream(this, language)
-
+    private fun renderInitialIdleState() {
         views.textProgressTotal.text = ""
         views.textScore.text = ""
         views.textGuessLong.text = ""
-        views.textFr.text = language.greeting
+        views.textForeign.text = language.greeting
         views.textEn.text = getString(R.string.START_INFO_TEXT)
+    }
 
-        vocabDictionary = MyDictionary(inputStream, sharedPreferences)
-        val initTotalSize = vocabDictionary.csvData.size.toFloat()
+    private fun renderInitialProgressBars() {
+        val total = vocabDictionary.csvData.size.toFloat()
+        if (total <= 0f) return
         for (skill in Skill.ladder) {
             views.progressBars[skill]?.progress =
-                (vocabDictionary.getActiveDataSize(skill) / initTotalSize * 100).toInt()
+                (vocabDictionary.getActiveDataSize(skill) / total * 100).toInt()
             views.progressBarsFinished[skill]?.progress =
-                (vocabDictionary.getFinishedDataSize(skill) / initTotalSize * 100).toInt()
+                (vocabDictionary.getFinishedDataSize(skill) / total * 100).toInt()
         }
+    }
 
-        quizController = QuizController(
-            activity = this,
-            views = views,
-            sounds = sounds,
-            tts = this,
-            vocabDictionary = vocabDictionary,
-            language = language,
-        )
-
+    private fun wireQuizControllerListeners() {
         views.buttonFail.setDebouncedOnClickListener { quizController.onFailClick() }
         views.buttonNext.setDebouncedOnClickListener { quizController.onNextClick() }
         views.buttonNew.setDebouncedOnClickListener { quizController.onNewClick() }
         views.buttonTip.setDebouncedOnClickListener { quizController.onTipClick() }
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
-        quizController.refreshStreakBadge()
+    }
 
-        if (!sharedPreferences.getBoolean("tutorial_shown", false)) {
-            findViewById<View>(android.R.id.content).post { showTutorial() }
-        }
+    private fun maybeShowTutorial(prefs: SharedPreferences) {
+        if (prefs.getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)) return
+        findViewById<View>(android.R.id.content).post { showTutorial() }
     }
 
     private fun showTutorial() {
@@ -211,7 +242,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 .cancelable(true)
 
         val steps = mutableListOf(
-            target(views.textFr, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
+            target(views.textForeign, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
             target(views.buttonNext, "Next", "Tap when you have a guess. The answer is revealed, and occasionally you'll be asked to confirm whether you actually got it right."),
             target(views.buttonFail, "I don't know", "Tap if you can't recall the meaning. The translation is revealed and you move on."),
             target(views.buttonTip, "Tip", "Plays an example sentence using the word, to jog your memory."),
@@ -238,8 +269,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             })
             .start()
 
-        getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-            .edit().putBoolean("tutorial_shown", true).apply()
+        AppPrefs.get(this).edit().putBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, true).apply()
     }
 
     private fun findOverflowMenuButton(): View? {
@@ -294,21 +324,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     override fun onInit(status: Int) {
-        if (status == TextToSpeech.SUCCESS) {
-            val result = textToSpeech.setLanguage(language.locale)
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                println("Language ${language.locale} is not supported.")
-            }
-
-            // Audio attributes that don't steal focus from music apps.
-            val audioAttributes = AudioAttributes.Builder()
+        if (status != TextToSpeech.SUCCESS) {
+            Log.w(TAG, "TextToSpeech initialization failed.")
+            return
+        }
+        val result = textToSpeech.setLanguage(language.locale)
+        if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+            Log.w(TAG, "Language ${language.locale} is not supported.")
+        }
+        // Audio attributes that don't steal focus from music apps.
+        textToSpeech.setAudioAttributes(
+            AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_GAME)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                 .build()
-            textToSpeech.setAudioAttributes(audioAttributes)
-        } else {
-            println("TextToSpeech initialization failed.")
-        }
+        )
     }
 
     override fun speakForeignWord(vocab: Vocab, flush: Boolean) {
@@ -362,13 +392,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     override fun onResume() {
         super.onResume()
-        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-        val savedLanguage = Language.fromCode(prefs.getString("app_language", null))
+        val prefs = AppPrefs.get(this)
+        val savedLanguage = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
         if (savedLanguage != language) {
             recreate()
             return
         }
-        val savedWipeTimestamp = prefs.getLong("progress_wiped_at_${language.code}", 0L)
+        val savedWipeTimestamp = prefs.getLong(AppPrefs.progressWipedAtKey(language.code), 0L)
         if (savedWipeTimestamp > languageWipeTimestampAtStart) {
             recreate()
             return
@@ -392,12 +422,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         ContextCompat.startForegroundService(this, serviceIntent)
     }
 
-    private fun createNotificationChannel() {
-        val name = "Show vocabs"
-        val descriptionText = "This channel shows continuously vocabs to practice"
-        val importance = NotificationManager.IMPORTANCE_DEFAULT
-        val channel = NotificationChannel(channelId, name, importance).apply {
-            description = descriptionText
+    private fun createForegroundServiceChannel() {
+        val channel = NotificationChannel(
+            MyForegroundService.NOTIFICATION_CHANNEL_ID,
+            "Show vocabs",
+            NotificationManager.IMPORTANCE_DEFAULT,
+        ).apply {
+            description = "This channel shows continuously vocabs to practice"
         }
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

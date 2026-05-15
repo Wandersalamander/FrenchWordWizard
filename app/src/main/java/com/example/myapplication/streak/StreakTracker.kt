@@ -2,36 +2,34 @@ package com.example.myapplication.streak
 
 import android.app.NotificationManager
 import android.content.Context
+import com.example.myapplication.data.AppPrefs
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.math.max
 
 /**
- * Daily-practice streak. State lives in the existing
- * "vocabulary_preferences" SharedPreferences so we don't introduce a second
- * store. "Today" is device-local — LocalDate handles DST/timezone shifts.
+ * Daily-practice streak. State lives in the shared app SharedPreferences so we
+ * don't introduce a second store. "Today" is device-local — LocalDate handles
+ * DST/timezone shifts.
  *
  * Reset is lazy: we never run a midnight job. [currentStreak] returns 0 when
  * the last recorded day is older than yesterday, so a missed day expires the
  * streak the next time anything reads it.
  */
 object StreakTracker {
-    const val PREFS_NAME = "vocabulary_preferences"
+    private const val KEY_CURRENT = "streak_current"
+    private const val KEY_LAST_DATE = "streak_last_date"
+    private const val KEY_LONGEST = "streak_longest"
+    private const val KEY_REMINDER_ENABLED = "streak_reminder_enabled"
+    private const val KEY_REMINDER_HOUR = "streak_reminder_hour"
+    private const val KEY_REMINDER_MINUTE = "streak_reminder_minute"
 
-    const val KEY_CURRENT = "streak_current"
-    const val KEY_LAST_DATE = "streak_last_date"
-    const val KEY_LONGEST = "streak_longest"
-    const val KEY_REMINDER_ENABLED = "streak_reminder_enabled"
-    const val KEY_REMINDER_HOUR = "streak_reminder_hour"
-    const val KEY_REMINDER_MINUTE = "streak_reminder_minute"
-
-    const val DEFAULT_REMINDER_HOUR = 21
-    const val DEFAULT_REMINDER_MINUTE = 0
+    private const val DEFAULT_REMINDER_HOUR = 21
+    private const val DEFAULT_REMINDER_MINUTE = 0
 
     private val DATE_FORMAT: DateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE
 
-    private fun prefs(context: Context) =
-        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    private fun prefs(context: Context) = AppPrefs.get(context)
 
     private fun parseDate(raw: String?): LocalDate? =
         if (raw.isNullOrBlank()) null else try {

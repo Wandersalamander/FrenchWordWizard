@@ -33,25 +33,22 @@ enum class Skill(
 }
 
 data class SkillStats(
-    var viewTimeMilli: Long = 10000L,
-    var viewTimeMilli_prev: Long = 10000L,
+    var viewTimeMilli: Long = DEFAULT_VIEW_TIME_MS,
+    var viewTimeMilli_prev: Long = DEFAULT_VIEW_TIME_MS,
     var nTimesViewed: Int = 0,
     var nTimesFailed: Float = 0.0f,
     var lastDisplayed: Long = 0L,
 ) {
     fun failureProbability(): Float {
-        return if (nTimesViewed == 0) {
-            1.0f
-        } else {
-            val base = 0.5f / nTimesViewed.toFloat()
-            val raw = base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
-            raw.coerceIn(0.0f, 1.0f)
-        }
+        if (nTimesViewed == 0) return 1.0f
+        val base = 0.5f / nTimesViewed.toFloat()
+        val raw = base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
+        return raw.coerceIn(0.0f, 1.0f)
     }
 
     fun meanTimeViewedMilli(): Double = viewTimeMilli.toDouble()
 
-    fun viewedMiutesAgo(): Long =
+    fun viewedMinutesAgo(): Long =
         TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - lastDisplayed)
 
     fun getTimeString(): String =
@@ -59,11 +56,17 @@ data class SkillStats(
 
     fun getStarsString(): String {
         val successProbability = (1.0f - failureProbability()).coerceIn(0.0f, 1.0f)
-        val starNumber = 5
-        val nFullStars: Int = (starNumber * successProbability).toInt()
-        val remainder: Int = starNumber - nFullStars
-        return "★".repeat(nFullStars) + "☆".repeat(remainder)
+        val totalStars = 5
+        val full: Int = (totalStars * successProbability).toInt()
+        return "★".repeat(full) + "☆".repeat(totalStars - full)
     }
 
     fun getInfoString(): String = getTimeString() + "\n" + getStarsString()
+
+    companion object {
+        // Seed value for a freshly-encountered word's view-time estimate (10s).
+        // High enough that the first round's actual time gets blended in without
+        // an undue jump up or down.
+        const val DEFAULT_VIEW_TIME_MS = 10_000L
+    }
 }

@@ -1,7 +1,6 @@
 package com.example.myapplication.settings
 
 import android.app.TimePickerDialog
-import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.text.format.Formatter
@@ -20,10 +19,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
+import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.SentenceSource
 import com.example.myapplication.dictionary.openDictionaryStream
+import com.example.myapplication.dictionary.parseVocabHash
 import com.example.myapplication.llm.LlmService
 import com.example.myapplication.streak.StreakAlarmScheduler
 import com.example.myapplication.streak.StreakTracker
@@ -37,8 +38,8 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-        val currentLanguage = Language.fromCode(prefs.getString("app_language", null))
+        val prefs = AppPrefs.get(this)
+        val currentLanguage = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
 
         val radioGroup = findViewById<RadioGroup>(R.id.languageRadioGroup)
         val radioFrench = findViewById<RadioButton>(R.id.radioFrench)
@@ -63,7 +64,7 @@ class SettingsActivity : AppCompatActivity() {
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             val language = languageByRadioId[checkedId] ?: Language.DEFAULT
-            prefs.edit().putString("app_language", language.code).apply()
+            prefs.edit().putString(AppPrefs.KEY_APP_LANGUAGE, language.code).apply()
         }
 
         // Sentence-source preference: easy / hard / LLM. Defaults to EASY for
@@ -86,7 +87,7 @@ class SettingsActivity : AppCompatActivity() {
         radioSentenceLlm.isEnabled = false
         sentenceGroup.setOnCheckedChangeListener { _, checkedId ->
             val source = sourceByRadioId[checkedId] ?: SentenceSource.DEFAULT
-            prefs.edit().putString(SentenceSource.PREF_KEY, source.storageValue).apply()
+            prefs.edit().putString(AppPrefs.KEY_SENTENCE_SOURCE, source.storageValue).apply()
         }
 
         // AI status — kick off init in case the user opened settings before MainActivity ran,
@@ -196,7 +197,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupResetProgressSection() {
-        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
+        val prefs = AppPrefs.get(this)
         val spinner = findViewById<Spinner>(R.id.resetLanguageSpinner)
         val button = findViewById<Button>(R.id.resetProgressButton)
 
@@ -206,7 +207,7 @@ class SettingsActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
-        val current = Language.fromCode(prefs.getString("app_language", null))
+        val current = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
         spinner.setSelection(languages.indexOf(current).coerceAtLeast(0))
 
         button.setDebouncedOnClickListener {
@@ -239,7 +240,7 @@ class SettingsActivity : AppCompatActivity() {
     private suspend fun wipeProgressFor(language: Language): Int = withContext(Dispatchers.IO) {
         val hashes = collectHashes(language)
         if (hashes.isEmpty()) return@withContext 0
-        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
+        val prefs = AppPrefs.get(this@SettingsActivity)
         val editor = prefs.edit()
         var removed = 0
         // Vocab hashes in the CSVs are 32-char MD5s; per-word keys are stored
@@ -250,7 +251,7 @@ class SettingsActivity : AppCompatActivity() {
                 removed++
             }
         }
-        editor.putLong("progress_wiped_at_${language.code}", System.currentTimeMillis())
+        editor.putLong(AppPrefs.progressWipedAtKey(language.code), System.currentTimeMillis())
         editor.apply()
         removed
     }
@@ -259,8 +260,7 @@ class SettingsActivity : AppCompatActivity() {
         val hashes = mutableSetOf<String>()
         openDictionaryStream(this, language).bufferedReader().use { reader ->
             reader.lineSequence().forEach { line ->
-                val parts = line.split('\t', limit = 6)
-                if (parts.size >= 6) hashes.add(parts[3].trim())
+                parseVocabHash(line)?.let { hashes.add(it) }
             }
         }
         return hashes

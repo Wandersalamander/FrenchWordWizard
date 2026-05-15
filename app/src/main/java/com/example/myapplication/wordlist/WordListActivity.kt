@@ -1,6 +1,5 @@
 package com.example.myapplication.wordlist
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
@@ -56,10 +56,10 @@ class WordListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_word_list)
 
-        val prefs = getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE)
-        val language = Language.fromCode(prefs.getString("app_language", null))
-        sortIndex = prefs.getInt("wordlist_sort_index", 0).coerceIn(0, sortOptions.lastIndex)
-        val savedSkillName = prefs.getString("wordlist_selected_skill", null)
+        val prefs = AppPrefs.get(this)
+        val language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        sortIndex = prefs.getInt(AppPrefs.KEY_WORDLIST_SORT_INDEX, 0).coerceIn(0, sortOptions.lastIndex)
+        val savedSkillName = prefs.getString(AppPrefs.KEY_WORDLIST_SELECTED_SKILL, null)
         selectedSkill = Skill.ladder.firstOrNull { it.name == savedSkillName } ?: Skill.ladder.first()
 
         dictionary = MyDictionary(openDictionaryStream(this, language), prefs)
@@ -96,7 +96,7 @@ class WordListActivity : AppCompatActivity() {
                 if (position != sortIndex) {
                     sortIndex = position
                     currentPage = 0
-                    prefs.edit().putInt("wordlist_sort_index", sortIndex).apply()
+                    prefs.edit().putInt(AppPrefs.KEY_WORDLIST_SORT_INDEX, sortIndex).apply()
                     refreshList()
                 }
             }
@@ -128,7 +128,7 @@ class WordListActivity : AppCompatActivity() {
                     if (newSkill != selectedSkill) {
                         selectedSkill = newSkill
                         currentPage = 0
-                        prefs.edit().putString("wordlist_selected_skill", newSkill.name).apply()
+                        prefs.edit().putString(AppPrefs.KEY_WORDLIST_SELECTED_SKILL, newSkill.name).apply()
                         adapter.setSkill(newSkill)
                         refreshList()
                     }
@@ -165,8 +165,8 @@ class WordListActivity : AppCompatActivity() {
     private fun applySort(words: List<Vocab>, idx: Int): List<Vocab> {
         val skill = selectedSkill
         return when (idx) {
-            0 -> words.sortedBy { it.french.lowercase() }
-            1 -> words.sortedByDescending { it.french.lowercase() }
+            0 -> words.sortedBy { it.foreign.lowercase() }
+            1 -> words.sortedByDescending { it.foreign.lowercase() }
             2 -> words.sortedBy { it.english.lowercase() }
             // Words the user marked "I know it" (ignore=true) are not struggling
             // regardless of failureProbability, which is high after only 1 view.

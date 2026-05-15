@@ -32,7 +32,7 @@ class WordListAdapter(
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         val v = items[position]
         val s = v.stats(skill)
-        holder.foreign.text = v.french
+        holder.foreign.text = v.foreign
         holder.english.text = v.english
         holder.stars.text = s.getStarsString()
         val avgTimeS = s.meanTimeViewedMilli() / 1000.0

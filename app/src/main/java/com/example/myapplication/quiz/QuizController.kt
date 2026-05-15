@@ -20,6 +20,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import kotlin.random.Random
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -30,7 +31,7 @@ data class QuizViews(
     val buttonTip: Button,
     val buttonHard: Button,
     val buttonLearned: Button,
-    val textFr: TextView,
+    val textForeign: TextView,
     val textScore: TextView,
     val textEn: TextView,
     val textGuessLong: TextView,
@@ -55,6 +56,12 @@ interface TtsHelper {
     suspend fun speakSentenceAndAwait(sentence: CharSequence)
 }
 
+private const val SPOT_CHECK_PROBABILITY = 0.2
+private const val RECENT_WORDS_CAPACITY = 20
+private const val VIEW_TIME_EMA_ALPHA = 0.3
+private const val WRONG_VOCAB_PICK_ATTEMPTS = 50
+private const val SENTENCE_FADE_IN_DURATION_MS = 220L
+
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
  * state machine, and the per-word save-and-advance logic. Lifted out of
@@ -72,10 +79,8 @@ class QuizController(
     var currentVocab: Vocab? = null
         private set
     private val recentWords = ArrayDeque<String>()
-    private val recentWordsCapacity = 20
     private var startTime: Long = System.currentTimeMillis()
     private var inSpotCheck = false
-    private val spotCheckProbability = 0.2
 
     // Skill being practiced for the currently-displayed word. Set in updateVocab
     // when a new word is picked and used for all stat writes during the round.
@@ -109,7 +114,7 @@ class QuizController(
     fun onNextClick() {
         if (inSpotCheck) {
             exitSpotCheck(wasWrong = false)
-        } else if (currentVocab != null && Math.random() < spotCheckProbability) {
+        } else if (currentVocab != null && Random.nextDouble() < SPOT_CHECK_PROBABILITY) {
             startSpotCheck()
         } else {
             updateVocab(0, newCandidates = false)
@@ -124,7 +129,7 @@ class QuizController(
 
     /**
      * Toggle session-scoped listening mode and refresh the current word's
-     * display. Both [QuizViews.textFr] and [QuizViews.textGuessLong] (if
+     * display. Both [QuizViews.textForeign] and [QuizViews.textGuessLong] (if
      * currently visible) are re-rendered so masking stays consistent
      * across the two views.
      */
@@ -209,7 +214,7 @@ class QuizController(
     }
 
     private fun showProgressiveRevealTip(vocab: Vocab) {
-        val letterCount = vocab.french.count { it.isLetter() }
+        val letterCount = vocab.foreign.count { it.isLetter() }
         if (progressiveRevealCount >= letterCount) return
         progressiveRevealCount++
         // Triangular weighting: the i-th of N reveals costs
@@ -286,26 +291,59 @@ class QuizController(
     }
 
     fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
-        if (penalty > 0 && currentVocab != null) {
-            currentVocab!!.stats(currentSkill).nTimesFailed += 1.0f
+        applyFailurePenaltyAndPersist(penalty, saveVocab)
+        val vocab = advanceToNextDistinctVocab(newCandidates)
+
+        resetRoundState(vocab)
+        refreshAllProgressBars()
+        refreshStreakBadge()
+        renderScoreText(vocab)
+        setQuizButtonsEnabled(true)
+        positionTotalLabel()
+
+        displayForeignWord(vocab)
+        views.textEn.visibility =
+            if (currentSkill.flow.englishIsPrompt) View.VISIBLE else View.INVISIBLE
+        views.textEn.text = vocab.english
+        views.textGuessLong.visibility = View.INVISIBLE
+        seedSentenceCache(vocab)
+        views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
+        setupLearnedButton()
+
+        startTime = System.currentTimeMillis()
+        currentSkill.flow.ttsAtRoundStart(vocab, tts)
+    }
+
+    private fun applyFailurePenaltyAndPersist(penalty: Long, saveVocab: Boolean) {
+        if (penalty > 0) {
+            currentVocab?.let { it.stats(currentSkill).nTimesFailed += 1.0f }
         }
         if (saveVocab) saveCurrentVocab(penalty)
+    }
 
+    /**
+     * Pick a new vocab/skill pair, retrying briefly to avoid repeating the
+     * same foreign word back-to-back. Updates [currentVocab] and [currentSkill]
+     * in place and returns the new vocab non-null.
+     */
+    private fun advanceToNextDistinctVocab(newCandidates: Boolean): Vocab {
         if (currentVocab == null) {
             val (v, s) = pickNextVocab(newCandidates)
             currentVocab = v
             currentSkill = s
         }
-        val previousVocabFrench = currentVocab!!.french
+        val previousForeign = currentVocab!!.foreign
         var attempts = 0
-        while (currentVocab!!.french == previousVocabFrench && attempts < 50) {
+        while (currentVocab!!.foreign == previousForeign && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
             val (v, s) = pickNextVocab(newCandidates)
             currentVocab = v
             currentSkill = s
             attempts++
         }
+        return currentVocab!!
+    }
 
-        val vocab = currentVocab!!
+    private fun resetRoundState(vocab: Vocab) {
         // Snapshot the active skill's stats so we can roll back if the round
         // turns out to be compromised (e.g. a LISTEN round started with
         // listening already off — the user could read the foreign word).
@@ -315,57 +353,62 @@ class QuizController(
         inSpotCheck = false
         views.buttonFail.text = "I don't know"
         views.buttonNext.text = "Next"
+    }
+
+    private fun refreshAllProgressBars() {
         val total = vocabDictionary.csvData.size
+        if (total <= 0) return
         val totalF = total.toFloat()
         for (skill in Skill.ladder) {
             val introduced = vocabDictionary.getActiveDataSize(skill)
-            val skillFinished = vocabDictionary.getFinishedDataSize(skill)
+            val finished = vocabDictionary.getFinishedDataSize(skill)
             views.progressBars[skill]?.progress = (introduced / totalF * 100).toInt()
-            views.progressBarsFinished[skill]?.progress = (skillFinished / totalF * 100).toInt()
+            views.progressBarsFinished[skill]?.progress = (finished / totalF * 100).toInt()
         }
-        refreshStreakBadge()
+    }
+
+    private fun renderScoreText(vocab: Vocab) {
         val currentStats = vocab.stats(currentSkill)
         views.textScore.text = if (currentStats.nTimesViewed == 0) {
             if (currentSkill == Skill.ladder.first()) "A new word!"
             else "${currentSkill.displayName} exercise unlocked!"
         } else currentStats.getInfoString()
-        setQuizButtonsEnabled(true)
+    }
 
-        // Single readout above the stack: how many words have been introduced
-        // via the first ladder skill (READ). Other skills' counts are conveyed
-        // visually by the stacked bar lengths. The label is positioned over
-        // the right edge of READ's progress fill so it tracks visually.
+    /**
+     * Single readout above the stack: how many words have been introduced
+     * via the first ladder skill (READ). The label is positioned over
+     * the right edge of READ's progress fill so it tracks visually.
+     */
+    private fun positionTotalLabel() {
+        val total = vocabDictionary.csvData.size
+        if (total <= 0) return
         val readSkill = Skill.ladder.first()
         val readIntroduced = vocabDictionary.getActiveDataSize(readSkill)
         views.textProgressTotal.text = readIntroduced.toString()
-        val readBar = views.progressBars[readSkill]
-        readBar?.post {
+        val readBar = views.progressBars[readSkill] ?: return
+        readBar.post {
             val barWidth = readBar.width
             val labelWidth = views.textProgressTotal.width
-            val progressFraction = readIntroduced / totalF
+            val progressFraction = readIntroduced / total.toFloat()
             val targetX = progressFraction * barWidth - labelWidth / 2f
             val maxX = (barWidth - labelWidth).coerceAtLeast(0).toFloat()
             views.textProgressTotal.translationX = targetX.coerceIn(0f, maxX)
         }
-        displayForeignWord(vocab)
-        views.textEn.visibility =
-            if (currentSkill.flow.englishIsPrompt) View.VISIBLE else View.INVISIBLE
-        views.textEn.text = vocab.english
-        views.textGuessLong.visibility = View.INVISIBLE
-        // Seed the per-word sentence cache with the CSV fallback so a reveal
-        // (Fail) without a prior Tip still has something to display without
-        // burning an LLM call. Honour the user's easy/hard preference so the
-        // seed matches what they'd see if Tip were pressed.
-        val seedSentence = vocab.csvSentenceFor(SentenceSource.fromContext(activity))
-        views.textGuessLong.text = seedSentence
+    }
+
+    /**
+     * Seed the per-word sentence cache with the CSV fallback so a reveal
+     * (Fail) without a prior Tip still has something to display without
+     * burning an LLM call. Honour the user's easy/hard preference so the
+     * seed matches what they'd see if Tip were pressed.
+     */
+    private fun seedSentenceCache(vocab: Vocab) {
+        val seed = vocab.csvSentenceFor(SentenceSource.fromContext(activity))
+        views.textGuessLong.text = seed
         views.textGuessLong.setOnClickListener(null)
         views.textGuessLong.isClickable = false
-        currentSentence = seedSentence
-        views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
-        setupLearnedButton()
-
-        startTime = System.currentTimeMillis()
-        currentSkill.flow.ttsAtRoundStart(vocab, tts)
+        currentSentence = seed
     }
 
     private fun pickNextVocab(newCandidates: Boolean): Pair<Vocab, Skill> {
@@ -374,7 +417,7 @@ class QuizController(
         val skillFilter: (Skill) -> Boolean =
             if (listeningEnabled) ({ true }) else ({ it != Skill.LISTEN })
         return if (newCandidates) vocabDictionary.getInactiveVocab()
-        else vocabDictionary.getActiveVocabWeightened(skillFilter)
+        else vocabDictionary.getActiveVocabWeighted(skillFilter)
     }
 
     private fun saveCurrentVocab(penalty: Long) {
@@ -383,37 +426,25 @@ class QuizController(
         // Always update recent-words: the user has seen this word regardless
         // of whether the round counts, and we don't want to surface it again
         // back-to-back.
-        val justFinished = vocab.french
-        recentWords.remove(justFinished)
-        recentWords.addLast(justFinished)
-        while (recentWords.size > recentWordsCapacity) {
-            recentWords.removeFirst()
-        }
+        rememberRecentWord(vocab.foreign)
 
         val snapshot = roundStartSnapshot
         if (roundCompromised && snapshot != null) {
             // Listening was off at some point during a LISTEN round — the
             // user could read the foreign word, so roll back any in-memory
             // mutations from the round and persist the rolled-back state.
-            val stats = vocab.stats(currentSkill)
-            stats.viewTimeMilli = snapshot.viewTimeMilli
-            stats.viewTimeMilli_prev = snapshot.viewTimeMilli_prev
-            stats.nTimesViewed = snapshot.nTimesViewed
-            stats.nTimesFailed = snapshot.nTimesFailed
-            stats.lastDisplayed = snapshot.lastDisplayed
+            vocab.stats(currentSkill).copyFrom(snapshot)
             vocab.savePreferences()
             return
         }
 
-        val endTime = System.currentTimeMillis()
-        val timeElapsed = endTime - startTime + penalty
-
+        val timeElapsed = System.currentTimeMillis() - startTime + penalty
         val stats = vocab.stats(currentSkill)
         val prevFailureProbability = stats.failureProbability()
 
         stats.nTimesViewed += 1
-        val alpha = 0.3
-        stats.viewTimeMilli = (alpha * timeElapsed + (1.0 - alpha) * stats.viewTimeMilli).toLong()
+        stats.viewTimeMilli =
+            (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli).toLong()
         stats.lastDisplayed = System.currentTimeMillis()
         vocab.savePreferences()
 
@@ -426,6 +457,14 @@ class QuizController(
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
         ) {
             sounds.playSuccess()
+        }
+    }
+
+    private fun rememberRecentWord(word: String) {
+        recentWords.remove(word)
+        recentWords.addLast(word)
+        while (recentWords.size > RECENT_WORDS_CAPACITY) {
+            recentWords.removeFirst()
         }
     }
 
@@ -457,21 +496,7 @@ class QuizController(
         val source = SentenceSource.fromContext(activity)
         val sentence: String = when {
             useExisting -> currentSentence ?: vocab.csvSentenceFor(source)
-            source == SentenceSource.LLM && LlmService.isReady -> {
-                views.textGuessLong.visibility = View.INVISIBLE
-                startThinkingAnimation()
-                val generated = try {
-                    LlmService.generate(
-                        word = vocab.french,
-                        translation = vocab.english,
-                        recent = recentWords.toList(),
-                        language = language,
-                    )
-                } finally {
-                    stopThinkingAnimation()
-                }
-                generated ?: vocab.csvSentenceFor(source)
-            }
+            source == SentenceSource.LLM && LlmService.isReady -> generateFromLlmOrFallback(vocab, source)
             else -> vocab.csvSentenceFor(source)
         }
         currentSentence = sentence
@@ -480,8 +505,24 @@ class QuizController(
         renderSentence(sentence, maskNow)
         views.textGuessLong.alpha = 0f
         views.textGuessLong.visibility = View.VISIBLE
-        views.textGuessLong.animate().alpha(1f).setDuration(220).start()
+        views.textGuessLong.animate().alpha(1f).setDuration(SENTENCE_FADE_IN_DURATION_MS).start()
         return sentence
+    }
+
+    private suspend fun generateFromLlmOrFallback(vocab: Vocab, source: SentenceSource): String {
+        views.textGuessLong.visibility = View.INVISIBLE
+        startThinkingAnimation()
+        val generated = try {
+            LlmService.generate(
+                word = vocab.foreign,
+                translation = vocab.english,
+                recent = recentWords.toList(),
+                language = language,
+            )
+        } finally {
+            stopThinkingAnimation()
+        }
+        return generated ?: vocab.csvSentenceFor(source)
     }
 
     /** Sets [QuizViews.textGuessLong]'s text and tap-handler based on [mask]. */
@@ -525,7 +566,7 @@ class QuizController(
     }
 
     private fun displayForeignWord(vocab: Vocab) {
-        currentSkill.flow.setupTextFr(
+        currentSkill.flow.setupForeignText(
             vocab,
             views,
             listeningEnabled,
@@ -565,8 +606,17 @@ class QuizController(
      */
     private fun revealCurrentForeignWord() {
         val vocab = currentVocab ?: return
-        views.textFr.text = vocab.french
-        views.textFr.setOnClickListener(null)
-        views.textFr.isClickable = false
+        views.textForeign.text = vocab.foreign
+        views.textForeign.setOnClickListener(null)
+        views.textForeign.isClickable = false
     }
+}
+
+/** Copy every field from [other] into the receiver, in place. */
+private fun SkillStats.copyFrom(other: SkillStats) {
+    viewTimeMilli = other.viewTimeMilli
+    viewTimeMilli_prev = other.viewTimeMilli_prev
+    nTimesViewed = other.nTimesViewed
+    nTimesFailed = other.nTimesFailed
+    lastDisplayed = other.lastDisplayed
 }

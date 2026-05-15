@@ -2,6 +2,7 @@ package com.example.myapplication.dictionary
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.myapplication.data.AppPrefs
 
 /**
  * Where the example sentence shown during a quiz round comes from.
@@ -22,15 +23,14 @@ enum class SentenceSource(val storageValue: String) {
 
     companion object {
         val DEFAULT = EASY
-        const val PREF_KEY = "sentence_source"
 
         fun fromStorage(stored: String?): SentenceSource =
             values().firstOrNull { it.storageValue == stored } ?: DEFAULT
 
         fun fromPrefs(prefs: SharedPreferences): SentenceSource =
-            fromStorage(prefs.getString(PREF_KEY, null))
+            fromStorage(prefs.getString(AppPrefs.KEY_SENTENCE_SOURCE, null))
 
         fun fromContext(context: Context): SentenceSource =
-            fromPrefs(context.getSharedPreferences("vocabulary_preferences", Context.MODE_PRIVATE))
+            fromPrefs(AppPrefs.get(context))
     }
 }

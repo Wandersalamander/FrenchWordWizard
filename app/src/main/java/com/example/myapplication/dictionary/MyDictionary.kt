@@ -22,14 +22,9 @@ fun openDictionaryStream(context: Context, language: Language): InputStream {
 class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences) {
     val csvData: List<Vocab> = readCsv(inputStream)
 
-
     fun reloadPreferences() {
         csvData.forEach { it.loadPreferences() }
     }
-
-    fun getActiveDataSize(): Int = getActiveDataSize(Skill.ladder.first())
-
-    fun getFinishedDataSize(): Int = getFinishedDataSize(Skill.ladder.first())
 
     /** Words where [skill] has been practiced at least once. */
     fun getActiveDataSize(skill: Skill): Int =
@@ -45,47 +40,18 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
                 (it.ignore || it.stats(skill).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD)
         }
 
-    fun getIgnoredDataSize(): Int {
-        return csvData.filter { it.ignore }.size
-    }
-
-    fun debugDictionary() {
-        val activeData = csvData.filter { it.hasBeenIntroduced() }.iterator()
-        while (activeData.hasNext()) {
-            val vocab = activeData.next()
-            println(vocab.debugSortValue())
-        }
-    }
-
-    fun readCsv(inputStream: InputStream): List<Vocab> {
-        return inputStream.bufferedReader().use { reader ->
+    private fun readCsv(inputStream: InputStream): List<Vocab> =
+        inputStream.bufferedReader().use { reader ->
             reader.lineSequence()
-                .mapNotNull { line ->
-                    val parts = line.split('\t', ignoreCase = false, limit = 6)
-                    if (parts.size < 6) return@mapNotNull null
-                    try {
-                        Vocab(
-                            parts[0].trim(),
-                            parts[1].trim(),
-                            parts[2].trim().toInt(),
-                            parts[3].trim(),
-                            parts[4].trim(),
-                            parts[5].trim(),
-                            sharedPreferences
-                        )
-                    } catch (e: NumberFormatException) {
-                        null
-                    }
-                }
+                .mapNotNull { Vocab.fromCsvLine(it, sharedPreferences) }
                 .toList()
         }
-    }
 
     fun getInactiveVocab(): Pair<Vocab, Skill> {
         val firstSkill = Skill.ladder.first()
         val inactiveCsvData = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
         if (inactiveCsvData.isEmpty()) {
-            return getActiveVocabWeightened()
+            return getActiveVocabWeighted()
         }
         val minImportance = inactiveCsvData.minOf { it.importance }
         val candidates = inactiveCsvData.filter { it.importance == minImportance }
@@ -102,18 +68,6 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         if (minImportance == ESSENTIALS_IMPORTANCE) candidates.first()
         else candidates[Random.nextInt(candidates.size)]
 
-    companion object {
-        const val ESSENTIALS_IMPORTANCE: Int = 0
-
-        // Auto-pull a fresh inactive word whenever the active (word, skill)
-        // pool falls below this. For a brand-new user this is roughly the
-        // number of distinct words introduced before the system stops adding
-        // more on its own — keeping it low avoids overwhelming beginners.
-        // Past the early stage, every word contributes >1 pair as more skills
-        // unlock, so the threshold stops gating new introductions naturally.
-        const val AUTO_INTRODUCE_THRESHOLD: Int = 5
-    }
-
     /**
      * Selection pool is every (word, skill) pair where the word has been
      * introduced and the skill is not yet retired (sortValue > 0). Each pair
@@ -126,10 +80,9 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
      * skill ([Skill.READ]) is still used as the no-candidate fallback even if
      * filtered out, since something has to be returned.
      */
-    fun getActiveVocabWeightened(
+    fun getActiveVocabWeighted(
         skillFilter: (Skill) -> Boolean = { true },
     ): Pair<Vocab, Skill> {
-        val firstSkill = Skill.ladder.first()
         val activePairs: List<Pair<Vocab, Skill>> = csvData.flatMap { vocab ->
             if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
             Skill.ladder.mapNotNull { skill ->
@@ -139,39 +92,54 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
             }
         }
         if (activePairs.size < AUTO_INTRODUCE_THRESHOLD) {
-            val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
-            if (inactive.isNotEmpty()) {
-                val minImportance = inactive.minOf { it.importance }
-                val candidates = inactive.filter { it.importance == minImportance }
-                return pickNextInactive(candidates, minImportance) to firstSkill
-            }
-            val available = csvData.filter {
-                !it.ignore && !(it.hasBeenIntroduced() && it.isFullyLearned())
-            }
-            if (available.isEmpty()) {
-                return csvData[Random.nextInt(csvData.size)] to firstSkill
-            }
-            val pickedVocab = available[Random.nextInt(available.size)]
-            // The vocab may have one or more skills retired; pick the first one
-            // that's actually active so we don't waste a round on a retired skill.
-            val pickedSkill = Skill.ladder.firstOrNull {
-                skillFilter(it) && pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
-            } ?: firstSkill
-            return pickedVocab to pickedSkill
+            return pickFallback(skillFilter)
         }
-        val totalChance = activePairs.sumOf { (vocab, skill) -> vocab.sortValue(skill) }
-        val randomValue = Random.nextDouble(0.0, totalChance)
-        var sum = 0.0
-        var idx = 0
-        for (i in 0 until activePairs.size) {
-            val (vocab, skill) = activePairs[i]
-            sum += vocab.sortValue(skill)
-            idx = i
-            if (sum >= randomValue) {
-                break
-            }
-        }
-        return activePairs[idx]
+        return pickWeighted(activePairs)
     }
 
+    private fun pickFallback(skillFilter: (Skill) -> Boolean): Pair<Vocab, Skill> {
+        val firstSkill = Skill.ladder.first()
+        val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
+        if (inactive.isNotEmpty()) {
+            val minImportance = inactive.minOf { it.importance }
+            val candidates = inactive.filter { it.importance == minImportance }
+            return pickNextInactive(candidates, minImportance) to firstSkill
+        }
+        val available = csvData.filter {
+            !it.ignore && !(it.hasBeenIntroduced() && it.isFullyLearned())
+        }
+        if (available.isEmpty()) {
+            return csvData[Random.nextInt(csvData.size)] to firstSkill
+        }
+        val pickedVocab = available[Random.nextInt(available.size)]
+        // The vocab may have one or more skills retired; pick the first one
+        // that's actually active so we don't waste a round on a retired skill.
+        val pickedSkill = Skill.ladder.firstOrNull {
+            skillFilter(it) && pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
+        } ?: firstSkill
+        return pickedVocab to pickedSkill
+    }
+
+    private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {
+        val totalChance = pairs.sumOf { (vocab, skill) -> vocab.sortValue(skill) }
+        val randomValue = Random.nextDouble(0.0, totalChance)
+        var sum = 0.0
+        for (pair in pairs) {
+            sum += pair.first.sortValue(pair.second)
+            if (sum >= randomValue) return pair
+        }
+        return pairs.last()
+    }
+
+    companion object {
+        const val ESSENTIALS_IMPORTANCE: Int = 0
+
+        // Auto-pull a fresh inactive word whenever the active (word, skill)
+        // pool falls below this. For a brand-new user this is roughly the
+        // number of distinct words introduced before the system stops adding
+        // more on its own — keeping it low avoids overwhelming beginners.
+        // Past the early stage, every word contributes >1 pair as more skills
+        // unlock, so the threshold stops gating new introductions naturally.
+        const val AUTO_INTRODUCE_THRESHOLD: Int = 5
+    }
 }

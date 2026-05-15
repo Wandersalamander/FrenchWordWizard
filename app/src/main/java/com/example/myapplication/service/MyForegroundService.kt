@@ -6,10 +6,10 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.myapplication.R
+import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.openDictionaryStream
@@ -65,10 +65,8 @@ class MyForegroundService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        val sharedPreferences: SharedPreferences = getSharedPreferences(
-            "vocabulary_preferences", Context.MODE_PRIVATE
-        )
-        val language = Language.fromCode(sharedPreferences.getString("app_language", null))
+        val sharedPreferences = AppPrefs.get(this)
+        val language = Language.fromCode(sharedPreferences.getString(AppPrefs.KEY_APP_LANGUAGE, null))
         val inputStream: InputStream = openDictionaryStream(this, language)
         vocabDictionary = MyDictionary(inputStream, sharedPreferences)
 
@@ -107,7 +105,7 @@ class MyForegroundService : Service() {
 
     private fun updateNotification() {
         vocabDictionary.reloadPreferences()
-        val (localVocab, _) = vocabDictionary.getActiveVocabWeightened()
+        val (vocab, _) = vocabDictionary.getActiveVocabWeighted()
         val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this,
@@ -119,8 +117,8 @@ class MyForegroundService : Service() {
         val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(pendingIntent)
-            .setContentTitle("${localVocab.french} | ${localVocab.english}")
-            .setContentText(localVocab.getSomeFrenchLong())
+            .setContentTitle("${vocab.foreign} | ${vocab.english}")
+            .setContentText(vocab.randomExample())
 
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

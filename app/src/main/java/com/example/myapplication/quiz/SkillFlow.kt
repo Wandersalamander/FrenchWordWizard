@@ -43,7 +43,7 @@ internal sealed interface SkillFlow {
     val englishIsPrompt: Boolean
 
     /**
-     * Set up [QuizViews.textFr] for the start of a round.
+     * Set up [QuizViews.textForeign] for the start of a round.
      *
      * [onMaskedWordTapped] — invoked when the user taps a *masked* foreign word
      * to reveal it via TTS. This is a hint and costs a small failure increment.
@@ -51,7 +51,7 @@ internal sealed interface SkillFlow {
      * [onWordReplayed] — invoked when the user taps an *already visible*
      * foreign word to hear it spoken again. No penalty; pure convenience.
      */
-    fun setupTextFr(
+    fun setupForeignText(
         vocab: Vocab,
         views: QuizViews,
         listeningEnabled: Boolean,
@@ -92,17 +92,17 @@ internal object ReadFlow : SkillFlow {
     override val tipBehavior = TipBehavior.Sentence
     override val englishIsPrompt = false
 
-    override fun setupTextFr(
+    override fun setupForeignText(
         vocab: Vocab,
         views: QuizViews,
         listeningEnabled: Boolean,
         onMaskedWordTapped: () -> Unit,
         onWordReplayed: () -> Unit,
     ) {
-        views.textFr.text = vocab.french
+        views.textForeign.text = vocab.foreign
         // Tap the visible foreign word to hear it again (no penalty).
-        views.textFr.setDebouncedOnClickListener { onWordReplayed() }
-        views.textFr.isClickable = true
+        views.textForeign.setDebouncedOnClickListener { onWordReplayed() }
+        views.textForeign.isClickable = true
     }
 
     override fun ttsAtRoundStart(vocab: Vocab, tts: TtsHelper) =
@@ -124,7 +124,7 @@ internal object ListenFlow : SkillFlow {
     override val tipBehavior = TipBehavior.Sentence
     override val englishIsPrompt = false
 
-    override fun setupTextFr(
+    override fun setupForeignText(
         vocab: Vocab,
         views: QuizViews,
         listeningEnabled: Boolean,
@@ -132,14 +132,14 @@ internal object ListenFlow : SkillFlow {
         onWordReplayed: () -> Unit,
     ) {
         if (listeningEnabled) {
-            views.textFr.text = maskWord(vocab.french)
-            views.textFr.setDebouncedOnClickListener { onMaskedWordTapped() }
-            views.textFr.isClickable = true
+            views.textForeign.text = maskWord(vocab.foreign)
+            views.textForeign.setDebouncedOnClickListener { onMaskedWordTapped() }
+            views.textForeign.isClickable = true
         } else {
             // Listening disabled → word is shown like in READ. Allow no-penalty replays.
-            views.textFr.text = vocab.french
-            views.textFr.setDebouncedOnClickListener { onWordReplayed() }
-            views.textFr.isClickable = true
+            views.textForeign.text = vocab.foreign
+            views.textForeign.setDebouncedOnClickListener { onWordReplayed() }
+            views.textForeign.isClickable = true
         }
     }
 
@@ -178,7 +178,7 @@ internal object InvertFlow : SkillFlow {
 
     private const val MASK_CHAR = '◉'
 
-    override fun setupTextFr(
+    override fun setupForeignText(
         vocab: Vocab,
         views: QuizViews,
         listeningEnabled: Boolean,
@@ -187,9 +187,9 @@ internal object InvertFlow : SkillFlow {
     ) {
         // INVERT keeps the foreign word fully masked until progressive reveal —
         // tapping it must not leak audio of the answer.
-        views.textFr.text = maskWord(vocab.french, MASK_CHAR)
-        views.textFr.setOnClickListener(null)
-        views.textFr.isClickable = false
+        views.textForeign.text = maskWord(vocab.foreign, MASK_CHAR)
+        views.textForeign.setOnClickListener(null)
+        views.textForeign.isClickable = false
     }
 
     override fun ttsAtRoundStart(vocab: Vocab, tts: TtsHelper) =
@@ -208,7 +208,7 @@ internal object InvertFlow : SkillFlow {
     override fun isCompromisedByListening(listeningEnabled: Boolean): Boolean = false
 
     override fun applyProgressiveReveal(vocab: Vocab, views: QuizViews, revealedLetters: Int) {
-        views.textFr.text = revealLetterPrefix(vocab.french, revealedLetters, MASK_CHAR)
+        views.textForeign.text = revealLetterPrefix(vocab.foreign, revealedLetters, MASK_CHAR)
     }
 }
 
