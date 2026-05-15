@@ -122,7 +122,7 @@ data class Vocab(
         val s = stats(skill)
         val fpb = s.failureProbability()
         if (fpb < SKILL_FINISHED_THRESHOLD) {
-            return 0.0
+            return refreshSortValue(s)
         }
         val lastSeenHours = if (s.nTimesViewed == 0) {
             // Newly-active skill pair — lastDisplayed is the epoch (1970), which
@@ -137,15 +137,49 @@ data class Vocab(
         return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) * fpb * timeFactor * hardMultiplier
     }
 
+    /**
+     * Post-mastery refresh weight. Stability grows with each pass (clean
+     * streak lengthens because lastTimeFailed stays put) and the next
+     * interval lengthens automatically. A fail bumps lastTimeFailed and
+     * nTimesFailed — over enough fails the pair's failureProbability rises
+     * back above [SKILL_FINISHED_THRESHOLD] and it returns to active drilling.
+     */
+    private fun refreshSortValue(
+        s: SkillStats,
+        now: Long = System.currentTimeMillis(),
+    ): Double {
+        val daysSinceLastDisplayed = (now - s.lastDisplayed) / MILLIS_PER_DAY
+        val cleanStreakDays = if (s.lastTimeFailed > 0L && s.lastDisplayed > s.lastTimeFailed) {
+            (s.lastDisplayed - s.lastTimeFailed) / MILLIS_PER_DAY
+        } else {
+            // Never failed for this skill — no streak anchor. Each clean view
+            // contributes a few days of implicit stability instead.
+            s.nTimesViewed * VIEW_AS_STREAK_DAYS
+        }
+        val stabilityDays = (cleanStreakDays + REFRESH_FLOOR_DAYS)
+            .coerceIn(REFRESH_FLOOR_DAYS, REFRESH_CAP_DAYS)
+        if (daysSinceLastDisplayed < stabilityDays) return 0.0
+        val overdueRatio = (daysSinceLastDisplayed / stabilityDays).coerceAtMost(OVERDUE_CAP)
+        return REFRESH_WEIGHT * overdueRatio
+    }
+
     fun pronounceableEn(): String = EnglishAbbreviations.expand(english)
 
     fun pronounceableForeign(language: Language): String =
         language.expandAbbreviations(foreign)
 
     companion object {
-        // Below this failure probability, a (word, skill) pair is retired — it
-        // never appears in the quiz pool again.
+        // Below this failure probability, a (word, skill) pair exits active
+        // drilling and is handed off to the refresh pool (refreshSortValue).
         const val SKILL_FINISHED_THRESHOLD = 0.1f
+
+        // Refresh pool tuning. See [refreshSortValue] for how these combine.
+        private const val REFRESH_WEIGHT = 0.1
+        private const val REFRESH_FLOOR_DAYS = 7.0
+        private const val REFRESH_CAP_DAYS = 180.0
+        private const val VIEW_AS_STREAK_DAYS = 3.0
+        private const val OVERDUE_CAP = 3.0
+        private const val MILLIS_PER_DAY = 86_400_000.0
 
         /**
          * Parse a single tab-separated CSV line into a [Vocab], or null when
