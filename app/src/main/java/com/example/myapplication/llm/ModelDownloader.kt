@@ -36,10 +36,10 @@ object ModelDownloader {
                 throw java.io.IOException("HTTP $code from $url")
             }
             val total = conn.contentLengthLong
+            var downloaded = 0L
             conn.inputStream.use { input ->
                 tmp.outputStream().use { output ->
                     val buffer = ByteArray(64 * 1024)
-                    var downloaded = 0L
                     var lastReport = 0L
                     while (true) {
                         coroutineContext.ensureActive()
@@ -55,6 +55,15 @@ object ModelDownloader {
                     }
                     onProgress(downloaded, total)
                 }
+            }
+            // The atomic rename below guarantees we don't leave a half-baked
+            // target file even if the connection dies mid-stream, but a server
+            // that hangs up after sending only some of the bytes would still
+            // produce a fully-written-but-incomplete .part. Detect that here.
+            if (total > 0 && downloaded != total) {
+                throw java.io.IOException(
+                    "Truncated download: got $downloaded of $total bytes from $url"
+                )
             }
             if (target.exists()) target.delete()
             if (!tmp.renameTo(target)) {

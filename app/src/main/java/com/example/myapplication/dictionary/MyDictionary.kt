@@ -19,11 +19,28 @@ fun openDictionaryStream(context: Context, language: Language): InputStream {
     return SequenceInputStream(Collections.enumeration(streams))
 }
 
-class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences) {
+/**
+ * Per-skill counts shown on the progress bars: how many words have started
+ * the skill ([introduced]) and how many have either been marked learned or
+ * dropped below the retirement threshold ([finished]).
+ */
+data class SkillProgress(var introduced: Int = 0, var finished: Int = 0)
+
+class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences? = null) {
     val csvData: List<Vocab> = readCsv(inputStream)
+
+    // Cache of foreign words that have entered the rotation. Used by the LLM
+    // prompt to optionally seed example sentences with previously-studied
+    // vocabulary. Built lazily on first read and incrementally maintained via
+    // [notifyVocabIntroduced] so we don't scan ~10k entries per LLM call.
+    private val introducedForeignSet: LinkedHashSet<String> = LinkedHashSet()
+    private var introducedForeignInitialized: Boolean = false
 
     fun reloadPreferences() {
         csvData.forEach { it.loadPreferences() }
+        // Stat values changed under us — discard caches.
+        introducedForeignInitialized = false
+        introducedForeignSet.clear()
     }
 
     /** Words where [skill] has been practiced at least once. */
@@ -39,6 +56,55 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
             it.stats(skill).nTimesViewed > 0 &&
                 (it.ignore || it.stats(skill).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD)
         }
+
+    /**
+     * Compute introduced/finished counts for every ladder skill in a single
+     * pass over [csvData]. Per-round progress-bar refresh used to call
+     * [getActiveDataSize] + [getFinishedDataSize] for each of N skills (2N
+     * full scans); this collapses to one.
+     */
+    fun computeAllSkillProgress(): Map<Skill, SkillProgress> {
+        val out: Map<Skill, SkillProgress> =
+            Skill.ladder.associateWith { SkillProgress() }
+        for (vocab in csvData) {
+            for (skill in Skill.ladder) {
+                val stats = vocab.stats(skill)
+                if (stats.nTimesViewed <= 0) continue
+                val progress = out.getValue(skill)
+                progress.introduced++
+                if (vocab.ignore || stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) {
+                    progress.finished++
+                }
+            }
+        }
+        return out
+    }
+
+    /**
+     * Snapshot of the foreign words that have entered the rotation. Cached
+     * after first computation; QuizController calls [notifyVocabIntroduced]
+     * when a word's first round is committed so the cache stays current
+     * without rescanning [csvData] on every LLM prompt.
+     */
+    fun getIntroducedForeignWords(): List<String> {
+        if (!introducedForeignInitialized) {
+            for (vocab in csvData) {
+                if (vocab.hasBeenIntroduced()) introducedForeignSet.add(vocab.foreign)
+            }
+            introducedForeignInitialized = true
+        }
+        return introducedForeignSet.toList()
+    }
+
+    /**
+     * Mark [vocab] as introduced in the cached set. Idempotent — calling on a
+     * word that was already in the set is a no-op. Skipped when the cache
+     * hasn't been built yet (next [getIntroducedForeignWords] call will scan).
+     */
+    fun notifyVocabIntroduced(vocab: Vocab) {
+        if (!introducedForeignInitialized) return
+        introducedForeignSet.add(vocab.foreign)
+    }
 
     private fun readCsv(inputStream: InputStream): List<Vocab> =
         inputStream.bufferedReader().use { reader ->

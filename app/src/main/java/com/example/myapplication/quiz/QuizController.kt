@@ -392,11 +392,11 @@ class QuizController(
         val total = vocabDictionary.csvData.size
         if (total <= 0) return
         val totalF = total.toFloat()
+        val progress = vocabDictionary.computeAllSkillProgress()
         for (skill in Skill.ladder) {
-            val introduced = vocabDictionary.getActiveDataSize(skill)
-            val finished = vocabDictionary.getFinishedDataSize(skill)
-            views.progressBars[skill]?.progress = (introduced / totalF * 100).toInt()
-            views.progressBarsFinished[skill]?.progress = (finished / totalF * 100).toInt()
+            val counts = progress.getValue(skill)
+            views.progressBars[skill]?.progress = (counts.introduced / totalF * 100).toInt()
+            views.progressBarsFinished[skill]?.progress = (counts.finished / totalF * 100).toInt()
         }
     }
 
@@ -486,12 +486,19 @@ class QuizController(
         val timeElapsed = System.currentTimeMillis() - startTime + penalty
         val stats = vocab.stats(currentSkill)
         val prevFailureProbability = stats.failureProbability()
+        val wasIntroduced = vocab.hasBeenIntroduced()
 
         stats.nTimesViewed += 1
         stats.viewTimeMilli =
             (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli).toLong()
         stats.lastDisplayed = System.currentTimeMillis()
         vocab.savePreferences()
+
+        // First time this word entered the rotation — keep the LLM's
+        // "previously studied words" cache in sync without rescanning csvData.
+        if (!wasIntroduced && vocab.hasBeenIntroduced()) {
+            vocabDictionary.notifyVocabIntroduced(vocab)
+        }
 
         // A committed (non-compromised) round is what counts for the daily
         // streak. Idempotent within a day — first round of the day bumps the
@@ -562,11 +569,7 @@ class QuizController(
                 word = vocab.foreign,
                 translation = vocab.english,
                 recent = recentWords.toList(),
-                everSeen = vocabDictionary.csvData
-                    .asSequence()
-                    .filter { it.hasBeenIntroduced() }
-                    .map { it.foreign }
-                    .toList(),
+                everSeen = vocabDictionary.getIntroducedForeignWords(),
                 language = language,
             )
         } finally {

@@ -157,12 +157,19 @@ data class Vocab(
         val s = stats(skill)
         if (s.failureProbability() >= SKILL_FINISHED_THRESHOLD) return 0.0
         val daysSinceLastDisplayed = (now - s.lastDisplayed) / MILLIS_PER_DAY
-        val cleanStreakDays = if (s.lastTimeFailed > 0L && s.lastDisplayed > s.lastTimeFailed) {
-            (s.lastDisplayed - s.lastTimeFailed) / MILLIS_PER_DAY
-        } else {
-            // Never failed for this skill — no streak anchor. Each clean view
-            // contributes a few days of implicit stability instead.
-            s.nTimesViewed * VIEW_AS_STREAK_DAYS
+        val cleanStreakDays = when {
+            s.lastTimeFailed > 0L && s.lastDisplayed > s.lastTimeFailed ->
+                (s.lastDisplayed - s.lastTimeFailed) / MILLIS_PER_DAY
+            s.nTimesFailed > 0f ->
+                // Legacy record: has failed historically but the timestamp wasn't
+                // tracked back then. Don't credit it with an implicit clean streak —
+                // pin to the floor so it cycles back into refresh on its normal cadence
+                // instead of getting over-stabilized.
+                REFRESH_FLOOR_DAYS
+            else ->
+                // Never failed for this skill — no streak anchor. Each clean view
+                // contributes a few days of implicit stability instead.
+                s.nTimesViewed * VIEW_AS_STREAK_DAYS
         }
         val stabilityDays = (cleanStreakDays + REFRESH_FLOOR_DAYS)
             .coerceIn(REFRESH_FLOOR_DAYS, REFRESH_CAP_DAYS)
