@@ -407,6 +407,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         quizController.refreshStreakBadge()
     }
 
+    override fun onPause() {
+        if (::quizController.isInitialized) {
+            quizController.markPaused()
+        }
+        super.onPause()
+    }
+
     private fun ensureNotificationPermissionThenStartService() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
             ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)

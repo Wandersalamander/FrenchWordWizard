@@ -86,6 +86,11 @@ class QuizController(
         private set
     private val recentWords = ArrayDeque<String>()
     private var startTime: Long = System.currentTimeMillis()
+    // Foreground-only round time: each onPause flushes the active interval into
+    // here, and the next resume restarts the live segment. saveCurrentVocab sums
+    // both so a settings detour or screen-off gap doesn't get counted as
+    // thinking time, while pre-pause attention isn't thrown away either.
+    private var elapsedBeforePause: Long = 0L
     private var inSpotCheck = false
 
     // Skill being practiced for the currently-displayed word. Set in updateVocab
@@ -172,8 +177,19 @@ class QuizController(
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
     }
 
-    /** Reset the response timer; call when the activity resumes. */
+    /** Resume the live time segment; call when the activity resumes. */
     fun markResumed() {
+        startTime = System.currentTimeMillis()
+    }
+
+    /**
+     * Flush the active foreground segment into [elapsedBeforePause] so the
+     * paused interval is excluded from the round's time. Call from the host
+     * activity's onPause — safe to call repeatedly (subsequent calls add zero
+     * because markResumed reanchors startTime).
+     */
+    fun markPaused() {
+        elapsedBeforePause += System.currentTimeMillis() - startTime
         startTime = System.currentTimeMillis()
     }
 
@@ -321,6 +337,7 @@ class QuizController(
         setupLearnedButton()
 
         startTime = System.currentTimeMillis()
+        elapsedBeforePause = 0L
         currentSkill.flow.ttsAtRoundStart(vocab, tts)
     }
 
@@ -483,7 +500,8 @@ class QuizController(
             return
         }
 
-        val timeElapsed = System.currentTimeMillis() - startTime + penalty
+        val timeElapsed =
+            elapsedBeforePause + (System.currentTimeMillis() - startTime) + penalty
         val stats = vocab.stats(currentSkill)
         val prevFailureProbability = stats.failureProbability()
         val wasIntroduced = vocab.hasBeenIntroduced()
