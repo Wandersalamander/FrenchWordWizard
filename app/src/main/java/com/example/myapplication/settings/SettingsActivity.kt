@@ -1,7 +1,6 @@
 package com.example.myapplication.settings
 
 import android.app.TimePickerDialog
-import android.graphics.Color
 import android.os.Bundle
 import android.text.format.Formatter
 import android.view.View
@@ -15,6 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -231,7 +231,9 @@ class SettingsActivity : AppCompatActivity() {
                 }
                 .create()
             dialog.setOnShowListener {
-                dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(Color.parseColor("#D32F2F"))
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(
+                    ContextCompat.getColor(this@SettingsActivity, R.color.danger)
+                )
             }
             dialog.show()
         }

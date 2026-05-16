@@ -67,15 +67,13 @@
         android:id="@+id/textStreak"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="16dp"
+        android:contentDescription="Current practice streak in days"
         android:text=""
+        android:textColor="@color/monokai_orange"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/monokai_orange"
-        android:contentDescription="Current practice streak in days"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/progressContainer"
+        app:layout_constraintEnd_toEndOf="@+id/progressContainer" />
 
     <Button
         android:id="@+id/button_hard"

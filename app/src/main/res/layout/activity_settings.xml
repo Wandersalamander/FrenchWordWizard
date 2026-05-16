@@ -122,7 +122,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="12sp"
-        android:textColor="#888888"
+        android:textColor="?android:attr/textColorTertiary"
         android:fontFamily="monospace"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
@@ -171,7 +171,7 @@
         android:layout_height="wrap_content"
         android:text="When available, the Tip button generates fresh example sentences on-device using a small LLM via MediaPipe (default: Qwen 2.5 1.5B, ~1.6 GB, GPU-accelerated). Downloaded once. Otherwise the built-in CSV sentences are used."
         android:textSize="13sp"
-        android:textColor="#666666"
+        android:textColor="?android:attr/textColorSecondary"
         android:padding="8dp" />
 
     <TextView
@@ -225,7 +225,7 @@
         android:layout_height="wrap_content"
         android:text="A notification fires at this time only when you have a streak going and haven't practiced yet today."
         android:textSize="13sp"
-        android:textColor="#666666"
+        android:textColor="?android:attr/textColorSecondary"
         android:padding="8dp" />
 
     <TextView
@@ -241,7 +241,7 @@
         android:layout_height="wrap_content"
         android:text="Language to reset"
         android:textSize="14sp"
-        android:textColor="#666666"
+        android:textColor="?android:attr/textColorSecondary"
         android:paddingStart="8dp"
         android:paddingEnd="8dp" />
 
@@ -259,15 +259,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Reset progress"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#D32F2F" />
+        android:textColor="@color/on_danger"
+        android:backgroundTint="@color/danger" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Permanently deletes all learned/hard flags and quiz stats for the chosen language. This cannot be undone."
         android:textSize="13sp"
-        android:textColor="#666666"
+        android:textColor="?android:attr/textColorSecondary"
         android:padding="8dp" />
 </LinearLayout>
 </ScrollView>

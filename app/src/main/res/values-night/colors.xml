@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night counterparts to the semantic tokens in values/colors.xml. The
+         brand and monokai palettes are reused as-is. -->
+    <color name="text_secondary">#BFBFC9</color>
+    <color name="text_tertiary">#8E8E99</color>
+    <!-- Slightly desaturated red so the danger button doesn't glow on a dark
+         surface; on_danger stays white for AA contrast. -->
+    <color name="danger">#E57373</color>
+    <color name="on_danger">#1A0F0F</color>
+    <!-- Pure white over saturated bars is harsh at night; the soft cream
+         keeps the "finished" overlay readable without overwhelming. -->
+    <color name="progress_finished_overlay">#E8E6DE</color>
+</resources>
