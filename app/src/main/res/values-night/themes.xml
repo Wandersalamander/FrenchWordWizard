@@ -1,18 +1,31 @@
 <resources>
-    <!-- Night override. The DayNight parent already swaps the neutral palette
-         (background, surface, text colors) for us — we only retune the brand
-         so primary reads as a lighter purple against the dark surface, with
-         black text on top for contrast. -->
+    <!-- Dark mode: full Monokai canvas. Pink/cyan accents are reused as-is
+         (they were designed for this background), text flips to Monokai FG,
+         secondary surfaces lift slightly from the BG. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/brand_primary_light</item>
-        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/monokai_pink</item>
+        <item name="colorPrimaryVariant">@color/monokai_pink_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
 
-        <item name="colorSecondary">@color/brand_secondary</item>
-        <item name="colorSecondaryVariant">@color/brand_secondary_dark</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/monokai_cyan</item>
+        <item name="colorSecondaryVariant">@color/monokai_cyan_dark</item>
+        <item name="colorOnSecondary">@color/monokai_bg</item>
+        <item name="colorAccent">@color/monokai_cyan</item>
 
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Dark Monokai canvas; surface lifts slightly so cards/dialogs read
+             as raised. Primary text goes pure white — Monokai FG (#F8F8F2)
+             would technically work but reads as faintly grayish; muted text
+             keeps the Monokai olive tone for hierarchy. -->
+        <item name="android:colorBackground">@color/monokai_bg</item>
+        <item name="colorSurface">@color/monokai_bg_lift</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/monokai_comment_light</item>
+        <item name="android:textColorTertiary">@color/monokai_comment</item>
+
+        <item name="actionBarStyle">@style/Widget.MyApplication.ActionBar</item>
+        <item name="android:statusBarColor">@color/monokai_bg</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

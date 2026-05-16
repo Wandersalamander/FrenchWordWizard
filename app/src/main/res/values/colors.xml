@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Brand palette. The previous values referenced @android:color/* aliases
-         that resolve differently across API levels; switching to literal hex
-         keeps the brand stable. -->
-    <color name="brand_primary">#6750A4</color>
-    <color name="brand_primary_dark">#4F378B</color>
-    <color name="brand_primary_light">#D0BCFF</color>
-    <color name="brand_secondary">#03DAC5</color>
-    <color name="brand_secondary_dark">#018786</color>
+    <!-- Monokai canonical palette. Hex values are the original Monokai theme
+         constants (background, foreground, comment, plus the six syntax
+         accents). The *_dark / *_light additions and bg_lift are derived for
+         status-bar variants and elevated surfaces. -->
+    <color name="monokai_bg">#272822</color>
+    <color name="monokai_bg_lift">#3E3D32</color>
+    <color name="monokai_fg">#F8F8F2</color>
+    <color name="monokai_comment">#75715E</color>
+    <color name="monokai_comment_light">#A59F85</color>
+    <color name="monokai_pink">#F92672</color>
+    <color name="monokai_pink_dark">#C71B5C</color>
+    <color name="monokai_orange">#FD971F</color>
+    <color name="monokai_yellow">#E6DB74</color>
+    <color name="monokai_green">#A6E22E</color>
+    <color name="monokai_cyan">#66D9EF</color>
+    <color name="monokai_cyan_dark">#3FB8D1</color>
+    <color name="monokai_purple">#AE81FF</color>
+
+    <!-- Warm cream paper for light-mode content surfaces. Sits between pure
+         white and the Monokai foreground so the editor feel carries over to
+         daylight without looking dingy. -->
+    <color name="cream_surface">#FAF8F0</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Semantic tokens. Each has a night counterpart in values-night/colors.xml
-         so views referencing these names follow the system theme. -->
-    <color name="text_secondary">#5B5B66</color>
-    <color name="text_tertiary">#8A8A95</color>
+    <!-- Mode-flipping text color for the main vocab views (textGuess, textReal,
+         textGuessLong). Applied explicitly on those TextViews so Material's
+         default TextAppearance can't sneak a high-emphasis alpha overlay on
+         top — that's what was making the vocab look dim/grayish even on a
+         "near-black" textColorPrimary. -->
+    <color name="vocab_text">#000000</color>
+
+    <!-- Semantic tokens. values-night overrides only those whose meaning
+         flips in dark mode. -->
     <color name="danger">#C62828</color>
     <color name="on_danger">#FFFFFFFF</color>
     <!-- Tint overlaid on the colored skill bar to mark the "finished" portion.
-         In light mode white reads as a bright highlight on the saturated bar;
-         see values-night for the dark-mode tweak. -->
-    <color name="progress_finished_overlay">#FFFFFFFF</color>
-
-    <!-- Monokai palette — used as per-skill accents on progress bars. These are
-         intentional vivid accents that read well on both light and dark
-         backgrounds, so they do not have night counterparts. -->
-    <color name="monokai_green">#A6E22E</color>
-    <color name="monokai_cyan">#66D9EF</color>
-    <color name="monokai_orange">#FD971F</color>
-    <color name="monokai_pink">#F92672</color>
-    <color name="monokai_purple">#AE81FF</color>
-    <color name="monokai_yellow">#E6DB74</color>
+         Monokai FG reads as a warm highlight over any of the saturated accent
+         fills and works in both modes. -->
+    <color name="progress_finished_overlay">@color/monokai_fg</color>
 </resources>

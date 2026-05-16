@@ -13,6 +13,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:text="Un mot etrange et aussi trop long"
+        android:textColor="@color/vocab_text"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +27,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="A foreign word"
+        android:textColor="@color/vocab_text"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/textGuess"
         app:layout_constraintTop_toBottomOf="@+id/textGuess" />
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Ma mère a ressenti une très grande peine lorsqu’elle a appris que mon père servirait une peine de six ans pour un crime qu’il n’a pas commis. "
+        android:textColor="@color/vocab_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0.00"
+        android:textColor="@color/vocab_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textGuess"
         app:layout_constraintStart_toStartOf="@+id/textGuess" />
