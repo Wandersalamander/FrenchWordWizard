@@ -50,7 +50,18 @@ data class SkillStats(
         if (nTimesViewed == 0) return 1.0f
         val base = 0.5f / nTimesViewed.toFloat()
         val raw = base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
-        return raw.coerceIn(0.0f, 1.0f)
+        val clamped = raw.coerceIn(0.0f, 1.0f)
+        // Sustained-slowness gate: a clean run of fast Next-presses can drive
+        // raw fpb under the mastery threshold even when the user is still
+        // actually struggling. While the last two view-time samples together
+        // exceed SLOW_VIEW_TIME_SUM_MS, floor the reported fpb just above the
+        // mastery cut so the (word, skill) pair stays in the active pool.
+        return if (clamped < SLOW_FPB_FLOOR &&
+            viewTimeMilli + viewTimeMilli_prev > SLOW_VIEW_TIME_SUM_MS) {
+            SLOW_FPB_FLOOR
+        } else {
+            clamped
+        }
     }
 
     fun meanTimeViewedMilli(): Double = viewTimeMilli.toDouble()
@@ -75,5 +86,15 @@ data class SkillStats(
         // High enough that the first round's actual time gets blended in without
         // an undue jump up or down.
         const val DEFAULT_VIEW_TIME_MS = 10_000L
+
+        // When viewTimeMilli + viewTimeMilli_prev exceeds this, failureProbability
+        // is floored so the pair can't slip past the mastery gate. ~5s average
+        // per round across the last two samples.
+        const val SLOW_VIEW_TIME_SUM_MS = 10_000L
+
+        // Kept in lockstep with Vocab.SKILL_FINISHED_THRESHOLD (0.10) + 0.05:
+        // just above the mastery cut so the pair stays active without being
+        // surfaced as urgently as a fresh failure would.
+        const val SLOW_FPB_FLOOR = 0.15f
     }
 }

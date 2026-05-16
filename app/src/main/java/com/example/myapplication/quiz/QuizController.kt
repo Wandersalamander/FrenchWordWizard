@@ -489,6 +489,9 @@ class QuizController(
         val wasIntroduced = vocab.hasBeenIntroduced()
 
         stats.nTimesViewed += 1
+        // Snapshot the pre-update EMA into _prev so the slow-gate sum in
+        // failureProbability() spans the last two rounds rather than just one.
+        stats.viewTimeMilli_prev = stats.viewTimeMilli
         stats.viewTimeMilli =
             (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli).toLong()
         stats.lastDisplayed = System.currentTimeMillis()
