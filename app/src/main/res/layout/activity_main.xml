@@ -102,18 +102,20 @@
 
     <Button
         android:id="@+id/button_next"
-        android:layout_width="wrap_content"
+        android:layout_width="64pt"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginEnd="40dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_fail"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.843" />
 
     <Button
         android:id="@+id/button_tip"
-        android:layout_width="wrap_content"
+        android:layout_width="64pt"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="Tip"
@@ -126,7 +128,7 @@
 
     <Button
         android:id="@+id/button_new"
-        android:layout_width="wrap_content"
+        android:layout_width="64pt"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="A NEW WORD"
@@ -135,12 +137,10 @@
 
     <Button
         android:id="@+id/button_fail"
-        android:layout_width="wrap_content"
+        android:layout_width="64pt"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="I don't know"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button_next" />
 
@@ -152,11 +152,12 @@
 
     <LinearLayout
         android:id="@+id/progressContainer"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginBottom="32dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button_fail"
+        app:layout_constraintEnd_toEndOf="@+id/button_next"
         app:layout_constraintStart_toStartOf="@+id/button_fail">
 
         <TextView
