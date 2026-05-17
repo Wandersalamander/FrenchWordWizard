@@ -18,44 +18,64 @@ class MyDictionaryProgressTest {
         return MyDictionary(ByteArrayInputStream(csv.toByteArray()))
     }
 
-    @Test fun progress_emptyDictionaryHasZeroCounts() {
-        val dict = dictionaryOf(emptyList())
-        val counts = dict.computeAllSkillProgress()
-        for (skill in Skill.ladder) {
-            assertEquals("$skill introduced", 0, counts.getValue(skill).introduced)
-            assertEquals("$skill finished", 0, counts.getValue(skill).finished)
-        }
+    @Test fun stageBuckets_emptyDictionaryHasZeroCounts() {
+        val counts = dictionaryOf(emptyList()).computeStageBucketCounts()
+        assertEquals(StageBucketCounts(0, 0, 0, 0, 0), counts)
     }
 
-    @Test fun progress_countsIntroducedAndFinishedPerSkill() {
+    @Test fun stageBuckets_untouchedWordIsUnknown() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
-            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",
-            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",
         ))
-        // Word 0: introduced + finished on READ. Word 1: introduced only on READ. Word 2: untouched.
-        dict.csvData[0].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
-        dict.csvData[1].stats(Skill.READ).apply { nTimesViewed = 2; nTimesFailed = 2f }
-        // Word 2 stays untouched (nTimesViewed == 0).
-        val counts = dict.computeAllSkillProgress()
-        assertEquals(2, counts.getValue(Skill.READ).introduced)
-        assertEquals(1, counts.getValue(Skill.READ).finished)
-        // Other skills untouched.
-        assertEquals(0, counts.getValue(Skill.LISTEN).introduced)
-        assertEquals(0, counts.getValue(Skill.INVERT).introduced)
+        val counts = dict.computeStageBucketCounts()
+        assertEquals(StageBucketCounts(finished = 0, invertActive = 0, listenActive = 0,
+            readActive = 0, unknown = 1), counts)
     }
 
-    @Test fun progress_ignoredWordCountsAsFinishedOnceIntroduced() {
+    @Test fun stageBuckets_deepestIntroducedSkillSelectsBucket() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",          // READ only, struggling
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",                // READ + LISTEN, LISTEN struggling
+            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",             // all three, INVERT struggling
+            "Tisch\ttable\t1\thash4\tDer Tisch ist alt.\tTisch.",         // untouched
+        ))
+        dict.csvData[0].stats(Skill.READ).apply { nTimesViewed = 2; nTimesFailed = 2f }
+        dict.csvData[1].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
+        dict.csvData[1].stats(Skill.LISTEN).apply { nTimesViewed = 2; nTimesFailed = 2f }
+        dict.csvData[2].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
+        dict.csvData[2].stats(Skill.LISTEN).apply { nTimesViewed = 100; nTimesFailed = 0f }
+        dict.csvData[2].stats(Skill.INVERT).apply { nTimesViewed = 2; nTimesFailed = 2f }
+        val counts = dict.computeStageBucketCounts()
+        assertEquals(StageBucketCounts(finished = 0, invertActive = 1, listenActive = 1,
+            readActive = 1, unknown = 1), counts)
+    }
+
+    @Test fun stageBuckets_finishedRequiresAllSkillsIntroducedAndMastered() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",       // READ mastered, LISTEN/INVERT never started
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",             // all three mastered
+        ))
+        // Word 0: READ stats look "done" but downstream skills are untouched —
+        // shouldn't count as fully finished, the user still has practice ahead.
+        dict.csvData[0].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
+        for (skill in Skill.ladder) {
+            dict.csvData[1].stats(skill).apply { nTimesViewed = 100; nTimesFailed = 0f }
+        }
+        val counts = dict.computeStageBucketCounts()
+        assertEquals(StageBucketCounts(finished = 1, invertActive = 0, listenActive = 0,
+            readActive = 1, unknown = 0), counts)
+    }
+
+    @Test fun stageBuckets_ignoredWordShortCircuitsToFinished() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
         val vocab = dict.csvData[0]
         vocab.stats(Skill.READ).apply { nTimesViewed = 1; nTimesFailed = 1f }  // high fpb
         vocab.ignore = true
-        val counts = dict.computeAllSkillProgress()
-        // Introduced (viewed at least once) and finished (ignore short-circuit).
-        assertEquals(1, counts.getValue(Skill.READ).introduced)
-        assertEquals(1, counts.getValue(Skill.READ).finished)
+        val counts = dict.computeStageBucketCounts()
+        assertEquals(StageBucketCounts(finished = 1, invertActive = 0, listenActive = 0,
+            readActive = 0, unknown = 0), counts)
     }
 
     @Test fun introducedForeignWords_startsEmpty() {

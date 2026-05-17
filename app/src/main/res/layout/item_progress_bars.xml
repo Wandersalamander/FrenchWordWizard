@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Single segmented progress bar shown on the main screen. The five child
+     Views are weighted at runtime by QuizController.refreshAllProgressBars to
+     reflect how many words sit in each progress bucket (left = most progressed,
+     right = least). Colours are pinned to the Monokai palette; no alpha
+     blending — the segments are opaque and butted edge-to-edge. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/progressSegmentRow"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="10dp"
+    android:orientation="horizontal">
 
-    <ProgressBar
-        android:id="@+id/progressBarSkill"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progress="0" />
+    <View
+        android:id="@+id/segFinished"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:background="@color/monokai_green" />
 
-    <ProgressBar
-        android:id="@+id/progressBarSkillFinished"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progress="0"
-        android:progressTint="@color/progress_finished_overlay"
-        android:progressBackgroundTint="@android:color/transparent" />
-</FrameLayout>
+    <View
+        android:id="@+id/segInvertActive"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:background="@color/monokai_purple" />
+
+    <View
+        android:id="@+id/segListenActive"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:background="@color/monokai_cyan" />
+
+    <View
+        android:id="@+id/segReadActive"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:background="@color/monokai_orange" />
+
+    <View
+        android:id="@+id/segUnknown"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/monokai_bg_lift" />
+</LinearLayout>

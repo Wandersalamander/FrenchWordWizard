@@ -37,8 +37,4 @@
          flips in dark mode. -->
     <color name="danger">#C62828</color>
     <color name="on_danger">#FFFFFFFF</color>
-    <!-- Tint overlaid on the colored skill bar to mark the "finished" portion.
-         Monokai FG reads as a warm highlight over any of the saturated accent
-         fills and works in both modes. -->
-    <color name="progress_finished_overlay">@color/monokai_fg</color>
 </resources>

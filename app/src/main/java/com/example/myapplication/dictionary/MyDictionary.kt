@@ -20,11 +20,24 @@ fun openDictionaryStream(context: Context, language: Language): InputStream {
 }
 
 /**
- * Per-skill counts shown on the progress bars: how many words have started
- * the skill ([introduced]) and how many have either been marked learned or
- * dropped below the retirement threshold ([finished]).
+ * Five mutually-exclusive progress buckets shown on the segmented main-screen
+ * bar, summing to csvData.size. Ordered from most-progressed (left of the
+ * bar) to least-progressed (right):
+ * - [finished]: every introduced ladder skill is below SKILL_FINISHED_THRESHOLD
+ *   (or the word is ignored), AND every ladder skill has been introduced. A
+ *   word that has only mastered READ but never reached LISTEN/INVERT is NOT
+ *   finished — practice is still ahead of it.
+ * - [invertActive] / [listenActive] / [readActive]: the deepest introduced
+ *   skill is this one, and the word does not yet qualify as finished.
+ * - [unknown]: no skill has been practiced.
  */
-data class SkillProgress(var introduced: Int = 0, var finished: Int = 0)
+data class StageBucketCounts(
+    val finished: Int,
+    val invertActive: Int,
+    val listenActive: Int,
+    val readActive: Int,
+    val unknown: Int,
+)
 
 class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences? = null) {
     val csvData: List<Vocab> = readCsv(inputStream)
@@ -48,36 +61,39 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         csvData.count { it.stats(skill).nTimesViewed > 0 }
 
     /**
-     * Words considered "done" for [skill]: either marked learned, or the
-     * skill's failureProbability has dropped below the retirement threshold.
+     * Bucket every word into one of the five mutually-exclusive progress
+     * stages. Single pass over [csvData]; called once per round to drive the
+     * segmented progress bar.
      */
-    fun getFinishedDataSize(skill: Skill): Int =
-        csvData.count {
-            it.stats(skill).nTimesViewed > 0 &&
-                (it.ignore || it.stats(skill).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD)
-        }
-
-    /**
-     * Compute introduced/finished counts for every ladder skill in a single
-     * pass over [csvData]. Per-round progress-bar refresh used to call
-     * [getActiveDataSize] + [getFinishedDataSize] for each of N skills (2N
-     * full scans); this collapses to one.
-     */
-    fun computeAllSkillProgress(): Map<Skill, SkillProgress> {
-        val out: Map<Skill, SkillProgress> =
-            Skill.ladder.associateWith { SkillProgress() }
+    fun computeStageBucketCounts(): StageBucketCounts {
+        var finished = 0
+        var invertActive = 0
+        var listenActive = 0
+        var readActive = 0
+        var unknown = 0
+        val ladder = Skill.ladder
         for (vocab in csvData) {
-            for (skill in Skill.ladder) {
+            val deepest = ladder.lastOrNull { vocab.stats(it).nTimesViewed > 0 }
+            if (deepest == null) {
+                unknown++
+                continue
+            }
+            val fullyFinished = vocab.ignore || ladder.all { skill ->
                 val stats = vocab.stats(skill)
-                if (stats.nTimesViewed <= 0) continue
-                val progress = out.getValue(skill)
-                progress.introduced++
-                if (vocab.ignore || stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) {
-                    progress.finished++
-                }
+                stats.nTimesViewed > 0 &&
+                    stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
+            }
+            if (fullyFinished) {
+                finished++
+                continue
+            }
+            when (deepest) {
+                Skill.INVERT -> invertActive++
+                Skill.LISTEN -> listenActive++
+                Skill.READ -> readActive++
             }
         }
-        return out
+        return StageBucketCounts(finished, invertActive, listenActive, readActive, unknown)
     }
 
     /**

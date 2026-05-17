@@ -19,7 +19,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.FrameLayout
-import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
@@ -27,7 +26,6 @@ import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
-import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.dictionary.openDictionaryStream
 import com.example.myapplication.llm.LlmService
@@ -45,15 +43,6 @@ import java.util.Locale
 
 private const val TAG = "MainActivity"
 private const val UTTERANCE_AWAITABLE = "awaitable_sentence"
-
-// Monokai palette cycled by ladder index — each skill gets a distinct fill colour.
-private val SKILL_COLOR_RES_IDS = listOf(
-    R.color.monokai_green,
-    R.color.monokai_cyan,
-    R.color.monokai_orange,
-    R.color.monokai_pink,
-    R.color.monokai_purple,
-)
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper {
     private lateinit var textToSpeech: TextToSpeech
@@ -155,23 +144,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     private fun bindViews(): QuizViews {
         val progressBarsContainer = findViewById<FrameLayout>(R.id.progressBarsContainer)
-        val progressBars = mutableMapOf<Skill, ProgressBar>()
-        val progressBarsFinished = mutableMapOf<Skill, ProgressBar>()
-        for ((index, skill) in Skill.ladder.withIndex()) {
-            val row = layoutInflater.inflate(R.layout.item_progress_bars, progressBarsContainer, false)
-            val bar = row.findViewById<ProgressBar>(R.id.progressBarSkill)
-            val barFinished = row.findViewById<ProgressBar>(R.id.progressBarSkillFinished)
-            val colorRes = SKILL_COLOR_RES_IDS[index % SKILL_COLOR_RES_IDS.size]
-            bar.progressTintList = ContextCompat.getColorStateList(this, colorRes)
-            // Later skills are more transparent so the layers behind remain visible
-            // where they extend beyond the upper skill's progress.
-            val alpha = 1f / (index + 1)
-            bar.alpha = alpha
-            barFinished.alpha = alpha
-            progressBars[skill] = bar
-            progressBarsFinished[skill] = barFinished
-            progressBarsContainer.addView(row)
-        }
+        val row = layoutInflater.inflate(R.layout.item_progress_bars, progressBarsContainer, false) as ViewGroup
+        progressBarsContainer.addView(row)
 
         return QuizViews(
             buttonFail = findViewById(R.id.button_fail),
@@ -186,8 +160,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textGuessLong = findViewById(R.id.textGuessLong),
             textProgressTotal = findViewById(R.id.textProgressTotal),
             textStreak = findViewById(R.id.textStreak),
-            progressBars = progressBars,
-            progressBarsFinished = progressBarsFinished,
+            progressSegmentRow = row,
+            segFinished = row.findViewById(R.id.segFinished),
+            segInvertActive = row.findViewById(R.id.segInvertActive),
+            segListenActive = row.findViewById(R.id.segListenActive),
+            segReadActive = row.findViewById(R.id.segReadActive),
+            segUnknown = row.findViewById(R.id.segUnknown),
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
     }
@@ -211,14 +189,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun renderInitialProgressBars() {
-        val total = vocabDictionary.csvData.size.toFloat()
-        if (total <= 0f) return
-        for (skill in Skill.ladder) {
-            views.progressBars[skill]?.progress =
-                (vocabDictionary.getActiveDataSize(skill) / total * 100).toInt()
-            views.progressBarsFinished[skill]?.progress =
-                (vocabDictionary.getFinishedDataSize(skill) / total * 100).toInt()
-        }
+        if (vocabDictionary.csvData.isEmpty()) return
+        applyStageBucketWeights(views, vocabDictionary.computeStageBucketCounts())
     }
 
     private fun wireQuizControllerListeners() {

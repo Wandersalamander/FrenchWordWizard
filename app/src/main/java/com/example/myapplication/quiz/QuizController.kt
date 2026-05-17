@@ -14,9 +14,10 @@ import com.example.myapplication.streak.StreakTracker
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.ProgressBar
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -38,8 +39,14 @@ data class QuizViews(
     val textGuessLong: TextView,
     val textProgressTotal: TextView,
     val textStreak: TextView,
-    val progressBars: Map<Skill, ProgressBar>,
-    val progressBarsFinished: Map<Skill, ProgressBar>,
+    // Single segmented progress bar (one row, five coloured Views weighted by
+    // bucket count). Replaces the previous per-skill stacked ProgressBars.
+    val progressSegmentRow: ViewGroup,
+    val segFinished: View,
+    val segInvertActive: View,
+    val segListenActive: View,
+    val segReadActive: View,
+    val segUnknown: View,
     val thinkingSparkle: ImageView,
 )
 
@@ -428,15 +435,8 @@ class QuizController(
     }
 
     private fun refreshAllProgressBars() {
-        val total = vocabDictionary.csvData.size
-        if (total <= 0) return
-        val totalF = total.toFloat()
-        val progress = vocabDictionary.computeAllSkillProgress()
-        for (skill in Skill.ladder) {
-            val counts = progress.getValue(skill)
-            views.progressBars[skill]?.progress = (counts.introduced / totalF * 100).toInt()
-            views.progressBarsFinished[skill]?.progress = (counts.finished / totalF * 100).toInt()
-        }
+        if (vocabDictionary.csvData.isEmpty()) return
+        applyStageBucketWeights(views, vocabDictionary.computeStageBucketCounts())
     }
 
     private fun renderScoreText(vocab: Vocab) {
@@ -448,19 +448,19 @@ class QuizController(
     }
 
     /**
-     * Single readout above the stack: how many words have been introduced
-     * via the first ladder skill (READ). The label is positioned over
-     * the right edge of READ's progress fill so it tracks visually.
+     * Numeric readout above the bar: total words introduced (i.e. anything
+     * not in the "unknown" bucket). Positioned over the right edge of the
+     * READ-active segment — which is the boundary between "any practice"
+     * and "untouched" — so the number tracks the colored region's tip.
      */
     private fun positionTotalLabel() {
         val total = vocabDictionary.csvData.size
         if (total <= 0) return
-        val readSkill = Skill.ladder.first()
-        val readIntroduced = vocabDictionary.getActiveDataSize(readSkill)
+        val readIntroduced = vocabDictionary.getActiveDataSize(Skill.ladder.first())
         views.textProgressTotal.text = readIntroduced.toString()
-        val readBar = views.progressBars[readSkill] ?: return
-        readBar.post {
-            val barWidth = readBar.width
+        val bar = views.progressSegmentRow
+        bar.post {
+            val barWidth = bar.width
             val labelWidth = views.textProgressTotal.width
             val progressFraction = readIntroduced / total.toFloat()
             val targetX = progressFraction * barWidth - labelWidth / 2f
@@ -719,4 +719,25 @@ private fun SkillStats.copyFrom(other: SkillStats) {
     nTimesFailed = other.nTimesFailed
     lastDisplayed = other.lastDisplayed
     lastTimeFailed = other.lastTimeFailed
+}
+
+/**
+ * Push [counts] into the five segmented-bar Views by setting each child's
+ * LinearLayout weight to the bucket count. Weight 0 collapses a segment so
+ * empty buckets disappear cleanly. Shared between QuizController (per-round
+ * refresh) and MainActivity (initial idle render before QuizController exists).
+ */
+internal fun applyStageBucketWeights(views: QuizViews, counts: com.example.myapplication.dictionary.StageBucketCounts) {
+    setSegmentWeight(views.segFinished, counts.finished)
+    setSegmentWeight(views.segInvertActive, counts.invertActive)
+    setSegmentWeight(views.segListenActive, counts.listenActive)
+    setSegmentWeight(views.segReadActive, counts.readActive)
+    setSegmentWeight(views.segUnknown, counts.unknown)
+}
+
+private fun setSegmentWeight(segment: View, count: Int) {
+    val params = segment.layoutParams as LinearLayout.LayoutParams
+    if (params.weight == count.toFloat()) return
+    params.weight = count.toFloat()
+    segment.layoutParams = params
 }
