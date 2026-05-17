@@ -368,7 +368,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:minHeight="48dp"
-                android:text="I don't know" />
+                android:text="✗ Show me" />
 
             <Button
                 android:id="@+id/button_next"
@@ -377,7 +377,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:minHeight="48dp"
-                android:text="Next" />
+                android:text="✓ I knew it" />
         </LinearLayout>
 
         <LinearLayout
@@ -393,7 +393,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:minHeight="48dp"
-                android:text="Tip" />
+                android:text="💡 Hint" />
 
             <Button
                 android:id="@+id/button_new"
@@ -402,7 +402,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:minHeight="48dp"
-                android:text="A NEW WORD" />
+                android:text="+ New word" />
         </LinearLayout>
     </LinearLayout>
 
