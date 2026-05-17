@@ -2,6 +2,7 @@ package com.example.myapplication.quiz
 
 import android.content.Context
 import android.graphics.drawable.Animatable
+import com.example.myapplication.R
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.SentenceSource
@@ -19,6 +20,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlin.random.Random
@@ -39,6 +42,7 @@ data class QuizViews(
     val textGuessLong: TextView,
     val textProgressTotal: TextView,
     val textStreak: TextView,
+    val textStreakShield: TextView,
     // Single segmented progress bar (one row, five coloured Views weighted by
     // bucket count). Replaces the previous per-skill stacked ProgressBars.
     val progressSegmentRow: ViewGroup,
@@ -547,7 +551,8 @@ class QuizController(
         // A committed (non-compromised) round is what counts for the daily
         // streak. Idempotent within a day — first round of the day bumps the
         // count, subsequent rounds are no-ops.
-        StreakTracker.recordPracticeToday(activity.applicationContext)
+        val result = StreakTracker.recordPracticeToday(activity.applicationContext)
+        surfaceStreakResult(result)
 
         if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
@@ -573,8 +578,46 @@ class QuizController(
      * the streak indirectly via reminder changes).
      */
     fun refreshStreakBadge() {
-        val streak = StreakTracker.currentStreak(activity.applicationContext)
+        val ctx = activity.applicationContext
+        val streak = StreakTracker.currentStreak(ctx)
+        val shields = StreakTracker.freezesAvailable(ctx)
         views.textStreak.text = if (streak > 0) "🔥 $streak" else ""
+        views.textStreakShield.text = "🛡️ $shields"
+        views.textStreakShield.visibility = View.VISIBLE
+        views.textStreakShield.setOnClickListener { showShieldExplanation() }
+    }
+
+    private fun showShieldExplanation() {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_shield_info, null)
+        view.findViewById<TextView>(R.id.shieldDialogEarn).text =
+            "Earn one shield every ${StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of streak " +
+                "(up to ${StreakTracker.MAX_FREEZES} stockpiled)."
+        AlertDialog.Builder(activity)
+            .setView(view)
+            .setPositiveButton("Got it", null)
+            .show()
+    }
+
+    private fun surfaceStreakResult(result: StreakTracker.RecordResult) {
+        if (result !is StreakTracker.RecordResult.Counted) return
+        val ctx = activity.applicationContext
+        when {
+            result.freezesConsumed > 0 -> {
+                val plural = if (result.freezesConsumed == 1) "" else "s"
+                Toast.makeText(
+                    ctx,
+                    "🛡️ Shield used — streak saved (${result.freezesConsumed} day$plural covered)",
+                    Toast.LENGTH_LONG,
+                ).show()
+            }
+            result.freezeAwarded -> {
+                Toast.makeText(
+                    ctx,
+                    "🛡️ Shield earned — keep your streak safe",
+                    Toast.LENGTH_SHORT,
+                ).show()
+            }
+        }
     }
 
     /**

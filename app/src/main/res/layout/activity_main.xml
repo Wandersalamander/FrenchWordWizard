@@ -79,6 +79,23 @@
         app:layout_constraintBottom_toTopOf="@+id/progressContainer"
         app:layout_constraintEnd_toEndOf="@+id/progressContainer" />
 
+    <TextView
+        android:id="@+id/textStreakShield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="Streak shields available — tap for details"
+        android:focusable="true"
+        android:padding="6dp"
+        android:text=""
+        android:textColor="@color/monokai_comment_light"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textStreak"
+        app:layout_constraintEnd_toStartOf="@+id/textStreak"
+        app:layout_constraintTop_toTopOf="@+id/textStreak" />
+
     <Button
         android:id="@+id/button_hard"
         style="?android:attr/buttonBarButtonStyle"

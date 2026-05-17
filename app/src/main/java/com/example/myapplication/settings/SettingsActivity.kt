@@ -158,7 +158,8 @@ class SettingsActivity : AppCompatActivity() {
         fun renderStats() {
             val current = StreakTracker.currentStreak(this)
             val longest = StreakTracker.longestStreak(this)
-            statsView.text = "Current: $current day${plural(current)} · Best: $longest day${plural(longest)}"
+            val shields = StreakTracker.freezesAvailable(this)
+            statsView.text = "Current: $current day${plural(current)} · Best: $longest day${plural(longest)} · 🛡️ $shields"
         }
 
         fun renderTime() {

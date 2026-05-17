@@ -160,6 +160,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textGuessLong = findViewById(R.id.textGuessLong),
             textProgressTotal = findViewById(R.id.textProgressTotal),
             textStreak = findViewById(R.id.textStreak),
+            textStreakShield = findViewById(R.id.textStreakShield),
             progressSegmentRow = row,
             segFinished = row.findViewById(R.id.segFinished),
             segInvertActive = row.findViewById(R.id.segInvertActive),
@@ -213,6 +214,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 .tintTarget(false)
                 .cancelable(true)
 
+        // The streak badge is normally empty until the user has practiced;
+        // seed a placeholder value so the TapTarget has something visible to
+        // highlight during the first-launch tour. The shield badge already
+        // shows "🛡️ 0" by default, so no seeding is needed for it. Cleared
+        // back to the real state when the sequence ends.
+        val seededStreak = views.textStreak.text.isNullOrEmpty()
+        if (seededStreak) views.textStreak.text = "🔥 0"
+        val restoreBadges = { if (seededStreak) quizController.refreshStreakBadge() }
+
         val steps = mutableListOf(
             target(views.textForeign, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
             target(views.buttonNext, "Next", "Tap when you have a guess. The answer is revealed, and occasionally you'll be asked to confirm whether you actually got it right."),
@@ -220,7 +230,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             target(views.buttonTip, "Tip", "Plays an example sentence using the word, to jog your memory."),
             target(views.buttonNew, "A new word", "Skip the current word and pull a brand new one you haven't seen yet."),
             target(views.buttonHard, "Flag as hard", "Marks this word as difficult so it appears more often."),
-            target(views.buttonLearned, "Mark as learned", "Tap once to reveal the answer, then tap again to confirm you've learned it and stop seeing it.")
+            target(views.buttonLearned, "Mark as learned", "Tap once to reveal the answer, then tap again to confirm you've learned it and stop seeing it."),
+            target(views.textStreak, "Daily streak", "Practice at least one round per day to build a streak. The fire counts how many days in a row you've kept it going."),
+            target(views.textStreakShield, "Streak shield", "Every week of practice earns you a shield (up to ${com.example.myapplication.streak.StreakTracker.MAX_FREEZES} stockpiled, enough to cover a holiday or a sick week). Miss a day and a shield is spent automatically — your streak survives. Tap the shield any time to see how many you have left."),
         )
 
         findOverflowMenuButton()?.let { overflow ->
@@ -235,9 +247,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             .targets(steps)
             .continueOnCancel(true)
             .listener(object : TapTargetSequence.Listener {
-                override fun onSequenceFinish() {}
+                override fun onSequenceFinish() { restoreBadges() }
                 override fun onSequenceStep(target: TapTarget, targetClicked: Boolean) {}
-                override fun onSequenceCanceled(target: TapTarget) {}
+                override fun onSequenceCanceled(target: TapTarget) { restoreBadges() }
             })
             .start()
 
