@@ -21,6 +21,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlin.random.Random
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -67,6 +68,9 @@ private const val SENTENCE_FADE_IN_DURATION_MS = 220L
 // a guaranteed slot regardless of how crowded the active pool is. Skipped when
 // no mastered pair has gone stale.
 private const val MASTERED_REFRESH_INTERVAL = 20
+// How long the success chime lasts; TTS for the next round is held off this
+// long when a mastery just triggered, so the chime isn't drowned by speech.
+private const val POST_SUCCESS_TTS_DELAY_MS = 500L
 
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
@@ -120,6 +124,11 @@ class QuizController(
     // Ticks once per active-pool pick; when it hits [MASTERED_REFRESH_INTERVAL]
     // the next pick is forced through the mastered-refresh picker.
     private var picksSinceMasteredRefresh: Int = 0
+
+    // Held when the round-start TTS is being deferred so a success chime can
+    // finish unmuffled. Cancelled at the start of the next updateVocab so the
+    // previous round's word never speaks over the new one.
+    private var pendingRoundStartTtsJob: Job? = null
 
     fun onFailClick() {
         if (inSpotCheck) exitSpotCheck(wasWrong = true)
@@ -317,7 +326,12 @@ class QuizController(
     }
 
     fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
-        applyFailurePenaltyAndPersist(penalty, saveVocab)
+        // Cancel any deferred TTS from the previous round so a rapid Next press
+        // doesn't let the prior word speak over the new one.
+        pendingRoundStartTtsJob?.cancel()
+        pendingRoundStartTtsJob = null
+
+        val successPlayed = applyFailurePenaltyAndPersist(penalty, saveVocab)
         val vocab = advanceToNextDistinctVocab(newCandidates)
 
         resetRoundState(vocab)
@@ -338,14 +352,22 @@ class QuizController(
 
         startTime = System.currentTimeMillis()
         elapsedBeforePause = 0L
-        currentSkill.flow.ttsAtRoundStart(vocab, tts)
+        if (successPlayed) {
+            pendingRoundStartTtsJob = activity.lifecycleScope.launch {
+                delay(POST_SUCCESS_TTS_DELAY_MS)
+                currentSkill.flow.ttsAtRoundStart(vocab, tts)
+            }
+        } else {
+            currentSkill.flow.ttsAtRoundStart(vocab, tts)
+        }
     }
 
-    private fun applyFailurePenaltyAndPersist(penalty: Long, saveVocab: Boolean) {
+    /** Returns true if the persistence step triggered the mastery success chime. */
+    private fun applyFailurePenaltyAndPersist(penalty: Long, saveVocab: Boolean): Boolean {
         if (penalty > 0) {
             currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
         }
-        if (saveVocab) saveCurrentVocab(penalty)
+        return if (saveVocab) saveCurrentVocab(penalty) else false
     }
 
     /**
@@ -482,8 +504,9 @@ class QuizController(
         return vocabDictionary.getActiveVocabWeighted(skillFilter)
     }
 
-    private fun saveCurrentVocab(penalty: Long) {
-        val vocab = currentVocab ?: return
+    /** Returns true if a mastery transition triggered the success chime. */
+    private fun saveCurrentVocab(penalty: Long): Boolean {
+        val vocab = currentVocab ?: return false
 
         // Always update recent-words: the user has seen this word regardless
         // of whether the round counts, and we don't want to surface it again
@@ -497,7 +520,7 @@ class QuizController(
             // mutations from the round and persist the rolled-back state.
             vocab.stats(currentSkill).copyFrom(snapshot)
             vocab.savePreferences()
-            return
+            return false
         }
 
         val timeElapsed =
@@ -530,7 +553,9 @@ class QuizController(
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
         ) {
             sounds.playSuccess()
+            return true
         }
+        return false
     }
 
     private fun rememberRecentWord(word: String) {
