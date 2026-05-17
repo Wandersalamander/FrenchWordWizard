@@ -18,4 +18,20 @@
     <!-- Darker than the bg_lift card surface so the unfilled bar reads as a
          recessed groove cut into the panel. -->
     <color name="progress_track">#272822</color>
+
+    <!-- Dark-mode overrides for the accessibility-tuned semantic tokens.
+         The raw Monokai accents already pass ≥3:1 against monokai_bg /
+         bg_lift, so segments/counts revert to their original hues. The
+         muted text tokens lift slightly from monokai_comment_light so
+         they still clear 4.5:1 on bg_lift. -->
+    <color name="card_eyebrow">#BCB59A</color>
+    <color name="card_text_muted">#BCB59A</color>
+    <color name="seg_mastered">#A6E22E</color>
+    <color name="seg_read">#FD971F</color>
+    <color name="seg_listen">#66D9EF</color>
+    <color name="seg_invert">#AE81FF</color>
+    <color name="lifetime_count_color">#A6E22E</color>
+    <color name="today_count_color">#E6DB74</color>
+    <color name="streak_count_color">#FD971F</color>
+    <color name="streak_shield_color">#BCB59A</color>
 </resources>

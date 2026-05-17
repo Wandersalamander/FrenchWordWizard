@@ -46,6 +46,12 @@ data class QuizViews(
     val buttonHard: Button,
     val buttonLearned: Button,
     val cardVocab: View,
+    // Roots of the two bottom progress cards, captured so refreshLifetimeBar /
+    // refreshActiveBar can attach a contentDescription that summarises the
+    // bar for screen readers (raw segment Views have no semantics on their
+    // own).
+    val cardLifetime: View,
+    val cardActive: View,
     val textForeign: TextView,
     val textScore: TextView,
     val textEn: TextView,
@@ -502,10 +508,24 @@ class QuizController(
 
     private fun renderScoreText(vocab: Vocab) {
         val currentStats = vocab.stats(currentSkill)
-        views.textScore.text = if (currentStats.nTimesViewed == 0) {
-            if (currentSkill == Skill.ladder.first()) "A new word!"
+        if (currentStats.nTimesViewed == 0) {
+            val msg = if (currentSkill == Skill.ladder.first()) "A new word!"
             else "${currentSkill.displayName} exercise unlocked!"
-        } else currentStats.getInfoString()
+            views.textScore.text = msg
+            views.textScore.contentDescription = msg
+        } else {
+            views.textScore.text = currentStats.getInfoString()
+            // The visible string is glyph-heavy ("⧖ 1.4 s\n★★★☆☆") and
+            // reads terribly through TalkBack. Build a sentence form from
+            // the same data so SR users get "1.4 seconds average, 3 of 5
+            // stars" instead.
+            val seconds = currentStats.meanTimeViewedMilli() / 1000.0
+            val successProbability =
+                (1.0f - currentStats.failureProbability()).coerceIn(0.0f, 1.0f)
+            val stars = (5 * successProbability).toInt()
+            views.textScore.contentDescription =
+                String.format("%.1f seconds average, %d of 5 stars", seconds, stars)
+        }
     }
 
     /**
@@ -635,7 +655,20 @@ class QuizController(
         val streak = StreakTracker.currentStreak(ctx)
         val shields = StreakTracker.freezesAvailable(ctx)
         views.textStreak.text = if (streak > 0) "🔥 $streak" else ""
+        // Without a dynamic contentDescription, TalkBack reads the literal
+        // glyphs ("fire emoji 12") or skips the value entirely. Spell out
+        // the count and unit so SR users get the same information as the
+        // visible badge.
+        views.textStreak.contentDescription = when {
+            streak <= 0 -> null
+            streak == 1 -> "1 day streak"
+            else -> "$streak day streak"
+        }
         views.textStreakShield.text = "🛡️ $shields"
+        views.textStreakShield.contentDescription = when (shields) {
+            1 -> "1 streak shield available, tap for details"
+            else -> "$shields streak shields available, tap for details"
+        }
         views.textStreakShield.visibility = View.VISIBLE
         views.textStreakShield.setOnClickListener { showShieldExplanation() }
     }
@@ -852,6 +885,16 @@ internal fun refreshLifetimeBar(
     setSegmentWeight(views.segLifetimeRemaining, remaining)
     val today = MasteryTracker.todayCount(context)
     views.textLifetimeLabel.text = buildLifetimeLabel(context, mastered, today, total)
+    // The card is the only accessibility-focusable element in the lifetime
+    // block (the bar/label rows are flagged importantForAccessibility="no"
+    // in activity_main.xml), so its contentDescription is what TalkBack
+    // reads. Updated every refresh so the announcement always matches the
+    // visible bar.
+    views.cardLifetime.contentDescription = buildString {
+        append("Total progress: ")
+        append("$mastered of $total words mastered")
+        if (today > 0) append(", plus $today today")
+    }
 }
 
 internal fun refreshActiveBar(
@@ -864,6 +907,8 @@ internal fun refreshActiveBar(
     setSegmentWeight(views.segActiveListen, counts.listen)
     setSegmentWeight(views.segActiveInvert, counts.invert)
     views.textActiveLabel.text = buildActiveLabel(context, counts)
+    views.cardActive.contentDescription =
+        "Active words: ${counts.read} read, ${counts.listen} listen, ${counts.invert} invert"
 }
 
 /*
@@ -880,14 +925,14 @@ private fun buildLifetimeLabel(
     total: Int,
 ): CharSequence {
     val sb = SpannableStringBuilder()
-    appendColored(context, sb, mastered.toString(), com.example.myapplication.R.color.monokai_green)
-    appendColored(context, sb, " / $total", com.example.myapplication.R.color.monokai_comment_light)
+    appendColored(context, sb, mastered.toString(), com.example.myapplication.R.color.lifetime_count_color)
+    appendColored(context, sb, " / $total", com.example.myapplication.R.color.card_text_muted)
     if (today > 0) {
-        appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.monokai_comment_light)
+        appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.card_text_muted)
         val start = sb.length
         sb.append("+$today")
         sb.setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(context, com.example.myapplication.R.color.monokai_yellow)),
+            ForegroundColorSpan(ContextCompat.getColor(context, com.example.myapplication.R.color.today_count_color)),
             start,
             sb.length,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE,
@@ -899,11 +944,11 @@ private fun buildLifetimeLabel(
 
 private fun buildActiveLabel(context: Context, counts: ActiveSetCounts): CharSequence {
     val sb = SpannableStringBuilder()
-    appendColored(context, sb, counts.read.toString(), com.example.myapplication.R.color.monokai_orange)
-    appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.monokai_comment_light)
-    appendColored(context, sb, counts.listen.toString(), com.example.myapplication.R.color.monokai_cyan)
-    appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.monokai_comment_light)
-    appendColored(context, sb, counts.invert.toString(), com.example.myapplication.R.color.monokai_purple)
+    appendColored(context, sb, counts.read.toString(), com.example.myapplication.R.color.seg_read)
+    appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.card_text_muted)
+    appendColored(context, sb, counts.listen.toString(), com.example.myapplication.R.color.seg_listen)
+    appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.card_text_muted)
+    appendColored(context, sb, counts.invert.toString(), com.example.myapplication.R.color.seg_invert)
     return sb
 }
 

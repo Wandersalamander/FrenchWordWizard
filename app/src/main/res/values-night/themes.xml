@@ -3,7 +3,10 @@
          (they were designed for this background), text flips to Monokai FG,
          secondary surfaces lift slightly from the BG. -->
     <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/monokai_pink</item>
+        <!-- Same darker pink as light mode; white-on-monokai_pink only hits
+             ~3.8:1, white-on-pink_dark clears 5.5:1. Card stripes still use
+             @color/monokai_pink directly for the brighter decorative accent. -->
+        <item name="colorPrimary">@color/monokai_pink_dark</item>
         <item name="colorPrimaryVariant">@color/monokai_pink_dark</item>
         <item name="colorOnPrimary">@color/white</item>
 

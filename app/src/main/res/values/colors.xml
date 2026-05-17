@@ -51,4 +51,43 @@
          flips in dark mode. -->
     <color name="danger">#C62828</color>
     <color name="on_danger">#FFFFFFFF</color>
+
+    <!-- ============================================================
+         Accessibility-tuned semantic tokens for card surfaces.
+
+         The raw Monokai palette is calibrated for the dark canvas it
+         was designed on; on the cream light surface several of those
+         hues sit at ~1.5-2.5:1 contrast and fail WCAG 2.1 AA. These
+         tokens give every "colored label / segment / count" a mode-
+         aware hex that clears 3:1 (graphics) or 4.5:1 (text). The
+         original monokai_* swatches are still used for hue-coded
+         chrome (card top stripes, vocab card accent) where contrast
+         isn't load-bearing.
+         ============================================================ -->
+
+    <!-- Small muted labels on card surfaces (CardEyebrow style, " / total"
+         connector text, etc.). Light: Monokai 'comment' (~5:1 vs cream).
+         Dark override lifts it so it still clears 4.5:1 on bg_lift. -->
+    <color name="card_eyebrow">#75715E</color>
+    <color name="card_text_muted">#75715E</color>
+
+    <!-- Lifetime mastery bar fill — darker green for cream, original
+         monokai_green in dark. Same hue family, just deepened. -->
+    <color name="seg_mastered">#3F7E0E</color>
+
+    <!-- Active-pool segment fills, one per skill. Light values are deeper
+         siblings of the orange/cyan/purple Monokai accents. -->
+    <color name="seg_read">#B45309</color>
+    <color name="seg_listen">#0E7490</color>
+    <color name="seg_invert">#6D28D9</color>
+
+    <!-- Mode-aware variants of the lifetime/today label highlights. -->
+    <color name="lifetime_count_color">#3F7E0E</color>
+    <color name="today_count_color">#B45309</color>
+
+    <!-- Streak counter digit colour. Darker than monokai_orange so the
+         number reads against cream (the 🔥 emoji is system-coloured and
+         carries the warm tone visually regardless). -->
+    <color name="streak_count_color">#9A3412</color>
+    <color name="streak_shield_color">#75715E</color>
 </resources>

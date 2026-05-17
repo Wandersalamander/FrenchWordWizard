@@ -60,22 +60,27 @@
             android:layout_marginEnd="4dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
-            android:contentDescription="Streak shields available — tap for details"
             android:focusable="true"
-            android:padding="6dp"
+            android:gravity="center"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="10dp"
             android:text=""
-            android:textColor="@color/monokai_comment_light"
+            android:textColor="@color/streak_shield_color"
             android:textSize="18sp"
             android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck"
             tools:text="🛡️ 3" />
 
         <TextView
             android:id="@+id/textStreak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="Current practice streak in days"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:paddingHorizontal="4dp"
             android:text=""
-            android:textColor="@color/monokai_orange"
+            android:textColor="@color/streak_count_color"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="🔥 12" />
@@ -108,11 +113,17 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="0.85" />
 
+        <!-- accessibilityTraversalAfter pushes the ⚑/✓ actions behind the
+             vocab content for screen readers, so users hear the word and
+             translation before landing on the buttons that operate on
+             them. -->
         <Button
             android:id="@+id/button_hard"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:accessibilityTraversalAfter="@id/textGuessLong"
+            android:contentDescription="Flag as hard"
             android:text="⚑"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/button_learned"
@@ -123,18 +134,25 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:accessibilityTraversalAfter="@id/button_hard"
+            android:contentDescription="Mark as learned"
             android:text="✓"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Main foreign word — visually the biggest thing on the screen. -->
+        <!-- Main foreign word — visually the biggest thing on the screen.
+             accessibilityLiveRegion="polite" makes TalkBack announce the
+             new word each round so SR users don't have to swipe to
+             discover it; the foreign-locale text is set in code so the
+             SR uses the right voice. -->
         <TextView
             android:id="@+id/textGuess"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="8dp"
+            android:accessibilityLiveRegion="polite"
             android:text=""
             android:textColor="@color/vocab_text"
             android:textSize="34sp"
@@ -195,11 +213,17 @@
     <!-- ===================== LIFETIME PROGRESS CARD ===================== -->
     <!-- setSegmentWeight in QuizController casts the segment LayoutParams to
          LinearLayout.LayoutParams, so the bar row MUST stay a LinearLayout. -->
+    <!-- focusable + screenReaderFocusable group the card into a single
+         accessibility node; QuizController sets contentDescription on
+         cardLifetime each round so SR users hear "234 of 1500 mastered,
+         plus 5 today" instead of nothing (the raw segment Views have no
+         semantics on their own). -->
     <LinearLayout
         android:id="@+id/cardLifetime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_card_green"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingHorizontal="18dp"
         android:paddingTop="12dp"
@@ -210,6 +234,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
             android:baselineAligned="true"
+            android:importantForAccessibility="no"
             android:orientation="horizontal">
 
             <TextView
@@ -230,6 +255,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="10dp"
+            android:importantForAccessibility="no"
             android:orientation="horizontal">
 
             <View
@@ -237,7 +263,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:background="@color/monokai_green" />
+                android:background="@color/seg_mastered" />
 
             <View
                 android:id="@+id/segLifetimeRemaining"
@@ -255,6 +281,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_card_cyan"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingHorizontal="18dp"
         android:paddingTop="12dp"
@@ -265,6 +292,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
             android:baselineAligned="true"
+            android:importantForAccessibility="no"
             android:orientation="horizontal">
 
             <TextView
@@ -286,6 +314,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/progress_track"
+            android:importantForAccessibility="no"
             android:orientation="horizontal">
 
             <View
@@ -293,21 +322,21 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:background="@color/monokai_orange" />
+                android:background="@color/seg_read" />
 
             <View
                 android:id="@+id/segActiveListen"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:background="@color/monokai_cyan" />
+                android:background="@color/seg_listen" />
 
             <View
                 android:id="@+id/segActiveInvert"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:background="@color/monokai_purple" />
+                android:background="@color/seg_invert" />
         </LinearLayout>
     </LinearLayout>
 
@@ -323,6 +352,10 @@
         android:orientation="vertical"
         android:paddingHorizontal="8dp">
 
+        <!-- maxLines is intentionally left unset so labels can wrap at the
+             user's preferred font scale (a11y "Largest" can double the
+             text size). minHeight keeps the touch target at 48 dp even
+             on single-line labels. -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -334,7 +367,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:maxLines="1"
+                android:minHeight="48dp"
                 android:text="I don't know" />
 
             <Button
@@ -343,7 +376,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:maxLines="1"
+                android:minHeight="48dp"
                 android:text="Next" />
         </LinearLayout>
 
@@ -359,7 +392,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:maxLines="1"
+                android:minHeight="48dp"
                 android:text="Tip" />
 
             <Button
@@ -368,7 +401,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:maxLines="1"
+                android:minHeight="48dp"
                 android:text="A NEW WORD" />
         </LinearLayout>
     </LinearLayout>

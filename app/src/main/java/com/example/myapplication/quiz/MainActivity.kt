@@ -17,6 +17,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -142,7 +143,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun bindViews(): QuizViews {
-        return QuizViews(
+        val views = QuizViews(
             buttonFail = findViewById(R.id.button_fail),
             buttonNext = findViewById(R.id.button_next),
             buttonNew = findViewById(R.id.button_new),
@@ -150,6 +151,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             buttonHard = findViewById(R.id.button_hard),
             buttonLearned = findViewById(R.id.button_learned),
             cardVocab = findViewById(R.id.cardVocab),
+            cardLifetime = findViewById(R.id.cardLifetime),
+            cardActive = findViewById(R.id.cardActive),
             textForeign = findViewById(R.id.textGuess),
             textScore = findViewById(R.id.textScore),
             textEn = findViewById(R.id.textReal),
@@ -165,6 +168,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             segActiveInvert = findViewById(R.id.segActiveInvert),
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
+        // Tag the foreign/English word TextViews with the right locale so
+        // TalkBack picks the matching voice — without this, French/German
+        // words are pronounced through the English engine and come out
+        // unintelligible. textLongGuess holds example sentences in the
+        // foreign language too.
+        views.textForeign.textLocale = language.locale
+        views.textGuessLong.textLocale = language.locale
+        views.textEn.textLocale = Locale.ENGLISH
+        return views
     }
 
     private fun disableQuizButtonsUntilFirstWord() {
@@ -201,6 +213,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     private fun maybeShowTutorial(prefs: SharedPreferences) {
         if (prefs.getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)) return
+        // TapTargetView overlays each highlighted view in turn; it's not
+        // navigable via TalkBack swipe gestures and effectively traps SR
+        // users on a screen they can't operate. Skip the auto-tour when
+        // a screen reader is active and persist the seen-flag so we don't
+        // pop it on every launch. The menu "Show tutorial" entry stays
+        // available for users who want to opt in.
+        val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
+        if (am.isTouchExplorationEnabled) {
+            AppPrefs.get(this).edit().putBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, true).apply()
+            return
+        }
         findViewById<View>(android.R.id.content).post { showTutorial() }
     }
 
