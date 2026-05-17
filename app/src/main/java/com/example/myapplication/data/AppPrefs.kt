@@ -19,6 +19,7 @@ object AppPrefs {
 
     const val KEY_APP_LANGUAGE = "app_language"
     const val KEY_TUTORIAL_SHOWN = "tutorial_shown"
+    const val KEY_SPOT_CHECK_TUTORIAL_SHOWN = "spot_check_tutorial_shown"
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"

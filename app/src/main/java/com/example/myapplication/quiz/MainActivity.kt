@@ -243,15 +243,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         val restoreBadges = { if (seededStreak) quizController.refreshStreakBadge() }
 
         val steps = mutableListOf(
-            target(views.textForeign, "The word", "This is where the word you need to translate appears. Try to recall its meaning before tapping anything."),
-            target(views.buttonNext, "Next", "Tap when you have a guess. The answer is revealed, and occasionally you'll be asked to confirm whether you actually got it right."),
-            target(views.buttonFail, "I don't know", "Tap if you can't recall the meaning. The translation is revealed and you move on."),
-            target(views.buttonTip, "Tip", "Plays an example sentence using the word, to jog your memory."),
-            target(views.buttonNew, "A new word", "Skip the current word and pull a brand new one you haven't seen yet."),
-            target(views.buttonHard, "Flag as hard", "Marks this word as difficult so it appears more often."),
-            target(views.buttonLearned, "Mark as learned", "Tap once to reveal the answer, then tap again to confirm you've learned it and stop seeing it."),
-            target(views.textStreak, "Daily streak", "Practice at least one round per day to build a streak. The fire counts how many days in a row you've kept it going."),
-            target(views.textStreakShield, "Streak shield", "Every week of practice earns you a shield (up to ${com.example.myapplication.streak.StreakTracker.MAX_FREEZES} stockpiled, enough to cover a holiday or a sick week). Miss a day and a shield is spent automatically — your streak survives. Tap the shield any time to see how many you have left."),
+            target(views.textForeign, "The word", "Recall what this foreign word means before tapping any button below."),
+            target(views.buttonNext, "I knew it", "Tap when you knew the word. The next one loads — occasionally a spot-check pops up so you can confirm you really got it right."),
+            target(views.buttonFail, "Show me", "Tap when the word stumped you. Reveals the translation and an example sentence, then loads the next word."),
+            target(views.buttonTip, "Tip", "Reveals an example sentence using the word and reads it aloud. Costs a small score penalty — one tip per word."),
+            target(views.buttonNew, "A new word", "Skips this word and pulls a fresh one you've never seen, expanding your active pool."),
+            target(views.buttonHard, "Flag as hard", "Marks the word as tough so it shows up more often. Tap again to unflag."),
+            target(views.buttonLearned, "Mark as learned", "First tap reveals the answer so you can check yourself. Tap again to retire the word — you won't see it again."),
+            target(views.textStreak, "Daily streak", "Counts consecutive days you've practiced. Even one round keeps the streak alive."),
+            target(views.textStreakShield, "Streak shield", "Earn a shield every ${com.example.myapplication.streak.StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of practice (up to ${com.example.myapplication.streak.StreakTracker.MAX_FREEZES} stockpiled — enough for a holiday or a sick week). Miss a day and a shield is spent automatically, so your streak survives. Tap any time to see how many you have."),
         )
 
         findOverflowMenuButton()?.let { overflow ->

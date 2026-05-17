@@ -5,6 +5,7 @@ import android.graphics.drawable.Animatable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
 import com.example.myapplication.R
+import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.SentenceSource
@@ -24,6 +25,7 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.view.View
+import android.view.accessibility.AccessibilityManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -339,12 +341,42 @@ class QuizController(
         vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
 
         sounds.playSpotCheck()
+
+        maybeShowSpotCheckTutorial()
+    }
+
+    /**
+     * First-spot-check explainer. The mode change (buttons relabel to ✓/✗,
+     * answer reveals, vibration + chime fire) is genuinely surprising the
+     * first time it triggers — without an explanation new users don't know
+     * whether the buttons still mean what they did a moment ago. Skipped
+     * when a screen reader is active (same focus-trap rationale as the main
+     * TapTargetView tutorial).
+     */
+    private fun maybeShowSpotCheckTutorial() {
+        val prefs = AppPrefs.get(activity)
+        if (prefs.getBoolean(AppPrefs.KEY_SPOT_CHECK_TUTORIAL_SHOWN, false)) return
+        val am = activity.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
+        if (am.isTouchExplorationEnabled) {
+            prefs.edit().putBoolean(AppPrefs.KEY_SPOT_CHECK_TUTORIAL_SHOWN, true).apply()
+            return
+        }
+        AlertDialog.Builder(activity)
+            .setTitle("Spot check!")
+            .setMessage(
+                "Every now and then, the app pauses to verify you actually knew the word. " +
+                    "The answer is revealed above.\n\n" +
+                    "Tap ✓ Correct if you got it right, or ✗ Wrong if not."
+            )
+            .setPositiveButton("Got it", null)
+            .show()
+        prefs.edit().putBoolean(AppPrefs.KEY_SPOT_CHECK_TUTORIAL_SHOWN, true).apply()
     }
 
     private fun exitSpotCheck(wasWrong: Boolean) {
         inSpotCheck = false
-        views.buttonFail.text = "I don't know"
-        views.buttonNext.text = "Next"
+        views.buttonFail.text = "✗ Show me"
+        views.buttonNext.text = "✓ I knew it"
         if (wasWrong) {
             currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
             updateVocab(2000, newCandidates = false)
@@ -452,8 +484,8 @@ class QuizController(
         roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
         progressiveRevealCount = 0
         inSpotCheck = false
-        views.buttonFail.text = "I don't know"
-        views.buttonNext.text = "Next"
+        views.buttonFail.text = "✗ Show me"
+        views.buttonNext.text = "✓ I knew it"
     }
 
     // Last today-counter value reflected on screen; lets refreshAllProgressBars
