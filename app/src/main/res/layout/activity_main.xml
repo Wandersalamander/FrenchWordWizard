@@ -28,12 +28,13 @@
 
     <!-- ============================ STREAK CARD ============================
          Single row: title on the left, shield + fire grouped on the right.
-         Paddings mirror the lifetime/active cards (18dp horizontal, 12dp top,
-         14dp bottom) so the title sits at the same offset from the colored
-         stripe across all three. Title is top-aligned; the icons stay
-         vertically centered since they're visually heavier than the title.
-         baselineAligned is disabled so the small title's baseline isn't
-         pulled down to meet the much larger icon text. -->
+         Vertically tighter than the other cards' default 12/14 dp padding
+         because the shield/fire icons already carry plenty of visual weight;
+         giving them a 36dp tap target (instead of the 48dp default) keeps
+         the card compact while staying tappable — the TouchTargetSizeCheck
+         lint is intentionally suppressed for this reason. baselineAligned
+         is disabled so the small title's baseline isn't pulled down to
+         meet the much larger icon text. -->
     <LinearLayout
         android:id="@+id/cardStreak"
         android:layout_width="match_parent"
@@ -43,13 +44,13 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="18dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="14dp">
+        android:paddingTop="8dp"
+        android:paddingBottom="10dp">
 
         <TextView
             style="@style/CardEyebrow"
             android:layout_width="0dp"
-            android:layout_gravity="top"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:text="STREAK" />
 
@@ -62,9 +63,9 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:padding="10dp"
+            android:minWidth="40dp"
+            android:minHeight="36dp"
+            android:padding="6dp"
             android:text=""
             android:textColor="@color/streak_shield_color"
             android:textSize="18sp"
@@ -77,7 +78,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:minHeight="48dp"
             android:paddingHorizontal="4dp"
             android:text=""
             android:textColor="@color/streak_count_color"
