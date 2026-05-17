@@ -7,4 +7,15 @@
     <color name="on_danger">@color/monokai_bg</color>
 
     <color name="vocab_text">#FFFFFF</color>
+
+    <!-- Cards lift off the Monokai canvas using bg_lift, matching the dark
+         theme's elevated-surface convention. -->
+    <color name="card_surface">#3E3D32</color>
+    <!-- Brighter olive at low alpha so the panel edge stays readable against
+         the dark canvas without flattening into the bg_lift fill. -->
+    <color name="card_edge">#4DA59F85</color>
+
+    <!-- Darker than the bg_lift card surface so the unfilled bar reads as a
+         recessed groove cut into the panel. -->
+    <color name="progress_track">#272822</color>
 </resources>

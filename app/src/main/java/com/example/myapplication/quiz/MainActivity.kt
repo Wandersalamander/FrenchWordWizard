@@ -18,7 +18,6 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
@@ -143,10 +142,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun bindViews(): QuizViews {
-        val progressBarsContainer = findViewById<FrameLayout>(R.id.progressBarsContainer)
-        val row = layoutInflater.inflate(R.layout.item_progress_bars, progressBarsContainer, false) as ViewGroup
-        progressBarsContainer.addView(row)
-
         return QuizViews(
             buttonFail = findViewById(R.id.button_fail),
             buttonNext = findViewById(R.id.button_next),
@@ -154,19 +149,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             buttonTip = findViewById(R.id.button_tip),
             buttonHard = findViewById(R.id.button_hard),
             buttonLearned = findViewById(R.id.button_learned),
+            cardVocab = findViewById(R.id.cardVocab),
             textForeign = findViewById(R.id.textGuess),
             textScore = findViewById(R.id.textScore),
             textEn = findViewById(R.id.textReal),
             textGuessLong = findViewById(R.id.textGuessLong),
             textStreak = findViewById(R.id.textStreak),
             textStreakShield = findViewById(R.id.textStreakShield),
-            textLifetimeLabel = row.findViewById(R.id.textLifetimeLabel),
-            segLifetimeMastered = row.findViewById(R.id.segLifetimeMastered),
-            segLifetimeRemaining = row.findViewById(R.id.segLifetimeRemaining),
-            textActiveLabel = row.findViewById(R.id.textActiveLabel),
-            segActiveRead = row.findViewById(R.id.segActiveRead),
-            segActiveListen = row.findViewById(R.id.segActiveListen),
-            segActiveInvert = row.findViewById(R.id.segActiveInvert),
+            textLifetimeLabel = findViewById(R.id.textLifetimeLabel),
+            segLifetimeMastered = findViewById(R.id.segLifetimeMastered),
+            segLifetimeRemaining = findViewById(R.id.segLifetimeRemaining),
+            textActiveLabel = findViewById(R.id.textActiveLabel),
+            segActiveRead = findViewById(R.id.segActiveRead),
+            segActiveListen = findViewById(R.id.segActiveListen),
+            segActiveInvert = findViewById(R.id.segActiveInvert),
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
     }

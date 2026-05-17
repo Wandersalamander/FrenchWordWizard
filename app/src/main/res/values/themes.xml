@@ -37,4 +37,18 @@
         <item name="background">@color/monokai_bg</item>
         <item name="elevation">2dp</item>
     </style>
+
+    <!-- IDE-style section eyebrow used above the data inside the three small
+         cards (Streak / Total Progress / Active Words). Small, monospace,
+         widely-tracked uppercase in muted comment-light so it labels the card
+         without competing with the data on the right. -->
+    <style name="CardEyebrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/monokai_comment_light</item>
+    </style>
 </resources>

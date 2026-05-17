@@ -23,6 +23,20 @@
          daylight without looking dingy. -->
     <color name="cream_surface">#FAF8F0</color>
 
+    <!-- Card surface — slightly lighter/whiter than the cream canvas so cards
+         read as raised editor panes in light mode. values-night flips this to
+         monokai_bg_lift for the same dark-mode lift effect. -->
+    <color name="card_surface">#FFFEF8</color>
+    <!-- Hairline card edge: olive Monokai comment at low alpha so the stroke
+         defines the panel without competing with the colored top accent. -->
+    <color name="card_edge">#33756F5E</color>
+
+    <!-- Unfilled portion of the progress bars. Needs to read against the card
+         surface, so it's noticeably darker than card_surface in light mode and
+         (via values-night) noticeably darker than bg_lift in dark mode —
+         giving the bar a recessed-groove feel either way. -->
+    <color name="progress_track">#E5DDC4</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 

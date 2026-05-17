@@ -2,6 +2,8 @@ package com.example.myapplication.quiz
 
 import android.content.Context
 import android.graphics.drawable.Animatable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.LayerDrawable
 import com.example.myapplication.R
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
@@ -43,15 +45,16 @@ data class QuizViews(
     val buttonTip: Button,
     val buttonHard: Button,
     val buttonLearned: Button,
+    val cardVocab: View,
     val textForeign: TextView,
     val textScore: TextView,
     val textEn: TextView,
     val textGuessLong: TextView,
     val textStreak: TextView,
     val textStreakShield: TextView,
-    // Two stacked bars: lifetime mastered (single fill of the deck) and the
-    // composition of the currently-drilling pool, segmented by skill. See
-    // item_progress_bars.xml for the visual structure.
+    // Two progress cards in activity_main.xml: lifetime mastered (single fill
+    // of the deck) on cardLifetime, and the composition of the
+    // currently-drilling pool, segmented by skill, on cardActive.
     val textLifetimeLabel: TextView,
     val segLifetimeMastered: View,
     val segLifetimeRemaining: View,
@@ -367,6 +370,8 @@ class QuizController(
         seedSentenceCache(vocab)
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
         setupLearnedButton()
+        applyCardAccent(views.cardVocab, currentSkill)
+        popView(views.cardVocab, peakScale = 1.04f)
 
         startTime = System.currentTimeMillis()
         elapsedBeforePause = 0L
@@ -460,16 +465,37 @@ class QuizController(
         renderedTodayCount = todayNow
     }
 
-    private fun popTodayCounter() {
-        val label = views.textLifetimeLabel
-        label.animate().cancel()
-        label.scaleX = 1f
-        label.scaleY = 1f
-        label.animate()
-            .scaleX(1.18f).scaleY(1.18f)
+    private fun popTodayCounter() = popView(views.textLifetimeLabel, peakScale = 1.18f)
+
+    /**
+     * Recolour the vocab card's top accent stripe to match [skill]. The stripe
+     * is the second item in [R.drawable.bg_card_pink]'s layer-list; we mutate
+     * its in-memory copy so other views referencing the same drawable
+     * resource aren't dragged along. Mutating an already-mutated drawable is
+     * a no-op, so calling this each round is safe.
+     */
+    private fun applyCardAccent(card: View, skill: Skill) {
+        val bg = card.background.mutate() as LayerDrawable
+        val stripe = bg.getDrawable(1) as GradientDrawable
+        stripe.setColor(ContextCompat.getColor(activity, skill.accentColorRes()))
+    }
+
+    /**
+     * Brief scale-up-then-back "pop" used to draw attention to a view that just
+     * updated. [peakScale] is the apex of the animation; defaults match the
+     * small-label feel of the lifetime counter, but callers animating larger
+     * views (e.g. an entire card) should pass something modest like 1.04f so
+     * the scaled view doesn't overlap its neighbors.
+     */
+    private fun popView(view: View, peakScale: Float = 1.18f) {
+        view.animate().cancel()
+        view.scaleX = 1f
+        view.scaleY = 1f
+        view.animate()
+            .scaleX(peakScale).scaleY(peakScale)
             .setDuration(120L)
             .withEndAction {
-                label.animate().scaleX(1f).scaleY(1f).setDuration(160L).start()
+                view.animate().scaleX(1f).scaleY(1f).setDuration(160L).start()
             }
             .start()
     }
@@ -781,6 +807,20 @@ class QuizController(
     }
 }
 
+/**
+ * Per-skill accent colour. Single source of truth for "which colour means
+ * which skill" — used both for the vocab card's top stripe (recoloured per
+ * round) and the active-progress bar segments in activity_main.xml, which
+ * reference the same @color/monokai_* resources directly. Keep the XML and
+ * this mapping in sync when adding skills.
+ */
+@androidx.annotation.ColorRes
+internal fun Skill.accentColorRes(): Int = when (this) {
+    Skill.READ -> R.color.monokai_orange
+    Skill.LISTEN -> R.color.monokai_cyan
+    Skill.INVERT -> R.color.monokai_purple
+}
+
 /** Copy every field from [other] into the receiver, in place. */
 private fun SkillStats.copyFrom(other: SkillStats) {
     viewTimeMilli = other.viewTimeMilli
@@ -829,8 +869,8 @@ internal fun refreshActiveBar(
 /*
  * Both labels share the same shape: primary numbers in their bar's signature
  * colour, connective text in monokai_comment_light, and an optional yellow
- * accent (only on the lifetime bar, for today's increment). Together with
- * monospace + end-gravity in item_progress_bars.xml they read as a pair
+ * accent (only on the lifetime bar, for today's increment). Together with the
+ * monospace + end-gravity labels in activity_main.xml they read as a pair
  * stacked above the right edge of each bar.
  */
 private fun buildLifetimeLabel(

@@ -1,198 +1,376 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Main quiz screen, grouped into four editor-pane "cards":
+
+       1. cardStreak    (orange) — daily streak fire + stockpiled shields.
+       2. cardVocab     (pink)   — score header, foreign word, translation,
+                                   example sentence, plus the per-word
+                                   flag (⚑) and learned (✓) buttons.
+       3. cardLifetime  (green)  — lifetime mastery bar + "{mastered} / {total}"
+                                   label with the +N-today highlight.
+       4. cardActive    (cyan)   — current active-pool composition bar,
+                                   segmented per skill.
+
+     Vertical LinearLayout splits the screen cleanly: streak + vocab anchor
+     at the top, a weight=1 Space absorbs any vertical slack, the two
+     progress cards and the 2×2 button grid form a fixed bottom block.
+     Each card's top-stripe color matches the data inside (see
+     drawable/bg_card_*.xml). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textGuess"
-        android:layout_width="0dp"
+    <!-- ============================ STREAK CARD ============================
+         Single row: title on the left, shield + fire grouped on the right.
+         Paddings mirror the lifetime/active cards (18dp horizontal, 12dp top,
+         14dp bottom) so the title sits at the same offset from the colored
+         stripe across all three. Title is top-aligned; the icons stay
+         vertically centered since they're visually heavier than the title.
+         baselineAligned is disabled so the small title's baseline isn't
+         pulled down to meet the much larger icon text. -->
+    <LinearLayout
+        android:id="@+id/cardStreak"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="16dp"
-        android:text="Un mot etrange et aussi trop long"
-        android:textColor="@color/vocab_text"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_learned"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        android:background="@drawable/bg_card_orange"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="14dp">
 
-    <TextView
-        android:id="@+id/textReal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="A foreign word"
-        android:textColor="@color/vocab_text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/button_hard"
-        app:layout_constraintStart_toStartOf="@+id/textGuess"
-        app:layout_constraintTop_toBottomOf="@+id/textGuess" />
+        <TextView
+            style="@style/CardEyebrow"
+            android:layout_width="0dp"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:text="STREAK" />
 
-    <TextView
-        android:id="@+id/textGuessLong"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
-        android:text="Ma mère a ressenti une très grande peine lorsqu’elle a appris que mon père servirait une peine de six ans pour un crime qu’il n’a pas commis. "
-        android:textColor="@color/vocab_text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textGuess"
-        app:layout_constraintTop_toBottomOf="@+id/textReal" />
+        <TextView
+            android:id="@+id/textStreakShield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Streak shields available — tap for details"
+            android:focusable="true"
+            android:padding="6dp"
+            android:text=""
+            android:textColor="@color/monokai_comment_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="🛡️ 3" />
 
-    <ImageView
-        android:id="@+id/thinking_sparkle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginStart="-4dp"
-        android:contentDescription="@null"
-        android:src="@drawable/thinking_sparkle"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/textGuessLong"
-        app:layout_constraintTop_toTopOf="@+id/textGuessLong" />
+        <TextView
+            android:id="@+id/textStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Current practice streak in days"
+            android:text=""
+            android:textColor="@color/monokai_orange"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="🔥 12" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textScore"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="0.00"
-        android:textColor="@color/vocab_text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textGuess"
-        app:layout_constraintEnd_toStartOf="@+id/button_learned"
-        app:layout_constraintStart_toStartOf="@+id/textGuess" />
-
-    <TextView
-        android:id="@+id/textStreak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Current practice streak in days"
-        android:text=""
-        android:textColor="@color/monokai_orange"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/progressContainer"
-        app:layout_constraintEnd_toEndOf="@+id/progressContainer" />
-
-    <TextView
-        android:id="@+id/textStreakShield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:contentDescription="Streak shields available — tap for details"
-        android:focusable="true"
-        android:padding="6dp"
-        android:text=""
-        android:textColor="@color/monokai_comment_light"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textStreak"
-        app:layout_constraintEnd_toStartOf="@+id/textStreak"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textStreak" />
-
-    <Button
-        android:id="@+id/button_hard"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:text="⚑"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textGuessLong"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textScore"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button_learned"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:text="✓"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textScore"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <Button
-        android:id="@+id/button_next"
-        android:layout_width="64pt"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="40dp"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_fail"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
-
-    <Button
-        android:id="@+id/button_tip"
-        android:layout_width="64pt"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Tip"
-        app:layout_constraintBottom_toBottomOf="@+id/button_new"
-        app:layout_constraintEnd_toStartOf="@+id/button_new"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button_fail"
-        app:layout_constraintTop_toTopOf="@+id/button_new"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button_new"
-        android:layout_width="64pt"
+    <!-- ============================ VOCAB CARD ============================ -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardVocab"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="A NEW WORD"
-        app:layout_constraintEnd_toEndOf="@+id/button_next"
-        app:layout_constraintTop_toBottomOf="@+id/button_next" />
+        android:background="@drawable/bg_card_pink"
+        android:paddingStart="20dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="22dp">
 
-    <Button
-        android:id="@+id/button_fail"
-        android:layout_width="64pt"
+        <!-- Score line: sits above the word as a small status header (mirrors
+             the IDE "file path / metadata" line above editor content). -->
+        <TextView
+            android:id="@+id/textScore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text=""
+            android:textColor="@color/vocab_text"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/button_hard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0.85" />
+
+        <Button
+            android:id="@+id/button_hard"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="⚑"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/button_learned"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_learned"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="✓"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Main foreign word — visually the biggest thing on the screen. -->
+        <TextView
+            android:id="@+id/textGuess"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:text=""
+            android:textColor="@color/vocab_text"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_learned"
+            tools:text="Un mot étrange" />
+
+        <TextView
+            android:id="@+id/textReal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:text=""
+            android:textColor="@color/vocab_text"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textGuess"
+            app:layout_constraintTop_toBottomOf="@+id/textGuess"
+            tools:text="A foreign word" />
+
+        <TextView
+            android:id="@+id/textGuessLong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text=""
+            android:textColor="@color/vocab_text"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textGuess"
+            app:layout_constraintTop_toBottomOf="@+id/textReal"
+            tools:text="Ma mère a ressenti une très grande peine lorsqu'elle a appris…" />
+
+        <ImageView
+            android:id="@+id/thinking_sparkle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="-4dp"
+            android:contentDescription="@null"
+            android:src="@drawable/thinking_sparkle"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/textGuessLong"
+            app:layout_constraintTop_toTopOf="@+id/textGuessLong" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Flex spacer: absorbs any leftover vertical room between the vocab
+         card and the bottom block, instead of letting cards drift apart
+         unevenly. minHeight guarantees a visible gap on short screens. -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="12dp" />
+
+    <!-- ===================== LIFETIME PROGRESS CARD ===================== -->
+    <!-- setSegmentWeight in QuizController casts the segment LayoutParams to
+         LinearLayout.LayoutParams, so the bar row MUST stay a LinearLayout. -->
+    <LinearLayout
+        android:id="@+id/cardLifetime"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="I don't know"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_next" />
+        android:background="@drawable/bg_card_green"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="14dp">
 
-    <androidx.constraintlayout.widget.Group
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <!-- Hosts item_progress_bars.xml (two-bar layout: lifetime mastery on top,
-         active-set composition below). All labels live inside the inflated row. -->
-    <FrameLayout
-        android:id="@+id/progressContainer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_fail"
-        app:layout_constraintEnd_toEndOf="@+id/button_next"
-        app:layout_constraintStart_toStartOf="@+id/button_fail">
-
-        <FrameLayout
-            android:id="@+id/progressBarsContainer"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:baselineAligned="true"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/CardEyebrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="TOTAL PROGRESS" />
+
+            <TextView
+                android:id="@+id/textLifetimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                tools:text="234 / 1500  ·  +5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/segLifetimeMastered"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@color/monokai_green" />
+
+            <View
+                android:id="@+id/segLifetimeRemaining"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/progress_track" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ===================== ACTIVE PROGRESS CARD ===================== -->
+    <LinearLayout
+        android:id="@+id/cardActive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_card_cyan"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:baselineAligned="true"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/CardEyebrow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="ACTIVE WORDS" />
+
+            <TextView
+                android:id="@+id/textActiveLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                tools:text="8  ·  4  ·  2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/progress_track"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/segActiveRead"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@color/monokai_orange" />
+
+            <View
+                android:id="@+id/segActiveListen"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@color/monokai_cyan" />
+
+            <View
+                android:id="@+id/segActiveInvert"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@color/monokai_purple" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- =========================== ACTION BUTTONS ===========================
+         Clean 2×2 grid via two horizontal rows. Each row hands its two
+         children equal weight so buttons span the full available width with
+         a uniform 16dp inter-column gap (8dp + 8dp). The destructive Fail and
+         the primary Next sit on the top row (more reachable thumb zone). -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_fail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="I don't know" />
+
+            <Button
+                android:id="@+id/button_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="Next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_tip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="Tip" />
+
+            <Button
+                android:id="@+id/button_new"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="A NEW WORD" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
