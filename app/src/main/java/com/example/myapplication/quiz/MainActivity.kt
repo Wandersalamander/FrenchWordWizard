@@ -250,7 +250,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             target(views.buttonNew, "New word", "Skips this word and pulls a fresh one you've never seen, expanding your active pool."),
             target(views.buttonHard, "Flag as hard", "Marks the word as tough so it shows up more often. Tap again to unflag."),
             target(views.buttonLearned, "Mark as learned", "First tap reveals the answer so you can check yourself. Tap again to retire the word — you won't see it again."),
-            target(views.textStreak, "Daily streak", "Counts consecutive days you've practiced. Even one round keeps the streak alive."),
+            target(views.textStreak, "Daily streak", "Counts consecutive days you've practiced. Even one round keeps the streak alive. Tap any time for a refresher."),
             target(views.textStreakShield, "Streak shield", "Earn a shield every ${com.example.myapplication.streak.StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of practice (up to ${com.example.myapplication.streak.StreakTracker.MAX_FREEZES} stockpiled — enough for a holiday or a sick week). Miss a day and a shield is spent automatically, so your streak survives. Tap any time to see how many you have."),
         )
 

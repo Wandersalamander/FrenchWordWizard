@@ -693,9 +693,15 @@ class QuizController(
         // visible badge.
         views.textStreak.contentDescription = when {
             streak <= 0 -> null
-            streak == 1 -> "1 day streak"
-            else -> "$streak day streak"
+            streak == 1 -> "1 day streak, tap for details"
+            else -> "$streak day streak, tap for details"
         }
+        // Only expose the flame as a tap target when there's a streak to
+        // explain — wrap_content collapses the empty state, so there's
+        // nothing meaningful to tap on day 0.
+        views.textStreak.isClickable = streak > 0
+        views.textStreak.isFocusable = streak > 0
+        views.textStreak.setOnClickListener { showStreakExplanation() }
         views.textStreakShield.text = "🛡️ $shields"
         views.textStreakShield.contentDescription = when (shields) {
             1 -> "1 streak shield available, tap for details"
@@ -710,6 +716,21 @@ class QuizController(
         view.findViewById<TextView>(R.id.shieldDialogEarn).text =
             "Earn one shield every ${StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of streak " +
                 "(up to ${StreakTracker.MAX_FREEZES} stockpiled)."
+        AlertDialog.Builder(activity)
+            .setView(view)
+            .setPositiveButton("Got it", null)
+            .show()
+    }
+
+    private fun showStreakExplanation() {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_streak_info, null)
+        val longest = StreakTracker.longestStreak(activity.applicationContext)
+        if (longest > 0) {
+            val plural = if (longest == 1) "" else "s"
+            val longestView = view.findViewById<TextView>(R.id.streakDialogLongest)
+            longestView.text = "Best so far: $longest day$plural"
+            longestView.visibility = View.VISIBLE
+        }
         AlertDialog.Builder(activity)
             .setView(view)
             .setPositiveButton("Got it", null)

@@ -77,12 +77,16 @@
             android:id="@+id/textStreak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
-            android:paddingHorizontal="4dp"
+            android:padding="6dp"
             android:text=""
             android:textColor="@color/streak_count_color"
             android:textSize="20sp"
             android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck"
             tools:text="🔥 12" />
     </LinearLayout>
 
