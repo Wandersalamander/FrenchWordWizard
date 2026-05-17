@@ -6,9 +6,9 @@ import org.junit.Test
 import java.io.ByteArrayInputStream
 
 /**
- * Unit tests for the consolidated progress-count and introduced-words cache
- * APIs on MyDictionary. These replaced a per-skill scan per progress-bar
- * refresh (called every round) and a full-csvData rescan on every LLM call.
+ * Unit tests for the lifetime-mastery and active-set count APIs on
+ * MyDictionary that drive the two main-screen progress bars, plus the
+ * introduced-words cache used by the LLM prompt.
  */
 class MyDictionaryProgressTest {
 
@@ -18,64 +18,94 @@ class MyDictionaryProgressTest {
         return MyDictionary(ByteArrayInputStream(csv.toByteArray()))
     }
 
-    @Test fun stageBuckets_emptyDictionaryHasZeroCounts() {
-        val counts = dictionaryOf(emptyList()).computeStageBucketCounts()
-        assertEquals(StageBucketCounts(0, 0, 0, 0, 0), counts)
+    /**
+     * Mark this (word, skill) pair as mastered — many clean views, zero
+     * failures, plus snug view-time samples so SkillStats' sustained-slowness
+     * gate doesn't floor failureProbability above SKILL_FINISHED_THRESHOLD.
+     */
+    private fun SkillStats.markMastered() {
+        nTimesViewed = 100
+        nTimesFailed = 0f
+        viewTimeMilli = 1_000L
+        viewTimeMilli_prev = 1_000L
     }
 
-    @Test fun stageBuckets_untouchedWordIsUnknown() {
+    /** Mark as struggling — high failure rate, default view times are fine. */
+    private fun SkillStats.markStruggling() {
+        nTimesViewed = 2
+        nTimesFailed = 2f
+    }
+
+    @Test fun lifetimeMastered_emptyDictionaryIsZero() {
+        assertEquals(0, dictionaryOf(emptyList()).computeLifetimeMasteredCount())
+    }
+
+    @Test fun lifetimeMastered_untouchedWordIsNotMastered() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
-        val counts = dict.computeStageBucketCounts()
-        assertEquals(StageBucketCounts(finished = 0, invertActive = 0, listenActive = 0,
-            readActive = 0, unknown = 1), counts)
+        assertEquals(0, dict.computeLifetimeMasteredCount())
     }
 
-    @Test fun stageBuckets_deepestIntroducedSkillSelectsBucket() {
+    @Test fun lifetimeMastered_requiresAllSkillsIntroducedAndBelowThreshold() {
         val dict = dictionaryOf(listOf(
-            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",          // READ only, struggling
-            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",                // READ + LISTEN, LISTEN struggling
-            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",             // all three, INVERT struggling
-            "Tisch\ttable\t1\thash4\tDer Tisch ist alt.\tTisch.",         // untouched
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",  // READ mastered only
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",        // all three mastered
         ))
-        dict.csvData[0].stats(Skill.READ).apply { nTimesViewed = 2; nTimesFailed = 2f }
-        dict.csvData[1].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
-        dict.csvData[1].stats(Skill.LISTEN).apply { nTimesViewed = 2; nTimesFailed = 2f }
-        dict.csvData[2].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
-        dict.csvData[2].stats(Skill.LISTEN).apply { nTimesViewed = 100; nTimesFailed = 0f }
-        dict.csvData[2].stats(Skill.INVERT).apply { nTimesViewed = 2; nTimesFailed = 2f }
-        val counts = dict.computeStageBucketCounts()
-        assertEquals(StageBucketCounts(finished = 0, invertActive = 1, listenActive = 1,
-            readActive = 1, unknown = 1), counts)
-    }
-
-    @Test fun stageBuckets_finishedRequiresAllSkillsIntroducedAndMastered() {
-        val dict = dictionaryOf(listOf(
-            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",       // READ mastered, LISTEN/INVERT never started
-            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",             // all three mastered
-        ))
-        // Word 0: READ stats look "done" but downstream skills are untouched —
-        // shouldn't count as fully finished, the user still has practice ahead.
-        dict.csvData[0].stats(Skill.READ).apply { nTimesViewed = 100; nTimesFailed = 0f }
+        // READ stats look done but the downstream skills are untouched — practice
+        // is still ahead, so this word must not count as lifetime-mastered.
+        dict.csvData[0].stats(Skill.READ).markMastered()
         for (skill in Skill.ladder) {
-            dict.csvData[1].stats(skill).apply { nTimesViewed = 100; nTimesFailed = 0f }
+            dict.csvData[1].stats(skill).markMastered()
         }
-        val counts = dict.computeStageBucketCounts()
-        assertEquals(StageBucketCounts(finished = 1, invertActive = 0, listenActive = 0,
-            readActive = 1, unknown = 0), counts)
+        assertEquals(1, dict.computeLifetimeMasteredCount())
     }
 
-    @Test fun stageBuckets_ignoredWordShortCircuitsToFinished() {
+    @Test fun lifetimeMastered_ignoredWordShortCircuitsToMastered() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
         val vocab = dict.csvData[0]
-        vocab.stats(Skill.READ).apply { nTimesViewed = 1; nTimesFailed = 1f }  // high fpb
+        vocab.stats(Skill.READ).markStruggling()  // high fpb
         vocab.ignore = true
-        val counts = dict.computeStageBucketCounts()
-        assertEquals(StageBucketCounts(finished = 1, invertActive = 0, listenActive = 0,
-            readActive = 0, unknown = 0), counts)
+        assertEquals(1, dict.computeLifetimeMasteredCount())
+    }
+
+    @Test fun activeSet_emptyDictionaryIsZero() {
+        assertEquals(ActiveSetCounts(0, 0, 0), dictionaryOf(emptyList()).computeActiveSetCounts())
+    }
+
+    @Test fun activeSet_untouchedWordContributesNothing() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        assertEquals(ActiveSetCounts(0, 0, 0), dict.computeActiveSetCounts())
+    }
+
+    @Test fun activeSet_perSkillPairsCountIndependently() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",   // active in READ only
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",         // READ mastered, LISTEN active
+            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",      // READ + LISTEN mastered, INVERT active
+            "Tisch\ttable\t1\thash4\tDer Tisch ist alt.\tTisch.",  // untouched
+        ))
+        dict.csvData[0].stats(Skill.READ).markStruggling()
+        dict.csvData[1].stats(Skill.READ).markMastered()
+        dict.csvData[1].stats(Skill.LISTEN).markStruggling()
+        dict.csvData[2].stats(Skill.READ).markMastered()
+        dict.csvData[2].stats(Skill.LISTEN).markMastered()
+        dict.csvData[2].stats(Skill.INVERT).markStruggling()
+        assertEquals(ActiveSetCounts(read = 1, listen = 1, invert = 1), dict.computeActiveSetCounts())
+    }
+
+    @Test fun activeSet_ignoredWordContributesNothing() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val vocab = dict.csvData[0]
+        vocab.stats(Skill.READ).markStruggling()
+        vocab.ignore = true
+        assertEquals(ActiveSetCounts(0, 0, 0), dict.computeActiveSetCounts())
     }
 
     @Test fun introducedForeignWords_startsEmpty() {

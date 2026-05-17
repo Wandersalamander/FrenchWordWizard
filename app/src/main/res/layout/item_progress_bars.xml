@@ -1,47 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Single segmented progress bar shown on the main screen. The five child
-     Views are weighted at runtime by QuizController.refreshAllProgressBars to
-     reflect how many words sit in each progress bucket (left = most progressed,
-     right = least). Colours are pinned to the Monokai palette; no alpha
-     blending — the segments are opaque and butted edge-to-edge. -->
+<!-- Two stacked progress bars shown above the action buttons:
+
+     1. Lifetime bar — fraction of the deck fully mastered (every ladder skill
+        below SKILL_FINISHED_THRESHOLD). Label reads "{mastered} +{today} /
+        {total}" with the today increment rendered in monokai_yellow so the
+        per-day momentum is visible separately from the slow lifetime fill.
+
+     2. Active-set bar — composition of the currently-drilling (word, skill)
+        pairs, segmented by skill. Each pair contributes to its skill's segment
+        independently, so a word being drilled in two skills counts in both
+        (matches what the picker pool sees). The whole bar always fills to the
+        row width — only the segment proportions change. Parent bg uses
+        bg_lift so an empty active set still shows a visible dim track.
+
+     Per-row weights and label text are pushed at runtime by
+     refreshLifetimeBar / refreshActiveBar in QuizController. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/progressSegmentRow"
     android:layout_width="match_parent"
-    android:layout_height="10dp"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <View
-        android:id="@+id/segFinished"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:background="@color/monokai_green" />
+    <TextView
+        android:id="@+id/textLifetimeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:textSize="14sp" />
 
-    <View
-        android:id="@+id/segInvertActive"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:background="@color/monokai_purple" />
+    <LinearLayout
+        android:id="@+id/lifetimeBarRow"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="horizontal">
 
-    <View
-        android:id="@+id/segListenActive"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:background="@color/monokai_cyan" />
+        <View
+            android:id="@+id/segLifetimeMastered"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@color/monokai_green" />
 
-    <View
-        android:id="@+id/segReadActive"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:background="@color/monokai_orange" />
+        <View
+            android:id="@+id/segLifetimeRemaining"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/monokai_bg_lift" />
+    </LinearLayout>
 
-    <View
-        android:id="@+id/segUnknown"
+    <Space
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/monokai_bg_lift" />
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/textActiveLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/activeBarRow"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/monokai_bg_lift"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/segActiveRead"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@color/monokai_orange" />
+
+        <View
+            android:id="@+id/segActiveListen"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@color/monokai_cyan" />
+
+        <View
+            android:id="@+id/segActiveInvert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@color/monokai_purple" />
+    </LinearLayout>
 </LinearLayout>

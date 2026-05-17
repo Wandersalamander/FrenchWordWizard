@@ -158,15 +158,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textScore = findViewById(R.id.textScore),
             textEn = findViewById(R.id.textReal),
             textGuessLong = findViewById(R.id.textGuessLong),
-            textProgressTotal = findViewById(R.id.textProgressTotal),
             textStreak = findViewById(R.id.textStreak),
             textStreakShield = findViewById(R.id.textStreakShield),
-            progressSegmentRow = row,
-            segFinished = row.findViewById(R.id.segFinished),
-            segInvertActive = row.findViewById(R.id.segInvertActive),
-            segListenActive = row.findViewById(R.id.segListenActive),
-            segReadActive = row.findViewById(R.id.segReadActive),
-            segUnknown = row.findViewById(R.id.segUnknown),
+            textLifetimeLabel = row.findViewById(R.id.textLifetimeLabel),
+            segLifetimeMastered = row.findViewById(R.id.segLifetimeMastered),
+            segLifetimeRemaining = row.findViewById(R.id.segLifetimeRemaining),
+            textActiveLabel = row.findViewById(R.id.textActiveLabel),
+            segActiveRead = row.findViewById(R.id.segActiveRead),
+            segActiveListen = row.findViewById(R.id.segActiveListen),
+            segActiveInvert = row.findViewById(R.id.segActiveInvert),
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
     }
@@ -182,7 +182,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun renderInitialIdleState() {
-        views.textProgressTotal.text = ""
         views.textScore.text = ""
         views.textGuessLong.text = ""
         views.textForeign.text = language.greeting
@@ -191,7 +190,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     private fun renderInitialProgressBars() {
         if (vocabDictionary.csvData.isEmpty()) return
-        applyStageBucketWeights(views, vocabDictionary.computeStageBucketCounts())
+        refreshLifetimeBar(applicationContext, views, vocabDictionary)
+        refreshActiveBar(applicationContext, views, vocabDictionary)
     }
 
     private fun wireQuizControllerListeners() {

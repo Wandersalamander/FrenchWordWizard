@@ -8,15 +8,15 @@
 
     <TextView
         android:id="@+id/textGuess"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="16dp"
         android:text="Un mot etrange et aussi trop long"
         android:textColor="@color/vocab_text"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_learned"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,19 +24,22 @@
 
     <TextView
         android:id="@+id/textReal"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="A foreign word"
         android:textColor="@color/vocab_text"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_hard"
         app:layout_constraintStart_toStartOf="@+id/textGuess"
         app:layout_constraintTop_toBottomOf="@+id/textGuess" />
 
     <TextView
         android:id="@+id/textGuessLong"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
         android:text="Ma mère a ressenti une très grande peine lorsqu’elle a appris que mon père servirait une peine de six ans pour un crime qu’il n’a pas commis. "
         android:textColor="@color/vocab_text"
         android:textSize="24sp"
@@ -59,12 +62,14 @@
 
     <TextView
         android:id="@+id/textScore"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="0.00"
         android:textColor="@color/vocab_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textGuess"
+        app:layout_constraintEnd_toStartOf="@+id/button_learned"
         app:layout_constraintStart_toStartOf="@+id/textGuess" />
 
     <TextView
@@ -83,6 +88,7 @@
         android:id="@+id/textStreakShield"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
         android:contentDescription="Streak shields available — tap for details"
@@ -94,6 +100,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textStreak"
         app:layout_constraintEnd_toStartOf="@+id/textStreak"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textStreak" />
 
     <Button
@@ -101,10 +109,11 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
         android:text="⚑"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textGuessLong"
-        app:layout_constraintStart_toEndOf="@+id/textReal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textScore"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -113,10 +122,11 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
         android:text="✓"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textScore"
-        app:layout_constraintStart_toEndOf="@+id/textGuess" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <Button
@@ -169,29 +179,20 @@
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="123dp" />
 
-    <LinearLayout
+    <!-- Hosts item_progress_bars.xml (two-bar layout: lifetime mastery on top,
+         active-set composition below). All labels live inside the inflated row. -->
+    <FrameLayout
         android:id="@+id/progressContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button_fail"
         app:layout_constraintEnd_toEndOf="@+id/button_next"
         app:layout_constraintStart_toStartOf="@+id/button_fail">
 
-        <TextView
-            android:id="@+id/textProgressTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="14sp" />
-
-        <!-- Per-skill bar rows are inflated into here at runtime, one per Skill.ladder
-             entry. FrameLayout makes them share the same Y position so they appear
-             stacked rather than tiled. -->
         <FrameLayout
             android:id="@+id/progressBarsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

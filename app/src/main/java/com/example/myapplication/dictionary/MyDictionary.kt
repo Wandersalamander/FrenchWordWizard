@@ -20,23 +20,16 @@ fun openDictionaryStream(context: Context, language: Language): InputStream {
 }
 
 /**
- * Five mutually-exclusive progress buckets shown on the segmented main-screen
- * bar, summing to csvData.size. Ordered from most-progressed (left of the
- * bar) to least-progressed (right):
- * - [finished]: every introduced ladder skill is below SKILL_FINISHED_THRESHOLD
- *   (or the word is ignored), AND every ladder skill has been introduced. A
- *   word that has only mastered READ but never reached LISTEN/INVERT is NOT
- *   finished — practice is still ahead of it.
- * - [invertActive] / [listenActive] / [readActive]: the deepest introduced
- *   skill is this one, and the word does not yet qualify as finished.
- * - [unknown]: no skill has been practiced.
+ * Per-skill count of (word, skill) pairs currently in the active drilling
+ * pool — introduced for that skill but not yet retired below
+ * SKILL_FINISHED_THRESHOLD. A word being drilled in multiple skills
+ * contributes to each skill's count independently, matching what the picker
+ * pool in [MyDictionary.getActiveVocabWeighted] sees.
  */
-data class StageBucketCounts(
-    val finished: Int,
-    val invertActive: Int,
-    val listenActive: Int,
-    val readActive: Int,
-    val unknown: Int,
+data class ActiveSetCounts(
+    val read: Int,
+    val listen: Int,
+    val invert: Int,
 )
 
 class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences? = null) {
@@ -61,39 +54,51 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         csvData.count { it.stats(skill).nTimesViewed > 0 }
 
     /**
-     * Bucket every word into one of the five mutually-exclusive progress
-     * stages. Single pass over [csvData]; called once per round to drive the
-     * segmented progress bar.
+     * Count of words that count as fully mastered for the lifetime bar:
+     * either ignored, or every ladder skill has been introduced AND retired
+     * below SKILL_FINISHED_THRESHOLD. Single pass over [csvData].
      */
-    fun computeStageBucketCounts(): StageBucketCounts {
-        var finished = 0
-        var invertActive = 0
-        var listenActive = 0
-        var readActive = 0
-        var unknown = 0
-        val ladder = Skill.ladder
+    fun computeLifetimeMasteredCount(): Int {
+        var mastered = 0
         for (vocab in csvData) {
-            val deepest = ladder.lastOrNull { vocab.stats(it).nTimesViewed > 0 }
-            if (deepest == null) {
-                unknown++
+            if (vocab.ignore) {
+                mastered++
                 continue
             }
-            val fullyFinished = vocab.ignore || ladder.all { skill ->
-                val stats = vocab.stats(skill)
-                stats.nTimesViewed > 0 &&
-                    stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
+            if (!vocab.hasBeenIntroduced()) continue
+            val fully = Skill.ladder.all { skill ->
+                val s = vocab.stats(skill)
+                s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
             }
-            if (fullyFinished) {
-                finished++
-                continue
-            }
-            when (deepest) {
-                Skill.INVERT -> invertActive++
-                Skill.LISTEN -> listenActive++
-                Skill.READ -> readActive++
+            if (fully) mastered++
+        }
+        return mastered
+    }
+
+    /**
+     * Per-skill count of (word, skill) pairs in the active drilling pool —
+     * unlocked, introduced for that skill, and still above the mastery
+     * threshold. Drives the active-set composition bar.
+     */
+    fun computeActiveSetCounts(): ActiveSetCounts {
+        var read = 0
+        var listen = 0
+        var invert = 0
+        for (vocab in csvData) {
+            if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
+            for (skill in Skill.ladder) {
+                if (!vocab.isSkillUnlocked(skill)) continue
+                val s = vocab.stats(skill)
+                if (s.nTimesViewed == 0) continue
+                if (s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) continue
+                when (skill) {
+                    Skill.READ -> read++
+                    Skill.LISTEN -> listen++
+                    Skill.INVERT -> invert++
+                }
             }
         }
-        return StageBucketCounts(finished, invertActive, listenActive, readActive, unknown)
+        return ActiveSetCounts(read, listen, invert)
     }
 
     /**

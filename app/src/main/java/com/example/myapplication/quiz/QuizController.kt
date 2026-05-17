@@ -10,12 +10,18 @@ import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.SkillStats
 import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.llm.LlmService
+import com.example.myapplication.dictionary.ActiveSetCounts
 import com.example.myapplication.setDebouncedOnClickListener
+import com.example.myapplication.streak.MasteryTracker
 import com.example.myapplication.streak.StreakTracker
+import android.graphics.Typeface
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -23,6 +29,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import kotlin.random.Random
 import kotlinx.coroutines.Job
@@ -40,17 +47,18 @@ data class QuizViews(
     val textScore: TextView,
     val textEn: TextView,
     val textGuessLong: TextView,
-    val textProgressTotal: TextView,
     val textStreak: TextView,
     val textStreakShield: TextView,
-    // Single segmented progress bar (one row, five coloured Views weighted by
-    // bucket count). Replaces the previous per-skill stacked ProgressBars.
-    val progressSegmentRow: ViewGroup,
-    val segFinished: View,
-    val segInvertActive: View,
-    val segListenActive: View,
-    val segReadActive: View,
-    val segUnknown: View,
+    // Two stacked bars: lifetime mastered (single fill of the deck) and the
+    // composition of the currently-drilling pool, segmented by skill. See
+    // item_progress_bars.xml for the visual structure.
+    val textLifetimeLabel: TextView,
+    val segLifetimeMastered: View,
+    val segLifetimeRemaining: View,
+    val textActiveLabel: TextView,
+    val segActiveRead: View,
+    val segActiveListen: View,
+    val segActiveInvert: View,
     val thinkingSparkle: ImageView,
 )
 
@@ -350,7 +358,6 @@ class QuizController(
         refreshStreakBadge()
         renderScoreText(vocab)
         setQuizButtonsEnabled(true)
-        positionTotalLabel()
 
         displayForeignWord(vocab)
         views.textEn.visibility =
@@ -438,9 +445,33 @@ class QuizController(
         views.buttonNext.text = "Next"
     }
 
+    // Last today-counter value reflected on screen; lets refreshAllProgressBars
+    // detect an increment and pop the label without firing the animation on
+    // every round.
+    private var renderedTodayCount: Int = 0
+
     private fun refreshAllProgressBars() {
         if (vocabDictionary.csvData.isEmpty()) return
-        applyStageBucketWeights(views, vocabDictionary.computeStageBucketCounts())
+        val ctx = activity.applicationContext
+        refreshLifetimeBar(ctx, views, vocabDictionary)
+        refreshActiveBar(ctx, views, vocabDictionary)
+        val todayNow = MasteryTracker.todayCount(ctx)
+        if (todayNow > renderedTodayCount) popTodayCounter()
+        renderedTodayCount = todayNow
+    }
+
+    private fun popTodayCounter() {
+        val label = views.textLifetimeLabel
+        label.animate().cancel()
+        label.scaleX = 1f
+        label.scaleY = 1f
+        label.animate()
+            .scaleX(1.18f).scaleY(1.18f)
+            .setDuration(120L)
+            .withEndAction {
+                label.animate().scaleX(1f).scaleY(1f).setDuration(160L).start()
+            }
+            .start()
     }
 
     private fun renderScoreText(vocab: Vocab) {
@@ -449,28 +480,6 @@ class QuizController(
             if (currentSkill == Skill.ladder.first()) "A new word!"
             else "${currentSkill.displayName} exercise unlocked!"
         } else currentStats.getInfoString()
-    }
-
-    /**
-     * Numeric readout above the bar: total words introduced (i.e. anything
-     * not in the "unknown" bucket). Positioned over the right edge of the
-     * READ-active segment — which is the boundary between "any practice"
-     * and "untouched" — so the number tracks the colored region's tip.
-     */
-    private fun positionTotalLabel() {
-        val total = vocabDictionary.csvData.size
-        if (total <= 0) return
-        val readIntroduced = vocabDictionary.getActiveDataSize(Skill.ladder.first())
-        views.textProgressTotal.text = readIntroduced.toString()
-        val bar = views.progressSegmentRow
-        bar.post {
-            val barWidth = bar.width
-            val labelWidth = views.textProgressTotal.width
-            val progressFraction = readIntroduced / total.toFloat()
-            val targetX = progressFraction * barWidth - labelWidth / 2f
-            val maxX = (barWidth - labelWidth).coerceAtLeast(0).toFloat()
-            views.textProgressTotal.translationX = targetX.coerceIn(0f, maxX)
-        }
     }
 
     /**
@@ -527,6 +536,8 @@ class QuizController(
             return false
         }
 
+        val wasFullyMastered = isFullyMasteredNow(vocab)
+
         val timeElapsed =
             elapsedBeforePause + (System.currentTimeMillis() - startTime) + penalty
         val stats = vocab.stats(currentSkill)
@@ -554,6 +565,14 @@ class QuizController(
         val result = StreakTracker.recordPracticeToday(activity.applicationContext)
         surfaceStreakResult(result)
 
+        // Word just crossed from "still has a skill to master" to "every
+        // ladder skill below threshold" — feed the "+N today" highlight on
+        // the lifetime bar. The bar refresh later in the round flow picks
+        // this up via MasteryTracker.todayCount.
+        if (!wasFullyMastered && isFullyMasteredNow(vocab)) {
+            MasteryTracker.recordMasteredToday(activity.applicationContext)
+        }
+
         if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
         ) {
@@ -561,6 +580,14 @@ class QuizController(
             return true
         }
         return false
+    }
+
+    private fun isFullyMasteredNow(vocab: Vocab): Boolean {
+        if (vocab.ignore) return true
+        return Skill.ladder.all { skill ->
+            val s = vocab.stats(skill)
+            s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
+        }
     }
 
     private fun rememberRecentWord(word: String) {
@@ -765,17 +792,95 @@ private fun SkillStats.copyFrom(other: SkillStats) {
 }
 
 /**
- * Push [counts] into the five segmented-bar Views by setting each child's
- * LinearLayout weight to the bucket count. Weight 0 collapses a segment so
- * empty buckets disappear cleanly. Shared between QuizController (per-round
- * refresh) and MainActivity (initial idle render before QuizController exists).
+ * Repaints the lifetime mastery bar and its label. Shared between
+ * QuizController (per-round refresh) and MainActivity (initial idle render
+ * before QuizController exists).
+ *
+ * Label reads "{mastered} +{today} / {total}" with the today increment in
+ * monokai_yellow + bold. The "+N today" portion is omitted when zero so the
+ * label doesn't draw attention to days where nothing has been mastered yet.
  */
-internal fun applyStageBucketWeights(views: QuizViews, counts: com.example.myapplication.dictionary.StageBucketCounts) {
-    setSegmentWeight(views.segFinished, counts.finished)
-    setSegmentWeight(views.segInvertActive, counts.invertActive)
-    setSegmentWeight(views.segListenActive, counts.listenActive)
-    setSegmentWeight(views.segReadActive, counts.readActive)
-    setSegmentWeight(views.segUnknown, counts.unknown)
+internal fun refreshLifetimeBar(
+    context: Context,
+    views: QuizViews,
+    dictionary: com.example.myapplication.dictionary.MyDictionary,
+) {
+    val total = dictionary.csvData.size
+    val mastered = dictionary.computeLifetimeMasteredCount()
+    val remaining = (total - mastered).coerceAtLeast(0)
+    setSegmentWeight(views.segLifetimeMastered, mastered)
+    setSegmentWeight(views.segLifetimeRemaining, remaining)
+    val today = MasteryTracker.todayCount(context)
+    views.textLifetimeLabel.text = buildLifetimeLabel(context, mastered, today, total)
+}
+
+internal fun refreshActiveBar(
+    context: Context,
+    views: QuizViews,
+    dictionary: com.example.myapplication.dictionary.MyDictionary,
+) {
+    val counts = dictionary.computeActiveSetCounts()
+    setSegmentWeight(views.segActiveRead, counts.read)
+    setSegmentWeight(views.segActiveListen, counts.listen)
+    setSegmentWeight(views.segActiveInvert, counts.invert)
+    views.textActiveLabel.text = buildActiveLabel(context, counts)
+}
+
+/*
+ * Both labels share the same shape: primary numbers in their bar's signature
+ * colour, connective text in monokai_comment_light, and an optional yellow
+ * accent (only on the lifetime bar, for today's increment). Together with
+ * monospace + end-gravity in item_progress_bars.xml they read as a pair
+ * stacked above the right edge of each bar.
+ */
+private fun buildLifetimeLabel(
+    context: Context,
+    mastered: Int,
+    today: Int,
+    total: Int,
+): CharSequence {
+    val sb = SpannableStringBuilder()
+    appendColored(context, sb, mastered.toString(), com.example.myapplication.R.color.monokai_green)
+    appendColored(context, sb, " / $total", com.example.myapplication.R.color.monokai_comment_light)
+    if (today > 0) {
+        appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.monokai_comment_light)
+        val start = sb.length
+        sb.append("+$today")
+        sb.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(context, com.example.myapplication.R.color.monokai_yellow)),
+            start,
+            sb.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE,
+        )
+        sb.setSpan(StyleSpan(Typeface.BOLD), start, sb.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+    return sb
+}
+
+private fun buildActiveLabel(context: Context, counts: ActiveSetCounts): CharSequence {
+    val sb = SpannableStringBuilder()
+    appendColored(context, sb, counts.read.toString(), com.example.myapplication.R.color.monokai_orange)
+    appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.monokai_comment_light)
+    appendColored(context, sb, counts.listen.toString(), com.example.myapplication.R.color.monokai_cyan)
+    appendColored(context, sb, "  ·  ", com.example.myapplication.R.color.monokai_comment_light)
+    appendColored(context, sb, counts.invert.toString(), com.example.myapplication.R.color.monokai_purple)
+    return sb
+}
+
+private fun appendColored(
+    context: Context,
+    sb: SpannableStringBuilder,
+    text: String,
+    colorRes: Int,
+) {
+    val start = sb.length
+    sb.append(text)
+    sb.setSpan(
+        ForegroundColorSpan(ContextCompat.getColor(context, colorRes)),
+        start,
+        sb.length,
+        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE,
+    )
 }
 
 private fun setSegmentWeight(segment: View, count: Int) {
