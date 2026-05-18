@@ -1,11 +1,10 @@
 package com.example.myapplication.quiz
 
 import android.Manifest
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.media.AudioAttributes
 import android.os.Build
@@ -20,6 +19,7 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import com.example.myapplication.data.AppPrefs
@@ -38,7 +38,6 @@ import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
-import java.io.File
 import java.util.Locale
 
 private const val TAG = "MainActivity"
@@ -110,10 +109,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun workAroundDexReloadBug() {
-        // Fix a bug seen via the AndroidStudio IDE that prevented the
-        // application from running several times without uninstalling first.
-        val dexOutputDir: File = codeCacheDir
-        dexOutputDir.setReadOnly()
+        // Debug-builds-only workaround for an AndroidStudio IDE issue that
+        // prevented re-runs without uninstalling. Marking codeCacheDir read-only
+        // blocks DEX optimization caching, which would hurt cold-start in a
+        // release build — gate strictly to debuggable APKs.
+        val isDebuggable = applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
+        if (!isDebuggable) return
+        codeCacheDir.setReadOnly()
     }
 
     private fun setupTextToSpeech() {
@@ -135,7 +137,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun setupNotificationChannels() {
-        createForegroundServiceChannel()
+        // Foreground-service channel is owned by MyForegroundService — it
+        // creates the channel itself before calling startForeground(), so we
+        // don't duplicate (and possibly contradict) the channel metadata here.
         StreakNotifications.ensureChannel(this)
         // Idempotent — re-arms today if the alarm exists, or schedules a fresh
         // one on first launch / after the user re-enabled the reminder.
@@ -256,12 +260,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             target(views.textStreakShield, "Streak shield", "Earn a shield every ${com.example.myapplication.streak.StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of practice (up to ${com.example.myapplication.streak.StreakTracker.MAX_FREEZES} stockpiled — enough for a holiday or a sick week). Miss a day and a shield is spent automatically, so your streak survives. Tap any time to see how many you have."),
         )
 
-        findOverflowMenuButton()?.let { overflow ->
-            steps += target(
-                overflow,
+        findActionBarToolbar()?.let { toolbar ->
+            steps += TapTarget.forToolbarOverflow(
+                toolbar,
                 "Settings & more",
-                "Open this menu to reach Settings, where you can download an advanced on-device AI that writes richer Tip sentences."
-            )
+                "Open this menu to reach Settings, where you can download an advanced on-device AI that writes richer Tip sentences.",
+            ).tintTarget(false).cancelable(true)
         }
 
         TapTargetSequence(this)
@@ -277,18 +281,24 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         AppPrefs.get(this).edit().putBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, true).apply()
     }
 
-    private fun findOverflowMenuButton(): View? {
+    /**
+     * Walk the decor view to find the AppCompat-managed toolbar so TapTargetView
+     * can drop a target on its overflow menu button. We don't call
+     * [setSupportActionBar], so the toolbar isn't directly addressable — but
+     * it's always somewhere under the action-bar container in the decor tree.
+     * Returns null on unusual themes (e.g. NoActionBar without our own
+     * toolbar); the caller skips the tutorial step gracefully when null.
+     */
+    private fun findActionBarToolbar(): Toolbar? {
         val root = window.decorView as? ViewGroup ?: return null
-        return findOverflowMenuButton(root)
+        return findToolbarIn(root)
     }
 
-    private fun findOverflowMenuButton(group: ViewGroup): View? {
+    private fun findToolbarIn(group: ViewGroup): Toolbar? {
         for (i in 0 until group.childCount) {
             val child = group.getChildAt(i)
-            if (child.javaClass.simpleName == "OverflowMenuButton") return child
-            if (child is ViewGroup) {
-                findOverflowMenuButton(child)?.let { return it }
-            }
+            if (child is Toolbar) return child
+            if (child is ViewGroup) findToolbarIn(child)?.let { return it }
         }
         return null
     }
@@ -432,18 +442,5 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     private fun startVocabService() {
         ContextCompat.startForegroundService(this, serviceIntent)
-    }
-
-    private fun createForegroundServiceChannel() {
-        val channel = NotificationChannel(
-            MyForegroundService.NOTIFICATION_CHANNEL_ID,
-            "Show vocabs",
-            NotificationManager.IMPORTANCE_DEFAULT,
-        ).apply {
-            description = "This channel shows continuously vocabs to practice"
-        }
-        val notificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.createNotificationChannel(channel)
     }
 }

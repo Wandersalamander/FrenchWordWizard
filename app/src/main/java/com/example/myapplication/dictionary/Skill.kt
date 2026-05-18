@@ -46,6 +46,22 @@ data class SkillStats(
         lastTimeFailed = System.currentTimeMillis()
     }
 
+    /**
+     * Copy every field from [other] into this instance, in place. Used to
+     * roll back a round when the active skill's state changed mid-round in a
+     * way that compromises the result (e.g. listening toggled off in a LISTEN
+     * round). The receiving instance is the one held in the Vocab's
+     * skillStats map, so we mutate rather than swap references.
+     */
+    fun copyFrom(other: SkillStats) {
+        viewTimeMilli = other.viewTimeMilli
+        viewTimeMilli_prev = other.viewTimeMilli_prev
+        nTimesViewed = other.nTimesViewed
+        nTimesFailed = other.nTimesFailed
+        lastDisplayed = other.lastDisplayed
+        lastTimeFailed = other.lastTimeFailed
+    }
+
     fun failureProbability(): Float {
         if (nTimesViewed == 0) return 1.0f
         val base = 0.5f / nTimesViewed.toFloat()
