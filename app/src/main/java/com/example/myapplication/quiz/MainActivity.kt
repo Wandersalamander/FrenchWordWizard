@@ -212,6 +212,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         views.buttonTip.setDebouncedOnClickListener { quizController.onTipClick() }
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
+        quizController.setupStreakBadgeRoles()
     }
 
     private fun maybeShowTutorial(prefs: SharedPreferences) {
@@ -219,14 +220,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // TapTargetView overlays each highlighted view in turn; it's not
         // navigable via TalkBack swipe gestures and effectively traps SR
         // users on a screen they can't operate. Skip the auto-tour when
-        // a screen reader is active and persist the seen-flag so we don't
-        // pop it on every launch. The menu "Show tutorial" entry stays
-        // available for users who want to opt in.
+        // a screen reader is active. Don't persist the seen-flag in that
+        // case — if the user later disables TalkBack, the tour should
+        // still pop on the next fresh launch. The menu "Show tutorial"
+        // entry remains the manual escape hatch either way.
         val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
-        if (am.isTouchExplorationEnabled) {
-            AppPrefs.get(this).edit().putBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, true).apply()
-            return
-        }
+        if (am.isTouchExplorationEnabled) return
         findViewById<View>(android.R.id.content).post { showTutorial() }
     }
 

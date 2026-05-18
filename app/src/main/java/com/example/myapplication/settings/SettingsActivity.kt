@@ -166,6 +166,14 @@ class SettingsActivity : AppCompatActivity() {
             val h = StreakTracker.reminderHour(this)
             val m = StreakTracker.reminderMinute(this)
             timeButton.text = String.format(Locale.US, "%02d:%02d", h, m)
+            // The bare "21:00" reads as "twenty-one zero zero" with no role
+            // hint. Spelling out the action gives SR users the same affordance
+            // sighted users get from the section context.
+            timeButton.contentDescription = String.format(
+                Locale.US,
+                "Reminder time, currently %02d:%02d, double-tap to change",
+                h, m,
+            )
         }
 
         renderStats()

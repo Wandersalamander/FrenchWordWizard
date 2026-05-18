@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Word-list row: each row reads as a single TalkBack node so SR users hear
+     one combined announcement per word instead of five separate field stops.
+     The adapter sets contentDescription with a sentence-form summary (incl.
+     "3 of 5 stars" instead of the literal ★ glyphs). -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:focusable="true"
+    android:screenReaderFocusable="true"
     android:orientation="vertical"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
@@ -11,6 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
@@ -33,6 +40,7 @@
         android:id="@+id/itemEnglish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         android:textSize="15sp"
         android:layout_marginTop="2dp" />
 
@@ -40,6 +48,7 @@
         android:id="@+id/itemMeta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         android:textSize="12sp"
         android:layout_marginTop="2dp" />
 
@@ -47,6 +56,7 @@
         android:id="@+id/itemFlags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
         android:textSize="12sp"
         android:textStyle="italic"
         android:layout_marginTop="2dp"

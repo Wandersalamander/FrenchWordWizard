@@ -30,13 +30,10 @@
 
     <!-- ============================ STREAK CARD ============================
          Single row: title on the left, shield + fire grouped on the right.
-         Vertically tighter than the other cards' default 12/14 dp padding
-         because the shield/fire icons already carry plenty of visual weight;
-         giving them a 36dp tap target (instead of the 48dp default) keeps
-         the card compact while staying tappable — the TouchTargetSizeCheck
-         lint is intentionally suppressed for this reason. baselineAligned
-         is disabled so the small title's baseline isn't pulled down to
-         meet the much larger icon text. -->
+         Badges use the 48dp minimum tap target so screen-reader and motor-
+         impaired users can hit them reliably; baselineAligned is disabled
+         so the small title's baseline isn't pulled down to meet the much
+         larger icon text. -->
     <LinearLayout
         android:id="@+id/cardStreak"
         android:layout_width="match_parent"
@@ -46,14 +43,16 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="18dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="10dp">
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
 
         <TextView
+            android:id="@+id/textStreakEyebrow"
             style="@style/CardEyebrow"
             android:layout_width="0dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:accessibilityHeading="true"
             android:text="STREAK" />
 
         <TextView
@@ -65,14 +64,13 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
-            android:minWidth="40dp"
-            android:minHeight="36dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:padding="6dp"
             android:text=""
             android:textColor="@color/streak_shield_color"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck"
             tools:text="🛡️ 3" />
 
         <TextView
@@ -83,12 +81,13 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:padding="6dp"
             android:text=""
             android:textColor="@color/streak_count_color"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck"
             tools:text="🔥 12" />
     </LinearLayout>
 
@@ -173,6 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="8dp"
+            android:accessibilityLiveRegion="polite"
             android:text=""
             android:textColor="@color/vocab_text"
             android:textSize="22sp"

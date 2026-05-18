@@ -13,6 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
         android:text="Settings"
         android:textSize="28sp"
         android:layout_marginBottom="32dp" />
@@ -20,6 +21,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
+        android:labelFor="@+id/languageRadioGroup"
         android:text="Language"
         android:textSize="20sp"
         android:layout_marginBottom="16dp" />
@@ -65,6 +68,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
+        android:labelFor="@+id/sentenceSourceRadioGroup"
         android:text="Example sentences"
         android:textSize="20sp"
         android:layout_marginTop="32dp"
@@ -103,6 +108,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
         android:text="On-device AI"
         android:textSize="20sp"
         android:layout_marginTop="32dp"
@@ -122,7 +128,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="12sp"
-        android:textColor="?android:attr/textColorTertiary"
+        android:textColor="?android:attr/textColorSecondary"
         android:fontFamily="monospace"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
@@ -177,6 +183,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
         android:text="Streak"
         android:textSize="20sp"
         android:layout_marginTop="32dp"
@@ -231,6 +238,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
         android:text="Reset progress"
         android:textSize="20sp"
         android:layout_marginTop="32dp"
@@ -239,6 +247,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:labelFor="@+id/resetLanguageSpinner"
         android:text="Language to reset"
         android:textSize="14sp"
         android:textColor="?android:attr/textColorSecondary"

@@ -35,6 +35,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.AccessibilityDelegateCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.lifecycle.lifecycleScope
 import kotlin.random.Random
 import kotlinx.coroutines.Job
@@ -268,6 +271,26 @@ class QuizController(
     fun markPaused() {
         elapsedBeforePause += System.currentTimeMillis() - startTime
         startTime = System.currentTimeMillis()
+    }
+
+    /**
+     * Attach a Button role to the streak/shield TextViews so non-TalkBack
+     * assistive tech (Switch Access, TV remotes, BrailleBack) sees them as
+     * buttons. TextView + clickable=true announces correctly through TalkBack
+     * already, but other services key off the node's class name.
+     */
+    fun setupStreakBadgeRoles() {
+        listOf(views.textStreak, views.textStreakShield).forEach { badge ->
+            ViewCompat.setAccessibilityDelegate(badge, object : AccessibilityDelegateCompat() {
+                override fun onInitializeAccessibilityNodeInfo(
+                    host: View,
+                    info: AccessibilityNodeInfoCompat,
+                ) {
+                    super.onInitializeAccessibilityNodeInfo(host, info)
+                    info.className = Button::class.java.name
+                }
+            })
+        }
     }
 
     fun setupLearnedButton() {
@@ -670,11 +693,14 @@ class QuizController(
         return layout.getPrimaryHorizontal(end)
     }
 
-    private fun perSkillRunLength(active: Int, finishedToday: Int): Int =
-        active.toString().length +
+    private fun perSkillRunLength(active: Int, finishedToday: Int): Int {
+        val activeLen = active.toString().length
+        if (finishedToday <= 0) return activeLen
+        return activeLen +
             ACTIVE_LABEL_TODAY_JOIN.length +
             ACTIVE_LABEL_TODAY_PREFIX.length +
             finishedToday.toString().length
+    }
 
     private enum class ActiveGroup { READ, LISTEN, INVERT }
 
@@ -990,10 +1016,16 @@ class QuizController(
             views.textGuessLong.text = maskSentence(sentence)
             views.textGuessLong.setDebouncedOnClickListener { onMaskedSentenceTapped() }
             views.textGuessLong.isClickable = true
+            // The visible mask is all underscores — TalkBack reads each one
+            // ("underscore underscore underscore…"). Swap in a sentence form
+            // describing the tap action so SR users get something useful.
+            views.textGuessLong.contentDescription =
+                "Example sentence hidden, tap to hear it read aloud"
         } else {
             views.textGuessLong.text = sentence
             views.textGuessLong.setOnClickListener(null)
             views.textGuessLong.isClickable = false
+            views.textGuessLong.contentDescription = null
         }
     }
 
@@ -1217,7 +1249,9 @@ private fun buildActiveLabel(
  * [com.example.myapplication.R.color.today_count_color] (shared with the
  * lifetime card's "+N today" so both today-counts read as the same gold).
  * The space between is part of the gold span but is invisible, so the
- * visible gold glyphs are exactly the today-count digits.
+ * visible gold glyphs are exactly the today-count digits. When
+ * [finishedToday] is 0 the gold suffix is omitted entirely — matches the
+ * lifetime card's "skip +0" behavior. Keep [perSkillRunLength] in sync.
  */
 private fun appendActiveSkillRun(
     context: Context,
@@ -1227,6 +1261,7 @@ private fun appendActiveSkillRun(
     activeColorRes: Int,
 ) {
     appendColored(context, sb, active.toString(), activeColorRes)
+    if (finishedToday <= 0) return
     val goldStart = sb.length
     sb.append(ACTIVE_LABEL_TODAY_JOIN)
     sb.append(ACTIVE_LABEL_TODAY_PREFIX)

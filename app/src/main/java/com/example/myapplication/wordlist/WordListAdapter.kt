@@ -51,6 +51,25 @@ class WordListAdapter(
             holder.flags.visibility = View.VISIBLE
             holder.flags.text = flagBits.joinToString("  •  ")
         }
+        // Compose a sentence-form announcement so TalkBack reads the row as a
+        // single node — the children are flagged importantForAccessibility="no"
+        // in the layout. Stars expand from glyphs ("★★★☆☆") to "3 of 5 stars",
+        // and timing/freshness are spelled out instead of glyphed.
+        val successProbability = (1.0f - s.failureProbability()).coerceIn(0.0f, 1.0f)
+        val filledStars = (5 * successProbability).toInt()
+        holder.itemView.contentDescription = buildString {
+            append(v.foreign)
+            append(", ")
+            append(v.english)
+            append(". ")
+            append(filledStars).append(" of 5 stars. ")
+            append(s.nTimesViewed).append(if (s.nTimesViewed == 1) " view" else " views")
+            append(String.format(", %.1f seconds average", avgTimeS))
+            append(", last seen ").append(formatLastSeen(s.lastDisplayed))
+            if (flagBits.isNotEmpty()) {
+                append(". ").append(flagBits.joinToString(", "))
+            }
+        }
     }
 
     override fun getItemCount(): Int = items.size

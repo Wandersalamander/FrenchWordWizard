@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="6dp"
+        android:accessibilityHeading="true"
         android:text="Streak shield"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="22sp"

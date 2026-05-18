@@ -206,6 +206,7 @@ class WordListActivity : AppCompatActivity() {
             emptyLabel.visibility = View.VISIBLE
             recyclerView.visibility = View.GONE
             pageLabel.text = "0 words"
+            pageLabel.contentDescription = "No words"
             prevButton.isEnabled = false
             nextButton.isEnabled = false
             return
@@ -219,6 +220,15 @@ class WordListActivity : AppCompatActivity() {
         val total = totalPages()
         pageLabel.text = String.format(
             "Page %d / %d  •  %d words",
+            currentPage + 1,
+            total,
+            sortedWords.size,
+        )
+        // Spelled-out form for TalkBack — the visible "/" and "•" read as
+        // "slash" and "bullet" through the screen reader, which obscures the
+        // page-of-total semantics.
+        pageLabel.contentDescription = String.format(
+            "Page %d of %d, %d words total",
             currentPage + 1,
             total,
             sortedWords.size,
