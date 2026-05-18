@@ -43,8 +43,8 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="18dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp">
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
         <TextView
             android:id="@+id/textStreakEyebrow"
@@ -100,8 +100,20 @@
         android:background="@drawable/bg_card_pink"
         android:paddingStart="20dp"
         android:paddingEnd="12dp"
-        android:paddingTop="16dp"
+        android:paddingTop="12dp"
         android:paddingBottom="22dp">
+
+        <!-- Section eyebrow — matches the STREAK / TOTAL PROGRESS / ACTIVE
+             WORDS labels on the other three cards so all four panes share
+             one typographic header rule. accessibilityHeading lets SR users
+             jump between cards by heading. -->
+        <TextView
+            android:id="@+id/textVocabEyebrow"
+            style="@style/CardEyebrow"
+            android:accessibilityHeading="true"
+            android:text="WORD"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Score line: sits above the word as a small status header (mirrors
              the IDE "file path / metadata" line above editor content). -->
@@ -109,13 +121,14 @@
             android:id="@+id/textScore"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="12dp"
             android:text=""
             android:textColor="@color/vocab_text"
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@+id/button_hard"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textVocabEyebrow"
             tools:text="0.85" />
 
         <!-- accessibilityTraversalAfter pushes the ⚑/✓ actions behind the
@@ -132,7 +145,7 @@
             android:text="⚑"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/button_learned"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textVocabEyebrow" />
 
         <Button
             android:id="@+id/button_learned"
@@ -144,7 +157,7 @@
             android:text="✓"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textVocabEyebrow" />
 
         <!-- Main foreign word — visually the biggest thing on the screen.
              accessibilityLiveRegion="polite" makes TalkBack announce the

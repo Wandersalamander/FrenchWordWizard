@@ -1,64 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Word list: page title + a "filters" card (Skill / Sort spinners) + the
+     scrolling list + pagination. The filter card uses bg_card_plain (no
+     accent stripe) so utility chrome doesn't claim one of the Monokai
+     feature colors — the lifted card_surface + olive edge is enough to
+     mark it as a panel distinct from the cream page. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:paddingHorizontal="16dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
         android:text="Word list"
         android:textSize="24sp"
-        android:layout_marginBottom="8dp" />
-
-    <LinearLayout
-        android:id="@+id/skillRow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Skill:"
-            android:textSize="16sp"
-            android:layout_marginEnd="8dp" />
-
-        <Spinner
-            android:id="@+id/skillSpinner"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="12dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="8dp">
+        android:background="@drawable/bg_card_plain"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/skillRow"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sort by:"
-            android:textSize="16sp"
-            android:layout_marginEnd="8dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
 
-        <Spinner
-            android:id="@+id/sortSpinner"
-            android:layout_width="0dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skill:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/skillSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort by:"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/sortSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1">
 
         <androidx.recyclerview.widget.RecyclerView

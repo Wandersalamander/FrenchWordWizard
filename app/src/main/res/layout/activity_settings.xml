@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Settings: each section is wrapped in a Monokai-accented card (cyan /
+     green / pink / orange / purple) so the page reads as the same "editor
+     pane" system as the main quiz screen. The page title sits outside the
+     cards as a plain h1; section headings live inside each card. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +12,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:paddingHorizontal="16dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="24dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,267 +22,401 @@
         android:accessibilityHeading="true"
         android:text="Settings"
         android:textSize="28sp"
-        android:layout_marginBottom="32dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:accessibilityHeading="true"
-        android:labelFor="@+id/languageRadioGroup"
-        android:text="Language"
-        android:textSize="20sp"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="16dp" />
 
-    <RadioGroup
-        android:id="@+id/languageRadioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radioFrench"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Français (French)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-
-        <RadioButton
-            android:id="@+id/radioGerman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Deutsch (German)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-
-        <RadioButton
-            android:id="@+id/radioItalian"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Italiano (Italian)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-
-        <RadioButton
-            android:id="@+id/radioChinese"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="中文 (Chinese)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:accessibilityHeading="true"
-        android:labelFor="@+id/sentenceSourceRadioGroup"
-        android:text="Example sentences"
-        android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp" />
-
-    <RadioGroup
-        android:id="@+id/sentenceSourceRadioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radioSentenceEasy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Easy (short)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-
-        <RadioButton
-            android:id="@+id/radioSentenceHard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hard (long)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-
-        <RadioButton
-            android:id="@+id/radioSentenceLlm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="AI-generated (requires model)"
-            android:textSize="18sp"
-            android:padding="8dp" />
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:accessibilityHeading="true"
-        android:text="On-device AI"
-        android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp" />
-
-    <TextView
-        android:id="@+id/aiStatusText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AI sentences: checking…"
-        android:textSize="16sp"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/aiStatusDetail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="12sp"
-        android:textColor="?android:attr/textColorSecondary"
-        android:fontFamily="monospace"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:visibility="gone" />
-
+    <!-- ============================== LANGUAGE ============================== -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingStart="8dp">
-
-        <Button
-            android:id="@+id/aiDownloadButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Download model"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/aiCancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:layout_marginStart="8dp"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/aiRetryButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Retry"
-            android:layout_marginStart="8dp"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/aiDeleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete model"
-            android:layout_marginStart="8dp"
-            android:visibility="gone" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="When available, the Tip button generates fresh example sentences on-device using a small LLM via MediaPipe (default: Qwen 2.5 1.5B, ~1.6 GB, GPU-accelerated). Downloaded once. Otherwise the built-in CSV sentences are used."
-        android:textSize="13sp"
-        android:textColor="?android:attr/textColorSecondary"
-        android:padding="8dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:accessibilityHeading="true"
-        android:text="Streak"
-        android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp" />
-
-    <TextView
-        android:id="@+id/streakStatsText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="16sp"
-        android:padding="8dp" />
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/streakReminderSwitch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Daily reminder if streak is at risk"
-        android:textSize="16sp"
-        android:padding="8dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp">
+        android:background="@drawable/bg_card_cyan"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Reminder time"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/streakReminderTimeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="21:00" />
+            android:accessibilityHeading="true"
+            android:labelFor="@+id/languageRadioGroup"
+            android:text="Language"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/languageRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioFrench"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Français (French)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioGerman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deutsch (German)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioItalian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Italiano (Italian)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioChinese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中文 (Chinese)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+        </RadioGroup>
     </LinearLayout>
 
-    <TextView
+    <!-- ========================= EXAMPLE SENTENCES ========================= -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="A notification fires at this time only when you have a streak going and haven't practiced yet today."
-        android:textSize="13sp"
-        android:textColor="?android:attr/textColorSecondary"
-        android:padding="8dp" />
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_green"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:accessibilityHeading="true"
-        android:text="Reset progress"
-        android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:labelFor="@+id/sentenceSourceRadioGroup"
+            android:text="Example sentences"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
 
-    <TextView
+        <RadioGroup
+            android:id="@+id/sentenceSourceRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioSentenceEasy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy (short)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioSentenceHard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hard (long)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioSentenceLlm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI-generated (requires model)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- ============================ ON-DEVICE AI ============================
+         Status TextView + action buttons stay as-is; the prose footer is
+         restructured into iconified bullets matching dialog_streak_info /
+         dialog_shield_info so the explanation reads as part of the same
+         design language as the badge dialogs. -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:labelFor="@+id/resetLanguageSpinner"
-        android:text="Language to reset"
-        android:textSize="14sp"
-        android:textColor="?android:attr/textColorSecondary"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp" />
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_pink"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
 
-    <Spinner
-        android:id="@+id/resetLanguageSpinner"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="On-device AI"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/aiStatusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI sentences: checking…"
+            android:textSize="16sp"
+            android:paddingVertical="4dp" />
+
+        <TextView
+            android:id="@+id/aiStatusDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:fontFamily="monospace"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/aiDownloadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download model"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/aiCancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:layout_marginStart="8dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/aiRetryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:layout_marginStart="8dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/aiDeleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete model"
+                android:layout_marginStart="8dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Iconified bullets: same template as dialog_streak_info — a 32dp
+             icon column on the left and explanation copy on the right. Each
+             row is its own horizontal LinearLayout for crisp vertical
+             alignment of the icon to the first line of text. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="💡"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="2sp"
+                android:text="The Hint button generates fresh example sentences on-device using a small AI model."
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="📦"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="2sp"
+                android:text="Downloaded once (~2.6 GB), then runs locally on the device GPU — no network after that."
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="📄"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="2sp"
+                android:text="Without the model, the built-in CSV sentences are used instead."
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ============================== STREAK =============================== -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_orange"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
 
-    <Button
-        android:id="@+id/resetProgressButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Reset progress"
-        android:textColor="@color/on_danger"
-        android:backgroundTint="@color/danger" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="Streak"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
 
-    <TextView
+        <TextView
+            android:id="@+id/streakStatsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:paddingVertical="4dp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/streakReminderSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Daily reminder if streak is at risk"
+            android:textSize="16sp"
+            android:paddingVertical="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reminder time"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/streakReminderTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21:00" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="A notification fires at this time only when you have a streak going and haven't practiced yet today."
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary" />
+    </LinearLayout>
+
+    <!-- ========================== RESET PROGRESS ===========================
+         Purple stripe — the only Monokai accent not used on the quiz screen,
+         so destructive settings get their own identity without colliding
+         with feature colors. The destructive button still carries the red
+         danger token for the strongest visual warning. -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Permanently deletes all learned/hard flags and quiz stats for the chosen language. This cannot be undone."
-        android:textSize="13sp"
-        android:textColor="?android:attr/textColorSecondary"
-        android:padding="8dp" />
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_purple"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="Reset progress"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/resetLanguageSpinner"
+            android:text="Language to reset"
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <Spinner
+            android:id="@+id/resetLanguageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/resetProgressButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset progress"
+            android:textColor="@color/on_danger"
+            android:backgroundTint="@color/danger" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Permanently deletes all learned/hard flags and quiz stats for the chosen language. This cannot be undone."
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary" />
+    </LinearLayout>
 </LinearLayout>
 </ScrollView>
