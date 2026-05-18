@@ -81,7 +81,9 @@
     <color name="seg_listen">#0E7490</color>
     <color name="seg_invert">#6D28D9</color>
 
-    <!-- Mode-aware variants of the lifetime/today label highlights. -->
+    <!-- Mode-aware variants of the lifetime/today label highlights. Reused
+         by the active-pool "-N today" suffix and its floater so both
+         today-counts share one source of truth. -->
     <color name="lifetime_count_color">#3F7E0E</color>
     <color name="today_count_color">#B45309</color>
 

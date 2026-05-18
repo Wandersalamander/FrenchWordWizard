@@ -158,7 +158,7 @@ internal object ListenFlow : SkillFlow {
     override fun isCompromisedByListening(listeningEnabled: Boolean): Boolean = !listeningEnabled
 }
 
-private fun maskWord(word: String, maskChar: Char = '⬤'): String =
+private fun maskWord(word: String, maskChar: Char = '●'): String =
     word.map { if (it.isLetter()) maskChar else it }.joinToString("")
 
 private fun revealLetterPrefix(word: String, revealedLetters: Int, maskChar: Char): String {
@@ -176,7 +176,7 @@ internal object InvertFlow : SkillFlow {
     override val tipBehavior = TipBehavior.ProgressiveReveal
     override val englishIsPrompt = true
 
-    private const val MASK_CHAR = '◉'
+    private const val MASK_CHAR = '○'
 
     override fun setupForeignText(
         vocab: Vocab,

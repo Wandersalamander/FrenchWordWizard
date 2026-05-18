@@ -163,6 +163,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             segLifetimeMastered = findViewById(R.id.segLifetimeMastered),
             segLifetimeRemaining = findViewById(R.id.segLifetimeRemaining),
             textActiveLabel = findViewById(R.id.textActiveLabel),
+            textActiveDeltaRead = findViewById(R.id.textActiveDeltaRead),
+            textActiveDeltaListen = findViewById(R.id.textActiveDeltaListen),
+            textActiveDeltaInvert = findViewById(R.id.textActiveDeltaInvert),
             segActiveRead = findViewById(R.id.segActiveRead),
             segActiveListen = findViewById(R.id.segActiveListen),
             segActiveInvert = findViewById(R.id.segActiveInvert),
@@ -244,8 +247,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
         val steps = mutableListOf(
             target(views.textForeign, "The word", "Recall what this foreign word means before tapping any button below."),
-            target(views.buttonNext, "I knew it", "Tap when you knew the word. The next one loads — occasionally a spot-check pops up so you can confirm you really got it right."),
-            target(views.buttonFail, "Show me", "Tap when the word stumped you. Reveals the translation and an example sentence, then loads the next word."),
+            target(views.buttonNext, "Know it", "Tap when you know the word. The next one loads — occasionally a spot-check pops up so you can confirm you really got it right."),
+            target(views.buttonFail, "Reveal", "Tap when the word stumped you. Reveals the translation and an example sentence, then loads the next word."),
             target(views.buttonTip, "Hint", "Reveals an example sentence using the word and reads it aloud. Costs a small score penalty — one hint per word."),
             target(views.buttonNew, "New word", "Skips this word and pulls a fresh one you've never seen, expanding your active pool."),
             target(views.buttonHard, "Flag as hard", "Marks the word as tough so it shows up more often. Tap again to unflag."),
