@@ -126,11 +126,11 @@ private const val FLOATER_SIDE_GAP_DP = 2f
 private const val ACTIVE_LABEL_SEPARATOR = "  ·  "
 
 // Joiner between a skill's active count and its goldenrod "today-finished"
-// suffix. " -" gives "8 -2" — the leading space prevents "8-2" misreading
-// as arithmetic, and the "-" carries into the gold span so the visible
-// glyphs in gold are exactly "-2".
+// suffix. Just a space — gives "8 2" with the gold-coloured "2" reading as
+// a separate value because the two numbers carry different ForegroundColor
+// spans (skill colour vs today_count_color).
 private const val ACTIVE_LABEL_TODAY_JOIN = " "
-private const val ACTIVE_LABEL_TODAY_PREFIX = "-"
+private const val ACTIVE_LABEL_TODAY_PREFIX = ""
 
 /** Per-skill counts of (word, skill) pairs that retired below the mastery
  *  threshold today — the gold "-N" suffix in the ACTIVE WORDS label. */
@@ -1212,12 +1212,12 @@ private fun buildActiveLabel(
 }
 
 /**
- * Appends "{n_active} -{n_today}" for one skill, colouring the active count
- * in [activeColorRes] and the leading-space + dash + today-count in
+ * Appends "{n_active} {n_today}" for one skill, colouring the active count
+ * in [activeColorRes] and the leading space + today-count in
  * [com.example.myapplication.R.color.today_count_color] (shared with the
  * lifetime card's "+N today" so both today-counts read as the same gold).
  * The space between is part of the gold span but is invisible, so the
- * visible gold glyphs are exactly "-3".
+ * visible gold glyphs are exactly the today-count digits.
  */
 private fun appendActiveSkillRun(
     context: Context,
