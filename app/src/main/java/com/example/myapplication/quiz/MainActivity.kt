@@ -419,7 +419,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             recreate()
             return
         }
-        quizController.markResumed()
+        quizController.onAppResumed()
         quizController.refreshStreakBadge()
     }
 

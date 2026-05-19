@@ -297,6 +297,27 @@ class QuizController(
     }
 
     /**
+     * Activity-resume entry point. Resumes the timer and repaints both
+     * progress bars so any midnight rollover that happened while the app was
+     * backgrounded is reflected immediately — without this, the bars keep
+     * showing yesterday's gold "+N today" suffixes until the next swipe
+     * fires refreshAllProgressBars().
+     *
+     * Re-baselines [renderedTodayCount] and [renderedActiveCounts] to the
+     * post-rollover snapshot so the next genuine action still detects a real
+     * delta (and isn't fooled by the artificial yesterday→0 drop on resume).
+     */
+    fun onAppResumed() {
+        markResumed()
+        if (vocabDictionary.csvData.isEmpty()) return
+        val ctx = activity.applicationContext
+        refreshLifetimeBar(ctx, views, vocabDictionary)
+        refreshActiveBar(ctx, views, vocabDictionary)
+        renderedTodayCount = MasteryTracker.todayCount(ctx)
+        renderedActiveCounts = vocabDictionary.computeActiveSetCounts()
+    }
+
+    /**
      * Flush the active foreground segment into [elapsedBeforePause] so the
      * paused interval is excluded from the round's time. Call from the host
      * activity's onPause — safe to call repeatedly (subsequent calls add zero
