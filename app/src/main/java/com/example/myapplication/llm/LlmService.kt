@@ -50,6 +50,14 @@ object LlmService {
     const val MODEL_URL =
         "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main/gemma-4-E2B-it.litertlm"
 
+    // SHA256 of the model at MODEL_URL. Set to null to skip integrity
+    // verification (current state — the HuggingFace URL serves a versioned
+    // file but we haven't pinned a hash yet). When set, ModelDownloader
+    // rejects a download whose hash doesn't match. To populate: download
+    // once with this null, copy the "sha256=..." value logged by
+    // ModelDownloader, and paste it here.
+    private val MODEL_SHA256: String? = null
+
     private const val PREFS = "llm"
     private const val KEY_DOWNLOADED_URL = "model_url"
 
@@ -195,7 +203,7 @@ object LlmService {
             try {
                 _status.value = Status.Downloading(0L, 0L)
                 Log.i(TAG, "Starting model download from $MODEL_URL")
-                ModelDownloader.download(MODEL_URL, target) { downloaded, total ->
+                ModelDownloader.download(MODEL_URL, target, MODEL_SHA256) { downloaded, total ->
                     _status.value = Status.Downloading(downloaded, total)
                 }
                 appContext.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
@@ -391,6 +399,8 @@ object LlmService {
                 "The model file is no longer available at the configured URL."
             msg.startsWith("HTTP 5") ->
                 "The download server is temporarily unavailable. Try again later."
+            msg.startsWith("SHA256 mismatch") ->
+                "The downloaded model failed an integrity check. The file on the server may have changed; check for an app update."
             else -> "Download failed. Tap retry to try again."
         }
     }

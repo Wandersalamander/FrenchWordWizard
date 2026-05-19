@@ -1,61 +1,54 @@
-# French Vocabulary Trainer App
+# Vocabulary Trainer
 
-This repository contains the source code for an Android application designed to help users train and learn the 2000 most important French words. The app intelligently recognizes which words the user knows well and which words they need to practice more, automatically proposing words that need further practice.
+An Android app for learning vocabulary in French, German, Italian, and Chinese. Tracks per-word mastery, schedules practice adaptively, and generates fresh example sentences on-device using a local language model — no network calls during a session.
 
-## Features
+## Highlights
 
-- **Word Recognition**: The app tracks user progress and determines which words are well-known and which require more practice.
-- **Adaptive Learning**: Automatically proposes words that the user needs to practice based on their performance.
-- **Statistics**: Provides detailed statistics on user progress and word mastery.
-- **User-friendly Interface**: Easy-to-use interface designed for effective learning.
+- **Adaptive scheduling**: each word has a per-skill mastery score (read / listen / invert). Words near mastery are spot-checked before being retired; the active pool size adapts to your accuracy.
+- **On-device sentence generation**: example sentences are produced by [Gemma 4 E2B-it](https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm) running locally via the LiteRT-LM SDK. Apache 2.0, ungated. GPU acceleration on supported devices (OpenCL), CPU fallback otherwise.
+- **Streaks & reminders**: daily streak counter, configurable reminder notifications, boot-resilient via `BootReceiver`.
+- **Offline after first run**: the only network call is the one-time model download (~2.59 GB). Falls back to bundled CSV sentences if the model isn't available.
 
-## Screenshots
+## Build
 
-<!-- Add screenshots here -->
-<img src="https://github.com/Wandersalamander/FrenchWordWizard/blob/master/screenshot_main.jpeg" alt="screenshot_main" width="200"/> <img src="https://github.com/Wandersalamander/FrenchWordWizard/blob/master/screenshot_learning.jpeg" alt="screenshot_learning" width="200"/>
+Requires Android Studio with SDK 34. `minSdk` is 26.
 
-## Installation
+```
+./gradlew assembleDebug
+```
 
-1. **Clone the repository**:
-    ```sh
-    git clone https://github.com/yourusername/FrenchVocabularyTrainer.git
-    ```
+Release builds use R8 (`minifyEnabled true`) — keep rules for LiteRT-LM live in [app/proguard-rules.pro](app/proguard-rules.pro).
 
-2. **Open the project in Android Studio**:
-    - Launch Android Studio.
-    - Select `Open an existing project`.
-    - Navigate to the cloned repository directory and select it.
+## Model setup
 
-3. **Build the project**:
-    - Click on `Build` in the top menu and select `Rebuild Project`.
+On first launch you'll be prompted to download the model from HuggingFace (~2.59 GB, requires ~3 GB free). Alternatively, sideload to skip the download:
 
-4. **Run the app**:
-    - Connect your Android device or start an emulator.
-    - Click on `Run` in the top menu and select `Run 'app'`.
+```
+adb push gemma-4-E2B-it.litertlm \
+  /sdcard/Android/data/com.example.myapplication/files/llm/model.litertlm
+```
 
-## Usage
+The model file path is per-app external storage, so no root is required.
 
-1. **Start Learning**:
-    - Open the app and begin your training session.
-    - The app will present you with words to practice.
+## Project layout
 
-2. **Review Words**:
-    - Mark words as "Known" or "Unknown" based on your confidence.
-    - The app will adapt to your responses and adjust the word pool accordingly.
+```
+app/src/main/java/com/example/myapplication/
+├── quiz/          # MainActivity, QuizController, swipeable cards, progress UI
+├── dictionary/    # Vocab model, scheduling math, language data, CSV parsing
+├── llm/           # LlmService (Gemma 4 wrapper), ModelDownloader
+├── streak/        # Streak tracking, alarms, notifications, boot receiver
+├── settings/      # SettingsActivity
+├── wordlist/      # WordListActivity + adapter (browse all vocab)
+├── service/       # MyForegroundService (dictionary reload coordination)
+└── data/          # AppPrefs (SharedPreferences wrapper)
+```
 
-3. **Track Progress**:
-    - View your progress statistics to see how well you are doing and which words need more practice.
+Vocabulary CSVs live in [app/src/main/assets](app/src/main/assets) under one folder per language.
 
-## Contributing
+## Tests
 
-Contributions are welcome! If you would like to contribute to the project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
-
----
-
-Happy learning! 🇫🇷📚
+```
+./gradlew test                  # unit tests (scheduling math, dictionary progress)
+./gradlew connectedAndroidTest  # instrumented tests (currently stub)
+```
