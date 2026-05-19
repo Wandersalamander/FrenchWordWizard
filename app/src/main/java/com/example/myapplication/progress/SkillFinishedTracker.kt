@@ -1,4 +1,4 @@
-package com.example.myapplication.streak
+package com.example.myapplication.progress
 
 import android.content.Context
 import com.example.myapplication.data.AppPrefs

@@ -14,8 +14,8 @@ import com.example.myapplication.R
 import com.example.myapplication.dictionary.ActiveSetCounts
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.Skill
-import com.example.myapplication.streak.MasteryTracker
-import com.example.myapplication.streak.SkillFinishedTracker
+import com.example.myapplication.progress.MasteryTracker
+import com.example.myapplication.progress.SkillFinishedTracker
 
 /**
  * Per-skill count of (word, skill) pairs that retired below the mastery

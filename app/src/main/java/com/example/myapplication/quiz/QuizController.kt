@@ -15,8 +15,8 @@ import com.example.myapplication.dictionary.Vocab
 import com.example.myapplication.llm.LlmService
 import com.example.myapplication.dictionary.ActiveSetCounts
 import com.example.myapplication.setDebouncedOnClickListener
-import com.example.myapplication.streak.MasteryTracker
-import com.example.myapplication.streak.SkillFinishedTracker
+import com.example.myapplication.progress.MasteryTracker
+import com.example.myapplication.progress.SkillFinishedTracker
 import com.example.myapplication.streak.StreakTracker
 import android.os.VibrationEffect
 import android.os.Vibrator
