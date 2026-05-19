@@ -79,7 +79,7 @@ class SchedulingMathTest {
     }
 
     @Test fun fpb_floorIsInactiveWhenFastEnough() {
-        // Sum just at the threshold: gate should NOT trip (strictly greater).
+        // Max just at the threshold: gate should NOT trip (strictly greater).
         val s = SkillStats(
             viewTimeMilli = 5_000L,
             viewTimeMilli_prev = 5_000L,
