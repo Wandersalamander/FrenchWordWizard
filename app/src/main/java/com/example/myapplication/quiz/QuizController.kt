@@ -1,38 +1,24 @@
 package com.example.myapplication.quiz
 
-import android.content.Context
-import android.graphics.drawable.Animatable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
-import com.example.myapplication.R
-import com.example.myapplication.data.AppPrefs
-import com.example.myapplication.dictionary.Language
-import com.example.myapplication.dictionary.MyDictionary
-import com.example.myapplication.dictionary.SentenceSource
-import com.example.myapplication.dictionary.Skill
-import com.example.myapplication.dictionary.SkillStats
-import com.example.myapplication.dictionary.Vocab
-import com.example.myapplication.llm.LlmService
-import com.example.myapplication.dictionary.ActiveSetCounts
-import com.example.myapplication.setDebouncedOnClickListener
-import com.example.myapplication.progress.MasteryTracker
-import com.example.myapplication.progress.SkillFinishedTracker
-import com.example.myapplication.streak.StreakTracker
-import android.os.VibrationEffect
-import android.os.Vibrator
 import android.view.View
-import android.view.accessibility.AccessibilityManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.AccessibilityDelegateCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.myapplication.dictionary.Language
+import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.Skill
+import com.example.myapplication.dictionary.SkillStats
+import com.example.myapplication.dictionary.Vocab
+import com.example.myapplication.pop
+import com.example.myapplication.progress.MasteryTracker
+import com.example.myapplication.progress.SkillFinishedTracker
+import com.example.myapplication.setDebouncedOnClickListener
+import com.example.myapplication.streak.StreakTracker
 import kotlin.random.Random
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -93,38 +79,10 @@ interface TtsHelper {
 }
 
 private const val SPOT_CHECK_PROBABILITY = 0.2
-private const val RECENT_WORDS_CAPACITY = 20
-private const val RECENT_FOREIGN_AVOID_COUNT = 4
 private const val VIEW_TIME_EMA_ALPHA = 0.3
-private const val WRONG_VOCAB_PICK_ATTEMPTS = 50
-private const val SENTENCE_FADE_IN_DURATION_MS = 220L
-// Every Nth displayed round (counting committed words, not picker retries) is
-// granted to a due mastered (word, skill) pair, so post-mastery retention gets
-// a guaranteed slot regardless of how crowded the active pool is. Skipped when
-// no mastered pair has gone stale.
-private const val MASTERED_REFRESH_INTERVAL = 20
-// Backup safety floor on the active pool: every Nth round is granted to a
-// uniform random pick from active pairs, ignoring sortValue weights. Catches
-// near-mastered (word, skill) pairs whose weighted-picker probability has
-// shrunk too far to ever finish them. Independent of MASTERED_REFRESH_INTERVAL;
-// on the rare round both fire, mastered wins and uniform retries next round.
-private const val UNIFORM_ACTIVE_INTERVAL = 20
 // How long the success chime lasts; TTS for the next round is held off this
 // long when a mastery just triggered, so the chime isn't drowned by speech.
 private const val POST_SUCCESS_TTS_DELAY_MS = 500L
-
-// Distance the goldenrod "-N" floater rises above the active label before
-// fading out. ~24dp is enough to clear the bar row underneath so the floater
-// reads as lifting off the number, not the segment.
-private const val FLOATER_LIFT_DP = 24f
-
-// Gap between a digit's right edge and the floater's left edge. The floater
-// sits NEXT to the number ("7 -1"), not on top of it, so the user can read
-// both the new count and the delta at the same time.
-private const val FLOATER_SIDE_GAP_DP = 2f
-
-// ACTIVE_LABEL_* and ActiveSkillFinishedToday live in ProgressBars.kt so the
-// renderers and the floater-offset math share one source of truth.
 
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
@@ -140,21 +98,33 @@ class QuizController(
     private val vocabDictionary: MyDictionary,
     private val language: Language,
 ) {
+    private val streakBadge = StreakBadgeView(activity, views)
+    private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
+    private val picker = QuizPicker(vocabDictionary)
+    private val sentenceManager = SentenceManager(
+        activity = activity,
+        views = views,
+        dictionary = vocabDictionary,
+        language = language,
+        onMaskTapped = { onMaskedSentenceTapped() },
+        recentWords = { picker.recent() },
+    )
+    private val spotCheck = SpotCheckController(
+        activity = activity,
+        views = views,
+        sounds = sounds,
+        tts = tts,
+        revealForeignWord = ::revealCurrentForeignWord,
+    )
+
     var currentVocab: Vocab? = null
         private set
-    private val recentWords = ArrayDeque<String>()
     private var startTime: Long = System.currentTimeMillis()
     // Foreground-only round time: each onPause flushes the active interval into
     // here, and the next resume restarts the live segment. saveCurrentVocab sums
     // both so a settings detour or screen-off gap doesn't get counted as
     // thinking time, while pre-pause attention isn't thrown away either.
     private var elapsedBeforePause: Long = 0L
-    private var inSpotCheck = false
-    // Round view time frozen at the moment the user committed their answer
-    // (pressed Know-it / Reveal). -1 means "not frozen". The spot-check
-    // response that follows is verification, not time-on-card, so its
-    // thinking time must not feed into viewTimeMilli.
-    private var viewTimeFrozenAt: Long = -1L
 
     // Skill being practiced for the currently-displayed word. Set in updateVocab
     // when a new word is picked and used for all stat writes during the round.
@@ -164,10 +134,6 @@ class QuizController(
     // shown unmasked (e.g. the user is on a train without headphones).
     // Toggled via the menu; the next word picks up the new state.
     private var listeningEnabled: Boolean = true
-
-    // Unmasked sentence kept around so the tap-to-re-read handler can speak
-    // the original even when [QuizViews.textGuessLong] displays the masked form.
-    private var currentSentence: String? = null
 
     // Snapshot of the active skill's stats at round start. Used to roll back
     // any mid-round mutations if the round is later flagged as compromised
@@ -180,28 +146,18 @@ class QuizController(
     // meaningful when the active skill has ProgressiveReveal tip behavior.
     private var progressiveRevealCount: Int = 0
 
-    // Ticks once per active-pool pick; when it hits [MASTERED_REFRESH_INTERVAL]
-    // the next pick is forced through the mastered-refresh picker.
-    private var picksSinceMasteredRefresh: Int = 0
-
-    // Independent cadence counter for the uniform-active backup slot. See
-    // [UNIFORM_ACTIVE_INTERVAL]. Reset only when the slot is actually granted —
-    // an empty active pool leaves the counter past threshold so the next
-    // round retries.
-    private var picksSinceUniformActive: Int = 0
-
     // Held when the round-start TTS is being deferred so a success chime can
     // finish unmuffled. Cancelled at the start of the next updateVocab so the
     // previous round's word never speaks over the new one.
     private var pendingRoundStartTtsJob: Job? = null
 
     fun onFailClick() {
-        if (inSpotCheck) exitSpotCheck(wasWrong = true)
+        if (spotCheck.isActive) exitSpotCheck(wasWrong = true)
         else revealAllVocabData(showNextVocab = true)
     }
 
     fun onNextClick() {
-        if (inSpotCheck) {
+        if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = false)
         } else if (currentVocab != null &&
             (wouldFinishSkillOnNext() || Random.nextDouble() < SPOT_CHECK_PROBABILITY)) {
@@ -294,8 +250,7 @@ class QuizController(
         val vocab = currentVocab ?: return
         displayForeignWord(vocab)
         if (views.textGuessLong.visibility == View.VISIBLE) {
-            val sentence = currentSentence ?: return
-            renderSentence(sentence, currentSkill.flow.shouldMaskSentenceOnTip(listeningEnabled))
+            sentenceManager.reRender(currentSkill, listeningEnabled)
         }
     }
 
@@ -324,12 +279,7 @@ class QuizController(
      */
     fun onAppResumed() {
         markResumed()
-        if (vocabDictionary.csvData.isEmpty()) return
-        val ctx = activity.applicationContext
-        refreshLifetimeBar(ctx, views, vocabDictionary)
-        refreshActiveBar(ctx, views, vocabDictionary)
-        renderedTodayCount = MasteryTracker.todayCount(ctx)
-        renderedActiveCounts = vocabDictionary.computeActiveSetCounts()
+        progressBars.rebaseline()
     }
 
     /**
@@ -343,25 +293,7 @@ class QuizController(
         startTime = System.currentTimeMillis()
     }
 
-    /**
-     * Attach a Button role to the streak/shield TextViews so non-TalkBack
-     * assistive tech (Switch Access, TV remotes, BrailleBack) sees them as
-     * buttons. TextView + clickable=true announces correctly through TalkBack
-     * already, but other services key off the node's class name.
-     */
-    fun setupStreakBadgeRoles() {
-        listOf(views.textStreak, views.textStreakShield).forEach { badge ->
-            ViewCompat.setAccessibilityDelegate(badge, object : AccessibilityDelegateCompat() {
-                override fun onInitializeAccessibilityNodeInfo(
-                    host: View,
-                    info: AccessibilityNodeInfoCompat,
-                ) {
-                    super.onInitializeAccessibilityNodeInfo(host, info)
-                    info.className = Button::class.java.name
-                }
-            })
-        }
-    }
+    fun setupStreakBadgeRoles() = streakBadge.setupRoles()
 
     fun setupLearnedButton() {
         views.buttonLearned.text = "✓"
@@ -371,7 +303,7 @@ class QuizController(
             // actually know the word before committing on the second tap.
             revealCurrentForeignWord()
             views.textEn.visibility = View.VISIBLE
-            currentSentence?.let { renderSentence(it, mask = false) }
+            sentenceManager.renderUnmasked()
             views.textGuessLong.visibility = View.VISIBLE
             views.buttonLearned.text = "✓?"
             views.buttonLearned.setDebouncedOnClickListener {
@@ -398,7 +330,12 @@ class QuizController(
         setQuizButtonsEnabled(false)
 
         activity.lifecycleScope.launch {
-            val sentence = generateAndShowExampleSentence(vocab, maskWhenListening = true)
+            val sentence = sentenceManager.generateAndShow(
+                vocab,
+                currentSkill,
+                listeningEnabled,
+                maskWhenListening = true,
+            )
             tts.speakSentenceAndAwait(sentence)
             delay(1000)
             views.buttonFail.isEnabled = true
@@ -447,7 +384,12 @@ class QuizController(
             // Some skills (LISTEN with listening on) reveal the cached sentence
             // for consistency with what the user just heard; others regenerate.
             val useExisting = currentSkill.flow.reuseSentenceOnReveal(listeningEnabled)
-            val sentence = generateAndShowExampleSentence(vocab, useExisting = useExisting)
+            val sentence = sentenceManager.generateAndShow(
+                vocab,
+                currentSkill,
+                listeningEnabled,
+                useExisting = useExisting,
+            )
             tts.speakSentenceAndAwait(sentence)
             delay(1000)
 
@@ -462,75 +404,16 @@ class QuizController(
     }
 
     private fun startSpotCheck() {
-        viewTimeFrozenAt =
-            elapsedBeforePause + (System.currentTimeMillis() - startTime)
-        inSpotCheck = true
-        currentSkill.flow.setupSpotCheck(views, ::revealCurrentForeignWord)
-
-        // Reframes the card: the shown translation is ground truth, the user
-        // is rating themselves. Without this title "✗ Wrong / ✓ Correct"
-        // reads as a judgement on the translation.
-        views.textVocabEyebrow.text = "SELF-CHECK · DID YOU KNOW IT?"
-        views.buttonFail.text = "✗ Wrong"
-        views.buttonNext.text = "✓ Correct"
-        views.buttonNew.isEnabled = false
-        views.buttonNew.isClickable = false
-        views.buttonTip.isEnabled = false
-        views.buttonTip.isClickable = false
-        views.cardVocab.pullEnabled = false
-
-        val vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
-
-        sounds.playSpotCheck()
-
-        // Replay the foreign pronunciation so the user can verify they had
-        // the sound right, not just the meaning.
-        currentVocab?.let { tts.speakForeignWord(it, flush = true) }
-
-        maybeShowSpotCheckTutorial()
-    }
-
-    /**
-     * First-spot-check explainer. The mode change (buttons relabel to ✓/✗,
-     * answer reveals, vibration + chime fire) is genuinely surprising the
-     * first time it triggers — without an explanation new users don't know
-     * whether the buttons still mean what they did a moment ago. Skipped
-     * when a screen reader is active (same focus-trap rationale as the main
-     * TapTargetView tutorial).
-     */
-    private fun maybeShowSpotCheckTutorial() {
-        val prefs = AppPrefs.get(activity)
-        if (prefs.getBoolean(AppPrefs.KEY_SPOT_CHECK_TUTORIAL_SHOWN, false)) return
-        val am = activity.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
-        if (am.isTouchExplorationEnabled) {
-            prefs.edit().putBoolean(AppPrefs.KEY_SPOT_CHECK_TUTORIAL_SHOWN, true).apply()
-            return
-        }
-        AlertDialog.Builder(activity)
-            .setTitle("Spot check!")
-            .setMessage(
-                "Every now and then, the app pauses to verify you actually knew the word. " +
-                    "The answer is revealed above.\n\n" +
-                    "Tap ✓ Correct if you got it right, or ✗ Wrong if not."
-            )
-            .setPositiveButton("Got it", null)
-            .show()
-        prefs.edit().putBoolean(AppPrefs.KEY_SPOT_CHECK_TUTORIAL_SHOWN, true).apply()
+        val vocab = currentVocab ?: return
+        val viewTimeMs = elapsedBeforePause + (System.currentTimeMillis() - startTime)
+        spotCheck.start(vocab, currentSkill, viewTimeMs)
     }
 
     private fun exitSpotCheck(wasWrong: Boolean) {
-        inSpotCheck = false
-        views.textVocabEyebrow.text = "WORD"
-        views.buttonFail.text = "✗ Reveal"
-        views.buttonNext.text = "✓ Know it"
-        if (wasWrong) {
-            // updateVocab → applyFailurePenaltyAndPersist records the failure
-            // because penalty > 0; don't double-count it here.
-            updateVocab(2000, newCandidates = false)
-        } else {
-            updateVocab(0, newCandidates = false)
-        }
+        spotCheck.exit()
+        // updateVocab → applyFailurePenaltyAndPersist records the failure
+        // because penalty > 0; don't double-count it here.
+        updateVocab(if (wasWrong) 2000 else 0, newCandidates = false)
     }
 
     fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
@@ -543,7 +426,7 @@ class QuizController(
         val vocab = advanceToNextDistinctVocab(newCandidates)
 
         resetRoundState(vocab)
-        refreshAllProgressBars()
+        progressBars.refreshAll()
         refreshStreakBadge()
         renderScoreText(vocab)
         setQuizButtonsEnabled(true)
@@ -553,11 +436,11 @@ class QuizController(
             if (currentSkill.flow.englishIsPrompt) View.VISIBLE else View.INVISIBLE
         views.textEn.text = vocab.english
         views.textGuessLong.visibility = View.INVISIBLE
-        seedSentenceCache(vocab)
+        sentenceManager.seed(vocab)
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
         setupLearnedButton()
         applyCardAccent(views.cardVocab, currentSkill)
-        popView(views.cardVocab, peakScale = 1.04f)
+        views.cardVocab.pop(peakScale = 1.04f)
 
         startTime = System.currentTimeMillis()
         elapsedBeforePause = 0L
@@ -580,55 +463,18 @@ class QuizController(
     }
 
     /**
-     * Pick a new vocab/skill pair, retrying briefly to avoid repeating the
-     * same foreign word back-to-back. Updates [currentVocab] and [currentSkill]
+     * Pick a new vocab/skill pair. Updates [currentVocab] and [currentSkill]
      * in place and returns the new vocab non-null.
      */
     private fun advanceToNextDistinctVocab(newCandidates: Boolean): Vocab {
-        // Tick the cadence once per displayed round (NOT once per pickNextVocab
-        // call) so the anti-repeat retries below don't race the counter past
-        // threshold faster than every Nth round.
-        val allowMasteredRefresh = !newCandidates && tickMasteredCadence()
-        val allowUniformActive = !newCandidates && tickUniformActiveCadence()
-        var current: Vocab = currentVocab ?: run {
-            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh, allowUniformActive)
-            currentVocab = v
-            currentSkill = s
-            v
-        }
-        // Avoid the last few foreign words so a heavy-weight pair can't
-        // ping-pong (X-Y-X-Y) within a small active pool. The just-displayed
-        // word is in [recentWords] (added by saveCurrentVocab), but include
-        // current defensively for the first-ever pick when the deque is empty.
-        val avoidForeign = recentWords.toList()
-            .takeLast(RECENT_FOREIGN_AVOID_COUNT)
-            .toSet() + current.foreign
-        var attempts = 0
-        while (current.foreign in avoidForeign && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
-            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh, allowUniformActive)
-            current = v
-            currentVocab = v
-            currentSkill = s
-            attempts++
-        }
-        return current
-    }
-
-    /**
-     * Bumps the once-per-round cadence counter and reports whether this round
-     * should attempt a mastered-refresh pick. The counter is only reset by
-     * [pickNextVocab] when the slot is actually granted — a round with no
-     * eligible mastered pair leaves the counter past threshold so the next
-     * round retries.
-     */
-    private fun tickMasteredCadence(): Boolean {
-        picksSinceMasteredRefresh++
-        return picksSinceMasteredRefresh >= MASTERED_REFRESH_INTERVAL
-    }
-
-    private fun tickUniformActiveCadence(): Boolean {
-        picksSinceUniformActive++
-        return picksSinceUniformActive >= UNIFORM_ACTIVE_INTERVAL
+        val (v, s) = picker.pickNext(
+            newCandidates = newCandidates,
+            listeningEnabled = listeningEnabled,
+            avoidCurrentForeign = currentVocab?.foreign,
+        )
+        currentVocab = v
+        currentSkill = s
+        return v
     }
 
     private fun resetRoundState(vocab: Vocab) {
@@ -638,167 +484,11 @@ class QuizController(
         roundStartSnapshot = vocab.stats(currentSkill).copy()
         roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
         progressiveRevealCount = 0
-        inSpotCheck = false
-        viewTimeFrozenAt = -1L
+        spotCheck.reset()
         views.textVocabEyebrow.text = "WORD"
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
     }
-
-    // Last today-counter value reflected on screen; lets refreshAllProgressBars
-    // detect an increment and pop the label without firing the animation on
-    // every round.
-    private var renderedTodayCount: Int = 0
-
-    // Last per-group active counts mirrored on screen. Used to detect a drop
-    // (a pair retired below the mastery threshold this round) and fire a
-    // goldenrod "-N" delta floater off the matching digit. Null until the
-    // first refresh so the first render doesn't claim a phantom drop.
-    private var renderedActiveCounts: ActiveSetCounts? = null
-
-    private fun refreshAllProgressBars() {
-        if (vocabDictionary.csvData.isEmpty()) return
-        val ctx = activity.applicationContext
-        refreshLifetimeBar(ctx, views, vocabDictionary)
-        val newCounts = vocabDictionary.computeActiveSetCounts()
-        val todayFinished = ActiveSkillFinishedToday(
-            read = SkillFinishedTracker.todayCount(ctx, Skill.READ),
-            listen = SkillFinishedTracker.todayCount(ctx, Skill.LISTEN),
-            invert = SkillFinishedTracker.todayCount(ctx, Skill.INVERT),
-        )
-        refreshActiveBar(ctx, views, newCounts, todayFinished)
-        val todayNow = MasteryTracker.todayCount(ctx)
-        if (todayNow > renderedTodayCount) popTodayCounter()
-        renderedTodayCount = todayNow
-        maybeFireActiveDeltas(newCounts, todayFinished)
-        renderedActiveCounts = newCounts
-    }
-
-    private fun popTodayCounter() = popView(views.textLifetimeLabel, peakScale = 1.18f)
-
-    /**
-     * If any of the three active-pool counts dropped since the last render,
-     * pop the whole label and fire a goldenrod "-N" floater off each affected
-     * segment. The first render (renderedActiveCounts == null) is treated as
-     * a baseline so a fresh-launch hydration doesn't claim a phantom drop.
-     */
-    private fun maybeFireActiveDeltas(
-        newCounts: ActiveSetCounts,
-        todayFinished: ActiveSkillFinishedToday,
-    ) {
-        val prev = renderedActiveCounts ?: return
-        val dropRead = prev.read - newCounts.read
-        val dropListen = prev.listen - newCounts.listen
-        val dropInvert = prev.invert - newCounts.invert
-        if (dropRead <= 0 && dropListen <= 0 && dropInvert <= 0) return
-        popView(views.textActiveLabel, peakScale = 1.18f)
-        // The label needs a layout pass after setText before
-        // layout.getPrimaryHorizontal is meaningful; defer to the next frame.
-        views.textActiveLabel.post {
-            if (dropRead > 0) {
-                animateActiveDelta(views.textActiveDeltaRead, dropRead, ActiveGroup.READ, newCounts, todayFinished)
-            }
-            if (dropListen > 0) {
-                animateActiveDelta(views.textActiveDeltaListen, dropListen, ActiveGroup.LISTEN, newCounts, todayFinished)
-            }
-            if (dropInvert > 0) {
-                animateActiveDelta(views.textActiveDeltaInvert, dropInvert, ActiveGroup.INVERT, newCounts, todayFinished)
-            }
-        }
-    }
-
-    /**
-     * Fires a single goldenrod "-N" floater off the right edge of [group]'s
-     * "{n_active} -{n_today}" run in textActiveLabel. The floater is anchored
-     * immediately after the gold today-suffix, then lifts up ~24dp while
-     * fading. Re-entrant: any in-flight animation on the same floater is
-     * cancelled and restarted.
-     */
-    private fun animateActiveDelta(
-        floater: TextView,
-        drop: Int,
-        group: ActiveGroup,
-        counts: ActiveSetCounts,
-        todayFinished: ActiveSkillFinishedToday,
-    ) {
-        val label = views.textActiveLabel
-        val layout = label.layout ?: return
-        val segmentRightX = segmentRightEdgeXInLabel(layout, counts, todayFinished, group) ?: return
-
-        floater.animate().cancel()
-        floater.text = "-$drop"
-        val density = activity.resources.displayMetrics.density
-        // Floater sits next to (not over) the segment. translationX is the
-        // floater's own left edge inside the ConstraintLayout, and the
-        // floater is start-constrained to textActiveLabel so X=0 there means
-        // the label's left edge — so segmentRightX (a label-local X) maps 1:1.
-        floater.translationX = segmentRightX + FLOATER_SIDE_GAP_DP * density
-        floater.translationY = 0f
-        floater.alpha = 0f
-        floater.scaleX = 0.85f
-        floater.scaleY = 0.85f
-        floater.visibility = View.VISIBLE
-
-        val liftPx = FLOATER_LIFT_DP * density
-        floater.animate()
-            .alpha(1f)
-            .scaleX(1.15f).scaleY(1.15f)
-            .setDuration(120L)
-            .withEndAction {
-                floater.animate()
-                    .translationY(-liftPx)
-                    .alpha(0f)
-                    .scaleX(0.95f).scaleY(0.95f)
-                    .setDuration(640L)
-                    .withEndAction {
-                        floater.visibility = View.INVISIBLE
-                        floater.translationX = 0f
-                        floater.translationY = 0f
-                        floater.alpha = 1f
-                        floater.scaleX = 1f
-                        floater.scaleY = 1f
-                    }
-                    .start()
-            }
-            .start()
-    }
-
-    /**
-     * Pixel X of the right edge of [group]'s "{active} -{today}" run inside
-     * textActiveLabel's own coordinate space (NOT the parent's). Returns null
-     * when the rendered text doesn't match the expected shape — a paranoid
-     * fallback that just skips the floater rather than crashing.
-     */
-    private fun segmentRightEdgeXInLabel(
-        layout: android.text.Layout,
-        counts: ActiveSetCounts,
-        todayFinished: ActiveSkillFinishedToday,
-        group: ActiveGroup,
-    ): Float? {
-        val readSeg = perSkillRunLength(counts.read, todayFinished.read)
-        val listenSeg = perSkillRunLength(counts.listen, todayFinished.listen)
-        val invertSeg = perSkillRunLength(counts.invert, todayFinished.invert)
-        val sepLen = ACTIVE_LABEL_SEPARATOR.length
-        val expectedEnd = readSeg + sepLen + listenSeg + sepLen + invertSeg
-        if (layout.text.length < expectedEnd) return null
-        val end = when (group) {
-            ActiveGroup.READ -> readSeg
-            ActiveGroup.LISTEN -> readSeg + sepLen + listenSeg
-            ActiveGroup.INVERT -> expectedEnd
-        }
-        return layout.getPrimaryHorizontal(end)
-    }
-
-    private fun perSkillRunLength(active: Int, finishedToday: Int): Int {
-        val activeLen = active.toString().length
-        if (finishedToday <= 0) return activeLen
-        return activeLen +
-            ACTIVE_LABEL_TODAY_JOIN.length +
-            ACTIVE_LABEL_TODAY_PREFIX.length +
-            finishedToday.toString().length
-    }
-
-    private enum class ActiveGroup { READ, LISTEN, INVERT }
 
     /**
      * Recolour the vocab card's top accent stripe to match [skill]. The stripe
@@ -811,26 +501,6 @@ class QuizController(
         val bg = card.background.mutate() as LayerDrawable
         val stripe = bg.getDrawable(1) as GradientDrawable
         stripe.setColor(ContextCompat.getColor(activity, skill.accentColorRes()))
-    }
-
-    /**
-     * Brief scale-up-then-back "pop" used to draw attention to a view that just
-     * updated. [peakScale] is the apex of the animation; defaults match the
-     * small-label feel of the lifetime counter, but callers animating larger
-     * views (e.g. an entire card) should pass something modest like 1.04f so
-     * the scaled view doesn't overlap its neighbors.
-     */
-    private fun popView(view: View, peakScale: Float = 1.18f) {
-        view.animate().cancel()
-        view.scaleX = 1f
-        view.scaleY = 1f
-        view.animate()
-            .scaleX(peakScale).scaleY(peakScale)
-            .setDuration(120L)
-            .withEndAction {
-                view.animate().scaleX(1f).scaleY(1f).setDuration(160L).start()
-            }
-            .start()
     }
 
     private fun renderScoreText(vocab: Vocab) {
@@ -855,51 +525,6 @@ class QuizController(
         }
     }
 
-    /**
-     * Seed the per-word sentence cache with the CSV fallback so a reveal
-     * (Fail) without a prior Tip still has something to display without
-     * burning an LLM call. Honour the user's easy/hard preference so the
-     * seed matches what they'd see if Tip were pressed.
-     */
-    private fun seedSentenceCache(vocab: Vocab) {
-        val seed = vocab.csvSentenceFor(SentenceSource.fromContext(activity))
-        views.textGuessLong.text = seed
-        views.textGuessLong.setOnClickListener(null)
-        views.textGuessLong.isClickable = false
-        currentSentence = seed
-    }
-
-    private fun pickNextVocab(
-        newCandidates: Boolean,
-        allowMasteredRefresh: Boolean,
-        allowUniformActive: Boolean,
-    ): Pair<Vocab, Skill> {
-        // When listening is off the LISTEN skill is excluded from the pool —
-        // getInactiveVocab always returns READ so it doesn't need the filter.
-        val skillFilter: (Skill) -> Boolean =
-            if (listeningEnabled) ({ true }) else ({ it != Skill.LISTEN })
-        if (newCandidates) return vocabDictionary.getInactiveVocab()
-        if (allowMasteredRefresh) {
-            val mastered = vocabDictionary.pickMasteredVocabToRefresh(skillFilter)
-            if (mastered != null) {
-                picksSinceMasteredRefresh = 0
-                return mastered
-            }
-            // No mastered pair is due — leave the counter past threshold so
-            // the next round tries again instead of waiting a full cycle.
-        }
-        if (allowUniformActive) {
-            val uniform = vocabDictionary.pickUniformActiveVocab(skillFilter)
-            if (uniform != null) {
-                picksSinceUniformActive = 0
-                return uniform
-            }
-            // Empty active pool — leave the counter past threshold so the next
-            // round retries once the pool has been seeded.
-        }
-        return vocabDictionary.getActiveVocabWeighted(skillFilter)
-    }
-
     /** Returns true if a mastery transition triggered the success chime. */
     private fun saveCurrentVocab(penalty: Long): Boolean {
         val vocab = currentVocab ?: return false
@@ -907,7 +532,7 @@ class QuizController(
         // Always update recent-words: the user has seen this word regardless
         // of whether the round counts, and we don't want to surface it again
         // back-to-back.
-        rememberRecentWord(vocab.foreign)
+        picker.rememberWord(vocab.foreign)
 
         val snapshot = roundStartSnapshot
         if (roundCompromised && snapshot != null) {
@@ -921,9 +546,8 @@ class QuizController(
 
         val wasFullyMastered = isFullyMasteredNow(vocab)
 
-        val activeViewTime =
-            if (viewTimeFrozenAt >= 0L) viewTimeFrozenAt
-            else elapsedBeforePause + (System.currentTimeMillis() - startTime)
+        val activeViewTime = spotCheck.frozenViewTimeMs
+            ?: (elapsedBeforePause + (System.currentTimeMillis() - startTime))
         val timeElapsed = activeViewTime + penalty
         val stats = vocab.stats(currentSkill)
         // Use the round-start snapshot for the pre-round fpb, not the live
@@ -961,7 +585,7 @@ class QuizController(
         // streak. Idempotent within a day — first round of the day bumps the
         // count, subsequent rounds are no-ops.
         val result = StreakTracker.recordPracticeToday(activity.applicationContext)
-        surfaceStreakResult(result)
+        streakBadge.surfaceResult(result)
 
         // Word just crossed from "still has a skill to master" to "every
         // ladder skill below threshold" — feed the "+N today" highlight on
@@ -993,175 +617,15 @@ class QuizController(
         }
     }
 
-    private fun rememberRecentWord(word: String) {
-        recentWords.remove(word)
-        recentWords.addLast(word)
-        while (recentWords.size > RECENT_WORDS_CAPACITY) {
-            recentWords.removeFirst()
-        }
-    }
-
     /**
-     * Refresh the streak badge from persistent state. Cheap: just a prefs
-     * read + LocalDate comparison. Public so MainActivity.onResume can poke it
-     * after returning from Settings (where the user may have toggled or reset
-     * the streak indirectly via reminder changes).
+     * Refresh the streak badge from persistent state. Public so
+     * MainActivity.onResume can poke it after returning from Settings (where
+     * the user may have toggled or reset the streak indirectly via reminder
+     * changes).
      */
-    fun refreshStreakBadge() {
-        val ctx = activity.applicationContext
-        val streak = StreakTracker.currentStreak(ctx)
-        val shields = StreakTracker.freezesAvailable(ctx)
-        views.textStreak.text = if (streak > 0) "🔥 $streak" else ""
-        // Without a dynamic contentDescription, TalkBack reads the literal
-        // glyphs ("fire emoji 12") or skips the value entirely. Spell out
-        // the count and unit so SR users get the same information as the
-        // visible badge.
-        views.textStreak.contentDescription = when {
-            streak <= 0 -> null
-            streak == 1 -> "1 day streak, tap for details"
-            else -> "$streak day streak, tap for details"
-        }
-        // Only expose the flame as a tap target when there's a streak to
-        // explain — wrap_content collapses the empty state, so there's
-        // nothing meaningful to tap on day 0.
-        views.textStreak.isClickable = streak > 0
-        views.textStreak.isFocusable = streak > 0
-        views.textStreak.setOnClickListener { showStreakExplanation() }
-        views.textStreakShield.text = "🛡️ $shields"
-        views.textStreakShield.contentDescription = when (shields) {
-            1 -> "1 streak shield available, tap for details"
-            else -> "$shields streak shields available, tap for details"
-        }
-        views.textStreakShield.visibility = View.VISIBLE
-        views.textStreakShield.setOnClickListener { showShieldExplanation() }
-    }
+    fun refreshStreakBadge() = streakBadge.refresh()
 
-    private fun showShieldExplanation() {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_shield_info, null)
-        view.findViewById<TextView>(R.id.shieldDialogEarn).text =
-            "Earn one shield every ${StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of streak " +
-                "(up to ${StreakTracker.MAX_FREEZES} stockpiled)."
-        AlertDialog.Builder(activity)
-            .setView(view)
-            .setPositiveButton("Got it", null)
-            .show()
-    }
-
-    private fun showStreakExplanation() {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_streak_info, null)
-        val longest = StreakTracker.longestStreak(activity.applicationContext)
-        if (longest > 0) {
-            val plural = if (longest == 1) "" else "s"
-            val longestView = view.findViewById<TextView>(R.id.streakDialogLongest)
-            longestView.text = "Best so far: $longest day$plural"
-            longestView.visibility = View.VISIBLE
-        }
-        AlertDialog.Builder(activity)
-            .setView(view)
-            .setPositiveButton("Got it", null)
-            .show()
-    }
-
-    private fun surfaceStreakResult(result: StreakTracker.RecordResult) {
-        if (result !is StreakTracker.RecordResult.Counted) return
-        val ctx = activity.applicationContext
-        when {
-            result.freezesConsumed > 0 -> {
-                val plural = if (result.freezesConsumed == 1) "" else "s"
-                Toast.makeText(
-                    ctx,
-                    "🛡️ Shield used — streak saved (${result.freezesConsumed} day$plural covered)",
-                    Toast.LENGTH_LONG,
-                ).show()
-            }
-            result.freezeAwarded -> {
-                Toast.makeText(
-                    ctx,
-                    "🛡️ Shield earned — keep your streak safe",
-                    Toast.LENGTH_SHORT,
-                ).show()
-            }
-        }
-    }
-
-    /**
-     * Generates (or falls back to) the example sentence, displays it in
-     * [QuizViews.textGuessLong], and returns the unmasked text so the caller
-     * can hand it to TTS. When [maskWhenListening] is true and the current
-     * round is a listening one, the on-screen text is replaced with bullets
-     * — the user must rely on audio rather than reading the word inside the
-     * sentence. When [useExisting] is true (reveal flow), the cached
-     * [currentSentence] is reused instead of calling the LLM again.
-     */
-    private suspend fun generateAndShowExampleSentence(
-        vocab: Vocab,
-        maskWhenListening: Boolean = false,
-        useExisting: Boolean = false,
-    ): String {
-        val source = SentenceSource.fromContext(activity)
-        val sentence: String = when {
-            useExisting -> currentSentence ?: vocab.csvSentenceFor(source)
-            source == SentenceSource.LLM && LlmService.isReady -> generateFromLlmOrFallback(vocab, source)
-            else -> vocab.csvSentenceFor(source)
-        }
-        currentSentence = sentence
-        val maskNow = maskWhenListening &&
-            currentSkill.flow.shouldMaskSentenceOnTip(listeningEnabled)
-        renderSentence(sentence, maskNow)
-        views.textGuessLong.alpha = 0f
-        views.textGuessLong.visibility = View.VISIBLE
-        views.textGuessLong.animate().alpha(1f).setDuration(SENTENCE_FADE_IN_DURATION_MS).start()
-        return sentence
-    }
-
-    private suspend fun generateFromLlmOrFallback(vocab: Vocab, source: SentenceSource): String {
-        views.textGuessLong.visibility = View.INVISIBLE
-        startThinkingAnimation()
-        val generated = try {
-            LlmService.generate(
-                word = vocab.foreign,
-                translation = vocab.english,
-                recent = recentWords.toList(),
-                everSeen = vocabDictionary.getIntroducedForeignWords(),
-                language = language,
-            )
-        } finally {
-            stopThinkingAnimation()
-        }
-        return generated ?: vocab.csvSentenceFor(source)
-    }
-
-    /** Sets [QuizViews.textGuessLong]'s text and tap-handler based on [mask]. */
-    private fun renderSentence(sentence: String, mask: Boolean) {
-        if (mask) {
-            views.textGuessLong.text = maskSentence(sentence)
-            views.textGuessLong.setDebouncedOnClickListener { onMaskedSentenceTapped() }
-            views.textGuessLong.isClickable = true
-            // The visible mask is all underscores — TalkBack reads each one
-            // ("underscore underscore underscore…"). Swap in a sentence form
-            // describing the tap action so SR users get something useful.
-            views.textGuessLong.contentDescription =
-                "Example sentence hidden, tap to hear it read aloud"
-        } else {
-            views.textGuessLong.text = sentence
-            views.textGuessLong.setOnClickListener(null)
-            views.textGuessLong.isClickable = false
-            views.textGuessLong.contentDescription = null
-        }
-    }
-
-    private fun maskSentence(sentence: String): String =
-        sentence.map { if (it.isWhitespace()) it else '_' }.joinToString("")
-
-    private fun startThinkingAnimation() {
-        views.thinkingSparkle.visibility = View.VISIBLE
-        (views.thinkingSparkle.drawable as? Animatable)?.start()
-    }
-
-    fun stopThinkingAnimation() {
-        (views.thinkingSparkle.drawable as? Animatable)?.stop()
-        views.thinkingSparkle.visibility = View.GONE
-    }
+    fun stopThinkingAnimation() = sentenceManager.stopThinkingAnimation()
 
     private fun setQuizButtonsEnabled(enabled: Boolean) {
         views.buttonFail.isEnabled = enabled
@@ -1208,7 +672,7 @@ class QuizController(
     /** Replay the example sentence (with a small penalty) when its mask is tapped. */
     private fun onMaskedSentenceTapped() {
         val vocab = currentVocab ?: return
-        val sentence = currentSentence ?: return
+        val sentence = sentenceManager.currentSentence ?: return
         vocab.stats(currentSkill).recordFailure(0.1f)
         tts.speakSentence(sentence)
     }
