@@ -232,6 +232,10 @@ class QuizController(
         sim.viewTimeMilli_prev = sim.viewTimeMilli
         sim.viewTimeMilli =
             (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * sim.viewTimeMilli).toLong()
+        // Mirror the rolling-window append that saveCurrentVocab does on a
+        // committed clean round, so the blended fpb in the sim reflects the
+        // prospective outcome rather than ignoring the recent run.
+        sim.recordInteraction(0f)
         return sim.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
     }
 

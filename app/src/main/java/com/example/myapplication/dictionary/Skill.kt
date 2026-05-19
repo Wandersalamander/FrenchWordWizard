@@ -90,7 +90,24 @@ data class SkillStats(
     fun failureProbability(): Float {
         if (nTimesViewed == 0) return 1.0f
         val base = 0.5f / nTimesViewed.toFloat()
-        val raw = base + (1.0f - base) * nTimesFailed / nTimesViewed.toFloat()
+        val counterRate = (nTimesFailed / nTimesViewed.toFloat()).coerceIn(0f, 1f)
+
+        // Blend the lifetime counter rate with a recency-weighted rate over
+        // [recentInteractions]. With an empty window (legacy migrated rows,
+        // or a fresh skill) the formula collapses to today's exact behavior;
+        // as the window fills, recent outcomes pull the estimate, but the
+        // counters never lose all weight (Bayesian shrinkage ratio
+        // n / (n + WINDOW_BLEND_PRIOR)).
+        val effectiveRate = if (recentInteractions.isEmpty()) {
+            counterRate
+        } else {
+            val windowRate = windowFailureProbability()
+            val n = recentInteractions.size
+            val blendWeight = n.toFloat() / (n + WINDOW_BLEND_PRIOR)
+            blendWeight * windowRate + (1f - blendWeight) * counterRate
+        }
+
+        val raw = base + (1.0f - base) * effectiveRate
         val clamped = raw.coerceIn(0.0f, 1.0f)
         // Sustained-slowness gate: a clean run of fast Next-presses can drive
         // raw fpb under the mastery threshold even when the user is still
@@ -104,6 +121,27 @@ data class SkillStats(
         } else {
             clamped
         }
+    }
+
+    /**
+     * Recency-weighted mean of [recentInteractions] failAmounts. The newest
+     * entry has weight 1.0, each older entry × [WINDOW_DECAY], so a
+     * full 10-entry window weighs the newest sample ≈6× the oldest. Returns 0
+     * for an empty window (callers must guard — see [failureProbability]).
+     */
+    private fun windowFailureProbability(): Float {
+        if (recentInteractions.isEmpty()) return 0f
+        var weightSum = 0.0
+        var failSum = 0.0
+        val n = recentInteractions.size
+        for (i in 0 until n) {
+            // List is chronological (append at end); newest = last index.
+            val agePos = n - 1 - i
+            val w = Math.pow(WINDOW_DECAY.toDouble(), agePos.toDouble())
+            weightSum += w
+            failSum += w * recentInteractions[i].failAmount.coerceIn(0f, 1f)
+        }
+        return (failSum / weightSum).toFloat().coerceIn(0f, 1f)
     }
 
     fun meanTimeViewedMilli(): Double = viewTimeMilli.toDouble()
@@ -144,5 +182,19 @@ data class SkillStats(
         // the counters. Sized to fit comfortably in one TEXT cell while still
         // giving recency-weighted fpb formulas enough signal to work with.
         const val MAX_INTERACTIONS = 10
+
+        // Per-entry weight ratio in [windowFailureProbability]: oldest weight
+        // = newest * decay^(MAX_INTERACTIONS - 1). At 0.8 the newest sample
+        // is ≈6× the weight of the oldest (0.8^9 ≈ 0.13), giving a half-life
+        // of ~3 entries — recent enough to react to a struggling run, slow
+        // enough that one bad round doesn't tank the estimate.
+        const val WINDOW_DECAY = 0.8f
+
+        // Bayesian shrinkage constant for blending the window rate against
+        // the lifetime counter rate: window weight = n / (n + this). With
+        // n=10 (full window) the window gets ~77 % weight; a single fresh
+        // entry only gets 25 %, so the counters still anchor early-stage
+        // estimates. Lower = window dominates sooner.
+        const val WINDOW_BLEND_PRIOR = 3f
     }
 }

@@ -1,5 +1,6 @@
 package com.example.myapplication.dictionary
 
+import com.example.myapplication.data.VocabInteraction
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
@@ -94,6 +95,99 @@ class SchedulingMathTest {
         // recordFailure(1.0f) called more times than views — shouldn't go > 1.0.
         val s = SkillStats(nTimesViewed = 2, nTimesFailed = 10f)
         assertEquals(1.0f, s.failureProbability(), 1e-6f)
+    }
+
+    // ---------- Blended window/counter fpb ----------
+
+    /** Build a fail/pass window from a list of failAmounts in chronological order (oldest first). */
+    private fun window(vararg failAmounts: Float): List<VocabInteraction> =
+        failAmounts.mapIndexed { i, f -> VocabInteraction(timestampMs = i.toLong(), failAmount = f) }
+
+    @Test fun fpb_emptyWindowMatchesCounterOnlyFormula() {
+        // With no rolling-window history, the new blended formula must
+        // collapse exactly to the legacy counter-only result so existing
+        // migrated rows behave identically until they accumulate fresh data.
+        val fast = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 10,
+            nTimesFailed = 3f,
+            recentInteractions = emptyList(),
+        )
+        val base = 0.5f / 10f
+        val expected = base + (1f - base) * (3f / 10f)
+        assertEquals(expected, fast.failureProbability(), 1e-6f)
+    }
+
+    @Test fun fpb_recentFailuresPullUpVsRecentPasses() {
+        // Same counters, opposite window orderings: a pair finishing on
+        // failures must score higher than the same counters finishing on
+        // passes. This is the core "5 right then 2 wrong vs 2 wrong then 5
+        // right" distinction the rolling window was added to express.
+        val counters = mapOf("nTimesViewed" to 10, "nTimesFailed" to 2f)
+        val recentlyFailing = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = counters["nTimesViewed"] as Int,
+            nTimesFailed = counters["nTimesFailed"] as Float,
+            // 5 passes then 2 fails (newest = fails)
+            recentInteractions = window(0f, 0f, 0f, 0f, 0f, 1f, 1f),
+        )
+        val recentlyImproving = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = counters["nTimesViewed"] as Int,
+            nTimesFailed = counters["nTimesFailed"] as Float,
+            // 2 fails then 5 passes (newest = passes)
+            recentInteractions = window(1f, 1f, 0f, 0f, 0f, 0f, 0f),
+        )
+        assertTrue(
+            "recently-failing fpb (${recentlyFailing.failureProbability()}) " +
+                "should exceed recently-improving fpb (${recentlyImproving.failureProbability()})",
+            recentlyFailing.failureProbability() > recentlyImproving.failureProbability(),
+        )
+    }
+
+    @Test fun fpb_singleEntryHasSmallWindowWeight() {
+        // One window entry → window blend weight ≈ 1/(1+3) = 0.25, so a
+        // single fresh fail can't override 100 views of clean history.
+        val stats = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 100,
+            nTimesFailed = 0f,
+            recentInteractions = window(1f),
+        )
+        // counterRate = 0, windowRate = 1, blend = 0.25 → effective = 0.25.
+        // raw = base + (1-base) * 0.25, base = 0.005, so raw ≈ 0.254.
+        val fpb = stats.failureProbability()
+        assertTrue("single fail should bump but not dominate, was $fpb", fpb in 0.20f..0.30f)
+    }
+
+    @Test fun fpb_slowFloorStillAppliesWithWindow() {
+        // Even with a clean window the slow-view gate should keep a slow
+        // pair out of mastery — the window must not bypass the floor.
+        val stats = SkillStats(
+            viewTimeMilli = 7_000L,
+            viewTimeMilli_prev = 6_000L,
+            nTimesViewed = 100,
+            nTimesFailed = 0f,
+            recentInteractions = window(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f),
+        )
+        assertEquals(SkillStats.SLOW_FPB_FLOOR, stats.failureProbability(), 1e-6f)
+    }
+
+    @Test fun recordInteraction_appendsAndTrimsToMax() {
+        val s = SkillStats(nTimesViewed = 0, nTimesFailed = 0f)
+        repeat(SkillStats.MAX_INTERACTIONS + 5) { i ->
+            s.recordInteraction(failAmount = if (i % 2 == 0) 0f else 1f)
+        }
+        assertEquals(SkillStats.MAX_INTERACTIONS, s.recentInteractions.size)
+        // Trimmed window keeps the tail (newest entries), so the last one
+        // matches the last failAmount we pushed.
+        val lastIdx = SkillStats.MAX_INTERACTIONS + 5 - 1
+        val expectedLastFail = if (lastIdx % 2 == 0) 0f else 1f
+        assertEquals(expectedLastFail, s.recentInteractions.last().failAmount, 1e-6f)
     }
 
     @Test fun recordFailure_setsLastTimeFailed() {
