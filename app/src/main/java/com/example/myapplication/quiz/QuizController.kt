@@ -102,6 +102,12 @@ private const val SENTENCE_FADE_IN_DURATION_MS = 220L
 // a guaranteed slot regardless of how crowded the active pool is. Skipped when
 // no mastered pair has gone stale.
 private const val MASTERED_REFRESH_INTERVAL = 20
+// Backup safety floor on the active pool: every Nth round is granted to a
+// uniform random pick from active pairs, ignoring sortValue weights. Catches
+// near-mastered (word, skill) pairs whose weighted-picker probability has
+// shrunk too far to ever finish them. Independent of MASTERED_REFRESH_INTERVAL;
+// on the rare round both fire, mastered wins and uniform retries next round.
+private const val UNIFORM_ACTIVE_INTERVAL = 20
 // How long the success chime lasts; TTS for the next round is held off this
 // long when a mastery just triggered, so the chime isn't drowned by speech.
 private const val POST_SUCCESS_TTS_DELAY_MS = 500L
@@ -172,6 +178,12 @@ class QuizController(
     // the next pick is forced through the mastered-refresh picker.
     private var picksSinceMasteredRefresh: Int = 0
 
+    // Independent cadence counter for the uniform-active backup slot. See
+    // [UNIFORM_ACTIVE_INTERVAL]. Reset only when the slot is actually granted —
+    // an empty active pool leaves the counter past threshold so the next
+    // round retries.
+    private var picksSinceUniformActive: Int = 0
+
     // Held when the round-start TTS is being deferred so a success chime can
     // finish unmuffled. Cancelled at the start of the next updateVocab so the
     // previous round's word never speaks over the new one.
@@ -185,11 +197,36 @@ class QuizController(
     fun onNextClick() {
         if (inSpotCheck) {
             exitSpotCheck(wasWrong = false)
-        } else if (currentVocab != null && Random.nextDouble() < SPOT_CHECK_PROBABILITY) {
+        } else if (currentVocab != null &&
+            (wouldFinishSkillOnNext() || Random.nextDouble() < SPOT_CHECK_PROBABILITY)) {
             startSpotCheck()
         } else {
             updateVocab(0, newCandidates = false)
         }
+    }
+
+    /**
+     * True when a clean commit of the current round would push the active
+     * skill's failureProbability across the mastery threshold. Used to force
+     * a spot check so a streak of fast Next-presses can't sneak a (word,
+     * skill) pair into mastery without a verification step.
+     *
+     * Simulates the commit on a copy of the stats — same math as
+     * [saveCurrentVocab]'s update plus [SkillStats.failureProbability] —
+     * rather than computing analytically, so the slow-floor and any future
+     * tweaks to the FP formula stay in one place.
+     */
+    private fun wouldFinishSkillOnNext(): Boolean {
+        val vocab = currentVocab ?: return false
+        val stats = vocab.stats(currentSkill)
+        if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) return false
+        val timeElapsed = elapsedBeforePause + (System.currentTimeMillis() - startTime)
+        val sim = stats.copy()
+        sim.nTimesViewed += 1
+        sim.viewTimeMilli_prev = sim.viewTimeMilli
+        sim.viewTimeMilli =
+            (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * sim.viewTimeMilli).toLong()
+        return sim.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
     }
 
     fun onNewClick() = updateVocab(0, newCandidates = true)
@@ -504,8 +541,9 @@ class QuizController(
         // call) so the anti-repeat retries below don't race the counter past
         // threshold faster than every Nth round.
         val allowMasteredRefresh = !newCandidates && tickMasteredCadence()
+        val allowUniformActive = !newCandidates && tickUniformActiveCadence()
         var current: Vocab = currentVocab ?: run {
-            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh)
+            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh, allowUniformActive)
             currentVocab = v
             currentSkill = s
             v
@@ -519,7 +557,7 @@ class QuizController(
             .toSet() + current.foreign
         var attempts = 0
         while (current.foreign in avoidForeign && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
-            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh)
+            val (v, s) = pickNextVocab(newCandidates, allowMasteredRefresh, allowUniformActive)
             current = v
             currentVocab = v
             currentSkill = s
@@ -538,6 +576,11 @@ class QuizController(
     private fun tickMasteredCadence(): Boolean {
         picksSinceMasteredRefresh++
         return picksSinceMasteredRefresh >= MASTERED_REFRESH_INTERVAL
+    }
+
+    private fun tickUniformActiveCadence(): Boolean {
+        picksSinceUniformActive++
+        return picksSinceUniformActive >= UNIFORM_ACTIVE_INTERVAL
     }
 
     private fun resetRoundState(vocab: Vocab) {
@@ -779,6 +822,7 @@ class QuizController(
     private fun pickNextVocab(
         newCandidates: Boolean,
         allowMasteredRefresh: Boolean,
+        allowUniformActive: Boolean,
     ): Pair<Vocab, Skill> {
         // When listening is off the LISTEN skill is excluded from the pool —
         // getInactiveVocab always returns READ so it doesn't need the filter.
@@ -793,6 +837,15 @@ class QuizController(
             }
             // No mastered pair is due — leave the counter past threshold so
             // the next round tries again instead of waiting a full cycle.
+        }
+        if (allowUniformActive) {
+            val uniform = vocabDictionary.pickUniformActiveVocab(skillFilter)
+            if (uniform != null) {
+                picksSinceUniformActive = 0
+                return uniform
+            }
+            // Empty active pool — leave the counter past threshold so the next
+            // round retries once the pool has been seeded.
         }
         return vocabDictionary.getActiveVocabWeighted(skillFilter)
     }

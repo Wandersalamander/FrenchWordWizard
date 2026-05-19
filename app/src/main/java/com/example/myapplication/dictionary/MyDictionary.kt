@@ -170,14 +170,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     fun getActiveVocabWeighted(
         skillFilter: (Skill) -> Boolean = { true },
     ): Pair<Vocab, Skill> {
-        val activePairs: List<Pair<Vocab, Skill>> = csvData.flatMap { vocab ->
-            if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
-            Skill.ladder.mapNotNull { skill ->
-                if (!skillFilter(skill)) return@mapNotNull null
-                if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
-                if (vocab.sortValue(skill) > 0.0) vocab to skill else null
-            }
-        }
+        val activePairs = collectActivePairs(skillFilter)
         // Gate on distinct *words*, not (word, skill) pair count — otherwise
         // LISTEN/INVERT unlocks inflate the pool from 3 distinct words and
         // freeze new-word intake.
@@ -187,6 +180,32 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
         }
         return pickWeighted(activePairs)
     }
+
+    /**
+     * Uniform random pick over the active (word, skill) pool — same
+     * membership as [getActiveVocabWeighted] (introduced, unlocked, sortValue
+     * > 0) but every pair has equal probability. Backup safety floor for
+     * near-mastered pairs whose tiny weighted-picker probability would
+     * otherwise starve them. Returns null when the pool is empty so the
+     * caller can fall through to the weighted picker.
+     */
+    fun pickUniformActiveVocab(
+        skillFilter: (Skill) -> Boolean = { true },
+    ): Pair<Vocab, Skill>? {
+        val activePairs = collectActivePairs(skillFilter)
+        if (activePairs.isEmpty()) return null
+        return activePairs[Random.nextInt(activePairs.size)]
+    }
+
+    private fun collectActivePairs(skillFilter: (Skill) -> Boolean): List<Pair<Vocab, Skill>> =
+        csvData.flatMap { vocab ->
+            if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
+            Skill.ladder.mapNotNull { skill ->
+                if (!skillFilter(skill)) return@mapNotNull null
+                if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
+                if (vocab.sortValue(skill) > 0.0) vocab to skill else null
+            }
+        }
 
     private fun pickFallback(skillFilter: (Skill) -> Boolean): Pair<Vocab, Skill> {
         val firstSkill = Skill.ladder.first()
