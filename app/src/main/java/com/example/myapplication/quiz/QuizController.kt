@@ -233,9 +233,14 @@ class QuizController(
         sim.viewTimeMilli =
             (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * sim.viewTimeMilli).toLong()
         // Mirror the rolling-window append that saveCurrentVocab does on a
-        // committed clean round, so the blended fpb in the sim reflects the
-        // prospective outcome rather than ignoring the recent run.
-        sim.recordInteraction(0f)
+        // committed round. The round may have accumulated partial penalties
+        // mid-round (tip = 0.25, mask tap = 0.1, etc.) — those bump nFailed
+        // but not the window, so reconstruct the per-round delta the same
+        // way saveCurrentVocab will, instead of assuming a clean 0.
+        val simFailAmount =
+            (stats.nTimesFailed - (roundStartSnapshot?.nTimesFailed ?: stats.nTimesFailed))
+                .coerceAtLeast(0f)
+        sim.recordInteraction(simFailAmount)
         return sim.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
     }
 
@@ -921,7 +926,14 @@ class QuizController(
             else elapsedBeforePause + (System.currentTimeMillis() - startTime)
         val timeElapsed = activeViewTime + penalty
         val stats = vocab.stats(currentSkill)
-        val prevFailureProbability = stats.failureProbability()
+        // Use the round-start snapshot for the pre-round fpb, not the live
+        // stats — mid-round penalties (tip, mask taps) have already bumped
+        // nFailed on the live stats, which would make the mastery-crossing
+        // comparison fire on rounds that started below the threshold,
+        // briefly dipped above mid-round, and ended below again. The chime
+        // should only fire on a genuine active → mastered transition.
+        val prevFailureProbability =
+            snapshot?.failureProbability() ?: stats.failureProbability()
         val wasIntroduced = vocab.hasBeenIntroduced()
 
         stats.nTimesViewed += 1
