@@ -1,6 +1,6 @@
 package com.example.myapplication.data
 
-import com.example.myapplication.data.entities.LanguageWipeEntity
+import com.example.myapplication.data.db.entities.LanguageWipeEntity
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.util.concurrent.ConcurrentHashMap

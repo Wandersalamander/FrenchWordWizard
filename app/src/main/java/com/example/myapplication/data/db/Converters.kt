@@ -1,6 +1,7 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.db
 
 import androidx.room.TypeConverter
+import com.example.myapplication.data.VocabInteraction
 import com.example.myapplication.dictionary.Skill
 
 /**

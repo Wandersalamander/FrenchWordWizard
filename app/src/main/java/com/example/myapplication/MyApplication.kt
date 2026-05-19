@@ -2,7 +2,7 @@ package com.example.myapplication
 
 import android.app.Application
 import com.example.myapplication.data.DataLayer
-import com.example.myapplication.data.LegacyImporter
+import com.example.myapplication.data.migration.LegacyImporter
 import com.example.myapplication.streak.StreakTracker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

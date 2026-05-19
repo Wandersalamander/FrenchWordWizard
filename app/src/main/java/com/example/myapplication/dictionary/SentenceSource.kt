@@ -2,7 +2,7 @@ package com.example.myapplication.dictionary
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.prefs.AppPrefs
 
 /**
  * Where the example sentence shown during a quiz round comes from.

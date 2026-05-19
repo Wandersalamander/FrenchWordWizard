@@ -1,9 +1,9 @@
 package com.example.myapplication.progress
 
 import android.content.Context
-import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.prefs.AppPrefs
 import com.example.myapplication.data.DataLayer
-import com.example.myapplication.data.entities.DailySkillFinishedCountEntity
+import com.example.myapplication.data.db.entities.DailySkillFinishedCountEntity
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.Skill
 import kotlinx.coroutines.launch

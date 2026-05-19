@@ -1,12 +1,12 @@
-package com.example.myapplication.data.dao
+package com.example.myapplication.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.myapplication.data.entities.VocabFlagsEntity
-import com.example.myapplication.data.entities.VocabStatsEntity
+import com.example.myapplication.data.db.entities.VocabFlagsEntity
+import com.example.myapplication.data.db.entities.VocabStatsEntity
 
 /**
  * Per-vocab DAO. Bulk reads are used at dictionary load time to hydrate the

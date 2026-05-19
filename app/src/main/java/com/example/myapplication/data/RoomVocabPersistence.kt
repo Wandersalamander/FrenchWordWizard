@@ -1,8 +1,8 @@
 package com.example.myapplication.data
 
-import com.example.myapplication.data.dao.VocabDao
-import com.example.myapplication.data.entities.VocabFlagsEntity
-import com.example.myapplication.data.entities.VocabStatsEntity
+import com.example.myapplication.data.db.dao.VocabDao
+import com.example.myapplication.data.db.entities.VocabFlagsEntity
+import com.example.myapplication.data.db.entities.VocabStatsEntity
 import com.example.myapplication.dictionary.Skill
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

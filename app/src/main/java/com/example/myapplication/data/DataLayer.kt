@@ -1,6 +1,7 @@
 package com.example.myapplication.data
 
 import android.content.Context
+import com.example.myapplication.data.db.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -1,9 +1,9 @@
-package com.example.myapplication.data.dao
+package com.example.myapplication.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.myapplication.data.entities.LanguageWipeEntity
+import com.example.myapplication.data.db.entities.LanguageWipeEntity
 
 @Dao
 interface LanguageWipeDao {

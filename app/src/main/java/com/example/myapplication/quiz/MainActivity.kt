@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
-import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.prefs.AppPrefs
 import com.example.myapplication.data.DataLayer
 import com.example.myapplication.data.LanguageWipeRepository
 import com.example.myapplication.setDebouncedOnClickListener

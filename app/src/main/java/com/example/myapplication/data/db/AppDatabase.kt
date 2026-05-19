@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.db
 
 import android.content.Context
 import androidx.room.Database
@@ -7,19 +7,19 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.myapplication.data.dao.DailyMasteredCountDao
-import com.example.myapplication.data.dao.DailySkillFinishedCountDao
-import com.example.myapplication.data.dao.LanguageWipeDao
-import com.example.myapplication.data.dao.MetadataDao
-import com.example.myapplication.data.dao.StreakDao
-import com.example.myapplication.data.dao.VocabDao
-import com.example.myapplication.data.entities.DailyMasteredCountEntity
-import com.example.myapplication.data.entities.DailySkillFinishedCountEntity
-import com.example.myapplication.data.entities.LanguageWipeEntity
-import com.example.myapplication.data.entities.MetadataEntity
-import com.example.myapplication.data.entities.StreakStateEntity
-import com.example.myapplication.data.entities.VocabFlagsEntity
-import com.example.myapplication.data.entities.VocabStatsEntity
+import com.example.myapplication.data.db.dao.DailyMasteredCountDao
+import com.example.myapplication.data.db.dao.DailySkillFinishedCountDao
+import com.example.myapplication.data.db.dao.LanguageWipeDao
+import com.example.myapplication.data.db.dao.MetadataDao
+import com.example.myapplication.data.db.dao.StreakDao
+import com.example.myapplication.data.db.dao.VocabDao
+import com.example.myapplication.data.db.entities.DailyMasteredCountEntity
+import com.example.myapplication.data.db.entities.DailySkillFinishedCountEntity
+import com.example.myapplication.data.db.entities.LanguageWipeEntity
+import com.example.myapplication.data.db.entities.MetadataEntity
+import com.example.myapplication.data.db.entities.StreakStateEntity
+import com.example.myapplication.data.db.entities.VocabFlagsEntity
+import com.example.myapplication.data.db.entities.VocabStatsEntity
 
 /**
  * Single SQLite store for all user data: per-vocab stats and flags, streak

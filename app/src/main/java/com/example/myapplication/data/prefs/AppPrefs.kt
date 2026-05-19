@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.prefs
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -6,7 +6,7 @@ import android.os.Vibrator
 import android.view.accessibility.AccessibilityManager
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.prefs.AppPrefs
 import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
 

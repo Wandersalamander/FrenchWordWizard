@@ -3,8 +3,8 @@ package com.example.myapplication.streak
 import android.app.NotificationManager
 import android.content.Context
 import com.example.myapplication.data.DataLayer
-import com.example.myapplication.data.entities.STREAK_STATE_SINGLETON_ID
-import com.example.myapplication.data.entities.StreakStateEntity
+import com.example.myapplication.data.db.entities.STREAK_STATE_SINGLETON_ID
+import com.example.myapplication.data.db.entities.StreakStateEntity
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter

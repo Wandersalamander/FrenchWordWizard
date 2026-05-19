@@ -1,23 +1,24 @@
-package com.example.myapplication.data
+package com.example.myapplication.data.migration
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import androidx.room.withTransaction
-import com.example.myapplication.data.entities.DailyMasteredCountEntity
-import com.example.myapplication.data.entities.DailySkillFinishedCountEntity
-import com.example.myapplication.data.entities.LanguageWipeEntity
-import com.example.myapplication.data.entities.MetadataEntity
-import com.example.myapplication.data.entities.STREAK_STATE_SINGLETON_ID
-import com.example.myapplication.data.entities.StreakStateEntity
-import com.example.myapplication.data.entities.VocabFlagsEntity
-import com.example.myapplication.data.entities.VocabStatsEntity
+import com.example.myapplication.data.DataLayer
+import com.example.myapplication.data.db.entities.DailyMasteredCountEntity
+import com.example.myapplication.data.db.entities.DailySkillFinishedCountEntity
+import com.example.myapplication.data.db.entities.LanguageWipeEntity
+import com.example.myapplication.data.db.entities.MetadataEntity
+import com.example.myapplication.data.db.entities.STREAK_STATE_SINGLETON_ID
+import com.example.myapplication.data.db.entities.StreakStateEntity
+import com.example.myapplication.data.db.entities.VocabFlagsEntity
+import com.example.myapplication.data.db.entities.VocabStatsEntity
 import com.example.myapplication.dictionary.Skill
 
 /**
  * One-shot importer that copies user data from the legacy SharedPreferences
  * layout into the Room database. Runs once per installation (gated by a
- * marker row in [com.example.myapplication.data.entities.MetadataEntity]);
+ * marker row in [com.example.myapplication.data.db.entities.MetadataEntity]);
  * subsequent launches see the marker and skip.
  *
  * Critically, the marker lives in Room, not in SharedPreferences. If the user

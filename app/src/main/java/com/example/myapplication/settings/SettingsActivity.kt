@@ -19,7 +19,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
-import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.prefs.AppPrefs
 import com.example.myapplication.data.DataLayer
 import com.example.myapplication.data.LanguageWipeRepository
 import com.example.myapplication.setDebouncedOnClickListener

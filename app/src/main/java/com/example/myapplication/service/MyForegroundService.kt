@@ -9,7 +9,7 @@ import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.myapplication.R
-import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.prefs.AppPrefs
 import com.example.myapplication.data.DataLayer
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
