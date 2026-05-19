@@ -1,5 +1,6 @@
 package com.example.myapplication.dictionary
 
+import com.example.myapplication.data.VocabInteraction
 import java.util.concurrent.TimeUnit
 
 /**
@@ -10,15 +11,18 @@ import java.util.concurrent.TimeUnit
  * this value. Unused for the first skill in the ladder (always unlocked).
  * Once unlocked AND practiced, a skill stays unlocked forever for that word
  * even if the predecessor's stats later drift back up — the unlock is sticky.
+ *
+ * The enum's [name] (READ / LISTEN / INVERT) is the value persisted in Room
+ * via [com.example.myapplication.data.Converters]. Renaming an enum case
+ * would orphan existing rows — add a new case instead.
  */
 enum class Skill(
-    val storagePrefix: String,
     val displayName: String,
     val unlockThreshold: Float,
 ) {
-    READ("", "Reading", 0.0f),  // empty prefix preserves legacy SharedPreferences keys — never rename
-    LISTEN("listen_", "Listening", 0.4f),  // unlocks at 3 stars on READ
-    INVERT("invert_", "Recall", 0.2f),  // unlocks at 4 stars on LISTEN
+    READ("Reading", 0.0f),
+    LISTEN("Listening", 0.4f),  // unlocks at 3 stars on READ
+    INVERT("Recall", 0.2f),  // unlocks at 4 stars on LISTEN
     ;
 
     companion object {
@@ -39,11 +43,31 @@ data class SkillStats(
     var nTimesFailed: Float = 0.0f,
     var lastDisplayed: Long = 0L,
     var lastTimeFailed: Long = 0L,
+    var recentInteractions: List<VocabInteraction> = emptyList(),
 ) {
     /** Single entry point for failure events so the counter and timestamp stay in sync. */
     fun recordFailure(amount: Float) {
         nTimesFailed += amount
         lastTimeFailed = System.currentTimeMillis()
+    }
+
+    /**
+     * Append one round's outcome to [recentInteractions] and trim the window
+     * to the last [MAX_INTERACTIONS] entries. Called once per committed round
+     * from the quiz save path; compromised rounds (rolled back via [copyFrom])
+     * skip this call.
+     */
+    fun recordInteraction(failAmount: Float) {
+        val entry = VocabInteraction(
+            timestampMs = System.currentTimeMillis(),
+            failAmount = failAmount,
+        )
+        val updated = recentInteractions + entry
+        recentInteractions = if (updated.size > MAX_INTERACTIONS) {
+            updated.subList(updated.size - MAX_INTERACTIONS, updated.size).toList()
+        } else {
+            updated
+        }
     }
 
     /**
@@ -60,6 +84,7 @@ data class SkillStats(
         nTimesFailed = other.nTimesFailed
         lastDisplayed = other.lastDisplayed
         lastTimeFailed = other.lastTimeFailed
+        recentInteractions = other.recentInteractions
     }
 
     fun failureProbability(): Float {
@@ -114,5 +139,10 @@ data class SkillStats(
         // just above the mastery cut so the pair stays active without being
         // surfaced as urgently as a fresh failure would.
         const val SLOW_FPB_FLOOR = 0.15f
+
+        // Length of the rolling per-round outcome window persisted alongside
+        // the counters. Sized to fit comfortably in one TEXT cell while still
+        // giving recency-weighted fpb formulas enough signal to work with.
+        const val MAX_INTERACTIONS = 10
     }
 }

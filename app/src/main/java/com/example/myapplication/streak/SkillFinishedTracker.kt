@@ -2,10 +2,15 @@ package com.example.myapplication.streak
 
 import android.content.Context
 import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.DataLayer
+import com.example.myapplication.data.entities.DailySkillFinishedCountEntity
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.Skill
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.concurrent.ConcurrentHashMap
 
 /**
  * Per-skill count of (word, skill) pairs that retired below the mastery
@@ -15,9 +20,7 @@ import java.time.format.DateTimeFormatter
  * crossing so the per-skill suffix reflects what the user just did.
  *
  * Scoped per active language — finishing a French skill doesn't bump the
- * German counter. The active language is read from [AppPrefs.KEY_APP_LANGUAGE]
- * on every call so the counter always tracks whichever dictionary is currently
- * loaded.
+ * German counter. State is held in memory and persisted to Room asynchronously.
  *
  * Lazy day rollover (same pattern as MasteryTracker / StreakTracker): every
  * write stamps today's LocalDate, every read returns 0 when the stamp isn't
@@ -25,44 +28,100 @@ import java.time.format.DateTimeFormatter
  * what resets it.
  */
 object SkillFinishedTracker {
-    private const val KEY_DATE_PREFIX = "skill_finished_today_date_"
-    private const val KEY_COUNT_PREFIX = "skill_finished_today_count_"
     private val DATE_FORMAT: DateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE
 
-    private fun dateKey(languageCode: String): String = "$KEY_DATE_PREFIX$languageCode"
-    private fun countKey(skill: Skill, languageCode: String): String =
-        "$KEY_COUNT_PREFIX${skill.name}_$languageCode"
+    private data class Key(val languageCode: String, val skill: Skill)
+    private data class Entry(val date: String, val count: Int)
+
+    private val cache = ConcurrentHashMap<Key, Entry>()
+    private val loadedLanguages = ConcurrentHashMap.newKeySet<String>()
 
     private fun activeLanguageCode(context: Context): String =
         AppPrefs.get(context).getString(AppPrefs.KEY_APP_LANGUAGE, null) ?: Language.DEFAULT.code
 
+    private fun ensureLanguageLoaded(languageCode: String) {
+        if (loadedLanguages.contains(languageCode)) return
+        runBlocking {
+            val rows = DataLayer.database.dailySkillFinishedCountDao()
+                .loadAllForLanguage(languageCode)
+            for (row in rows) {
+                cache[Key(row.languageCode, row.skill)] = Entry(row.date, row.count)
+            }
+        }
+        loadedLanguages.add(languageCode)
+    }
+
     fun todayCount(context: Context, skill: Skill): Int {
-        val p = AppPrefs.get(context)
         val lang = activeLanguageCode(context)
-        val storedDate = p.getString(dateKey(lang), null) ?: return 0
+        ensureLanguageLoaded(lang)
+        val entry = cache[Key(lang, skill)] ?: return 0
         val today = LocalDate.now().format(DATE_FORMAT)
-        if (storedDate != today) return 0
-        return p.getInt(countKey(skill, lang), 0)
+        if (entry.date != today) return 0
+        return entry.count
     }
 
     /** Bump [skill]'s today-count by one and return the new value. */
     fun recordFinishedToday(context: Context, skill: Skill): Int {
-        val p = AppPrefs.get(context)
         val lang = activeLanguageCode(context)
+        ensureLanguageLoaded(lang)
         val today = LocalDate.now().format(DATE_FORMAT)
-        val sameDay = p.getString(dateKey(lang), null) == today
-        // When the date stamp rolls over for this language, every per-skill
-        // count for this language resets — wipe all three keys in the same
-        // edit so we don't leave yesterday's counts hanging on the two skills
-        // that didn't tick this round.
-        val edit = p.edit()
-        if (!sameDay) {
-            for (s in Skill.entries) edit.putInt(countKey(s, lang), 0)
-            edit.putString(dateKey(lang), today)
+        // Detect whether the active language's per-skill counters are still
+        // on today's date. If they aren't — i.e. the day rolled over since
+        // the last write — every per-skill count for this language resets to
+        // 0 (the user's "today" snapshot is fresh).
+        val anySameDay = Skill.entries.any { s ->
+            cache[Key(lang, s)]?.date == today
         }
-        val current = if (sameDay) p.getInt(countKey(skill, lang), 0) else 0
+        if (!anySameDay) {
+            for (s in Skill.entries) cache[Key(lang, s)] = Entry(today, 0)
+        }
+        val key = Key(lang, skill)
+        val current = cache[key]?.takeIf { it.date == today }?.count ?: 0
         val next = current + 1
-        edit.putInt(countKey(skill, lang), next).apply()
+        cache[key] = Entry(today, next)
+        val now = System.currentTimeMillis()
+        // Persist this skill + any sibling reset rows in a single batch so a
+        // rollover doesn't leave yesterday's counts pinned on the other two.
+        val rows = mutableListOf<DailySkillFinishedCountEntity>()
+        if (!anySameDay) {
+            for (s in Skill.entries) {
+                rows += DailySkillFinishedCountEntity(
+                    languageCode = lang,
+                    skill = s,
+                    date = today,
+                    count = if (s == skill) next else 0,
+                    lastModifiedMs = now,
+                )
+            }
+        } else {
+            rows += DailySkillFinishedCountEntity(
+                languageCode = lang,
+                skill = skill,
+                date = today,
+                count = next,
+                lastModifiedMs = now,
+            )
+        }
+        DataLayer.writeScope.launch {
+            DataLayer.database.dailySkillFinishedCountDao().upsertBulk(rows)
+        }
         return next
+    }
+
+    /** Importer entry point. */
+    internal fun importEntry(languageCode: String, skill: Skill, date: String, count: Int) {
+        cache[Key(languageCode, skill)] = Entry(date, count)
+        loadedLanguages.add(languageCode)
+        DataLayer.writeScope.launch {
+            DataLayer.database.dailySkillFinishedCountDao().upsert(
+                DailySkillFinishedCountEntity(
+                    languageCode = languageCode,
+                    skill = skill,
+                    date = date,
+                    count = count,
+                    lastModifiedMs = System.currentTimeMillis(),
+                )
+            )
+        }
     }
 }

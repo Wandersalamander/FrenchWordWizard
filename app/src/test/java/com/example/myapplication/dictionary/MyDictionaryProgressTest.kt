@@ -12,7 +12,7 @@ import java.io.ByteArrayInputStream
  */
 class MyDictionaryProgressTest {
 
-    /** Build a dictionary from in-memory CSV lines with no SharedPreferences. */
+    /** Build a dictionary from in-memory CSV lines with no persistence. */
     private fun dictionaryOf(lines: List<String>): MyDictionary {
         val csv = lines.joinToString("\n")
         return MyDictionary(ByteArrayInputStream(csv.toByteArray()))
@@ -146,7 +146,7 @@ class MyDictionaryProgressTest {
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
         // Prime, then mutate the underlying stat as if a reload pulled different
-        // SharedPreferences values; reload should clear the stale cache.
+        // persisted values; reload should clear the stale cache.
         dict.csvData[0].stats(Skill.ladder.first()).nTimesViewed = 1
         assertEquals(listOf("Haus"), dict.getIntroducedForeignWords())
         // Simulate a wipe.

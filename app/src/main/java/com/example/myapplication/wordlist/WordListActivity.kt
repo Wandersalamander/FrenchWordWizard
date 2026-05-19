@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.DataLayer
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
@@ -62,7 +63,7 @@ class WordListActivity : AppCompatActivity() {
         val savedSkillName = prefs.getString(AppPrefs.KEY_WORDLIST_SELECTED_SKILL, null)
         selectedSkill = Skill.ladder.firstOrNull { it.name == savedSkillName } ?: Skill.ladder.first()
 
-        dictionary = MyDictionary(openDictionaryStream(this, language), prefs)
+        dictionary = MyDictionary(openDictionaryStream(this, language), DataLayer.vocabPersistence)
 
         recyclerView = findViewById(R.id.wordListRecycler)
         sortSpinner = findViewById(R.id.sortSpinner)

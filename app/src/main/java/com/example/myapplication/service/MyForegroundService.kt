@@ -6,11 +6,11 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.myapplication.R
 import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.DataLayer
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.openDictionaryStream
@@ -24,32 +24,14 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import java.io.InputStream
-import java.util.concurrent.atomic.AtomicBoolean
 
 class MyForegroundService : Service() {
     private lateinit var vocabDictionary: MyDictionary
-    private lateinit var sharedPreferences: SharedPreferences
 
     // Scope tied to the service lifecycle. Cancelled in onDestroy so any
     // in-flight delay()/update unwinds cleanly instead of leaking a thread.
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var updateJob: Job? = null
-
-    // Flips true whenever any pref changes — read on the next tick to decide
-    // whether to reparse the dictionary. Idle ticks (no practice happening in
-    // MainActivity since the last tick) skip the per-vocab pref re-read
-    // entirely, which used to be the per-30s cost. Initial state is false:
-    // onCreate just built the dictionary from current prefs, so the first
-    // tick has nothing fresh to pick up.
-    private val prefsDirty = AtomicBoolean(false)
-
-    private val prefsListener =
-        SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-            // Filter to per-vocab keys ("<32-char md5 hash><suffix>") so streak
-            // / settings / mastery-counter changes don't trigger a reload —
-            // those don't affect what the notification picks.
-            if (key != null && isVocabKey(key)) prefsDirty.set(true)
-        }
 
     companion object {
         const val NOTIFICATION_CHANNEL_ID = "ForegroundServiceChannel"
@@ -61,8 +43,14 @@ class MyForegroundService : Service() {
 
         // Cadence for refreshing the notification's vocab. The notification is
         // for passive glancing — refreshing every few seconds wastes battery
-        // and forces a full per-word pref reload across the dictionary on
-        // every tick. 30s is a comfortable balance.
+        // and forces a full per-word reload across the dictionary on every
+        // tick. 30s is a comfortable balance.
+        //
+        // Each tick re-applies the shared in-memory vocab cache to this
+        // service's MyDictionary so any changes the user committed in the
+        // main activity since the last tick are reflected here. The post-Room
+        // reload is just a Map lookup per Vocab, so we no longer need the
+        // dirty-bit listener the SharedPreferences version had.
         private const val UPDATE_INTERVAL_MS = 30_000L
     }
 
@@ -81,9 +69,6 @@ class MyForegroundService : Service() {
     }
 
     override fun onDestroy() {
-        if (::sharedPreferences.isInitialized) {
-            sharedPreferences.unregisterOnSharedPreferenceChangeListener(prefsListener)
-        }
         scope.cancel()
         updateJob = null
         super.onDestroy()
@@ -91,11 +76,10 @@ class MyForegroundService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        sharedPreferences = AppPrefs.get(this)
-        val language = Language.fromCode(sharedPreferences.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        val prefs = AppPrefs.get(this)
+        val language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
         val inputStream: InputStream = openDictionaryStream(this, language)
-        vocabDictionary = MyDictionary(inputStream, sharedPreferences)
-        sharedPreferences.registerOnSharedPreferenceChangeListener(prefsListener)
+        vocabDictionary = MyDictionary(inputStream, DataLayer.vocabPersistence)
 
         startForeground(NOTIFICATION_ID, createNotification().build())
     }
@@ -139,12 +123,11 @@ class MyForegroundService : Service() {
     }
 
     private fun updateNotification() {
-        // Reload only when MainActivity actually persisted vocab changes since
-        // the last tick. compareAndSet keeps the check + clear atomic against
-        // concurrent listener callbacks.
-        if (prefsDirty.compareAndSet(true, false)) {
-            vocabDictionary.reloadPreferences()
-        }
+        // Re-sync each Vocab's in-memory stats from the shared persistence
+        // cache so any commits from the main activity since the last tick are
+        // reflected in this service's notification. Cheap — a Map lookup per
+        // Vocab; the old SharedPreferences-listener dirty-bit isn't needed.
+        vocabDictionary.reloadPreferences()
         val (vocab, _) = vocabDictionary.getActiveVocabWeighted()
 
         val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
@@ -156,21 +139,5 @@ class MyForegroundService : Service() {
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(NOTIFICATION_ID, builder.build())
-    }
-
-    /**
-     * Vocab pref keys are written by [com.example.myapplication.dictionary.Vocab]
-     * as "{32-char md5 hex}{suffix}" (e.g. "nTimesViewed", "viewTimeMilli",
-     * "listen_lastDisplayed"). Anything else — streak counters, language,
-     * tutorial flags — should not trigger a dictionary reload.
-     */
-    private fun isVocabKey(key: String): Boolean {
-        if (key.length < 32) return false
-        for (i in 0 until 32) {
-            val c = key[i]
-            val isHex = c in '0'..'9' || c in 'a'..'f' || c in 'A'..'F'
-            if (!isHex) return false
-        }
-        return true
     }
 }

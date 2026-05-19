@@ -1,7 +1,7 @@
 package com.example.myapplication.dictionary
 
 import android.content.Context
-import android.content.SharedPreferences
+import com.example.myapplication.data.VocabPersistence
 import java.io.InputStream
 import java.io.SequenceInputStream
 import java.util.Collections
@@ -32,7 +32,7 @@ data class ActiveSetCounts(
     val invert: Int,
 )
 
-class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPreferences? = null) {
+class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? = null) {
     val csvData: List<Vocab> = readCsv(inputStream)
 
     // Cache of foreign words that have entered the rotation. Used by the LLM
@@ -42,6 +42,12 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     private val introducedForeignSet: LinkedHashSet<String> = LinkedHashSet()
     private var introducedForeignInitialized: Boolean = false
 
+    /**
+     * Re-apply persistence to every loaded Vocab. The shared [VocabPersistence]
+     * cache may have been mutated by another component (typically the main
+     * activity's save path while the foreground service was idle), so each
+     * Vocab pulls the current snapshot into its in-memory skillStats.
+     */
     fun reloadPreferences() {
         csvData.forEach { it.loadPreferences() }
         // Stat values changed under us — discard caches.
@@ -130,7 +136,7 @@ class MyDictionary(inputStream: InputStream, val sharedPreferences: SharedPrefer
     private fun readCsv(inputStream: InputStream): List<Vocab> =
         inputStream.bufferedReader().use { reader ->
             reader.lineSequence()
-                .mapNotNull { Vocab.fromCsvLine(it, sharedPreferences) }
+                .mapNotNull { Vocab.fromCsvLine(it, persistence) }
                 .toList()
         }
 

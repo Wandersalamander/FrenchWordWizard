@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
 }
 
 android {
@@ -43,6 +44,17 @@ dependencies {
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.3'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+    // Room (SQLite) — replaces SharedPreferences as the source of truth for
+    // per-vocab stats, streak state, and daily counters. Repository layer
+    // (com.example.myapplication.data) hides the storage backend so future
+    // cloud-sync / Google-Account-backup features can swap implementations
+    // without touching call sites. See ADR-001.
+    //
+    // 2.8.x is the line that ships KSP2 support; earlier versions fail with
+    // "unexpected jvm signature V" against Kotlin 2.2.x suspend DAOs.
+    implementation 'androidx.room:room-runtime:2.8.2'
+    implementation 'androidx.room:room-ktx:2.8.2'
+    ksp 'androidx.room:room-compiler:2.8.2'
     // LiteRT-LM SDK — used to load .litertlm model files (Gemma 4 family).
     // We migrated off com.google.mediapipe:tasks-genai because Gemma 4 only
     // ships in the .litertlm format.

@@ -927,6 +927,12 @@ class QuizController(
         stats.viewTimeMilli =
             (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli).toLong()
         stats.lastDisplayed = System.currentTimeMillis()
+        // failAmount = nFailed delta since round start, so the rolling window
+        // captures THIS round's outcome rather than the lifetime counter.
+        val failAmountThisRound =
+            (stats.nTimesFailed - (snapshot?.nTimesFailed ?: stats.nTimesFailed))
+                .coerceAtLeast(0f)
+        stats.recordInteraction(failAmountThisRound)
         vocab.savePreferences()
 
         // First time this word entered the rotation — keep the LLM's

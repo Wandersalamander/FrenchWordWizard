@@ -4,15 +4,15 @@ import android.content.Context
 import android.content.SharedPreferences
 
 /**
- * Single source of truth for the app's SharedPreferences store. Owns the
- * store name plus the cross-cutting key constants so we don't have a literal
- * `"vocabulary_preferences"` (and the magic key strings around it) scattered
- * through activities, services, and receivers.
+ * Small app-local UI settings only. Used to be the single source for every
+ * piece of persisted state; the user-progress data — per-vocab stats, streak,
+ * daily counters, language-wipe markers — now lives in Room (see
+ * [AppDatabase] and ADR-001 for the migration rationale).
  *
- * Per-vocabulary keys (the `<md5-hash><suffix>` family written by
- * [com.example.myapplication.dictionary.Vocab]) and streak keys
- * (`streak_*`) live next to the code that owns them — this helper only
- * centralizes the names that several modules share.
+ * What remains here is the handful of trivial flags that don't benefit from
+ * structured storage: the selected language, tutorial-seen markers, the word
+ * list's sort index, and the sentence-source preference. Each is a few bytes
+ * and is fine to ride Android Auto Backup as-is.
  */
 object AppPrefs {
     const val NAME = "vocabulary_preferences"
@@ -24,12 +24,6 @@ object AppPrefs {
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"
 
-    private const val PROGRESS_WIPED_AT_PREFIX = "progress_wiped_at_"
-
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
-
-    /** Per-language "user wiped progress at" timestamp key. */
-    fun progressWipedAtKey(languageCode: String): String =
-        "$PROGRESS_WIPED_AT_PREFIX$languageCode"
 }

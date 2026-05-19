@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-   Sample backup rules file; uncomment and customize as necessary.
-   See https://developer.android.com/guide/topics/data/autobackup
-   for details.
-   Note: This file is ignored for devices older that API 31
-   See https://developer.android.com/about/versions/12/backup-restore
+   Pre-Android-12 Auto Backup rules. The Room database is excluded so we
+   keep ownership of structured sync (see ADR-001) — Auto Backup of a live
+   SQLite file can ship a half-written page. SharedPreferences still rides
+   along because (a) the small UI-settings in AppPrefs are fine to restore
+   as-is, and (b) the legacy per-vocab keys still in the file act as the
+   seed source for the one-shot LegacyImporter if a user restores onto a
+   device with an empty Room DB.
 -->
 <full-backup-content>
-    <!--
-   <include domain="sharedpref" path="."/>
-   <exclude domain="sharedpref" path="device.xml"/>
--->
+    <exclude domain="database" path="app.db"/>
+    <exclude domain="database" path="app.db-shm"/>
+    <exclude domain="database" path="app.db-wal"/>
 </full-backup-content>

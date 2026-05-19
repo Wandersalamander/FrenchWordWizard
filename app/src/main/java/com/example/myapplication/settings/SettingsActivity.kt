@@ -20,6 +20,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
 import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.DataLayer
+import com.example.myapplication.data.LanguageWipeRepository
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.SentenceSource
@@ -251,20 +253,34 @@ class SettingsActivity : AppCompatActivity() {
     private suspend fun wipeProgressFor(language: Language): Int = withContext(Dispatchers.IO) {
         val hashes = collectHashes(language)
         if (hashes.isEmpty()) return@withContext 0
+
+        // Delete the rows from Room (the live source of truth) and drop the
+        // hashes from the in-memory cache so any MyDictionary already holding
+        // these Vocabs sees a fresh state on its next reloadPreferences.
+        val dao = DataLayer.database.vocabDao()
+        dao.deleteStatsForHashes(hashes)
+        dao.deleteFlagsForHashes(hashes)
+        DataLayer.vocabPersistence.evict(hashes)
+
+        // Also wipe the legacy SharedPreferences entries for these hashes.
+        // If we left them, a future reinstall via Android Auto Backup would
+        // restore them AND skip the importer (because the in-Room marker
+        // exists), but only an Auto-Backup-restored install with an empty
+        // Room DB hits the importer at all — see LegacyImporter. The safer
+        // model is: every wipe is fully reflected in both stores.
         val prefs = AppPrefs.get(this@SettingsActivity)
         val editor = prefs.edit()
         var removed = 0
-        // Vocab hashes in the CSVs are 32-char MD5s; per-word keys are stored
-        // as "<hash><suffix>" by Vocab.savePreferences. Match by hash prefix.
         for (key in prefs.all.keys) {
             if (key.length >= 32 && hashes.contains(key.substring(0, 32))) {
                 editor.remove(key)
                 removed++
             }
         }
-        editor.putLong(AppPrefs.progressWipedAtKey(language.code), System.currentTimeMillis())
         editor.apply()
-        removed
+
+        LanguageWipeRepository.recordWipe(language.code)
+        removed.coerceAtLeast(hashes.size)
     }
 
     private fun collectHashes(language: Language): Set<String> {

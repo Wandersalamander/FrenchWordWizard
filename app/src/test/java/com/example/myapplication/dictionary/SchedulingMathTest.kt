@@ -24,7 +24,7 @@ class SchedulingMathTest {
         hash = "h",
         exampleHard = "Das Haus ist groß.",
         exampleEasy = "Haus.",
-        sharedPreferences = null,
+        persistence = null,
     )
 
     // ---------- SkillStats.failureProbability ----------

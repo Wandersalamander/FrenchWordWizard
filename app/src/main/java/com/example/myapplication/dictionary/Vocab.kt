@@ -1,6 +1,8 @@
 package com.example.myapplication.dictionary
 
-import android.content.SharedPreferences
+import com.example.myapplication.data.SkillStatsSnapshot
+import com.example.myapplication.data.VocabPersistence
+import com.example.myapplication.data.VocabSnapshot
 import kotlin.math.ln
 import kotlin.random.Random
 
@@ -17,9 +19,9 @@ fun parseVocabHash(line: String): String? {
 
 /**
  * A single vocabulary entry: the foreign word, its English translation,
- * importance tier, hashed identifier (used as the SharedPreferences key
- * prefix), and two example sentences. Per-skill quiz stats live in
- * [skillStats] and are persisted via [savePreferences].
+ * importance tier, hashed identifier (used as the persistence key), and two
+ * example sentences. Per-skill quiz stats live in [skillStats] and are
+ * persisted via [savePreferences] through the supplied [VocabPersistence].
  */
 data class Vocab(
     val foreign: String,
@@ -28,7 +30,7 @@ data class Vocab(
     val hash: String,
     val exampleHard: String,
     val exampleEasy: String,
-    val sharedPreferences: SharedPreferences? = null,
+    val persistence: VocabPersistence? = null,
 ) {
     val skillStats: Map<Skill, SkillStats> = Skill.ladder.associateWith { SkillStats() }
 
@@ -55,40 +57,44 @@ data class Vocab(
     }
 
     fun loadPreferences() {
-        val prefs = sharedPreferences ?: return
+        val p = persistence ?: return
+        val snapshot = p.load(hash) ?: return
         for (skill in Skill.ladder) {
+            val saved = snapshot.perSkill[skill] ?: continue
             val stats = skillStats.getValue(skill)
-            val p = "${hash}${skill.storagePrefix}"
-            // Per-skill stats are stored as strings (legacy format) — read defensively
-            // so a corrupt entry falls back to a sane default instead of crashing.
-            stats.viewTimeMilli = prefs.readLong("${p}viewTimeMilli", SkillStats.DEFAULT_VIEW_TIME_MS)
-            stats.viewTimeMilli_prev =
-                prefs.readLong("${p}viewTimeMilli_prev", SkillStats.DEFAULT_VIEW_TIME_MS)
-            stats.nTimesViewed = prefs.readInt("${p}nTimesViewed", 0)
-            stats.nTimesFailed = prefs.readFloat("${p}nTimesFailed", 0f)
-            stats.lastDisplayed = prefs.readLong("${p}lastDisplayed", 0L)
-            stats.lastTimeFailed = prefs.readLong("${p}lastTimeFailed", 0L)
+            stats.viewTimeMilli = saved.viewTimeMs
+            stats.viewTimeMilli_prev = saved.viewTimeMsPrev
+            stats.nTimesViewed = saved.nViewed
+            stats.nTimesFailed = saved.nFailed
+            stats.lastDisplayed = saved.lastDisplayed
+            stats.lastTimeFailed = saved.lastFailed
+            stats.recentInteractions = saved.recentInteractions
         }
-        ignore = prefs.readBoolean("${hash}ignore", false)
-        flaggedHard = prefs.readBoolean("${hash}flaggedHard", false)
+        ignore = snapshot.ignore
+        flaggedHard = snapshot.flaggedHard
     }
 
     fun savePreferences() {
-        val prefs = sharedPreferences ?: return
-        val editor: SharedPreferences.Editor = prefs.edit()
-        for (skill in Skill.ladder) {
-            val stats = skillStats.getValue(skill)
-            val p = "${hash}${skill.storagePrefix}"
-            editor.putString("${p}viewTimeMilli", stats.viewTimeMilli.toString())
-            editor.putString("${p}viewTimeMilli_prev", stats.viewTimeMilli_prev.toString())
-            editor.putString("${p}nTimesViewed", stats.nTimesViewed.toString())
-            editor.putString("${p}nTimesFailed", stats.nTimesFailed.toString())
-            editor.putString("${p}lastDisplayed", stats.lastDisplayed.toString())
-            editor.putString("${p}lastTimeFailed", stats.lastTimeFailed.toString())
+        val p = persistence ?: return
+        val perSkill = skillStats.mapValues { (_, stats) ->
+            SkillStatsSnapshot(
+                viewTimeMs = stats.viewTimeMilli,
+                viewTimeMsPrev = stats.viewTimeMilli_prev,
+                nViewed = stats.nTimesViewed,
+                nFailed = stats.nTimesFailed,
+                lastDisplayed = stats.lastDisplayed,
+                lastFailed = stats.lastTimeFailed,
+                recentInteractions = stats.recentInteractions,
+            )
         }
-        editor.putString("${hash}ignore", ignore.toString())
-        editor.putString("${hash}flaggedHard", flaggedHard.toString())
-        editor.apply()
+        p.save(
+            hash = hash,
+            snapshot = VocabSnapshot(
+                perSkill = perSkill,
+                ignore = ignore,
+                flaggedHard = flaggedHard,
+            ),
+        )
     }
 
     fun stats(skill: Skill): SkillStats = skillStats.getValue(skill)
@@ -201,7 +207,7 @@ data class Vocab(
          * the line is malformed (wrong column count or non-numeric importance).
          * Columns: foreign, english, importance, hash, exampleHard, exampleEasy.
          */
-        fun fromCsvLine(line: String, sharedPreferences: SharedPreferences?): Vocab? {
+        fun fromCsvLine(line: String, persistence: VocabPersistence?): Vocab? {
             val parts = line.split('\t', ignoreCase = false, limit = 6)
             if (parts.size < 6) return null
             val importance = parts[2].trim().toIntOrNull() ?: return null
@@ -212,23 +218,8 @@ data class Vocab(
                 hash = parts[3].trim(),
                 exampleHard = parts[4].trim(),
                 exampleEasy = parts[5].trim(),
-                sharedPreferences = sharedPreferences,
+                persistence = persistence,
             )
         }
     }
 }
-
-// Per-vocab stats are persisted as strings (legacy format). Reading them via
-// SharedPreferences.getX would throw ClassCastException on existing installs,
-// so we go through getString and parse, with defensive defaults.
-private fun SharedPreferences.readLong(key: String, default: Long): Long =
-    getString(key, null)?.toLongOrNull() ?: default
-
-private fun SharedPreferences.readInt(key: String, default: Int): Int =
-    getString(key, null)?.toIntOrNull() ?: default
-
-private fun SharedPreferences.readFloat(key: String, default: Float): Float =
-    getString(key, null)?.toFloatOrNull() ?: default
-
-private fun SharedPreferences.readBoolean(key: String, default: Boolean): Boolean =
-    getString(key, null)?.toBooleanStrictOrNull() ?: default

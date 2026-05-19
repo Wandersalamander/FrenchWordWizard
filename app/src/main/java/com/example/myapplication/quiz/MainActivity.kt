@@ -23,6 +23,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import com.example.myapplication.data.AppPrefs
+import com.example.myapplication.data.DataLayer
+import com.example.myapplication.data.LanguageWipeRepository
 import com.example.myapplication.setDebouncedOnClickListener
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
@@ -86,8 +88,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
         val prefs = AppPrefs.get(this)
         language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
-        languageWipeTimestampAtStart = prefs.getLong(AppPrefs.progressWipedAtKey(language.code), 0L)
-        vocabDictionary = MyDictionary(openDictionaryStream(this, language), prefs)
+        languageWipeTimestampAtStart = LanguageWipeRepository.timestampFor(language.code)
+        vocabDictionary = MyDictionary(openDictionaryStream(this, language), DataLayer.vocabPersistence)
 
         views = bindViews()
         disableQuizButtonsUntilFirstWord()
@@ -415,7 +417,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             recreate()
             return
         }
-        val savedWipeTimestamp = prefs.getLong(AppPrefs.progressWipedAtKey(language.code), 0L)
+        val savedWipeTimestamp = LanguageWipeRepository.timestampFor(language.code)
         if (savedWipeTimestamp > languageWipeTimestampAtStart) {
             recreate()
             return
