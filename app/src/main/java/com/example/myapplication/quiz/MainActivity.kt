@@ -217,6 +217,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
         quizController.setupStreakBadgeRoles()
+        quizController.setupVocabCardPull()
     }
 
     private fun maybeShowTutorial(prefs: SharedPreferences) {

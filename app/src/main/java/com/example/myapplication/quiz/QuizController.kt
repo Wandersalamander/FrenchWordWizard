@@ -45,7 +45,7 @@ data class QuizViews(
     val buttonTip: Button,
     val buttonHard: Button,
     val buttonLearned: Button,
-    val cardVocab: View,
+    val cardVocab: SwipeableVocabCard,
     // Roots of the two bottom progress cards, captured so refreshLifetimeBar /
     // refreshActiveBar can attach a contentDescription that summarises the
     // bar for screen readers (raw segment Views have no semantics on their
@@ -195,6 +195,27 @@ class QuizController(
     fun onNewClick() = updateVocab(0, newCandidates = true)
     fun onTipClick() = showTip()
 
+    /**
+     * Wire the vocab card's bouncy pull-down gesture. First pull on a READ /
+     * LISTEN round fires Tip; once Tip is consumed (or unavailable for the
+     * skill) the same gesture fires Fail. INVERT rounds keep [pullEnabled]
+     * false so the gesture is inert. Called once from [MainActivity] after
+     * construction.
+     */
+    fun setupVocabCardPull() {
+        views.cardVocab.onPullCommitted = { onCardPulled() }
+    }
+
+    private fun onCardPulled() {
+        when {
+            views.buttonTip.isEnabled && views.buttonTip.isClickable -> onTipClick()
+            views.buttonFail.isEnabled && views.buttonFail.isClickable -> onFailClick()
+        }
+    }
+
+    private fun isPullDownSkill(skill: Skill): Boolean =
+        skill == Skill.READ || skill == Skill.LISTEN
+
     /** True when listening practice is active (masking happens for LISTEN words). */
     fun isListeningModeEnabled(): Boolean = listeningEnabled
 
@@ -312,6 +333,10 @@ class QuizController(
             views.buttonNext.isEnabled = true
             views.buttonNext.isClickable = true
             // Tip stays disabled — one tip per word.
+            // Re-enable the pull-down so a second pull can fire Fail. The
+            // wider setQuizButtonsEnabled isn't used here because it would
+            // un-disable Tip.
+            views.cardVocab.pullEnabled = isPullDownSkill(currentSkill)
         }
     }
 
@@ -373,6 +398,7 @@ class QuizController(
         views.buttonNew.isClickable = false
         views.buttonTip.isEnabled = false
         views.buttonTip.isClickable = false
+        views.cardVocab.pullEnabled = false
 
         val vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
@@ -1031,6 +1057,7 @@ class QuizController(
         val tipApplicable = enabled && currentSkill.flow.tipAllowed
         views.buttonTip.isEnabled = tipApplicable
         views.buttonTip.isClickable = tipApplicable
+        views.cardVocab.pullEnabled = enabled && isPullDownSkill(currentSkill)
     }
 
     private fun displayForeignWord(vocab: Vocab) {
