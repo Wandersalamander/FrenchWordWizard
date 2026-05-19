@@ -149,6 +149,11 @@ class QuizController(
     // thinking time, while pre-pause attention isn't thrown away either.
     private var elapsedBeforePause: Long = 0L
     private var inSpotCheck = false
+    // Round view time frozen at the moment the user committed their answer
+    // (pressed Know-it / Reveal). -1 means "not frozen". The spot-check
+    // response that follows is verification, not time-on-card, so its
+    // thinking time must not feed into viewTimeMilli.
+    private var viewTimeFrozenAt: Long = -1L
 
     // Skill being practiced for the currently-displayed word. Set in updateVocab
     // when a new word is picked and used for all stat writes during the round.
@@ -447,6 +452,8 @@ class QuizController(
     }
 
     private fun startSpotCheck() {
+        viewTimeFrozenAt =
+            elapsedBeforePause + (System.currentTimeMillis() - startTime)
         inSpotCheck = true
         currentSkill.flow.setupSpotCheck(views, ::revealCurrentForeignWord)
 
@@ -499,7 +506,8 @@ class QuizController(
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
         if (wasWrong) {
-            currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
+            // updateVocab → applyFailurePenaltyAndPersist records the failure
+            // because penalty > 0; don't double-count it here.
             updateVocab(2000, newCandidates = false)
         } else {
             updateVocab(0, newCandidates = false)
@@ -612,6 +620,7 @@ class QuizController(
         roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
         progressiveRevealCount = 0
         inSpotCheck = false
+        viewTimeFrozenAt = -1L
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
     }
@@ -892,8 +901,10 @@ class QuizController(
 
         val wasFullyMastered = isFullyMasteredNow(vocab)
 
-        val timeElapsed =
-            elapsedBeforePause + (System.currentTimeMillis() - startTime) + penalty
+        val activeViewTime =
+            if (viewTimeFrozenAt >= 0L) viewTimeFrozenAt
+            else elapsedBeforePause + (System.currentTimeMillis() - startTime)
+        val timeElapsed = activeViewTime + penalty
         val stats = vocab.stats(currentSkill)
         val prevFailureProbability = stats.failureProbability()
         val wasIntroduced = vocab.hasBeenIntroduced()
