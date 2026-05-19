@@ -110,8 +110,10 @@
         <TextView
             android:id="@+id/textVocabEyebrow"
             style="@style/CardEyebrow"
+            android:layout_width="0dp"
             android:accessibilityHeading="true"
             android:text="WORD"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

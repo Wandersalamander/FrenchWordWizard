@@ -157,6 +157,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             cardVocab = findViewById(R.id.cardVocab),
             cardLifetime = findViewById(R.id.cardLifetime),
             cardActive = findViewById(R.id.cardActive),
+            textVocabEyebrow = findViewById(R.id.textVocabEyebrow),
             textForeign = findViewById(R.id.textGuess),
             textScore = findViewById(R.id.textScore),
             textEn = findViewById(R.id.textReal),
