@@ -3,6 +3,10 @@ package com.example.myapplication.quiz
 import com.example.myapplication.dictionary.MyDictionary
 import com.example.myapplication.dictionary.Skill
 import com.example.myapplication.dictionary.Vocab
+import com.example.myapplication.dictionary.getActiveVocabWeighted
+import com.example.myapplication.dictionary.getInactiveVocab
+import com.example.myapplication.dictionary.pickMasteredVocabToRefresh
+import com.example.myapplication.dictionary.pickUniformActiveVocab
 
 private const val RECENT_WORDS_CAPACITY = 20
 private const val RECENT_FOREIGN_AVOID_COUNT = 4

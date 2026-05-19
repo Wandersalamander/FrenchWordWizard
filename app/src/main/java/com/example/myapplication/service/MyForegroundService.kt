@@ -13,6 +13,7 @@ import com.example.myapplication.data.AppPrefs
 import com.example.myapplication.data.DataLayer
 import com.example.myapplication.dictionary.Language
 import com.example.myapplication.dictionary.MyDictionary
+import com.example.myapplication.dictionary.getActiveVocabWeighted
 import com.example.myapplication.dictionary.openDictionaryStream
 import com.example.myapplication.quiz.MainActivity
 import kotlinx.coroutines.CoroutineScope
