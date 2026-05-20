@@ -29,7 +29,7 @@ schreiben	to write	1	b5e39abb8e84f789d89e273d1e17347c	Nachdem der Brief geschrie
 lesen	to read	1	a8bdb5f277137f69f47b22dea875c06b	Obwohl das Buch in einer komplizierten Sprache verfasst war, konnte sie es problemlos lesen.	Ich lese ein Buch.
 spielen	to play	1	2461a388db9c217266fcfaed1d03f0ed	Die Kinder durften im Garten spielen, solange sie versprachen, leise zu sein, damit die Nachbarn nicht gestört würden.	Die Kinder spielen draußen.
 der Mann	the man; husband	1	55a78ca3aea8a86b28586605bc3a0722	Der Mann, der gestern im Supermarkt neben mir stand, stellte sich als der neue Nachbar heraus.	Der Mann liest die Zeitung.
-die Frau	the woman; wife	1	3d96eaa96e2bffb0edf23d9bc74485ff	Die Frau, die seit zwanzig Jahren als Ärztin gearbeitet hatte.	Die Frau trinkt Kaffee.
+die Frau	the woman; wife	1	3d96eaa96e2bffb0edf23d9bc74485ff	Die Frau, die seit zwanzig Jahren als Ärztin gearbeitet hatte, kannte fast jeden Patienten beim Namen.	Die Frau trinkt Kaffee.
 das Kind	the child	1	3053959a445ed7874c0ba756a6308926	Das Kind, das den ganzen Nachmittag im Regen gespielt hatte, musste sofort in trockene Kleidung gewechselt werden.	Das Kind spielt im Garten.
 der Tag	the day	1	a8be533be378fa3aee0c95c0541c4c81	An dem Tag, an dem sie ihren Abschluss feierte, wusste sie, dass ein neuer Lebensabschnitt beginnen würde.	Heute ist ein schöner Tag.
 die Zeit	the time	1	0f404e9608d7b57e793a0d4c53842d2f	Obwohl die Zeit knapp war, nahm sie sich die Zeit, jedem einzelnen Gast persönlich zu danken.	Ich habe keine Zeit.
@@ -47,9 +47,9 @@ das Auge	the eye	1	4feab3a86945e0d1cb96704ec595e456	Als sie ihm in das Auge blic
 die Stadt	the city; town	1	8d06ef2b3de8360b37ea77680dafcae6	Die Stadt, in der wir aufgewachsen sind, hat sich in den letzten Jahren so stark verändert.	Die Stadt ist sehr alt.
 das Haus	the house	1	d4a38b6067419270cc64637884713fe0	Das Haus, das am Ende der Straße steht und seit Jahren leer gestanden hatte, wurde endlich renoviert und verkauft.	Das Haus ist groß.
 der Freund / die Freundin	the friend; boyfriend / girlfriend	1	e27a132eea9c1bdab56d0162d5ad0532	Mein bester Freund, den ich seit der Grundschule kenne, hat mir immer geholfen, wenn ich Probleme hatte.	Mein Freund kommt heute.
-die Familie	the family	1	0a73b75ab3dcd188cbcb0ca6aa08da15	Die Familie, die seit drei Generationen in diesem Dorf lebt.	Meine Familie ist klein.
+die Familie	the family	1	0a73b75ab3dcd188cbcb0ca6aa08da15	Die Familie, die seit drei Generationen in diesem Dorf lebt, kennt jeden Nachbarn beim Vornamen.	Meine Familie ist klein.
 der Vater	the father	1	549a966a243cd24720fbdfeee320437c	Obwohl der Vater den ganzen Tag gearbeitet hatte, nahm er sich abends immer die Zeit.	Mein Vater kocht heute.
-die Mutter	the mother	1	0ed0a0d204275a4ef575ff0c760e036b	Die Mutter, die drei Kinder allein großgezogen hatte.	Meine Mutter ist nett.
+die Mutter	the mother	1	0ed0a0d204275a4ef575ff0c760e036b	Die Mutter, die drei Kinder allein großgezogen hatte, verdiente höchsten Respekt von allen.	Meine Mutter ist nett.
 der Bruder	the brother	1	cb0197fc5461362ec43bca7ab2eca1e5	Mein älterer Bruder, der bereits seit fünf Jahren im Ausland lebt, hat mir geraten.	Mein Bruder ist zehn Jahre alt.
 die Schwester	the sister	1	3b5cd06a5eca39c9cb7eb57c989e2fd4	Meine Schwester, die als Krankenschwester in einem großen Krankenhaus arbeitet.	Meine Schwester singt gern.
 der Sohn	the son	1	a988d5d95d9b6162ab1c614e4c8c358b	Der Sohn, auf den die Eltern so stolz waren.	Ihr Sohn geht zur Schule.
