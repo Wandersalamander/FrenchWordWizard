@@ -18,8 +18,8 @@ rosa	pink	2	6f0c48b4bc9b010288366031c846cdab	Das rosa Kleid, das die kleine Toch
 die Zahl	the number	2	bfde101a2aa56c6c3fe1709c5aaa95ef	Die Zahl der Besucher war in diesem Jahr so hoch, dass die Organisatoren eine größere Halle hätten buchen müssen.	Nenne mir eine Zahl.
 eins	one	2	8b52cbd54e32701d9611206393042461	Wenn man nur noch eins der beiden Angebote wählen kann, sollte man sich gut überlegen, welches eins das richtige ist.	Eins und eins ist zwei.
 zwei	two	2	48206fb45a53ae1351369ce7c56adad0	Nachdem zwei Stunden vergangen waren und immer noch zwei Aufgaben offen standen, beschloss er, um Hilfe zu bitten.	Ich habe zwei Katzen.
-drei	three	2	8abfeda1651ef1bbe1fc4cf4bd227e43	In den letzten drei Monaten, in denen drei verschiedene Teams am Projekt gearbeitet hatten.	Ich habe drei Brüder.
-vier	four	2	30c627f781b98249916b69a2367d8085	Die vier Jahreszeiten, von denen jede ihre eigenen vier Besonderheiten hat.	Das Haus hat vier Zimmer.
+drei	three	2	8abfeda1651ef1bbe1fc4cf4bd227e43	In den letzten drei Monaten, in denen drei verschiedene Teams am Projekt gearbeitet hatten, wurden erhebliche Fortschritte erzielt.	Ich habe drei Brüder.
+vier	four	2	30c627f781b98249916b69a2367d8085	Die vier Jahreszeiten, von denen jede ihre eigenen vier Besonderheiten hat, prägen den Rhythmus des Lebens auf dem Land.	Das Haus hat vier Zimmer.
 fünf	five	2	aba750fce33ffe5424e13b00c6629631	Obwohl fünf Bewerber eingeladen worden waren, kamen nur drei zum Vorstellungsgespräch.	Ich arbeite fünf Tage die Woche.
 sechs	six	2	a4884f64e94ad09446451b0813b31574	Seit sechs Wochen arbeitet er an dem Projekt, und es werden wohl noch mindestens sechs weitere Wochen vergehen.	Es ist sechs Uhr.
 sieben	seven	2	6fbcba0cba99c109fc97cedd256dc4f9	Das Märchen von den sieben Zwergen, das seit Generationen erzählt wird, begeistert noch heute Kinder.	In einer Woche sind sieben Tage.
@@ -31,11 +31,11 @@ tausend	thousand	2	db9d64eb403ae22843e0ed2eee1656ea	Die Stadt, die bereits vor t
 der Morgen	the morning	2	116fd8f8a7f4ab1eb54bdc0aed3958dd	Am Morgen, als die ersten Sonnenstrahlen durch das Fenster fielen, genoss er den ruhigen Morgen mit einer Tasse Kaffee.	Am Morgen trinke ich Kaffee.
 der Mittag	noon; midday	2	6e7b8e120f5b082c13cfa4b936d40c9a	Am Mittag wurde es so heiß, dass alle beschlossen, eine längere Pause im Schatten einzulegen.	Wir essen um Mittag.
 der Abend	the evening	2	9231067c6950adeb453a199bd7f543a3	Am Abend, nachdem die Sonne untergegangen war, versammelten sich alle auf der Terrasse.	Guten Abend!
-die Stunde	the hour	2	7e50b783c57756a906dbb00fc06dbfef	Nachdem eine ganze Stunde vergangen war, ohne dass jemand gekommen wäre, beschloss sie.	Die Stunde hat sechzig Minuten.
+die Stunde	the hour	2	7e50b783c57756a906dbb00fc06dbfef	Nachdem eine ganze Stunde vergangen war, ohne dass jemand gekommen wäre, beschloss sie, das Treffen abzusagen und nach Hause zu gehen.	Die Stunde hat sechzig Minuten.
 die Minute	the minute	2	260fd193f01be02ed491d3f405c33f7d	In der letzten Minute des Spiels erzielte er das entscheidende Tor, das keine Minute zu früh kam.	Warte bitte eine Minute.
 die Woche	the week	2	5ab8a0096a83cdfc4c713ac214c7869a	In dieser Woche, die besonders stressig war, musste sie jede Woche mehr arbeiten als sonst.	Die Woche hat sieben Tage.
 der Monat	the month	2	9423c75c2760e432ce55be5903dd6119	In diesem Monat wurde bekannt, dass die Firma, die jeden Monat Verluste machte, endlich umstrukturiert werden sollte.	Welchen Monat haben wir?
-der Montag	Monday	2	69b3540c5538a9144b05a80c3392e34e	Am Montag, als alle noch müde vom Wochenende waren, verkündete der Chef.	Am Montag beginnt die Woche.
+der Montag	Monday	2	69b3540c5538a9144b05a80c3392e34e	Am Montag, als alle noch müde vom Wochenende waren, verkündete der Chef die unerwartete Beförderung der jungen Praktikantin.	Am Montag beginnt die Woche.
 der Dienstag	Tuesday	2	0ca6e151dae54ce0e9ff1f71caee545e	Am Dienstag soll die Besprechung stattfinden, aber wegen Krankheit verschoben werden musste.	Am Dienstag habe ich Sport.
 der Mittwoch	Wednesday	2	b5eebe81ae04184bd2e95782b928b4cc	Am Mittwoch, der genau in der Mitte der Woche liegt, findet traditionell die Sitzung statt.	Am Mittwoch ist Mitte der Woche.
 der Donnerstag	Thursday	2	28b0e02fbbe10478ebf7a366c470ba74	Am Donnerstag wurde beschlossen, dass die Veranstaltung, um eine Woche verschoben wird.	Am Donnerstag gehe ich schwimmen.
@@ -47,8 +47,8 @@ der Sommer	summer	2	56793f46ef7a19bcad9028061de3bda6	Im Sommer, als die Temperat
 der Herbst	autumn; fall	2	e22158914d7be2e758caebf020966780	Im Herbst, wenn die Blätter bunt werden, gehen wir gern im Wald spazieren.	Im Herbst fallen die Blätter.
 der Winter	winter	2	0ffb389540e3367c85123588be836fa4	Im Winter, als es so kalt wurde, dass die Seen zufroren, konnten die Kinder endlich Schlittschuh laufen.	Im Winter schneit es oft.
 das Frühstück	breakfast	2	560dc40f9b88783bd029ef5e34fa3de4	Das Frühstück, das im Hotel serviert wurde, war so reichhaltig, dass wir bis zum Mittag kein Frühstück mehr brauchten.	Zum Frühstück esse ich Brot.
-das Mittagessen	lunch	2	9c4758db73f3ddb4237a4370a14e8813	Das Mittagessen, das von der neuen Köchin zubereitet worden war, schmeckte so gut.	Das Mittagessen ist um zwölf Uhr.
-das Abendessen	dinner; supper	2	fe3db96881df1835a5a503b8da7f16bb	Das Abendessen, für das sie den ganzen Nachmittag gekocht hatte.	Um wie viel Uhr ist das Abendessen?
+das Mittagessen	lunch	2	9c4758db73f3ddb4237a4370a14e8813	Das Mittagessen, das von der neuen Köchin zubereitet worden war, schmeckte so gut, dass alle Gäste nach einer zweiten Portion fragten.	Das Mittagessen ist um zwölf Uhr.
+das Abendessen	dinner; supper	2	fe3db96881df1835a5a503b8da7f16bb	Das Abendessen, für das sie den ganzen Nachmittag gekocht hatte, schmeckte allen Gästen ausgezeichnet.	Um wie viel Uhr ist das Abendessen?
 die Milch	the milk	2	8a6581f8885a77e1fd341cc758cbe7cf	Obwohl die Milch im Kühlschrank noch nicht abgelaufen war, roch sie so seltsam, dass er beschloss, neue Milch zu kaufen.	Ich trinke gern Milch.
 das Brot	the bread	2	6b8a61b3e15e7b15c3218c87b4312ba4	Das frische Brot, das gerade aus dem Ofen kam, duftete so wunderbar, dass alle sofort ein Stück Brot probieren wollten.	Ich kaufe Brot beim Bäcker.
 der Käse	the cheese	2	7f4a3eaa1a87ac5d832877d335d74e76	Der Käse, der aus einer kleinen Molkerei in den Alpen stammte, war so fein gereift.	Ich mag Käse auf dem Brot.
@@ -81,9 +81,9 @@ das Glas	glass	2	3133df5964282ee2c0026d990635e48f	Das Glas, das versehentlich vo
 die Flasche	bottle	2	839c124c17bfbf0295cf0cb830440cb9	Die Flasche, die seit Jahren im hintersten Winkel des Weinregals gestanden hatte, enthielt einen seltenen Jahrgang.	Die Flasche ist leer.
 das Messer	knife	2	a5432bb4a3b7d3c5507f2ced76cdbff2	Das Messer, das regelmäßig geschärft werden muss, ist das wichtigste Werkzeug eines jeden professionellen Kochs.	Das Messer ist scharf.
 die Gabel	fork	2	7b67a4ef00ed1f36c23fa7abb7664fc8	Die Gabel, die im Mittelalter noch als exotisches Essbesteck galt, ist heute aus keinem Haushalt mehr wegzudenken.	Die Gabel liegt auf dem Tisch.
-der Löffel	spoon	2	8d1419f182cfa3b9089dcbf6ba1f97da	Mit dem Löffel, den er vorsichtig in die dampfende Suppe tauchte, prüfte der Koch.	Der Löffel ist aus Silber.
+der Löffel	spoon	2	8d1419f182cfa3b9089dcbf6ba1f97da	Mit dem Löffel, den er vorsichtig in die dampfende Suppe tauchte, prüfte der Koch sorgfältig die Würze des Gerichts.	Der Löffel ist aus Silber.
 die Pfanne	pan	2	44f20fd0138cdf95200849c12cb4b663	Nachdem die Pfanne auf höchster Stufe erhitzt worden war, wurde das Steak hineingelegt.	Die Pfanne ist sehr heiß.
-der Topf	pot	2	9fbf153006fd09c7341a1930cdf0eb30	Der Topf, in dem die Suppe seit dem frühen Morgen vor sich hin köchelte.	Der Topf steht auf dem Herd.
+der Topf	pot	2	9fbf153006fd09c7341a1930cdf0eb30	Der Topf, in dem die Suppe seit dem frühen Morgen vor sich hin köchelte, verströmte einen unwiderstehlichen Duft im ganzen Haus.	Der Topf steht auf dem Herd.
 der Kühlschrank	refrigerator	2	586666455935d824165885e64968fcea	Der Kühlschrank, der letzte Woche repariert werden musste, funktioniert nun wieder einwandfrei.	Der Kühlschrank ist kalt.
 arbeiten	to work	2	81de5b03b147c83d488afbb12c8a4b5f	Obwohl sie den ganzen Tag hart gearbeitet hatte, musste sie abends noch an einem dringenden Projekt arbeiten.	Ich arbeite jeden Tag.
 lernen	to learn	2	dad5e071bfbec46bf71f20068a410b1a	Wenn man eine Fremdsprache wirklich gut lernen möchte, sollte man jeden Tag etwas üben.	Ich lerne Deutsch.
@@ -144,17 +144,17 @@ ziehen	to pull / to move	2	c1814648a09d0283d0581fbc68636e17	Nachdem sie beschlos
 drücken	to push / to press	2	16c5867cb6a0102ca77fbb5e72b9848f	Um die Tür zu öffnen, müssen Sie den grünen Knopf drücken und gleichzeitig den Hebel nach unten ziehen.	Bitte drücken Sie den Knopf.
 tragen	to carry / to wear	2	499bd25ce15ffd106f36d334cc0eb9e8	Da es draußen bitterkalt war, beschloss sie, den dicken Wollmantel zu tragen.	Ich trage eine Jacke.
 heben	to lift	2	dff308cc66242c14a35ff57918041a55	Um das schwere Paket vom Boden zu heben, musste er in die Knie gehen und seinen Rücken gerade halten.	Kannst du die Kiste heben?
-der Körper	body	2	3faa611043e38c8c99fd73685585a301	Der menschliche Körper, der aus über zweihundert verschiedenen Knochen besteht.	Der Körper braucht Schlaf.
+der Körper	body	2	3faa611043e38c8c99fd73685585a301	Der menschliche Körper, der aus über zweihundert verschiedenen Knochen besteht, ist ein beeindruckendes Wunder der Natur.	Der Körper braucht Schlaf.
 das Herz	heart	2	90fe6bc02e96e8357332ddab443d2062	Das Herz, das jeden Tag etwa hunderttausend Mal schlägt, ist der wichtigste Muskel des menschlichen Körpers.	Das Herz schlägt schnell.
 das Blut	blood	2	d4899f2ca38c2fe5e659770fdc422f70	Nachdem das Blut im Labor untersucht worden war, stellte der Arzt fest, dass alle Werte im normalen Bereich lagen.	Das Blut ist rot.
 die Träne	tear	2	22f077424a08906979b5ce222a2c9773	Als die Träne langsam über ihre Wange rollte, versuchte sie verzweifelt, ihre Gefühle vor den anderen zu verbergen.	Eine Träne lief über ihr Gesicht.
 das Gehirn	brain	2	cd25a20b4e4556776415f4cb9b0004a1	Das Gehirn, das nur etwa zwei Prozent des Körpergewichts ausmacht, verbraucht rund zwanzig Prozent unserer Energie.	Das Gehirn ist sehr komplex.
 das Gesicht	face	2	f913238241389aed26f9506eb34be08e	Obwohl sie versuchte, ein fröhliches Gesicht zu machen, konnte man ihr deutlich ansehen.	Sein Gesicht ist freundlich.
-die Nase	nose	2	0df911b77e97f7857eac1c9aca6fa131	Die Nase, die nicht nur zum Riechen dient, sondern auch die eingeatmete Luft filtert und erwärmt.	Meine Nase ist kalt.
+die Nase	nose	2	0df911b77e97f7857eac1c9aca6fa131	Die Nase, die nicht nur zum Riechen dient, sondern auch die eingeatmete Luft filtert und erwärmt, ist ein erstaunlich vielseitiges Organ.	Meine Nase ist kalt.
 der Mund	mouth	2	0fa225a8554175c4fe7b3bd39aa112f3	Bevor der Zahnarzt mit der Behandlung beginnen konnte, musste der Patient den Mund weit öffnen.	Öffne deinen Mund bitte.
-das Ohr	ear	2	1e31bde320e8241071d9d0c8d9fffc61	Das Ohr, das nicht nur für das Hören zuständig ist, sondern auch den Gleichgewichtssinn steuert.	Mein Ohr tut weh.
+das Ohr	ear	2	1e31bde320e8241071d9d0c8d9fffc61	Das Ohr, das nicht nur für das Hören zuständig ist, sondern auch den Gleichgewichtssinn steuert, ist eines der empfindlichsten Sinnesorgane des Menschen.	Mein Ohr tut weh.
 der Zahn	tooth	2	464d15b12a9db4814bb383ddbe75788e	Wenn ein Zahn nicht rechtzeitig behandelt wird, kann er später schmerzhafte Probleme verursachen.	Der Zahn ist weiß.
-die Zunge	tongue	2	7c866718a616e0ef7b9571b34338a1c6	Die Zunge, die über tausende von Geschmacksknospen verfügt, ermöglicht es uns, zwischen süß, sauer, salzig.	Die Zunge schmeckt das Essen.
+die Zunge	tongue	2	7c866718a616e0ef7b9571b34338a1c6	Die Zunge, die über tausende von Geschmacksknospen verfügt, ermöglicht es uns, zwischen süß, sauer, salzig, bitter und umami zu unterscheiden.	Die Zunge schmeckt das Essen.
 der Hals	neck / throat	2	44311174fb8ffb1048c63ac33f785f92	Nachdem sie stundenlang in der Kälte gestanden hatte, bekam sie starke Schmerzen im Hals und konnte kaum noch schlucken.	Mein Hals tut weh.
 die Schulter	shoulder	2	584f269882bd56b0bf861b17ff493a11	Als er die schwere Tasche stundenlang auf der Schulter getragen hatte, verspürte er einen stechenden Schmerz.	Meine Schulter schmerzt.
 der Arm	arm	2	f64c69e895560949f78b5ce65ca5672f	Nachdem er sich beim Sport den Arm gebrochen hatte, musste er sechs Wochen einen Gips tragen.	Mein Arm ist gebrochen.
@@ -186,11 +186,11 @@ der Stiefel	boot	2	d7772302b0c726f27802afcd8d4a68d8	Der Stiefel, der aus hochwer
 der Hut	hat	2	ffaeaf0a7c0376d0f23021b30ec98cd1	Der Hut, den sein Großvater ihm vererbt hatte, war ein wertvolles Erinnerungsstück.	Der Hut steht dir gut.
 die Mütze	cap / beanie	2	3a732419b0166df8789abff5507357ad	Die Mütze, die sie selbst aus weicher Merinowolle gestrickt hatte, hielt selbst bei eisigen Temperaturen warm.	Die Mütze ist rot.
 der Schal	scarf	2	28ae95cbc49b673ff727a8c76fa51e65	Der Schal, den sie im letzten Winter in einem kleinen Laden in Wien gekauft hatte, war ihr liebstes Accessoire geworden.	Der Schal ist weich.
-der Handschuh	glove	2	3cdd854a515024839113711a9b1bbdab	Ohne den Handschuh, den sie glücklicherweise in ihrer Tasche gefunden hatte.	Der Handschuh ist warm.
-der Anzug	suit	2	46a568c7351aa4fa0bc159d883e9f47b	Der Anzug, der für das wichtige Geschäftstreffen maßgeschneidert worden war, saß so perfekt.	Der Anzug ist elegant.
+der Handschuh	glove	2	3cdd854a515024839113711a9b1bbdab	Ohne den Handschuh, den sie glücklicherweise in ihrer Tasche gefunden hatte, wären ihre Finger im eisigen Wind erfroren.	Der Handschuh ist warm.
+der Anzug	suit	2	46a568c7351aa4fa0bc159d883e9f47b	Der Anzug, der für das wichtige Geschäftstreffen maßgeschneidert worden war, saß so perfekt, dass alle Kollegen ihn bewunderten.	Der Anzug ist elegant.
 die Krawatte	tie	2	e9eb06be78bd6e871baf10ebf120f324	Die Krawatte, die er von seinem Vater geschenkt bekommen hatte, trug er nur bei feierlichen Anlässen.	Die Krawatte ist gestreift.
-der Gürtel	belt	2	b0a954be793542c3374f65607a086424	Der Gürtel, der aus echtem italienischem Leder hergestellt wurde, war zwar teuer.	Der Gürtel ist braun.
-die Tasche	bag / pocket	2	c66ee063885842125940e0f312e66a99	Die Tasche, in der sie all ihre wichtigen Unterlagen aufbewahrte.	Meine Tasche ist schwer.
+der Gürtel	belt	2	b0a954be793542c3374f65607a086424	Der Gürtel, der aus echtem italienischem Leder hergestellt wurde, war zwar teuer, aber von hervorragender Qualität.	Der Gürtel ist braun.
+die Tasche	bag / pocket	2	c66ee063885842125940e0f312e66a99	Die Tasche, in der sie all ihre wichtigen Unterlagen aufbewahrte, ließ sie ausgerechnet im Taxi liegen.	Meine Tasche ist schwer.
 null	zero	2	6acb9e7e963a18e936c5130349b41505	Bei null Grad gefriert das Wasser und wird zu Eis.	Es ist null Grad draußen.
 elf	eleven	2	4bda938e456425cbcb10ab53fc538204	Um elf Uhr beginnt die Vorlesung, also müssen wir uns beeilen.	Es ist elf Uhr.
 zwölf	twelve	2	dc623d40f906f93efee47a6c742daa5f	Das Jahr hat zwölf Monate und beginnt im Januar.	Es ist zwölf Uhr mittags.

@@ -50,10 +50,10 @@ der Freund / die Freundin	the friend; boyfriend / girlfriend	1	e27a132eea9c1bdab
 die Familie	the family	1	0a73b75ab3dcd188cbcb0ca6aa08da15	Die Familie, die seit drei Generationen in diesem Dorf lebt, kennt jeden Nachbarn beim Vornamen.	Meine Familie ist klein.
 der Vater	the father	1	549a966a243cd24720fbdfeee320437c	Obwohl der Vater den ganzen Tag gearbeitet hatte, nahm er sich abends immer die Zeit.	Mein Vater kocht heute.
 die Mutter	the mother	1	0ed0a0d204275a4ef575ff0c760e036b	Die Mutter, die drei Kinder allein großgezogen hatte, verdiente höchsten Respekt von allen.	Meine Mutter ist nett.
-der Bruder	the brother	1	cb0197fc5461362ec43bca7ab2eca1e5	Mein älterer Bruder, der bereits seit fünf Jahren im Ausland lebt, hat mir geraten.	Mein Bruder ist zehn Jahre alt.
-die Schwester	the sister	1	3b5cd06a5eca39c9cb7eb57c989e2fd4	Meine Schwester, die als Krankenschwester in einem großen Krankenhaus arbeitet.	Meine Schwester singt gern.
-der Sohn	the son	1	a988d5d95d9b6162ab1c614e4c8c358b	Der Sohn, auf den die Eltern so stolz waren.	Ihr Sohn geht zur Schule.
-die Tochter	the daughter	1	89b2649a2066081a6dd1bc9c9a55b3b7	Die Tochter, die sich immer gewünscht hatte, Lehrerin zu werden.	Die Tochter hilft der Mutter.
+der Bruder	the brother	1	cb0197fc5461362ec43bca7ab2eca1e5	Mein älterer Bruder, der bereits seit fünf Jahren im Ausland lebt, hat mir geraten, ihn dort einmal zu besuchen.	Mein Bruder ist zehn Jahre alt.
+die Schwester	the sister	1	3b5cd06a5eca39c9cb7eb57c989e2fd4	Meine Schwester, die als Krankenschwester in einem großen Krankenhaus arbeitet, ruft uns jeden Sonntagabend an.	Meine Schwester singt gern.
+der Sohn	the son	1	a988d5d95d9b6162ab1c614e4c8c358b	Der Sohn, auf den die Eltern so stolz waren, schloss sein Studium mit Bestnote ab.	Ihr Sohn geht zur Schule.
+die Tochter	the daughter	1	89b2649a2066081a6dd1bc9c9a55b3b7	Die Tochter, die sich immer gewünscht hatte, Lehrerin zu werden, hat ihren Traum nach langem Studium endlich verwirklicht.	Die Tochter hilft der Mutter.
 das Geld	the money	1	75bba46a063efa11f2eddde5c4b068fb	Das Geld, das für das Projekt bereitgestellt worden war, reichte nicht aus.	Ich habe kein Geld.
 die Frage	the question	1	b88712d05a412528ee274f4ab47d6e4b	Die Frage, ob man den Fortschritt aufhalten kann, wurde in der Diskussion so hitzig debattiert.	Das ist eine gute Frage.
 die Antwort	the answer	1	e6a981166dfe21475fb0dd78d5c73ce0	Die Antwort auf diese komplizierte Frage konnte erst gefunden werden.	Ich kenne die Antwort.
@@ -67,7 +67,7 @@ dass	that (conjunction)	1	376e9db76e28b21e10581ebedf4aaf71	Es wurde berichtet, d
 als	when (past); than	1	a99bbb46d5bbb6e08229e1fd26c5a2c6	Als er nach vielen Jahren in seine Heimatstadt zurückkehrte, war alles anders, als er es in Erinnerung hatte.	Als ich jung war, spielte ich viel.
 nicht	not	1	380fbbf7d6a14f32c176d6ec618b8bbf	Obwohl er versprochen hatte, nicht zu spät zu kommen, schaffte er es wieder nicht, pünktlich zu sein.	Ich verstehe das nicht.
 auch	also; too	1	b228127f96a5bd519b898f1246afa81e	Auch wenn viele Menschen anderer Meinung sind, glaube ich.	Ich komme auch mit.
-noch	still; yet	1	fc43371b8d7ffb1986631774aca29f7a	Obwohl sie noch nie zuvor in Deutschland gewesen war, sprach sie die Sprache so gut.	Er schläft noch.
+noch	still; yet	1	fc43371b8d7ffb1986631774aca29f7a	Obwohl sie noch nie zuvor in Deutschland gewesen war, sprach sie die Sprache so gut, dass alle Einheimischen erstaunt waren.	Er schläft noch.
 schon	already	1	a369421e47acafb268c075a3b67e8bc2	Als wir ankamen, hatte der Film schon begonnen, sodass wir uns leise hinsetzen mussten, um die anderen nicht zu stören.	Ich habe schon gegessen.
 sehr	very	1	eca69c093f3bbd7aa06b1c56c9277976	Die Aufgabe war sehr viel schwieriger, als wir erwartet hatten, weshalb wir sehr lange brauchten, um sie zu lösen.	Das Essen ist sehr gut.
 nur	only; just	1	ad4450d08c7e2d50cfa55f6ffcc66244	Er wollte nur kurz vorbeischauen, aber am Ende blieb er den ganzen Abend, weil die Gespräche so interessant waren.	Ich habe nur fünf Euro.
@@ -108,7 +108,7 @@ unser	our	1	c6faebe0d575bc9c2aa01581f9e867ed	Unser Lehrer erklärte uns, dass un
 euer	your (informal plural)	1	147f83d999f5fe6469d0fb250ffaaf89	Wenn euer Plan funktioniert und euer Team das Projekt rechtzeitig abschließt, werdet ihr sicher eine gute Note bekommen.	Ist das euer Auto?
 kein	no; not any	1	187bc379a46abc57a5dd816eabfa6758	Da kein einziger Laden geöffnet hatte und es keinen Bus gab, mussten wir den ganzen Weg zu Fuß zurücklegen.	Ich habe kein Geld.
 dieser / diese / dieses	this; these	1	0e183976caca615209ab5b904a999d29	Dieser Vorschlag, den diese Gruppe bereits letztes Jahr gemacht hatte, wurde in diesem Jahr endlich angenommen.	Dieses Buch ist gut. Diese Frau kenne ich.
-jeder / jede / jedes	every; each	1	5514fe2f4e29501ef928478417d5507a	Jeder Mensch verdient es, mit Respekt behandelt zu werden, unabhängig davon.	Jedes Kind bekommt ein Geschenk.
+jeder / jede / jedes	every; each	1	5514fe2f4e29501ef928478417d5507a	Jeder Mensch verdient es, mit Respekt behandelt zu werden, unabhängig davon, woher er kommt oder welche Sprache er spricht.	Jedes Kind bekommt ein Geschenk.
 welcher / welche / welches	which; what	1	3795172a212b4e35ad096e445739f102	Welchen Weg wir auch immer nehmen werden, wir müssen entscheiden.	Welches Buch möchtest du lesen?
 alles	everything	1	6796bdfe14007df6b229eb43ac1e1b06	Nachdem alles vorbereitet worden war und alles an seinem Platz stand, konnte die Feier endlich beginnen.	Alles ist gut.
 nichts	nothing	1	85b205a2eb603cde40b2ea354da07710	Obwohl er den ganzen Tag gesucht hatte, fand er nichts, was ihm hätte helfen können.	Ich weiß nichts davon.
@@ -128,7 +128,7 @@ groß	big; tall	1	b8f24b54d6196b3fed48f79b16f1c107	Das große Haus, das am Ende 
 klein	small; little	1	cdd00301fa51f190c534b0f3a8319b69	Das kleine Dorf, in dem wir unseren Urlaub verbrachten, war so klein, dass es nicht einmal einen Supermarkt gab.	Das Kind ist noch klein.
 gut	good; well	1	0a0e61fb3d5a3f8df42d50395f1a8517	Es wäre gut, wenn du dich vorher informieren würdest, damit alles gut vorbereitet ist und nichts schiefgehen kann.	Das Essen schmeckt gut.
 schlecht	bad; poor	1	f03c2eaa097de1f7b88d53d712508697	Die Nachricht war so schlecht, dass alle Beteiligten sich fragten, ob es noch schlechter hätte kommen können.	Das Wetter ist schlecht.
-neu	new	1	81344c9a94615b48bf87ec9f5de06057	Das neue System, das erst letzte Woche installiert worden war, funktionierte so gut.	Ich habe ein neues Handy.
+neu	new	1	81344c9a94615b48bf87ec9f5de06057	Das neue System, das erst letzte Woche installiert worden war, funktionierte so gut, dass alle Mitarbeiter sofort begeistert waren.	Ich habe ein neues Handy.
 alt	old	1	39e17937789e91469f4d1bd472e4780e	Das alte Gebäude, das über zweihundert Jahre alt ist, soll unter Denkmalschutz gestellt werden, bevor es zu spät ist.	Die Kirche ist sehr alt.
 jung	young	1	751a943c721f0f8daa1cf02576de518a	Obwohl sie noch sehr jung war, zeigte sie ein Talent, das so beeindruckend war.	Sie ist noch jung.
 lang	long	1	338794a0e4fd90f8890e3ec1fcfe5c99	Der lange Weg, den wir durch den Wald gehen mussten, war so lang, dass wir mehrere Pausen einlegen mussten.	Die Straße ist lang.
@@ -143,7 +143,7 @@ richtig	right; correct	1	532b1b5109bc71d545ef01332e6c0e30	Obwohl sie dachte, all
 falsch	wrong; false	1	7e395dc8a476d23574b7cff2296cb09b	Obwohl er überzeugt war, dass seine Entscheidung nicht falsch gewesen sei, erkannte er später seinen Irrtum.	Das ist falsch.
 in	in; into	1	1058770f125eb7196658e66deae218f0	In der kleinen Stadt, in der sie aufgewachsen war, hatte sich in den letzten Jahren so viel verändert.	Ich bin in der Schule.
 auf	on; upon; onto	1	d0fb53dda434bdb3b74d27c50403d562	Auf dem Tisch, der mitten auf dem Marktplatz stand, lagen verschiedene Waren, die auf Käufer warteten.	Das Buch liegt auf dem Tisch.
-an	at; on (vertical); to	1	2133bbbc59673647aca3056ca7785759	An dem Tag, an dem wir ankamen, war das Wetter so schlecht.	Das Bild hängt an der Wand.
+an	at; on (vertical); to	1	2133bbbc59673647aca3056ca7785759	An dem Tag, an dem wir ankamen, war das Wetter so schlecht, dass wir am liebsten gleich wieder umgekehrt wären.	Das Bild hängt an der Wand.
 mit	with	1	119ec8a650fde00010a73bb88a309b1d	Mit großer Freude nahm sie die Einladung an, obwohl sie wusste, dass der Abend mit viel Arbeit verbunden sein würde.	Ich gehe mit meinem Freund.
 für	for	1	2d112ff619a4b6e028d9effe79a34d55	Für die Kinder, die sich so sehr auf den Ausflug gefreut hatten, war es enttäuschend.	Das Geschenk ist für dich.
 von	from; of; by	1	a6f1118759d76841d1411e6f631812fd	Von dem Berg aus konnte man die ganze Stadt sehen, die von einem dichten Nebel umhüllt war.	Ich komme von der Arbeit.
@@ -165,7 +165,7 @@ bis	until; up to; by	1	12a9cc9712517cdfc2f8423264d3cc07	Sie warteten bis zum Abe
 seit	since; for (time)	1	ba490f2e9f213bf47230e49fc164ecd0	Seit sie in die neue Stadt gezogen war, hatte sie sich verändert, denn seit diesem Umzug war alles anders.	Ich wohne hier seit drei Jahren.
 während	while; during	1	b5d0e56ff067a0b7fd3a0c75d9665864	Während die einen draußen spielten, bereiteten die anderen während der gesamten Zeit das Abendessen in der Küche vor.	Während ich lese, hört er Musik.
 statt	instead of	1	7b4ec94fa2775641511d18f8da49ee00	Statt mit dem Auto zu fahren, nahm er den Zug.	Statt Kaffee trinke ich Tee.
-wegen	because of; due to	1	6146e9c8808440974cfab92816548c18	Wegen des starken Regens, der wegen eines Tiefdruckgebiets über die Region gezogen war.	Wegen des Wetters bleiben wir zu Hause.
+wegen	because of; due to	1	6146e9c8808440974cfab92816548c18	Wegen des starken Regens, der wegen eines Tiefdruckgebiets über die Region gezogen war, mussten alle Veranstaltungen im Freien abgesagt werden.	Wegen des Wetters bleiben wir zu Hause.
 die Schule	the school	1	a49b4530996e886bc3911423a8356223	Die Schule, die nach dem berühmten Dichter benannt worden war, wurde kürzlich renoviert.	Ich gehe in die Schule.
 der Lehrer / die Lehrerin	the teacher	1	d335bbdc144027be9beb8ed4013f48ea	Der Lehrer, der seit über zwanzig Jahren an dieser Schule unterrichtet, ist bei den Schülern sehr beliebt.	Der Lehrer erklärt die Aufgabe.
 das Buch	the book	1	ce30bed818646e4fd0a075e2e3ae856e	Das Buch, das in mehr als dreißig Sprachen übersetzt worden ist, erzählt die Geschichte einer Familie.	Ich lese ein Buch.
@@ -181,6 +181,6 @@ das Bett	the bed	1	06046844abf8de16636eb6ab7993deb9	Nachdem sie den ganzen Tag g
 die Küche	the kitchen	1	2dd8367d7748ce2b01056238f074c94a	In der Küche, die gerade renoviert worden war, duftete es so herrlich nach frischem Brot.	Die Küche ist sauber.
 das Bad	the bathroom	1	aef6dd1d40ec6a89f19fe4c950a18537	Das Bad, das erst vor kurzem modernisiert worden war, verfügte über eine große Badewanne.	Das Bad ist neben dem Schlafzimmer.
 der Garten	the garden	1	3dfbbc801a6051bbb8e049c15a98b82f	In dem großen Garten, der hinter dem Haus lag, wuchsen so viele verschiedene Blumen.	Der Garten ist schön.
-die Blume	the flower	1	c648fc6624a0330759309c8edf6c6351	Die Blume, die sie zum Geburtstag geschenkt bekommen hatte, blühte so prächtig.	Die Blume ist rot.
+die Blume	the flower	1	c648fc6624a0330759309c8edf6c6351	Die Blume, die sie zum Geburtstag geschenkt bekommen hatte, blühte so prächtig, dass sie das ganze Wohnzimmer in ein Meer von Farben verwandelte.	Die Blume ist rot.
 der Baum	the tree	1	1e3c5f5c32af8a69c046be77bc47a786	Der alte Baum, der seit über hundert Jahren im Park steht, wurde zum Naturdenkmal erklärt.	Der Baum ist hoch.
-die Sonne	the sun	1	dcece40eb087d8e2bb0216517c2aa429	Als die Sonne hinter den Bergen aufging und ihre warmen Strahlen über das Tal schickte, wussten wir.	Die Sonne scheint.
+die Sonne	the sun	1	dcece40eb087d8e2bb0216517c2aa429	Als die Sonne hinter den Bergen aufging und ihre warmen Strahlen über das Tal schickte, wussten wir, dass es ein wunderschöner Tag werden würde.	Die Sonne scheint.

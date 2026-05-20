@@ -9,17 +9,17 @@ der Professor / die Professorin	the professor	4	c137461410e4a24fa53c3da47d8cc5fa
 das Fach	the subject	4	920f584163d59bc12c21633d47050ff9	Das Fach, das sie als Leistungskurs gewählt hatte, bereitete ihr wider Erwarten große Freude.	Mathematik ist mein Lieblingsfach.
 die Mathematik	mathematics	4	7cd53412dd1a0d2ac52a252bdb64e3a2	Die Mathematik, deren abstrakte Konzepte vielen Schülern Schwierigkeiten bereiten, ist dennoch eine faszinierende Wissenschaft.	Mathematik ist nicht einfach.
 die Geschichte	history / story	4	f80a63ff39553b2f3e1336035f431759	Die Geschichte, die im Unterricht behandelt wurde, eröffnete den Schülern eine völlig neue Perspektive.	Ich mag Geschichte.
-die Wissenschaft	science	4	421b3bcaf050627772b08282dd71c36c	Die Wissenschaft, ohne deren Erkenntnisse unsere moderne Gesellschaft nicht existieren könnte.	Die Wissenschaft ist wichtig.
+die Wissenschaft	science	4	421b3bcaf050627772b08282dd71c36c	Die Wissenschaft, ohne deren Erkenntnisse unsere moderne Gesellschaft nicht existieren könnte, verdient deutlich mehr Anerkennung als sie heute erhält.	Die Wissenschaft ist wichtig.
 die Kunst	art	4	e4cf5cbd6cdf91d5b3afc13617ef8753	Die Kunst, die in diesem Museum ausgestellt wird, spiegelt die kulturelle Vielfalt Europas wider.	Ich mag moderne Kunst.
 die Musik	music	4	e7b10aa9ad506525f94bfba90cea937a	Die Musik, die während des Konzerts gespielt wurde, berührte das Publikum auf besondere Weise.	Ich höre gern Musik.
 die Sprache	the language	4	7aabe4dd5cdc41d9d8f4621c9601715d	Die Sprache, deren grammatikalische Strukturen sich grundlegend von denen des Deutschen unterscheiden, ist nicht leicht zu erlernen.	Deutsch ist eine schwere Sprache.
 die Literatur	literature	4	32d90a3b5e7e9f0f5c74721c565b08c9	Die Literatur, die in der Epoche der Romantik entstanden ist, wird an deutschen Universitäten intensiv erforscht.	Ich lese gern Literatur.
 die Bibliothek	the library	4	1a6ee54ce9b77487406efa071b4bab50	Die Bibliothek, in der über eine Million Bücher aufbewahrt werden, ist für Studierende kostenlos zugänglich.	Die Bibliothek hat viele Bücher.
 der Stift	the pen	4	88971ce9f0e0e5e55ef62f3b57e3856b	Hätte er einen Stift dabeigehabt, als ihm die brillante Idee während der Zugfahrt kam.	Hast du einen Stift?
-der Bleistift	the pencil	4	b11a1bde4f476c2639a67562c4d722c1	Der Bleistift, mit dem die Architektin ihre ersten Entwürfe skizzierte.	Ich brauche einen Bleistift.
+der Bleistift	the pencil	4	b11a1bde4f476c2639a67562c4d722c1	Der Bleistift, mit dem die Architektin ihre ersten Entwürfe skizzierte, lag noch heute in einer Schublade ihres Schreibtisches.	Ich brauche einen Bleistift.
 der Kugelschreiber	the ballpoint pen	4	34527e6ad7e78464cf2d10669e02e183	Der Kugelschreiber, den er sich von seinem Kollegen geliehen hatte, brachte ihn in eine unangenehme Situation.	Der Kugelschreiber schreibt blau.
-das Heft	the notebook	4	ac5208e17d0e1ac163f7c5ed9d638c5a	Das Heft, in das sie während des gesamten Semesters gewissenhaft mitgeschrieben hatte.	Ich schreibe in mein Heft.
-die Seite	the page / side	4	ce6bfa3f4d5916686508f9ed57b8bdf0	Die Seite, auf der die wichtigsten Informationen zusammengefasst worden waren.	Das Buch hat viele Seiten.
+das Heft	the notebook	4	ac5208e17d0e1ac163f7c5ed9d638c5a	Das Heft, in das sie während des gesamten Semesters gewissenhaft mitgeschrieben hatte, war ihre wichtigste Vorbereitung für die Prüfung.	Ich schreibe in mein Heft.
+die Seite	the page / side	4	ce6bfa3f4d5916686508f9ed57b8bdf0	Die Seite, auf der die wichtigsten Informationen zusammengefasst worden waren, markierte sie mit einem leuchtenden Klebezettel.	Das Buch hat viele Seiten.
 die Tafel	the blackboard	4	86deb0f4557b3143ef175e439f508ab5	An die Tafel, die in jedem Klassenzimmer der alten Schule hing, hatte die Lehrerin die Formel geschrieben.	Die Lehrerin schreibt an die Tafel.
 die Kreide	the chalk	4	4a799170ec247385f6dd909787d5c819	Die Kreide, mit der früher auf die Tafel geschrieben wurde, erinnert viele an ihre eigene Schulzeit.	Die Kreide ist weiß.
 das Wörterbuch	the dictionary	4	5e5f0e405326347691852d3ec2cade5f	Das Wörterbuch, das von einem Team aus Linguisten zusammengestellt wurde und über hunderttausend Einträge enthält, gilt als Standardwerk der Branche.	Ich schlage das Wort im Wörterbuch nach.
@@ -59,7 +59,7 @@ die Kirche	the church	4	d67f52ecc7ea23f5d37ed13bd6a234ef	Die Kirche, die im drei
 die Moschee	the mosque	4	bfec58799ccacf4d7712b6128ef87a42	Die Moschee, deren prachtvolle Architektur das Stadtbild seit Jahrzehnten prägt, wurde feierlich eingeweiht.	Die Moschee ist wunderschön.
 die Nachricht	the news / message	4	34e83e181efa7bba7e81515a040a1228	Die Nachricht, die sich innerhalb weniger Minuten über soziale Medien verbreitete, sorgte für große Aufregung.	Ich habe eine Nachricht bekommen.
 die Zeitung	the newspaper	4	31a118117960182c7aeb9e49de085886	Die Zeitung, die seit über hundert Jahren erscheint, gilt als eine der seriösesten des Landes.	Ich lese jeden Morgen die Zeitung.
-die Zeitschrift	the magazine	4	b3004654e396f831eabe86787aa4573b	Die Zeitschrift, in der regelmäßig Artikel über aktuelle wissenschaftliche Entdeckungen veröffentlicht werden.	Diese Zeitschrift erscheint monatlich.
+die Zeitschrift	the magazine	4	b3004654e396f831eabe86787aa4573b	Die Zeitschrift, in der regelmäßig Artikel über aktuelle wissenschaftliche Entdeckungen veröffentlicht werden, hat mittlerweile über hunderttausend Abonnenten.	Diese Zeitschrift erscheint monatlich.
 das Fernsehen	television	4	0088e3d46bc8f0cedf78ab6db73dab1f	Das Fernsehen, das einst als revolutionäres Medium galt, spielt für ältere Generationen immer noch eine wichtige Rolle.	Wir schauen abends Fernsehen.
 das Radio	the radio	4	3a8a36a07a95d5e1ab0124ff337bd7e3	Das Radio, das trotz der Konkurrenz durch digitale Medien weiterhin Millionen von Hörern erreicht, bleibt ein wichtiges Informationsmedium.	Ich höre Radio beim Frühstück.
 das Internet	the internet	4	015282b6c2d271f6f1fbcac9c8c26282	Das Internet, ohne das unser modernes Leben kaum noch vorstellbar wäre, birgt sowohl Chancen als auch Risiken.	Das Internet ist sehr schnell.
@@ -70,7 +70,7 @@ der Bericht	the report	4	3234ee4c6da25cde247a542935a58fe8	Der Bericht, der von e
 die Meldung	the report / news item	4	fdf388d2360521fb95fbb71973f7dfda	Die Meldung, die über alle Nachrichtenkanäle verbreitet wurde, hatte bereits große Unruhe in der Bevölkerung ausgelöst.	Die Meldung kam heute Morgen.
 die Werbung	the advertising	4	fb14e6a47cceca93d33e5efa99be3752	Die Werbung, die gezielt auf bestimmte Zielgruppen ausgerichtet ist, beeinflusst unser Kaufverhalten stärker.	Die Werbung im Fernsehen nervt mich.
 drucken	to print	4	5b3727e262a9b948aa7402fad2daaa73	Obwohl man heutzutage fast alles digital lesen kann, bevorzugen es viele Menschen, wichtige Dokumente zu drucken.	Kannst du das Dokument drucken?
-veröffentlichen	to publish	4	4b6f51c8920a4881064369921d8e40c7	Der Verlag beschloss, das Buch erst dann zu veröffentlichen, nachdem sämtliche rechtlichen Bedenken.	Sie will ihren Roman veröffentlichen.
+veröffentlichen	to publish	4	4b6f51c8920a4881064369921d8e40c7	Der Verlag beschloss, das Buch erst dann zu veröffentlichen, nachdem sämtliche rechtlichen Bedenken ausgeräumt worden waren.	Sie will ihren Roman veröffentlichen.
 die Information	the information	4	d3a0ee0e60f3f6a7d91076a347d49631	Die Information, die aus vertraulichen Quellen stammte, wurde schließlich der Öffentlichkeit zugänglich gemacht.	Ich brauche mehr Information darüber.
 die Meinung	the opinion	4	b7c20e143219a0c0da8fa9f165dcca77	Obwohl jeder das Recht hat, seine Meinung frei zu äußern, sollte man bedenken, dass die eigene Freiheit dort endet.	Das ist meine Meinung.
 diskutieren	to discuss	4	2ee06637656483af2776298a40f29c70	Anstatt das Problem sachlich zu diskutieren, wie es in einer demokratischen Gesellschaft üblich sein sollte.	Wir diskutieren das Thema morgen.
@@ -90,8 +90,8 @@ das Beispiel	the example	4	c3533499b0f851d808bbc4d20779ef3a	Das Beispiel, das de
 die Idee	the idea	4	34e2a092ad946b40e29a53b37225d5db	Die Idee, die ihr mitten in der Nacht gekommen war, erwies sich als der Durchbruch.	Das ist eine gute Idee!
 der Gedanke	the thought	4	5c469a5dc8f2ea7ff015022f7ce00223	Der Gedanke, dass man durch bloßes Nachdenken komplexe Probleme lösen kann.	Dieser Gedanke gefällt mir.
 der Grund	the reason	4	22b73cfff09cfb82ca2ab2f6c359ea49	Der Grund, warum er die Stelle abgelehnt hatte.	Es gibt einen guten Grund dafür.
-die Ursache	the cause	4	df9ca0b76cd66b1163d15be97f03243a	Die Ursache des Unfalls, die erst nach einer aufwendigen Untersuchung ermittelt werden konnte.	Die Ursache ist noch unbekannt.
-die Wirkung	the effect	4	2832cc077a1d297d1284e4a370c766cd	Die Wirkung des Medikaments, die bei jedem Patienten unterschiedlich ausfallen kann.	Die Wirkung ist sofort spürbar.
+die Ursache	the cause	4	df9ca0b76cd66b1163d15be97f03243a	Die Ursache des Unfalls, die erst nach einer aufwendigen Untersuchung ermittelt werden konnte, lag in einem technischen Defekt der Bremsen.	Die Ursache ist noch unbekannt.
+die Wirkung	the effect	4	2832cc077a1d297d1284e4a370c766cd	Die Wirkung des Medikaments, die bei jedem Patienten unterschiedlich ausfallen kann, muss vom Arzt sorgfältig überwacht werden.	Die Wirkung ist sofort spürbar.
 die Folge	the consequence	4	ccda29f82fe27ce17a1bfe20b6642651	Die Folge seiner unüberlegten Entscheidung, die er getroffen hatte, ohne sich vorher ausreichend beraten zu lassen.	Das hat schlimme Folgen.
 die Lösung	the solution	4	4207d841f4a26095e01bc859b2d9afca	Die Lösung, die nach wochenlanger Arbeit gefunden wurde, basierte auf einem kreativen Kompromissvorschlag.	Wir suchen eine Lösung für das Problem.
 das Problem	the problem	4	c17db7d2c1732b7c032c9ffdee835ed9	Das Problem, dessen Komplexität anfangs unterschätzt worden war, hätte vermieden werden können.	Das ist ein großes Problem.
@@ -109,14 +109,14 @@ die Ordnung	the order	4	ab692e22f084d3c47f91c7776a55967b	Die Ordnung, die nach d
 das Chaos	chaos	4	94acbc16713071f94b752194a273e28c	Das Chaos, das nach dem plötzlichen Stromausfall in der Innenstadt ausgebrochen war, legte sich erst mit Einbruch der Dunkelheit wieder.	Nach dem Sturm herrschte Chaos.
 die Regel	the rule	4	36298d556799c675e22d45d29c02d04f	Die Regel, die ursprünglich zum Schutz der Verbraucher eingeführt worden war, wurde im Laufe der Jahre mehrfach gelockert.	Das ist eine wichtige Regel.
 die Ausnahme	the exception	4	65d1ee1f5ab2da79f5d7b643cd1ec5c8	Die Ausnahme, die in diesem besonderen Fall gemacht wurde, war strikt zeitlich begrenzt.	Es gibt keine Ausnahme von dieser Regel.
-der Unterschied	the difference	4	d023e3dcae8d0cd4ce11eda7c4713124	Der Unterschied zwischen den beiden Methoden, der auf den ersten Blick kaum erkennbar ist.	Es gibt einen großen Unterschied.
-die Ähnlichkeit	the similarity	4	eff79237dc519ff9ccd73d818cb1f7b6	Die Ähnlichkeit zwischen den beiden Sprachen, die auf eine gemeinsame historische Wurzel zurückzuführen ist.	Die Ähnlichkeit ist verblüffend.
+der Unterschied	the difference	4	d023e3dcae8d0cd4ce11eda7c4713124	Der Unterschied zwischen den beiden Methoden, der auf den ersten Blick kaum erkennbar ist, zeigt sich erst in den Langzeitergebnissen.	Es gibt einen großen Unterschied.
+die Ähnlichkeit	the similarity	4	eff79237dc519ff9ccd73d818cb1f7b6	Die Ähnlichkeit zwischen den beiden Sprachen, die auf eine gemeinsame historische Wurzel zurückzuführen ist, erleichtert den Spracherwerb erheblich.	Die Ähnlichkeit ist verblüffend.
 der Vergleich	the comparison	4	6c121775e7879f52f6e1c5280869d1b0	Der Vergleich, den der Forscher zwischen den beiden Wirtschaftssystemen anstellte, lieferte überraschende Erkenntnisse.	Im Vergleich ist das sehr günstig.
 der Vorteil	the advantage	4	c8f0aadd98b9349d3fa3f9459ee1d0bc	Der Vorteil, den diese neue Technologie bietet, liegt in ihrer bemerkenswerten Energieeffizienz.	Das hat viele Vorteile.
 der Nachteil	the disadvantage	4	9a4784468c02c9da19338c82e8192179	Der Nachteil dieser Methode, der anfangs übersehen wurde, besteht in den hohen Wartungskosten.	Jede Lösung hat auch einen Nachteil.
-die Bedeutung	the meaning / importance	4	62acdfbc9c446dbea79b4525d59efa14	Die Bedeutung dieses historischen Ereignisses, die von Zeitgenossen noch nicht erkannt werden konnte.	Die Bedeutung dieses Wortes kenne ich nicht.
+die Bedeutung	the meaning / importance	4	62acdfbc9c446dbea79b4525d59efa14	Die Bedeutung dieses historischen Ereignisses, die von Zeitgenossen noch nicht erkannt werden konnte, wurde erst Jahrhunderte später vollständig gewürdigt.	Die Bedeutung dieses Wortes kenne ich nicht.
 der Sinn	the sense / meaning	4	36583878ccdddcf119308455f806fc06	Der Sinn dieser Maßnahme, der sich vielen Bürgern zunächst nicht erschloss, liegt im langfristigen Umweltschutz.	Das ergibt keinen Sinn.
-der Zweck	the purpose	4	dd461312e33239ef83003097b236f89f	Der Zweck der Studie, die von einem internationalen Forscherteam durchgeführt wurde, besteht darin.	Was ist der Zweck dieser Übung?
+der Zweck	the purpose	4	dd461312e33239ef83003097b236f89f	Der Zweck der Studie, die von einem internationalen Forscherteam durchgeführt wurde, besteht darin, die Auswirkungen des Klimawandels auf Korallenriffe zu untersuchen.	Was ist der Zweck dieser Übung?
 aufräumen	to tidy up	4	c706493a7a3b22cd58a93e0c2e65dabd	Obwohl er versprochen hatte, sein Zimmer aufzuräumen, wurde es von ihm erst dann gemacht, als seine Mutter drohte.	Ich räume mein Zimmer auf.
 putzen	to clean	4	dba3343b7db7fa4ed7aa9697a231b3df	Wenn ich gewusst hätte, dass die Gäste schon um drei kommen, hätte ich die Fenster früher geputzt.	Sie putzt das Bad jeden Samstag.
 waschen	to wash	4	f58c87c0daf91b238b0909a20536db1c	Die Kleidung, die gestern in der Maschine gewaschen wurde, muss noch auf die Leine gehängt werden.	Er wäscht seine Hände vor dem Essen.
@@ -147,7 +147,7 @@ sich bedanken	to thank	4	c0b7416c7d0a174b34631d0018d9ab17	Sie bedankte sich herz
 gratulieren	to congratulate	4	810c625cd888f57eaaa2013b420bc816	Alle Kollegen gratulierten ihr zur Beförderung.	Wir gratulieren dir zum Geburtstag!
 feiern	to celebrate	4	8909567935d0d6a4c676bdfeca893383	Das Fest, das bis in die frühen Morgenstunden gefeiert wurde, hätte nicht schöner sein können.	Wir feiern heute seinen Geburtstag.
 schenken	to give (a gift)	4	388a547bdaecc374c1562957bc217058	Das Buch, das mir meine Mutter zum Abschluss geschenkt hatte, erwies sich als das wertvollste Geschenk.	Sie schenkt ihm eine Uhr zum Geburtstag.
-das Geschäft	the shop / the business	4	9a0f6f4179ca3a9db938e12ceb5cdfa4	Das kleine Geschäft an der Ecke, das seit über fünfzig Jahren von derselben Familie geführt wird.	Das Geschäft öffnet um neun Uhr.
+das Geschäft	the shop / the business	4	9a0f6f4179ca3a9db938e12ceb5cdfa4	Das kleine Geschäft an der Ecke, das seit über fünfzig Jahren von derselben Familie geführt wird, ist aus dem Stadtviertel nicht mehr wegzudenken.	Das Geschäft öffnet um neun Uhr.
 der Laden	the store	4	1f7d9f4d80fcfb5f5b7604ffe46f8699	Der Laden, in dem wir früher immer eingekauft haben, musste geschlossen werden.	Der Laden ist heute geschlossen.
 der Markt	the market	4	24ca545939860f57c94bd53899cb8aa1	Auf dem Markt, der jeden Samstag in der Altstadt stattfindet, werden Produkte verkauft.	Ich kaufe Obst auf dem Markt.
 der Supermarkt	the supermarket	4	f2918d344e0f631ee4ea4964401b2d38	Obwohl der neue Supermarkt erst vor einer Woche eröffnet wurde, ist er bereits so beliebt.	Der Supermarkt ist um die Ecke.
@@ -156,7 +156,7 @@ die Kasse	the cash register / the checkout	4	0ec165da3e6e7977a30d023599b2a3eb	An
 der Preis	the price	4	6a888ee3900ac71fb33bd8d44c28fa27	Der Preis, der für dieses handgefertigte Möbelstück verlangt wird, erscheint zunächst hoch.	Der Preis ist zu hoch für mich.
 das Angebot	the offer / the deal	4	93c58eae6e01172f5abec7b8e4cbecff	Das Angebot, das nur bis Ende der Woche gilt, wäre eine ausgezeichnete Gelegenheit, wenn man bedenkt, wie schnell die Preise steigen.	Dieses Angebot ist wirklich gut.
 der Rabatt	the discount	4	6976303b9d3a9c3ce6f6ec016393026a	Den Rabatt, der normalerweise nur Stammkunden gewährt wird, bekam ich.	Gibt es einen Rabatt auf diesen Artikel?
-die Quittung	the receipt	4	d1c5cabc5d42fad5e1a8f906fce56b1e	Ohne die Quittung, die ich glücklicherweise noch in meiner Jackentasche gefunden hatte.	Kann ich bitte die Quittung haben?
+die Quittung	the receipt	4	d1c5cabc5d42fad5e1a8f906fce56b1e	Ohne die Quittung, die ich glücklicherweise noch in meiner Jackentasche gefunden hatte, hätte ich die defekte Ware nicht umtauschen können.	Kann ich bitte die Quittung haben?
 die Rechnung	the bill / the invoice	4	adaf158ad3e228b32cfdfb745061d896	Die Rechnung, die uns per Post zugeschickt worden war, enthielt mehrere Fehler, weshalb wir sie reklamieren mussten.	Die Rechnung beträgt fünfzig Euro.
 die Währung	the currency	4	1f4a33214e9727b206a3d80a0b5fc8a6	Die Währung des Landes, in das wir reisen wollen, hat in den letzten Monaten so stark geschwankt.	Der Euro ist die Währung in Deutschland.
 der Euro	the euro	4	cc9dc0525a94aaef90df4470fcd00c9a	Seit der Euro im Jahr 2002 als Bargeld eingeführt wurde, sind die Preise in vielen Ländern gestiegen.	Das kostet fünf Euro.
@@ -171,8 +171,8 @@ teuer	expensive	4	85baa1e979e7b7174ad7667f0760df77	Das Restaurant, das so teuer 
 billig	cheap	4	05d1c853e1e24cede6e7a251fb491cfa	Die Möbel, die so billig angeboten werden, sind erfahrungsgemäß von minderer Qualität.	Das T-Shirt ist sehr billig.
 günstig	affordable / favorable	4	afb73fdb356dbba7ca1ad77387132ebe	Wenn man zur richtigen Zeit bucht, kann man erstaunlich günstige Flüge finden, die kaum mehr kosten als eine Zugfahrt.	Der Preis ist sehr günstig.
 die Auswahl	the selection / the choice	4	65bb1bf44d16dd3bbdc51193f03eb042	Die Auswahl an vegetarischen Gerichten, die in diesem Restaurant angeboten wird, ist so vielfältig.	Die Auswahl im Laden ist groß.
-die Abteilung	the department	4	287bfc4289216021802775ef63f85670	Die Abteilung für Haushaltswaren, die sich im dritten Stock des Kaufhauses befindet.	Die Abteilung für Schuhe ist im zweiten Stock.
-anprobieren	to try on	4	8f324a8dbf6c717b316f2e20bbc344dc	Das Kleid, das sie im Schaufenster gesehen und unbedingt anprobieren wollte, passte ihr so gut.	Darf ich diese Hose anprobieren?
+die Abteilung	the department	4	287bfc4289216021802775ef63f85670	Die Abteilung für Haushaltswaren, die sich im dritten Stock des Kaufhauses befindet, wurde im letzten Jahr komplett neu gestaltet.	Die Abteilung für Schuhe ist im zweiten Stock.
+anprobieren	to try on	4	8f324a8dbf6c717b316f2e20bbc344dc	Das Kleid, das sie im Schaufenster gesehen und unbedingt anprobieren wollte, passte ihr so gut, dass sie es sofort kaufte.	Darf ich diese Hose anprobieren?
 passen	to fit	4	f0b7378db37b71649c0e22f3bdbda2c3	Die Schuhe, die im Online-Shop bestellt worden waren, passten leider nicht, weshalb sie zurückgeschickt werden mussten.	Die Schuhe passen mir perfekt.
 gefallen	to please / to like	4	a2b59f186bf83bae82724b81e167a447	Das Gemälde, das meiner Mutter so gut gefallen hat, wurde von einem unbekannten Künstler gemalt.	Das Kleid gefällt mir sehr gut.
 die Tüte	the bag	4	50ae5e34fc1834850848a388033717f7	Seit in Deutschland für Plastiktüten bezahlt werden muss, bringen die meisten Kunden ihre eigene Tüte mit.	Brauchen Sie eine Tüte?

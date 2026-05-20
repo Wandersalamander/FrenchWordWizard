@@ -10,9 +10,9 @@ sich bewegen	to move	6	437f437f78cba2524ffa2ace3f446e46	Obwohl der Arzt ihm gera
 anhalten	to stop, to halt	6	a86f313c50c47543d1725ac97e9c0609	Der Bus, der an der Haltestelle hätte anhalten müssen, fuhr einfach vorbei.	Der Bus wird gleich anhalten.
 beschleunigen	to accelerate	6	81de30b3430d5928bae94d04bff5f70b	Wenn man den Prozess hätte beschleunigen wollen, hätte man mehr Mitarbeiter einstellen müssen.	Das Auto kann schnell beschleunigen.
 verlangsamen	to slow down	6	413c743d342bed6ebbd131c850b9b2aa	Die Maßnahmen, die ergriffen worden waren, um das Wachstum der Inflation zu verlangsamen, hätten wirksamer sein können.	Bitte verlangsamen Sie das Tempo.
-schieben	to push	6	f5274e8fe3d5eb47e23483952dd415c9	Den schweren Schrank, den sie allein hätte schieben müssen.	Kannst du den Wagen schieben?
+schieben	to push	6	f5274e8fe3d5eb47e23483952dd415c9	Den schweren Schrank, den sie allein hätte schieben müssen, brachten zum Glück zwei Nachbarn gemeinsam an die richtige Stelle.	Kannst du den Wagen schieben?
 gleiten	to glide, to slide	6	9f21337d403051a5c4a98a5feda499e7	Das Boot, das lautlos über den spiegelglatten See zu gleiten schien, hinterließ kaum eine Welle.	Die Schlittschuhe gleiten über das Eis.
-klettern	to climb	6	2ebdc92e56ff1a44387f2b188d5f72be	Auf den Felsen zu klettern, der von erfahrenen Bergsteigern als schwierig eingestuft worden war.	Die Kinder klettern auf den Baum.
+klettern	to climb	6	2ebdc92e56ff1a44387f2b188d5f72be	Auf den Felsen zu klettern, der von erfahrenen Bergsteigern als schwierig eingestuft worden war, traute sich der ungeübte Anfänger nicht.	Die Kinder klettern auf den Baum.
 kriechen	to crawl, to creep	6	6fdcab342a78f288261202e8a91b88d1	Obwohl die Höhle so eng war, dass man nur kriechend hätte vorankommen können, wagte er sich hinein.	Das Baby kann schon kriechen.
 sich bücken	to bend down	6	15f8e2b0d919dfaab581a9e033b65876	Obwohl der Arzt ihm empfohlen hatte, sich nicht zu bücken, musste er es dennoch tun, um den Schlüssel aufzuheben.	Ich muss mich bücken, um es aufzuheben.
 sich strecken	to stretch	6	f8b812cb30cde0837b4d838bd07a94c8	Nachdem sie stundenlang am Schreibtisch gesessen hatte, musste sie sich strecken, um die Verspannungen zu lösen.	Nach dem Aufwachen muss ich mich strecken.
@@ -71,7 +71,7 @@ messen	to measure	6	e57f10036ebc14770c8dc44a23e49304	Wenn man die Temperatur exa
 wiegen	to weigh	6	112b8ff2b1c597d3872a72b34eff5f6c	Um die Zutaten präzise zu wiegen, hätte man eine digitale Waage verwenden sollen.	Ich wiege das Paket auf der Waage.
 die Länge	length	6	e4b063df2eeeb2280a91b10151786ca3	Die Länge des Tunnels, der durch die Alpen gebohrt wurde, beträgt über fünfzig Kilometer.	Die Länge des Zimmers beträgt fünf Meter.
 die Breite	width	6	70803738c92be0b1537ee17dfaead99d	Die Breite des Flusses, die je nach Jahreszeit erheblich schwankt, wäre am Oberlauf geringer gewesen.	Die Breite der Straße ist zehn Meter.
-die Höhe	height	6	61b1837507f7e2ab0a839469888727b0	Die Höhe des Berges, die von verschiedenen Expeditionen unterschiedlich angegeben wird.	Die Höhe des Turms ist beeindruckend.
+die Höhe	height	6	61b1837507f7e2ab0a839469888727b0	Die Höhe des Berges, die von verschiedenen Expeditionen unterschiedlich angegeben wird, beträgt nach neuesten Messungen knapp achttausend Meter.	Die Höhe des Turms ist beeindruckend.
 die Tiefe	depth	6	496fa2ebba039acf16e4c6b3eeb7c7ee	Die Tiefe des Ozeans, deren Erforschung technisch anspruchsvoll ist, birgt Geheimnisse.	Die Tiefe des Sees beträgt zwanzig Meter.
 das Gewicht	weight	6	4efb9f1e46f5c1a7fb2dfa74dcb25836	Das Gewicht des Pakets, das die zulässige Grenze überschritten hatte, hätte reduziert werden müssen.	Das Gewicht der Tasche ist zwei Kilo.
 die Geschwindigkeit	speed	6	7853d366a170bf9f7c1479c08d6a94db	Die Geschwindigkeit, mit der sich die Technologie weiterentwickelt, hätte niemand vorhergesagt.	Die Geschwindigkeit des Zuges ist hoch.
@@ -95,11 +95,11 @@ der Nagel	nail	6	111772a14119a943d6116de511e4774a	Der Nagel, der schief in die W
 die Zange	pliers	6	66e74c55929a638dced27eb66372b979	Die Zange, mit der der Elektriker den Draht durchtrennte, wäre nützlicher gewesen, wenn sie schärfer gewesen wäre.	Gib mir bitte die Zange.
 die Säge	saw	6	5ddedbd81c56994222ab65459593e928	Die Säge, deren Blatt regelmäßig geschärft werden muss und mit der die dicksten Stämme durchtrennt werden können, ist das wichtigste Werkzeug des Försters.	Die Säge ist sehr scharf.
 der Bohrer	drill	6	b494e0bf06316c608a73102af29952b1	Der Bohrer, der für Betonwände konzipiert wurde, hätte das Loch schneller gebohrt, wenn die Drehzahl höher gewesen wäre.	Der Bohrer macht ein Loch in die Wand.
-der Schraubenzieher	screwdriver	6	22c7a78a66b63d4dc22cadf2266e4761	Der Schraubenzieher, mit dem die winzigen Schrauben des Laptops gelöst werden sollten.	Wo ist der Schraubenzieher?
+der Schraubenzieher	screwdriver	6	22c7a78a66b63d4dc22cadf2266e4761	Der Schraubenzieher, mit dem die winzigen Schrauben des Laptops gelöst werden sollten, hatte leider genau die falsche Größe.	Wo ist der Schraubenzieher?
 das Werkzeug	tool	6	1ad36ecadb015d26d23aade451afa1f8	Das Werkzeug, das über Generationen in der Familie weitergegeben wurde, wäre auf dem Antiquitätenmarkt sehr wertvoll.	Das Werkzeug liegt in der Garage.
 reparieren	to repair	6	ad48d05864e4d72055871e8ea9e21aa8	Obwohl der Mechaniker versuchte, das alte Radio zu reparieren, dessen Röhren längst nicht mehr hergestellt werden.	Kannst du mein Fahrrad reparieren?
-das Klebeband	adhesive tape	6	8fbfaac3d052617262d31255a5f8811d	Das Klebeband, mit dem die zerrissene Seite provisorisch zusammengehalten wurde.	Ich brauche das Klebeband für das Paket.
-der Draht	wire	6	e91ca1488004d5841688c643d6e95652	Der Draht, aus dem der Künstler eine filigrane Skulptur formte.	Der Draht ist dünn und lang.
+das Klebeband	adhesive tape	6	8fbfaac3d052617262d31255a5f8811d	Das Klebeband, mit dem die zerrissene Seite provisorisch zusammengehalten wurde, lockerte sich schon nach wenigen Tagen wieder.	Ich brauche das Klebeband für das Paket.
+der Draht	wire	6	e91ca1488004d5841688c643d6e95652	Der Draht, aus dem der Künstler eine filigrane Skulptur formte, stammte ursprünglich aus alten Telefonleitungen.	Der Draht ist dünn und lang.
 die Leiter	ladder	6	7f99c4406134fffbc236298748b0e3b8	Die Leiter, die gegen die Hauswand gelehnt wurde und auf der der Maler bis zum Dach kletterte, geriet plötzlich gefährlich ins Wanken.	Ich brauche die Leiter, um auf das Dach zu kommen.
 der Eimer	bucket	6	03570a0bee6de0717d26ab61c5566078	Der Eimer, in den das Regenwasser tropfte, hätte durch eine Reparatur des Dachs überflüssig gemacht werden können.	Der Eimer ist voll mit Wasser.
 der Besen	broom	6	60ecfde2ac0d54c43371a7b03b186932	Der Besen, mit dem die Küche nach der Feier gefegt wurde, hätte längst durch einen neuen ersetzt werden sollen.	Ich fege den Boden mit dem Besen.
@@ -108,7 +108,7 @@ das Bügeleisen	iron	6	5e57027cbf27427bda6e007bcc4ca276	Das Bügeleisen war zu h
 die Waschmaschine	washing machine	6	93fd742fb0f7b203f5620793460ff049	Die Waschmaschine, die mitten im Schleudergang stehen blieb, hätte von einem Fachmann repariert werden müssen.	Die Waschmaschine wäscht die Kleidung.
 der Geschirrspüler	dishwasher	6	1289ed3b6edfcc414521f118624f07ca	Der Geschirrspüler, der nach dem letzten Spülgang eine Pfütze auf dem Küchenboden hinterlassen hatte, musste vom Techniker dringend überprüft werden.	Der Geschirrspüler ist kaputt.
 die Mikrowelle	microwave	6	0b326a76e2b4c99dbfb02a67cd46adb8	Die Mikrowelle, in der das Essen viel zu lange erhitzt wurde, hätte längst ersetzt werden sollen.	Ich wärme das Essen in der Mikrowelle auf.
-der Herd	stove	6	5d45cae0c3e62610c9f3a47690c54898	Der Herd, auf dem die Suppe stundenlang vor sich hin köchelte.	Der Herd ist in der Küche.
+der Herd	stove	6	5d45cae0c3e62610c9f3a47690c54898	Der Herd, auf dem die Suppe stundenlang vor sich hin köchelte, machte die ganze Küche angenehm warm.	Der Herd ist in der Küche.
 der Backofen	oven	6	279855de9378b19bc218d15ca52c709f	Der Backofen, der auf zweihundert Grad vorgeheizt wurde und in dem der Kuchen goldbraun gebacken werden sollte, gab plötzlich seinen Geist auf.	Der Kuchen ist im Backofen.
 der Wasserhahn	faucet, tap	6	9022fc60b90d5b28eee78d23ed145f6e	Der Wasserhahn, aus dem seit Tagen ununterbrochen Wasser tropfte, hätte sofort repariert werden müssen.	Der Wasserhahn tropft.
 das Spülbecken	kitchen sink	6	f2b0b4694821117c25ac08e5b23b9af5	Das Spülbecken, das seit dem Wochenende verstopft war und in dem sich schmutziges Wasser angestaut hatte, wurde vom Klempner endlich freigemacht.	Das Spülbecken ist voller Geschirr.
@@ -131,7 +131,7 @@ der Geburtstag	birthday	6	c8b8c158217cff4e0c84361ec1ddc823	Der Geburtstag konnte
 das Jubiläum	anniversary, jubilee	6	b4d1731d93b4ea5f261fed086f576e05	Das Jubiläum, das mit einem großen Festakt begangen wurde und zu dem Ehrengäste aus aller Welt angereist waren, wird allen Teilnehmern noch lange in Erinnerung bleiben.	Das Jubiläum der Firma ist nächste Woche.
 die Verlobung	engagement	6	799fc77d9bc2668c9714d1fd1cdaf6d1	Die Verlobung, die bei einem romantischen Abendessen verkündet wurde und über die sich die ganze Familie freute, sollte schon bald in eine prachtvolle Hochzeit münden.	Die Verlobung war eine große Überraschung.
 die Taufe	baptism	6	963cfaadc21f6c3e3690f22ccd3970f2	Die Taufe, die in der kleinen Dorfkirche stattfand und bei der drei Generationen zusammenkamen, war für die Großeltern ein bewegender Moment.	Die Taufe findet am Sonntag statt.
-die Beerdigung	funeral	6	09fe5b766d8ac2a0d0f1afc597ee174e	Die Beerdigung, an der Hunderte von Trauernden teilnahmen und bei der ergreifende Reden gehalten wurden.	Die Beerdigung war sehr traurig.
+die Beerdigung	funeral	6	09fe5b766d8ac2a0d0f1afc597ee174e	Die Beerdigung, an der Hunderte von Trauernden teilnahmen und bei der ergreifende Reden gehalten wurden, zeigte deutlich, wie sehr der Verstorbene geliebt worden war.	Die Beerdigung war sehr traurig.
 der Feiertag	holiday, public holiday	6	420aab6c22a808580f7b765b5a5b12f9	Der Feiertag, der in diesem Bundesland begangen wird, aber in den Nachbarländern ein gewöhnlicher Arbeitstag ist.	Am Feiertag haben die Geschäfte geschlossen.
 das Weihnachten	Christmas	6	7c054ac6e69fd078d2013b48d8befbba	Das Weihnachten, das wegen des starken Schneefalls beinahe ohne die Großeltern hätte gefeiert werden müssen, wurde dank eines Räumfahrzeugs doch noch zum Familienfest.	An Weihnachten gibt es Geschenke.
 das Ostern	Easter	6	a8fff5278d09a3e279b191d2067b70a9	Das Ostern, das in diesem Jahr mit ungewöhnlich warmem Wetter einherging und an dem die Kinder im Garten Eier suchten, blieb der ganzen Familie in glücklicher Erinnerung.	An Ostern suchen die Kinder Eier.
@@ -146,14 +146,14 @@ der Eintritt	admission, entry	6	5cdf46154ff976d10656c519d1fe6735	Der Eintritt, d
 die Eintrittskarte	admission ticket	6	ed319b95bdf76f308cca7e97af57c870	Die Eintrittskarten waren innerhalb weniger Minuten ausverkauft.	Ich kaufe eine Eintrittskarte für das Konzert.
 das Publikum	audience	6	611f0e42bb47b59f81354bf30dfa9c7c	Das Publikum applaudierte nach der bewegenden Aufführung minutenlang stehend.	Das Publikum klatscht laut.
 der Applaus	applause	6	9ac2f2f7969cffc5fe2d0e117c916d51	Der Applaus, der nach dem letzten Akt durch den gesamten Saal hallte, hätte die Darsteller noch mehr gefreut.	Der Applaus war lang und laut.
-die Bühne	stage	6	7ab4926d8d28625650fd5ef1a1b1d98b	Die Bühne, auf der die berühmtesten Schauspieler der Welt aufgetreten sind.	Die Sängerin steht auf der Bühne.
+die Bühne	stage	6	7ab4926d8d28625650fd5ef1a1b1d98b	Die Bühne, auf der die berühmtesten Schauspieler der Welt aufgetreten sind, sollte in diesem Jahr ihr hundertjähriges Jubiläum feiern.	Die Sängerin steht auf der Bühne.
 der Vorhang	curtain	6	3dd893cb0971ae799d8b76c0adf21d0e	Der Vorhang, der sich langsam hob und hinter dem eine atemberaubende Kulisse zum Vorschein kam, ließ das Publikum staunend verstummen.	Der Vorhang geht auf.
-die Garderobe	cloakroom, wardrobe	6	dce8fe9ff9c43e59690dcaeabbc5d530	Die Garderobe, in der die Mäntel der Theaterbesucher aufbewahrt wurden.	Bitte geben Sie Ihren Mantel an der Garderobe ab.
+die Garderobe	cloakroom, wardrobe	6	dce8fe9ff9c43e59690dcaeabbc5d530	Die Garderobe, in der die Mäntel der Theaterbesucher aufbewahrt wurden, war nach der Pause vom Personal in Sekundenschnelle wieder geleert.	Bitte geben Sie Ihren Mantel an der Garderobe ab.
 die Wahrheit	truth	6	8eb4c0edcf7438021cf3947d0970fa05	Die Wahrheit, die jahrelang verschwiegen worden war, hätte früher ans Licht kommen müssen.	Die Wahrheit ist manchmal schwer zu sagen.
 die Lüge	lie	6	8592fc0378a632a9cdba1f577dbe147a	Die Lüge, die so geschickt konstruiert war, blieb über Jahre hinweg unentdeckt.	Eine Lüge hat kurze Beine.
 die Hoffnung	hope	6	f40c5ace076b480f2f6092aa0a0b2c17	Die Hoffnung, die sie trotz aller Rückschläge nie aufgegeben hatte, wäre ohne die Unterstützung ihrer Familie erloschen.	Die Hoffnung gibt mir Kraft.
 die Angst	fear, anxiety	6	681f532aa92b6d98810a6b93cb59ff71	Die Angst, die ihn seit seiner Kindheit begleitete, hätte überwunden werden können, wenn er früher Hilfe gesucht hätte.	Die Angst vor Spinnen ist weit verbreitet.
-die Freude	joy	6	c81675b926a3398a7cae78d0991c8b1a	Die Freude, die sich auf ihrem Gesicht abzeichnete, als sie die Nachricht erhielt.	Die Freude über das Geschenk war groß.
+die Freude	joy	6	c81675b926a3398a7cae78d0991c8b1a	Die Freude, die sich auf ihrem Gesicht abzeichnete, als sie die Nachricht erhielt, war kaum zu übersehen.	Die Freude über das Geschenk war groß.
 die Trauer	grief, mourning	6	6a1af2ee06e95595fa68d66e3cacce77	Die Trauer, die nach dem Verlust eines geliebten Menschen empfunden wird, wäre leichter zu ertragen.	Die Trauer nach dem Verlust ist groß.
 der Mut	courage	6	095ff6ce85dab0103bfb9a5537ecd924	Der Mut, den sie aufbrachte, als sie vor dem gesamten Publikum sprach, hätte gefehlt.	Man braucht Mut, um Neues zu wagen.
 die Geduld	patience	6	ce36916c73498c80e3579f128ca94455	Die Geduld, die aufgebracht werden musste, während die endlosen Verhandlungen sich über Monate hinzogen.	Geduld ist eine wichtige Eigenschaft.
