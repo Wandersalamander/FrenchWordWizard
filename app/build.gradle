@@ -5,10 +5,16 @@ plugins {
 }
 
 android {
-    namespace 'com.example.myapplication'
+    // Kotlin/Java namespace for R, BuildConfig, and relative class names in
+    // the manifest. Independent of applicationId so we can rename the source
+    // tree without changing the installed-app identity on user devices.
+    namespace 'io.github.wandersalamander.vocabtrainer'
     compileSdk 34
 
     defaultConfig {
+        // Intentionally NOT updated alongside the namespace rename — keeping
+        // the original applicationId means existing installs (and their
+        // streak/mastery/vocab progress) survive the refactor.
         applicationId "com.example.myapplication"
         minSdk 26
         targetSdk 34
@@ -46,7 +52,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
     // Room (SQLite) — replaces SharedPreferences as the source of truth for
     // per-vocab stats, streak state, and daily counters. Repository layer
-    // (com.example.myapplication.data) hides the storage backend so future
+    // (io.github.wandersalamander.vocabtrainer.data) hides the storage backend so future
     // cloud-sync / Google-Account-backup features can swap implementations
     // without touching call sites. See ADR-001.
     //

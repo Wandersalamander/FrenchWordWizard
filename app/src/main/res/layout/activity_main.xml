@@ -92,7 +92,7 @@
     </LinearLayout>
 
     <!-- ============================ VOCAB CARD ============================ -->
-    <com.example.myapplication.quiz.SwipeableVocabCard
+    <io.github.wandersalamander.vocabtrainer.quiz.SwipeableVocabCard
         android:id="@+id/cardVocab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -220,7 +220,7 @@
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/textGuessLong"
             app:layout_constraintTop_toTopOf="@+id/textGuessLong" />
-    </com.example.myapplication.quiz.SwipeableVocabCard>
+    </io.github.wandersalamander.vocabtrainer.quiz.SwipeableVocabCard>
 
     <!-- Flex spacer: absorbs any leftover vertical room between the vocab
          card and the bottom block, instead of letting cards drift apart

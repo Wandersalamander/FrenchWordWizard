@@ -33,16 +33,29 @@ The model file path is per-app external storage, so no root is required.
 ## Project layout
 
 ```
-app/src/main/java/com/example/myapplication/
-├── quiz/          # MainActivity, QuizController, swipeable cards, progress UI
-├── dictionary/    # Vocab model, scheduling math, language data, CSV parsing
+app/src/main/java/io/github/wandersalamander/vocabtrainer/
+├── quiz/          # MainActivity + QuizController orchestrator, split into
+│                  # focused collaborators: SentenceManager, QuizPicker,
+│                  # ProgressBarAnimator, StreakBadgeView, SpotCheckController,
+│                  # SwipeableVocabCard, SkillFlow, SoundEffects
+├── dictionary/    # Vocab model, scheduling math (Skill, Vocab, MyDictionary)
+│                  # plus VocabSelector — the pickers used by the quiz
 ├── llm/           # LlmService (Gemma 4 wrapper), ModelDownloader
-├── streak/        # Streak tracking, alarms, notifications, boot receiver
+├── progress/      # Per-day counters: MasteryTracker, SkillFinishedTracker
+├── streak/        # Daily streak: StreakTracker, alarms, notifications,
+│                  # BootReceiver
 ├── settings/      # SettingsActivity
 ├── wordlist/      # WordListActivity + adapter (browse all vocab)
 ├── service/       # MyForegroundService (dictionary reload coordination)
-└── data/          # AppPrefs (SharedPreferences wrapper)
+└── data/          # Cross-storage facades (DataLayer, VocabPersistence)
+    ├── prefs/     # AppPrefs (SharedPreferences wrapper)
+    ├── db/        # Room: AppDatabase, Converters, dao/, entities/
+    └── migration/ # LegacyImporter (one-shot SharedPrefs → Room copy)
 ```
+
+The Android `applicationId` deliberately stays as `com.example.myapplication`
+(see [app/build.gradle](app/build.gradle)) so user installs retain their
+streak/mastery/vocab progress across the Kotlin-namespace rename.
 
 Vocabulary CSVs live in [app/src/main/assets](app/src/main/assets) under one folder per language.
 
