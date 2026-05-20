@@ -24,7 +24,7 @@
 猪肉 (zhūròu)	pork	3	114daa63e178719e4ce8a3cd1e9d5815	中国菜里猪肉用得最多。	猪肉饺子。
 羊肉 (yángròu)	lamb; mutton	3	320f03f9dbfdcf949d48b49d20fdd5b3	冬天吃羊肉很暖身。	羊肉串。
 虾 (xiā)	shrimp	3	f19fb7315f047e812aa5ce7044367a70	这道白灼虾特别新鲜。	大虾。
-螃蟹 (pángxiè)	crab	3	bcd50c9f165fc5b1c72261b78b88eeb1	中秋节是吃螃蟹的好时候。	大闸蟹。
+螃蟹 (pángxiè)	crab	3	bcd50c9f165fc5b1c72261b78b88eeb1	中秋节是吃螃蟹的好时候。	吃螃蟹。
 苹果 (píngguǒ)	apple	3	953bddb8394edb6715415d7c31b00a59	一天一个苹果,医生远离我。	红苹果。
 香蕉 (xiāngjiāo)	banana	3	9cfdb04219de460a38442d01c01210f3	早餐我常吃一根香蕉。	黄香蕉。
 橙子 (chéngzi)	orange	3	0e2764ef8998ecb4739a741c63eda480	冬天的橙子又甜又多汁。	大橙子。
@@ -77,13 +77,13 @@
 羊 (yáng)	sheep	3	89846331f6bf590bd3eace67ed116fd0	内蒙古有很多牛羊。	山羊。
 鸡 (jī)	chicken	3	792a0243c9f7256de569d4e1073febe7	老母鸡炖汤特别滋补。	大公鸡。
 鸭 (yā)	duck	3	7f8288004448e85b261dba8af13ff372	北京烤鸭用的是填鸭。	大鸭子。
-兔子 (tùzi)	rabbit	3	331e4bba4de5f0b423a862a08c8e1763	兔子最喜欢吃胡萝卜。	小白兔。
+兔子 (tùzi)	rabbit	3	331e4bba4de5f0b423a862a08c8e1763	兔子最喜欢吃胡萝卜。	小兔子。
 老鼠 (lǎoshǔ)	mouse	3	77d2d96ebf2636857a06c7fc1f04fc0c	厨房里有老鼠真让人头疼。	大老鼠。
 狼 (láng)	wolf	3	3e6615fd594dd806f800700c5fb33b6c	狼群是非常聪明的动物。	大灰狼。
 熊 (xióng)	bear	3	704a3ff7fa1a736bd750e1b50f9b6621	大熊猫是中国的国宝。	大狗熊。
 老虎 (lǎohǔ)	tiger	3	e99f2181fce75d6b37c53f808e6da4f1	老虎是百兽之王。	大老虎。
 狮子 (shīzi)	lion	3	fc3d9d73b77270ee98a6bb2c30c2d687	非洲草原上有很多狮子。	狮子王。
-大象 (dàxiàng)	elephant	3	becbf3863aa6de7a8fb97546b4be23bb	大象是陆地上最大的动物。	非洲象。
+大象 (dàxiàng)	elephant	3	becbf3863aa6de7a8fb97546b4be23bb	大象是陆地上最大的动物。	大象很大。
 猴子 (hóuzi)	monkey	3	29acb09641f48d8b3300b216ad84d59b	动物园里的猴子很活泼。	小猴子。
 天气 (tiānqì)	weather	3	ba9bef6e19500561cda7e09cdcfa480f	今天天气真不错,适合出门。	好天气。
 太阳 (tàiyáng)	sun	3	43aea55898118d720563749b2fe7edf0	太阳出来了,我们出去走走吧。	大太阳。
@@ -131,7 +131,7 @@
 皮带 (pídài)	belt	3	34a929183160fd48ba6be3e197455fe9	这条皮带是真皮的。	黑皮带。
 钱包 (qiánbāo)	wallet	3	1503a012131c83685050e1568d8fbc6e	我钱包丢了,急死我了。	皮钱包。
 雨伞 (yǔsǎn)	umbrella	3	f636cc4eb5900328996f4169e1800be7	天气预报说有雨,带把伞。	大雨伞。
-眼镜 (yǎnjìng)	glasses	3	d9216bbeb9fea7f361c8f8cc077ab898	我近视了,需要配眼镜。	太阳镜。
+眼镜 (yǎnjìng)	glasses	3	d9216bbeb9fea7f361c8f8cc077ab898	我近视了,需要配眼镜。	戴眼镜。
 病 (bìng)	illness	3	5965234e23616f1968767c8a8ecab271	他病了好几天,还没好。	生病。
 感冒 (gǎnmào)	cold; flu	3	1eefd22409dc89dd6a6c4d2f50d52b68	最近天气变化大,容易感冒。	得感冒。
 发烧 (fāshāo)	fever	3	31bc50b2ed73c696f6cecad76697210c	孩子发烧了,要赶紧去医院。	发高烧。

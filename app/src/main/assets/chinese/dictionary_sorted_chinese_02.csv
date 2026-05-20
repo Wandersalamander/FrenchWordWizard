@@ -32,10 +32,10 @@
 妈妈 (māma)	mom; mother	2	f6ff748ca69738efc2f687c07c63680f	我妈妈做的红烧肉特别好吃。	妈妈。
 父亲 (fùqīn)	father (formal)	2	7a41dd5716810eae1f1f5ffe6cce2d81	我父亲是一位退休的大学教授。	父亲节。
 母亲 (mǔqīn)	mother (formal)	2	dada6d1e93184bc934201a2617a950bf	母亲节我打算回家陪妈妈过。	母亲节。
-哥哥 (gēge)	older brother	2	0bf509112cf33fc8bd4f2de491395c59	我哥哥比我大三岁,他已经结婚了。	大哥。
-弟弟 (dìdi)	younger brother	2	08876e27a9fe2518f9dafde18f805eab	我弟弟还在上大学,正在准备考研。	小弟。
-姐姐 (jiějie)	older sister	2	e1bfe0ab16c18543627e5c1f88e71e11	我姐姐在上海工作,我们好久没见了。	大姐。
-妹妹 (mèimei)	younger sister	2	eca862d1cbbf924cd3603b6e8f938b45	我妹妹今年刚高考完,正在等录取结果。	小妹。
+哥哥 (gēge)	older brother	2	0bf509112cf33fc8bd4f2de491395c59	我哥哥比我大三岁,他已经结婚了。	我哥哥。
+弟弟 (dìdi)	younger brother	2	08876e27a9fe2518f9dafde18f805eab	我弟弟还在上大学,正在准备考研。	我弟弟。
+姐姐 (jiějie)	older sister	2	e1bfe0ab16c18543627e5c1f88e71e11	我姐姐在上海工作,我们好久没见了。	我姐姐。
+妹妹 (mèimei)	younger sister	2	eca862d1cbbf924cd3603b6e8f938b45	我妹妹今年刚高考完,正在等录取结果。	我妹妹。
 儿子 (érzi)	son	2	3f0a9cc6b70972c67e704863f9f0e74e	我儿子刚学会走路,跑得到处都是。	大儿子。
 女儿 (nǚ'ér)	daughter	2	4db9d2fad13127f22495557bfc8a49ef	我女儿今年五岁,特别喜欢画画。	小女儿。
 孩子 (háizi)	child; kid	2	1e3ebb310701aaf82efdffbc02479f3c	这个孩子很懂事,从小就帮家里做事。	几个孩子。
@@ -65,7 +65,7 @@
 浴室 (yùshì)	bathroom	2	b1350f47115f95a49e1e6619e720a344	浴室里的水龙头坏了,需要找人来修。	浴室。
 卫生间 (wèishēngjiān)	toilet; bathroom	2	347b166ca4fcee021a31d80a3a1404f5	请问卫生间在哪里？我急着用。	卫生间。
 洗手间 (xǐshǒujiān)	restroom	2	700a3aa440bef58ef1ee651c161e8287	女洗手间在二楼的最右边。	洗手间。
-卧室 (wòshì)	bedroom	2	3314e8dd1bcb7ff9bf7d452ccc1f7c82	我的卧室不大,但是布置得很温馨。	主卧。
+卧室 (wòshì)	bedroom	2	3314e8dd1bcb7ff9bf7d452ccc1f7c82	我的卧室不大,但是布置得很温馨。	我的卧室。
 客厅 (kètīng)	living room	2	a73a1c83c054026ab7fe60662bea32c7	客厅里摆了一张大沙发和一个茶几。	大客厅。
 阳台 (yángtái)	balcony	2	0eb28b6eb0735b65c17b65d946f230ff	我家阳台上种了很多花花草草。	阳台。
 花园 (huāyuán)	garden	2	e477db661a85126405ff763f3ff37748	这个小区有个很漂亮的花园。	后花园。
