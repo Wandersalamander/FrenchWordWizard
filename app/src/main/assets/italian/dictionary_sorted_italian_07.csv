@@ -176,7 +176,7 @@ arido	arid / dry	7	62bdbefc8f3de4b219af0e4fec91d186	Il clima arido del deserto r
 fertile	fertile	7	556812cf6709ad44c1a3b3023f597042	La terra della pianura padana è fertile e produce grandi quantità di grano, mais e riso ogni anno.	Suolo fertile.
 sterile	sterile / barren	7	7c0561305a40a7b4f1c766684a90f949	Il terreno sterile non produce nulla e bisogna concimarlo con cura prima di poterlo coltivare bene.	Una terra sterile.
 lussureggiante	lush	7	0daf95a9a318ae62fc12b0643fbfe827	La vegetazione lussureggiante delle foreste tropicali è impressionante con i suoi alberi giganti e fiori esotici.	Una giungla lussureggiante.
-il pozzo	well	7	34c414b46e032ba15e96f01e72341da3	Il pozzo del giardino è profondo dieci metri e l'acqua è ancora fresca anche durante le estati.	Un pozzo profondo.
+il pozzo	well (water source)	7	34c414b46e032ba15e96f01e72341da3	Il pozzo del giardino è profondo dieci metri e l'acqua è ancora fresca anche durante le estati.	Un pozzo profondo.
 il rivolo	rivulet / small stream	7	7443d19cc83e6c9fe72f476f2cf5be67	Un rivolo d'acqua scorre tra le pietre del giardino formando un piccolo angolo di paradiso.	Un piccolo rivolo.
 la larva	larva	7	0179897d80f77a41274d87d27772a06e	La larva della farfalla si trasforma in crisalide prima di diventare un meraviglioso insetto adulto colorato.	Una larva piccola.
 il bozzolo	cocoon	7	f3426dfba7783fda645adb12732516a5	Il bozzolo del baco da seta produce la seta che viene poi tessuta nei tessuti pregiati italiani.	Un bozzolo bianco.

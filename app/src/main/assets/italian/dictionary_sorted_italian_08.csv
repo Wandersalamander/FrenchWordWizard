@@ -32,7 +32,7 @@ il giornale	newspaper	8	390c5d6de7bc45f233722be05de6cf6d	Leggo il giornale ogni 
 la rivista	magazine	8	35a895fd55816242b2849ae19b490ce3	Compro una rivista di moda ogni mese per restare aggiornata sulle tendenze della stagione attuale.	Una rivista famosa.
 l'articolo	article	8	0c11a67cb3da47a738af1a81616455fb	Ho letto un articolo molto interessante sui cambiamenti climatici sul giornale di ieri sera in metropolitana.	Un articolo lungo.
 la notizia	news (item)	8	777bd620871167d86f3664ef169d13f3	La notizia del giorno è la vittoria della nostra squadra al campionato di calcio nazionale dopo anni.	Una brutta notizia.
-l'intervista	interview	8	97c443f75232a9c9940e7b3b741c0216	Il giornalista ha fatto un'intervista molto interessante al primo ministro durante il telegiornale della sera.	Un'intervista esclusiva.
+l'intervista	interview (media / press)	8	97c443f75232a9c9940e7b3b741c0216	Il giornalista ha fatto un'intervista molto interessante al primo ministro durante il telegiornale della sera.	Un'intervista esclusiva.
 il reportage	reportage / feature story	8	5e0d59c2904c650bcd0b1b18f3e6084b	Il reportage del giornalista in zona di guerra ha vinto un premio internazionale per il giornalismo coraggioso.	Un reportage emozionante.
 il telegiornale	TV news	8	725441100dcfb8bb8fe8f898d3c0a1bd	Guardo il telegiornale ogni sera alle otto per essere informato sulle notizie più importanti del giorno.	Telegiornale serale.
 la telecronaca	live commentary	8	56bd5f7b21f37ad9ba846d4895c4f57c	La telecronaca della partita di calcio è stata fatta da un giornalista famoso e molto preparato sportivamente.	Una telecronaca emozionante.
