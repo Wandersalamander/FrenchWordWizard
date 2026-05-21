@@ -6,13 +6,13 @@ questo / questa	this	1	aa5969a469efb65007feb6da0b3081ec	Questo libro e questa ri
 quello / quella	that	1	a176df6426da031a97e2d4a4ec6e44a9	Quello che hai detto e quella decisione mi hanno fatto riflettere a lungo.	Quella casa è grande.
 mio / mia	my	1	eab89131c35a3a78745aa698f8fe90a5	Il mio cane e la mia gatta vivono insieme in armonia da molti anni.	È mia.
 tuo / tua	your (singular informal)	1	7c4684008ac5e8a3a7a0b7f8cc8126b1	Il tuo lavoro e la tua passione mi ispirano davvero ogni giorno.	È tuo?
-suo / sua	his / her / its	1	633e5078b0dc3e527745d26bf281ddc3	Il suo libro e la sua penna sono sempre sulla scrivania ordinata.	È suo.
+suo / sua	his / her / its; your (formal)	1	633e5078b0dc3e527745d26bf281ddc3	Il suo libro e la sua penna sono sempre sulla scrivania ordinata.	È suo.
 nostro / nostra	our	1	806a2eff49607bd9d9093156f97c09df	Il nostro paese e la nostra cultura sono ricchi di storia e tradizioni.	È nostra.
 io	I	1	f98ed07a4d5f50f7de1410d905f1477f	Io penso che tu abbia ragione su questo argomento delicato.	Io sono qui.
 tu	you (singular informal)	1	b6b4ce6df035dcfaa26f3bc32fb89e6a	Tu hai sempre saputo come farmi sorridere anche nei momenti difficili.	Tu cosa pensi?
-lui	he	1	55681f25f2b5ce8a670140d1dff04da5	Lui è arrivato in ritardo perché il treno era stato cancellato all'ultimo momento.	Lui dorme.
+lui	he / him	1	55681f25f2b5ce8a670140d1dff04da5	Lui è arrivato in ritardo perché il treno era stato cancellato all'ultimo momento.	Lui dorme.
 lei	she / her / you (formal)	1	688f227b9cad4edeed15f067e04d3764	Lei lavora in ospedale come medico da più di vent'anni ormai.	Lei è qui.
-noi	we	1	5585e79028e8d00e7a26a68b168739bd	Noi siamo amici da tanti anni e ci conosciamo molto bene a vicenda.	Noi mangiamo.
+noi	we / us	1	5585e79028e8d00e7a26a68b168739bd	Noi siamo amici da tanti anni e ci conosciamo molto bene a vicenda.	Noi mangiamo.
 voi	you (plural)	1	0106085c83556205a5aef641b6eb76a5	Voi avete fatto un ottimo lavoro durante questo progetto difficile e complesso.	Voi siete pronti?
 loro	they / them	1	b66f36de26d6b937e64d72f5a5fafac0	Loro vivono in una casa grande con un bel giardino in periferia.	Loro arrivano domani.
 mi	me / myself	1	29bfe372865737fe2bfcfd3618b1da7d	Quando mi vedi triste, sai sempre come farmi tornare il sorriso.	Mi chiamo Marco.
@@ -48,7 +48,7 @@ molto	very / much	1	896d6f56dd084f43a240f393f7de5d82	Sono molto stanco oggi perc
 poco	little / few	1	9709638de74d20a5482f5e409f0a0b1e	Ho dormito poco stanotte perché ho avuto poco tempo per riposarmi davvero.	Un po'.
 troppo	too much / too many	1	e393dd1705836e4f61f94d32944fe538	Hai mangiato troppo a pranzo e ora ti senti troppo stanco per uscire.	Troppo caro.
 abbastanza	enough / quite	1	981fecfbb9b6dbe3334ce10ea35a045a	Abbiamo abbastanza tempo per finire il progetto prima della scadenza fissata.	Abbastanza bene.
-ancora	still / yet / again	1	acc104f45c245c07b2e1aca153b4656a	Sei ancora sveglio? Non hai ancora finito di studiare per l'esame?	Ancora una volta.
+ancora	still / yet / again / more	1	acc104f45c245c07b2e1aca153b4656a	Sei ancora sveglio? Non hai ancora finito di studiare per l'esame?	Ancora una volta.
 già	already	1	d63a13c77ff03f45bfa8a7b087927b37	Ho già mangiato due ore fa e ho già finito tutti i compiti.	Già fatto.
 mai	never / ever	1	2b28587f6d880ea9fc27c6c48fe3f1eb	Non ho mai visto un tramonto così bello come questa sera al mare.	Mai più.
 sempre	always	1	46cfaf678500ffab87bf1b894b8fe373	Mia madre cucina sempre la pasta la domenica per tutta la famiglia riunita.	Sempre lo stesso.
@@ -69,7 +69,7 @@ dire	to say / to tell	1	2fca68e97d6644dc3f3765f75953ba1e	Voglio dire la verità 
 andare	to go	1	e86bb199de89d2d11238be94c3b89054	Mi piace andare al mare in estate per nuotare ogni giorno con gli amici.	Vado a casa.
 venire	to come	1	be5d76b2520f482d0fcdf466de915576	Puoi venire a casa mia stasera a cena con tutta la famiglia?	Vieni qui!
 potere	to be able / can	1	ae61e068da673474da51c219f997ebe8	Non posso venire stasera ma posso venire domani sera senza problemi.	Posso aiutarti?
-dovere	to have to / must	1	e25565431059c5ed0954ea1490bc3b78	Devo studiare molto per l'esame e devo finire tutti gli esercizi del libro.	Devo andare.
+dovere	to have to / must / to owe	1	e25565431059c5ed0954ea1490bc3b78	Devo studiare molto per l'esame e devo finire tutti gli esercizi del libro.	Devo andare.
 volere	to want	1	0719e8fc7c3923b6608a609d828a948f	Voglio imparare l'italiano perché voglio viaggiare in Italia il prossimo anno.	Cosa vuoi?
 sapere	to know (facts)	1	f40104ffa7683c0df3facff5f6e6722b	So che hai ragione e so anche che dovrei ascoltarti molto di più.	Lo so.
 conoscere	to know (people / places)	1	3b7c414ad67679d983c71334dc852105	Conosco bene Roma perché ci ho vissuto e conosco molte persone lì.	Ti conosco.
@@ -77,7 +77,7 @@ vedere	to see	1	0e7ec8ddd854ff64210ff617e55518fe	Voglio vedere quel film stasera
 sentire	to hear / feel / smell / taste	1	68cfc18e446098a6a2a8b70273ec1a05	Posso sentire la musica dalla finestra aperta e mi sento molto rilassato.	Mi sento bene.
 dare	to give	1	a0c4cadf0cbed6feb770521c888da575	Posso darti un buon consiglio? Devi dare il meglio di te stesso sempre.	Dammi la mano.
 stare	to stay / to be (state)	1	418dc7852d13cc28bc4c1c5c492df7ee	Mi piace stare a casa quando piove e stare in compagnia degli amici.	Come stai?
-trovare	to find	1	fdb393ecef69ce29a214270cd470d927	Non riesco a trovare le chiavi ma le devo trovare prima di uscire.	L'ho trovato.
+trovare	to find; (trovarsi) to be located / find oneself	1	fdb393ecef69ce29a214270cd470d927	Non riesco a trovare le chiavi ma le devo trovare prima di uscire.	L'ho trovato.
 parlare	to speak / to talk	1	c8536d95c98f5fcd0f0f5aac0b8fcc29	Mi piace parlare con persone interessanti e parlare di vari argomenti culturali.	Parlo italiano.
 portare	to bring / carry / wear / take	1	9275bb7698e5e6d5e31ba0f0fdb0b20f	Devo portare il regalo alla festa e portare anche una bottiglia di vino.	Porto io.
 mettere	to put	1	4353b9b87661ca1d641d7d849fe8611c	Dove devo mettere queste scatole pesanti? Le posso mettere in cantina.	Metti qui.
@@ -139,7 +139,7 @@ il fratello	brother	1	94cf09e7f0b7ee742cd54236a4a1940f	Mio fratello è più gran
 la sorella	sister	1	4e9a8a80593aa4d9902705a9cad3fc8d	Ho una sorella minore che studia medicina all'università di Bologna.	Mia sorella è dottoressa.
 il pane	bread	1	c6c6ce72f4dff102e38d74f7143a2ea8	Il pane fresco del mattino è il mio cibo preferito a colazione con il burro.	Pane e burro.
 il vino	wine	1	69bb23ca275704f46c65d8ed4ac3b5d7	Il vino italiano è famoso in tutto il mondo per la sua qualità eccellente.	Un bicchiere di vino.
-il caffè	coffee	1	c9d8bbe90b0114f9fc5cad3a3b589aea	Il caffè italiano è il migliore del mondo, soprattutto al mattino presto.	Un caffè, per favore.
+il caffè	coffee / café (place)	1	c9d8bbe90b0114f9fc5cad3a3b589aea	Il caffè italiano è il migliore del mondo, soprattutto al mattino presto.	Un caffè, per favore.
 la città	city	1	d0e058a46b9757a25501d627425c7c2e	La città di Roma è ricca di storia e di monumenti antichi da visitare.	Vivo in città.
 il paese	country / village	1	4a74bcd0ead122a9c00cc15d33be5f37	Il mio paese è piccolo ma molto bello, immerso nella natura verdeggiante.	Un piccolo paese.
 la strada	street / road	1	e18dc7afd27f3a31380e6238edc6226b	La strada principale del paese è chiusa per i lavori in corso.	Per strada.

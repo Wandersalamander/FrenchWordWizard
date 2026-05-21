@@ -12,7 +12,7 @@ kommen	to come	1	a168e64f3ffb77ff04b882ec22bbff70	Wenn du morgen zur Party komme
 sehen	to see	1	7f17e4134eb905fe30076186b1078245	Als wir aus dem Fenster sahen, konnten wir den wunderschönen Sonnenuntergang sehen.	Ich sehe einen Vogel.
 geben	to give; (es gibt) there is / there are	1	e236a3a4277f7bafefec2225f2f46ee9	Obwohl es keine einfache Lösung zu geben schien, wurde beschlossen, den Betroffenen zusätzliche Unterstützung zu geben.	Er gibt mir das Buch.
 nehmen	to take	1	91c4bf91396a36ad498edc4e29292d70	Bevor wir eine endgültige Entscheidung treffen, sollten wir uns die Zeit nehmen.	Ich nehme den Bus.
-finden	to find	1	6fad90f33c53acfc3203203fbcc5cdd6	Obwohl viele Leute das Restaurant schwer zu finden scheinen, finden diejenigen, die es entdecken, hervorragendes Essen.	Ich finde meinen Schlüssel nicht.
+finden	to find; to think / consider (opinion)	1	6fad90f33c53acfc3203203fbcc5cdd6	Obwohl viele Leute das Restaurant schwer zu finden scheinen, finden diejenigen, die es entdecken, hervorragendes Essen.	Ich finde meinen Schlüssel nicht.
 sagen	to say; to tell	1	aeb8592e73093aaf4ef065821e1fb48b	Es wird oft gesagt, dass man die Wahrheit sagen sollte, auch wenn es schwierig ist, das Richtige zu sagen.	Was willst du sagen?
 wissen	to know (a fact)	1	ea6ec600891e0725f08df6138d665ad5	Hätte ich gewusst, dass du das nicht wissen konntest, hätte ich es dir viel früher gesagt.	Ich weiß es nicht.
 lassen	to let / to leave / (causative) to have done	1	45c660170e8e9a005b7e57ba8c5a5070	Er ließ sich von niemandem davon abbringen, sein Auto in der Garage stehen zu lassen, obwohl das Wetter schön war.	Lass mich in Ruhe!
@@ -64,7 +64,7 @@ denn	because; for	1	6cb984e49cd63687e35000d94467afd3	Er blieb zu Hause, denn er 
 weil	because	1	d26b2f1fcc7495ee47054cafd1978226	Weil der Zug Verspätung hatte und sie deshalb den Anschlussflug verpasste, kam sie einen Tag zu spät an.	Ich bin müde, weil ich spät ins Bett gegangen bin.
 wenn	if; when; whenever	1	99a0863912d903a3e9fa31bd4cb83320	Wenn du mehr Zeit hättest und wenn das Wetter besser wäre, könnten wir einen langen Spaziergang durch den Wald machen.	Wenn es regnet, bleibe ich zu Hause.
 dass	that (conjunction)	1	376e9db76e28b21e10581ebedf4aaf71	Es wurde berichtet, dass die Regierung beschlossen hat, dass neue Gesetze zum Umweltschutz verabschiedet werden sollen.	Ich weiß, dass du recht hast.
-als	when (past); than	1	a99bbb46d5bbb6e08229e1fd26c5a2c6	Als er nach vielen Jahren in seine Heimatstadt zurückkehrte, war alles anders, als er es in Erinnerung hatte.	Als ich jung war, spielte ich viel.
+als	when (past); than; as (in a role)	1	a99bbb46d5bbb6e08229e1fd26c5a2c6	Als er nach vielen Jahren in seine Heimatstadt zurückkehrte, war alles anders, als er es in Erinnerung hatte.	Als ich jung war, spielte ich viel.
 nicht	not	1	380fbbf7d6a14f32c176d6ec618b8bbf	Obwohl er versprochen hatte, nicht zu spät zu kommen, schaffte er es wieder nicht, pünktlich zu sein.	Ich verstehe das nicht.
 auch	also; too	1	b228127f96a5bd519b898f1246afa81e	Auch wenn viele Menschen anderer Meinung sind, glaube ich.	Ich komme auch mit.
 noch	still; yet	1	fc43371b8d7ffb1986631774aca29f7a	Obwohl sie noch nie zuvor in Deutschland gewesen war, sprach sie die Sprache so gut, dass alle Einheimischen erstaunt waren.	Er schläft noch.
@@ -98,7 +98,7 @@ er	he	1	4cf38f00512f983f593ce3d924dc4b92	Obwohl er versprochen hatte, pünktlich
 sie	she; they; you (formal)	1	5afe84798341e4493a3f0adf50c096da	Sie hatte gehofft, dass sie ihre Freunde auf der Feier treffen würde, aber leider konnten sie nicht kommen.	Sie ist meine Schwester.
 es	it	1	c0b8f04019d57ba4557d4eb83d123fe8	Es wurde berichtet, dass es in den Bergen so kalt geworden ist, dass es sogar im Sommer schneien könnte.	Es regnet heute.
 wir	we	1	fd8526d09e46dd369e976665458b798d	Obwohl wir ursprünglich nur drei Tage bleiben wollten, entschieden wir uns, eine ganze Woche zu bleiben.	Wir gehen nach Hause.
-ihr	you (informal plural)	1	425940dae2dc7731db2087000c195216	Wenn ihr euch beeilt und ihr den Bus noch erwischt, könntet ihr pünktlich zum Unterricht kommen.	Wo seid ihr?
+ihr	you (informal plural); (to) her (dative)	1	425940dae2dc7731db2087000c195216	Wenn ihr euch beeilt und ihr den Bus noch erwischt, könntet ihr pünktlich zum Unterricht kommen.	Wo seid ihr?
 der / die / das	the (definite article)	1	d52ccebeb847ee161aa271331b58c859	Der Mann, die Frau und das Kind, die an der Bushaltestelle warteten, wurden vom Regen überrascht.	Der Hund ist groß. Die Katze ist klein. Das Haus ist alt.
 ein / eine	a; an (indefinite article)	1	3e01c32ebc7d863401aa9d4b101569fc	Es war einmal ein kleiner Junge, der eine geheimnisvolle Tür entdeckte, hinter der sich eine völlig neue Welt verbarg.	Ich habe einen Hund und eine Katze.
 mein	my	1	87580ebcaf0a7cf1e15fc99699e6269e	Mein größter Wunsch war es schon immer, die Welt zu bereisen, weshalb mein erstes Reiseziel Japan sein wird.	Das ist mein Buch.
