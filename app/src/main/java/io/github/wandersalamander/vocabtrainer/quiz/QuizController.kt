@@ -9,8 +9,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import io.github.wandersalamander.vocabtrainer.data.CommitButton
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
+import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
@@ -151,19 +153,26 @@ class QuizController(
     // previous round's word never speaks over the new one.
     private var pendingRoundStartTtsJob: Job? = null
 
+    // Per-round observation accumulator. Reset in resetRoundState, mutated
+    // from every user-action handler, and frozen into a ReviewLogEntry by
+    // saveCurrentVocab. See RoundFacts kdoc for the raw-fact philosophy.
+    private val roundFacts = RoundFacts()
+
     fun onFailClick() {
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) exitSpotCheck(wasWrong = true)
         else revealAllVocabData(showNextVocab = true)
     }
 
     fun onNextClick() {
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = false)
         } else if (currentVocab != null &&
             (wouldFinishSkillOnNext() || Random.nextDouble() < SPOT_CHECK_PROBABILITY)) {
             startSpotCheck()
         } else {
-            updateVocab(0, newCandidates = false)
+            updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
         }
     }
 
@@ -200,8 +209,15 @@ class QuizController(
         return sim.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
     }
 
-    fun onNewClick() = updateVocab(0, newCandidates = true)
-    fun onTipClick() = showTip()
+    fun onNewClick() {
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
+    }
+
+    fun onTipClick() {
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        showTip()
+    }
 
     /**
      * Wire the vocab card's bouncy pull-down gesture. First pull on a READ /
@@ -244,7 +260,7 @@ class QuizController(
         // pick a new (non-LISTEN) one. updateVocab honours roundCompromised so
         // the LISTEN stats are rolled back before advancing.
         if (!enabled && currentSkill == Skill.LISTEN && currentVocab != null) {
-            updateVocab(0, newCandidates = false)
+            updateVocab(0, newCandidates = false, commitButton = CommitButton.OTHER)
             return
         }
         val vocab = currentVocab ?: return
@@ -256,6 +272,7 @@ class QuizController(
 
     fun onHardClick() {
         val vocab = currentVocab ?: return
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         vocab.flaggedHard = !vocab.flaggedHard
         vocab.savePreferences()
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
@@ -299,6 +316,7 @@ class QuizController(
         views.buttonLearned.text = "✓"
         views.buttonLearned.setDebouncedOnClickListener {
             val vocab = currentVocab ?: return@setDebouncedOnClickListener
+            roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
             // First tap reveals everything so the user can verify they
             // actually know the word before committing on the second tap.
             revealCurrentForeignWord()
@@ -310,7 +328,7 @@ class QuizController(
                 vocab.ignore = true
                 vocab.savePreferences()
                 setupLearnedButton()
-                updateVocab(0, newCandidates = false)
+                updateVocab(0, newCandidates = false, commitButton = CommitButton.LEARNED)
             }
         }
     }
@@ -326,6 +344,7 @@ class QuizController(
 
     private fun showSentenceTip(vocab: Vocab) {
         vocab.stats(currentSkill).recordFailure(0.25f)
+        roundFacts.recordSentenceTip()
 
         setQuizButtonsEnabled(false)
 
@@ -360,6 +379,7 @@ class QuizController(
         val penalty = 2f * (letterCount - progressiveRevealCount + 1) /
             (letterCount * (letterCount + 1))
         vocab.stats(currentSkill).recordFailure(penalty)
+        roundFacts.recordProgressiveReveal()
         currentSkill.flow.applyProgressiveReveal(vocab, views, progressiveRevealCount)
         if (progressiveRevealCount >= letterCount) {
             views.buttonTip.isEnabled = false
@@ -394,7 +414,7 @@ class QuizController(
             delay(1000)
 
             if (showNextVocab) {
-                updateVocab(2000, newCandidates = false)
+                updateVocab(2000, newCandidates = false, commitButton = CommitButton.FAIL)
                 delay(100)
             }
             // setQuizButtonsEnabled honours the per-skill Tip rule, so an
@@ -411,18 +431,30 @@ class QuizController(
 
     private fun exitSpotCheck(wasWrong: Boolean) {
         spotCheck.exit()
+        roundFacts.recordSpotCheckResult(passed = !wasWrong)
         // updateVocab → applyFailurePenaltyAndPersist records the failure
-        // because penalty > 0; don't double-count it here.
-        updateVocab(if (wasWrong) 2000 else 0, newCandidates = false)
+        // because penalty > 0; don't double-count it here. The button used
+        // to resolve the spot check determines the commit kind: ✓ Correct
+        // (no penalty) was a NEXT, ✗ Wrong (with penalty) was a FAIL.
+        updateVocab(
+            penalty = if (wasWrong) 2000 else 0,
+            newCandidates = false,
+            commitButton = if (wasWrong) CommitButton.FAIL else CommitButton.NEXT,
+        )
     }
 
-    fun updateVocab(penalty: Long, newCandidates: Boolean, saveVocab: Boolean = true) {
+    fun updateVocab(
+        penalty: Long,
+        newCandidates: Boolean,
+        commitButton: CommitButton,
+        saveVocab: Boolean = true,
+    ) {
         // Cancel any deferred TTS from the previous round so a rapid Next press
         // doesn't let the prior word speak over the new one.
         pendingRoundStartTtsJob?.cancel()
         pendingRoundStartTtsJob = null
 
-        val successPlayed = applyFailurePenaltyAndPersist(penalty, saveVocab)
+        val successPlayed = applyFailurePenaltyAndPersist(penalty, commitButton, saveVocab)
         val vocab = advanceToNextDistinctVocab(newCandidates)
 
         resetRoundState(vocab)
@@ -455,11 +487,15 @@ class QuizController(
     }
 
     /** Returns true if the persistence step triggered the mastery success chime. */
-    private fun applyFailurePenaltyAndPersist(penalty: Long, saveVocab: Boolean): Boolean {
+    private fun applyFailurePenaltyAndPersist(
+        penalty: Long,
+        commitButton: CommitButton,
+        saveVocab: Boolean,
+    ): Boolean {
         if (penalty > 0) {
             currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
         }
-        return if (saveVocab) saveCurrentVocab(penalty) else false
+        return if (saveVocab) saveCurrentVocab(penalty, commitButton) else false
     }
 
     /**
@@ -484,6 +520,7 @@ class QuizController(
         roundStartSnapshot = vocab.stats(currentSkill).copy()
         roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
         progressiveRevealCount = 0
+        roundFacts.reset(System.currentTimeMillis())
         spotCheck.reset()
         views.textVocabEyebrow.text = "WORD"
         views.buttonFail.text = "✗ Reveal"
@@ -526,7 +563,7 @@ class QuizController(
     }
 
     /** Returns true if a mastery transition triggered the success chime. */
-    private fun saveCurrentVocab(penalty: Long): Boolean {
+    private fun saveCurrentVocab(penalty: Long, commitButton: CommitButton): Boolean {
         val vocab = currentVocab ?: return false
 
         // Always update recent-words: the user has seen this word regardless
@@ -534,20 +571,34 @@ class QuizController(
         // back-to-back.
         picker.rememberWord(vocab.foreign)
 
+        // Captured once so the log entry's timestamp_ms, the stats'
+        // lastDisplayed, and any view-time math all agree on a single "now".
+        val nowMs = System.currentTimeMillis()
+        val activeViewTime = spotCheck.frozenViewTimeMs
+            ?: (elapsedBeforePause + (nowMs - startTime))
+
         val snapshot = roundStartSnapshot
         if (roundCompromised && snapshot != null) {
             // Listening was off at some point during a LISTEN round — the
             // user could read the foreign word, so roll back any in-memory
             // mutations from the round and persist the rolled-back state.
+            // Still log the round (compromised=true) so we keep "user saw
+            // this word at this time" — downstream training should exclude
+            // these from outcome inference.
             vocab.stats(currentSkill).copyFrom(snapshot)
-            vocab.savePreferences()
+            val logEntry = buildLogEntry(
+                vocab = vocab,
+                commitButton = commitButton,
+                compromised = true,
+                foregroundViewTimeMs = activeViewTime,
+                nowMs = nowMs,
+            )
+            vocab.savePreferences(reviewLog = logEntry)
             return false
         }
 
         val wasFullyMastered = isFullyMasteredNow(vocab)
 
-        val activeViewTime = spotCheck.frozenViewTimeMs
-            ?: (elapsedBeforePause + (System.currentTimeMillis() - startTime))
         val timeElapsed = activeViewTime + penalty
         val stats = vocab.stats(currentSkill)
         // Use the round-start snapshot for the pre-round fpb, not the live
@@ -566,14 +617,21 @@ class QuizController(
         stats.viewTimeMilli_prev = stats.viewTimeMilli
         stats.viewTimeMilli =
             (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli).toLong()
-        stats.lastDisplayed = System.currentTimeMillis()
+        stats.lastDisplayed = nowMs
         // failAmount = nFailed delta since round start, so the rolling window
         // captures THIS round's outcome rather than the lifetime counter.
         val failAmountThisRound =
             (stats.nTimesFailed - (snapshot?.nTimesFailed ?: stats.nTimesFailed))
                 .coerceAtLeast(0f)
         stats.recordInteraction(failAmountThisRound)
-        vocab.savePreferences()
+        val logEntry = buildLogEntry(
+            vocab = vocab,
+            commitButton = commitButton,
+            compromised = false,
+            foregroundViewTimeMs = activeViewTime,
+            nowMs = nowMs,
+        )
+        vocab.savePreferences(reviewLog = logEntry)
 
         // First time this word entered the rotation — keep the LLM's
         // "previously studied words" cache in sync without rescanning csvData.
@@ -608,6 +666,29 @@ class QuizController(
         }
         return false
     }
+
+    /**
+     * Freeze the in-progress [roundFacts] plus the round context into an
+     * immutable [io.github.wandersalamander.vocabtrainer.data.ReviewLogEntry]. The
+     * [SentenceSource] is captured at this point so the log reflects what
+     * the user was set up to see for this round.
+     */
+    private fun buildLogEntry(
+        vocab: Vocab,
+        commitButton: CommitButton,
+        compromised: Boolean,
+        foregroundViewTimeMs: Long,
+        nowMs: Long,
+    ) = roundFacts.build(
+        vocabHash = vocab.hash,
+        skill = currentSkill,
+        commitButton = commitButton,
+        sentenceSource = SentenceSource.fromContext(activity),
+        listeningEnabled = listeningEnabled,
+        compromised = compromised,
+        foregroundViewTimeMs = foregroundViewTimeMs,
+        nowMs = nowMs,
+    )
 
     private fun isFullyMasteredNow(vocab: Vocab): Boolean {
         if (vocab.ignore) return true
@@ -655,6 +736,8 @@ class QuizController(
     /** Replay the foreign word (with a small penalty) when the mask is tapped. */
     private fun onMaskedWordTapped() {
         val vocab = currentVocab ?: return
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        roundFacts.recordWordMaskTap()
         vocab.stats(currentSkill).recordFailure(0.1f)
         tts.speakForeignWord(vocab, flush = true)
     }
@@ -666,6 +749,8 @@ class QuizController(
      */
     private fun onWordReplayed() {
         val vocab = currentVocab ?: return
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        roundFacts.recordWordReplay()
         tts.speakForeignWord(vocab, flush = true)
     }
 
@@ -673,6 +758,8 @@ class QuizController(
     private fun onMaskedSentenceTapped() {
         val vocab = currentVocab ?: return
         val sentence = sentenceManager.currentSentence ?: return
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        roundFacts.recordSentenceMaskTap()
         vocab.stats(currentSkill).recordFailure(0.1f)
         tts.speakSentence(sentence)
     }

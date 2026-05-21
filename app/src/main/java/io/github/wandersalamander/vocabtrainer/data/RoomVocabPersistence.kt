@@ -1,7 +1,9 @@
 package io.github.wandersalamander.vocabtrainer.data
 
 import io.github.wandersalamander.vocabtrainer.data.db.dao.VocabDao
+import io.github.wandersalamander.vocabtrainer.data.db.dao.VocabReviewLogDao
 import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabFlagsEntity
+import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabReviewLogEntity
 import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import kotlinx.coroutines.CoroutineScope
@@ -20,9 +22,14 @@ import java.util.concurrent.ConcurrentHashMap
  * Per-write the in-memory entry is updated synchronously *before* the DB
  * write is launched, so subsequent reads see the new value immediately even
  * if the persist hasn't reached disk yet.
+ *
+ * When [save] is called with a [ReviewLogEntry], both writes go into the
+ * same `launch` block so the stats upsert lands before the log insert — the
+ * FK from `vocab_review_log` → `vocab_stats` is satisfied in order.
  */
 class RoomVocabPersistence(
     private val vocabDao: VocabDao,
+    private val reviewLogDao: VocabReviewLogDao,
     private val writeScope: CoroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.IO),
 ) : VocabPersistence {
 
@@ -30,7 +37,7 @@ class RoomVocabPersistence(
 
     override fun load(hash: String): VocabSnapshot? = cache[hash]
 
-    override fun save(hash: String, snapshot: VocabSnapshot) {
+    override fun save(hash: String, snapshot: VocabSnapshot, reviewLog: ReviewLogEntry?) {
         cache[hash] = snapshot
         val now = System.currentTimeMillis()
         val statsRows = snapshot.perSkill.map { (skill, s) ->
@@ -53,11 +60,32 @@ class RoomVocabPersistence(
             flaggedHard = snapshot.flaggedHard,
             lastModifiedMs = now,
         )
+        val logRow = reviewLog?.let { it.toEntity() }
         writeScope.launch {
             vocabDao.upsertStatsBulk(statsRows)
             vocabDao.upsertFlags(flagsRow)
+            if (logRow != null) reviewLogDao.append(logRow)
         }
     }
+
+    private fun ReviewLogEntry.toEntity(): VocabReviewLogEntity = VocabReviewLogEntity(
+        vocabHash = vocabHash,
+        skill = skill,
+        timestampMs = timestampMs,
+        viewTimeMs = viewTimeMs,
+        timeToFirstActionMs = timeToFirstActionMs,
+        pausedMs = pausedMs,
+        commitButton = commitButton,
+        tipUsed = tipUsed,
+        progressiveReveals = progressiveReveals,
+        wordMaskTaps = wordMaskTaps,
+        wordReplays = wordReplays,
+        sentenceMaskTaps = sentenceMaskTaps,
+        spotCheckResult = spotCheckResult,
+        sentenceSource = sentenceSource,
+        listeningEnabled = listeningEnabled,
+        compromised = compromised,
+    )
 
     override suspend fun preload() {
         val stats = vocabDao.loadAllStats()

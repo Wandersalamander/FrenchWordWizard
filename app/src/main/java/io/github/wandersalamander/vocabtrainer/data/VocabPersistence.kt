@@ -18,8 +18,12 @@ interface VocabPersistence {
     /** Returns the cached snapshot for [hash], or null when the cache has no entry. */
     fun load(hash: String): VocabSnapshot?
 
-    /** Apply [snapshot] to the in-memory cache and persist it (fire-and-forget). */
-    fun save(hash: String, snapshot: VocabSnapshot)
+    /**
+     * Apply [snapshot] to the in-memory cache and persist it (fire-and-forget).
+     * When [reviewLog] is non-null, also append the log row in the same write
+     * batch so the FK from log → stats is satisfied in order.
+     */
+    fun save(hash: String, snapshot: VocabSnapshot, reviewLog: ReviewLogEntry? = null)
 
     /**
      * Fill the in-memory cache from the backing store. Suspend — callers from

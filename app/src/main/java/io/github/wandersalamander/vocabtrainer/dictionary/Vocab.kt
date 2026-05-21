@@ -1,5 +1,6 @@
 package io.github.wandersalamander.vocabtrainer.dictionary
 
+import io.github.wandersalamander.vocabtrainer.data.ReviewLogEntry
 import io.github.wandersalamander.vocabtrainer.data.SkillStatsSnapshot
 import io.github.wandersalamander.vocabtrainer.data.VocabPersistence
 import io.github.wandersalamander.vocabtrainer.data.VocabSnapshot
@@ -74,7 +75,13 @@ data class Vocab(
         flaggedHard = snapshot.flaggedHard
     }
 
-    fun savePreferences() {
+    /**
+     * Persist the current in-memory state. When [reviewLog] is non-null
+     * (round-commit path), it's appended to the review log in the same write
+     * batch — the FK from log → stats is satisfied because the snapshot
+     * upsert runs first. Non-round saves (Hard toggle, Learned ✓) pass null.
+     */
+    fun savePreferences(reviewLog: ReviewLogEntry? = null) {
         val p = persistence ?: return
         val perSkill = skillStats.mapValues { (_, stats) ->
             SkillStatsSnapshot(
@@ -94,6 +101,7 @@ data class Vocab(
                 ignore = ignore,
                 flaggedHard = flaggedHard,
             ),
+            reviewLog = reviewLog,
         )
     }
 

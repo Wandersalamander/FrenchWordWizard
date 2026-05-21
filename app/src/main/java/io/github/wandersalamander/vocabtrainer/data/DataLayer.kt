@@ -32,7 +32,11 @@ object DataLayer {
             if (initialized) return
             _writeScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
             _database = AppDatabase.get(context)
-            _vocabPersistence = RoomVocabPersistence(_database.vocabDao(), _writeScope)
+            _vocabPersistence = RoomVocabPersistence(
+                vocabDao = _database.vocabDao(),
+                reviewLogDao = _database.vocabReviewLogDao(),
+                writeScope = _writeScope,
+            )
             initialized = true
         }
     }

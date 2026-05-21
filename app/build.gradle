@@ -4,6 +4,14 @@ plugins {
     id 'com.google.devtools.ksp'
 }
 
+// Room schema export: writes one JSON per @Database version into
+// app/schemas/<AppDatabase>/<version>.json. MigrationTestHelper reads these
+// to drive migration tests, and they double as a paper trail of historical
+// schema for code review. Commit the generated files alongside any schema bump.
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
 android {
     // Kotlin/Java namespace for R, BuildConfig, and relative class names in
     // the manifest. Independent of applicationId so we can rename the source
@@ -38,6 +46,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    // Bundle the exported Room schema JSONs into the androidTest APK so
+    // MigrationTestHelper can find them at runtime via the assets folder.
+    // Without this, runMigrationsAndValidate throws FileNotFoundException
+    // pointing at the missing <DbClass>/<version>.json.
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
 }
 
 dependencies {
@@ -68,4 +84,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // MigrationTestHelper for schema-validated migration tests. Reads the
+    // JSON schemas exported via the ksp room.schemaLocation arg above.
+    androidTestImplementation 'androidx.room:room-testing:2.8.2'
 }
