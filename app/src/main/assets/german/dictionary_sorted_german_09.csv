@@ -20,7 +20,7 @@ der Einsatz	effort / use / deployment	9	4be24b46b507d03326b774c56339674b	Ohne de
 der Nutzen	benefit / use	9	f7c27ea5af06f00e2d5441d213570402	Der Nutzen dieser neuen Technologie für die Medizin ist enorm und wird viele Leben retten.	Was ist der Nutzen?
 die Voraussetzung	prerequisite / requirement	9	fcc4bdb98fcc9006ce05e031e495e8bc	Eine gute Ausbildung ist die wichtigste Voraussetzung für einen erfolgreichen Berufseinstieg.	Das ist eine Voraussetzung.
 die Kritik	criticism / review	9	acd26bd7eb802d96b2690290e179d04c	Die Kritik an dem neuen Gesetz war so stark, dass die Regierung Nachbesserungen ankündigte.	Die Kritik war hart.
-die Schicht	layer / shift	9	88d4ced2af7afb9977de5792f3238b3f	Die Nachtschicht beginnt um zehn Uhr und endet um sechs Uhr morgens.	Er arbeitet in der Nachtschicht.
+die Schicht	layer / shift / social class	9	88d4ced2af7afb9977de5792f3238b3f	Die Nachtschicht beginnt um zehn Uhr und endet um sechs Uhr morgens.	Er arbeitet in der Nachtschicht.
 das Erlebnis	experience (event)	9	ecd07b6e033b10852085d4df933f9886	Der Besuch des Konzerts war ein unvergessliches Erlebnis, an das sie sich noch lange erinnern wird.	Das war ein tolles Erlebnis.
 die Strecke	route / distance / stretch	9	a21a8fc2880f89d25ebde86b7c5ed80e	Die Strecke von München nach Berlin kann man mit dem ICE in weniger als vier Stunden zurücklegen.	Die Strecke ist lang.
 die Nachfrage	demand / inquiry	9	4fe9eb7f3022d0c5be22fd058536ce2f	Die Nachfrage nach Elektroautos steigt seit Jahren kontinuierlich an.	Die Nachfrage ist groß.
@@ -47,8 +47,8 @@ aufmachen	to open	9	d8364f851cb198a17b9358f49562f958	Mach bitte das Fenster auf,
 zumachen	to close / to shut	9	c7dc49f061a43d3611fc4d22dd494747	Mach bitte die Tür zu, es zieht fürchterlich.	Mach das Fenster zu.
 einschalten	to switch on / to turn on	9	0d8257b731fb3101d026326335a4e98f	Er schaltete den Fernseher ein, um die Abendnachrichten zu sehen.	Schalt das Licht ein.
 ausschalten	to switch off / to turn off	9	6d4a28239d38e5bb72b07971a80d0113	Vergiss nicht, das Licht auszuschalten, wenn du das Zimmer verlässt.	Schalt den Computer aus.
-besorgen	to get / to obtain / to worry	9	65e3c07ebd0c1d2ee2c0da5ac2662b63	Kannst du auf dem Heimweg noch Milch und Brot besorgen?	Ich besorge das.
-einigen	to agree / to come to an agreement	9	1385b89ce39c5e6ceaf44a1e35981335	Nach langer Diskussion einigten sich die Parteien endlich auf einen Kompromiss.	Wir haben uns geeinigt.
+besorgen	to get / to obtain / to procure	9	65e3c07ebd0c1d2ee2c0da5ac2662b63	Kannst du auf dem Heimweg noch Milch und Brot besorgen?	Ich besorge das.
+einigen	(sich einigen) to agree / come to an agreement	9	1385b89ce39c5e6ceaf44a1e35981335	Nach langer Diskussion einigten sich die Parteien endlich auf einen Kompromiss.	Wir haben uns geeinigt.
 mitbringen	to bring along	9	fb8cd9394cce7ee3757d2d137bcbe9d3	Vergiss nicht, das Buch mitzubringen, das du mir versprochen hast.	Bring bitte Brot mit.
 mitnehmen	to take along	9	b5137711377ba4dcd1a779ab467bdff1	Nimm einen Regenschirm mit, der Wetterbericht sagt Regen voraus.	Kann ich das mitnehmen?
 aufnehmen	to record / to take in / to admit	9	2ae355b93fde609c17ce95413de342cf	Das Gespräch wurde aufgenommen, damit es später als Protokoll verwendet werden konnte.	Ich nehme das auf.
@@ -110,7 +110,7 @@ sich streiten	to argue / to quarrel	9	c1d519f9f2c1a85b68a7efef8b78b07c	Die Nachb
 sich sorgen	to worry	9	2f0357c8dccf2650223b3c54230e5f7b	Die Eltern sorgten sich um ihre Tochter, die allein in einer fremden Stadt lebte.	Ich sorge mich um dich.
 sich schämen	to be ashamed	9	848c9e01e7e1f2f8183683d994a24678	Er schämte sich dafür, dass er seine Mitschülerin vor der ganzen Klasse ausgelacht hatte.	Du solltest dich schämen.
 übertreiben	to exaggerate	9	d16f4e1a10bb1bda6b0f526f83ccc9fd	Er übertrieb gerne, wenn er von seinen Abenteuern erzählte, um seine Zuhörer zu beeindrucken.	Übertreib nicht.
-überlegen	to think about / to consider	9	e86c97032248bccf1a77990042fbacd7	Ich muss mir das gut überlegen, bevor ich eine so wichtige Entscheidung treffe.	Lass mich kurz überlegen.
+überlegen	(verb) to think about / consider; (adj.) superior	9	e86c97032248bccf1a77990042fbacd7	Ich muss mir das gut überlegen, bevor ich eine so wichtige Entscheidung treffe.	Lass mich kurz überlegen.
 verzichten	to do without / to forgo	9	ec8972f34f7f5ec12261a623bdd388e4	Um gesünder zu leben, verzichtete sie auf Zucker und trank nur noch Wasser.	Ich verzichte darauf.
 bewundern	to admire	9	29f348d3ab49d2ed61d9ede7be1d4980	Alle bewunderten die junge Sportlerin für ihren Mut und ihre Entschlossenheit.	Ich bewundere dich.
 zweifeln	to doubt	9	344ca66a0f3972a666376762528b36c0	Ich zweifle nicht daran, dass du die richtige Entscheidung treffen wirst.	Ich zweifle daran.

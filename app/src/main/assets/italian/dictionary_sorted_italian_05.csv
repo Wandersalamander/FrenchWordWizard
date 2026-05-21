@@ -27,7 +27,7 @@ il marciapiede	sidewalk	5	2bda2acab19bfa5890e1e182ae038ef7	Cammino sul marciapie
 l'incrocio	intersection	5	154084ce2df69214f1325cb9ae5c1780	All'incrocio devi girare a destra per arrivare alla casa di mia zia in centro.	Un incrocio pericoloso.
 l'ufficio	office	5	893abe130a54e3f160c110f32fb2932b	Il mio ufficio è al quinto piano del palazzo di vetro nel centro direzionale.	Vado in ufficio.
 la farmacia	pharmacy	5	dbc3c50848d0018bc557251940feade3	Vado in farmacia a comprare la medicina per il mal di testa che mi tormenta da giorni.	Una farmacia di turno.
-la libreria	bookstore	5	9fc4d038880d95838f3a819f4df65f0d	La libreria del centro vende sia libri nuovi che usati a prezzi molto convenienti.	Una grande libreria.
+la libreria	bookstore / bookcase	5	9fc4d038880d95838f3a819f4df65f0d	La libreria del centro vende sia libri nuovi che usati a prezzi molto convenienti.	Una grande libreria.
 l'edicola	newsstand	5	e2fff65b3236d83edf8efb15d61484a5	Compro il giornale all'edicola sotto casa ogni mattina prima di andare al lavoro presto.	Un'edicola chiusa.
 il bar	bar / café	5	37b51d194a7513e45b56f6524f2d51f2	Faccio colazione al bar tutti i giorni con un cappuccino e un cornetto al cioccolato.	Andiamo al bar.
 l'hotel	hotel	5	e919c49d5f0cd737285367810a3394d0	Abbiamo prenotato un hotel a quattro stelle per le nostre vacanze estive in Sicilia.	Un hotel di lusso.
@@ -69,8 +69,8 @@ attraversare	to cross	5	764f8ab197971614d972f253d1e967bf	Bisogna attraversare la
 fermarsi	to stop oneself	5	9cc8959e3d0e455095e9d58999b8bcb3	Devo fermarmi al distributore per fare benzina prima di continuare il lungo viaggio in macchina.	Fermati un attimo.
 noleggiare	to rent (car/boat)	5	f00d2ab93c989c8d5cdf78f18ae39ba0	Voglio noleggiare una macchina per visitare la Sicilia in modo più libero e indipendente.	Noleggio una bici.
 pernottare	to stay overnight	5	6e34379f5ff6cc8ed76e5e4b3c3c7d21	Decidiamo di pernottare in un piccolo bed and breakfast nel borgo medievale di montagna.	Pernottare in hotel.
-girare	to turn / wander	5	5f804482b255f027c88c1e8087794558	Mi piace girare per il centro storico di una nuova città a piedi senza una meta precisa.	Gira a destra.
-registrarsi	to check in	5	105aa94b5bf6625cdd18d05a6ed10063	Bisogna registrarsi alla reception dell'hotel mostrando il documento d'identità valido.	Mi registro adesso.
+girare	to turn / wander / film (shoot)	5	5f804482b255f027c88c1e8087794558	Mi piace girare per il centro storico di una nuova città a piedi senza una meta precisa.	Gira a destra.
+registrarsi	to register / check in	5	105aa94b5bf6625cdd18d05a6ed10063	Bisogna registrarsi alla reception dell'hotel mostrando il documento d'identità valido.	Mi registro adesso.
 smarrirsi	to get lost	5	7af3cf33e10fe48191ac00172177b913	È facile smarrirsi nelle stradine strette del centro storico di Venezia per i turisti.	Mi sono smarrito.
 percorrere	to travel along	5	30875789250e38b8e50d080d382274e6	Voglio percorrere tutta la costa amalfitana in macchina per ammirare i panorami mozzafiato.	Percorro la strada.
 esplorare	to explore	5	1708f57184d5bbcd8e5735abf646c308	Mi piace esplorare nuove città a piedi per scoprire angoli nascosti e particolari unici.	Esploriamo insieme.
@@ -127,19 +127,19 @@ sotto	below / under	5	e1404d494477d7dbc77719c2706c3c74	C'è una cantina sotto la
 vicino	near / close	5	ddfc27db1de6bf1d3a6f7038fbc9b78e	Abito vicino al centro della città e posso andare a piedi al lavoro ogni mattina presto.	Vicino a casa.
 lontano	far / distant	5	17a1ac7c8eef1d0638d28f5d13da11ae	Mio fratello vive lontano, in Australia, e lo vedo solo una volta ogni due anni.	Lontano da qui.
 il centro	center / downtown	5	9484c73d200423b79f02cf29d55aedb7	Lavoro nel centro della città e vado al lavoro a piedi tutti i giorni per fare movimento.	In centro.
-la pianta	plant	5	8b0ff9f7684fbc4de319f77f8eb20544	Ho una pianta di basilico sul balcone e la uso per cucinare la pasta al pesto.	Una pianta verde.
+la pianta	plant / floor plan / sole (of foot)	5	8b0ff9f7684fbc4de319f77f8eb20544	Ho una pianta di basilico sul balcone e la uso per cucinare la pasta al pesto.	Una pianta verde.
 la foglia	leaf	5	dd0546096924984278fb9cdb79594a39	La foglia gialla è caduta dall'albero del giardino con il primo vento freddo dell'autunno.	Una foglia secca.
 l'erba	grass	5	469e999152ade59ac432643b2a54996e	L'erba del giardino deve essere tagliata almeno una volta alla settimana durante l'estate calda.	Erba alta.
 il ramo	branch	5	a732722c6f24131348e05a0a6f9542b1	Il ramo dell'albero si è spezzato durante il temporale violento di ieri sera tardi.	Un ramo rotto.
 la radice	root	5	d3a6cdf239ef3b7f4ce8ed76a8dae8e7	Le radici di questo albero sono talmente profonde da raggiungere la falda acquifera sotterranea.	Una radice forte.
-il frutto	fruit (single)	5	213689dd0114868b3c5c816749aeeab8	Questo frutto esotico viene importato direttamente dal Brasile e ha un sapore davvero unico al palato.	Un frutto raro.
+il frutto	fruit (single) / fruit (result)	5	213689dd0114868b3c5c816749aeeab8	Questo frutto esotico viene importato direttamente dal Brasile e ha un sapore davvero unico al palato.	Un frutto raro.
 il seme	seed	5	713ef8d58cbf1c1dabb51f8fbe73a92f	Il seme di girasole è ottimo da mangiare come spuntino sano durante la pausa pranzo.	Un piccolo seme.
 il sasso	stone / rock	5	e49ac6c6e682533038e20a59aa2e008a	Ho trovato un bel sasso colorato sulla spiaggia durante la passeggiata con i miei nipoti.	Un sasso liscio.
 la pietra	stone (material)	5	2fb74eed31df38eead96278c6349b8fe	La casa antica del paese è costruita interamente di pietra locale grigia e resistente al tempo.	Una pietra preziosa.
 la sabbia	sand	5	06cafd1b41873052b72f3ee650254fe0	La sabbia bianca della spiaggia caraibica è famosa in tutto il mondo per la sua morbidezza unica.	Sabbia fine.
 il fango	mud	5	a47b7b91ab5175f88c08167eeb4c7859	Dopo la forte pioggia il sentiero di montagna è diventato pieno di fango scivoloso e difficile.	Pieno di fango.
 la polvere	dust	5	e3e8e9c02d94bd67a5a886328d74b6ca	C'è troppa polvere sui mobili del salotto e devo fare le pulizie a fondo questo weekend.	Polvere ovunque.
-il tronco	trunk	5	166c93396b10c5be319c5acd8122f020	Il tronco del vecchio albero è cavo dentro e diventa la casa di tanti piccoli uccelli.	Un tronco antico.
+il tronco	trunk (of tree) / torso	5	166c93396b10c5be319c5acd8122f020	Il tronco del vecchio albero è cavo dentro e diventa la casa di tanti piccoli uccelli.	Un tronco antico.
 la corteccia	bark	5	7f1464d009cd54506a8718f31e368f06	La corteccia di questa quercia secolare è ruvida e screpolata dal tempo e dalle intemperie.	Corteccia secca.
 il cespuglio	bush	5	57e251e0612c0757ed1938cece87cd4e	Il cespuglio di rose vicino al cancello è in fiore e profuma tutto il giardino di primavera.	Un cespuglio fiorito.
 la mosca	fly	5	d3e863b4c91bff6d3a274e923e9e5968	C'è una mosca fastidiosa nella stanza che continua a girare intorno alla lampada accesa.	Una piccola mosca.
@@ -167,7 +167,7 @@ il ricordo	memory	5	c840b69d696126ea000e2dfc6acdbee4	Ho un bel ricordo del mio p
 l'arrivo	arrival	5	95360875e562442e4ea63e1e019ad640	L'arrivo del treno è previsto per le tre del pomeriggio alla stazione centrale del paese.	Tempo di arrivo.
 la partenza	departure	5	5f42a70b8e11aac3a2836aa4a66e5d4a	La partenza dell'aereo è alle dieci e dobbiamo essere in aeroporto due ore prima.	Buona partenza!
 il ritorno	return	5	b8833f77c8423cb01d8c5ed359a37034	Il ritorno dalle vacanze è sempre un momento difficile perché bisogna riprendere la routine quotidiana.	Il viaggio di ritorno.
-l'ospite	guest	5	fec59f79a07eb89b3d9d2d6de8bb128f	Mio cugino sarà nostro ospite per una settimana intera durante le vacanze natalizie di dicembre.	Un ospite gradito.
+l'ospite	guest / host	5	fec59f79a07eb89b3d9d2d6de8bb128f	Mio cugino sarà nostro ospite per una settimana intera durante le vacanze natalizie di dicembre.	Un ospite gradito.
 l'accoglienza	welcome / reception	5	864f5a89e0eb470391ee056042ea61b8	L'accoglienza in questo hotel è davvero calorosa e il personale è disponibile e professionale.	Una calda accoglienza.
 la passeggiata	walk / stroll	5	d2adb6bec620661b6ce9ff7620004244	Faccio una lunga passeggiata in centro ogni domenica mattina con il mio fedele cane Rocky.	Una piacevole passeggiata.
 il picnic	picnic	5	7ca6c5076bb01c621993eaf8aba35c41	Abbiamo fatto un picnic sul prato con tanto cibo, vino rosso e bei colori della natura.	Un picnic in campagna.
@@ -176,7 +176,7 @@ lo sci	ski / skiing	5	a76f2c01be007dbd8c7fdb01a4ec6115	Vado a sciare ogni invern
 il surf	surfing	5	353c8773694fbf1251dec54d98b614a1	Mio nipote ama il surf e ogni estate va in California per cavalcare le onde dell'oceano.	Tavola da surf.
 l'equitazione	horse riding	5	401588735989669fc4a82647a739486a	L'equitazione è il mio sport preferito e cavalco tutte le settimane in un maneggio in campagna.	Lezione di equitazione.
 l'alpinismo	mountaineering	5	48f0fabd05ec594d6dbf216cb2ce3697	L'alpinismo richiede grande preparazione fisica, mentale e attrezzatura adeguata per affrontare la montagna.	Alpinismo estremo.
-la pesca	fishing	5	221a18f5d29952fd78b05bd25afd6d47	La pesca è un'attività rilassante che pratico la domenica mattina al lago vicino a casa.	Andiamo a pesca.
+la pesca	fishing / peach	5	221a18f5d29952fd78b05bd25afd6d47	La pesca è un'attività rilassante che pratico la domenica mattina al lago vicino a casa.	Andiamo a pesca.
 la caccia	hunting	5	dfa6fd91317e9d937dda65074f924f46	La caccia è regolamentata da leggi severe per proteggere gli animali e l'ambiente naturale.	Apertura della caccia.
 il nuoto	swimming	5	388d661e9ccf0e365bd48ecec563650c	Il nuoto è uno degli sport più completi perché coinvolge tutti i muscoli del corpo.	Lezioni di nuoto.
 locale	local	5	fb216d9e8791e63c8d12bdc420956839	Ho mangiato in un ristorante locale dove servono solo prodotti tipici della regione siciliana.	Cucina locale.

@@ -40,12 +40,12 @@ il rame	copper	10	db4180193c578a686685739556791951	Il rame è un metallo rosso u
 il gas	gas	10	fee74eac0728a1bb5ff7d4666f8c4a88	Il gas naturale è la principale fonte di energia per riscaldare le case in molti paesi europei moderni del nord.	Un gas tossico.
 la cifra	digit / figure	10	c3c06e5aa01129eea3b7ce3faf9de1c2	La cifra finale della somma è quattro perché i numeri sommati danno questo risultato preciso senza alcun errore.	Una grossa cifra.
 la somma	sum / addition	10	a0f4ba2c8d5c9a230f176943e5de5194	La somma di tutti i numeri da uno a dieci è cinquantacinque secondo i miei calcoli matematici precisi.	Una somma esatta.
-il prodotto	product (math)	10	23147ce18e7364b9e8a4bc95c0cfd8bb	Il prodotto di sei per sette è quarantadue secondo le tabelline che abbiamo imparato in seconda elementare a scuola.	Un buon prodotto.
+il prodotto	product	10	23147ce18e7364b9e8a4bc95c0cfd8bb	Il prodotto di sei per sette è quarantadue secondo le tabelline che abbiamo imparato in seconda elementare a scuola.	Un buon prodotto.
 il quoziente	quotient	10	4451f930b8aef472634b49c7add973e4	Il quoziente della divisione di venti per cinque è quattro senza resto come tutti i bambini sanno fare bene.	Un alto quoziente.
 l'equazione	equation	10	e60650d58e50cf4ef67da014b867db07	L'equazione di secondo grado ha sempre due soluzioni che si trovano usando la formula risolutiva imparata al liceo.	Un'equazione complessa.
 la formula	formula	10	35be2c1cf2cc489bdb16b678cd73cd78	La formula matematica per calcolare l'area del cerchio è pi greco moltiplicato per il raggio al quadrato.	Una formula segreta.
 il grafico	graph / chart	10	0c84b8e6cb355aed4768c33064af6730	Il grafico mostra l'andamento delle vendite negli ultimi cinque anni con una crescita costante del fatturato aziendale.	Un grafico chiaro.
-l'asse	axis	10	ff359c65a79d0e894e8ebccf5bff7c47	L'asse delle ascisse è quello orizzontale mentre quello delle ordinate è verticale come si vede nel grafico cartesiano.	L'asse della terra.
+l'asse	axis (m.) / board, plank (f.)	10	ff359c65a79d0e894e8ebccf5bff7c47	L'asse delle ascisse è quello orizzontale mentre quello delle ordinate è verticale come si vede nel grafico cartesiano.	L'asse della terra.
 la percentuale	percentage	10	b27fe3f48c75f42f2eb1b6644c352a17	La percentuale di studenti che ha superato l'esame è del settantacinque per cento secondo le statistiche ufficiali raccolte.	Una percentuale alta.
 la frazione	fraction	10	53db61d50aa0f1d97ae2d1f2aea95b0a	La frazione un mezzo significa una parte su due ed è il modo più semplice per rappresentare un numero non intero.	Una piccola frazione.
 l'arte	art	10	c8581bc43486c23ee099afe031f4de31	L'arte italiana del Rinascimento è famosa in tutto il mondo per i grandi maestri come Leonardo, Michelangelo e Raffaello.	Un'arte bella.
@@ -54,7 +54,7 @@ la scultura	sculpture	10	e0f85950871864ae68bbd52aa767ef8c	La scultura del David 
 il disegno	drawing	10	ff5b440ba28d32ec3f3affeda37d3b48	Il disegno preparatorio del quadro è stato fatto a matita prima di passare ai colori a olio definitivi sulla tela.	Un bel disegno.
 lo schizzo	sketch	10	da4817f198e913ccdd312f37ab2db333	Lo schizzo veloce dell'artista cattura perfettamente l'atmosfera di quella mattina di sole sulla spiaggia italiana del sud.	Uno schizzo a matita.
 il ritratto	portrait	10	76620b057982a23214f9ad1925f1cfdf	Il ritratto della Gioconda è il dipinto più famoso al mondo e attira ogni anno milioni di visitatori al Louvre.	Un bel ritratto.
-l'opera	work (artistic)	10	9ed987966c06808b50f9fddc24931bd1	L'opera completa di questo artista è stata raccolta in un grande museo della sua città di nascita italiana storica.	Un'opera d'arte.
+l'opera	work / opera (music) / deed	10	9ed987966c06808b50f9fddc24931bd1	L'opera completa di questo artista è stata raccolta in un grande museo della sua città di nascita italiana storica.	Un'opera d'arte.
 la mostra	exhibition	10	0dd100bf1c5c2001e6274bc2ae12b78c	La mostra di pittura impressionista è aperta al pubblico fino alla fine del mese al palazzo reale del centro storico.	Una mostra interessante.
 l'esposizione	exhibition	10	67e4ad7638102e4dafb784e7b899b47e	L'esposizione internazionale di Milano ha attirato visitatori da tutto il mondo durante i sei mesi di apertura totale.	Una grande esposizione.
 il capolavoro	masterpiece	10	5a44377365358440c13d250b870909e0	Questo libro è considerato un capolavoro della letteratura italiana del ventesimo secolo per la sua originalità e profondità.	Un vero capolavoro.
@@ -79,7 +79,7 @@ la percussione	percussion	10	73aa1840eba60653e8fa6e63cfb2ea7b	Le percussioni del
 il sassofono	saxophone	10	c55dc3740a79d41b8791443b940ae562	Il sassofono è lo strumento simbolo del jazz americano e si distingue per il suo suono caldo e avvolgente alla persona.	Un sax sensuale.
 il mandolino	mandolin	10	0acc46d892983a71eeead4b7fe1c0f99	Il mandolino napoletano è uno strumento tipico della tradizione musicale italiana e si suona con un plettro come la chitarra.	Suona il mandolino.
 lo sport	sport	10	3823552b7a2b839259a831e3b7b349a3	Lo sport è importante per mantenere il corpo in forma e la mente lucida durante tutte le età della vita.	Praticare uno sport.
-il calcio	soccer / football	10	657cd0659a8d7ccfd0793cbb6f1459f0	Il calcio è lo sport più popolare in Italia e ogni weekend milioni di tifosi vanno allo stadio a vedere la partita.	Una partita di calcio.
+il calcio	soccer / football / kick	10	657cd0659a8d7ccfd0793cbb6f1459f0	Il calcio è lo sport più popolare in Italia e ogni weekend milioni di tifosi vanno allo stadio a vedere la partita.	Una partita di calcio.
 il basket	basketball	10	0f6cdb621b452ac6fb994d88e674e49f	Il basket americano è famoso in tutto il mondo grazie alla lega professionistica che ha lanciato grandi campioni di livello internazionale.	Una palla da basket.
 il tennis	tennis	10	1fbfb23351e3580651395ab721f5e935	Il tennis è uno sport individuale che richiede grande concentrazione e preparazione atletica per competere a livelli professionali importanti.	Una racchetta da tennis.
 il golf	golf	10	c6cf642b8f1cac1101e23a06aa63600e	Il golf è considerato uno sport elegante e si pratica su grandi campi verdi con buche distribuite secondo regole precise.	Un campo da golf.
@@ -94,7 +94,7 @@ la pallavolo	volleyball	10	67f06dcbe36ab7a62bc54f5262bbbdc5	La pallavolo italian
 il rugby	rugby	10	24908ce13bfd3ec802bfc0ba32fc79e8	Il rugby è uno sport di squadra molto duro e impegnativo che richiede grande preparazione fisica e tattica per giocarlo bene.	Una partita di rugby.
 l'hockey	hockey	10	df0349ce110b69f03b4def8012ae4970	L'hockey su ghiaccio è lo sport nazionale del Canada dove si gioca a tutti i livelli da quello amatoriale a quello professionistico.	Hockey su ghiaccio.
 la partita	match / game	10	e35c9393c8f130b7d323c2082b127ec3	La partita di ieri sera è stata emozionante fino all'ultimo minuto con un risultato di tre a due finale combattuto.	Una bella partita.
-la gara	race / competition	10	04b7aaeab58d4c6507e86a90250694af	La gara di nuoto è stata vinta dal nostro campione nazionale che ha battuto il record italiano di tre secondi pieni.	Una difficile gara.
+la gara	race / competition / tender (bid)	10	04b7aaeab58d4c6507e86a90250694af	La gara di nuoto è stata vinta dal nostro campione nazionale che ha battuto il record italiano di tre secondi pieni.	Una difficile gara.
 il torneo	tournament	10	f46be5aeb362172e14d72145e0dd9897	Il torneo di tennis di Wimbledon è il più antico e prestigioso del mondo e si svolge ogni anno a Londra.	Un grande torneo.
 il campionato	championship / league	10	3140bbdcc4512998485e2376b5181afa	Il campionato di calcio italiano è uno dei più seguiti al mondo e ogni anno la Juventus è tra le favorite alla vittoria.	Vincere il campionato.
 l'allenamento	training / workout	10	64ef9a0f17178b525d0cde8f07d4798a	L'allenamento quotidiano è fondamentale per mantenere alta la forma fisica e migliorare le proprie prestazioni atletiche durante l'anno.	Un duro allenamento.
@@ -137,7 +137,7 @@ la cometa	comet	10	2f5581dddbf6355398b8b4cb298df89b	La cometa di Halley passa vi
 l'asteroide	asteroid	10	270066dee326ac556845d7d7096cda07	L'asteroide gigante che si è schiantato sulla Terra sessantacinque milioni di anni fa ha causato l'estinzione dei dinosauri preistorici.	Un grande asteroide.
 l'eclissi	eclipse	10	66f46b67c3fa07ce9017f5e2e2beaa95	L'eclissi solare totale è un evento spettacolare che si verifica solo poche volte ogni secolo in determinate zone del nostro pianeta.	Un'eclissi rara.
 l'orbita	orbit	10	dad166a4a2a3022591b1bdcc2b7a5c62	L'orbita della Terra intorno al Sole dura esattamente un anno solare ed è leggermente ellittica come quella degli altri pianeti.	In orbita stabile.
-la gravità	gravity	10	0259e1aa0f848f71942edc999e46a193	La gravità terrestre tiene tutti gli oggetti attaccati alla superficie del pianeta impedendoci di volare via nello spazio profondo.	La forza di gravità.
+la gravità	gravity / seriousness	10	0259e1aa0f848f71942edc999e46a193	La gravità terrestre tiene tutti gli oggetti attaccati alla superficie del pianeta impedendoci di volare via nello spazio profondo.	La forza di gravità.
 calcolare	to calculate	10	9b64ddab9cf410832e2e30da7eb99c97	Devo calcolare il costo totale del viaggio prima di decidere se posso permettermi di andare in vacanza l'estate prossima.	Calcola la somma.
 misurare	to measure	10	624e37345f62daba445dfe94fcae558d	Bisogna misurare con precisione la stanza prima di comprare i mobili nuovi per la casa appena ristrutturata da poco.	Misura la stanza.
 sommare	to add up / sum	10	a506be022dbdf9a144e33b9cd8f973e3	Devo sommare tutti i numeri della lista per ottenere il totale finale delle spese del mese di settembre scorso.	Sommare i conti.
@@ -164,7 +164,7 @@ stupido	stupid / foolish	10	072d98e017fe33291ae559b2648cf996	Non bisogna fare sc
 ignorante	ignorant	10	487b813444eb86e2383a124260d130bf	Quella persona è davvero ignorante perché non sa neanche le cose più elementari della cultura generale di base scolastica.	Un commento ignorante.
 colto	cultured / educated	10	8d0fc5443a388221b3193a0d12c66e81	Mio nonno era un uomo molto colto che parlava cinque lingue ed era esperto di storia e letteratura italiana antica.	Una persona colta.
 la tradizione	tradition	10	be2b9d90f40f6777b932977d2fcf1f75	La tradizione del pranzo di Natale in famiglia è importante per mantenere vivi i legami tra le diverse generazioni.	Una vecchia tradizione.
-il costume	custom / costume	10	4f99e8ee797ac7727600ce4bc5b28e5f	Il costume di Carnevale di Venezia è famoso in tutto il mondo per la sua eleganza, ricchezza di dettagli e bellezza unica.	Un bel costume.
+il costume	custom / costume / swimsuit	10	4f99e8ee797ac7727600ce4bc5b28e5f	Il costume di Carnevale di Venezia è famoso in tutto il mondo per la sua eleganza, ricchezza di dettagli e bellezza unica.	Un bel costume.
 la cerimonia	ceremony	10	b05a706dc6e93d50e6a00bdcefd7bb08	La cerimonia di laurea di mia sorella si è tenuta nel palazzo storico dell'università alla presenza di tutta la famiglia riunita.	Una bella cerimonia.
 il rituale	ritual	10	fc95387773aa436c71b658f968d4b092	Il rituale del caffè della mattina è importante per molti italiani per iniziare bene la giornata di lavoro intensa quotidiana.	Un antico rituale.
 il festival	festival	10	ae8fc55ccdc61c9812a7e247cf4dafdf	Il festival del cinema di Venezia è uno dei più importanti del mondo e attira ogni anno star del cinema internazionale famose.	Un grande festival.
@@ -192,7 +192,7 @@ confutare	to refute	10	f2bdfc4c315916afff498885260fbe97	Lo scienziato è riuscit
 validare	to validate	10	2305a984d4068a683002e8ef9808f127	Bisogna validare il risultato dell'esperimento ripetendolo molte volte in condizioni controllate per essere sicuri della sua attendibilità reale.	Validare i dati.
 verificare	to verify	10	fd5e6309319a737aa03b5edd1e9767e5	Devo verificare l'esattezza di queste informazioni prima di pubblicarle sul giornale di domani mattina presto in edicola.	Verifica il fatto.
 definire	to define	10	5bb81750264bedda596beba5feb2cacb	Bisogna definire chiaramente i termini usati prima di iniziare una discussione filosofica seria su temi così complicati e profondi.	Definire le regole.
-prevedere	to foresee / predict	10	3e36e933e726f3a0924f36de5be479dd	Le previsioni meteorologiche prevedono pioggia per tutta la settimana e quindi dovremo rimandare il pic-nic in campagna programmato sabato.	Prevedere il futuro.
+prevedere	to foresee / predict / stipulate	10	3e36e933e726f3a0924f36de5be479dd	Le previsioni meteorologiche prevedono pioggia per tutta la settimana e quindi dovremo rimandare il pic-nic in campagna programmato sabato.	Prevedere il futuro.
 universale	universal	10	a0ee8fc8218a3c17a51d14ec5443aa20	I diritti umani sono valori universali che dovrebbero essere garantiti a tutti gli abitanti del pianeta senza alcuna distinzione.	Una verità universale.
 particolare	particular / specific	10	29607aaee7f4806670d089d45189bef1	Questa è una situazione particolare che richiede una soluzione speciale e creativa diversa da quelle utilizzate in casi simili precedenti.	Un caso particolare.
 generale	general	10	ba4a1c94052b1153792981fbf4622029	La regola generale prevede che tutti i dipendenti debbano timbrare il cartellino in entrata e in uscita ogni giorno lavorativo.	Un discorso generale.

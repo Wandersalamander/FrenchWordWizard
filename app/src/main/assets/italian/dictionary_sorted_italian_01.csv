@@ -11,7 +11,7 @@ nostro / nostra	our	1	806a2eff49607bd9d9093156f97c09df	Il nostro paese e la nost
 io	I	1	f98ed07a4d5f50f7de1410d905f1477f	Io penso che tu abbia ragione su questo argomento delicato.	Io sono qui.
 tu	you (singular informal)	1	b6b4ce6df035dcfaa26f3bc32fb89e6a	Tu hai sempre saputo come farmi sorridere anche nei momenti difficili.	Tu cosa pensi?
 lui	he	1	55681f25f2b5ce8a670140d1dff04da5	Lui è arrivato in ritardo perché il treno era stato cancellato all'ultimo momento.	Lui dorme.
-lei	she; you (formal)	1	688f227b9cad4edeed15f067e04d3764	Lei lavora in ospedale come medico da più di vent'anni ormai.	Lei è qui.
+lei	she / her / you (formal)	1	688f227b9cad4edeed15f067e04d3764	Lei lavora in ospedale come medico da più di vent'anni ormai.	Lei è qui.
 noi	we	1	5585e79028e8d00e7a26a68b168739bd	Noi siamo amici da tanti anni e ci conosciamo molto bene a vicenda.	Noi mangiamo.
 voi	you (plural)	1	0106085c83556205a5aef641b6eb76a5	Voi avete fatto un ottimo lavoro durante questo progetto difficile e complesso.	Voi siete pronti?
 loro	they / them	1	b66f36de26d6b937e64d72f5a5fafac0	Loro vivono in una casa grande con un bel giardino in periferia.	Loro arrivano domani.
@@ -19,18 +19,18 @@ mi	me / myself	1	29bfe372865737fe2bfcfd3618b1da7d	Quando mi vedi triste, sai sem
 ti	you / yourself	1	e00fba6fedfb8a49e13346f7099a23fc	Ti aspetto da un'ora davanti al cinema, dimmi dove sei.	Ti amo.
 ci	us / there	1	35ea51baf1fe7f0142ad5f950855dde0	Ci sono molte persone alla festa stasera e ci stiamo divertendo tantissimo.	Ci vediamo.
 vi	you (plural) / yourselves	1	35b36b28916d38b34abddf832e286126	Vi scrivo per ringraziarvi del bellissimo regalo che mi avete fatto.	Vi saluto.
-si	oneself / one	1	ac5585d98646d255299c359140537783	Si dice che il tempo cambierà nei prossimi giorni e che pioverà molto.	Si vede.
+si	oneself / himself / herself / themselves / one (impersonal)	1	ac5585d98646d255299c359140537783	Si dice che il tempo cambierà nei prossimi giorni e che pioverà molto.	Si vede.
 me	me (stressed)	1	ab86a1e1ef70dff97959067b723c5c24	Per me è importante avere del tempo libero per dedicarmi ai miei hobby.	Vieni con me.
 te	you (stressed singular)	1	569ef72642be0fadd711d6a468d68ee1	Senza te non saprei come affrontare questa difficile situazione familiare.	Conto su di te.
 chi	who	1	1e6086b705c7161eeb93a8b249a5ca7c	Chi ha lasciato la finestra aperta durante la notte mentre dormivamo?	Chi è?
-che	that / what / which	1	f81e986ee4c9f80d6002bf5302b3ea87	Il libro che mi hai consigliato è davvero interessante e ben scritto.	Che cosa fai?
+che	that / what / which / how (exclamatory)	1	f81e986ee4c9f80d6002bf5302b3ea87	Il libro che mi hai consigliato è davvero interessante e ben scritto.	Che cosa fai?
 cosa	thing / what	1	12703dd1411c33587da2004a9434a400	C'è una cosa importante che devo dirti prima che parta domani mattina.	Cosa vuoi?
 quale	which / what	1	f05ce263f3fab3bc3e07c495291ed0b2	Quale film preferisci vedere stasera al cinema con i nostri amici?	Quale scegli?
 quanto	how much / how many	1	5c5ff9df1a3789982db612293d119d49	Quanto costa questo libro e quanto tempo ci vuole per leggerlo?	Quanto costa?
 tutto	all / everything	1	35a9b9c553129a2e647c70aae2088f61	Tutto è andato bene durante il viaggio nonostante il maltempo previsto.	Tutto bene?
 di	of / from	1	690382ddccb8abc7367a136262e1978f	La casa di mia zia si trova al centro di una piccola città storica.	Sono di Roma.
 a	to / at	1	0cc175b9c0f1b6a831c399e269772661	Vado a Roma a trovare i miei amici durante le vacanze estive.	A casa.
-da	from / by / since	1	5ca2aa845c8cd5ace6b016841f100d82	Da giovane abitavo da mia nonna ogni estate per due mesi interi.	Vengo da Milano.
+da	from / by / since / at (someone's place) / to	1	5ca2aa845c8cd5ace6b016841f100d82	Da giovane abitavo da mia nonna ogni estate per due mesi interi.	Vengo da Milano.
 in	in / to	1	13b5bfe96f3e2fe411c9f66f4a582adf	In estate andiamo sempre in montagna per sfuggire al caldo della città.	Sono in casa.
 con	with	1	7ed201fa20d25d22b291dc85ae9e5ced	Vado al cinema con i miei amici per vedere un film d'azione.	Con piacere.
 su	on / about	1	0b180078d994cb2b5ed89d7ce8e7eea2	Il libro è su un tavolino e parla di un argomento molto attuale.	Su questo tema.
@@ -59,7 +59,7 @@ qui	here	1	9d24420082d450cb81caf59e2b173279	Vieni qui un momento, devo dirti una
 là	there (over there)	1	7c9ac3d17e5ae0a5124619689e48de10	Là in fondo alla strada c'è una bellissima piazza con una fontana antica.	Guarda là.
 ora	now / hour	1	d41fe446faeb9c02909aa61b34736059	Ora devo andare a lavorare perché tra un'ora ho una riunione importante.	Che ora è?
 dopo	after / afterwards	1	ac4c777a9b80627bcd4b2cab4ec016f2	Dopo cena guardiamo un film insieme sul divano del salotto comodo.	Dopo di te.
-prima	before / first	1	3c00ab9ee5f47c8afc7ab4fc62342ef4	Prima di uscire devo finire questo lavoro importante per il mio capo.	Prima o poi.
+prima	before / earlier / first	1	3c00ab9ee5f47c8afc7ab4fc62342ef4	Prima di uscire devo finire questo lavoro importante per il mio capo.	Prima o poi.
 presto	early / soon	1	1e954771813210da5673f51da7e4394c	Mi alzo sempre presto la mattina per fare colazione con calma prima del lavoro.	A presto!
 tardi	late	1	db8b9677c3d2085a21a3d1fa65afe34c	Sono arrivato tardi all'appuntamento perché c'era molto traffico in autostrada.	È tardi.
 essere	to be	1	56e1c1edb51514657dbb89ba27743ef0	Voglio essere felice nella vita e fare ciò che mi appassiona davvero.	Sono italiano.
@@ -74,12 +74,12 @@ volere	to want	1	0719e8fc7c3923b6608a609d828a948f	Voglio imparare l'italiano per
 sapere	to know (facts)	1	f40104ffa7683c0df3facff5f6e6722b	So che hai ragione e so anche che dovrei ascoltarti molto di più.	Lo so.
 conoscere	to know (people / places)	1	3b7c414ad67679d983c71334dc852105	Conosco bene Roma perché ci ho vissuto e conosco molte persone lì.	Ti conosco.
 vedere	to see	1	0e7ec8ddd854ff64210ff617e55518fe	Voglio vedere quel film stasera al cinema, lo voglio vedere insieme a te.	Ci vediamo!
-sentire	to hear / to feel	1	68cfc18e446098a6a2a8b70273ec1a05	Posso sentire la musica dalla finestra aperta e mi sento molto rilassato.	Mi sento bene.
+sentire	to hear / feel / smell / taste	1	68cfc18e446098a6a2a8b70273ec1a05	Posso sentire la musica dalla finestra aperta e mi sento molto rilassato.	Mi sento bene.
 dare	to give	1	a0c4cadf0cbed6feb770521c888da575	Posso darti un buon consiglio? Devi dare il meglio di te stesso sempre.	Dammi la mano.
 stare	to stay / to be (state)	1	418dc7852d13cc28bc4c1c5c492df7ee	Mi piace stare a casa quando piove e stare in compagnia degli amici.	Come stai?
 trovare	to find	1	fdb393ecef69ce29a214270cd470d927	Non riesco a trovare le chiavi ma le devo trovare prima di uscire.	L'ho trovato.
 parlare	to speak / to talk	1	c8536d95c98f5fcd0f0f5aac0b8fcc29	Mi piace parlare con persone interessanti e parlare di vari argomenti culturali.	Parlo italiano.
-portare	to bring / to wear	1	9275bb7698e5e6d5e31ba0f0fdb0b20f	Devo portare il regalo alla festa e portare anche una bottiglia di vino.	Porto io.
+portare	to bring / carry / wear / take	1	9275bb7698e5e6d5e31ba0f0fdb0b20f	Devo portare il regalo alla festa e portare anche una bottiglia di vino.	Porto io.
 mettere	to put	1	4353b9b87661ca1d641d7d849fe8611c	Dove devo mettere queste scatole pesanti? Le posso mettere in cantina.	Metti qui.
 credere	to believe	1	9dc988345b95eb716296e2b4540139eb	Credo che tu abbia ragione e credo anche che dovremmo provare insieme.	Ci credo.
 uscire	to go out	1	37b8e7f57592ee127a6c3d4daf65b19c	Stasera voglio uscire con gli amici per stare un po' fuori casa.	Esco ora.
@@ -99,7 +99,7 @@ iniziare	to begin / to start	1	2b03705de9d6dd82c433eaed25049e68	Voglio iniziare 
 finire	to finish	1	5dfba979719ff18092af69de7cd36ab1	Devo finire questo libro e poi finire i compiti per domani mattina.	Ho finito.
 continuare	to continue	1	c7773217ed87335f1321a7cfedf34ace	Voglio continuare a studiare e continuare a migliorare il mio italiano scritto.	Continua così.
 cambiare	to change	1	1fa4559081dae690fed1b1ab6d7aa4b4	Voglio cambiare lavoro e cambiare città il prossimo anno per nuovi orizzonti.	Tutto cambia.
-perdere	to lose / to miss	1	97d09f9c58fd9502ccc31c350efae7b4	Non voglio perdere il treno e non voglio perdere neanche le chiavi nuove.	Ho perso le chiavi.
+perdere	to lose / miss / waste (time)	1	97d09f9c58fd9502ccc31c350efae7b4	Non voglio perdere il treno e non voglio perdere neanche le chiavi nuove.	Ho perso le chiavi.
 ricordare	to remember	1	ca0cc9a2827ab43ea94114890aad9f91	Devo ricordare di chiamare mia madre e ricordare di comprare il latte fresco.	Mi ricordo.
 dimenticare	to forget	1	0e45156f4b307899d6d8d5423ea1bf99	Non voglio dimenticare il tuo compleanno né dimenticare le cose veramente importanti.	Ho dimenticato.
 pensare	to think	1	7118df4903c33654656d0caf0f588eda	Devo pensare bene prima di prendere una decisione e pensare al mio futuro.	Cosa pensi?
@@ -151,20 +151,20 @@ la macchina	car / machine	1	aff79667f4c3ec1e7c93114b947fdb9d	La mia macchina è 
 la mano	hand	1	5b4d762427d4dff75f6e5885cb380080	Mi sono fatto male alla mano destra mentre giocavo a pallone ieri sera.	Dammi la mano.
 l'occhio	eye	1	af5871c825d442b3dd03a90ac437d484	Ho un problema all'occhio sinistro e devo andare dall'oculista al più presto.	A occhio.
 la testa	head	1	7a68f09bd992671bb3b19a5e70b7827e	Ho mal di testa stamattina, forse ho dormito troppo poco la notte scorsa.	Mal di testa.
-il cuore	heart	1	8b784f8f08e36ba472c44b8d30917a88	Il mio cuore batte forte ogni volta che ti vedo entrare nella stanza.	Di cuore.
+il cuore	heart / core	1	8b784f8f08e36ba472c44b8d30917a88	Il mio cuore batte forte ogni volta che ti vedo entrare nella stanza.	Di cuore.
 il nome	name	1	666ac576aa2666cff323f5d976d592a6	Qual è il tuo nome? Il mio nome è Marco, piacere di conoscerti finalmente.	Come ti chiami?
 i soldi	money	1	8ea6e5f2dd5b9d7458671b3ced7ea9da	Non ho abbastanza soldi questo mese per comprare un nuovo telefono di marca.	Hai soldi?
 la vita	life	1	1116d70f3af1555dd95b361a7619eb1b	La vita è bella se la sai vivere con passione e curiosità ogni giorno.	La mia vita.
 il modo	way / manner	1	b4bd3c0453ef20e66f2fcc026e3816ec	C'è sempre un modo per risolvere i problemi se ci credi davvero molto.	In ogni modo.
-la parte	part	1	4d2aa37ecdd52b899359c0ffbaa8402a	Una parte di me vorrebbe partire ma un'altra parte vuole assolutamente restare.	La maggior parte.
-il punto	point	1	dbf8386ad34c7bac0e3f5f712756bfae	Hai sollevato un punto interessante che merita di essere discusso a fondo.	Punto e basta.
-la volta	time / occasion	1	a1423b7bbd7522605a6267121a91e6f1	C'era una volta una principessa che viveva in un castello sul mare.	Un'altra volta.
+la parte	part / side / role	1	4d2aa37ecdd52b899359c0ffbaa8402a	Una parte di me vorrebbe partire ma un'altra parte vuole assolutamente restare.	La maggior parte.
+il punto	point / period (.) / stitch	1	dbf8386ad34c7bac0e3f5f712756bfae	Hai sollevato un punto interessante che merita di essere discusso a fondo.	Punto e basta.
+la volta	time / occasion / vault	1	a1423b7bbd7522605a6267121a91e6f1	C'era una volta una principessa che viveva in un castello sul mare.	Un'altra volta.
 grande	big / great	1	7a3e1c7c45a215a4cbd11d441e63ec4f	Vivo in una casa grande con un bel giardino dove i bambini giocano.	Una grande città.
 piccolo	small / little	1	90319ea56263c86d6dbade1b0f34fab6	Il mio appartamento è piccolo ma molto accogliente e decisamente luminoso.	Un piccolo problema.
 nuovo	new	1	00777c83ed57889ec7c96acea333440a	Ho comprato un'auto nuova il mese scorso, dopo aver venduto quella vecchia.	Un nuovo amico.
 vecchio	old	1	ad01977d7d311d5b5898e274efeb211b	Mio nonno è molto vecchio ma ha ancora una mente lucida e attenta.	Un vecchio film.
 buono	good	1	db2d46512642abeb3113bb5d6982a07c	Questo cibo è davvero buono, mi piace molto la cucina di tua madre.	Buon appetito!
-cattivo	bad	1	37dc1567cd3a8896939c770f196fc9d7	Ha un carattere cattivo ma in fondo è una persona buona e generosa.	Un cattivo esempio.
+cattivo	bad / naughty / wicked	1	37dc1567cd3a8896939c770f196fc9d7	Ha un carattere cattivo ma in fondo è una persona buona e generosa.	Un cattivo esempio.
 bello	beautiful / nice	1	5a4d5215fa1fb5435e5322dbeb60dd3c	Che bel tempo oggi, è una giornata bellissima per andare al parco.	Una bella giornata.
 brutto	ugly / bad	1	11735e1e14db3f61c60f93503504fb2b	Oggi è una brutta giornata perché piove e fa anche molto freddo fuori.	Un brutto film.
 alto	tall / high	1	329d0259b8f9da84744c10e4bf085dd6	Mio fratello è molto alto, è il più alto della famiglia di sicuro.	Una persona alta.

@@ -72,7 +72,7 @@ il corso	course	6	596befa8ed524061b5abdb777cd9403e	Ho seguito un corso di italia
 la lezione	lesson	6	f521a7fe6420245e76fe8e1f4dcc615d	La lezione di matematica è alle nove di mattina nell'aula magna del primo piano.	Una bella lezione.
 la materia	subject	6	ea9f44d47a98e4434fe1ad9105c0c64a	La mia materia preferita a scuola era la storia perché mi affascinano le antiche civiltà mediterranee.	Materia di studio.
 l'esame	exam	6	eb7552e2a95c2734882c4a63ce6bf43f	Ho superato l'esame di stato con il massimo dei voti e adesso posso esercitare la professione.	Un esame difficile.
-il voto	grade	6	a071a50330ebfd0a41f8c4a46a195c90	Ho preso un bel voto al test di matematica grazie alle ore di studio fatte la settimana scorsa.	Un buon voto.
+il voto	grade / vote / vow	6	a071a50330ebfd0a41f8c4a46a195c90	Ho preso un bel voto al test di matematica grazie alle ore di studio fatte la settimana scorsa.	Un buon voto.
 il diploma	diploma	6	e42094e44cf3201366abb7ff2ad817a8	Ho ottenuto il diploma di scuola superiore con votazione massima dopo cinque anni di studio intenso.	Un diploma prestigioso.
 la laurea	degree	6	408baa543ae1ff7870b392cff5301a31	Mi sono laureato in ingegneria con il massimo dei voti dopo cinque anni di duro lavoro accademico.	La laurea triennale.
 il dottorato	doctorate / PhD	6	8f8c7c8f95da21133625049772f2595b	Sto facendo il dottorato di ricerca in fisica all'università di Bologna da tre anni ormai.	Un dottorato impegnativo.
@@ -89,7 +89,7 @@ la penna	pen	6	0ec0b9e04fac01d8a16b4b845372d2ac	Mi serve una penna nera per firm
 la matita	pencil	6	1ca319fa7e736f947e6bc3d82a513274	Disegno con la matita prima di colorare con i pennarelli durante le ore di arte a scuola.	Una matita gialla.
 la gomma	eraser	6	7ca32af8fd2c59e80c0ee51b0e4dde7c	Uso la gomma per cancellare gli errori che faccio mentre svolgo gli esercizi di matematica difficili.	Una gomma morbida.
 il compito	homework	6	9dd7e02123a396566425c0c3c45b3935	I bambini devono fare i compiti tutti i giorni dopo essere tornati a casa da scuola.	Un compito difficile.
-la lettura	reading (act)	6	32bb8353b0e0fdd7ef155337015c36f5	La lettura è il mio passatempo preferito e leggo almeno un libro al mese di varie tematiche.	Una bella lettura.
+la lettura	reading	6	32bb8353b0e0fdd7ef155337015c36f5	La lettura è il mio passatempo preferito e leggo almeno un libro al mese di varie tematiche.	Una bella lettura.
 l'aula	classroom	6	1d86ec4ce9d3a4cf793d052268bd1924	L'aula di mio figlio è grande e luminosa con grandi finestre che danno sul cortile esterno.	Un'aula spaziosa.
 la ricerca	research	6	a12cfc54ab5a50806103c8d07f92fa9c	La ricerca scientifica richiede molti anni di studio e sperimentazione prima di ottenere risultati concreti.	Una ricerca importante.
 lo studio	study (act / room)	6	c944634550c698febdd9c868db908d9d	Lo studio dell'italiano richiede impegno costante e tanta pratica con madrelingua per migliorare velocemente.	Studio ogni giorno.
@@ -154,7 +154,7 @@ sostituire	to replace	6	5adf4cc2d6f5a9da0ab5846e4a61590f	Devo sostituire la lamp
 scambiare	to exchange	6	912eacdb42e3748319d2b653e1248eac	Vorrei scambiare questo regalo con un altro più adatto alle mie esigenze pratiche di tutti i giorni.	Scambiamo i posti.
 prestare	to lend	6	39cdb839f8848b5565ab88507b7ecae6	Posso prestarti il libro che ho finito di leggere ieri sera tardi se ti interessa la trama.	Prestami i soldi.
 restituire	to return / give back	6	560ef5f8b80fbc3ba4459c49d7986a48	Devo restituire il libro alla biblioteca entro la fine della settimana per evitare di pagare la multa.	Restituisci la chiave.
-rendere	to render / make / give back	6	e30229a33f957c4d84cbb53b3112d84d	Vivere in campagna mi rende felice perché finalmente posso respirare l'aria pulita della natura tranquilla.	Mi rende triste.
+rendere	to make / give back / render	6	e30229a33f957c4d84cbb53b3112d84d	Vivere in campagna mi rende felice perché finalmente posso respirare l'aria pulita della natura tranquilla.	Mi rende triste.
 donare	to donate	6	fa17f4e734bacc13a5dfe16ddf603e07	Voglio donare un po' di denaro alla fondazione benefica che aiuta i bambini malati nei paesi in via di sviluppo.	Dona il sangue.
 regalare	to give as gift	6	2c9fd82bcd50edbf8d3dbe2064dfad95	Voglio regalare un bel libro alla mia amica per il suo compleanno la settimana prossima.	Le regalo un mazzo di fiori.
 scoprire	to discover	6	7f8497c882ffafc920f5ba1c7ee05d6d	Voglio scoprire nuovi posti durante questo viaggio in Italia con i miei amici e la famiglia.	Ho scoperto la verità.
@@ -162,7 +162,7 @@ inventare	to invent	6	216a224c6c03909f2ceda523bfa40fb1	Mio nonno è riuscito a i
 descrivere	to describe	6	604f49040e2213d971c43b74f2c51a8c	Puoi descrivere la persona che hai visto al parco ieri sera tardi prima dell'incidente avvenuto?	Descrivi la scena.
 assicurare	to assure / insure	6	925cdb5bca041c9b30c8cd18fb1b7c66	Ti posso assicurare che farò tutto il possibile per aiutarti in questa situazione difficile e delicata.	Assicuro la macchina.
 incaricare	to entrust	6	d6f6749e5171f38850d421618188ca2d	Mi hanno incaricato di organizzare la festa di Natale aziendale per tutti i dipendenti della sede.	Lo incarico io.
-occupare	to occupy	6	bb6323dc5afbd7e8c7b4ef4eb3875737	Quel posto a sedere è già occupato da un'altra persona che è andata in bagno per un attimo.	Occupo il tempo.
+occupare	to occupy / take up	6	bb6323dc5afbd7e8c7b4ef4eb3875737	Quel posto a sedere è già occupato da un'altra persona che è andata in bagno per un attimo.	Occupo il tempo.
 contattare	to contact	6	4dccee5dec57d79c58aa14d96aa75a83	Devi contattare il servizio clienti per risolvere il problema con la fattura del mese scorso sbagliata.	Contattami subito.
 comunicare	to communicate	6	eb5ba8f2486405fb80f0b27d80880363	È importante comunicare bene con i propri colleghi per evitare malintesi durante il lavoro di gruppo.	Comunico la novità.
 informare	to inform	6	e04947b5d4e320187ccd7df2f71c2d51	Devo informare il mio capo che sarò assente domani per un'importante visita medica programmata da tempo.	Ti informo subito.
@@ -178,9 +178,9 @@ efficiente	efficient	6	f1bac88b41c9e8c95ca72f5c5841a52b	Il nuovo sistema informa
 produttivo	productive	6	fac17e83976ed5cd6b334c2c1222a23a	Ho passato una giornata davvero produttiva e sono riuscito a finire tutti i compiti previsti per oggi.	Un lavoro produttivo.
 redditizio	profitable	6	76413cd5afcd80e298713148d2096bf0	Quel nuovo investimento è davvero redditizio e mi sta dando ottimi guadagni dopo solo sei mesi.	Un affare redditizio.
 costoso	expensive	6	3f53f908224262041ce482929445884c	Quell'orologio svizzero è troppo costoso per le mie possibilità economiche al momento del mio nuovo stipendio.	Un albergo costoso.
-economico	economical / cheap	6	de55fbf50dab0c4f841f6020ed600e67	Ho trovato un volo molto economico per Parigi per il prossimo weekend con la compagnia low cost.	Una soluzione economica.
+economico	economic / economical / cheap	6	de55fbf50dab0c4f841f6020ed600e67	Ho trovato un volo molto economico per Parigi per il prossimo weekend con la compagnia low cost.	Una soluzione economica.
 gratuito	free of charge	6	7fd93560fa6a81fc3b31fa5d6e9d1086	L'ingresso al museo è gratuito la prima domenica di ogni mese per tutti i visitatori italiani.	Servizio gratuito.
-conveniente	convenient / cheap	6	6b00e4431cc78fca28c8c8ca1531e661	È più conveniente comprare in offerta al supermercato del centro che pagare i prezzi pieni del piccolo negozio.	Un prezzo conveniente.
+conveniente	worthwhile / good-value / cheap (not "convenient")	6	6b00e4431cc78fca28c8c8ca1531e661	È più conveniente comprare in offerta al supermercato del centro che pagare i prezzi pieni del piccolo negozio.	Un prezzo conveniente.
 esigente	demanding	6	6218d56aa7762b8cea20b1c794b40d50	Il mio capo è molto esigente ma giusto con tutti i dipendenti del nostro reparto produttivo.	Un cliente esigente.
 disponibile	available	6	0fdcda857572922f39c7a3c35533fdd0	Sono sempre disponibile ad aiutare i miei colleghi quando ne hanno bisogno durante le ore di lavoro.	Sono disponibile.
 l'orario	schedule / hours	6	f14f2f8695179071d03015da0630348f	L'orario di apertura del negozio è dalle nove alle diciannove dal lunedì al sabato escluse le feste.	Orario continuato.
@@ -189,7 +189,7 @@ l'appuntamento	appointment	6	4dc75af5cf5729db73facdae141172e1	Ho un appuntamento
 la data	date	6	8d777f385d3dfec8815d20f7496026dc	Qual è la data del nostro prossimo incontro? Devo segnarmela sull'agenda per non dimenticare l'impegno.	La data di nascita.
 il periodo	period	6	b98917264cbb9144fcf9ce9861bbcd37	Questo è un periodo difficile della mia vita ma sono sicuro che presto andrà tutto bene.	Un lungo periodo.
 la durata	duration	6	1b68ae6f4069df2f5ff41a52454b535e	La durata del corso è di sei mesi e prevede tre lezioni alla settimana di due ore ciascuna.	Una breve durata.
-l'intervallo	interval / break	6	9b54f2510549e4899ba2ea04d48f9338	Durante l'intervallo fra le lezioni i bambini giocano nel cortile della scuola elementare con grande gioia.	Un breve intervallo.
+l'intervallo	interval / break / intermission	6	9b54f2510549e4899ba2ea04d48f9338	Durante l'intervallo fra le lezioni i bambini giocano nel cortile della scuola elementare con grande gioia.	Un breve intervallo.
 la frequenza	frequency	6	d347c725089515b84dfec18145b6bf9b	La frequenza delle riunioni aziendali è settimanale e si svolgono ogni lunedì mattina alle nove in punto.	Alta frequenza.
 il ritmo	rhythm / pace	6	4ec61f637a5e90f8fef5ec75334a3f3c	Il ritmo di vita in città è molto più frenetico di quello tranquillo della campagna toscana.	Un buon ritmo.
 il programma	program / schedule	6	0132fb50cb37f922f0810f1740306382	Il programma del convegno prevede tre giornate di conferenze su temi importanti dell'economia mondiale moderna.	Un programma denso.

@@ -9,7 +9,7 @@ il salice	willow	7	96f00994e47070f3462c11221ea6453d	Il salice piangente cresce v
 la betulla	birch	7	6ee1d9373ed07373b0b435ad135e70a0	La betulla bianca delle foreste del nord ha una corteccia particolare e foglie piccole verdi.	Una betulla snella.
 il melo	apple tree	7	fe0e2fe499dba85ed54677a881e39d41	Nel giardino di mia nonna c'è un vecchio melo che produce mele dolcissime ogni autunno.	Un melo carico.
 il pero	pear tree	7	e0930567dc04aa6771e01634e7733fcd	Il pero del giardino è in fiore ed è bellissimo durante la primavera della valle umbra.	Un pero fiorito.
-il fico	fig / fig tree	7	7c48884fec6b4fc057fab30146343448	Il fico del cortile produce frutti dolcissimi a fine agosto che mangiamo direttamente dall'albero.	Un fico dolce.
+il fico	fig / fig tree / (slang) cool	7	7c48884fec6b4fc057fab30146343448	Il fico del cortile produce frutti dolcissimi a fine agosto che mangiamo direttamente dall'albero.	Un fico dolce.
 il cipresso	cypress	7	4d3a2a44526dba47260942bc17839420	Il cipresso è il simbolo dei paesaggi toscani e si trova lungo tutte le strade di campagna.	Un cipresso solitario.
 l'acero	maple	7	841ef77999408100bb550589632ee60f	L'acero canadese tinge le sue foglie di rosso fuoco durante l'autunno settentrionale per qualche settimana.	Foglia d'acero.
 il castagno	chestnut tree	7	b576bd1cb446bdc69e9ab04444a6c0f1	Il castagno produce castagne dolci che raccogliamo in autunno nei boschi delle Alpi italiane.	Un castagno gigante.
@@ -65,7 +65,7 @@ l'orso	bear	7	c4f830de47c37abf9b3e9922aef85763	L'orso bruno marsicano vive nei b
 il cervo	deer	7	b0d9de769d1d8fcb19000cf670f87145	Il cervo dei boschi alpini ha corna maestose che cambiano ogni primavera per riconquistare le femmine.	Un cervo elegante.
 lo scoiattolo	squirrel	7	5ec10235e94e283ebdfcf0ea4416eb05	Lo scoiattolo rosso salta da un albero all'altro con grande agilità nascondendo le ghiande raccolte.	Uno scoiattolo veloce.
 il pipistrello	bat	7	27da01164149d36e390241c39fdc3cdf	Il pipistrello vola di notte e si nutre principalmente di insetti che cattura in volo silenziosamente.	Un pipistrello notturno.
-il tasso	badger	7	4b85a21200e8eb254e79417678a63664	Il tasso vive sotto terra e esce solo di notte per cercare cibo nei boschi solitari.	Un tasso timido.
+il tasso	rate / badger / yew	7	4b85a21200e8eb254e79417678a63664	Il tasso vive sotto terra e esce solo di notte per cercare cibo nei boschi solitari.	Un tasso timido.
 il riccio	hedgehog	7	9d5975a5c1c30a5d1efaaf679b7ff644	Il riccio si arrotola su se stesso quando ha paura di un predatore vicino al suo nido.	Un riccio spinoso.
 la talpa	mole	7	f49b3f1f7ca99d139ceb3064fdfa6d4e	La talpa scava lunghi tunnel sotterranei nel giardino per cercare lombrichi e insetti vari.	Una piccola talpa.
 il cinghiale	wild boar	7	42399825af8029cbbbde727fcc6520fd	Il cinghiale dei boschi della Maremma è cacciato durante la stagione venatoria autunnale per la carne.	Un cinghiale grosso.
@@ -126,10 +126,10 @@ l'estinzione	extinction	7	6d9031179ac938d4d4bf5b020fcae003	Molte specie sono in 
 la protezione	protection	7	e61217fbcf64a6dfdfe83454294d3020	La protezione dell'ambiente è fondamentale per garantire un futuro sostenibile alle prossime generazioni umane.	Una protezione necessaria.
 la conservazione	conservation	7	2f08a2ff636bdedb338fa1bc03ac5a67	La conservazione dei monumenti antichi richiede grande impegno economico e tecnico da parte dello stato.	Conservazione naturale.
 la riserva	reserve / preserve	7	0b7df0fed156b954bff509215e50d067	La riserva naturale protegge gli animali selvatici e permette loro di vivere nel loro habitat originale.	Una grande riserva.
-lo stagno	pond	7	a322e669b143fbe710b92415b24e0880	Lo stagno del giardino è popolato da rane, pesci rossi e libellule durante l'estate calda.	Un piccolo stagno.
+lo stagno	pond / tin (metal)	7	a322e669b143fbe710b92415b24e0880	Lo stagno del giardino è popolato da rane, pesci rossi e libellule durante l'estate calda.	Un piccolo stagno.
 il tuono	thunder	7	a2138a3bfe69c497d52c514ed0eebddd	Il tuono ha fatto tremare tutti i vetri della casa durante il forte temporale di ieri sera.	Un forte tuono.
 il fulmine	lightning	7	8f38f14d0dfc630a52ebe24dc1576d21	Il fulmine ha colpito un albero nel giardino di mio nonno durante il temporale notturno improvviso.	Veloce come un fulmine.
-il lampo	lightning flash	7	fee9e052986f65ef247a79f3130235e4	Il lampo ha illuminato per un istante tutta la valle durante il forte temporale notturno della sera.	Un lampo improvviso.
+il lampo	lightning / flash / zipper	7	fee9e052986f65ef247a79f3130235e4	Il lampo ha illuminato per un istante tutta la valle durante il forte temporale notturno della sera.	Un lampo improvviso.
 l'arcobaleno	rainbow	7	a7c7f747d1ef73b299d0cbd869bd4828	Dopo la pioggia è apparso un bellissimo arcobaleno con tutti i colori che attraversava il cielo.	Un arcobaleno doppio.
 la brina	frost	7	1c32fe506bd81b0723b0d294c69b16a8	La brina ha coperto i prati di campagna durante la fredda notte di novembre con un velo bianco.	Brina mattutina.
 la grandine	hail	7	acd2f86d23edd27d3e222a0c70c6e259	La grandine ha distrutto il raccolto di uva del vigneto durante la tempesta improvvisa di luglio.	Forte grandine.
@@ -145,7 +145,7 @@ la duna	dune	7	22dc7ba595fddf34804a5f7454e001a2	Le dune di sabbia del Sahara cam
 il promontorio	promontory / headland	7	a0b8fcddc8678f8becd236228b4cc492	Il promontorio si protende nel mare e offre una vista stupenda sulla costa rocciosa intorno.	Un alto promontorio.
 il dirupo	cliff / precipice	7	1676f3151bf35a51c516ef801d3bc8f6	Bisogna fare attenzione vicino al dirupo perché la caduta sarebbe mortale per chi ci si avvicina troppo.	Un dirupo pericoloso.
 la cascata	waterfall	7	a2ce929c1a7e744255f5e5e1b5c4c9c3	La cascata delle Marmore è la più alta d'Europa e si trova in Umbria, vicino a Terni.	Una grande cascata.
-la sorgente	spring (water)	7	77895b7e5feb67dd97a8fe6c452aa0ad	La sorgente del fiume sgorga fresca dalle rocce della montagna alpina italiana del nord.	Acqua di sorgente.
+la sorgente	source / spring (water)	7	77895b7e5feb67dd97a8fe6c452aa0ad	La sorgente del fiume sgorga fresca dalle rocce della montagna alpina italiana del nord.	Acqua di sorgente.
 il ruscello	small stream	7	b75149db457ffa16dd25a9872019bf8f	Il ruscello scorre tra le rocce del bosco con un suono rilassante per chi cammina vicino.	Un piccolo ruscello.
 il torrente	torrent / mountain stream	7	ea7e6422fdfc587681d132507d69e7f6	Il torrente di montagna è gonfio di acqua dopo le piogge primaverili abbondanti del mese scorso.	Un torrente alpino.
 la palude	marsh / swamp	7	6c2d9a1be95e738d920f1392e6a2b5ca	La palude della maremma è ricca di uccelli migratori che vi sostano durante il viaggio annuale.	Una palude vasta.
@@ -165,7 +165,7 @@ sbocciare	to bloom / open	7	06c35ccd7a51fdab72dbd576de1de788	I papaveri sboccian
 crescere	to grow	7	4b80cda47ab7b0dbe71f929832ea75c5	I bambini crescono velocemente e ogni anno sembra che siano già diventati grandi e maturi.	Crescere bene.
 marcire	to rot	7	2ef2c3689b229dc0de8bcf56daf724bb	La frutta dimenticata sul tavolo della cucina marcisce velocemente durante l'estate calda e umida estiva.	Marciscono le mele.
 appassire	to wither / wilt	7	b6d17eae22e1b96921bece101251bde2	I fiori del vaso appassiscono velocemente se non si cambia l'acqua tutti i giorni regolarmente.	I fiori appassiscono.
-abbattere	to chop down / fell	7	154f2ec9ea47750a36d85620ab5a5add	Hanno deciso di abbattere il vecchio albero del giardino perché era diventato pericoloso per la casa.	Abbattere un muro.
+abbattere	to demolish / knock down / fell / shoot down	7	154f2ec9ea47750a36d85620ab5a5add	Hanno deciso di abbattere il vecchio albero del giardino perché era diventato pericoloso per la casa.	Abbattere un muro.
 pascolare	to graze	7	c6767774ad632fa2f0bfc13bb90eb26a	Le pecore pascolano sui prati di montagna durante l'estate sotto la guida del pastore esperto.	Pascolare le mucche.
 verdeggiante	verdant	7	7ff7fbad32cc023686bc14b64d8d4d0d	I prati verdeggianti delle Alpi sono uno spettacolo unico durante la primavera mite e profumata di fiori.	Una valle verdeggiante.
 fiorito	in bloom	7	45624e1e57e9635cc9e3efa7b18c77aa	Il giardino fiorito di mia nonna è un'esplosione di colori durante tutta la primavera fino all'estate.	Un prato fiorito.

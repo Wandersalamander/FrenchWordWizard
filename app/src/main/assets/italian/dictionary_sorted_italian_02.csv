@@ -22,8 +22,8 @@ spegnere	to turn off	2	58affaba114a002653470c76d4e9ed28	Ricordati di spegnere la
 rompere	to break	2	48a49820ea6c68c34283026f6aea9964	Stai attento a non rompere quel vaso antico che apparteneva a mia nonna.	Ho rotto il bicchiere.
 costruire	to build	2	458244aacf3f414d84b65cfdcec89f29	Stanno costruendo un nuovo palazzo accanto alla mia vecchia casa di famiglia.	Costruiscono una casa.
 creare	to create	2	cc8aa442019b25f35ae542ec95ee72ff	Voglio creare qualcosa di bello e utile per la comunità del mio quartiere.	Ho creato un sito.
-tenere	to hold / to keep	2	cb102e250e8e412c94ced6f5c6418168	Puoi tenere questo pacco un momento mentre cerco le chiavi nella borsa?	Tieni la mano.
-prendere	to take	2	f5c327f22e14780daa681bb347a60edc	Devo prendere il treno delle otto per arrivare in tempo alla riunione importante.	Prendi il libro.
+tenere	to hold / keep / care about	2	cb102e250e8e412c94ced6f5c6418168	Puoi tenere questo pacco un momento mentre cerco le chiavi nella borsa?	Tieni la mano.
+prendere	to take / have (food/drink) / catch / get	2	f5c327f22e14780daa681bb347a60edc	Devo prendere il treno delle otto per arrivare in tempo alla riunione importante.	Prendi il libro.
 sedersi	to sit down	2	8f5d5f964a954ee9734e2cfb3733457a	Voglio sedermi un attimo perché sono stanco di camminare per la città intera.	Siediti qui.
 alzarsi	to get up	2	311d6f49243149c0bbf631924b0d18b2	Devo alzarmi presto domani mattina per andare al mercato del paese vicino.	Mi alzo alle sette.
 svegliarsi	to wake up	2	801b966594708d776d1dd08fa7993e8e	Mi sveglio sempre alla stessa ora ogni mattina anche senza la sveglia accesa.	Mi sveglio presto.
@@ -47,7 +47,7 @@ usare	to use	2	7aa586045ae6b24aed6d9d50c01517aa	Posso usare il tuo computer un m
 provare	to try	2	4a3d44f1e7172132ab2d8548af23a242	Voglio provare questa nuova ricetta che ho trovato su un libro di cucina italiana.	Provo a fare.
 cominciare	to begin / to start	2	98570db17d0cf41294ac39cb6d33f5b3	Voglio cominciare a fare sport per migliorare la mia salute fisica e mentale.	Cominciamo subito.
 entrare	to enter	2	0bff7dacb7cec51745c49ab67b651e3a	Posso entrare un momento per parlarti di una cosa molto importante per il lavoro?	Entra pure.
-passare	to pass / to spend	2	704d83f97a3a59d2cbd2301657f74cba	Voglio passare le vacanze al mare con tutta la mia famiglia riunita insieme.	Passa di qui.
+passare	to pass / spend / drop by	2	704d83f97a3a59d2cbd2301657f74cba	Voglio passare le vacanze al mare con tutta la mia famiglia riunita insieme.	Passa di qui.
 il piede	foot	2	38ffc2bd3ad12b3098b30ac9d27727c8	Mi sono fatto male al piede destro mentre giocavo a calcio con gli amici.	A piedi.
 la gamba	leg	2	e1ea6c23d6ef11c15fbf2681cd7097f9	Ho dolore alla gamba sinistra perché ho corso troppo ieri al parco grande.	Gambe lunghe.
 il braccio	arm	2	3e5d97b4c1d0db2237f7c4c471640216	Ho un livido sul braccio destro perché sono caduto dalla bicicletta ieri pomeriggio.	A braccia aperte.
@@ -109,7 +109,7 @@ il medico	doctor	2	652044ac6e008761b3e6141748a99880	Devo andare dal medico doman
 l'ospedale	hospital	2	9646ed20d0da5f6aa7503a5e0116e7c9	Mio padre è in ospedale da una settimana per un'operazione importante alla gamba.	Vado all'ospedale.
 la medicina	medicine	2	b2f7ab0ac61dd0c305e0f896ef1fb12e	Devo prendere la medicina tre volte al giorno fino alla fine della settimana prossima.	Una medicina forte.
 il minuto	minute	2	c04d94cfa036529812da2a3a9dffc408	Aspetta un minuto perché devo finire questo lavoro importante prima di uscire di casa.	Cinque minuti.
-il secondo	second	2	4586a10aea3f82a95aeec3df1fda9cd1	Tra un secondo arrivo, sto solo prendendo le chiavi dalla borsa sul tavolo della cucina.	Un secondo, prego.
+il secondo	second / second course (meal)	2	4586a10aea3f82a95aeec3df1fda9cd1	Tra un secondo arrivo, sto solo prendendo le chiavi dalla borsa sul tavolo della cucina.	Un secondo, prego.
 il momento	moment	2	2b2f4507ee9dcedd17456cc9b5f735b2	Aspetta un momento perché devo rispondere a una telefonata urgente dal lavoro importante.	In questo momento.
 l'inizio	beginning	2	7df656af4efecd9b1f69f708e6903b78	L'inizio di un nuovo anno porta sempre nuove speranze e nuovi obiettivi importanti per tutti.	Dall'inizio.
 la fine	end	2	fff25994ee3941b225ba898fd17d186f	Alla fine del film tutti hanno pianto perché era una storia molto commovente davvero.	Alla fine.
@@ -163,7 +163,7 @@ sicuramente	certainly	2	7d4f82bda6481341ee640a5386d7adbc	Sicuramente ti chiamer�
 quasi	almost	2	27bec4fedb5a399af4c5b7ad031d1127	Sono quasi pronto, dammi solo cinque minuti per finire di prepararmi adesso prima di uscire.	Quasi finito.
 soprattutto	above all / especially	2	aa0195a9fb45f92c1f3676146155614a	Mi piace viaggiare soprattutto in primavera quando il tempo è bello e mite ovunque.	Soprattutto questo.
 comunque	anyway	2	5badc5b9915a232db3fa84bfca0c34a2	Comunque ci vediamo domani sera al ristorante alle otto in punto come d'accordo prima.	Comunque grazie.
-allora	so / then	2	13423b2996d1e5b237ff8265d2ca743e	Allora cosa hai deciso di fare alla fine per il tuo viaggio dell'anno prossimo importante?	Allora andiamo!
+allora	so / then / back then	2	13423b2996d1e5b237ff8265d2ca743e	Allora cosa hai deciso di fare alla fine per il tuo viaggio dell'anno prossimo importante?	Allora andiamo!
 invece	instead	2	165701a00ecbea1ecab272ea748d2984	Invece di andare al cinema stasera potremmo restare a casa a guardare un bel film insieme.	Io invece preferisco.
 insieme	together	2	741b4dacb70dde4444c5978abcafc320	Ci piace molto stare insieme e fare lunghe passeggiate nel parco la domenica mattina.	Andiamo insieme.
 sei	six	2	e8d275af37ce2c474cbd3e65c0bce5c8	Ho sei anni di esperienza nel mio campo professionale e mi piace ancora moltissimo.	Sei caffè.
@@ -186,17 +186,17 @@ nessuno	nobody	2	33407a85a8f0c1d4f901fd59330bd0e5	Non c'è nessuno in casa oggi 
 qualcuno	someone	2	3a9b1121e1f4178e389da0994fe4efcb	Qualcuno deve aver lasciato la porta aperta perché c'è una corrente fredda in casa.	Qualcuno è qui?
 niente	nothing	2	37f13349d0443dfad63a5be13262848e	Non ho niente da fare oggi pomeriggio quindi possiamo vederci se vuoi tu davvero.	Niente di nuovo.
 qualcosa	something	2	dae93754559698297eb6b62a0b746172	C'è qualcosa che non mi convince in tutta questa storia che mi avete raccontato ieri sera.	Vuoi qualcosa?
-tanto	so much / a lot	2	839bf59995cd3c79fd9d4b499ecae9c6	Ti voglio tanto bene e non riuscirei a vivere senza di te al mio fianco mai.	Tanto tempo fa.
-altro	other	2	e2900469788627f8d973e87a42595445	Cerchiamo qualcos'altro perché questo non mi piace per niente, non è il mio stile.	Un altro caffè.
+tanto	so much / a lot / anyway	2	839bf59995cd3c79fd9d4b499ecae9c6	Ti voglio tanto bene e non riuscirei a vivere senza di te al mio fianco mai.	Tanto tempo fa.
+altro	other / another / else / more	2	e2900469788627f8d973e87a42595445	Cerchiamo qualcos'altro perché questo non mi piace per niente, non è il mio stile.	Un altro caffè.
 stesso	same	2	e9a9255b5d80e2d2f1ff4a07212d13d1	Mio fratello e io abbiamo lo stesso carattere e gli stessi gusti in tutto praticamente.	Allo stesso tempo.
-proprio	own / really	2	13b3e41ebed3a00c82144fd9c63caf5b	Questa è proprio la mia auto, l'ho comprata il mese scorso da un amico fidato.	Proprio così.
+proprio	own / really / exactly	2	13b3e41ebed3a00c82144fd9c63caf5b	Questa è proprio la mia auto, l'ho comprata il mese scorso da un amico fidato.	Proprio così.
 durante	during	2	a086451de75cb260dd18eec7ab4e75b8	Durante l'estate andiamo sempre al mare per due settimane consecutive di vacanza familiare.	Durante la notte.
 oltre	beyond / besides	2	680c0c29004649c3528b979d29bcf288	Oltre al lavoro principale faccio anche un secondo lavoro nel weekend al bar del centro.	Oltre cento persone.
 ognuno	everyone / each one	2	be49d1554f1136d019f08422d09a29c4	Ognuno di noi ha le proprie responsabilità e dobbiamo rispettarle tutti senza alcuna eccezione.	Ognuno di noi.
 il motivo	reason	2	22be503d9d0f7b4d64363930462297cb	Non c'è un motivo valido per cui dovresti rinunciare ai tuoi sogni più importanti adesso.	Per quale motivo?
 la differenza	difference	2	0aa08495552be1bf3668fb41474cd4af	C'è una grande differenza tra desiderare qualcosa e impegnarsi davvero per ottenerla con fatica.	Fa la differenza.
 il paio	pair / couple	2	4dd8cfdec17c63a76f7de7247441927b	Ho comprato un paio di scarpe nuove al negozio del centro la settimana scorsa finalmente.	Un paio di giorni.
-il tipo	type / kind	2	401281b092fd5f950813ba41a39cee7d	Che tipo di musica preferisci ascoltare quando lavori al computer in ufficio durante il giorno?	Un tipo strano.
+il tipo	type / kind / guy	2	401281b092fd5f950813ba41a39cee7d	Che tipo di musica preferisci ascoltare quando lavori al computer in ufficio durante il giorno?	Un tipo strano.
 io sono	I am	2	97892f082cc913efe7bc5d5d340784bc	Io sono italiano e abito a Roma da più di vent'anni con la mia famiglia.	Io sono qui.
 tu sei	you are	2	6d53ce0ff56827eb95030541c70c7a03	Tu sei un caro amico e ti voglio bene da tantissimi anni ormai.	Tu sei stanco?
 lui è / lei è	he is / she is	2	c2aa42bbc0420e35105329886b447f3f	Lui è il mio fratello maggiore e lei è la mia migliore amica d'infanzia.	Lui è felice.

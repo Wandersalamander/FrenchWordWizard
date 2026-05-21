@@ -22,7 +22,7 @@ der Dachboden	attic	3	9dbd2aa19f8e0eabae4d3c8e1ec9434a	Auf dem Dachboden, der se
 die Treppe	stairs, staircase	3	c5d76914cb5623ad243332ad72f59aec	Die Treppe, die in den zweiten Stock führt, müsste dringend repariert werden, da einige Stufen morsch sind.	Die Treppe ist steil.
 die Wand	wall	3	72aac46036a470069b28766055d73c66	An der Wand, die frisch gestrichen worden war, hing ein Gemälde, das meine Großmutter gemalt hatte.	Die Wand ist weiß.
 der Boden	floor, ground	3	eba6908826434abcd7f26a2fae9c4feb	Der Boden, der gerade erst verlegt worden war, wurde durch das eindringende Wasser stark beschädigt.	Der Boden ist aus Holz.
-die Decke	ceiling	3	0590cc60d8b4eeae750ad7946414750b	Wenn die Decke nicht so niedrig wäre, könnte man in diesem Raum problemlos einen großen Kronleuchter aufhängen.	Die Decke ist sehr hoch.
+die Decke	ceiling / blanket	3	0590cc60d8b4eeae750ad7946414750b	Wenn die Decke nicht so niedrig wäre, könnte man in diesem Raum problemlos einen großen Kronleuchter aufhängen.	Die Decke ist sehr hoch.
 das Dach	roof	3	ceac1d5588ede65fd67f279174d0f8c1	Das Dach, das im letzten Sturm beschädigt worden war, muss so schnell wie möglich repariert werden.	Das Dach ist rot.
 der Schrank	cupboard, wardrobe	3	e6aa41f55210e71f48064e4ef8f00b45	Der Schrank, den mein Großvater vor fünfzig Jahren gebaut hatte, steht immer noch im Schlafzimmer meiner Eltern.	Der Schrank ist voll.
 das Regal	shelf	3	500c845cf162076db5cbfa90953d4449	Das Regal, das an der Wand befestigt werden sollte, ist heruntergefallen, weil die Dübel nicht richtig saßen.	Das Regal hängt an der Wand.
@@ -77,7 +77,7 @@ das Büro	office	3	39af7aaa5d0702b1f56ef7870ed1f6b8	Im Büro, das erst kürzlich
 der Computer	computer	3	129b448877f0a2870189d2d0f67674ae	Der Computer, der gestern noch einwandfrei funktioniert hatte, ließ sich heute Morgen nicht mehr hochfahren.	Der Computer ist neu.
 der Bildschirm	screen, monitor	3	31a4d80d9a3a8c87842c913bec364cfc	Der Bildschirm, der erst letzte Woche geliefert worden war, zeigte bereits nach wenigen Tagen störende Pixelfehler.	Der Bildschirm ist groß.
 die Tastatur	keyboard	3	52bb9ffd93b4a35e7cac118f60fc6768	Die Tastatur, an die ich mich nach dem Wechsel von einem deutschen zu einem englischen Layout hätte gewöhnen müssen, brachte mich immer wieder ins Stolpern.	Die Tastatur ist schmutzig.
-die Maus	mouse (computer)	3	e3a5a51a10c7d14c86d43e2319ea08b1	Die Maus, die mir mein Kollege empfohlen hatte, erwies sich als perfekt für lange Arbeitstage am Computer.	Die Maus funktioniert nicht.
+die Maus	mouse (animal / computer)	3	e3a5a51a10c7d14c86d43e2319ea08b1	Die Maus, die mir mein Kollege empfohlen hatte, erwies sich als perfekt für lange Arbeitstage am Computer.	Die Maus funktioniert nicht.
 der Drucker	printer	3	46e4e6e1d5ca9992edc955ae1d580470	Der Drucker, der schon seit Wochen Papierstaus verursachte, wurde endlich durch ein neues Modell ersetzt.	Der Drucker druckt zu langsam.
 die E-Mail	email	3	9b1ba10b279632f18b483110e52fa8d0	Die E-Mail, die ich gestern an den Kunden geschickt hatte, der nicht für ihn bestimmt war, sorgte für große Aufregung.	Ich schreibe eine E-Mail.
 das Telefon	telephone	3	1f350a67609a1698eed327c82b112f56	Das Telefon, das den ganzen Vormittag ununterbrochen geklingelt hatte, wurde schließlich auf lautlos gestellt.	Das Telefon klingelt.
@@ -85,7 +85,7 @@ das Gehalt	salary	3	e43019d5e99c9d2eb0f2108ed1be67e4	Das Gehalt, über das im Vo
 die Bewerbung	application (job)	3	347650c02d212541e58e9f3d7f191d0c	Die Bewerbung, die ich trotz großer Zweifel abgeschickt hatte, führte tatsächlich zu einer Einladung zum Vorstellungsgespräch.	Ich schreibe eine Bewerbung.
 das Vorstellungsgespräch	job interview	3	0158d03d06a04d5389dcf1f17bb83ea1	Das Vorstellungsgespräch, auf das ich mich wochenlang vorbereitet hatte, verlief so gut, dass mir die Stelle schon am nächsten Tag zugesagt wurde.	Das Vorstellungsgespräch war gut.
 der Vertrag	contract	3	9a4383e0082b3504c78c2c83b8634dff	Den Vertrag, den ich hätte unterschreiben sollen, musste ich meinem Anwalt vorlegen.	Ich unterschreibe den Vertrag.
-kündigen	to quit, to terminate	3	f0410f26df3108c0bb0f704e4238f2df	Obwohl er eigentlich hätte kündigen wollen, entschied er sich zu bleiben.	Er will kündigen.
+kündigen	to give notice / resign / cancel (contract) / terminate	3	f0410f26df3108c0bb0f704e4238f2df	Obwohl er eigentlich hätte kündigen wollen, entschied er sich zu bleiben.	Er will kündigen.
 die Besprechung	meeting	3	254a4f86f4f5d7a65bc9d76a5c7e4eec	Die Besprechung, die eigentlich nur eine Stunde hätte dauern sollen, zog sich bis in den späten Nachmittag hin.	Die Besprechung ist um zwei Uhr.
 das Projekt	project	3	bd0f5967f1de459b17ee49ec88e2584a	Das Projekt, an dem wir seit sechs Monaten gearbeitet hatten, wurde überraschend eingestellt.	Das Projekt ist fast fertig.
 die Aufgabe	task, assignment	3	7df7fb518bd5daa3b4f5db127f78e17a	Die Aufgabe, die mir übertragen worden war, erwies sich als weitaus komplexer als erwartet.	Die Aufgabe ist schwer.
@@ -125,7 +125,7 @@ die Wiese	meadow	3	178f8f2ed7d88a3cf868cbf9832a24cc	Die Wiese, auf der früher K
 der Berg	mountain	3	845d405678b6bb2f981368960be105a6	Der Berg, dessen Gipfel bei klarem Wetter von der Stadt aus zu sehen ist, wurde letztes Jahr zum Naturerbe erklärt.	Der Berg ist sehr hoch.
 das Tal	valley	3	0259e372bffc285abb6d6da7a8fa335a	Das Tal, das von hohen Bergen umgeben ist und in dem ein kleiner Fluss fließt, zieht jedes Jahr zahlreiche Wanderer an.	Das Tal ist schön.
 der Fluss	river	3	c26044eb8f653fed1117ecf6140047b2	Der Fluss, der nach den starken Regenfällen über die Ufer getreten war, überflutete mehrere Dörfer in der Umgebung.	Der Fluss fließt durch die Stadt.
-der See	lake	3	2f543580169a17c67182e32f9ee2c9b1	Am See, dessen Wasser so klar war, dass man den Grund sehen konnte, verbrachten wir jeden Sommer unsere Ferien.	Der See ist kalt.
+der See	lake (m.); die See: sea (f.)	3	2f543580169a17c67182e32f9ee2c9b1	Am See, dessen Wasser so klar war, dass man den Grund sehen konnte, verbrachten wir jeden Sommer unsere Ferien.	Der See ist kalt.
 das Meer	sea, ocean	3	779889b0a1595122d7b2e57cf3b74552	Das Meer, das an diesem Morgen ungewöhnlich ruhig dalag, lud zum Schwimmen ein.	Das Meer ist blau.
 die Küste	coast	3	af25e627efdf03d96c8ee09731129924	An der Küste, die durch den Klimawandel zunehmend von Erosion bedroht wird, wurden aufwendige Schutzmaßnahmen ergriffen.	Die Küste ist wunderschön.
 die Insel	island	3	265b1a300558cce4c510c5cd516809d9	Die Insel, die nur mit einer kleinen Fähre erreichbar war und auf der weniger als hundert Menschen lebten, wirkte wie aus einer anderen Zeit.	Die Insel ist klein.
@@ -158,7 +158,7 @@ aufgeregt	excited, agitated	3	36cb8e108d018067022ffc85eab78e7b	Die Kinder waren 
 nervös	nervous	3	0176b14d9633ff7a141b3cc18bdf830e	Sie war so nervös vor dem Vorstellungsgespräch, dass sie die Nacht zuvor kaum geschlafen hatte und ihre Hände zitterten.	Ich bin nervös.
 zufrieden	satisfied, content	3	0daa748d094cad83418ab8e98dea7d79	Er war zufrieden mit dem Ergebnis seiner Arbeit.	Ich bin zufrieden.
 neugierig	curious	3	53c1129775381b868c16bb9b6eb5a7a6	Das Kind, das von Natur aus neugierig war und alles genau untersuchen wollte, stellte den ganzen Tag tausend Fragen.	Das Kind ist neugierig.
-gelangweilt	bored	3	0daa748d094cad83418ab8e98dea7d80	Der Schüler, der so gelangweilt vom Unterricht war, dass er aus dem Fenster starrte.	Ich bin gelangweilt.
+gelangweilt	bored	3	6cf6e0ebeeb4920f1a24d5c50dad9c88	Der Schüler, der so gelangweilt vom Unterricht war, dass er aus dem Fenster starrte.	Ich bin gelangweilt.
 der Arzt / die Ärztin	the doctor	3	c70aaf3e589faaab1336d903d3c699d7	Obwohl der Arzt, der seit zwanzig Jahren in der Notaufnahme arbeitet, die Symptome sofort erkannte.	Der Arzt hilft mir.
 das Krankenhaus	the hospital	3	67e2ebaed7193c1c26c3b4f1a626e6f1	Das Krankenhaus, das im letzten Jahr renoviert wurde, verfügt nun über eine moderne Intensivstation.	Das Krankenhaus ist groß.
 die Apotheke	the pharmacy	3	95b6ff95fe94b34c42cceb85b64e6add	Wenn die Apotheke, die sich an der Ecke befindet, geschlossen wäre, müsste man in die nächste Stadt fahren.	Ich gehe in die Apotheke.

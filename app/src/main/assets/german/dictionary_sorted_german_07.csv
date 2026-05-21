@@ -1,5 +1,5 @@
-anziehen	to put on / to dress	7	75a78599ea55eb1ff4c2e26635fdb02d	Sie zog sich schnell an, weil sie verschlafen hatte und den Bus auf keinen Fall verpassen wollte.	Zieh dich warm an.
-ausziehen	to take off / to undress	7	dd6c40036b6f5a2f8bebc3a10c81ab22	Als er nach Hause kam, zog er sofort die nassen Schuhe aus und stellte sie vor die Heizung.	Zieh bitte die Schuhe aus.
+anziehen	to put on / to dress / to attract	7	75a78599ea55eb1ff4c2e26635fdb02d	Sie zog sich schnell an, weil sie verschlafen hatte und den Bus auf keinen Fall verpassen wollte.	Zieh dich warm an.
+ausziehen	to take off / to undress / to move out	7	dd6c40036b6f5a2f8bebc3a10c81ab22	Als er nach Hause kam, zog er sofort die nassen Schuhe aus und stellte sie vor die Heizung.	Zieh bitte die Schuhe aus.
 der Verein	club / association	7	2b9a219a682704ba060cc3b0b1edb738	Der Sportverein feierte sein hundertjähriges Bestehen mit einem großen Fest.	Ich bin Mitglied im Verein.
 das Lied	song	7	ceff778184ed2f1ef0d90b0584a699c9	Das Lied, das sie bei der Hochzeit ihrer Schwester sang, rührte alle Gäste zu Tränen.	Kennst du dieses Lied?
 tanzen	to dance	7	f8090ae4936bcfbd58f179b547eff6db	Obwohl er behauptete, nicht tanzen zu können, bewegte er sich auf der Tanzfläche erstaunlich elegant.	Wir tanzen gerne zusammen.
@@ -35,10 +35,10 @@ schmutzig	dirty	7	98a28994091c526aa08bb73d3c979261	Nach dem Fußballspiel im Reg
 hell	bright / light	7	159ed42ee2b8242cfadc8acadae883b0	Das Zimmer war so hell, dass sie die Vorhänge zuziehen musste, um den Computer benutzen zu können.	Das Zimmer ist hell.
 dunkel	dark	7	2160d4b56c87b3ece2b5f6747c0a27b8	Der Keller war so dunkel, dass man ohne Taschenlampe keinen einzigen Schritt machen konnte.	Es ist schon dunkel draußen.
 breit	wide / broad	7	a41684cb0d4a7660fce1e0fb173753fe	Die breite Straße, die durch das Stadtzentrum führt, wurde ursprünglich für Pferdekutschen angelegt.	Die Straße ist sehr breit.
-eng	narrow / tight	7	bfab921c2b812536725538740bed3a21	Die enge Gasse in der Altstadt war so schmal, dass kaum zwei Personen nebeneinander gehen konnten.	Die Hose ist mir zu eng.
+eng	narrow / tight / close	7	bfab921c2b812536725538740bed3a21	Die enge Gasse in der Altstadt war so schmal, dass kaum zwei Personen nebeneinander gehen konnten.	Die Hose ist mir zu eng.
 dick	thick / fat	7	3fb49e173fcc0588879790ff191f2166	Das dicke Buch, das er in der Bibliothek gefunden hatte, enthielt alles.	Das Buch ist sehr dick.
 dünn	thin	7	ceb1196b9e6a5c346e957da9c9a241d5	Die Wände des alten Hauses waren so dünn, dass man jedes Wort der Nachbarn hören konnte.	Das Papier ist sehr dünn.
-tief	deep	7	95ecd5ce7567526a49ac62d27f0939b7	Der See war an seiner tiefsten Stelle über hundert Meter tief, weshalb das Tauchen dort verboten war.	Das Wasser ist tief.
+tief	deep / low	7	95ecd5ce7567526a49ac62d27f0939b7	Der See war an seiner tiefsten Stelle über hundert Meter tief, weshalb das Tauchen dort verboten war.	Das Wasser ist tief.
 hoch	high / tall	7	5fac0b88dd952f9f14a52ce8353d315e	Der Turm war so hoch, dass seine Spitze an manchen Tagen von den Wolken verdeckt wurde.	Der Berg ist sehr hoch.
 voll	full	7	b62c9bf9e0261bedb73db7116336db92	Der Saal war so voll, dass einige Besucher draußen stehen und die Rede über Lautsprecher verfolgen mussten.	Das Glas ist voll.
 leer	empty	7	14ee581579d9d5caee40ccce09347b03	Als sie in die Wohnung zurückkam, war der Kühlschrank leer, weil niemand eingekauft hatte.	Die Flasche ist leer.
@@ -87,7 +87,7 @@ der Wunsch	wish	7	e07e85bdde2bf38a8aa4226d8e50b3cc	Sein größter Wunsch war es,
 die Eile	hurry / haste	7	bd5a4e3516d8069967ff9f19c60493b3	In der Eile vergaß er seinen Regenschirm im Büro und bemerkte es erst an der Bushaltestelle.	Ich bin in Eile.
 die Ruhe	calm / quiet / rest	7	702d60301f69658d89a2758f2cd119b9	Die Ruhe am frühen Morgen, wenn die Stadt noch schläft, ist meine liebste Zeit zum Nachdenken.	Ich brauche Ruhe.
 bald	soon	7	a4c754263e80ef4103a53e458d490383	Wenn du dich beeilst, werden wir bald am Ziel sein und können uns endlich ausruhen.	Bis bald!
-gerade	just now / straight	7	99fb7b7d1f081864f0c225aa6747f610	Ich habe gerade erst erfahren, dass die Besprechung auf morgen verschoben worden ist.	Er ist gerade gekommen.
+gerade	just now / straight / even (number)	7	99fb7b7d1f081864f0c225aa6747f610	Ich habe gerade erst erfahren, dass die Besprechung auf morgen verschoben worden ist.	Er ist gerade gekommen.
 fast	almost	7	bd75243f00cfb2bb29e7b51580e291fc	Er wäre fast über den nassen Boden ausgerutscht, konnte sich aber im letzten Moment noch festhalten.	Es ist fast Mitternacht.
 sogar	even	7	42b8cc02a01e0915bcecd76e0d8a51f8	Sogar der strenge Lehrer musste zugeben, dass die Schülerin eine herausragende Arbeit abgeliefert hatte.	Sogar das Kind versteht das.
 wenigstens	at least	7	f4d52f7d4ed43a27501462bacd813b63	Wenn du schon nicht kommen kannst, ruf wenigstens an und sag Bescheid.	Iss wenigstens etwas.
@@ -106,7 +106,7 @@ schreien	to scream / to shout	7	d02d4f6c4994c5aa717f81cb84052bc7	Er schrie so la
 flüstern	to whisper	7	eff9a156c29ef0844913a4a6d5648a36	Sie flüsterte ihm ein Geheimnis ins Ohr, das sie noch niemandem erzählt hatte.	Er flüstert leise.
 schweigen	to be silent	7	4e6afa588860b0211ad3de1d62e24538	Er schwieg eine ganze Weile, bevor er endlich den Mut fand, seine Meinung zu diesem heiklen Thema zu sagen.	Warum schweigst du?
 träumen	to dream	7	8470b4a8302653d9012af0aa49c4a9f8	Als Kind träumte sie davon, Astronautin zu werden und die Erde aus dem Weltraum zu betrachten.	Ich träume von einer Reise.
-leiden	to suffer	7	79e6ebde9cad76f0fe8ce30cbd9d9617	Er litt jahrelang unter chronischen Rückenschmerzen, bis er endlich einen Spezialisten fand, der ihm helfen konnte.	Er leidet an Kopfschmerzen.
+leiden	to suffer; (jdn. leiden können) to like, tolerate	7	79e6ebde9cad76f0fe8ce30cbd9d9617	Er litt jahrelang unter chronischen Rückenschmerzen, bis er endlich einen Spezialisten fand, der ihm helfen konnte.	Er leidet an Kopfschmerzen.
 kämpfen	to fight / to struggle	7	4a20ace6a35873d4529b2f0399d2128e	Die Mannschaft kämpfte bis zur letzten Minute, obwohl ein Sieg längst aussichtslos erschien.	Er kämpft für seine Rechte.
 retten	to save / to rescue	7	453ec63a37ed0c24f54944400a63be8a	Die Feuerwehr rettete die Familie aus dem brennenden Haus, bevor das Dach einstürzte.	Er hat ihr das Leben gerettet.
 stehlen	to steal	7	84eceb7d937690c6437024bb0e9a0bb1	Der Dieb stahl das Gemälde aus dem Museum, ohne dass die Sicherheitskameras etwas aufgezeichnet hatten.	Jemand hat mein Fahrrad gestohlen.
@@ -116,7 +116,7 @@ sich gewöhnen	to get used to	7	0bf94ba98803c9a140338bcd281a3c3b	Es dauerte Mona
 sich kümmern	to take care of	7	237fb791f8b806a066951e05e6cd351e	Die Nachbarin kümmerte sich liebevoll um die Katze, während die Familie im Urlaub war.	Wer kümmert sich um den Hund?
 sich unterhalten	to chat / to converse	7	0cd904600a2c69fd6733d23079b21a75	Wir unterhielten uns stundenlang über die alten Zeiten und merkten gar nicht, wie schnell die Zeit verging.	Wir unterhalten uns gerne.
 die Hilfe	help	7	47516cdf95b579e32bd4aa09545e8f8e	Ohne die Hilfe seiner Kollegen hätte er das Projekt niemals fristgerecht abschließen können.	Ich brauche Hilfe.
-der Rat	advice	7	4c46d2253397f9c851309d1fc9b69255	Ihr Rat, das Jobangebot sorgfältig zu prüfen, bevor sie zusagt, erwies sich als goldrichtig.	Ich brauche deinen Rat.
+der Rat	advice / council	7	4c46d2253397f9c851309d1fc9b69255	Ihr Rat, das Jobangebot sorgfältig zu prüfen, bevor sie zusagt, erwies sich als goldrichtig.	Ich brauche deinen Rat.
 der Vorschlag	suggestion / proposal	7	ba654dc6b24b1775dc28fbe6aee98dc2	Sein Vorschlag, das Meeting auf den Nachmittag zu verschieben, wurde von allen Teilnehmern begrüßt.	Das ist ein guter Vorschlag.
 die Entscheidung	decision	7	6bbfb6fbc48a52d87762f3427728a2e9	Die Entscheidung, ins Ausland zu ziehen, fiel ihr nicht leicht, aber sie hat sie nie bereut.	Das war die richtige Entscheidung.
 die Verantwortung	responsibility	7	1c9cfc0302bd0568e730a6c87f5c0f97	Die Verantwortung für das Wohlergehen der Mitarbeiter liegt beim gesamten Führungsteam.	Du trägst die Verantwortung.

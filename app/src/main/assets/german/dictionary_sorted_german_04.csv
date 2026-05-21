@@ -2,7 +2,7 @@ die Prüfung	the exam	4	8fd5051a06a3160287e53f23217e81dd	Hätte er sich gründli
 die Klasse	the class / grade	4	d760b626ed6895c4ebd9a22c9099c9b4	In der Klasse, in der mehr als dreißig Schüler unterrichtet werden, herrscht ein angenehmes Lernklima.	Die Klasse hat 25 Schüler.
 der Unterricht	the lesson / class	4	9028b3de4c77cc7834e942469cf60136	Der Unterricht, der aufgrund des Lehrermangels häufig ausfällt, sollte dringend reformiert werden.	Der Unterricht beginnt um acht Uhr.
 die Hausaufgabe	the homework	4	e5152fc50bd4a716c9d790b59c650ca0	Die Hausaufgabe, die bis morgen abgegeben werden muss, erfordert mindestens drei Stunden konzentrierter Arbeit.	Ich mache meine Hausaufgabe.
-die Note	the grade / mark	4	cb8c87cb369f00c5f0fb2fa357cd20b0	Die Note, die er in der Abschlussprüfung erhielt, hätte besser ausfallen können, wenn er mehr gelernt hätte.	Ich habe eine gute Note bekommen.
+die Note	grade / mark / (musical) note	4	cb8c87cb369f00c5f0fb2fa357cd20b0	Die Note, die er in der Abschlussprüfung erhielt, hätte besser ausfallen können, wenn er mehr gelernt hätte.	Ich habe eine gute Note bekommen.
 der Schüler / die Schülerin	the pupil / student	4	2f2c511c957adf83ef79d687d7d51f56	Der Schüler, dessen außergewöhnliche Begabung bereits in der Grundschule erkannt worden war, erhielt ein Stipendium für eine renommierte Schule.	Der Schüler lernt fleißig.
 der Student / die Studentin	the (university) student	4	f68486ece9077930d8963f325330c880	Die Studentin, die neben ihrem Vollzeitstudium noch arbeiten muss, hat selten Zeit für ihre Freunde.	Der Student liest viele Bücher.
 der Professor / die Professorin	the professor	4	c137461410e4a24fa53c3da47d8cc5fa	Der Professor, dessen Vorlesungen stets überfüllt sind, veröffentlichte kürzlich ein bahnbrechendes Werk.	Die Professorin hält eine Vorlesung.
@@ -40,7 +40,7 @@ das Recht	the right / law	4	d3ae1a2c1fa3295e61274c6b43a96c0b	Das Recht, seine Me
 die Pflicht	the duty / obligation	4	c61ba9299c25887507c3bec4138ecc76	Die Pflicht, die jedem Bürger auferlegt wird, bildet das Fundament einer funktionierenden Gesellschaft.	Es ist meine Pflicht, zu helfen.
 die Steuer	the tax	4	c65a9bd6fc59437192ebac561fd9ef5c	Die Steuer, die auf alle Einkommen oberhalb eines bestimmten Freibetrags erhoben wird, finanziert die wichtigsten staatlichen Aufgaben.	Wir müssen Steuer zahlen.
 die Polizei	the police	4	6c522f946455e3fe000f2fafcffdcf25	Die Polizei, die unverzüglich am Tatort eintraf, konnte den Verdächtigen innerhalb weniger Stunden festnehmen.	Die Polizei hilft den Menschen.
-das Gericht	the court	4	e549ed281da02d69896091304a663e07	Das Gericht, vor dem der Fall seit mehreren Monaten verhandelt wird, tagt nächste Woche erneut.	Das Gericht entscheidet morgen.
+das Gericht	court / dish / course (food)	4	e549ed281da02d69896091304a663e07	Das Gericht, vor dem der Fall seit mehreren Monaten verhandelt wird, tagt nächste Woche erneut.	Das Gericht entscheidet morgen.
 der Richter / die Richterin	the judge	4	66e50465e7d7e43c8d7a20fafa07fdfd	Der Richter, dessen Unparteilichkeit von beiden Seiten infrage gestellt wurde, verkündete schließlich ein mildes Urteil.	Die Richterin ist streng aber fair.
 der Anwalt / die Anwältin	the lawyer	4	406b1fea6a1864316b26e46eced65526	Der Anwalt, den sie auf Empfehlung einer Freundin engagiert hatte, konnte eine außergerichtliche Einigung erzielen.	Der Anwalt vertritt seinen Mandanten.
 das Gefängnis	the prison	4	92d56af8651ec33a79f9f1d0c8fa259c	Das Gefängnis, in dem mehr als tausend Insassen untergebracht sind, soll modernisiert werden.	Er kam ins Gefängnis.
@@ -89,7 +89,7 @@ die Quelle	the source	4	b17c9d9a282ea85b4f8fcf454c3caac1	Die Quelle, aus der die
 das Beispiel	the example	4	c3533499b0f851d808bbc4d20779ef3a	Das Beispiel, das der Lehrer zur Veranschaulichung des komplexen Sachverhalts herangezogen hatte, half den Schülern, das Thema endlich zu verstehen.	Kannst du mir ein Beispiel geben?
 die Idee	the idea	4	34e2a092ad946b40e29a53b37225d5db	Die Idee, die ihr mitten in der Nacht gekommen war, erwies sich als der Durchbruch.	Das ist eine gute Idee!
 der Gedanke	the thought	4	5c469a5dc8f2ea7ff015022f7ce00223	Der Gedanke, dass man durch bloßes Nachdenken komplexe Probleme lösen kann.	Dieser Gedanke gefällt mir.
-der Grund	the reason	4	22b73cfff09cfb82ca2ab2f6c359ea49	Der Grund, warum er die Stelle abgelehnt hatte.	Es gibt einen guten Grund dafür.
+der Grund	reason / ground / bottom	4	22b73cfff09cfb82ca2ab2f6c359ea49	Der Grund, warum er die Stelle abgelehnt hatte.	Es gibt einen guten Grund dafür.
 die Ursache	the cause	4	df9ca0b76cd66b1163d15be97f03243a	Die Ursache des Unfalls, die erst nach einer aufwendigen Untersuchung ermittelt werden konnte, lag in einem technischen Defekt der Bremsen.	Die Ursache ist noch unbekannt.
 die Wirkung	the effect	4	2832cc077a1d297d1284e4a370c766cd	Die Wirkung des Medikaments, die bei jedem Patienten unterschiedlich ausfallen kann, muss vom Arzt sorgfältig überwacht werden.	Die Wirkung ist sofort spürbar.
 die Folge	the consequence	4	ccda29f82fe27ce17a1bfe20b6642651	Die Folge seiner unüberlegten Entscheidung, die er getroffen hatte, ohne sich vorher ausreichend beraten zu lassen.	Das hat schlimme Folgen.
@@ -161,7 +161,7 @@ die Rechnung	the bill / the invoice	4	adaf158ad3e228b32cfdfb745061d896	Die Rechn
 die Währung	the currency	4	1f4a33214e9727b206a3d80a0b5fc8a6	Die Währung des Landes, in das wir reisen wollen, hat in den letzten Monaten so stark geschwankt.	Der Euro ist die Währung in Deutschland.
 der Euro	the euro	4	cc9dc0525a94aaef90df4470fcd00c9a	Seit der Euro im Jahr 2002 als Bargeld eingeführt wurde, sind die Preise in vielen Ländern gestiegen.	Das kostet fünf Euro.
 der Cent	the cent	4	7fb1b56b45a58d359446006316281ff8	Es fehlten nur noch zwei Cent, die ich leider nicht passend hatte.	Hast du zehn Cent für mich?
-bar	cash (in cash)	4	07df3f3d695548bbba0608e76f480933	In vielen deutschen Restaurants wird erwartet, dass man bar bezahlt, was für Touristen.	Ich zahle bar.
+bar	in cash / bare	4	07df3f3d695548bbba0608e76f480933	In vielen deutschen Restaurants wird erwartet, dass man bar bezahlt, was für Touristen.	Ich zahle bar.
 die Kreditkarte	the credit card	4	9d9c9d6d9d4baebb263956f158a22598	Die Kreditkarte, die mir gestohlen worden war, musste sofort gesperrt werden.	Kann ich mit Kreditkarte bezahlen?
 umtauschen	to exchange / to return	4	d1fabdd14e9e0f5d6944cacc9852d860	Die Hose, die ich letzte Woche gekauft hatte, konnte problemlos umgetauscht werden.	Ich möchte dieses Hemd umtauschen.
 zurückgeben	to return (give back)	4	c53eae536def8a0f9d2bd2c26410a4a1	Das Gerät, das innerhalb der Garantiezeit kaputtgegangen war, wurde vom Händler anstandslos zurückgenommen.	Kann ich das Buch zurückgeben?
@@ -183,7 +183,7 @@ die Batterie	the battery	4	3bf147e90c954fceae44da0614b721fb	Die Batterie meines 
 das Kabel	the cable	4	aceeefd8832b8710a3498230de910fc0	Das Kabel, das hinter dem Schreibtisch so verlegt werden musste, dass niemand darüber stolpern konnte.	Wo ist das Ladekabel?
 der Stecker	the plug	4	e2b6cee25772140220ea34550a32546c	Der Stecker, der nicht in die Steckdose passte, brauchte einen Adapter für die ausländische Norm.	Der Stecker passt nicht in die Dose.
 die Steckdose	the power outlet	4	1ea31b0a274168d5d7412cec73c61e37	In dem alten Hotel gab es nur eine einzige Steckdose pro Zimmer, was für Reisende, die mehrere Geräte laden müssen.	Die Steckdose ist neben dem Bett.
-der Schalter	the switch	4	2e1832c24daa8488af00888e45d840d7	Der Schalter, der sich irgendwo an der Wand befinden müsste, konnte im Dunkeln nicht gefunden werden.	Drück den Schalter, um das Licht anzumachen.
+der Schalter	switch / counter (at bank/post office)	4	2e1832c24daa8488af00888e45d840d7	Der Schalter, der sich irgendwo an der Wand befinden müsste, konnte im Dunkeln nicht gefunden werden.	Drück den Schalter, um das Licht anzumachen.
 das Licht	the light	4	9d914cb9790eaefbc64c5139cbf163b1	Das Licht im Treppenhaus, funktionierte schon seit Wochen nicht mehr, was mehrfach gemeldet worden war.	Mach bitte das Licht an.
 die Energie	the energy	4	9d5009bc62e97917ff79d26f376d3729	Die Energie, die durch erneuerbare Quellen gewonnen wird, könnte den gesamten Bedarf des Landes decken.	Wir brauchen mehr Energie aus der Sonne.
 der Strom	the electricity / the current	4	5ac95126fdb7f00b46b6b971ca99da63	Als der Strom während des Gewitters ausfiel, mussten alle wichtigen Daten, die noch nicht gespeichert worden waren.	Der Strom ist heute ausgefallen.

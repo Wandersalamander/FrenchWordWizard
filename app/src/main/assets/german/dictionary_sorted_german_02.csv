@@ -106,7 +106,7 @@ aufhören	to stop	2	8e9a7696ae16c5851fee6f1ad988b0ef	Der Arzt empfahl ihm dringe
 beginnen	to begin	2	af70f7537e7ac13d760370c196bd4f61	Die Bauarbeiten an der neuen Brücke beginnen erst im Herbst, weil das Frühjahr zu regnerisch war.	Die Schule wird bald beginnen.
 enden	to end	2	6bb5cbb9c527f5b9e2cf49d855400057	Niemand hätte ahnen können, dass der jahrelange Rechtsstreit so abrupt enden würde.	Der Film wird um zehn Uhr enden.
 warten	to wait	2	00cea3107d8eeb5e3a730627e2fddabb	Obwohl sie bereits seit über einer Stunde am Bahnhof warten musste, blieb sie geduldig.	Wir müssen hier warten.
-suchen	to search	2	5ad606561623acb21acb4c4bf15957b4	Die Polizei musste das gesamte Waldgebiet systematisch absuchen, um nach dem vermissten Wanderer zu suchen.	Ich suche meine Schlüssel.
+suchen	to look for / to search / to seek	2	5ad606561623acb21acb4c4bf15957b4	Die Polizei musste das gesamte Waldgebiet systematisch absuchen, um nach dem vermissten Wanderer zu suchen.	Ich suche meine Schlüssel.
 versuchen	to try	2	116e6f8604ba8d747c80c0aea2c702d0	Obwohl er wusste, dass die Aufgabe nahezu unmöglich war, wollte er es dennoch versuchen.	Ich werde es versuchen.
 schaffen	to manage / to create	2	54ffa7fdf052d96db4fbd12071a36a86	Wenn wir alle zusammenarbeiten und uns gegenseitig unterstützen, werden wir es schaffen.	Wir schaffen das.
 erreichen	to reach / to achieve	2	e235fbc0414a970ce314a43f51766454	Um ihre beruflichen Ziele zu erreichen, hatte sie nicht nur hart gearbeitet.	Wir können das Ziel erreichen.
@@ -115,21 +115,21 @@ verbessern	to improve	2	c2225b09c685ab3260a9d70db3f9bf29	Um seine Deutschkenntni
 entwickeln	to develop	2	15c1635929140591f16d2d5a3404785d	Das Unternehmen musste innerhalb kürzester Zeit eine neue Strategie entwickeln.	Wir entwickeln eine neue App.
 entscheiden	to decide	2	7562ab283d01a42323269b30295a0df3	Bevor sie sich endgültig entscheiden konnte, musste sie alle Vor- und Nachteile sorgfältig gegeneinander abwägen.	Du musst dich jetzt entscheiden.
 vergessen	to forget	2	8043c536b99326d0a0a27daf93aca0ea	Obwohl er versucht hatte, den peinlichen Vorfall zu vergessen.	Ich darf das nicht vergessen.
-erinnern	to remember	2	2b44ebc9537765ff2fe19d203d002366	Jedes Mal, wenn sie dieses alte Lied hörte, konnte sie sich an die glücklichen Tage ihrer Kindheit erinnern.	Ich erinnere mich an dich.
+erinnern	(sich erinnern an) to remember; (jdn. erinnern an) to remind	2	2b44ebc9537765ff2fe19d203d002366	Jedes Mal, wenn sie dieses alte Lied hörte, konnte sie sich an die glücklichen Tage ihrer Kindheit erinnern.	Ich erinnere mich an dich.
 glauben	to believe	2	a8d1ca910420320a3c5841ec7c7ae74d	Obwohl alle Beweise dagegen sprachen, wollte er weiterhin daran glauben, dass sich am Ende alles zum Guten wenden würde.	Ich glaube dir.
 hoffen	to hope	2	4c4df5bc219ba53de0777db7213d4f39	Trotz der schwierigen Lage dürfen wir nicht aufgeben, sondern müssen weiterhin auf eine bessere Zukunft hoffen.	Wir hoffen auf gutes Wetter.
 wünschen	to wish	2	b93a08615bb3ac51723da3db79835bee	Wenn ich mir etwas wünschen könnte, würde ich mir einen dauerhaften Frieden für alle Menschen auf der Welt wünschen.	Ich wünsche dir alles Gute.
-fühlen	to feel	2	f0fd1323e30a2e79c5cd0bd7a6490fc4	Nachdem sie die schlechte Nachricht erhalten hatte, konnte sie deutlich fühlen, wie ihr das Herz schwer wurde.	Ich fühle mich müde.
+fühlen	to feel; (sich fühlen) to feel (some way)	2	f0fd1323e30a2e79c5cd0bd7a6490fc4	Nachdem sie die schlechte Nachricht erhalten hatte, konnte sie deutlich fühlen, wie ihr das Herz schwer wurde.	Ich fühle mich müde.
 lieben	to love	2	b7807e615ff1c2cdf0de1f2d43b0398c	Obwohl sie wusste, dass es schwierig werden würde, konnte sie nicht aufhören, ihn von ganzem Herzen zu lieben.	Ich liebe meine Familie.
 hassen	to hate	2	f524b39858127eb2c013072ad1c6f636	Es wäre falsch, jemanden nur deshalb zu hassen, weil er eine andere Meinung vertritt als man selbst.	Ich hasse Lügen.
 mögen	to like	2	63cc6ecbdd73e327ee00484a0612aa7f	Obwohl die meisten Kinder Gemüse nicht mögen, sollten Eltern immer wieder versuchen, es ihnen schmackhaft zu machen.	Ich mag Schokolade.
-freuen	to be happy / to look forward to	2	1098d50bc7f78a4e87b5ff7f90668c7d	Ich freue mich so sehr darauf, dass wir uns nach all den Jahren endlich wiedersehen.	Ich freue mich auf morgen.
+freuen	(sich freuen) to be happy; (sich freuen auf) to look forward to	2	1098d50bc7f78a4e87b5ff7f90668c7d	Ich freue mich so sehr darauf, dass wir uns nach all den Jahren endlich wiedersehen.	Ich freue mich auf morgen.
 lachen	to laugh	2	7c6454c7d0e079943fb8d4560baf494e	Als der Komiker seinen besten Witz erzählte, musste das gesamte Publikum so laut lachen.	Die Kinder lachen viel.
 weinen	to cry	2	07468e648398e40c6eb62c6bcdd42c71	Das kleine Mädchen begann bitterlich zu weinen, als es erfuhr, dass sein geliebter Hamster in der Nacht gestorben war.	Das Baby fängt an zu weinen.
 schlafen	to sleep	2	a62b2d9deed4826129f859301d2ca5b2	Obwohl er versuchte zu schlafen, hielten ihn die Sorgen um die bevorstehende Prüfung die ganze Nacht lang wach.	Ich möchte jetzt schlafen.
 aufwachen	to wake up	2	14e2d862f10a9ebc6e31b487515e016c	Nachdem der Wecker zum dritten Mal geklingelt hatte, entschloss er sich endlich aufzuwachen.	Ich wache um sechs Uhr auf.
 aufstehen	to get up	2	ec74abcc2ae7c2760effa94080600233	Obwohl es ihr an kalten Wintermorgen besonders schwerfällt aufzustehen, zwingt sie sich dazu.	Ich muss früh aufstehen.
-setzen	to sit down / to put	2	26d1efabe4ec92787b36d01c41356b13	Nachdem alle Gäste eingetroffen waren, bat der Gastgeber sie höflich, sich an den festlich gedeckten Tisch zu setzen.	Bitte setzen Sie sich.
+setzen	to put / to set; (sich) to sit down	2	26d1efabe4ec92787b36d01c41356b13	Nachdem alle Gäste eingetroffen waren, bat der Gastgeber sie höflich, sich an den festlich gedeckten Tisch zu setzen.	Bitte setzen Sie sich.
 legen	to lay / to put	2	9bf1a05b485f7867ff3f8b5c2254881f	Bevor sie das Baby vorsichtig in sein Bettchen legen konnte, musste sie erst die weiche Decke zurechtlegen.	Ich lege das Buch auf den Tisch.
 hängen	to hang	2	8d1948efab8a6488d31efdbb092acae5	Das Gemälde, das seit Generationen an derselben Wand im Wohnzimmer der Familie hängen sollte, wurde gestern beim Umzug versehentlich beschädigt.	Das Bild muss an der Wand hängen.
 fallen	to fall	2	430cf7e9ac21b5c2014a8d5ce490e22a	Als die ersten Blätter von den Bäumen zu fallen begannen, wusste jeder, dass der lange Sommer endgültig vorbei war.	Die Blätter fallen im Herbst.

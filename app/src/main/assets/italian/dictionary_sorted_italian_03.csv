@@ -49,7 +49,7 @@ la ricetta	recipe	3	a86565d9964029e885411d61516a2879	La ricetta della pasta al p
 il cuoco	cook / chef	3	c3d99554d5e2eace9909d51f7b5911d9	Il cuoco di questo ristorante è famoso in tutta la regione per la sua creatività in cucina.	Un bravo cuoco.
 il cameriere	waiter	3	b6b80f1dcb2e62a97152a7052df341e8	Il cameriere è stato molto gentile e ci ha consigliato i migliori piatti del menu di stasera.	Cameriere, il conto!
 ordinare	to order	3	728daaadf4b13e9848df9a607b051650	Cosa volete ordinare per cena stasera al ristorante in centro città vicino al teatro?	Ordino la pasta.
-servire	to serve	3	af96cef361334119e8eeac2174ebbd8e	Il cameriere ci ha appena servito il primo piatto in questo ristorante elegante del centro storico.	Mi serva subito.
+servire	to serve / to need (mi serve)	3	af96cef361334119e8eeac2174ebbd8e	Il cameriere ci ha appena servito il primo piatto in questo ristorante elegante del centro storico.	Mi serve subito.
 assaggiare	to taste	3	53b1a0fa36215408be5158537dbce814	Voglio assaggiare il dolce della casa che il cuoco ha preparato per i clienti speciali oggi.	Vuoi assaggiare?
 gustare	to enjoy / savor	3	0ffe5b904a95ec2881b6376b5a29b55b	Mi piace gustare un buon vino rosso accompagnato da un piatto di formaggi misti italiani.	Gusto il pranzo.
 bollire	to boil	3	76f36e857e6de9a7f1f71cdc48ff6ec7	Devo bollire l'acqua per la pasta prima di aggiungerla quando l'acqua è ben calda nella pentola.	L'acqua bolle.
@@ -79,8 +79,8 @@ blu	blue	3	6f2fb2d3def4f99053edab239195f146	Il cielo è di un bel blu intenso og
 giallo	yellow	3	85f3c35de5e6ac28e4d31b17cbb529d3	Il sole è giallo brillante e illumina tutto il giardino questa bellissima mattina d'estate calda.	Una rosa gialla.
 nero	black	3	770bfedcd56afdbb406a93355add8070	Il mio gatto nero ha gli occhi verdi e dorme sempre sul mio letto comodamente.	Un caffè nero.
 bianco	white	3	99914b157a01e4f50883d4a2adbc2085	Il vestito bianco della sposa è elegante e perfetto per il matrimonio in chiesa antica.	Pane bianco.
-rosa	pink	3	84109ae4b4178430b8174b1dfef9162b	Le rose rosa sono il mio fiore preferito e le ricevo spesso da chi mi ama davvero.	Una camicia rosa.
-viola	purple	3	c31ac812dbb4b1a273b3c2d3bd465690	Il fiore viola del lillà profuma tutto il giardino in primavera con il suo aroma dolce intenso.	Un vestito viola.
+rosa	pink / rose (flower)	3	84109ae4b4178430b8174b1dfef9162b	Le rose rosa sono il mio fiore preferito e le ricevo spesso da chi mi ama davvero.	Una camicia rosa.
+viola	purple / violet / viola	3	c31ac812dbb4b1a273b3c2d3bd465690	Il fiore viola del lillà profuma tutto il giardino in primavera con il suo aroma dolce intenso.	Un vestito viola.
 marrone	brown	3	2126c164e7abbe8e5561ddfb6192811c	Le mie scarpe marroni sono comode e perfette per camminare in città tutta la giornata lunga.	Capelli marroni.
 grigio	gray	3	1d7b0b2fc8e498910de6922eea8ab8bc	Il cielo grigio di novembre annuncia che presto comincerà a piovere forte sul paese tranquillo.	Un gatto grigio.
 arancione	orange (color)	3	01e255d1dcad62921e34e41fbf88348d	L'arancione è il colore tipico dell'autunno quando le foglie cadono dagli alberi nel parco.	Un cappotto arancione.
@@ -124,7 +124,7 @@ il cielo	sky	3	be7740aa9d6f946349d2a54c8d133160	Il cielo stellato di una notte d
 la temperatura	temperature	3	ee9cf3b7ac113ccd7af311804b2be8ff	La temperatura di oggi è perfetta per una passeggiata al parco con tutta la famiglia riunita.	Bassa temperatura.
 fresco	cool / fresh	3	8d068c9dd06fac84989c48aa8b9f1685	L'aria fresca della mattina è perfetta per fare una corsa lungo il fiume del paese tranquillo.	Pane fresco.
 umido	humid	3	c0e0af4392bb2f455e199f984ffca62d	Il clima umido di questa città mi fa sentire sempre stanco e con il fiato corto pesante.	Aria umida.
-secco	dry	3	e6d948b4905562dd8eac9c606c6a592d	Il clima secco della montagna è perfetto per chi soffre di problemi respiratori e allergie stagionali.	Vino secco.
+secco	dry / skinny / curt	3	e6d948b4905562dd8eac9c606c6a592d	Il clima secco della montagna è perfetto per chi soffre di problemi respiratori e allergie stagionali.	Vino secco.
 piovere	to rain	3	e6248931347d56fde505de9a1ab93a71	Sta per piovere, dovremmo affrettarci a tornare a casa prima del temporale forte previsto.	Piove a dirotto.
 nevicare	to snow	3	9075072cc0d7dad44885614744115ca3	Quest'anno ha nevicato poco in pianura ma molto in montagna per la gioia degli sciatori esperti.	Nevica forte.
 il ghiaccio	ice	3	5c4ea34b1eb497c3db9aac4b9c5cab18	Il ghiaccio sulla strada è pericoloso e bisogna guidare con molta attenzione in inverno freddo.	Cubetti di ghiaccio.
@@ -149,7 +149,7 @@ i pantaloni	pants / trousers	3	4f80818dc26a067bb376ebf88b7b77bc	I pantaloni neri
 la scarpa	shoe	3	353e31b89851d09338b7a9dbe4d765be	Mi sono comprato un paio di scarpe nuove per la festa di sabato sera al ristorante elegante.	Una bella scarpa.
 il cappello	hat	3	bb7b269e0cab68e413c7444a4c2bfe8a	In inverno porto sempre un cappello di lana per proteggermi dal freddo intenso del nord italiano.	Un cappello rosso.
 il cappotto	coat	3	4e8db0a490460e40e597ce5d208fba50	Il mio cappotto invernale è caldissimo e mi protegge dal freddo durante le giornate gelide di gennaio.	Un cappotto pesante.
-la maglia	sweater	3	eb67d8fb634cab7d38e8913f9e9cb293	Mi metto sempre una maglia di lana quando fa freddo nella mia camera da letto la sera.	Una maglia calda.
+la maglia	sweater / jersey / shirt	3	eb67d8fb634cab7d38e8913f9e9cb293	Mi metto sempre una maglia di lana quando fa freddo nella mia camera da letto la sera.	Una maglia calda.
 la gonna	skirt	3	3bfea1f31bb5a1e40786ff7eef41bf81	La gonna lunga è di moda quest'estate e si abbina bene alle scarpe basse comode per camminare.	Una gonna corta.
 la giacca	jacket	3	c878a2ef42476b09fc73c22084427e8b	La giacca di pelle è alla moda e si abbina perfettamente con i jeans casual blu da sera.	Una giacca elegante.
 i calzini	socks	3	b63c810d3fd92eb8a0d1573b601441d8	Mi metto sempre dei calzini di cotone per evitare di sudare durante la giornata di lavoro al computer.	Calzini puliti.
@@ -170,7 +170,7 @@ la pillola	pill	3	f2dea04491baf83182c4f03dffa9bed6	Devo prendere una pillola dop
 guarire	to heal	3	b69b704517dc234a81ae278ed2708ca6	Spero di guarire presto da quest'influenza per poter tornare al lavoro la prossima settimana finalmente.	Guarisco presto.
 scegliere	to choose	3	22e802b523faf68a972b52f327aa68b3	Devo scegliere quale università frequentare e la decisione mi sta facendo davvero impazzire ultimamente.	Scegli tu.
 succedere	to happen	3	fac4cf20302d6d87f32505a673a9b9b9	Cosa è successo ieri sera durante la festa di Marco a casa sua nuova in periferia?	È successo qualcosa?
-sembrare	to seem	3	03f1b87f90a27d98e6f809cfe10c2200	Sembri stanco oggi, hai dormito abbastanza la notte scorsa per affrontare la giornata pesante?	Sembra giusto.
+sembrare	to seem / look / appear	3	03f1b87f90a27d98e6f809cfe10c2200	Sembri stanco oggi, hai dormito abbastanza la notte scorsa per affrontare la giornata pesante?	Sembra giusto.
 riuscire	to succeed / manage	3	4e29a1ee9c143a51e8a47d84ce2da20a	Non riesco a finire questo lavoro entro stasera senza l'aiuto di tutti i miei colleghi disponibili.	Ci riesco.
 decidere	to decide	3	49a22cdf1409938050f84a50139c7dbf	Devo decidere prima di domani se accettare quel nuovo lavoro all'estero o restare qui in Italia.	Hai deciso?
 immaginare	to imagine	3	4cdf1a926ea6f930e2f9667f1e310430	Posso solo immaginare quanto sia stato difficile per te affrontare quella situazione da solo per mesi.	Immagina che bello.
@@ -180,7 +180,7 @@ funzionare	to work / function	3	c3be2a058f24bc5f793a939ffdd187a7	Il computer non
 occorrere	to be needed	3	1db47b5349b0eade98588ebe876108f2	Mi occorre un nuovo computer per il lavoro perché quello vecchio non è più affidabile per niente.	Mi occorre tempo.
 la fame	hunger	3	f86f4786f77a482d600ad9366292cff4	Ho una fame da lupi e non vedo l'ora di mangiare la cena preparata da mia madre stasera.	Ho fame.
 la sete	thirst	3	a7222f153e5c1450b46a3446c957eae8	Ho una sete terribile dopo aver corso per due ore al sole della giornata estiva calda e afosa.	Ho sete.
-la voglia	desire / want	3	420d8174943e805fbb019ac36af0ae89	Ho voglia di un buon caffè caldo dopo il pranzo abbondante con tutta la famiglia riunita oggi.	Ho voglia di gelato.
+la voglia	desire / wish / craving	3	420d8174943e805fbb019ac36af0ae89	Ho voglia di un buon caffè caldo dopo il pranzo abbondante con tutta la famiglia riunita oggi.	Ho voglia di gelato.
 il bisogno	need	3	8726092d8a5a8fdb99bd3b8660db7f53	Ho bisogno di una vacanza lunga per rilassarmi dopo questi mesi di lavoro intenso e stressante difficile.	Ho bisogno di te.
 l'esperienza	experience	3	1fc4ff816f5f9f94f846f35d7f2822ec	L'esperienza di lavoro all'estero mi ha cambiato profondamente e mi ha aperto la mente a nuove culture.	Una bella esperienza.
 il futuro	future	3	5c72b79ee66109770d5813eb17112c12	Il futuro è incerto e dobbiamo essere pronti ad adattarci a qualunque cambiamento ci aspetti più avanti.	Pensa al futuro.

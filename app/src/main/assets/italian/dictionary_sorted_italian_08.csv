@@ -33,7 +33,7 @@ la rivista	magazine	8	35a895fd55816242b2849ae19b490ce3	Compro una rivista di mod
 l'articolo	article	8	0c11a67cb3da47a738af1a81616455fb	Ho letto un articolo molto interessante sui cambiamenti climatici sul giornale di ieri sera in metropolitana.	Un articolo lungo.
 la notizia	news (item)	8	777bd620871167d86f3664ef169d13f3	La notizia del giorno è la vittoria della nostra squadra al campionato di calcio nazionale dopo anni.	Una brutta notizia.
 l'intervista	interview	8	97c443f75232a9c9940e7b3b741c0216	Il giornalista ha fatto un'intervista molto interessante al primo ministro durante il telegiornale della sera.	Un'intervista esclusiva.
-il reportage	report (journalism)	8	5e0d59c2904c650bcd0b1b18f3e6084b	Il reportage del giornalista in zona di guerra ha vinto un premio internazionale per il giornalismo coraggioso.	Un reportage emozionante.
+il reportage	reportage / feature story	8	5e0d59c2904c650bcd0b1b18f3e6084b	Il reportage del giornalista in zona di guerra ha vinto un premio internazionale per il giornalismo coraggioso.	Un reportage emozionante.
 il telegiornale	TV news	8	725441100dcfb8bb8fe8f898d3c0a1bd	Guardo il telegiornale ogni sera alle otto per essere informato sulle notizie più importanti del giorno.	Telegiornale serale.
 la telecronaca	live commentary	8	56bd5f7b21f37ad9ba846d4895c4f57c	La telecronaca della partita di calcio è stata fatta da un giornalista famoso e molto preparato sportivamente.	Una telecronaca emozionante.
 lo spettacolo	show / spectacle	8	891715dd7284768358986416e12afc5c	Lo spettacolo teatrale è stato apprezzato da tutto il pubblico che ha applaudito a lungo alla fine.	Uno spettacolo magnifico.
@@ -89,7 +89,7 @@ disinstallare	to uninstall	8	ddaafb35e54d7b19f126230a9a9428dd	Voglio disinstalla
 configurare	to configure	8	61bc5b76c4df8f596410098ddcaa9195	Bisogna configurare bene le impostazioni dell'email prima di poterla utilizzare in modo efficace per il lavoro quotidiano.	Configura il sistema.
 aggiornare	to update	8	6eac056634c5fbde08d88fc52e045b7f	Devo aggiornare il sistema operativo del computer per avere tutte le funzionalità nuove e maggiore sicurezza informatica.	Aggiorna l'app.
 pubblicare	to publish	8	c4ef8f493f5c97f3a5bd13bc570bd277	Lo scrittore ha deciso di pubblicare il suo nuovo romanzo con una grande casa editrice italiana di Milano.	Pubblica il libro.
-trasmettere	to broadcast	8	4724d0cc44701693f48bf805b609301a	La radio trasmette ogni mattina un programma molto interessante sull'attualità politica nazionale e internazionale.	Trasmettono in diretta.
+trasmettere	to broadcast / transmit / convey	8	4724d0cc44701693f48bf805b609301a	La radio trasmette ogni mattina un programma molto interessante sull'attualità politica nazionale e internazionale.	Trasmettono in diretta.
 registrare	to record	8	cf6a36dea460e7613175af505690d6b2	Voglio registrare la conferenza per poterla riascoltare con calma a casa durante il fine settimana libero.	Registra il video.
 fotografare	to photograph	8	f7962189489e3e3383421591b99446f0	Mi piace fotografare i paesaggi durante i miei viaggi per ricordare ogni momento speciale vissuto in vacanza.	Fotografo tutto.
 filmare	to film	8	bbf4130997e98c8ea66c942eee6248d6	Voglio filmare il matrimonio di mia sorella per fare un bel video da far vedere ai parenti.	Filma la scena.
@@ -132,7 +132,7 @@ la fotografia	photography / photo	8	7ff28bbdca9b8e81000f3a7a3eb36714	La fotograf
 l'immagine	image	8	6a8c6972eec669156787348f93c837a5	L'immagine sullo schermo del computer è sfocata e devo cambiare le impostazioni del monitor per vedere bene.	Un'immagine chiara.
 il video	video	8	421b47ffd946ca083b65cd668c6b17e6	Il video del matrimonio di mia sorella è bellissimo e lo guardiamo ogni anno il giorno dell'anniversario.	Un video lungo.
 il filmato	footage / clip	8	170711ab6f5799ed1a878a36a196af39	Il filmato del concerto di ieri sera è stato pubblicato su internet ed è già diventato virale ovunque.	Un breve filmato.
-la ripresa	shot / take	8	84b8dd0a24c3e4e2eabecfc886844729	La ripresa aerea della città di Roma con il drone è davvero spettacolare e mostra tutta la bellezza.	Una ripresa difficile.
+la ripresa	recovery / resumption / shot (film)	8	84b8dd0a24c3e4e2eabecfc886844729	La ripresa aerea della città di Roma con il drone è davvero spettacolare e mostra tutta la bellezza.	Una ripresa difficile.
 la regia	direction (film)	8	baa765f01a64428c60d86eb3ec1c7fd3	La regia del nuovo film italiano è molto particolare e originale con scelte tecniche innovative del regista.	Un'ottima regia.
 la scena	scene	8	ad9152704dece9ae8c2cb2941e5831da	La scena finale del film è davvero commovente e tutti gli spettatori del cinema piangevano quando è apparsa.	Una scena emozionante.
 l'inquadratura	frame / shot	8	b8301dea155694cd79109121c5db2a8d	L'inquadratura del paesaggio è perfetta e cattura tutta la bellezza della valle alpina al tramonto rosso.	Un'inquadratura larga.
@@ -147,8 +147,8 @@ l'accordo	chord / agreement	8	9fb5cba9fc15e1af0b63fb28c9aa47b4	L'accordo finale 
 il brano	track / piece	8	1d153c72e0073364efb242d91726a092	Il brano più famoso dell'album è uscito come singolo ed è entrato nelle classifiche di tutto il mondo.	Un brano celebre.
 il concerto	concert	8	f1a2abfffd08c3f8e630bf1ac810508a	Il concerto di musica classica al teatro alla Scala di Milano è stato indimenticabile per tutto il pubblico.	Un concerto rock.
 l'orchestra	orchestra	8	8f163b472e2164f66a5cd751098783f9	L'orchestra sinfonica suona stasera al teatro alla Scala di Milano con un programma di musica romantica intenso.	Una grande orchestra.
-la banda	band	8	c157cd3cfba5c444f2f0e6378f3da47e	La banda musicale del paese suona durante la festa patronale tutti gli anni nella piazza principale del centro.	Una banda allegra.
-il canale	channel	8	a55a0c980787d4669c1791cc80e9e08f	Il canale televisivo trasmette solo film d'autore per gli appassionati di cinema d'arte e cultura italiana.	Cambia canale.
+la banda	band / gang	8	c157cd3cfba5c444f2f0e6378f3da47e	La banda musicale del paese suona durante la festa patronale tutti gli anni nella piazza principale del centro.	Una banda allegra.
+il canale	channel / canal	8	a55a0c980787d4669c1791cc80e9e08f	Il canale televisivo trasmette solo film d'autore per gli appassionati di cinema d'arte e cultura italiana.	Cambia canale.
 l'episodio	episode	8	558765b167901c0e7fde3bfa761ff6dd	L'ultimo episodio della serie televisiva è stato il più bello di tutta la stagione e ha lasciato a bocca aperta.	Un episodio finale.
 la serie	series / TV show	8	f263d9a8b7cb4a9e573c18e5b9e15091	La serie televisiva americana ha vinto molti premi internazionali per la qualità della sceneggiatura e degli attori.	Una serie nuova.
 il documentario	documentary	8	e77bc299c2553f2afbe58155a954a652	Il documentario sulla natura africana è stato girato in cinque anni di riprese in luoghi selvaggi e remoti.	Un documentario interessante.
@@ -193,9 +193,9 @@ l'anonimato	anonymity	8	572c8f5c6cfbca20fafbf8007931b83d	L'anonimato in rete per
 il segreto	secret	8	525d5d4f0cfb94d045c48971aa1aa974	Il segreto della ricetta di mia nonna è l'ingrediente speciale che lei aggiungeva sempre alla fine della preparazione.	Un segreto importante.
 la riservatezza	confidentiality	8	4b45d75df0b8d91d481469a91e6584ca	La riservatezza dei dati medici è fondamentale e i medici sono tenuti per legge a non divulgare le informazioni sensibili.	Massima riservatezza.
 la trasparenza	transparency	8	e9c6ae404d65a572ac56667a34c41dab	La trasparenza nelle decisioni politiche è essenziale per mantenere la fiducia dei cittadini nelle istituzioni democratiche e moderne.	Trasparenza assoluta.
-il virus	virus (computer)	8	326577fbe6d73973bd67437829bf9301	Il computer è stato infettato da un virus e devo formattarlo completamente per recuperare il funzionamento normale.	Un brutto virus.
+il virus	virus	8	326577fbe6d73973bd67437829bf9301	Il computer è stato infettato da un virus e devo formattarlo completamente per recuperare il funzionamento normale.	Un brutto virus.
 il backup	backup	8	402051f4be0cc3aad33bcf3ac3d6532b	Faccio un backup completo del computer ogni mese per non perdere i dati importanti in caso di guasti improvvisi.	Un backup completo.
-il recupero	recovery	8	92e521fa4c5fdc66d3e5355a4c3568ca	Il recupero dei dati persi dopo il guasto del disco rigido è stato possibile grazie al backup recente fatto.	Il recupero crediti.
+il recupero	recovery / retrieval / collection	8	92e521fa4c5fdc66d3e5355a4c3568ca	Il recupero dei dati persi dopo il guasto del disco rigido è stato possibile grazie al backup recente fatto.	Il recupero crediti.
 l'archivio	archive	8	e9651b73a1b50b64e682b575f642e7c8	L'archivio storico della città conserva documenti antichi di grande valore culturale per gli studiosi e gli storici.	Un archivio enorme.
 il certificato	certificate	8	cbef27f50f0abe27bde1f3e3c4cef231	Il certificato digitale garantisce l'autenticità del sito web e protegge gli utenti dalle frodi informatiche dannose esistenti.	Un certificato valido.
 sarei	I would be	8	d934d2598ba2f5aa515701f5a0826d76	Sarei felice di accettare il vostro gentile invito a cena per sabato sera prossimo.	Sarei felice.

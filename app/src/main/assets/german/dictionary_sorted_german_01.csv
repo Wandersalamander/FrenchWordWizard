@@ -10,16 +10,16 @@ machen	to make; to do	1	cfba10e358aca24de1aea4eb4b0471e9	Nachdem die Hausaufgabe
 gehen	to go; to walk	1	6ec1f347cc3482e880d87668a48c8a6b	Obwohl es stark regnete, beschloss sie, trotzdem zu Fuß zur Arbeit zu gehen, weil ihr Auto in der Werkstatt war.	Wir gehen in den Park.
 kommen	to come	1	a168e64f3ffb77ff04b882ec22bbff70	Wenn du morgen zur Party kommen könntest, würde ich mich sehr freuen, weil alle deine Freunde auch kommen werden.	Kommst du heute?
 sehen	to see	1	7f17e4134eb905fe30076186b1078245	Als wir aus dem Fenster sahen, konnten wir den wunderschönen Sonnenuntergang sehen.	Ich sehe einen Vogel.
-geben	to give	1	e236a3a4277f7bafefec2225f2f46ee9	Obwohl es keine einfache Lösung zu geben schien, wurde beschlossen, den Betroffenen zusätzliche Unterstützung zu geben.	Er gibt mir das Buch.
+geben	to give; (es gibt) there is / there are	1	e236a3a4277f7bafefec2225f2f46ee9	Obwohl es keine einfache Lösung zu geben schien, wurde beschlossen, den Betroffenen zusätzliche Unterstützung zu geben.	Er gibt mir das Buch.
 nehmen	to take	1	91c4bf91396a36ad498edc4e29292d70	Bevor wir eine endgültige Entscheidung treffen, sollten wir uns die Zeit nehmen.	Ich nehme den Bus.
 finden	to find	1	6fad90f33c53acfc3203203fbcc5cdd6	Obwohl viele Leute das Restaurant schwer zu finden scheinen, finden diejenigen, die es entdecken, hervorragendes Essen.	Ich finde meinen Schlüssel nicht.
 sagen	to say; to tell	1	aeb8592e73093aaf4ef065821e1fb48b	Es wird oft gesagt, dass man die Wahrheit sagen sollte, auch wenn es schwierig ist, das Richtige zu sagen.	Was willst du sagen?
 wissen	to know (a fact)	1	ea6ec600891e0725f08df6138d665ad5	Hätte ich gewusst, dass du das nicht wissen konntest, hätte ich es dir viel früher gesagt.	Ich weiß es nicht.
-lassen	to let; to leave	1	45c660170e8e9a005b7e57ba8c5a5070	Er ließ sich von niemandem davon abbringen, sein Auto in der Garage stehen zu lassen, obwohl das Wetter schön war.	Lass mich in Ruhe!
-stehen	to stand	1	32bcf160318ec77f1c29e77b4b390d62	Als der alte Mann aufstand, bemerkte er, dass er nicht mehr so lange stehen konnte wie früher, was ihn traurig stimmte.	Ich stehe an der Haltestelle.
+lassen	to let / to leave / (causative) to have done	1	45c660170e8e9a005b7e57ba8c5a5070	Er ließ sich von niemandem davon abbringen, sein Auto in der Garage stehen zu lassen, obwohl das Wetter schön war.	Lass mich in Ruhe!
+stehen	to stand; (in text) to say / be written	1	32bcf160318ec77f1c29e77b4b390d62	Als der alte Mann aufstand, bemerkte er, dass er nicht mehr so lange stehen konnte wie früher, was ihn traurig stimmte.	Ich stehe an der Haltestelle.
 denken	to think	1	a4429d83648cce85a73aab27804c255b	Wenn man bedenkt, wie schnell sich die Technologie entwickelt, muss man daran denken.	Ich denke oft an dich.
 sprechen	to speak	1	edd5278911e28e9659ce53b513e25e4e	Obwohl sie noch nie zuvor öffentlich gesprochen hatte, konnte sie so überzeugend sprechen, dass alle begeistert waren.	Er spricht Deutsch.
-halten	to hold; to stop	1	83c71ca458ebab9af190d4c2ce9af217	Der Redner versuchte, die Aufmerksamkeit des Publikums zu halten, indem er eine spannende Geschichte erzählte.	Halt bitte das Glas fest!
+halten	to hold / to stop / to keep; (halten für) to consider	1	83c71ca458ebab9af190d4c2ce9af217	Der Redner versuchte, die Aufmerksamkeit des Publikums zu halten, indem er eine spannende Geschichte erzählte.	Halt bitte das Glas fest!
 bringen	to bring	1	f561b04cce6656d8107392b3d6212177	Wenn du das nächste Mal zu Besuch kommst, könntest du mir bitte die Bücher mitbringen.	Bring mir bitte ein Glas Wasser.
 leben	to live	1	c7dc704a938e13594586dad9c8bc87a0	Obwohl sie in einer kleinen Stadt aufgewachsen war, träumte sie davon, eines Tages in einer großen Stadt zu leben.	Wir leben in Berlin.
 fahren	to drive; to travel	1	f547dc8a08150647805edfa195cba729	Da die Straßen wegen des Schneefalls gesperrt worden waren, mussten wir zu Hause bleiben.	Ich fahre mit dem Fahrrad.
@@ -179,7 +179,7 @@ der Tisch	the table	1	1421ae7c4a0acb3b1201c544da9bc55d	Der Tisch, der in der Mit
 der Stuhl	the chair	1	bf9415f500bd13163e6c044a4a557575	Der alte Stuhl, der seit Generationen in der Familie war, wurde so sorgfältig restauriert, dass er wie neu aussah.	Der Stuhl steht am Tisch.
 das Bett	the bed	1	06046844abf8de16636eb6ab7993deb9	Nachdem sie den ganzen Tag gearbeitet hatte, freute sie sich auf nichts mehr als auf ihr warmes Bett.	Ich gehe ins Bett.
 die Küche	the kitchen	1	2dd8367d7748ce2b01056238f074c94a	In der Küche, die gerade renoviert worden war, duftete es so herrlich nach frischem Brot.	Die Küche ist sauber.
-das Bad	the bathroom	1	aef6dd1d40ec6a89f19fe4c950a18537	Das Bad, das erst vor kurzem modernisiert worden war, verfügte über eine große Badewanne.	Das Bad ist neben dem Schlafzimmer.
+das Bad	the bathroom / bath	1	aef6dd1d40ec6a89f19fe4c950a18537	Das Bad, das erst vor kurzem modernisiert worden war, verfügte über eine große Badewanne.	Das Bad ist neben dem Schlafzimmer.
 der Garten	the garden	1	3dfbbc801a6051bbb8e049c15a98b82f	In dem großen Garten, der hinter dem Haus lag, wuchsen so viele verschiedene Blumen.	Der Garten ist schön.
 die Blume	the flower	1	c648fc6624a0330759309c8edf6c6351	Die Blume, die sie zum Geburtstag geschenkt bekommen hatte, blühte so prächtig, dass sie das ganze Wohnzimmer in ein Meer von Farben verwandelte.	Die Blume ist rot.
 der Baum	the tree	1	1e3c5f5c32af8a69c046be77bc47a786	Der alte Baum, der seit über hundert Jahren im Park steht, wurde zum Naturdenkmal erklärt.	Der Baum ist hoch.

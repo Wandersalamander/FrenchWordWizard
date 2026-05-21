@@ -74,8 +74,8 @@ la realtà	reality	9	06f7510dc7f4e80f9e1db870dd9b8893	La realtà è spesso più 
 l'illusione	illusion	9	8eb7cf3e2a0bf425192569113106987a	L'illusione di essere felici grazie ai beni materiali svanisce presto quando si capisce cosa conta davvero.	Una pura illusione.
 la verità	truth	9	a68280303c02f9c49501526f85718827	La verità viene sempre a galla prima o poi e nasconderla per troppo tempo è sempre controproducente.	La sacra verità.
 l'eternità	eternity	9	1fb7d06cbace72869721090ac6431c4b	L'eternità è un concetto difficile da comprendere per la mente umana abituata a misurare il tempo in giorni e anni.	Per l'eternità.
-l'infinito	infinite / infinity	9	dc12a613487cfc433bdf981b7a65baf4	L'infinito dell'universo affascina gli astronomi che continuano a scoprire nuovi mondi e nuove galassie ogni anno.	Lo spazio infinito.
-finito	finite	9	6b4641ad5f0d7938e1ceb4a6a2b5fa99	Il tempo finito che abbiamo nella vita ci impone di scegliere bene cosa fare e cosa lasciare perdere subito.	Un mondo finito.
+l'infinito	infinity / infinite / infinitive (grammar)	9	dc12a613487cfc433bdf981b7a65baf4	L'infinito dell'universo affascina gli astronomi che continuano a scoprire nuovi mondi e nuove galassie ogni anno.	Lo spazio infinito.
+finito	finished / finite	9	6b4641ad5f0d7938e1ceb4a6a2b5fa99	Il tempo finito che abbiamo nella vita ci impone di scegliere bene cosa fare e cosa lasciare perdere subito.	Un mondo finito.
 immortale	immortal	9	8b40cd026fea8e18949b49f41175ccad	L'opera del grande poeta è immortale e continua a essere letta e amata anche dopo molti secoli dalla sua morte.	Una fama immortale.
 mortale	mortal	9	4e6df43af7b9371b79507bbdf4522f21	L'uomo è mortale e questa consapevolezza dovrebbe spingerci a vivere ogni momento della vita con maggiore intensità.	Un colpo mortale.
 la certezza	certainty	9	579a8e1cbb76fe84494991eb966774da	Non c'è alcuna certezza assoluta nella vita ma dobbiamo prendere decisioni anche con dei dubbi e delle paure.	Una assoluta certezza.
@@ -116,7 +116,7 @@ giudicare	to judge	9	2a22513a4c4d0153a2508fb67b80bc8c	Non bisogna giudicare le p
 condannare	to condemn	9	4d41937caff222f6aa8a6d054fb50a22	Il giudice ha deciso di condannare l'imputato a venti anni di carcere per i gravi reati commessi negli ultimi cinque anni.	Condannare il colpevole.
 assolvere	to acquit	9	e3e91c1e3027d4158042dec6ce929483	La corte d'appello ha deciso di assolvere l'imputato per insufficienza di prove dopo tre anni di processi lunghissimi.	Assolto con formula piena.
 difendere	to defend	9	47f0767a0e9d9f6838d61e8c32018be8	Bisogna sempre difendere i propri principi anche quando è scomodo o costa caro per la propria carriera personale.	Difendi i deboli.
-attaccare	to attack	9	defc3318d7a3905b96037d4d806fb965	Non è giusto attaccare una persona personalmente solo perché si hanno opinioni diverse sui temi della politica attuale.	Attaccare il nemico.
+attaccare	to attack / attach / stick / start	9	defc3318d7a3905b96037d4d806fb965	Non è giusto attaccare una persona personalmente solo perché si hanno opinioni diverse sui temi della politica attuale.	Attaccare il nemico.
 conquistare	to conquer	9	cdcef85a142b257c6e6f422e269a2d24	Il generale romano è riuscito a conquistare tutta l'Italia in pochi anni grazie alle sue strategie militari geniali e innovative.	Conquistare il mondo.
 dominare	to dominate	9	12661b8d914bca729c24c2f09cd44b85	L'impero romano è riuscito a dominare tutto il Mediterraneo per più di cinque secoli fino al crollo dell'impero d'occidente.	Dominare la situazione.
 governare	to govern	9	2456fac8d64555739110cc743b414a30	Governare un paese non è facile e richiede grande competenza, esperienza e capacità di mediazione tra interessi contrastanti.	Governare con saggezza.
@@ -139,12 +139,12 @@ ambizioso	ambitious	9	6f6944ddea696e9f9b2bdb0ce0da6d1c	Il giovane manager è mol
 determinato	determined	9	47f59de54d39b4db447b412ceea95183	Sono determinato a finire questo difficile progetto entro la fine del mese nonostante tutte le difficoltà incontrate finora.	Una persona determinata.
 modesto	modest	9	cee4ba0cccdba9f3955d498c89fae725	Il professore è una persona molto modesta nonostante abbia vinto premi internazionali importanti nella sua carriera accademica.	Un guadagno modesto.
 valere	to be worth	9	dd9d5b4b1b4c9d85714c9ca379d9e766	Questa antica moneta vale molto più di quanto pensi se la fai valutare da un esperto numismatico.	Vale la pena.
-contare	to count	9	ab62175861fad120ba6e3773e10ca9f5	Devo contare i giorni che mi separano dalle vacanze al mare con la mia famiglia tutta riunita finalmente.	Conto su di te.
+contare	to count / count on / rely	9	ab62175861fad120ba6e3773e10ca9f5	Devo contare i giorni che mi separano dalle vacanze al mare con la mia famiglia tutta riunita finalmente.	Conto su di te.
 importare	to matter / import	9	6ab6a853515153c782d224598f1b984d	Non mi importa cosa pensano gli altri della mia scelta perché sono sicuro di aver fatto la cosa giusta.	Mi importa molto.
 riferire	to report / refer	9	1ff42d58ea9d2e22c7ad4ef5f43d1d72	Devo riferire al mio capo tutto quello che è successo durante la riunione di ieri pomeriggio in dettaglio.	Riferisci il messaggio.
 riguardare	to concern / regard	9	4456d7dc50262990cd3361dd27bb460e	Questa decisione importante riguarda tutti i dipendenti dell'azienda e quindi richiede una riflessione collettiva approfondita.	Mi riguarda.
 trattare	to treat / deal with	9	5483d8c32b7f244a9cb1c41dddfba84b	Bisogna trattare tutti gli ospiti con cortesia e rispetto senza alcuna distinzione di nazionalità o ceto sociale.	Trattare bene tutti.
-convenire	to be convenient	9	faf44decff2dffa24eca6159e8d1e93d	Mi conviene comprare l'abbonamento mensile della metropolitana perché uso i mezzi pubblici tutti i giorni per lavoro.	Conviene così.
+convenire	to be worthwhile / advantageous; to agree	9	faf44decff2dffa24eca6159e8d1e93d	Mi conviene comprare l'abbonamento mensile della metropolitana perché uso i mezzi pubblici tutti i giorni per lavoro.	Conviene così.
 opporre	to oppose	9	936d12657fc15f19e882b3d5b9f12e1e	Devo opporre resistenza a questa decisione ingiusta che colpisce molti dipendenti senza alcuna giustificazione razionale comprensibile finora.	Opporsi al cambiamento.
 sopportare	to bear / stand	9	eb551f2ffc734ab9aff2586725a22a90	Non posso più sopportare questo comportamento da parte dei miei colleghi e devo parlare con il capo subito.	Sopporta la situazione.
 tollerare	to tolerate	9	0ad4bf666ac1f2d8e03e2733af0d45c7	Non posso tollerare la mancanza di rispetto da parte dei miei studenti durante le lezioni di matematica importanti.	Tollerare gli errori.

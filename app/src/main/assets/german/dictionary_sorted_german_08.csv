@@ -1,5 +1,5 @@
 abschließen	to lock / to complete	8	96c9382dd1de532b9a136daa647fdffe	Vergiss nicht, die Haustür abzuschließen, bevor du ins Bett gehst.	Ich habe die Tür abgeschlossen.
-ausgehen	to go out	8	e0379fec7577fc43280bec7c35f4f199	Am Wochenende geht sie gerne mit ihren Freundinnen in der Stadt aus.	Wir gehen heute Abend aus.
+ausgehen	to go out / to run out (be depleted); (davon ~) to assume	8	e0379fec7577fc43280bec7c35f4f199	Am Wochenende geht sie gerne mit ihren Freundinnen in der Stadt aus.	Wir gehen heute Abend aus.
 einkaufen	to go shopping / to shop	8	7621f62ef7209191541ed6365b5f90cf	Jeden Samstag fährt die ganze Familie zum Supermarkt, um für die kommende Woche einzukaufen.	Ich muss noch einkaufen.
 nachdenken	to think about / to reflect	8	90c90eaf111a8c57346b8731d3e7d38b	Er dachte lange über das Angebot nach, bevor er sich endlich für eine Zusage entschied.	Lass mich darüber nachdenken.
 vorbereiten	to prepare	8	8be95221556575b0fafe651d3f178ffe	Sie bereitete das Abendessen vor, während die Kinder ihre Hausaufgaben machten.	Ich bereite mich auf die Prüfung vor.
@@ -27,13 +27,13 @@ beitragen	to contribute	8	637295d9a05b03ebfaf1ab44a2b652f8	Jeder kann dazu beitr
 sich verlassen	to rely on	8	15b4b349d7ab69cc931c7bb0eaaff754	Auf ihn kann man sich immer verlassen; er hält stets, was er verspricht.	Ich verlasse mich auf dich.
 herausfinden	to find out	8	2233e9b2d98a4def89d5e373da8f278e	Die Detektivin fand heraus, wer das Geld gestohlen hatte, und überführte den Täter mit einem cleveren Trick.	Ich muss das herausfinden.
 zusammenarbeiten	to collaborate / to work together	8	8dba0aa058a87c688a64fa8fcf468341	Die beiden Unternehmen beschlossen, zusammenzuarbeiten, um das neue Produkt schneller auf den Markt zu bringen.	Wir arbeiten gut zusammen.
-aufgeben	to give up / to post (a letter)	8	470ba4808b3c726340ac79220f6c7e71	Obwohl der Weg lang und beschwerlich war, gab sie niemals auf und erreichte schließlich ihr Ziel.	Gib nicht auf!
+aufgeben	to give up / post (letter) / assign (homework) / check in (luggage)	8	470ba4808b3c726340ac79220f6c7e71	Obwohl der Weg lang und beschwerlich war, gab sie niemals auf und erreichte schließlich ihr Ziel.	Gib nicht auf!
 abnehmen	to lose weight / to decrease	8	3020ef22805dd206f4405f4f5c38dc62	Nach drei Monaten gesunder Ernährung und regelmäßigem Sport hatte er zehn Kilo abgenommen.	Ich möchte abnehmen.
 zunehmen	to gain weight / to increase	8	6c39a2cb46b6bb5f6aff230b6b126e6a	Die Zahl der Touristen hat in den letzten Jahren stetig zugenommen, was die Infrastruktur der kleinen Stadt belastet.	Die Bevölkerung nimmt zu.
 verwenden	to use / to apply	8	c8aeec33858641bf13a1fb0299db67e6	Für dieses Rezept sollte man am besten frische Kräuter verwenden, weil sie viel aromatischer sind als getrocknete.	Welches Wort soll ich verwenden?
 unterbrechen	to interrupt	8	f972e8e00d31db2b247d63d35f47a8cd	Sie unterbrach ihn mitten im Satz, weil sie eine wichtige Information hinzufügen wollte.	Unterbrich mich bitte nicht.
 verschwinden	to disappear	8	a034386756dd864070f9dbfe3a08b586	Der Nebel verschwand so schnell, wie er gekommen war, und gab den Blick auf eine atemberaubende Landschaft frei.	Die Sonne verschwand hinter den Wolken.
-erscheinen	to appear / to seem	8	cf915a193eb435bdcd314b9214b53df9	Der Autor erschien persönlich zur Buchvorstellung und signierte geduldig die Bücher seiner begeisterten Leser.	Er erscheint müde.
+erscheinen	to appear / to seem / to be published	8	cf915a193eb435bdcd314b9214b53df9	Der Autor erschien persönlich zur Buchvorstellung und signierte geduldig die Bücher seiner begeisterten Leser.	Er erscheint müde.
 sich verhalten	to behave	8	425e06bd4cfa51a0854e95c167609dce	Er verhielt sich in der schwierigen Situation so ruhig und besonnen.	Verhalte dich bitte ruhig.
 entstehen	to arise / to develop	8	c0ab88da832d47958e3767e42c230c5b	Durch die Zusammenarbeit verschiedener Künstler entstand ein Wandgemälde, das die Geschichte des Viertels erzählt.	Wie ist das entstanden?
 ersetzen	to replace	8	85f013108ebe8551313a073980f2de96	Der alte Computer wurde durch ein leistungsstärkeres Modell ersetzt, das den modernen Anforderungen besser gerecht wird.	Kann man das ersetzen?
@@ -123,11 +123,11 @@ das Stück	piece / play	8	2ff284825b37da1c6babeae005b50123	Das Theaterstück war
 die Reihe	row / series / turn	8	3e70896c5a7d21ef8b6e48fbd99fd9ac	In der ersten Reihe saßen die Ehrengäste, die eigens für die Veranstaltung angereist waren.	Du bist an der Reihe.
 die Menge	amount / crowd	8	6fde8300a166c5eafb4c69199bb83898	Eine große Menge an Zuschauern hatte sich vor dem Rathaus versammelt, um die Bekanntgabe zu verfolgen.	Eine große Menge Wasser.
 der Zugang	access	8	7d2c9cd5b85d7207b5a677c44a1d8324	Der Zugang zum Gebäude ist nur mit einer speziellen Chipkarte möglich.	Ich habe keinen Zugang.
-die Lage	situation / location	8	698f36a3a366ec11412baeffd5a694f0	Die Lage am Arbeitsmarkt hat sich in den letzten Monaten deutlich verbessert.	Die Lage ist ernst.
+die Lage	situation / location / layer	8	698f36a3a366ec11412baeffd5a694f0	Die Lage am Arbeitsmarkt hat sich in den letzten Monaten deutlich verbessert.	Die Lage ist ernst.
 der Mangel	shortage / deficiency / lack	8	d3a763d0d88d7aeb33e6b55f58d3809c	Der Mangel an Fachkräften ist eines der größten Probleme der deutschen Wirtschaft.	Es herrscht ein Mangel.
 der Wert	value / worth	8	8df8afa81d9c03524ee572c732cdfc86	Der ideelle Wert dieses alten Familienfotos ist für mich unschätzbar, auch wenn es materiell wertlos ist.	Das hat keinen Wert.
 die Rücksicht	consideration	8	0e0e117a0a3d068d3312aa7aee74f000	Man sollte immer Rücksicht auf seine Mitmenschen nehmen, besonders in öffentlichen Verkehrsmitteln.	Nimm Rücksicht.
-das Verhältnis	relationship / ratio	8	11cd98343c6aea742d5797348729b345	Das Verhältnis zwischen Preis und Leistung stimmt bei diesem Produkt nicht mehr.	Wir haben ein gutes Verhältnis.
+das Verhältnis	relationship / ratio / affair	8	11cd98343c6aea742d5797348729b345	Das Verhältnis zwischen Preis und Leistung stimmt bei diesem Produkt nicht mehr.	Wir haben ein gutes Verhältnis.
 das Doppelte	double	8	7e2a2a1d5fe5d4c01ab9175b3b6b780c	Die Kosten für die Renovierung betrugen am Ende das Doppelte des ursprünglichen Voranschlags.	Das ist das Doppelte.
 das Verbrechen	crime	8	5a3c78702389003b2f3dad1c57fa569e	Das Verbrechen wurde erst nach mehreren Wochen aufgeklärt, als ein entscheidender Hinweis einging.	Das ist ein Verbrechen.
 der Dieb	thief	8	2554d31ffd8b3ec8ea8be90320da0e6e	Der Dieb wurde auf frischer Tat ertappt, als er versuchte, ein Gemälde aus dem Museum zu stehlen.	Der Dieb ist geflohen.
@@ -141,7 +141,7 @@ annehmen	to accept / to assume	8	e930cde53ce4dd66b730a07088d37d61	Sie nahm das J
 auffallen	to stand out / to be noticed	8	238842853c996a1006d6552ab4e8a3fb	Sein eleganter Anzug fiel sofort auf, weil alle anderen Gäste leger gekleidet waren.	Das fällt mir auf.
 auffordern	to request / to urge	8	ed2a08b540f87682386755ebf1505d37	Die Polizei forderte die Menge auf, den Platz zu räumen und nach Hause zu gehen.	Ich fordere dich auf.
 betrachten	to look at / to consider	8	1790fa21d415a092868b8d44edaa7e61	Sie betrachtete das Gemälde lange und still, als könne sie jedes Detail mit den Augen aufnehmen.	Betrachte es von hier.
-einsetzen	to deploy / to use / to commit	8	830789981f6bb52a2258dae9cfef7aac	Die Feuerwehr setzte alle verfügbaren Kräfte ein, um den Brand unter Kontrolle zu bringen.	Wir setzen neue Technik ein.
+einsetzen	to deploy / use / insert / begin; (sich ~ für) to advocate	8	830789981f6bb52a2258dae9cfef7aac	Die Feuerwehr setzte alle verfügbaren Kräfte ein, um den Brand unter Kontrolle zu bringen.	Wir setzen neue Technik ein.
 einrichten	to furnish / to set up	8	1516f46d71f631c6eb508d704ce2cb28	Sie richteten ihre erste gemeinsame Wohnung mit viel Liebe und wenig Geld ein.	Das Zimmer ist schön eingerichtet.
 erfahren	to learn / to find out / experienced	8	8e2b9864d0dedf05276ea4ac4d430130	Erst gestern habe ich erfahren, dass sie geheiratet hat und ein Kind erwartet.	Ich habe es gerade erfahren.
 festhalten	to hold on to / to record	8	5fb917f66f3e3d10cc1d7220868e3409	Er hielt sich am Geländer fest, als der Bus plötzlich scharf bremste.	Halt dich fest!
@@ -151,7 +151,7 @@ sich handeln	to be about / to concern	8	5fe0f3af011a40a57a3ff913db6d32f4	Bei dem
 nutzen	to use / to take advantage of	8	41ea2e47dbbba7629c518e5468b837a4	Er nutzte die Gelegenheit, um mit dem berühmten Wissenschaftler ein paar Worte zu wechseln.	Nutze die Chance.
 stammen	to come from / to originate	8	6dbdf606968cdf055c1c945a27ec39a6	Das Rezept stammt aus dem achtzehnten Jahrhundert und wird seitdem von Generation zu Generation weitergegeben.	Woher stammt das?
 übernehmen	to take over / to assume	8	0d798ff69c8785eef208fefa6c69bf61	Nach dem Rücktritt des Direktors übernahm sein Stellvertreter vorübergehend die Leitung des Instituts.	Ich übernehme die Aufgabe.
-umgehen	to deal with / to handle	8	4ceec56f3184d40600a4d1791346878b	Man muss lernen, mit Kritik konstruktiv umzugehen, anstatt sich sofort angegriffen zu fühlen.	Wie geht man damit um?
+umgehen	to deal with / handle; (inseparable umGEHen) to circumvent, bypass	8	4ceec56f3184d40600a4d1791346878b	Man muss lernen, mit Kritik konstruktiv umzugehen, anstatt sich sofort angegriffen zu fühlen.	Wie geht man damit um?
 untersuchen	to examine / to investigate	8	cdee5a155dbe9759ab22f00f57b390f2	Der Arzt untersuchte den Patienten gründlich und konnte zum Glück nichts Ernstes feststellen.	Der Arzt untersucht mich.
 verbreiten	to spread / to distribute	8	ba8490a414f41faac82f3351a1c240f2	Die Nachricht verbreitete sich innerhalb weniger Stunden über die sozialen Medien auf der ganzen Welt.	Die Nachricht verbreitet sich schnell.
 verlangen	to demand / to charge	8	9c6183b0abdf5f5a48da733988b11919	Der Vermieter verlangt eine deutlich höhere Miete, als für diese Gegend üblich ist.	Was verlangen Sie dafür?
