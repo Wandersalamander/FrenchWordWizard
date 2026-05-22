@@ -20,8 +20,12 @@ class SoundEffects(context: Context) {
     private val spotCheckSoundId: Int
 
     init {
+        // USAGE_MEDIA so playback follows the active output device (Bluetooth
+        // A2DP, wired headset). USAGE_GAME is not reliably routed to A2DP and
+        // can stay on the built-in speaker. We never request audio focus, so
+        // this still mixes over music apps without interrupting them.
         val audioAttrs = AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_GAME)
+            .setUsage(AudioAttributes.USAGE_MEDIA)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build()
         soundPool = SoundPool.Builder()

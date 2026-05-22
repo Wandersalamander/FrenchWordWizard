@@ -177,6 +177,121 @@ class SchedulingMathTest {
         assertEquals(SkillStats.SLOW_FPB_FLOOR, stats.failureProbability(), 1e-6f)
     }
 
+    // ---------- Time-spaced clean-streak counter discount ----------
+
+    @Test fun fpb_spacedCleanStreakPushesBadHistoryThroughThreshold() {
+        // A pair failed heavily in the past (10/20) but answered cleanly for
+        // the last 10 rounds, with the clean run spread across 8 calendar days.
+        // The time-spaced discount fades the stale counter out far enough to
+        // drop below the mastery threshold — while a no-streak twin (identical
+        // counters/window, timestamps unset) must NOT cross, proving the
+        // elapsed streak is what moved it rather than the window alone.
+        val cleanWindow = window(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f)
+        val anchor = 1_000_000_000_000L
+        val spaced = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 20,
+            nTimesFailed = 10f,
+            lastTimeFailed = anchor,
+            lastDisplayed = anchor + 8L * DAY_MS,
+            recentInteractions = cleanWindow,
+        )
+        val noStreak = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 20,
+            nTimesFailed = 10f,
+            recentInteractions = cleanWindow,
+        )
+        assertTrue(
+            "spaced clean streak should master the pair, was ${spaced.failureProbability()}",
+            spaced.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+        assertTrue(
+            "no-streak twin should not be mastered yet, was ${noStreak.failureProbability()}",
+            noStreak.failureProbability() >= Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+        assertTrue(
+            "the streak must lower fpb relative to no streak",
+            spaced.failureProbability() < noStreak.failureProbability(),
+        )
+    }
+
+    @Test fun fpb_crammedCleanStreakDoesNotMaster() {
+        // Identical counters and a fully clean 10-round window, but the clean
+        // run happened inside one short session (≈0 calendar days). Massed
+        // practice must not discount the bad history: fpb stays above threshold
+        // and strictly above the same reps spaced across days.
+        val cleanWindow = window(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f)
+        val anchor = 1_000_000_000_000L
+        val crammed = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 20,
+            nTimesFailed = 10f,
+            lastTimeFailed = anchor,
+            lastDisplayed = anchor + 60_000L, // one minute later — same session
+            recentInteractions = cleanWindow,
+        )
+        val spaced = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 20,
+            nTimesFailed = 10f,
+            lastTimeFailed = anchor,
+            lastDisplayed = anchor + 8L * DAY_MS,
+            recentInteractions = cleanWindow,
+        )
+        assertTrue(
+            "crammed clean streak should not master, was ${crammed.failureProbability()}",
+            crammed.failureProbability() >= Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+        assertTrue(
+            "spacing the same reps must lower fpb below cramming",
+            spaced.failureProbability() < crammed.failureProbability(),
+        )
+    }
+
+    @Test fun fpb_singleRepAcrossIdleGapDoesNotMaster() {
+        // Failed heavily, then answered correctly exactly once and left the
+        // word idle for 20 days. The long elapsed gap alone must not collapse
+        // the counter — the rep gate needs several clean reps — so the pair
+        // stays well above the mastery threshold.
+        val s = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 30,
+            nTimesFailed = 18f,
+            lastTimeFailed = 1_000_000_000_000L,
+            lastDisplayed = 1_000_000_000_000L + 20L * DAY_MS,
+            recentInteractions = window(0f), // exactly one clean rep
+        )
+        val fpb = s.failureProbability()
+        assertTrue("single rep across a long gap must not master, was $fpb",
+            fpb > Vocab.SKILL_FINISHED_THRESHOLD)
+        assertTrue("counter should still dominate (fpb high), was $fpb", fpb > 0.3f)
+    }
+
+    @Test fun fpb_noStreakIdenticalToOldBlend() {
+        // With fail/display timestamps unset (cleanStreakDays == 0) the discount
+        // is inert and the blend must equal the pre-discount formula exactly.
+        // Pins the "no regression for rows without a measurable streak" promise.
+        val s = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 10,
+            nTimesFailed = 2f,
+            recentInteractions = window(0f, 0f, 0f, 1f, 0f), // n=5, one fail 2nd-from-newest
+        )
+        // Old blend, recomputed by hand:
+        //   windowWeight = 5/(5+3) = 0.625
+        //   windowRate   = 0.8 / 3.3616 = 0.237983  (decay-weighted)
+        //   effective    = 0.625*0.237983 + 0.375*0.2 = 0.223739
+        //   base = 0.05 → raw = 0.05 + 0.95*0.223739 = 0.262552
+        assertEquals(0.262552f, s.failureProbability(), 1e-4f)
+    }
+
     @Test fun recordInteraction_appendsAndTrimsToMax() {
         val s = SkillStats(nTimesViewed = 0, nTimesFailed = 0f)
         repeat(SkillStats.MAX_INTERACTIONS + 5) { i ->

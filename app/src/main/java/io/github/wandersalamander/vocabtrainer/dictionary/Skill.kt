@@ -94,17 +94,24 @@ data class SkillStats(
 
         // Blend the lifetime counter rate with a recency-weighted rate over
         // [recentInteractions]. With an empty window (legacy migrated rows,
-        // or a fresh skill) the formula collapses to today's exact behavior;
-        // as the window fills, recent outcomes pull the estimate, but the
-        // counters never lose all weight (Bayesian shrinkage ratio
-        // n / (n + WINDOW_BLEND_PRIOR)).
+        // or a fresh skill) the formula collapses to today's exact behavior.
+        // Once the window fills, recent outcomes pull the estimate; on top of
+        // that the lifetime counter is discounted as a time-spaced clean streak
+        // builds (see [counterKeepFactor]), so a word that was failed often long
+        // ago but is now answered correctly stops being dragged down by history.
         val effectiveRate = if (recentInteractions.isEmpty()) {
             counterRate
         } else {
             val windowRate = windowFailureProbability()
             val n = recentInteractions.size
-            val blendWeight = n.toFloat() / (n + WINDOW_BLEND_PRIOR)
-            blendWeight * windowRate + (1f - blendWeight) * counterRate
+            val windowWeight = n.toFloat() / (n + WINDOW_BLEND_PRIOR)
+            // Shrink only the counter's share of the blend, then renormalise so
+            // the freed weight is handed to the window. When there's no clean
+            // streak counterKeepFactor() is 1.0 and this is byte-for-byte the
+            // old blendWeight * windowRate + (1 - blendWeight) * counterRate.
+            val counterWeight = (1f - windowWeight) * counterKeepFactor()
+            val totalWeight = windowWeight + counterWeight
+            (windowWeight * windowRate + counterWeight * counterRate) / totalWeight
         }
 
         val raw = base + (1.0f - base) * effectiveRate
@@ -142,6 +149,54 @@ data class SkillStats(
             failSum += w * recentInteractions[i].failAmount.coerceIn(0f, 1f)
         }
         return (failSum / weightSum).toFloat().coerceIn(0f, 1f)
+    }
+
+    /**
+     * How much of the lifetime counter's blend weight to KEEP, in [0, 1].
+     *
+     * A word that was failed often long ago but is now answered correctly
+     * should be allowed past the mastery gate — but only on evidence of
+     * *durable* retention, not one cramming session. So the counter fades out
+     * as a clean streak builds, gated on BOTH:
+     *   - elapsed clean *days* since the last failure (exponential decay with
+     *     time-constant [COUNTER_DECAY_TAU_DAYS]); a burst of correct answers
+     *     inside a single session barely moves this, a clean run across a week
+     *     does — the spacing effect, encoded.
+     *   - a few trailing clean reps in the window ([COUNTER_DISCOUNT_MIN_REPS]),
+     *     so failing once, getting it right once, then leaving the word idle for
+     *     weeks can't collapse the counter off that single lucky rep.
+     *
+     * Returns 1.0 (no discount — today's behavior) whenever there's no
+     * measurable post-failure clean run, which is also why every counter-only /
+     * unset-timestamp path is unaffected.
+     */
+    private fun counterKeepFactor(): Float {
+        val timeDecay = Math.exp(-cleanStreakDays() / COUNTER_DECAY_TAU_DAYS).toFloat()
+        val repConfidence =
+            (trailingCleanReps().toFloat() / COUNTER_DISCOUNT_MIN_REPS).coerceIn(0f, 1f)
+        return 1f - repConfidence * (1f - timeDecay)
+    }
+
+    /**
+     * Wall-clock clean streak in days: elapsed time from the last recorded
+     * failure to the most recent view. 0 when there's no measurable post-failure
+     * clean run — never failed, the last round *was* the failure (timestamps
+     * coincide), or a legacy row whose fail timestamp predates tracking.
+     */
+    private fun cleanStreakDays(): Double =
+        if (lastTimeFailed > 0L && lastDisplayed > lastTimeFailed) {
+            (lastDisplayed - lastTimeFailed).toDouble() / MILLIS_PER_DAY
+        } else {
+            0.0
+        }
+
+    /** Count of consecutive fully-clean (failAmount ≤ 0) rounds at the newest end of the window. */
+    private fun trailingCleanReps(): Int {
+        var count = 0
+        for (i in recentInteractions.indices.reversed()) {
+            if (recentInteractions[i].failAmount <= 0f) count++ else break
+        }
+        return count
     }
 
     fun meanTimeViewedMilli(): Double = viewTimeMilli.toDouble()
@@ -196,5 +251,23 @@ data class SkillStats(
         // entry only gets 25 %, so the counters still anchor early-stage
         // estimates. Lower = window dominates sooner.
         const val WINDOW_BLEND_PRIOR = 3f
+
+        // Time constant (in days) for fading out the lifetime fail counter as a
+        // clean streak builds. At one TAU of clean days the counter keeps ~37 %
+        // of its blend weight, ~14 % at two TAU, ~5 % at three. Measured in
+        // calendar time on purpose: a word with a bad history can't be crammed
+        // past the mastery gate in one session — the clean run has to survive
+        // across days. This is the main "ease re-learned words through" knob.
+        const val COUNTER_DECAY_TAU_DAYS = 4.0
+
+        // Trailing clean reps required before the time discount above fully
+        // applies; below this it scales down linearly. Guards the idle-gap case
+        // where a single correct answer across weeks would otherwise collapse
+        // the counter on its own.
+        const val COUNTER_DISCOUNT_MIN_REPS = 3f
+
+        // Local copy of the day-in-millis constant (Vocab keeps its own private
+        // one) so SkillStats' clean-streak math is self-contained.
+        private const val MILLIS_PER_DAY = 86_400_000.0
     }
 }

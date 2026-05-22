@@ -351,10 +351,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
             Log.w(TAG, "Language ${language.locale} is not supported.")
         }
-        // Audio attributes that don't steal focus from music apps.
+        // USAGE_MEDIA so speech follows the active output device (Bluetooth
+        // A2DP, wired headset). USAGE_GAME is not reliably routed to A2DP and
+        // can stay on the built-in speaker. We never request audio focus, so
+        // this still mixes over music apps without interrupting them.
         textToSpeech.setAudioAttributes(
             AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_GAME)
+                .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                 .build()
         )
