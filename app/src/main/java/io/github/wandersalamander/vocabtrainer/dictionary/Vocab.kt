@@ -153,7 +153,8 @@ data class Vocab(
         val hardMultiplier = if (flaggedHard) 3.0 else 1.0
         // Time as a gentle multiplier: 5s -> 1.0, 2s -> 0.7, 15s -> 1.4, clamped to [0.5, 2.0]
         val timeFactor = (0.4 + 0.12 * s.meanTimeViewedMilli() / 1000.0).coerceIn(0.5, 2.0)
-        return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) * fpb * timeFactor * hardMultiplier
+        return (ln(1.0f + lastSeenHours * lastSeenHours) + 1.0f) *
+            fpb * timeFactor * hardMultiplier * closingBoost(fpb)
     }
 
     /**
@@ -201,6 +202,41 @@ data class Vocab(
         // drilling and is handed off to the refresh pool via
         // [failureProbabilityMasteredWords].
         const val SKILL_FINISHED_THRESHOLD = 0.1f
+
+        // Peak multiplier [closingBoost] applies to a pair sitting right at the
+        // mastery threshold and answered fast. Ramps down to 1.0 at the band
+        // top. Tunable: higher = near-mastered pairs close out sooner but crowd
+        // fresher pairs more in the weighted picker.
+        const val CLOSING_BOOST_MAX = 4.0
+
+        /**
+         * Counteracts near-mastered starvation. [failureProbability] enters
+         * [sortValue] as a *multiplier*, so a pair a clean round or two from
+         * mastery gets a tiny weight and loses every weighted draw to fresher
+         * pairs — lingering in the active pool indefinitely. This ramps a boost
+         * from [CLOSING_BOOST_MAX] at [SKILL_FINISHED_THRESHOLD] down to 1.0 at
+         * the band top.
+         *
+         * The band top is [SkillStats.SLOW_FPB_FLOOR] on purpose. The slow gate
+         * pins a too-slowly-answered pair's fpb to exactly that floor, so any
+         * fpb *strictly below* it already means the pair is BOTH near mastery
+         * AND being answered fast — the only pairs we want to hurry toward
+         * closing. A pair pinned at the slow floor gets boost = 1.0: it stays
+         * in normal rotation until the user's recall for it speeds up, which is
+         * what the slow gate exists to wait for.
+         *
+         * Pure function of [fpb] (no instance state) so it's unit-testable in
+         * isolation. Callers in [sortValue] only reach it with
+         * fpb >= [SKILL_FINISHED_THRESHOLD] (mastered pairs short-circuit to 0
+         * earlier), so the ramp denominator is always positive there.
+         */
+        internal fun closingBoost(fpb: Float): Double {
+            val bandTop = SkillStats.SLOW_FPB_FLOOR
+            if (fpb >= bandTop || bandTop <= SKILL_FINISHED_THRESHOLD) return 1.0
+            val t = ((fpb - SKILL_FINISHED_THRESHOLD) / (bandTop - SKILL_FINISHED_THRESHOLD))
+                .coerceIn(0f, 1f)
+            return CLOSING_BOOST_MAX - (CLOSING_BOOST_MAX - 1.0) * t
+        }
 
         // Refresh pool tuning. See [failureProbabilityMasteredWords] for how
         // these combine.

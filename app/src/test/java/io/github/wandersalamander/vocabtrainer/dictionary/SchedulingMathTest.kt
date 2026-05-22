@@ -361,6 +361,82 @@ class SchedulingMathTest {
         assertEquals(3.0 * base, hard, 1e-6)
     }
 
+    // ---------- Vocab.closingBoost ----------
+
+    @Test fun closingBoost_isMaxAtThreshold() {
+        // A pair sitting right at the mastery threshold (and fast) gets the
+        // full boost so it gets surfaced and closes out.
+        assertEquals(
+            Vocab.CLOSING_BOOST_MAX,
+            Vocab.closingBoost(Vocab.SKILL_FINISHED_THRESHOLD),
+            1e-9,
+        )
+    }
+
+    @Test fun closingBoost_isOneAtSlowFloor() {
+        // Band top IS the slow floor: a pair pinned there by the slow gate was
+        // answered too slowly, so it must NOT be boosted — it stays in normal
+        // rotation until the user's recall for it speeds up.
+        assertEquals(1.0, Vocab.closingBoost(SkillStats.SLOW_FPB_FLOOR), 1e-9)
+    }
+
+    @Test fun closingBoost_isOneWellAboveBand() {
+        // A genuinely-hard pair (high fpb) gets no closing help.
+        assertEquals(1.0, Vocab.closingBoost(0.30f), 1e-9)
+    }
+
+    @Test fun closingBoost_rampsDownTowardBandTop() {
+        val nearThreshold = Vocab.closingBoost(0.105f)
+        val midBand = Vocab.closingBoost(0.125f)
+        val nearTop = Vocab.closingBoost(0.145f)
+        assertTrue("boost should stay above 1.0 inside the band, was $nearTop", nearTop > 1.0)
+        assertTrue(
+            "boost should decrease toward the band top " +
+                "($nearThreshold → $midBand → $nearTop)",
+            nearThreshold > midBand && midBand > nearTop,
+        )
+        assertTrue("peak must not exceed the configured max", nearThreshold <= Vocab.CLOSING_BOOST_MAX)
+    }
+
+    @Test fun sortValue_closingBoostFlipsOrderingForFastNearMastered() {
+        // Two fast pairs, identical except failure count. nearDone sits in the
+        // closing band (fpb just above the mastery threshold); onTrack is
+        // further out (fpb above the slow floor, so no boost). Raw fpb would
+        // order onTrack ABOVE nearDone (more failures → bigger weight). The
+        // closing boost must flip that so the about-to-finish pair actually
+        // gets surfaced — this is the near-mastered-starvation fix.
+        val now = System.currentTimeMillis()
+        val nearDone = newVocab().apply {
+            stats(Skill.READ).apply {
+                nTimesViewed = 50; nTimesFailed = 5f
+                viewTimeMilli = 1_500L; viewTimeMilli_prev = 1_500L
+                lastDisplayed = now
+            }
+        }
+        val onTrack = newVocab().apply {
+            stats(Skill.READ).apply {
+                nTimesViewed = 50; nTimesFailed = 9f
+                viewTimeMilli = 1_500L; viewTimeMilli_prev = 1_500L
+                lastDisplayed = now
+            }
+        }
+        val fpbNear = nearDone.stats(Skill.READ).failureProbability()
+        val fpbOn = onTrack.stats(Skill.READ).failureProbability()
+        // Preconditions: nearDone is in the boost band, onTrack is above it,
+        // and raw fpb orders them the "wrong" way for closing out.
+        assertTrue("nearDone should be in the closing band, was $fpbNear",
+            fpbNear >= Vocab.SKILL_FINISHED_THRESHOLD && fpbNear < SkillStats.SLOW_FPB_FLOOR)
+        assertTrue("onTrack should be at/above the slow floor, was $fpbOn",
+            fpbOn >= SkillStats.SLOW_FPB_FLOOR)
+        assertTrue("raw fpb should order onTrack above nearDone", fpbOn > fpbNear)
+        // The actual fix: weighted-picker ordering is flipped by the boost.
+        assertTrue(
+            "closing boost should make nearDone (${nearDone.sortValue(Skill.READ)}) " +
+                "outrank onTrack (${onTrack.sortValue(Skill.READ)})",
+            nearDone.sortValue(Skill.READ) > onTrack.sortValue(Skill.READ),
+        )
+    }
+
     // ---------- failureProbabilityMasteredWords ----------
 
     @Test fun masteredRefresh_isZeroForActivePair() {
