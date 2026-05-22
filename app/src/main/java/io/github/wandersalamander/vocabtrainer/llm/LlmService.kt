@@ -50,13 +50,18 @@ object LlmService {
     const val MODEL_URL =
         "https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main/gemma-4-E2B-it.litertlm"
 
-    // SHA256 of the model at MODEL_URL. Set to null to skip integrity
-    // verification (current state — the HuggingFace URL serves a versioned
-    // file but we haven't pinned a hash yet). When set, ModelDownloader
-    // rejects a download whose hash doesn't match. To populate: download
-    // once with this null, copy the "sha256=..." value logged by
-    // ModelDownloader, and paste it here.
-    private val MODEL_SHA256: String? = null
+    // SHA256 of the model file at MODEL_URL. ModelDownloader hashes the
+    // downloaded bytes and rejects a mismatch, turning a corrupted/truncated
+    // 2.59 GB transfer into a clean, retryable "integrity check failed" instead
+    // of a cryptic engine-init crash on a half-written file.
+    //
+    // Value is the git-LFS object id (= sha256 of the file content) HuggingFace
+    // publishes for gemma-4-E2B-it.litertlm (2,588,147,712 bytes), read from the
+    // repo tree API on 2026-05-22. If MODEL_URL is repointed at a different
+    // model, update this too — or set it back to null to capture the new value
+    // from ModelDownloader's "sha256=..." log line on the next download.
+    private val MODEL_SHA256: String? =
+        "181938105e0eefd105961417e8da75903eacda102c4fce9ce90f50b97139a63c"
 
     private const val PREFS = "llm"
     private const val KEY_DOWNLOADED_URL = "model_url"

@@ -29,7 +29,8 @@ import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
  * daily mastery counters. Settings that are truly small and app-local (chosen
  * language, tutorial-shown flag, sort index) stay in [AppPrefs] /
  * SharedPreferences — Room is for the user-progress data we want to be able
- * to back up, sync, and migrate cleanly. See ADR-001.
+ * to back up, sync, and migrate cleanly. See ADR-001
+ * (docs/adr/0001-room-as-source-of-truth-and-backup-strategy.md).
  */
 @Database(
     entities = [
@@ -62,6 +63,11 @@ abstract class AppDatabase : RoomDatabase() {
     companion object {
         private const val DB_NAME = "app.db"
 
+        // Current schema version. MUST equal @Database(version = …) above.
+        // Exposed so migration tests assert against one version instead of a
+        // scattered literal; MigrationCoverageTest fails if the two drift.
+        internal const val SCHEMA_VERSION = 3
+
         @Volatile
         private var instance: AppDatabase? = null
 
@@ -71,7 +77,13 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 DB_NAME,
             )
-                .addMigrations(MIGRATION_2_3)
+                // Migration policy: deliberately NO fallbackToDestructiveMigration.
+                // A missing migration must fail loudly in dev/CI (MigrationCoverageTest
+                // opens the earliest schema through this exact list), never silently
+                // wipe user progress — protecting that progress is the whole point of
+                // the Room-as-source-of-truth design (ADR-001). Every schema bump adds
+                // its Migration to ALL_MIGRATIONS and ships a test.
+                .addMigrations(*ALL_MIGRATIONS)
                 .build()
                 .also { instance = it }
         }
@@ -128,5 +140,12 @@ abstract class AppDatabase : RoomDatabase() {
                 )
             }
         }
+
+        // Single source of truth for the migrations get() applies.
+        // MigrationCoverageTest exercises this same array through the real
+        // builder, so registering a migration here wires it into prod AND the
+        // coverage test at once. Declared after MIGRATION_2_3 so the property
+        // initializer sees a non-null value.
+        internal val ALL_MIGRATIONS: Array<Migration> = arrayOf(MIGRATION_2_3)
     }
 }
