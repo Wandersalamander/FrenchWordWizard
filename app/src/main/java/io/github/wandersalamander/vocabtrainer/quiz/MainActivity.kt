@@ -9,6 +9,8 @@ import android.content.pm.PackageManager
 import android.media.AudioAttributes
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
@@ -45,6 +47,12 @@ import java.util.Locale
 private const val TAG = "MainActivity"
 private const val UTTERANCE_AWAITABLE = "awaitable_sentence"
 
+// Trailing-debounce window for foreign-word TTS. Must sit above the 350 ms
+// button debounce so sustained fast tapping collapses to one utterance instead
+// of one QUEUE_FLUSH per card — each flush restarts the audio stream, and over
+// Bluetooth A2DP that resync crackles.
+private const val FOREIGN_SPEAK_DEBOUNCE_MS = 400L
+
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper {
     private lateinit var textToSpeech: TextToSpeech
     private lateinit var language: Language
@@ -64,6 +72,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     // deferred; the field just gives onDone something to call into.
     @Volatile
     private var pendingTtsDone: CompletableDeferred<Unit>? = null
+
+    // Main-thread handler used to trailing-debounce foreign-word TTS so rapid
+    // card advances don't churn the audio stream. See FOREIGN_SPEAK_DEBOUNCE_MS.
+    private val ttsHandler = Handler(Looper.getMainLooper())
+    private var pendingForeignSpeak: Runnable? = null
 
     private val requestNotificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -216,7 +229,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         views.buttonFail.setDebouncedOnClickListener { quizController.onFailClick() }
         views.buttonNext.setDebouncedOnClickListener { quizController.onNextClick() }
         views.buttonNew.setDebouncedOnClickListener { quizController.onNewClick() }
-        views.buttonTip.setDebouncedOnClickListener { quizController.onTipClick() }
+        views.buttonTip.setOnClickListener { quizController.onTipClick() }
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
         quizController.setupStreakBadgeRoles()
@@ -365,9 +378,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     override fun speakForeignWord(vocab: Vocab, flush: Boolean) {
         val word = vocab.pronounceableForeign(language)
-        textToSpeech.language = language.locale
-        val mode = if (flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
-        textToSpeech.speak(word, mode, null, null)
+        if (!flush) {
+            textToSpeech.language = language.locale
+            textToSpeech.speak(word, TextToSpeech.QUEUE_ADD, null, null)
+            return
+        }
+        // Collapse a rapid burst of flush-mode calls to the card the user lands
+        // on; see FOREIGN_SPEAK_DEBOUNCE_MS for why.
+        pendingForeignSpeak?.let(ttsHandler::removeCallbacks)
+        val runnable = Runnable {
+            textToSpeech.language = language.locale
+            textToSpeech.speak(word, TextToSpeech.QUEUE_FLUSH, null, null)
+        }
+        pendingForeignSpeak = runnable
+        ttsHandler.postDelayed(runnable, FOREIGN_SPEAK_DEBOUNCE_MS)
     }
 
     override fun speakEnglishWord(vocab: Vocab) {
@@ -400,6 +424,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     override fun onDestroy() {
+        pendingForeignSpeak?.let(ttsHandler::removeCallbacks)
         if (::textToSpeech.isInitialized) {
             textToSpeech.stop()
             textToSpeech.shutdown()
