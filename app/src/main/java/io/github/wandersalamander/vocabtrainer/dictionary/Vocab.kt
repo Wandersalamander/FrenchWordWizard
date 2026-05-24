@@ -70,6 +70,7 @@ data class Vocab(
             stats.lastDisplayed = saved.lastDisplayed
             stats.lastTimeFailed = saved.lastFailed
             stats.recentInteractions = saved.recentInteractions
+            stats.fastTracked = saved.fastTracked
         }
         ignore = snapshot.ignore
         flaggedHard = snapshot.flaggedHard
@@ -92,6 +93,7 @@ data class Vocab(
                 lastDisplayed = stats.lastDisplayed,
                 lastFailed = stats.lastTimeFailed,
                 recentInteractions = stats.recentInteractions,
+                fastTracked = stats.fastTracked,
             )
         }
         p.save(

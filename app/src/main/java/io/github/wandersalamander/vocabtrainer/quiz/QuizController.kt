@@ -85,6 +85,10 @@ private const val VIEW_TIME_EMA_ALPHA = 0.3
 // How long the success chime lasts; TTS for the next round is held off this
 // long when a mastery just triggered, so the chime isn't drowned by speech.
 private const val POST_SUCCESS_TTS_DELAY_MS = 500L
+// Backgrounding past this duration discards the currently-displayed word on
+// resume: the user has lost context on it, so saving a Next/Fail based on a
+// stale view would corrupt the stats.
+private const val LONG_PAUSE_DISMISS_THRESHOLD_MS = 30 * 1000L
 
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
@@ -127,6 +131,10 @@ class QuizController(
     // both so a settings detour or screen-off gap doesn't get counted as
     // thinking time, while pre-pause attention isn't thrown away either.
     private var elapsedBeforePause: Long = 0L
+    // Wall-clock time stamped at markPaused so onAppResumed can measure the gap
+    // and decide whether the displayed word is still fresh. 0 means "no pause
+    // recorded yet" (fresh process), which is why onAppResumed gates on > 0.
+    private var pauseWallClockMs: Long = 0L
 
     // Skill being practiced for the currently-displayed word. Set in updateVocab
     // when a new word is picked and used for all stat writes during the round.
@@ -210,8 +218,7 @@ class QuizController(
     }
 
     fun onNewClick() {
-        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
-        updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
+        dismissCurrentVocab(newCandidates = true)
     }
 
     fun onTipClick() {
@@ -284,30 +291,78 @@ class QuizController(
     }
 
     /**
-     * Activity-resume entry point. Resumes the timer and repaints both
-     * progress bars so any midnight rollover that happened while the app was
-     * backgrounded is reflected immediately — without this, the bars keep
-     * showing yesterday's gold "+N today" suffixes until the next swipe
-     * fires refreshAllProgressBars().
+     * Activity-resume entry point. Always rebaselines the progress bars so
+     * any midnight rollover that happened in the background is absorbed
+     * quietly (without it, bars would either keep yesterday's "+N today"
+     * suffix or fire a spurious "-N" drop animation on the next refresh).
      *
-     * Re-baselines [renderedTodayCount] and [renderedActiveCounts] to the
-     * post-rollover snapshot so the next genuine action still detects a real
-     * delta (and isn't fooled by the artificial yesterday→0 drop on resume).
+     * On top of that, a long backgrounding ([LONG_PAUSE_DISMISS_THRESHOLD_MS])
+     * discards the currently-displayed word: the user has lost context, and
+     * a Next/Fail based on a stale view would corrupt the stats. Short pauses
+     * just re-anchor the round timer.
      */
     fun onAppResumed() {
-        markResumed()
+        val pausedMs = if (pauseWallClockMs > 0L) {
+            System.currentTimeMillis() - pauseWallClockMs
+        } else 0L
+        pauseWallClockMs = 0L
         progressBars.rebaseline()
+        if (pausedMs >= LONG_PAUSE_DISMISS_THRESHOLD_MS && currentVocab != null) {
+            // dismissCurrentVocab's downstream updateVocab re-anchors startTime,
+            // so markResumed isn't needed on this branch.
+            dismissCurrentVocab(newCandidates = false)
+        } else {
+            markResumed()
+        }
     }
 
     /**
      * Flush the active foreground segment into [elapsedBeforePause] so the
-     * paused interval is excluded from the round's time. Call from the host
-     * activity's onPause — safe to call repeatedly (subsequent calls add zero
-     * because markResumed reanchors startTime).
+     * paused interval is excluded from the round's time. Also stamps wall-clock
+     * so [onAppResumed] can size the gap. Call from the host activity's
+     * onPause — safe to call repeatedly (subsequent calls add zero because
+     * markResumed reanchors startTime).
      */
     fun markPaused() {
-        elapsedBeforePause += System.currentTimeMillis() - startTime
-        startTime = System.currentTimeMillis()
+        val now = System.currentTimeMillis()
+        elapsedBeforePause += now - startTime
+        startTime = now
+        pauseWallClockMs = now
+    }
+
+    /**
+     * Discard the currently-displayed word without saving anything: roll any
+     * mid-round in-memory penalties (tip, mask taps) back to the round-start
+     * snapshot, mark the foreign as recently-shown so the picker avoids
+     * back-to-back repeats, then advance to a fresh word. No stats update, no
+     * review log, no streak credit, no mastery tracker tick — the user's view
+     * of this word leaves no trace.
+     *
+     * Used when the user actively asks for a different word (+new), and when
+     * the app resumes after a long absence that's invalidated the displayed
+     * word. Safe to call when no vocab is currently displayed.
+     */
+    fun dismissCurrentVocab(newCandidates: Boolean) {
+        val current = currentVocab
+        val snapshot = roundStartSnapshot
+        if (current != null && snapshot != null) {
+            // Undo any mid-round penalties so the in-memory state matches
+            // what's on disk. Without this, the dismissed word's stats would
+            // carry tip/mask-tap fails until the next session reload.
+            current.stats(currentSkill).copyFrom(snapshot)
+            // Keep the anti-repeat deque consistent with what the user saw:
+            // without this, a small active pool could roll the same word
+            // again on the very next pick.
+            picker.rememberWord(current.foreign)
+        }
+        updateVocab(
+            penalty = 0,
+            newCandidates = newCandidates,
+            // commitButton is unused when saveVocab=false (no log entry written),
+            // but updateVocab's signature requires it; OTHER fits semantically.
+            commitButton = CommitButton.OTHER,
+            saveVocab = false,
+        )
     }
 
     fun setupStreakBadgeRoles() = streakBadge.setupRoles()
@@ -624,6 +679,34 @@ class QuizController(
             (stats.nTimesFailed - (snapshot?.nTimesFailed ?: stats.nTimesFailed))
                 .coerceAtLeast(0f)
         stats.recordInteraction(failAmountThisRound)
+
+        // First-exposure fast-track: a brand-new pair the user clears trivially
+        // (fast, clean, no help, no penalty) gets flagged so failureProbability
+        // short-circuits to [SkillStats.FAST_TRACKED_FPB] (sub-threshold). The
+        // counters stay honest — nViewed is still 1, the WordList view sees
+        // the truth, the refresh-pool stability calc uses real history, and a
+        // future event-sourcing replay can re-derive the flag from the log
+        // under different rules. The flag is revoked the moment evidence
+        // contradicts it: [SkillStats.recordFailure] clears it on any penalty,
+        // and the slow-round check below clears it when later view-time samples
+        // cross the slow-gate ceiling (preserving the slow gate's safety
+        // property the formula-short-circuit would otherwise bypass).
+        val fastTracking = penalty == 0L && FastTrack.isCandidate(
+            priorViews = snapshot?.nTimesViewed ?: 0,
+            tipUsed = roundFacts.tipUsed,
+            wordMaskTaps = roundFacts.wordMaskTaps,
+            sentenceMaskTaps = roundFacts.sentenceMaskTaps,
+            progressiveReveals = roundFacts.progressiveReveals,
+            elapsedMs = activeViewTime,
+        )
+        if (fastTracking) {
+            stats.fastTracked = true
+        } else if (stats.fastTracked) {
+            val slowNow = maxOf(stats.viewTimeMilli, stats.viewTimeMilli_prev) >
+                SkillStats.SLOW_VIEW_TIME_MAX_MS
+            if (slowNow) stats.fastTracked = false
+        }
+
         val logEntry = buildLogEntry(
             vocab = vocab,
             commitButton = commitButton,

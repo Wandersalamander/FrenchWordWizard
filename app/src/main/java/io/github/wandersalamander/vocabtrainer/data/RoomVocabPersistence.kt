@@ -52,6 +52,7 @@ class RoomVocabPersistence(
                 lastFailed = s.lastFailed,
                 lastModifiedMs = now,
                 recentInteractions = s.recentInteractions,
+                fastTracked = s.fastTracked,
             )
         }
         val flagsRow = VocabFlagsEntity(
@@ -102,6 +103,7 @@ class RoomVocabPersistence(
                     lastDisplayed = row.lastDisplayed,
                     lastFailed = row.lastFailed,
                     recentInteractions = row.recentInteractions,
+                    fastTracked = row.fastTracked,
                 )
             }
             val f = flags[hash]

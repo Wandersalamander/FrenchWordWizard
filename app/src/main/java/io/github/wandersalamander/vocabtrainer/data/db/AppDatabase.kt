@@ -43,7 +43,7 @@ import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
         DailySkillFinishedCountEntity::class,
         MetadataEntity::class,
     ],
-    version = 3,
+    version = 4,
     // JSON schemas are exported to app/schemas/<AppDatabase>/<version>.json
     // (configured via the ksp room.schemaLocation arg in build.gradle).
     // MigrationTestHelper reads them; commit the generated files alongside
@@ -66,7 +66,7 @@ abstract class AppDatabase : RoomDatabase() {
         // Current schema version. MUST equal @Database(version = …) above.
         // Exposed so migration tests assert against one version instead of a
         // scattered literal; MigrationCoverageTest fails if the two drift.
-        internal const val SCHEMA_VERSION = 3
+        internal const val SCHEMA_VERSION = 4
 
         @Volatile
         private var instance: AppDatabase? = null
@@ -141,11 +141,29 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Adds [VocabStatsEntity.fastTracked] (INTEGER NOT NULL, default 0).
+         * Replaces the prior "bump nTimesViewed to 6" hack with an honest
+         * sub-threshold short-circuit in [SkillStats.failureProbability], so
+         * the counters / WordList display / refresh-pool stability calc all
+         * stay truthful. Purely additive — every existing row decodes to
+         * fastTracked=false, which is the correct default for any pre-v4 pair
+         * (the bump-based fast-track never landed in a shipped build).
+         */
+        internal val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "ALTER TABLE `vocab_stats` " +
+                        "ADD COLUMN `fastTracked` INTEGER NOT NULL DEFAULT 0"
+                )
+            }
+        }
+
         // Single source of truth for the migrations get() applies.
         // MigrationCoverageTest exercises this same array through the real
         // builder, so registering a migration here wires it into prod AND the
         // coverage test at once. Declared after MIGRATION_2_3 so the property
         // initializer sees a non-null value.
-        internal val ALL_MIGRATIONS: Array<Migration> = arrayOf(MIGRATION_2_3)
+        internal val ALL_MIGRATIONS: Array<Migration> = arrayOf(MIGRATION_2_3, MIGRATION_3_4)
     }
 }

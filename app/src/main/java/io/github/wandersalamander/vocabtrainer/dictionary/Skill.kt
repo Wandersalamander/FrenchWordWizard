@@ -44,11 +44,22 @@ data class SkillStats(
     var lastDisplayed: Long = 0L,
     var lastTimeFailed: Long = 0L,
     var recentInteractions: List<VocabInteraction> = emptyList(),
+    /**
+     * First-exposure fast-track: when true, [failureProbability] short-circuits
+     * to [FAST_TRACKED_FPB] (sub-threshold) so the pair retires from the active
+     * pool without lying about the counters. Set by QuizController on a trivial
+     * first round (fast, clean, no help); cleared by [recordFailure] on any
+     * penalty, or by QuizController on a later slow round.
+     */
+    var fastTracked: Boolean = false,
 ) {
     /** Single entry point for failure events so the counter and timestamp stay in sync. */
     fun recordFailure(amount: Float) {
         nTimesFailed += amount
         lastTimeFailed = System.currentTimeMillis()
+        // Any penalty contradicts the fast-track trust: the user struggled,
+        // so revoke the short-circuit and let the formula compute naturally.
+        if (amount > 0f) fastTracked = false
     }
 
     /**
@@ -85,10 +96,17 @@ data class SkillStats(
         lastDisplayed = other.lastDisplayed
         lastTimeFailed = other.lastTimeFailed
         recentInteractions = other.recentInteractions
+        fastTracked = other.fastTracked
     }
 
     fun failureProbability(): Float {
         if (nTimesViewed == 0) return 1.0f
+        // Trusted as mastered from a trivial first round (set by QuizController
+        // via the fast-track gate). The flag is cleared the moment evidence
+        // contradicts it — any recordFailure with amount > 0, or a slow round
+        // detected by QuizController — so once that happens the formula below
+        // takes over normally.
+        if (fastTracked) return FAST_TRACKED_FPB
         val base = 0.5f / nTimesViewed.toFloat()
         val counterRate = (nTimesFailed / nTimesViewed.toFloat()).coerceIn(0f, 1f)
 
@@ -232,6 +250,13 @@ data class SkillStats(
         // just above the mastery cut so the pair stays active without being
         // surfaced as urgently as a fresh failure would.
         const val SLOW_FPB_FLOOR = 0.15f
+
+        // Sub-threshold value returned by [failureProbability] when [fastTracked]
+        // is set. Must stay strictly below Vocab.SKILL_FINISHED_THRESHOLD (0.10)
+        // so the pair retires from the active pool. 0.05 leaves a margin so a
+        // future tightening of the threshold by a few hundredths doesn't silently
+        // undo fast-track; the calibration is pinned by SchedulingMathTest.
+        const val FAST_TRACKED_FPB = 0.05f
 
         // Length of the rolling per-round outcome window persisted alongside
         // the counters. Sized to fit comfortably in one TEXT cell while still

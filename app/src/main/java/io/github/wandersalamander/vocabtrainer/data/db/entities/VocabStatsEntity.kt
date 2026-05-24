@@ -30,4 +30,13 @@ data class VocabStatsEntity(
     val lastModifiedMs: Long,
     @ColumnInfo(defaultValue = "")
     val recentInteractions: List<VocabInteraction> = emptyList(),
+    /**
+     * First-exposure fast-track flag. Set by QuizController when the user
+     * clears a brand-new pair trivially (fast, clean, no help) so the formula
+     * can short-circuit to a sub-threshold fpb without lying about
+     * [nViewed] / view-time history. Cleared by any later round that
+     * contradicts the trust (any penalty, or slow view times).
+     */
+    @ColumnInfo(defaultValue = "0")
+    val fastTracked: Boolean = false,
 )

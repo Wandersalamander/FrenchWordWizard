@@ -52,14 +52,17 @@ data class ReviewLogEntry(
 
 /**
  * What ended the round.
- * - [NEXT] / [FAIL] / [NEW]: the matching quiz button (or its spot-check
- *   equivalent — pressing Next during a spot check still resolves as NEXT,
- *   pressing Wrong during a spot check resolves as FAIL).
+ * - [NEXT] / [FAIL]: the matching quiz button (or its spot-check equivalent —
+ *   pressing Next during a spot check still resolves as NEXT, pressing Wrong
+ *   during a spot check resolves as FAIL).
  * - [LEARNED]: the user pressed the ✓ Learned button, marking the word as
  *   permanently ignored.
  * - [OTHER]: the round was ended by something other than a button press —
  *   currently only the mid-round listening-mode toggle that compromises a
  *   LISTEN round.
+ * - [NEW]: historical only. Used to mark "+new vocab" presses, but those
+ *   now dismiss the round without saving (no log entry written). Kept in the
+ *   enum so Room can still deserialize old rows.
  */
 enum class CommitButton { NEXT, FAIL, NEW, LEARNED, OTHER }
 

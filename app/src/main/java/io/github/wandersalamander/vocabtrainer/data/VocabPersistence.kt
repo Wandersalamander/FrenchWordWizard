@@ -1,5 +1,6 @@
 package io.github.wandersalamander.vocabtrainer.data
 
+import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 
 /**
@@ -61,4 +62,6 @@ data class SkillStatsSnapshot(
     val lastDisplayed: Long,
     val lastFailed: Long,
     val recentInteractions: List<VocabInteraction> = emptyList(),
+    /** See [VocabStatsEntity.fastTracked]. */
+    val fastTracked: Boolean = false,
 )

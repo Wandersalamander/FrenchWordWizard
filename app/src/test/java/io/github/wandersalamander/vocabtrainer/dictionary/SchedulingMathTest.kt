@@ -1,6 +1,7 @@
 package io.github.wandersalamander.vocabtrainer.dictionary
 
 import io.github.wandersalamander.vocabtrainer.data.VocabInteraction
+import io.github.wandersalamander.vocabtrainer.quiz.FastTrack
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
@@ -434,6 +435,59 @@ class SchedulingMathTest {
             "closing boost should make nearDone (${nearDone.sortValue(Skill.READ)}) " +
                 "outrank onTrack (${onTrack.sortValue(Skill.READ)})",
             nearDone.sortValue(Skill.READ) > onTrack.sortValue(Skill.READ),
+        )
+    }
+
+    // ---------- FastTrack calibration ----------
+
+    @Test fun fastTrackedFlagShortCircuitsFpbBelowMasteryThreshold() {
+        // FAST_TRACKED_FPB must stay strictly below SKILL_FINISHED_THRESHOLD so
+        // a flagged pair retires from the active pool. Pinned here so a future
+        // tweak to either constant that breaks the calibration trips a test
+        // rather than silently breaking fast-track.
+        val stats = SkillStats(
+            // Honest counters — a single (fresh) view, not the old "bump to 6" hack.
+            // The flag does the work; nTimesViewed/nFailed stay truthful.
+            nTimesViewed = 1,
+            nTimesFailed = 0f,
+            // Slow view times deliberately — the flag must override the slow gate
+            // until QuizController revokes it on a real slow round (covered below).
+            viewTimeMilli = 10_000L,
+            viewTimeMilli_prev = 10_000L,
+            fastTracked = true,
+        )
+        assertEquals(SkillStats.FAST_TRACKED_FPB, stats.failureProbability(), 1e-6f)
+        assertTrue(
+            "FAST_TRACKED_FPB=${SkillStats.FAST_TRACKED_FPB} must stay below " +
+                "SKILL_FINISHED_THRESHOLD=${Vocab.SKILL_FINISHED_THRESHOLD}",
+            SkillStats.FAST_TRACKED_FPB < Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+    }
+
+    @Test fun fastTrackedFlagClearedByRecordFailureWithPenalty() {
+        val stats = SkillStats(
+            nTimesViewed = 1,
+            nTimesFailed = 0f,
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            fastTracked = true,
+        )
+        // Any penalty (tip, mask tap, full fail) contradicts the trust.
+        stats.recordFailure(0.25f)
+        assertEquals(false, stats.fastTracked)
+        // And the formula computes normally again — proves the short-circuit is gone.
+        assertTrue(stats.failureProbability() > SkillStats.FAST_TRACKED_FPB)
+    }
+
+    @Test fun fastTrackMaxViewMsStaysBelowSlowGate() {
+        // The "fast" threshold for fast-track candidacy must stay strictly
+        // below the slow-gate ceiling so a candidate round is genuinely fast,
+        // not just "not slow". FastTrack's require() catches this at runtime,
+        // but the test catches it earlier.
+        assertTrue(
+            "MAX_VIEW_MS=${FastTrack.MAX_VIEW_MS} must be < " +
+                "SLOW_VIEW_TIME_MAX_MS=${SkillStats.SLOW_VIEW_TIME_MAX_MS}",
+            FastTrack.MAX_VIEW_MS < SkillStats.SLOW_VIEW_TIME_MAX_MS,
         )
     }
 
