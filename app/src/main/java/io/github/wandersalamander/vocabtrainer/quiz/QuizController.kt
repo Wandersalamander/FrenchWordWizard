@@ -166,6 +166,15 @@ class QuizController(
     // saveCurrentVocab. See RoundFacts kdoc for the raw-fact philosophy.
     private val roundFacts = RoundFacts()
 
+    // True iff the just-finished round was terminated by onNewClick. Lets a
+    // SECOND consecutive +New press commit the just-shown word as a clean NEW
+    // outcome (rapid skipping ⇒ "I know it", so the fresh word should enter
+    // the active pool instead of vanishing). Updated in resetRoundState from
+    // [advancingByNewClick], which is set for the duration of the onNewClick
+    // call so the marker survives the synchronous resetRoundState inside it.
+    private var lastAdvancedByNewClick: Boolean = false
+    private var advancingByNewClick: Boolean = false
+
     fun onFailClick() {
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) exitSpotCheck(wasWrong = true)
@@ -218,7 +227,22 @@ class QuizController(
     }
 
     fun onNewClick() {
-        dismissCurrentVocab(newCandidates = true)
+        val isRepeat = lastAdvancedByNewClick
+        advancingByNewClick = true
+        if (isRepeat && currentVocab != null) {
+            // Repeated +New ⇒ the user is rapidly skipping, signalling they
+            // know these words. Commit the just-shown word as a clean NEW
+            // round (so a fresh inactive word enters the active pool, and
+            // FastTrack may even promote it past mastery on a zero-elapsed
+            // round) instead of dismissing it into the void. The FIRST press
+            // of a run still pure-dismisses, so a single skip of an unwanted
+            // active review doesn't ghost-commit it.
+            roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+            updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
+        } else {
+            dismissCurrentVocab(newCandidates = true)
+        }
+        advancingByNewClick = false
     }
 
     fun onTipClick() {
@@ -580,6 +604,12 @@ class QuizController(
         views.textVocabEyebrow.text = "WORD"
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
+        // Carry the +New marker across the round boundary: true only when
+        // updateVocab was reached via onNewClick. Any other path (Next, Fail,
+        // Tip-then-Fail, listening toggle, long-pause dismiss) clears it, so
+        // the "second consecutive +New" check fires only on genuinely
+        // back-to-back +New presses.
+        lastAdvancedByNewClick = advancingByNewClick
     }
 
     /**
