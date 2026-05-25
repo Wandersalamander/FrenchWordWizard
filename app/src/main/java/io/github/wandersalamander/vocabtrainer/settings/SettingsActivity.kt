@@ -41,7 +41,7 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         val prefs = AppPrefs.get(this)
-        val currentLanguage = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        val currentLanguage = Language.fromPrefs(this)
 
         val radioGroup = findViewById<RadioGroup>(R.id.languageRadioGroup)
         val radioFrench = findViewById<RadioButton>(R.id.radioFrench)
@@ -218,7 +218,7 @@ class SettingsActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
-        val current = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        val current = Language.fromPrefs(this)
         spinner.setSelection(languages.indexOf(current).coerceAtLeast(0))
 
         button.setDebouncedOnClickListener {

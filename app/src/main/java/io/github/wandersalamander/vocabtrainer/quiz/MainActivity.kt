@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         setupNotificationChannels()
 
         val prefs = AppPrefs.get(this)
-        language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        language = Language.fromPrefs(this)
         languageWipeTimestampAtStart = LanguageWipeRepository.timestampFor(language.code)
         vocabDictionary = MyDictionary(openDictionaryStream(this, language), DataLayer.vocabPersistence)
 
@@ -416,8 +416,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     override fun onResume() {
         super.onResume()
-        val prefs = AppPrefs.get(this)
-        val savedLanguage = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        val savedLanguage = Language.fromPrefs(this)
         if (savedLanguage != language) {
             recreate()
             return

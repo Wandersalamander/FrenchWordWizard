@@ -58,7 +58,7 @@ class WordListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_word_list)
 
         val prefs = AppPrefs.get(this)
-        val language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
+        val language = Language.fromPrefs(this)
         sortIndex = prefs.getInt(AppPrefs.KEY_WORDLIST_SORT_INDEX, 0).coerceIn(0, sortOptions.lastIndex)
         val savedSkillName = prefs.getString(AppPrefs.KEY_WORDLIST_SELECTED_SKILL, null)
         selectedSkill = Skill.ladder.firstOrNull { it.name == savedSkillName } ?: Skill.ladder.first()

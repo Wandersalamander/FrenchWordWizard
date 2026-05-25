@@ -1,8 +1,10 @@
-package io.github.wandersalamander.vocabtrainer.quiz
+package io.github.wandersalamander.vocabtrainer.quiz.ui
 
 import android.view.View
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
+import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
+import io.github.wandersalamander.vocabtrainer.quiz.TtsHelper
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
 
 /**

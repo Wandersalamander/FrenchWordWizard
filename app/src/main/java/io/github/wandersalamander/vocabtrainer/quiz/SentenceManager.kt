@@ -9,6 +9,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.llm.LlmService
+import io.github.wandersalamander.vocabtrainer.quiz.ui.flow
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
 
 private const val SENTENCE_FADE_IN_DURATION_MS = 220L

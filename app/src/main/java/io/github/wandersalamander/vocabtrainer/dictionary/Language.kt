@@ -1,5 +1,7 @@
 package io.github.wandersalamander.vocabtrainer.dictionary
 
+import android.content.Context
+import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import java.util.Locale
 
 private val pinyinParenRegex = Regex("""\s*\([^)]*\)""")
@@ -121,6 +123,16 @@ enum class Language(
 
         fun fromCode(code: String?): Language =
             values().firstOrNull { it.code == code } ?: DEFAULT
+
+        /**
+         * The language the user is currently configured to study, read from
+         * [AppPrefs]. Falls back to [DEFAULT] on first launch (no preference
+         * stored) or post-wipe. Shared entry point — every component that
+         * needs the active language should call this rather than re-reading
+         * the SharedPreferences key, so the boot path stays a single line.
+         */
+        fun fromPrefs(context: Context): Language =
+            fromCode(AppPrefs.get(context).getString(AppPrefs.KEY_APP_LANGUAGE, null))
     }
 }
 

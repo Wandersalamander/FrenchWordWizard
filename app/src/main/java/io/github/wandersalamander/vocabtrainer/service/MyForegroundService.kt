@@ -9,7 +9,6 @@ import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import io.github.wandersalamander.vocabtrainer.R
-import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
@@ -24,7 +23,6 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import java.io.InputStream
 
 class MyForegroundService : Service() {
     private lateinit var vocabDictionary: MyDictionary
@@ -77,10 +75,8 @@ class MyForegroundService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        val prefs = AppPrefs.get(this)
-        val language = Language.fromCode(prefs.getString(AppPrefs.KEY_APP_LANGUAGE, null))
-        val inputStream: InputStream = openDictionaryStream(this, language)
-        vocabDictionary = MyDictionary(inputStream, DataLayer.vocabPersistence)
+        val language = Language.fromPrefs(this)
+        vocabDictionary = MyDictionary(openDictionaryStream(this, language), DataLayer.vocabPersistence)
 
         startForeground(NOTIFICATION_ID, createNotification().build())
     }
