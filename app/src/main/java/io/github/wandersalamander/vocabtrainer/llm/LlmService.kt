@@ -134,17 +134,6 @@ object LlmService {
         // Pre-create the directory so users can `adb push` here without mkdir.
         file.parentFile?.mkdirs()
 
-        // One-time cleanup: remove any leftover MediaPipe .task file from the
-        // pre-Gemma-4 era. The new runtime can't load it and it just wastes
-        // ~1.6 GB of disk if we leave it.
-        val staleTask = File(file.parentFile, "model.task")
-        if (staleTask.exists()) {
-            Log.i(TAG, "Removing stale MediaPipe model.task (${staleTask.length()} bytes)")
-            staleTask.delete()
-            appContext.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-                .edit().remove(KEY_DOWNLOADED_URL).apply()
-        }
-
         // If the .litertlm on disk was downloaded from a URL that no longer
         // matches MODEL_URL (e.g. we updated the constant), delete it so the
         // next download picks up the new model. Sideloaded files (no saved
