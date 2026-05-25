@@ -13,12 +13,23 @@ import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats
  * Zero UI — purely a speed-signal heuristic. Counters stay honest; the flag
  * only short-circuits [SkillStats.failureProbability]. Wrong-call risk (lucky
  * guess on a word the user didn't actually know) is caught downstream by:
+ *  - the QuizController spot-check gate, which forces a verification round on
+ *    *any* mastery transition — fast-track included — before the flag flips on,
  *  - [SkillStats.recordFailure], which clears the flag the moment any penalty
  *    is recorded (tip, mask tap, fail click),
  *  - QuizController's slow-round check, which clears the flag when later
  *    view-time samples cross [SkillStats.SLOW_VIEW_TIME_MAX_MS],
  *  - the refresh pool, which re-surfaces a "mastered" pair after a few weeks
- *    so a falsely fast-tracked word still gets a verification chance.
+ *    so a falsely fast-tracked word still gets another verification chance.
+ *
+ * Build-up policy: the gate is only eligible at tier N if the predecessor
+ * tier on the same vocab also has [SkillStats.fastTracked] set. The first
+ * ladder skill is vacuously satisfied; every subsequent tier requires an
+ * unbroken chain. A predecessor that earned mastery the long way (counters
+ * / window) or had its flag revoked by a later failure blocks the shortcut
+ * for all later tiers — the "I clearly know this" claim must keep compounding
+ * to keep buying speed. Enforced via the [predecessorFastTracked] parameter
+ * on [isCandidate], computed by the caller against the predecessor's stats.
  *
  * All thresholds are tunable knobs; if fast-track proves too eager or too
  * timid in practice, edit the constants and re-run [FastTrackTest].
@@ -50,9 +61,15 @@ internal object FastTrack {
 
     /**
      * Pure-function fast-track gate. Returns true when the just-committed
-     * round was a fresh, fast, clean pass with no help — the signals that
-     * together justify promoting the pair past the mastery threshold without
-     * grinding further rounds.
+     * round was a fresh, fast, clean pass with no help AND the build-up
+     * policy is satisfied — the signals that together justify promoting the
+     * pair past the mastery threshold without grinding further rounds.
+     *
+     * [predecessorFastTracked] is the build-up gate (see the kdoc on the
+     * containing object). Pass `true` for the first ladder skill (vacuous —
+     * no predecessor), and the predecessor's current [SkillStats.fastTracked]
+     * for every later tier. A `false` value short-circuits to non-candidate
+     * regardless of the other signals.
      *
      * Caller (QuizController) is responsible for excluding compromised rounds
      * and rounds with a non-zero penalty before checking — those are scored
@@ -65,7 +82,9 @@ internal object FastTrack {
         sentenceMaskTaps: Int,
         progressiveReveals: Int,
         elapsedMs: Long,
+        predecessorFastTracked: Boolean = true,
     ): Boolean {
+        if (!predecessorFastTracked) return false
         if (priorViews > MAX_PRIOR_VIEWS) return false
         if (tipUsed != TipUsed.NONE) return false
         if (wordMaskTaps > 0 || sentenceMaskTaps > 0 || progressiveReveals > 0) return false

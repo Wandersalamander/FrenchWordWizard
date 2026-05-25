@@ -13,8 +13,10 @@ import org.junit.Test
  */
 class FastTrackTest {
 
-    // Baseline: a first-exposure, clean, fast round with no help. Adjust one
-    // field per test to verify each rejection condition independently.
+    // Baseline: a first-exposure, clean, fast round with no help, with the
+    // predecessor-fast-tracked gate satisfied (vacuous default — matches the
+    // first ladder skill). Adjust one field per test to verify each rejection
+    // condition independently.
     private fun candidate(
         priorViews: Int = 0,
         tipUsed: TipUsed = TipUsed.NONE,
@@ -22,6 +24,7 @@ class FastTrackTest {
         sentenceMaskTaps: Int = 0,
         progressiveReveals: Int = 0,
         elapsedMs: Long = 1_500L,
+        predecessorFastTracked: Boolean = true,
     ): Boolean = FastTrack.isCandidate(
         priorViews = priorViews,
         tipUsed = tipUsed,
@@ -29,6 +32,7 @@ class FastTrackTest {
         sentenceMaskTaps = sentenceMaskTaps,
         progressiveReveals = progressiveReveals,
         elapsedMs = elapsedMs,
+        predecessorFastTracked = predecessorFastTracked,
     )
 
     @Test fun freshFastCleanRoundIsCandidate() {
@@ -85,5 +89,21 @@ class FastTrackTest {
     @Test fun anyCombinationOfDisqualifiersRejects() {
         assertFalse(candidate(priorViews = 1, tipUsed = TipUsed.SENTENCE))
         assertFalse(candidate(elapsedMs = 5_000L, wordMaskTaps = 1))
+    }
+
+    @Test fun predecessorNotFastTrackedDisqualifies() {
+        // Build-up policy: an otherwise-trivial round at tier N is rejected
+        // when the predecessor tier on the same vocab hasn't fast-tracked.
+        // The "I clearly know this" signal must keep compounding to keep
+        // buying speed; one tier earned the long way (or with a flag later
+        // revoked by failure) breaks the chain for every later tier.
+        assertFalse(candidate(predecessorFastTracked = false))
+    }
+
+    @Test fun predecessorFastTrackedAlonenotEnough() {
+        // Symmetric guard: passing the build-up gate doesn't bypass the other
+        // signals. The combined gate is AND, not OR.
+        assertFalse(candidate(predecessorFastTracked = true, tipUsed = TipUsed.SENTENCE))
+        assertFalse(candidate(predecessorFastTracked = true, elapsedMs = 10_000L))
     }
 }

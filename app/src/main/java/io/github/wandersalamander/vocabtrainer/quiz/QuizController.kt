@@ -260,7 +260,7 @@ class QuizController(
      * Already-fast-tracked pairs return false (no mastery transition to gate).
      */
     private fun wouldFastTrackToMastery(): Boolean {
-        currentVocab ?: return false
+        val vocab = currentVocab ?: return false
         val snapshot = roundStartSnapshot ?: return false
         if (snapshot.fastTracked) return false
         val activeViewTime = elapsedBeforePause + (System.currentTimeMillis() - startTime)
@@ -271,7 +271,26 @@ class QuizController(
             sentenceMaskTaps = roundFacts.sentenceMaskTaps,
             progressiveReveals = roundFacts.progressiveReveals,
             elapsedMs = activeViewTime,
+            predecessorFastTracked = predecessorFastTracked(vocab, currentSkill),
         )
+    }
+
+    /**
+     * True when [skill]'s predecessor in [Skill.ladder] has
+     * [SkillStats.fastTracked] set on [vocab] — the build-up gate for whether
+     * [skill] itself is eligible for the FastTrack shortcut. The first ladder
+     * skill returns true vacuously (no predecessor to compound).
+     *
+     * Encodes the policy: the "I clearly know this" signal must keep being
+     * earned at every tier; one tier mastered the long way (counters /
+     * window) or a flag later revoked by a failure breaks the chain for
+     * every subsequent tier. See [FastTrack] kdoc for the rationale.
+     */
+    private fun predecessorFastTracked(vocab: Vocab, skill: Skill): Boolean {
+        val idx = Skill.ladder.indexOf(skill)
+        if (idx <= 0) return true
+        val predecessor = Skill.ladder[idx - 1]
+        return vocab.stats(predecessor).fastTracked
     }
 
     fun onNewClick() {
@@ -809,7 +828,7 @@ class QuizController(
             failAmount = roundFailAmountDelta(stats, snapshot),
             nowMs = nowMs,
         )
-        applyFastTrackGate(stats, snapshot, penalty, activeViewTime)
+        applyFastTrackGate(vocab, stats, snapshot, penalty, activeViewTime)
 
         persistRoundLog(vocab, commitButton, activeViewTime, nowMs)
 
@@ -861,6 +880,7 @@ class QuizController(
      * property the formula-short-circuit would otherwise bypass).
      */
     private fun applyFastTrackGate(
+        vocab: Vocab,
         stats: SkillStats,
         snapshot: SkillStats?,
         penalty: Long,
@@ -873,6 +893,7 @@ class QuizController(
             sentenceMaskTaps = roundFacts.sentenceMaskTaps,
             progressiveReveals = roundFacts.progressiveReveals,
             elapsedMs = activeViewTime,
+            predecessorFastTracked = predecessorFastTracked(vocab, currentSkill),
         )
         if (fastTracking) {
             stats.fastTracked = true

@@ -84,6 +84,14 @@ object StatsReplay {
         // pre-increment priorViews. Setting wins over revocation in the same
         // round (it can't be both a fresh-trivial pass AND retroactively
         // slow), so the if/else mirrors saveCurrentVocab exactly.
+        //
+        // NB: [FastTrack]'s build-up policy requires the predecessor skill's
+        // fastTracked state at this entry's timestamp. Single-skill replay
+        // can't see that — [rebuild] processes one skill in isolation — so
+        // we pass the parameter's vacuous default (`true`). This is correct
+        // for the first ladder skill and a TODO for the rest: a future
+        // cross-skill replay walker should thread the actual predecessor
+        // state per timestamp, restoring full live↔replay equivalence.
         val fastTracking = penaltyMs == 0L && FastTrack.isCandidate(
             priorViews = priorViews,
             tipUsed = entry.tipUsed,
