@@ -174,19 +174,10 @@ class QuizController(
     // saveCurrentVocab. See RoundFacts kdoc for the raw-fact philosophy.
     private val roundFacts = RoundFacts()
 
-    // True iff the just-finished round was terminated by onNewClick. Lets a
-    // SECOND consecutive +New press commit the just-shown word as a clean NEW
-    // outcome (rapid skipping ⇒ "I know it", so the fresh word should enter
-    // the active pool instead of vanishing). Updated in resetRoundState from
-    // [advancingByNewClick], which is set for the duration of the onNewClick
-    // call so the marker survives the synchronous resetRoundState inside it.
-    private var lastAdvancedByNewClick: Boolean = false
-    private var advancingByNewClick: Boolean = false
-
     // True iff the currently-active spot check was triggered by an +New press
     // (as opposed to Next or a random check). Read by [exitSpotCheck] so the
-    // resolution advances with newCandidates=true and the +New-flow marker
-    // survives, instead of falling back to the Next-flow defaults.
+    // resolution advances with newCandidates=true and commits as NEW, instead
+    // of falling back to the Next-flow defaults.
     private var spotCheckOriginatedFromNewClick: Boolean = false
 
     fun onFailClick() {
@@ -302,31 +293,27 @@ class QuizController(
     }
 
     fun onNewClick() {
-        val isRepeat = lastAdvancedByNewClick
-        advancingByNewClick = true
-        if (isRepeat && currentVocab != null) {
-            // Repeated +New ⇒ the user is rapidly skipping, signalling they
-            // know these words. Commit the just-shown word as a clean NEW
-            // round (so a fresh inactive word enters the active pool, and
-            // FastTrack may even promote it past mastery on a zero-elapsed
-            // round) instead of dismissing it into the void. The FIRST press
-            // of a run still pure-dismisses, so a single skip of an unwanted
-            // active review doesn't ghost-commit it.
+        val vocab = currentVocab ?: return
+        if (vocab.hasBeenIntroduced()) {
+            // Already-introduced word: the user wants to set it aside and
+            // pull a fresh one. No commit — the active pair's stats stay put
+            // until the user actually engages with it later.
+            dismissCurrentVocab(newCandidates = true)
+        } else {
+            // Fresh, never-seen word: a +New press here means "I already
+            // know this one, give me another." Route through the Know-it
+            // path so FastTrack can promote it, with the same mastery
+            // spot-check gate as onNextClick so the flag can't flip on
+            // unverified. Lets the user hammer through a long list of
+            // already-known vocabulary.
             roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
             if (wouldMasterOnCommit()) {
-                // Same gate as onNextClick: every mastery route goes through
-                // a spot check. Remember the +New origin so the resolution
-                // advances with fresh candidates (matching the +New intent)
-                // rather than the Next-flow default.
                 spotCheckOriginatedFromNewClick = true
                 startSpotCheck()
             } else {
                 updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
             }
-        } else {
-            dismissCurrentVocab(newCandidates = true)
         }
-        advancingByNewClick = false
     }
 
     fun onTipClick() {
@@ -601,13 +588,6 @@ class QuizController(
         roundFacts.recordSpotCheckResult(passed = !wasWrong)
         val fromNew = spotCheckOriginatedFromNewClick
         spotCheckOriginatedFromNewClick = false
-        // Carry the +New marker across this resolution iff the user passed:
-        // a passing spot check on a +New-initiated check is the user
-        // confirming they really do know the just-shown word, so the next
-        // round should continue treating subsequent +New presses as part of
-        // the same "rapidly skipping known words" run. A FAIL contradicts the
-        // assumption — fall back to single-press dismiss for the next round.
-        if (fromNew && !wasWrong) advancingByNewClick = true
         // updateVocab → applyFailurePenaltyAndPersist records the failure
         // because penalty > 0; don't double-count it here. The commit kind
         // reflects both the spot-check outcome AND the originating button:
@@ -624,10 +604,6 @@ class QuizController(
                 else -> CommitButton.NEXT
             },
         )
-        // updateVocab → resetRoundState has already absorbed advancingByNewClick
-        // into lastAdvancedByNewClick; clear the transient flag so it doesn't
-        // bleed into any later non-+New path.
-        advancingByNewClick = false
     }
 
     fun updateVocab(
@@ -749,12 +725,6 @@ class QuizController(
         views.textVocabEyebrow.text = "WORD"
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
-        // Carry the +New marker across the round boundary: true only when
-        // updateVocab was reached via onNewClick. Any other path (Next, Fail,
-        // Tip-then-Fail, listening toggle, long-pause dismiss) clears it, so
-        // the "second consecutive +New" check fires only on genuinely
-        // back-to-back +New presses.
-        lastAdvancedByNewClick = advancingByNewClick
         // Defensive: spot-check origin shouldn't survive a round transition.
         // exitSpotCheck clears it on the normal path; this catches any path
         // that bypasses exitSpotCheck (e.g. future code that advances while
