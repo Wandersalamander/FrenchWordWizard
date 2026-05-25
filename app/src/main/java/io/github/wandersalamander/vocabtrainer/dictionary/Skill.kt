@@ -67,10 +67,15 @@ data class SkillStats(
      * to the last [MAX_INTERACTIONS] entries. Called once per committed round
      * from the quiz save path; compromised rounds (rolled back via [copyFrom])
      * skip this call.
+     *
+     * [timestampMs] defaults to the current wall clock for live commits; the
+     * replay path ([io.github.wandersalamander.vocabtrainer.data.scoring.StatsReplay])
+     * passes the log entry's actual timestamp instead so reconstructed
+     * windows match the historical reality, not the moment of replay.
      */
-    fun recordInteraction(failAmount: Float) {
+    fun recordInteraction(failAmount: Float, timestampMs: Long = System.currentTimeMillis()) {
         val entry = VocabInteraction(
-            timestampMs = System.currentTimeMillis(),
+            timestampMs = timestampMs,
             failAmount = failAmount,
         )
         val updated = recentInteractions + entry
@@ -239,6 +244,13 @@ data class SkillStats(
         // High enough that the first round's actual time gets blended in without
         // an undue jump up or down.
         const val DEFAULT_VIEW_TIME_MS = 10_000L
+
+        // Smoothing constant for the per-round view-time EMA:
+        //   viewTimeMilli' = ALPHA * timeElapsed + (1 - ALPHA) * viewTimeMilli
+        // Shared between the live commit path (QuizController.saveCurrentVocab,
+        // wouldFinishSkillOnNext) and the historical replay (StatsReplay), so a
+        // future change to the smoothing curve updates both — no two-place edit.
+        const val VIEW_TIME_EMA_ALPHA = 0.3
 
         // If either of the last two view-time samples exceeds this,
         // failureProbability is floored so the pair can't slip past the mastery

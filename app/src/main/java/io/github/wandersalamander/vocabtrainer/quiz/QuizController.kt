@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
+import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
@@ -81,7 +82,9 @@ interface TtsHelper {
 }
 
 private const val SPOT_CHECK_PROBABILITY = 0.2
-private const val VIEW_TIME_EMA_ALPHA = 0.3
+// Aliased to the shared constant on SkillStats so the live commit path and
+// StatsReplay can never drift on the smoothing curve.
+private val VIEW_TIME_EMA_ALPHA = SkillStats.VIEW_TIME_EMA_ALPHA
 // How long the success chime lasts; TTS for the next round is held off this
 // long when a mastery just triggered, so the chime isn't drowned by speech.
 private const val POST_SUCCESS_TTS_DELAY_MS = 500L
@@ -422,7 +425,7 @@ class QuizController(
     }
 
     private fun showSentenceTip(vocab: Vocab) {
-        vocab.stats(currentSkill).recordFailure(0.25f)
+        vocab.stats(currentSkill).recordFailure(RoundScoring.SENTENCE_TIP_PENALTY)
         roundFacts.recordSentenceTip()
 
         setQuizButtonsEnabled(false)
@@ -452,11 +455,11 @@ class QuizController(
         val letterCount = vocab.foreign.count { it.isLetter() }
         if (progressiveRevealCount >= letterCount) return
         progressiveRevealCount++
-        // Triangular weighting: the i-th of N reveals costs
-        // 2(N - i + 1) / (N(N+1)), so first reveal is the most expensive and
-        // the total over a full unmask is exactly 1.0 (≈ one Fail).
-        val penalty = 2f * (letterCount - progressiveRevealCount + 1) /
-            (letterCount * (letterCount + 1))
+        // Triangular weighting (full formula in RoundScoring): the i-th of N
+        // reveals costs 2·(N − i + 1) / (N·(N + 1)); the full unmask sums to
+        // exactly 1.0 (≈ one Fail click). Shared with StatsReplay so changing
+        // the curve updates both the live flow and any historical replay.
+        val penalty = RoundScoring.progressiveRevealPenalty(progressiveRevealCount, letterCount)
         vocab.stats(currentSkill).recordFailure(penalty)
         roundFacts.recordProgressiveReveal()
         currentSkill.flow.applyProgressiveReveal(vocab, views, progressiveRevealCount)
@@ -493,7 +496,11 @@ class QuizController(
             delay(1000)
 
             if (showNextVocab) {
-                updateVocab(2000, newCandidates = false, commitButton = CommitButton.FAIL)
+                updateVocab(
+                    penalty = RoundScoring.FAIL_PENALTY_MS,
+                    newCandidates = false,
+                    commitButton = CommitButton.FAIL,
+                )
                 delay(100)
             }
             // setQuizButtonsEnabled honours the per-skill Tip rule, so an
@@ -516,7 +523,7 @@ class QuizController(
         // to resolve the spot check determines the commit kind: ✓ Correct
         // (no penalty) was a NEXT, ✗ Wrong (with penalty) was a FAIL.
         updateVocab(
-            penalty = if (wasWrong) 2000 else 0,
+            penalty = if (wasWrong) RoundScoring.FAIL_PENALTY_MS else 0L,
             newCandidates = false,
             commitButton = if (wasWrong) CommitButton.FAIL else CommitButton.NEXT,
         )
@@ -572,7 +579,7 @@ class QuizController(
         saveVocab: Boolean,
     ): Boolean {
         if (penalty > 0) {
-            currentVocab?.let { it.stats(currentSkill).recordFailure(1.0f) }
+            currentVocab?.let { it.stats(currentSkill).recordFailure(RoundScoring.FAIL_PENALTY) }
         }
         return if (saveVocab) saveCurrentVocab(penalty, commitButton) else false
     }
@@ -708,7 +715,10 @@ class QuizController(
         val failAmountThisRound =
             (stats.nTimesFailed - (snapshot?.nTimesFailed ?: stats.nTimesFailed))
                 .coerceAtLeast(0f)
-        stats.recordInteraction(failAmountThisRound)
+        // Pass nowMs explicitly so the recorded interaction timestamp matches
+        // the lastDisplayed / log timestamp captured for this round (within
+        // microseconds of System.currentTimeMillis(), but lockstep is cleaner).
+        stats.recordInteraction(failAmountThisRound, nowMs)
 
         // First-exposure fast-track: a brand-new pair the user clears trivially
         // (fast, clean, no help, no penalty) gets flagged so failureProbability
@@ -851,7 +861,7 @@ class QuizController(
         val vocab = currentVocab ?: return
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         roundFacts.recordWordMaskTap()
-        vocab.stats(currentSkill).recordFailure(0.1f)
+        vocab.stats(currentSkill).recordFailure(RoundScoring.MASK_TAP_PENALTY)
         tts.speakForeignWord(vocab, flush = true)
     }
 
@@ -873,7 +883,7 @@ class QuizController(
         val sentence = sentenceManager.currentSentence ?: return
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         roundFacts.recordSentenceMaskTap()
-        vocab.stats(currentSkill).recordFailure(0.1f)
+        vocab.stats(currentSkill).recordFailure(RoundScoring.MASK_TAP_PENALTY)
         tts.speakSentence(sentence)
     }
 
