@@ -139,6 +139,24 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
         introducedForeignSet.add(vocab.foreign)
     }
 
+    /**
+     * Highest [Vocab.importance] tier across vocabs the learner has actually
+     * been introduced to. Used by the LLM's [io.github.wandersalamander.vocabtrainer.llm.GrammarStyle]
+     * as a difficulty budget: a learner whose introduced words top out at
+     * importance 2 isn't ready for subjunctive-heavy sentences. Returns 0 when
+     * nothing has been introduced yet — matches the tier-0 baseline in the
+     * grammar ladder.
+     */
+    fun getMaxIntroducedImportance(): Int {
+        var max = 0
+        for (vocab in csvData) {
+            if (vocab.hasBeenIntroduced() && vocab.importance > max) {
+                max = vocab.importance
+            }
+        }
+        return max
+    }
+
     private fun readCsv(inputStream: InputStream): List<Vocab> =
         inputStream.bufferedReader().use { reader ->
             reader.lineSequence()

@@ -271,12 +271,13 @@ object LlmService {
         recent: List<String>,
         everSeen: List<String>,
         language: Language,
+        maxImportance: Int,
         timeoutMs: Long = 5000L
     ): String? {
         val e = engine ?: return null
         if (!isReady) return null
 
-        val prompt = buildPrompt(word, translation, recent, everSeen, language)
+        val prompt = buildPrompt(word, translation, recent, everSeen, language, maxImportance)
         val result = runInference(e, prompt, timeoutMs, word)
         if (result != null) recordRecentSentence(result)
         return result
@@ -285,6 +286,8 @@ object LlmService {
     /**
      * Compose the model prompt. Mixes:
      *  - the target word + translation,
+     *  - a single [SentenceStyle] flavour chosen per call (cultural framing
+     *    or a difficulty-gated grammar construct — see [SentenceStyles.pick]),
      *  - a small random pool of previously-studied words (optional ingredients
      *    the model may weave in for variety), and
      *  - an "avoid these" list drawn from recently emitted sentences (anti-
@@ -301,6 +304,7 @@ object LlmService {
         recent: List<String>,
         everSeen: List<String>,
         language: Language,
+        maxImportance: Int,
     ): String {
         val sampledWords = sampleStudiedWords(word, recent, everSeen)
         val recentClause = if (sampledWords.isEmpty()) "" else
@@ -311,8 +315,10 @@ object LlmService {
                 " IMPORTANT: do NOT produce any of these previously generated sentences (or trivial paraphrases). Make a clearly different one: $list."
             }
         }
+        val styleClause = SentenceStyles.pick(maxImportance).promptFragment(language)
         return "Write one short example sentence in ${language.englishName} " +
                 " using the word \"$word\" (English meaning: \"$translation\")." +
+                styleClause +
                 recentClause +
                 avoidClause +
                 " Output ONLY the sentence, no quotes, no translation, no explanation."

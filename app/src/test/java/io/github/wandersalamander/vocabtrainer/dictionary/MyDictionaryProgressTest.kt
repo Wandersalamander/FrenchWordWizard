@@ -141,6 +141,26 @@ class MyDictionaryProgressTest {
         assertEquals(listOf("Auto"), dict.getIntroducedForeignWords())
     }
 
+    @Test fun maxIntroducedImportance_isZeroWhenNothingIntroduced() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+            "Wissenschaft\tscience\t10\thash2\tDie Wissenschaft schreitet voran.\tWissenschaft.",
+        ))
+        assertEquals(0, dict.getMaxIntroducedImportance())
+    }
+
+    @Test fun maxIntroducedImportance_tracksHighestIntroducedTier() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t3\thash2\tDas Auto fährt.\tAuto.",
+            "Wissenschaft\tscience\t10\thash3\tDie Wissenschaft schreitet voran.\tWissenschaft.",
+        ))
+        // Introduce the tier-1 and tier-3 words but not the tier-10 word.
+        dict.csvData[0].stats(Skill.ladder.first()).nTimesViewed = 1
+        dict.csvData[1].stats(Skill.ladder.first()).nTimesViewed = 1
+        assertEquals(3, dict.getMaxIntroducedImportance())
+    }
+
     @Test fun reloadPreferences_resetsIntroducedCache() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",

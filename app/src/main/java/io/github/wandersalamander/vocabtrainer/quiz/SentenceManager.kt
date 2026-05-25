@@ -114,6 +114,7 @@ internal class SentenceManager(
                 recent = recentWords(),
                 everSeen = dictionary.getIntroducedForeignWords(),
                 language = language,
+                maxImportance = dictionary.getMaxIntroducedImportance(),
             )
         } finally {
             stopThinkingAnimation()
