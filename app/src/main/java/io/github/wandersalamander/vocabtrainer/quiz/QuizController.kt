@@ -178,6 +178,12 @@ class QuizController(
     private var lastAdvancedByNewClick: Boolean = false
     private var advancingByNewClick: Boolean = false
 
+    // True iff the currently-active spot check was triggered by an +New press
+    // (as opposed to Next or a random check). Read by [exitSpotCheck] so the
+    // resolution advances with newCandidates=true and the +New-flow marker
+    // survives, instead of falling back to the Next-flow defaults.
+    private var spotCheckOriginatedFromNewClick: Boolean = false
+
     fun onFailClick() {
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) exitSpotCheck(wasWrong = true)
@@ -188,8 +194,12 @@ class QuizController(
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = false)
-        } else if (currentVocab != null &&
-            (wouldFinishSkillOnNext() || Random.nextDouble() < SPOT_CHECK_PROBABILITY)) {
+        } else if (currentVocab != null && wouldMasterOnCommit()) {
+            // Mastery is gated: no (word, skill) pair retires from active
+            // without a spot check, regardless of which button or which path
+            // (threshold crossing, fast-track) would have caused it.
+            startSpotCheck()
+        } else if (currentVocab != null && Random.nextDouble() < SPOT_CHECK_PROBABILITY) {
             startSpotCheck()
         } else {
             updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
@@ -197,10 +207,20 @@ class QuizController(
     }
 
     /**
+     * True when a clean commit of the current round would cause the (word,
+     * skill) pair to retire from the active pool — either by crossing the
+     * [Vocab.SKILL_FINISHED_THRESHOLD] failureProbability gate, or by
+     * tripping the [FastTrack] first-exposure short-circuit. Used to force a
+     * spot check on every mastery route so no pair can sneak past the
+     * verification step, regardless of which button or which threshold drove
+     * the transition.
+     */
+    private fun wouldMasterOnCommit(): Boolean =
+        wouldFinishSkillOnNext() || wouldFastTrackToMastery()
+
+    /**
      * True when a clean commit of the current round would push the active
-     * skill's failureProbability across the mastery threshold. Used to force
-     * a spot check so a streak of fast Next-presses can't sneak a (word,
-     * skill) pair into mastery without a verification step.
+     * skill's failureProbability across the mastery threshold.
      *
      * Simulates the commit on a copy of the stats — same math as
      * [saveCurrentVocab]'s update plus [SkillStats.failureProbability] —
@@ -229,6 +249,31 @@ class QuizController(
         return sim.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
     }
 
+    /**
+     * True when a clean commit of the current round would trip the
+     * [FastTrack] gate and flip [SkillStats.fastTracked] on, short-circuiting
+     * failureProbability to [SkillStats.FAST_TRACKED_FPB] (sub-threshold).
+     * [wouldFinishSkillOnNext] doesn't catch this case because the simulated
+     * stats keep their default nFailed/nTimesViewed → fpb stays above the
+     * threshold; the mastery comes entirely from the flag, not the counters.
+     *
+     * Already-fast-tracked pairs return false (no mastery transition to gate).
+     */
+    private fun wouldFastTrackToMastery(): Boolean {
+        currentVocab ?: return false
+        val snapshot = roundStartSnapshot ?: return false
+        if (snapshot.fastTracked) return false
+        val activeViewTime = elapsedBeforePause + (System.currentTimeMillis() - startTime)
+        return FastTrack.isCandidate(
+            priorViews = snapshot.nTimesViewed,
+            tipUsed = roundFacts.tipUsed,
+            wordMaskTaps = roundFacts.wordMaskTaps,
+            sentenceMaskTaps = roundFacts.sentenceMaskTaps,
+            progressiveReveals = roundFacts.progressiveReveals,
+            elapsedMs = activeViewTime,
+        )
+    }
+
     fun onNewClick() {
         val isRepeat = lastAdvancedByNewClick
         advancingByNewClick = true
@@ -241,7 +286,16 @@ class QuizController(
             // of a run still pure-dismisses, so a single skip of an unwanted
             // active review doesn't ghost-commit it.
             roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
-            updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
+            if (wouldMasterOnCommit()) {
+                // Same gate as onNextClick: every mastery route goes through
+                // a spot check. Remember the +New origin so the resolution
+                // advances with fresh candidates (matching the +New intent)
+                // rather than the Next-flow default.
+                spotCheckOriginatedFromNewClick = true
+                startSpotCheck()
+            } else {
+                updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
+            }
         } else {
             dismissCurrentVocab(newCandidates = true)
         }
@@ -518,15 +572,35 @@ class QuizController(
     private fun exitSpotCheck(wasWrong: Boolean) {
         spotCheck.exit()
         roundFacts.recordSpotCheckResult(passed = !wasWrong)
+        val fromNew = spotCheckOriginatedFromNewClick
+        spotCheckOriginatedFromNewClick = false
+        // Carry the +New marker across this resolution iff the user passed:
+        // a passing spot check on a +New-initiated check is the user
+        // confirming they really do know the just-shown word, so the next
+        // round should continue treating subsequent +New presses as part of
+        // the same "rapidly skipping known words" run. A FAIL contradicts the
+        // assumption — fall back to single-press dismiss for the next round.
+        if (fromNew && !wasWrong) advancingByNewClick = true
         // updateVocab → applyFailurePenaltyAndPersist records the failure
-        // because penalty > 0; don't double-count it here. The button used
-        // to resolve the spot check determines the commit kind: ✓ Correct
-        // (no penalty) was a NEXT, ✗ Wrong (with penalty) was a FAIL.
+        // because penalty > 0; don't double-count it here. The commit kind
+        // reflects both the spot-check outcome AND the originating button:
+        // ✓ Correct via +New stays a NEW commit, ✓ Correct via Next a NEXT,
+        // ✗ Wrong is always FAIL regardless of origin. newCandidates honors
+        // the originating button's intent so a passed +New still pulls a
+        // fresh inactive word.
         updateVocab(
             penalty = if (wasWrong) RoundScoring.FAIL_PENALTY_MS else 0L,
-            newCandidates = false,
-            commitButton = if (wasWrong) CommitButton.FAIL else CommitButton.NEXT,
+            newCandidates = fromNew,
+            commitButton = when {
+                wasWrong -> CommitButton.FAIL
+                fromNew -> CommitButton.NEW
+                else -> CommitButton.NEXT
+            },
         )
+        // updateVocab → resetRoundState has already absorbed advancingByNewClick
+        // into lastAdvancedByNewClick; clear the transient flag so it doesn't
+        // bleed into any later non-+New path.
+        advancingByNewClick = false
     }
 
     fun updateVocab(
@@ -617,6 +691,11 @@ class QuizController(
         // the "second consecutive +New" check fires only on genuinely
         // back-to-back +New presses.
         lastAdvancedByNewClick = advancingByNewClick
+        // Defensive: spot-check origin shouldn't survive a round transition.
+        // exitSpotCheck clears it on the normal path; this catches any path
+        // that bypasses exitSpotCheck (e.g. future code that advances while
+        // spot check was still active).
+        spotCheckOriginatedFromNewClick = false
     }
 
     /**
