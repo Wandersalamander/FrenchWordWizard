@@ -11,3 +11,4 @@
 local.properties
 __pycache__/
 *.pyc
+/.kotlin/sessions/kotlin-compiler-*
