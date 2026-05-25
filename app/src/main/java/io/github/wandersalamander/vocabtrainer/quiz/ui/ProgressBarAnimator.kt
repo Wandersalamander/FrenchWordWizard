@@ -1,4 +1,4 @@
-package io.github.wandersalamander.vocabtrainer.quiz
+package io.github.wandersalamander.vocabtrainer.quiz.ui
 
 import android.view.View
 import android.widget.TextView
@@ -9,6 +9,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.pop
 import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.progress.SkillFinishedTracker
+import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
 
 // Distance the goldenrod "-N" floater rises above the active label before
 // fading out. ~24dp is enough to clear the bar row underneath so the floater

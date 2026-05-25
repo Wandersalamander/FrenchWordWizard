@@ -3,7 +3,6 @@ package io.github.wandersalamander.vocabtrainer.data.scoring
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
 import io.github.wandersalamander.vocabtrainer.data.ReviewLogEntry
 import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats
-import io.github.wandersalamander.vocabtrainer.quiz.FastTrack
 
 /**
  * Reconstructs a [SkillStats] from a chronological log of [ReviewLogEntry]s

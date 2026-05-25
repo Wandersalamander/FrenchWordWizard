@@ -1,14 +1,8 @@
-package io.github.wandersalamander.vocabtrainer.quiz
+package io.github.wandersalamander.vocabtrainer.quiz.picker
 
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
-import io.github.wandersalamander.vocabtrainer.quiz.picker.ActiveWeightedPicker
-import io.github.wandersalamander.vocabtrainer.quiz.picker.IntroductionPicker
-import io.github.wandersalamander.vocabtrainer.quiz.picker.PickContext
-import io.github.wandersalamander.vocabtrainer.quiz.picker.PickerScheduler
-import io.github.wandersalamander.vocabtrainer.quiz.picker.RefreshPicker
-import io.github.wandersalamander.vocabtrainer.quiz.picker.UniformFloorPicker
 
 private const val RECENT_WORDS_CAPACITY = 20
 private const val RECENT_FOREIGN_AVOID_COUNT = 4

@@ -1,4 +1,4 @@
-package io.github.wandersalamander.vocabtrainer.quiz
+package io.github.wandersalamander.vocabtrainer.quiz.ui
 
 import android.content.Context
 import android.graphics.Typeface
@@ -16,6 +16,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.progress.SkillFinishedTracker
+import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
 
 /**
  * Per-skill count of (word, skill) pairs that retired below the mastery

@@ -31,6 +31,8 @@ import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.dictionary.openDictionaryStream
 import io.github.wandersalamander.vocabtrainer.llm.LlmService
+import io.github.wandersalamander.vocabtrainer.quiz.ui.refreshActiveBar
+import io.github.wandersalamander.vocabtrainer.quiz.ui.refreshLifetimeBar
 import io.github.wandersalamander.vocabtrainer.service.MyForegroundService
 import io.github.wandersalamander.vocabtrainer.settings.SettingsActivity
 import io.github.wandersalamander.vocabtrainer.streak.StreakAlarmScheduler

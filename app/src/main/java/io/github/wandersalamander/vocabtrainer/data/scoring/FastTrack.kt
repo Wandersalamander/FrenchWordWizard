@@ -1,4 +1,4 @@
-package io.github.wandersalamander.vocabtrainer.quiz
+package io.github.wandersalamander.vocabtrainer.data.scoring
 
 import io.github.wandersalamander.vocabtrainer.data.TipUsed
 import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats

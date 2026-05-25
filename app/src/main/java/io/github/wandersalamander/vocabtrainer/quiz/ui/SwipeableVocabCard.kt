@@ -1,4 +1,4 @@
-package io.github.wandersalamander.vocabtrainer.quiz
+package io.github.wandersalamander.vocabtrainer.quiz.ui
 
 import android.content.Context
 import android.util.AttributeSet

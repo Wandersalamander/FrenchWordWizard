@@ -5,7 +5,7 @@ import kotlin.random.Random
 /*
  * Selection algorithms over a [MyDictionary]: which (vocab, skill) pair to
  * surface for the next round. Three independent pickers feed the active-pool
- * loop in [io.github.wandersalamander.vocabtrainer.quiz.QuizPicker]:
+ * loop in [io.github.wandersalamander.vocabtrainer.quiz.picker.QuizPicker]:
  *
  *  - [getActiveVocabWeighted]: weighted-random across active (word, skill)
  *    pairs, using [Vocab.sortValue] as the weight.

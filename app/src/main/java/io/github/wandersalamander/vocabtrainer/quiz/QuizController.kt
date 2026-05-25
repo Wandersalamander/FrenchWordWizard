@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
+import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
@@ -20,6 +21,11 @@ import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.pop
 import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.progress.SkillFinishedTracker
+import io.github.wandersalamander.vocabtrainer.quiz.picker.QuizPicker
+import io.github.wandersalamander.vocabtrainer.quiz.ui.ProgressBarAnimator
+import io.github.wandersalamander.vocabtrainer.quiz.ui.StreakBadgeView
+import io.github.wandersalamander.vocabtrainer.quiz.ui.SwipeableVocabCard
+import io.github.wandersalamander.vocabtrainer.quiz.ui.accentColorRes
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
 import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 import kotlin.random.Random
