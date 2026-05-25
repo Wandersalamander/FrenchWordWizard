@@ -87,6 +87,32 @@ data class SkillStats(
     }
 
     /**
+     * Apply one committed round's outcome to this stats record: bump the view
+     * counter, slide the view-time EMA, stamp the display time, and append the
+     * outcome to the rolling window. Shared by the live commit path
+     * ([io.github.wandersalamander.vocabtrainer.quiz.QuizController.saveCurrentVocab]),
+     * the mastery-crossing simulation
+     * ([io.github.wandersalamander.vocabtrainer.quiz.QuizController.wouldFinishSkillOnNext]),
+     * and the event-sourcing replay
+     * ([io.github.wandersalamander.vocabtrainer.data.scoring.StatsReplay.applyEntry])
+     * so the three paths can never drift on the per-round math.
+     *
+     * Does NOT handle fast-track set/revoke or mid-round failure bookkeeping —
+     * those are caller-specific (live path tracks them mid-round; replay
+     * collapses them from the log; simulation skips them).
+     */
+    fun applyRoundCommit(timeElapsedMs: Long, failAmount: Float, nowMs: Long) {
+        nTimesViewed += 1
+        viewTimeMilli_prev = viewTimeMilli
+        viewTimeMilli = (
+            VIEW_TIME_EMA_ALPHA * timeElapsedMs +
+                (1.0 - VIEW_TIME_EMA_ALPHA) * viewTimeMilli
+            ).toLong()
+        lastDisplayed = nowMs
+        recordInteraction(failAmount, nowMs)
+    }
+
+    /**
      * Copy every field from [other] into this instance, in place. Used to
      * roll back a round when the active skill's state changed mid-round in a
      * way that compromises the result (e.g. listening toggled off in a LISTEN

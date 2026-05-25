@@ -71,17 +71,14 @@ object StatsReplay {
             stats.fastTracked = false
         }
 
-        stats.nTimesViewed += 1
-        stats.viewTimeMilli_prev = stats.viewTimeMilli
-        val timeElapsed = entry.viewTimeMs + penaltyMs
-        stats.viewTimeMilli = (
-            SkillStats.VIEW_TIME_EMA_ALPHA * timeElapsed +
-                (1.0 - SkillStats.VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli
-            ).toLong()
-        stats.lastDisplayed = entry.timestampMs
-        // Pass the entry's timestamp explicitly so the rebuilt window mirrors
-        // the historical reality, not the wall clock at the moment of replay.
-        stats.recordInteraction(failAmount, entry.timestampMs)
+        // Entry timestamp drives both lastDisplayed and the rolling-window
+        // entry so the rebuilt history mirrors what happened, not the wall
+        // clock at the moment of replay.
+        stats.applyRoundCommit(
+            timeElapsedMs = entry.viewTimeMs + penaltyMs,
+            failAmount = failAmount,
+            nowMs = entry.timestampMs,
+        )
 
         // Fast-track gate: same predicate as the live path, keyed on the
         // pre-increment priorViews. Setting wins over revocation in the same

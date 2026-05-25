@@ -98,6 +98,22 @@ object LlmService {
     private const val RECENT_SENTENCES_CAPACITY = 5
     private val recentSentences = ArrayDeque<String>()
 
+    // How many recent / ever-seen words to offer the model per call. The split
+    // mixes freshness (recent) with breadth (long-tail) so sentences don't
+    // recycle the same 20 words; the cap stops the model from packing several
+    // candidates into one sentence, which would collapse common words into a
+    // self-reinforcing loop.
+    private const val SAMPLED_RECENT_COUNT = 5
+    private const val SAMPLED_EVER_SEEN_COUNT = 5
+    private const val SAMPLED_RECENT_POOL = 20
+
+    // Sampler config for sentence generation. Higher temperature + wider topK/topP
+    // than the model's defaults to keep outputs creative; tune temperature down
+    // to ~0.7 if generations drift off-topic.
+    private const val SAMPLER_TOP_K = 80
+    private const val SAMPLER_TOP_P = 0.98
+    private const val SAMPLER_TEMPERATURE = 1.15
+
     fun modelFile(context: Context): File {
         // External app-specific storage so the model can be sideloaded via
         // `adb push` without root:
@@ -160,7 +176,7 @@ object LlmService {
             } catch (t: Throwable) {
                 if (t is CancellationException) throw t
                 Log.e(TAG, "Engine init failed — ${t.javaClass.simpleName}: ${t.message ?: "unknown error"}", t)
-                _status.value = Status.Unavailable(friendlyEngineError(t))
+                _status.value = Status.Unavailable(friendlyEngineError())
             } finally {
                 initInFlight = false
             }
@@ -271,98 +287,131 @@ object LlmService {
         val e = engine ?: return null
         if (!isReady) return null
 
-        val langName = language.englishName
-        // Pool of "previously studied" words we offer the model as optional
-        // ingredients: 5 sampled from the recent sliding window + 5 sampled
-        // from everything ever introduced. The split keeps freshness (recent)
-        // alongside breadth (long-tail vocabulary) so sentences don't just
-        // recycle the last 20 words. We deliberately sub-sample rather than
-        // pass the full lists — sending too many candidates makes the model
-        // squeeze several of them into one sentence and locks common short
-        // words ("libro", "haus") into a self-reinforcing loop.
-        val sampledRecent = recent.takeLast(20).shuffled().take(5)
-        val recentSet = sampledRecent.toSet()
-        val sampledEverSeen = everSeen
-            .filter { it != word && it !in recentSet }
-            .shuffled()
-            .take(5)
-        val sampledWords = sampledRecent + sampledEverSeen
-        val recentClause = if (sampledWords.isNotEmpty()) {
+        val prompt = buildPrompt(word, translation, recent, everSeen, language)
+        val result = runInference(e, prompt, timeoutMs, word)
+        if (result != null) recordRecentSentence(result)
+        return result
+    }
+
+    /**
+     * Compose the model prompt. Mixes:
+     *  - the target word + translation,
+     *  - a small random pool of previously-studied words (optional ingredients
+     *    the model may weave in for variety), and
+     *  - an "avoid these" list drawn from recently emitted sentences (anti-
+     *    repetition; without it common short words collapse to the same
+     *    output every call regardless of seed/temperature).
+     *
+     * The avoid list is snapshotted under [recentSentences]'s monitor so a
+     * concurrent successful generation appending to the deque can't tear the
+     * read.
+     */
+    private fun buildPrompt(
+        word: String,
+        translation: String,
+        recent: List<String>,
+        everSeen: List<String>,
+        language: Language,
+    ): String {
+        val sampledWords = sampleStudiedWords(word, recent, everSeen)
+        val recentClause = if (sampledWords.isEmpty()) "" else
             " You may also naturally include some previously studied words if it fits: ${sampledWords.joinToString(", ")}."
-        } else ""
-        // Anti-repetition: tell the model the last few sentences it produced
-        // and ask for a clearly different one. Snapshot under lock so we
-        // don't race with a concurrent successful generation appending below.
         val avoidClause = synchronized(recentSentences) {
             if (recentSentences.isEmpty()) "" else {
                 val list = recentSentences.joinToString("; ") { "\"$it\"" }
                 " IMPORTANT: do NOT produce any of these previously generated sentences (or trivial paraphrases). Make a clearly different one: $list."
             }
         }
-        val prompt = "Write one short example sentence in $langName " +
+        return "Write one short example sentence in ${language.englishName} " +
                 " using the word \"$word\" (English meaning: \"$translation\")." +
                 recentClause +
                 avoidClause +
                 " Output ONLY the sentence, no quotes, no translation, no explanation."
+    }
 
-        return mutex.withLock {
-            withContext(Dispatchers.Default) {
-                val started = System.currentTimeMillis()
-                val result = withTimeoutOrNull(timeoutMs) {
-                    try {
-                        // Each generate() call is independent — open a fresh
-                        // conversation so prior prompts don't bias the output.
-                        //
-                        // Sampling config notes:
-                        //   - SamplerConfig.seed defaults to 0 in the SDK,
-                        //     which makes generation deterministic — same
-                        //     prompt + seed = same sentence every time. We
-                        //     randomize the seed per call so the user sees
-                        //     genuinely fresh sentences, not a hidden cache.
-                        //   - temperature 0.9 + topK 40 + topP 0.95 are
-                        //     standard "creative but coherent" values; tune
-                        //     down to ~0.7 if outputs drift off-topic.
-                        //
+    private fun sampleStudiedWords(
+        targetWord: String,
+        recent: List<String>,
+        everSeen: List<String>,
+    ): List<String> {
+        val sampledRecent = recent
+            .takeLast(SAMPLED_RECENT_POOL)
+            .shuffled()
+            .take(SAMPLED_RECENT_COUNT)
+        val recentSet = sampledRecent.toSet()
+        val sampledEverSeen = everSeen
+            .filter { it != targetWord && it !in recentSet }
+            .shuffled()
+            .take(SAMPLED_EVER_SEEN_COUNT)
+        return sampledRecent + sampledEverSeen
+    }
+
+    /**
+     * Drive the LLM through one prompt under the engine mutex (one call in
+     * flight at a time) on the default dispatcher, capped by [timeoutMs].
+     *
+     * Per-call we open a fresh conversation and randomize [SamplerConfig.seed]
+     * — the SDK's seed defaults to 0, which makes generation deterministic
+     * (same prompt = same sentence every call) and silently caches behind the
+     * user's back. [word] is logged for diagnostic correlation with the
+     * caller's fallback path.
+     *
+     * Returns the cleaned sentence on success, or null on timeout / engine
+     * error (caller falls back to a CSV sentence).
+     */
+    private suspend fun runInference(
+        engine: Engine,
+        prompt: String,
+        timeoutMs: Long,
+        word: String,
+    ): String? = mutex.withLock {
+        withContext(Dispatchers.Default) {
+            val started = System.currentTimeMillis()
+            val result = withTimeoutOrNull(timeoutMs) {
+                try {
+                    Log.i(TAG, "generating with LLM (prompt=$prompt)")
+                    val convConfig = ConversationConfig(samplerConfig = newSamplerConfig())
+                    val responseText: String = engine.createConversation(convConfig).use { conv ->
                         // Message has no .text accessor; toString() returns
                         // the concatenated Contents text (verified against
                         // litert-lm source: Message.kt overrides
                         // toString() = contents.toString()).
-                        Log.i(TAG, "generating with LLM (prompt=$prompt)")
+                        conv.sendMessage(prompt).toString()
+                    }
+                    cleanup(responseText)
+                } catch (t: Throwable) {
+                    Log.w(TAG, "generate failed", t)
+                    null
+                }
+            }
+            val elapsed = System.currentTimeMillis() - started
+            if (result != null) {
+                Log.i(TAG, "generate ok in ${elapsed}ms (word=$word) -> $result")
+            } else {
+                val tag = if (elapsed >= timeoutMs) "TIMEOUT" else "FAIL"
+                Log.w(TAG, "generate returned null ($tag) in ${elapsed}ms (word=$word) — caller will fall back to CSV sentence")
+            }
+            result
+        }
+    }
 
-                        val convConfig = ConversationConfig(
-                            samplerConfig = SamplerConfig(
-                                topK = 80,
-                                topP = 0.98,
-                                temperature = 1.15,
-                                seed = Random.nextInt(),
-                            )
-                        )
-                        val responseText: String = e.createConversation(convConfig).use { conv ->
-                            conv.sendMessage(prompt).toString()
-                        }
-                        cleanup(responseText)
-                    } catch (t: Throwable) {
-                        Log.w(TAG, "generate failed", t)
-                        null
-                    }
-                }
-                val elapsed = System.currentTimeMillis() - started
-                if (result != null) {
-                    Log.i(TAG, "generate ok in ${elapsed}ms (word=$word) -> $result")
-                    // Remember this output so the next call's prompt can ask
-                    // the model to avoid it. Bounded to RECENT_SENTENCES_CAPACITY.
-                    synchronized(recentSentences) {
-                        recentSentences.addLast(result)
-                        while (recentSentences.size > RECENT_SENTENCES_CAPACITY) {
-                            recentSentences.removeFirst()
-                        }
-                    }
-                } else {
-                    val timedOut = elapsed >= timeoutMs
-                    val tag = if (timedOut) "TIMEOUT" else "FAIL"
-                    Log.w(TAG, "generate returned null ($tag) in ${elapsed}ms (word=$word) — caller will fall back to CSV sentence")
-                }
-                result
+    private fun newSamplerConfig(): SamplerConfig = SamplerConfig(
+        topK = SAMPLER_TOP_K,
+        topP = SAMPLER_TOP_P,
+        temperature = SAMPLER_TEMPERATURE,
+        seed = Random.nextInt(),
+    )
+
+    /**
+     * Remember a successful generation so the next prompt can ask the model
+     * to avoid it. Bounded to [RECENT_SENTENCES_CAPACITY] — older entries
+     * fall out the front.
+     */
+    private fun recordRecentSentence(sentence: String) {
+        synchronized(recentSentences) {
+            recentSentences.addLast(sentence)
+            while (recentSentences.size > RECENT_SENTENCES_CAPACITY) {
+                recentSentences.removeFirst()
             }
         }
     }
@@ -383,31 +432,28 @@ object LlmService {
     // Translates download failures into something the user can actually read
     // in the AI Status section of Settings. Keeps the technical exception
     // string in logs (see Log.e in startDownload) for debugging.
-    private fun friendlyDownloadError(t: Throwable): String {
-        val msg = t.message.orEmpty()
-        return when {
-            t is UnknownHostException ->
-                "No internet connection. Connect and try again."
-            t is SocketTimeoutException ->
-                "The download timed out. Try again on a faster or more stable network."
-            t is ConnectException ->
-                "Couldn't reach the download server. Try again later."
-            t is SSLException ->
-                "Secure connection failed. Try again later."
-            // FileOutputStream surfaces ENOSPC as IOException with this text on
-            // Android/Linux. Model is 2.59 GB so this is the common failure.
-            msg.contains("No space left", ignoreCase = true) ||
-                msg.contains("ENOSPC", ignoreCase = true) ->
-                "Not enough storage on this device. Free up about 3 GB and try again."
-            // ModelDownloader throws IOException("HTTP $code from $url") on non-2xx.
-            msg.startsWith("HTTP 4") ->
-                "The model file is no longer available at the configured URL."
-            msg.startsWith("HTTP 5") ->
-                "The download server is temporarily unavailable. Try again later."
-            msg.startsWith("SHA256 mismatch") ->
-                "The downloaded model failed an integrity check. The file on the server may have changed; check for an app update."
-            else -> "Download failed. Tap retry to try again."
-        }
+    private fun friendlyDownloadError(t: Throwable): String = when (t) {
+        is UnknownHostException -> "No internet connection. Connect and try again."
+        is SocketTimeoutException -> "The download timed out. Try again on a faster or more stable network."
+        is ConnectException -> "Couldn't reach the download server. Try again later."
+        is SSLException -> "Secure connection failed. Try again later."
+        else -> messageBasedDownloadError(t.message.orEmpty())
+    }
+
+    private fun messageBasedDownloadError(msg: String): String = when {
+        // FileOutputStream surfaces ENOSPC as IOException with this text on
+        // Android/Linux. Model is 2.59 GB so this is the common failure.
+        msg.contains("No space left", ignoreCase = true) ||
+            msg.contains("ENOSPC", ignoreCase = true) ->
+            "Not enough storage on this device. Free up about 3 GB and try again."
+        // ModelDownloader throws IOException("HTTP $code from $url") on non-2xx.
+        msg.startsWith("HTTP 4") ->
+            "The model file is no longer available at the configured URL."
+        msg.startsWith("HTTP 5") ->
+            "The download server is temporarily unavailable. Try again later."
+        msg.startsWith("SHA256 mismatch") ->
+            "The downloaded model failed an integrity check. The file on the server may have changed; check for an app update."
+        else -> "Download failed. Tap retry to try again."
     }
 
     // LiteRT-LM doesn't expose typed exceptions for "device too weak" — GPU
@@ -415,8 +461,7 @@ object LlmService {
     // unsupported tensor shapes all surface as generic throwables. We collapse
     // them to one message because the user's recourse is the same: live
     // without the offline model. The quiz falls back to CSV sentences.
-    private fun friendlyEngineError(@Suppress("UNUSED_PARAMETER") t: Throwable): String {
-        return "This device can't run the offline language model. " +
+    private fun friendlyEngineError(): String =
+        "This device can't run the offline language model. " +
                 "The app will keep working with built-in example sentences."
-    }
 }

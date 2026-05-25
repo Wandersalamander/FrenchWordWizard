@@ -82,9 +82,6 @@ interface TtsHelper {
 }
 
 private const val SPOT_CHECK_PROBABILITY = 0.2
-// Aliased to the shared constant on SkillStats so the live commit path and
-// StatsReplay can never drift on the smoothing curve.
-private val VIEW_TIME_EMA_ALPHA = SkillStats.VIEW_TIME_EMA_ALPHA
 // How long the success chime lasts; TTS for the next round is held off this
 // long when a mastery just triggered, so the chime isn't drowned by speech.
 private const val POST_SUCCESS_TTS_DELAY_MS = 500L
@@ -231,23 +228,26 @@ class QuizController(
         val vocab = currentVocab ?: return false
         val stats = vocab.stats(currentSkill)
         if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) return false
-        val timeElapsed = elapsedBeforePause + (System.currentTimeMillis() - startTime)
+        val nowMs = System.currentTimeMillis()
+        val timeElapsed = elapsedBeforePause + (nowMs - startTime)
         val sim = stats.copy()
-        sim.nTimesViewed += 1
-        sim.viewTimeMilli_prev = sim.viewTimeMilli
-        sim.viewTimeMilli =
-            (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * sim.viewTimeMilli).toLong()
-        // Mirror the rolling-window append that saveCurrentVocab does on a
-        // committed round. The round may have accumulated partial penalties
-        // mid-round (tip = 0.25, mask tap = 0.1, etc.) — those bump nFailed
-        // but not the window, so reconstruct the per-round delta the same
-        // way saveCurrentVocab will, instead of assuming a clean 0.
-        val simFailAmount =
-            (stats.nTimesFailed - (roundStartSnapshot?.nTimesFailed ?: stats.nTimesFailed))
-                .coerceAtLeast(0f)
-        sim.recordInteraction(simFailAmount)
+        // Mid-round penalties (tip = 0.25, mask tap = 0.1, etc.) bump nFailed
+        // but not the rolling window; the window delta is reconstructed the
+        // same way saveCurrentVocab will, instead of assuming a clean 0.
+        val simFailAmount = roundFailAmountDelta(stats, roundStartSnapshot)
+        sim.applyRoundCommit(timeElapsedMs = timeElapsed, failAmount = simFailAmount, nowMs = nowMs)
         return sim.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
     }
+
+    /**
+     * Per-round failure delta = how much nFailed grew since the round-start
+     * snapshot, clamped to non-negative. Compromised rollbacks restore the
+     * snapshot in place, so the live commit path uses an identical
+     * computation in [saveCurrentVocab].
+     */
+    private fun roundFailAmountDelta(stats: SkillStats, snapshot: SkillStats?): Float =
+        (stats.nTimesFailed - (snapshot?.nTimesFailed ?: stats.nTimesFailed))
+            .coerceAtLeast(0f)
 
     /**
      * True when a clean commit of the current round would trip the
@@ -609,15 +609,34 @@ class QuizController(
         commitButton: CommitButton,
         saveVocab: Boolean = true,
     ) {
-        // Cancel any deferred TTS from the previous round so a rapid Next press
-        // doesn't let the prior word speak over the new one.
-        pendingRoundStartTtsJob?.cancel()
-        pendingRoundStartTtsJob = null
-
+        cancelPendingRoundStartTts()
         val successPlayed = applyFailurePenaltyAndPersist(penalty, commitButton, saveVocab)
         val vocab = advanceToNextDistinctVocab(newCandidates)
 
         resetRoundState(vocab)
+        renderNewRound(vocab)
+        resetRoundTiming()
+        scheduleRoundStartTts(vocab, deferForSuccessChime = successPlayed)
+    }
+
+    /**
+     * Cancel any deferred round-start TTS from the previous round. A rapid
+     * Next press would otherwise let the prior word speak over the new one,
+     * because the post-success delay [POST_SUCCESS_TTS_DELAY_MS] keeps the
+     * earlier launch alive across the round boundary.
+     */
+    private fun cancelPendingRoundStartTts() {
+        pendingRoundStartTtsJob?.cancel()
+        pendingRoundStartTtsJob = null
+    }
+
+    /**
+     * Repaint every per-round UI surface for [vocab]: the score line, score
+     * eyebrow, foreign and English prompts, sentence manager, hard/learned
+     * buttons, card accent, and the card-pop entrance animation. Called once
+     * per round transition right after [resetRoundState].
+     */
+    private fun renderNewRound(vocab: Vocab) {
         progressBars.refreshAll()
         refreshStreakBadge()
         renderScoreText(vocab)
@@ -633,10 +652,28 @@ class QuizController(
         setupLearnedButton()
         applyCardAccent(views.cardVocab, currentSkill)
         views.cardVocab.pop(peakScale = 1.04f)
+    }
 
+    /**
+     * Zero the per-round timing fields. [startTime] is the wall-clock anchor
+     * the active view-time math is measured from; [elapsedBeforePause]
+     * accumulates time across backgrounding events within a single round.
+     */
+    private fun resetRoundTiming() {
         startTime = System.currentTimeMillis()
         elapsedBeforePause = 0L
-        if (successPlayed) {
+    }
+
+    /**
+     * Speak the round-opening prompt for [vocab]. When the previous round
+     * just triggered a mastery success chime, hold the TTS off by
+     * [POST_SUCCESS_TTS_DELAY_MS] so the chime isn't drowned by speech;
+     * otherwise speak immediately. The deferred path stores its job in
+     * [pendingRoundStartTtsJob] so [cancelPendingRoundStartTts] can interrupt
+     * it on a rapid advance.
+     */
+    private fun scheduleRoundStartTts(vocab: Vocab, deferForSuccessChime: Boolean) {
+        if (deferForSuccessChime) {
             pendingRoundStartTtsJob = activity.lifecycleScope.launch {
                 delay(POST_SUCCESS_TTS_DELAY_MS)
                 currentSkill.flow.ttsAtRoundStart(vocab, tts)
@@ -750,27 +787,10 @@ class QuizController(
 
         val snapshot = roundStartSnapshot
         if (roundCompromised && snapshot != null) {
-            // Listening was off at some point during a LISTEN round — the
-            // user could read the foreign word, so roll back any in-memory
-            // mutations from the round and persist the rolled-back state.
-            // Still log the round (compromised=true) so we keep "user saw
-            // this word at this time" — downstream training should exclude
-            // these from outcome inference.
-            vocab.stats(currentSkill).copyFrom(snapshot)
-            val logEntry = buildLogEntry(
-                vocab = vocab,
-                commitButton = commitButton,
-                compromised = true,
-                foregroundViewTimeMs = activeViewTime,
-                nowMs = nowMs,
-            )
-            vocab.savePreferences(reviewLog = logEntry)
+            persistCompromisedRound(vocab, snapshot, commitButton, activeViewTime, nowMs)
             return false
         }
 
-        val wasFullyMastered = isFullyMasteredNow(vocab)
-
-        val timeElapsed = activeViewTime + penalty
         val stats = vocab.stats(currentSkill)
         // Use the round-start snapshot for the pre-round fpb, not the live
         // stats — mid-round penalties (tip, mask taps) have already bumped
@@ -778,38 +798,74 @@ class QuizController(
         // comparison fire on rounds that started below the threshold,
         // briefly dipped above mid-round, and ended below again. The chime
         // should only fire on a genuine active → mastered transition.
-        val prevFailureProbability =
-            snapshot?.failureProbability() ?: stats.failureProbability()
+        val prevFailureProbability = snapshot?.failureProbability() ?: stats.failureProbability()
+        val wasFullyMastered = isFullyMasteredNow(vocab)
         val wasIntroduced = vocab.hasBeenIntroduced()
 
-        stats.nTimesViewed += 1
-        // Snapshot the pre-update EMA into _prev so the slow-gate sum in
-        // failureProbability() spans the last two rounds rather than just one.
-        stats.viewTimeMilli_prev = stats.viewTimeMilli
-        stats.viewTimeMilli =
-            (VIEW_TIME_EMA_ALPHA * timeElapsed + (1.0 - VIEW_TIME_EMA_ALPHA) * stats.viewTimeMilli).toLong()
-        stats.lastDisplayed = nowMs
         // failAmount = nFailed delta since round start, so the rolling window
         // captures THIS round's outcome rather than the lifetime counter.
-        val failAmountThisRound =
-            (stats.nTimesFailed - (snapshot?.nTimesFailed ?: stats.nTimesFailed))
-                .coerceAtLeast(0f)
-        // Pass nowMs explicitly so the recorded interaction timestamp matches
-        // the lastDisplayed / log timestamp captured for this round (within
-        // microseconds of System.currentTimeMillis(), but lockstep is cleaner).
-        stats.recordInteraction(failAmountThisRound, nowMs)
+        stats.applyRoundCommit(
+            timeElapsedMs = activeViewTime + penalty,
+            failAmount = roundFailAmountDelta(stats, snapshot),
+            nowMs = nowMs,
+        )
+        applyFastTrackGate(stats, snapshot, penalty, activeViewTime)
 
-        // First-exposure fast-track: a brand-new pair the user clears trivially
-        // (fast, clean, no help, no penalty) gets flagged so failureProbability
-        // short-circuits to [SkillStats.FAST_TRACKED_FPB] (sub-threshold). The
-        // counters stay honest — nViewed is still 1, the WordList view sees
-        // the truth, the refresh-pool stability calc uses real history, and a
-        // future event-sourcing replay can re-derive the flag from the log
-        // under different rules. The flag is revoked the moment evidence
-        // contradicts it: [SkillStats.recordFailure] clears it on any penalty,
-        // and the slow-round check below clears it when later view-time samples
-        // cross the slow-gate ceiling (preserving the slow gate's safety
-        // property the formula-short-circuit would otherwise bypass).
+        persistRoundLog(vocab, commitButton, activeViewTime, nowMs)
+
+        if (!wasIntroduced && vocab.hasBeenIntroduced()) {
+            // First time this word entered the rotation — keep the LLM's
+            // "previously studied words" cache in sync without rescanning csvData.
+            vocabDictionary.notifyVocabIntroduced(vocab)
+        }
+        recordDailyAchievements(vocab, wasFullyMastered)
+        return announceSkillFinishedIfCrossed(stats, prevFailureProbability)
+    }
+
+    /**
+     * Listening was off at some point during a LISTEN round — the user could
+     * read the foreign word, so roll back any in-memory mutations from the
+     * round and persist the rolled-back state. Still log the round
+     * (compromised=true) so we keep "user saw this word at this time" —
+     * downstream training should exclude these from outcome inference.
+     */
+    private fun persistCompromisedRound(
+        vocab: Vocab,
+        snapshot: SkillStats,
+        commitButton: CommitButton,
+        activeViewTime: Long,
+        nowMs: Long,
+    ) {
+        vocab.stats(currentSkill).copyFrom(snapshot)
+        val logEntry = buildLogEntry(
+            vocab = vocab,
+            commitButton = commitButton,
+            compromised = true,
+            foregroundViewTimeMs = activeViewTime,
+            nowMs = nowMs,
+        )
+        vocab.savePreferences(reviewLog = logEntry)
+    }
+
+    /**
+     * First-exposure fast-track: a brand-new pair the user clears trivially
+     * (fast, clean, no help, no penalty) gets flagged so failureProbability
+     * short-circuits to [SkillStats.FAST_TRACKED_FPB] (sub-threshold). The
+     * counters stay honest — nViewed is still 1, the WordList view sees
+     * the truth, the refresh-pool stability calc uses real history, and a
+     * future event-sourcing replay can re-derive the flag from the log
+     * under different rules. The flag is revoked the moment evidence
+     * contradicts it: [SkillStats.recordFailure] clears it on any penalty,
+     * and the slow-round check below clears it when later view-time samples
+     * cross the slow-gate ceiling (preserving the slow gate's safety
+     * property the formula-short-circuit would otherwise bypass).
+     */
+    private fun applyFastTrackGate(
+        stats: SkillStats,
+        snapshot: SkillStats?,
+        penalty: Long,
+        activeViewTime: Long,
+    ) {
         val fastTracking = penalty == 0L && FastTrack.isCandidate(
             priorViews = snapshot?.nTimesViewed ?: 0,
             tipUsed = roundFacts.tipUsed,
@@ -825,7 +881,14 @@ class QuizController(
                 SkillStats.SLOW_VIEW_TIME_MAX_MS
             if (slowNow) stats.fastTracked = false
         }
+    }
 
+    private fun persistRoundLog(
+        vocab: Vocab,
+        commitButton: CommitButton,
+        activeViewTime: Long,
+        nowMs: Long,
+    ) {
         val logEntry = buildLogEntry(
             vocab = vocab,
             commitButton = commitButton,
@@ -834,39 +897,40 @@ class QuizController(
             nowMs = nowMs,
         )
         vocab.savePreferences(reviewLog = logEntry)
+    }
 
-        // First time this word entered the rotation — keep the LLM's
-        // "previously studied words" cache in sync without rescanning csvData.
-        if (!wasIntroduced && vocab.hasBeenIntroduced()) {
-            vocabDictionary.notifyVocabIntroduced(vocab)
-        }
-
-        // A committed (non-compromised) round is what counts for the daily
-        // streak. Idempotent within a day — first round of the day bumps the
-        // count, subsequent rounds are no-ops.
-        val result = StreakTracker.recordPracticeToday(activity.applicationContext)
-        streakBadge.surfaceResult(result)
-
-        // Word just crossed from "still has a skill to master" to "every
-        // ladder skill below threshold" — feed the "+N today" highlight on
-        // the lifetime bar. The bar refresh later in the round flow picks
-        // this up via MasteryTracker.todayCount.
+    /**
+     * Trackers tied to a committed (non-compromised) round: the daily streak
+     * (idempotent within a day — first round bumps, the rest no-op) and the
+     * lifetime mastered-today highlight (fires only on the active → fully
+     * mastered transition for [vocab], compared against the [wasFullyMastered]
+     * pre-state captured before [applyRoundCommit] mutated the stats).
+     */
+    private fun recordDailyAchievements(vocab: Vocab, wasFullyMastered: Boolean) {
+        val streak = StreakTracker.recordPracticeToday(activity.applicationContext)
+        streakBadge.surfaceResult(streak)
         if (!wasFullyMastered && isFullyMasteredNow(vocab)) {
             MasteryTracker.recordMasteredToday(activity.applicationContext)
         }
+    }
 
-        if (stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
+    /**
+     * Mastery-crossing event: this round drove the current skill's fpb from
+     * "still active" to "below threshold". Records the per-skill "-N today"
+     * suffix that decorates the ACTIVE WORDS label, plays the success chime,
+     * and returns true so [updateVocab] can hold off the next round's TTS
+     * long enough not to drown the chime.
+     */
+    private fun announceSkillFinishedIfCrossed(
+        stats: SkillStats,
+        prevFailureProbability: Float,
+    ): Boolean {
+        val crossedNow = stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
-        ) {
-            // Per-skill "-N today" suffix on the ACTIVE WORDS label — same
-            // crossing event that plays the success chime, recorded once per
-            // (word, skill) so the suffix matches what just retired from the
-            // active pool.
-            SkillFinishedTracker.recordFinishedToday(activity.applicationContext, currentSkill)
-            sounds.playSuccess()
-            return true
-        }
-        return false
+        if (!crossedNow) return false
+        SkillFinishedTracker.recordFinishedToday(activity.applicationContext, currentSkill)
+        sounds.playSuccess()
+        return true
     }
 
     /**
