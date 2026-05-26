@@ -4,6 +4,18 @@ import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 
 /**
+ * Result of one round's pick decision. Carries the winning picker's [source]
+ * so downstream code (e.g. the scoring path's refresh-pool retention reward,
+ * the vocab card's RETENTION eyebrow) can tell origins apart without a
+ * second probe into the picker scheduler's state.
+ */
+data class PickerResult(
+    val vocab: Vocab,
+    val skill: Skill,
+    val source: PickerId,
+)
+
+/**
  * Composes several [PickerStrategy] policies into one per-round decision,
  * generalizing the hand-rolled cascade that used to live in QuizPicker.pickOne.
  *
@@ -67,10 +79,10 @@ class PickerScheduler(
         private val eligible: Set<PickerId>,
     ) {
         /** Run the precedence cascade. Idempotent w.r.t. cadence; safe to re-roll. */
-        fun select(): Pair<Vocab, Skill> = select(ctx, eligible)
+        fun select(): PickerResult = select(ctx, eligible)
     }
 
-    private fun select(ctx: PickContext, eligible: Set<PickerId>): Pair<Vocab, Skill> {
+    private fun select(ctx: PickContext, eligible: Set<PickerId>): PickerResult {
         for (strategy in strategies) {
             if (strategy.id !in eligible) continue
             val pick = strategy.pick(ctx) ?: continue
@@ -78,10 +90,11 @@ class PickerScheduler(
             // picker winning leaves lower ones' counters untouched, so they stay
             // due and serve the next round (no starvation between cadence slots).
             resetCadence(strategy)
-            return pick
+            return PickerResult(pick.first, pick.second, strategy.id)
         }
-        return fallback.pick(ctx)
+        val fallbackPick = fallback.pick(ctx)
             ?: error("Fallback picker ${fallback.id} returned null; it must always produce a pick")
+        return PickerResult(fallbackPick.first, fallbackPick.second, fallback.id)
     }
 
     /**

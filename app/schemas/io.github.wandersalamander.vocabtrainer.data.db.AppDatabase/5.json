@@ -1,0 +1,493 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 5,
+    "identityHash": "0d0c871aa2373614137b83b64d6b7209",
+    "entities": [
+      {
+        "tableName": "vocab_stats",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hash` TEXT NOT NULL, `skill` TEXT NOT NULL, `viewTimeMs` INTEGER NOT NULL, `viewTimeMsPrev` INTEGER NOT NULL, `nViewed` INTEGER NOT NULL, `nFailed` REAL NOT NULL, `lastDisplayed` INTEGER NOT NULL, `lastFailed` INTEGER NOT NULL, `lastModifiedMs` INTEGER NOT NULL, `recentInteractions` TEXT NOT NULL DEFAULT '', `fastTracked` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`hash`, `skill`))",
+        "fields": [
+          {
+            "fieldPath": "hash",
+            "columnName": "hash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skill",
+            "columnName": "skill",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "viewTimeMs",
+            "columnName": "viewTimeMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "viewTimeMsPrev",
+            "columnName": "viewTimeMsPrev",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nViewed",
+            "columnName": "nViewed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nFailed",
+            "columnName": "nFailed",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastDisplayed",
+            "columnName": "lastDisplayed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastFailed",
+            "columnName": "lastFailed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModifiedMs",
+            "columnName": "lastModifiedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recentInteractions",
+            "columnName": "recentInteractions",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "fastTracked",
+            "columnName": "fastTracked",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "hash",
+            "skill"
+          ]
+        }
+      },
+      {
+        "tableName": "vocab_flags",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hash` TEXT NOT NULL, `ignore` INTEGER NOT NULL, `flaggedHard` INTEGER NOT NULL, `lastModifiedMs` INTEGER NOT NULL, PRIMARY KEY(`hash`))",
+        "fields": [
+          {
+            "fieldPath": "hash",
+            "columnName": "hash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ignore",
+            "columnName": "ignore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flaggedHard",
+            "columnName": "flaggedHard",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModifiedMs",
+            "columnName": "lastModifiedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "hash"
+          ]
+        }
+      },
+      {
+        "tableName": "vocab_review_log",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `vocab_hash` TEXT NOT NULL, `skill` TEXT NOT NULL, `timestamp_ms` INTEGER NOT NULL, `view_time_ms` INTEGER NOT NULL, `time_to_first_action_ms` INTEGER, `paused_ms` INTEGER NOT NULL, `commit_button` TEXT NOT NULL, `tip_used` TEXT NOT NULL, `progressive_reveals` INTEGER NOT NULL, `word_mask_taps` INTEGER NOT NULL, `word_replays` INTEGER NOT NULL, `sentence_mask_taps` INTEGER NOT NULL, `spot_check_result` TEXT NOT NULL, `sentence_source` TEXT NOT NULL, `listening_enabled` INTEGER NOT NULL, `compromised` INTEGER NOT NULL, FOREIGN KEY(`vocab_hash`, `skill`) REFERENCES `vocab_stats`(`hash`, `skill`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vocabHash",
+            "columnName": "vocab_hash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skill",
+            "columnName": "skill",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestampMs",
+            "columnName": "timestamp_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "viewTimeMs",
+            "columnName": "view_time_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeToFirstActionMs",
+            "columnName": "time_to_first_action_ms",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "pausedMs",
+            "columnName": "paused_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "commitButton",
+            "columnName": "commit_button",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipUsed",
+            "columnName": "tip_used",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "progressiveReveals",
+            "columnName": "progressive_reveals",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordMaskTaps",
+            "columnName": "word_mask_taps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordReplays",
+            "columnName": "word_replays",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sentenceMaskTaps",
+            "columnName": "sentence_mask_taps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "spotCheckResult",
+            "columnName": "spot_check_result",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sentenceSource",
+            "columnName": "sentence_source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "listeningEnabled",
+            "columnName": "listening_enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "compromised",
+            "columnName": "compromised",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_vocab_review_log_vocab_hash_skill_timestamp_ms",
+            "unique": false,
+            "columnNames": [
+              "vocab_hash",
+              "skill",
+              "timestamp_ms"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vocab_review_log_vocab_hash_skill_timestamp_ms` ON `${TABLE_NAME}` (`vocab_hash`, `skill`, `timestamp_ms`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "vocab_stats",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vocab_hash",
+              "skill"
+            ],
+            "referencedColumns": [
+              "hash",
+              "skill"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "streak_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `current` INTEGER NOT NULL, `lastDate` TEXT, `longest` INTEGER NOT NULL, `freezes` INTEGER NOT NULL, `reminderEnabled` INTEGER NOT NULL, `reminderHour` INTEGER NOT NULL, `reminderMinute` INTEGER NOT NULL, `lastModifiedMs` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "current",
+            "columnName": "current",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastDate",
+            "columnName": "lastDate",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "longest",
+            "columnName": "longest",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "freezes",
+            "columnName": "freezes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reminderEnabled",
+            "columnName": "reminderEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reminderHour",
+            "columnName": "reminderHour",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reminderMinute",
+            "columnName": "reminderMinute",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModifiedMs",
+            "columnName": "lastModifiedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "language_wipe",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`languageCode` TEXT NOT NULL, `wipedAtMs` INTEGER NOT NULL, PRIMARY KEY(`languageCode`))",
+        "fields": [
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wipedAtMs",
+            "columnName": "wipedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "languageCode"
+          ]
+        }
+      },
+      {
+        "tableName": "daily_mastered_count",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`languageCode` TEXT NOT NULL, `date` TEXT NOT NULL, `count` INTEGER NOT NULL, `lastModifiedMs` INTEGER NOT NULL, PRIMARY KEY(`languageCode`))",
+        "fields": [
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "count",
+            "columnName": "count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModifiedMs",
+            "columnName": "lastModifiedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "languageCode"
+          ]
+        }
+      },
+      {
+        "tableName": "daily_skill_finished_count",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`languageCode` TEXT NOT NULL, `skill` TEXT NOT NULL, `date` TEXT NOT NULL, `count` INTEGER NOT NULL, `lastModifiedMs` INTEGER NOT NULL, PRIMARY KEY(`languageCode`, `skill`))",
+        "fields": [
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skill",
+            "columnName": "skill",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "count",
+            "columnName": "count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModifiedMs",
+            "columnName": "lastModifiedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "languageCode",
+            "skill"
+          ]
+        }
+      },
+      {
+        "tableName": "lifetime_score",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`languageCode` TEXT NOT NULL, `score` INTEGER NOT NULL, `lastModifiedMs` INTEGER NOT NULL, PRIMARY KEY(`languageCode`))",
+        "fields": [
+          {
+            "fieldPath": "languageCode",
+            "columnName": "languageCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModifiedMs",
+            "columnName": "lastModifiedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "languageCode"
+          ]
+        }
+      },
+      {
+        "tableName": "metadata",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`key` TEXT NOT NULL, `value` TEXT NOT NULL, PRIMARY KEY(`key`))",
+        "fields": [
+          {
+            "fieldPath": "key",
+            "columnName": "key",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "key"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0d0c871aa2373614137b83b64d6b7209')"
+    ]
+  }
+}

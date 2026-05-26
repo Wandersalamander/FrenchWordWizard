@@ -42,6 +42,13 @@ internal class ProgressBarAnimator(
     // first refresh so the first render doesn't claim a phantom drop.
     private var renderedActiveCounts: ActiveSetCounts? = null
 
+    // Last lifetime score mirrored on the streak-row score badge. Used to
+    // detect an increment (mastery or refresh-pool pass) and fire a goldenrod
+    // "+N" floater off the badge. Null until the first refresh so a fresh
+    // launch (which seeds the badge from the persisted total) doesn't pop a
+    // phantom delta.
+    private var renderedLifetimeScore: Long? = null
+
     fun refreshAll() {
         if (dictionary.csvData.isEmpty()) return
         val ctx = activity.applicationContext
@@ -53,11 +60,14 @@ internal class ProgressBarAnimator(
             invert = SkillFinishedTracker.todayCount(ctx, Skill.INVERT),
         )
         refreshActiveBar(ctx, views, newCounts, todayFinished)
+        val newScore = refreshLifetimeScoreBadge(ctx, views, dictionary)
         val todayNow = MasteryTracker.todayCount(ctx)
         if (todayNow > renderedTodayCount) views.textLifetimeLabel.pop()
         renderedTodayCount = todayNow
         maybeFireActiveDeltas(newCounts, todayFinished)
         renderedActiveCounts = newCounts
+        maybeFireLifetimeScoreDelta(newScore)
+        renderedLifetimeScore = newScore
     }
 
     /**
@@ -72,6 +82,7 @@ internal class ProgressBarAnimator(
         val ctx = activity.applicationContext
         refreshLifetimeBar(ctx, views, dictionary)
         refreshActiveBar(ctx, views, dictionary)
+        renderedLifetimeScore = refreshLifetimeScoreBadge(ctx, views, dictionary)
         renderedTodayCount = MasteryTracker.todayCount(ctx)
         renderedActiveCounts = dictionary.computeActiveSetCounts()
     }
@@ -187,6 +198,52 @@ internal class ProgressBarAnimator(
             ActiveGroup.INVERT -> expectedEnd
         }
         return layout.getPrimaryHorizontal(end)
+    }
+
+    /**
+     * Pop the streak-row score badge and fire a goldenrod "+N" floater off
+     * its top-end whenever the persisted lifetime score grew since the last
+     * render. Mirrors [animateActiveDelta] choreography (120 ms scale-in,
+     * 640 ms lift-and-fade) so the streak row's new badge moves the same way
+     * the active-bar deltas do. First render (renderedLifetimeScore == null)
+     * is a baseline so a fresh launch — which seeds the badge from the
+     * persisted total — doesn't claim a phantom delta.
+     */
+    private fun maybeFireLifetimeScoreDelta(newScore: Long) {
+        val prev = renderedLifetimeScore ?: return
+        val delta = newScore - prev
+        if (delta <= 0L) return
+        views.textStreakScore.pop()
+        val floater = views.textStreakScoreFloater
+        floater.animate().cancel()
+        floater.text = "+$delta"
+        floater.translationX = 0f
+        floater.translationY = 0f
+        floater.alpha = 0f
+        floater.scaleX = 0.85f
+        floater.scaleY = 0.85f
+        floater.visibility = View.VISIBLE
+        val liftPx = FLOATER_LIFT_DP * activity.resources.displayMetrics.density
+        floater.animate()
+            .alpha(1f)
+            .scaleX(1.15f).scaleY(1.15f)
+            .setDuration(120L)
+            .withEndAction {
+                floater.animate()
+                    .translationY(-liftPx)
+                    .alpha(0f)
+                    .scaleX(0.95f).scaleY(0.95f)
+                    .setDuration(640L)
+                    .withEndAction {
+                        floater.visibility = View.INVISIBLE
+                        floater.translationY = 0f
+                        floater.alpha = 1f
+                        floater.scaleX = 1f
+                        floater.scaleY = 1f
+                    }
+                    .start()
+            }
+            .start()
     }
 
     private fun perSkillRunLength(active: Int, finishedToday: Int): Int {

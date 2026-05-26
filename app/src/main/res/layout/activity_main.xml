@@ -29,19 +29,19 @@
     tools:context=".MainActivity">
 
     <!-- ============================ STREAK CARD ============================
-         Single row: title on the left, shield + fire grouped on the right.
-         Badges use the 48dp minimum tap target so screen-reader and motor-
-         impaired users can hit them reliably; baselineAligned is disabled
-         so the small title's baseline isn't pulled down to meet the much
-         larger icon text. -->
-    <LinearLayout
+         Single row: title on the left, score + shield + fire grouped on the
+         right. Badges use the 48dp minimum tap target so screen-reader and
+         motor-impaired users can hit them reliably. ConstraintLayout (rather
+         than the simpler LinearLayout) so the goldenrod "+N" floater can
+         lift OUT of the score badge while animating, anchored to the badge's
+         own X. clipChildren / clipToPadding are off for the same reason. -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardStreak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_card_orange"
-        android:baselineAligned="false"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:paddingHorizontal="18dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
@@ -49,11 +49,32 @@
         <TextView
             android:id="@+id/textStreakEyebrow"
             style="@style/CardEyebrow"
-            android:layout_width="0dp"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
             android:accessibilityHeading="true"
-            android:text="STREAK" />
+            android:text="STREAK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textStreakScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="6dp"
+            android:text=""
+            android:textColor="@color/today_count_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textStreakShield"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="⭐ 247" />
 
         <TextView
             android:id="@+id/textStreakShield"
@@ -71,6 +92,9 @@
             android:textColor="@color/streak_shield_color"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textStreak"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="🛡️ 3" />
 
         <TextView
@@ -88,8 +112,29 @@
             android:textColor="@color/streak_count_color"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="🔥 12" />
-    </LinearLayout>
+
+        <!-- Goldenrod "+N" floater that lifts off textStreakScore when the
+             knowledge score grows. Same animation choreography as the active-
+             bar "-N" floaters (see ProgressBarAnimator) — anchored to the
+             score badge's top-end, then lifted ~24dp while fading. -->
+        <TextView
+            android:id="@+id/textStreakScoreFloater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:textColor="@color/today_count_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/textStreakScore"
+            app:layout_constraintTop_toTopOf="@+id/textStreakScore"
+            tools:text="+1"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- ============================ VOCAB CARD ============================ -->
     <io.github.wandersalamander.vocabtrainer.quiz.ui.SwipeableVocabCard

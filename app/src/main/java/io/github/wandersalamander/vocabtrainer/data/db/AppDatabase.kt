@@ -10,6 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import io.github.wandersalamander.vocabtrainer.data.db.dao.DailyMasteredCountDao
 import io.github.wandersalamander.vocabtrainer.data.db.dao.DailySkillFinishedCountDao
 import io.github.wandersalamander.vocabtrainer.data.db.dao.LanguageWipeDao
+import io.github.wandersalamander.vocabtrainer.data.db.dao.LifetimeScoreDao
 import io.github.wandersalamander.vocabtrainer.data.db.dao.MetadataDao
 import io.github.wandersalamander.vocabtrainer.data.db.dao.StreakDao
 import io.github.wandersalamander.vocabtrainer.data.db.dao.VocabDao
@@ -17,6 +18,7 @@ import io.github.wandersalamander.vocabtrainer.data.db.dao.VocabReviewLogDao
 import io.github.wandersalamander.vocabtrainer.data.db.entities.DailyMasteredCountEntity
 import io.github.wandersalamander.vocabtrainer.data.db.entities.DailySkillFinishedCountEntity
 import io.github.wandersalamander.vocabtrainer.data.db.entities.LanguageWipeEntity
+import io.github.wandersalamander.vocabtrainer.data.db.entities.LifetimeScoreEntity
 import io.github.wandersalamander.vocabtrainer.data.db.entities.MetadataEntity
 import io.github.wandersalamander.vocabtrainer.data.db.entities.StreakStateEntity
 import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabFlagsEntity
@@ -41,9 +43,10 @@ import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
         LanguageWipeEntity::class,
         DailyMasteredCountEntity::class,
         DailySkillFinishedCountEntity::class,
+        LifetimeScoreEntity::class,
         MetadataEntity::class,
     ],
-    version = 4,
+    version = 5,
     // JSON schemas are exported to app/schemas/<AppDatabase>/<version>.json
     // (configured via the ksp room.schemaLocation arg in build.gradle).
     // MigrationTestHelper reads them; commit the generated files alongside
@@ -58,6 +61,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun languageWipeDao(): LanguageWipeDao
     abstract fun dailyMasteredCountDao(): DailyMasteredCountDao
     abstract fun dailySkillFinishedCountDao(): DailySkillFinishedCountDao
+    abstract fun lifetimeScoreDao(): LifetimeScoreDao
     abstract fun metadataDao(): MetadataDao
 
     companion object {
@@ -66,7 +70,7 @@ abstract class AppDatabase : RoomDatabase() {
         // Current schema version. MUST equal @Database(version = …) above.
         // Exposed so migration tests assert against one version instead of a
         // scattered literal; MigrationCoverageTest fails if the two drift.
-        internal const val SCHEMA_VERSION = 4
+        internal const val SCHEMA_VERSION = 5
 
         @Volatile
         private var instance: AppDatabase? = null
@@ -159,11 +163,31 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Adds [LifetimeScoreEntity] — one row per language tracking the
+         * monotone-increasing knowledge score (mastery + retention events).
+         * Purely additive — no existing rows touched. Pre-v5 users get an
+         * absent row, which [LifetimeScoreTracker] backfills lazily from
+         * the current lifetime-mastered count on first read.
+         */
+        internal val MIGRATION_4_5 = object : Migration(4, 5) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "CREATE TABLE IF NOT EXISTS `lifetime_score` (" +
+                        "`languageCode` TEXT NOT NULL, " +
+                        "`score` INTEGER NOT NULL, " +
+                        "`lastModifiedMs` INTEGER NOT NULL, " +
+                        "PRIMARY KEY(`languageCode`))"
+                )
+            }
+        }
+
         // Single source of truth for the migrations get() applies.
         // MigrationCoverageTest exercises this same array through the real
         // builder, so registering a migration here wires it into prod AND the
         // coverage test at once. Declared after MIGRATION_2_3 so the property
         // initializer sees a non-null value.
-        internal val ALL_MIGRATIONS: Array<Migration> = arrayOf(MIGRATION_2_3, MIGRATION_3_4)
+        internal val ALL_MIGRATIONS: Array<Migration> =
+            arrayOf(MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
     }
 }

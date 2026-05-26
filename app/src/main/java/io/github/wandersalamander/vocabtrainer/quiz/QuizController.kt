@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
@@ -19,8 +20,10 @@ import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.pop
+import io.github.wandersalamander.vocabtrainer.progress.LifetimeScoreTracker
 import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.progress.SkillFinishedTracker
+import io.github.wandersalamander.vocabtrainer.quiz.picker.PickerId
 import io.github.wandersalamander.vocabtrainer.quiz.picker.QuizPicker
 import io.github.wandersalamander.vocabtrainer.quiz.ui.ProgressBarAnimator
 import io.github.wandersalamander.vocabtrainer.quiz.ui.StreakBadgeView
@@ -56,6 +59,12 @@ data class QuizViews(
     val textGuessLong: TextView,
     val textStreak: TextView,
     val textStreakShield: TextView,
+    // Lifetime knowledge score badge in the streak row, plus its goldenrod
+    // "+N" floater that lifts off the badge when the score grows. Driven by
+    // ProgressBarAnimator using the same choreography as the active-bar
+    // floaters; values come from LifetimeScoreTracker.
+    val textStreakScore: TextView,
+    val textStreakScoreFloater: TextView,
     // Two progress cards in activity_main.xml: lifetime mastered (single fill
     // of the deck) on cardLifetime, and the composition of the
     // currently-drilling pool, segmented by skill, on cardActive.
@@ -147,6 +156,14 @@ class QuizController(
     // Skill being practiced for the currently-displayed word. Set in updateVocab
     // when a new word is picked and used for all stat writes during the round.
     private var currentSkill: Skill = Skill.READ
+
+    // True iff the current round's (vocab, skill) was served by the refresh
+    // pool (RefreshPicker). Drives the RETENTION eyebrow + gold accent on the
+    // vocab card, and the +SCORE_PER_REFRESH_PASS award when the round commits
+    // cleanly. Set in advanceToNextDistinctVocab and read by renderNewRound /
+    // saveCurrentVocab — so it always refers to the round being displayed or
+    // saved (which are the same round, since save runs before the next pick).
+    private var currentRoundFromRefreshPool: Boolean = false
 
     // Session-scoped: when false, LISTEN words and their tip sentences are
     // shown unmasked (e.g. the user is on a train without headphones).
@@ -653,7 +670,8 @@ class QuizController(
         sentenceManager.seed(vocab)
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
         setupLearnedButton()
-        applyCardAccent(views.cardVocab, currentSkill)
+        applyCardAccent(views.cardVocab, currentSkill, currentRoundFromRefreshPool)
+        applyVocabEyebrow(currentRoundFromRefreshPool)
         views.cardVocab.pop(peakScale = 1.04f)
     }
 
@@ -699,18 +717,19 @@ class QuizController(
     }
 
     /**
-     * Pick a new vocab/skill pair. Updates [currentVocab] and [currentSkill]
-     * in place and returns the new vocab non-null.
+     * Pick a new vocab/skill pair. Updates [currentVocab], [currentSkill], and
+     * [currentRoundFromRefreshPool] in place and returns the new vocab non-null.
      */
     private fun advanceToNextDistinctVocab(newCandidates: Boolean): Vocab {
-        val (v, s) = picker.pickNext(
+        val result = picker.pickNext(
             newCandidates = newCandidates,
             listeningEnabled = listeningEnabled,
             avoidCurrentForeign = currentVocab?.foreign,
         )
-        currentVocab = v
-        currentSkill = s
-        return v
+        currentVocab = result.vocab
+        currentSkill = result.skill
+        currentRoundFromRefreshPool = result.source == PickerId.REFRESH
+        return result.vocab
     }
 
     private fun resetRoundState(vocab: Vocab) {
@@ -733,16 +752,33 @@ class QuizController(
     }
 
     /**
-     * Recolour the vocab card's top accent stripe to match [skill]. The stripe
-     * is the second item in [R.drawable.bg_card_pink]'s layer-list; we mutate
-     * its in-memory copy so other views referencing the same drawable
+     * Recolour the vocab card's top accent stripe to match [skill] — or paint
+     * it gold ([R.color.today_count_color]) when [useRefreshAccent] is set, so
+     * a refresh-pool round is visually distinct from regular drilling. The
+     * stripe is the second item in [R.drawable.bg_card_pink]'s layer-list; we
+     * mutate its in-memory copy so other views referencing the same drawable
      * resource aren't dragged along. Mutating an already-mutated drawable is
      * a no-op, so calling this each round is safe.
      */
-    private fun applyCardAccent(card: View, skill: Skill) {
+    private fun applyCardAccent(card: View, skill: Skill, useRefreshAccent: Boolean) {
         val bg = card.background.mutate() as LayerDrawable
         val stripe = bg.getDrawable(1) as GradientDrawable
-        stripe.setColor(ContextCompat.getColor(activity, skill.accentColorRes()))
+        val colorRes =
+            if (useRefreshAccent) R.color.today_count_color else skill.accentColorRes()
+        stripe.setColor(ContextCompat.getColor(activity, colorRes))
+    }
+
+    /**
+     * Set the vocab card's eyebrow to "RETENTION" (gold) for a refresh-pool
+     * pick, or "WORD" (default muted) for any active-pool round. Pairs with
+     * [applyCardAccent] so the two signals (eyebrow + stripe) move together
+     * and the user can tell at a glance why this round is worth more points.
+     */
+    private fun applyVocabEyebrow(useRefreshLabel: Boolean) {
+        val colorRes =
+            if (useRefreshLabel) R.color.today_count_color else R.color.card_eyebrow
+        views.textVocabEyebrow.text = if (useRefreshLabel) "RETENTION" else "WORD"
+        views.textVocabEyebrow.setTextColor(ContextCompat.getColor(activity, colorRes))
     }
 
     private fun renderScoreText(vocab: Vocab) {
@@ -815,7 +851,7 @@ class QuizController(
             // "previously studied words" cache in sync without rescanning csvData.
             vocabDictionary.notifyVocabIntroduced(vocab)
         }
-        recordDailyAchievements(vocab, wasFullyMastered)
+        recordDailyAchievements(vocab, wasFullyMastered, penalty)
         return announceSkillFinishedIfCrossed(stats, prevFailureProbability)
     }
 
@@ -900,25 +936,40 @@ class QuizController(
 
     /**
      * Trackers tied to a committed (non-compromised) round: the daily streak
-     * (idempotent within a day — first round bumps, the rest no-op) and the
+     * (idempotent within a day — first round bumps, the rest no-op), the
      * lifetime mastered-today highlight (fires only on the active → fully
      * mastered transition for [vocab], compared against the [wasFullyMastered]
-     * pre-state captured before [applyRoundCommit] mutated the stats).
+     * pre-state captured before [applyRoundCommit] mutated the stats), and the
+     * retention reward (+[LifetimeScoreTracker.SCORE_PER_REFRESH_PASS] when a
+     * refresh-pool pick is passed cleanly — failed retention has its own
+     * consequence via fpb bumping the word back into active drilling, no
+     * penalty here).
      */
-    private fun recordDailyAchievements(vocab: Vocab, wasFullyMastered: Boolean) {
+    private fun recordDailyAchievements(
+        vocab: Vocab,
+        wasFullyMastered: Boolean,
+        penalty: Long,
+    ) {
         val streak = StreakTracker.recordPracticeToday(activity.applicationContext)
         streakBadge.surfaceResult(streak)
         if (!wasFullyMastered && isFullyMasteredNow(vocab)) {
             MasteryTracker.recordMasteredToday(activity.applicationContext)
+        }
+        if (currentRoundFromRefreshPool && penalty == 0L) {
+            LifetimeScoreTracker.recordIncrement(
+                activity.applicationContext,
+                LifetimeScoreTracker.SCORE_PER_REFRESH_PASS,
+            )
         }
     }
 
     /**
      * Mastery-crossing event: this round drove the current skill's fpb from
      * "still active" to "below threshold". Records the per-skill "-N today"
-     * suffix that decorates the ACTIVE WORDS label, plays the success chime,
-     * and returns true so [updateVocab] can hold off the next round's TTS
-     * long enough not to drown the chime.
+     * suffix that decorates the ACTIVE WORDS label, awards
+     * [LifetimeScoreTracker.SCORE_PER_SKILL_MASTERY] to the user's knowledge
+     * score, plays the success chime, and returns true so [updateVocab] can
+     * hold off the next round's TTS long enough not to drown the chime.
      */
     private fun announceSkillFinishedIfCrossed(
         stats: SkillStats,
@@ -928,6 +979,10 @@ class QuizController(
             prevFailureProbability >= Vocab.SKILL_FINISHED_THRESHOLD
         if (!crossedNow) return false
         SkillFinishedTracker.recordFinishedToday(activity.applicationContext, currentSkill)
+        LifetimeScoreTracker.recordIncrement(
+            activity.applicationContext,
+            LifetimeScoreTracker.SCORE_PER_SKILL_MASTERY,
+        )
         sounds.playSuccess()
         return true
     }

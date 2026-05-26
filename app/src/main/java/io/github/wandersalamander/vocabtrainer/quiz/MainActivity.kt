@@ -33,6 +33,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.openDictionaryStream
 import io.github.wandersalamander.vocabtrainer.llm.LlmService
 import io.github.wandersalamander.vocabtrainer.quiz.ui.refreshActiveBar
 import io.github.wandersalamander.vocabtrainer.quiz.ui.refreshLifetimeBar
+import io.github.wandersalamander.vocabtrainer.quiz.ui.refreshLifetimeScoreBadge
 import io.github.wandersalamander.vocabtrainer.service.MyForegroundService
 import io.github.wandersalamander.vocabtrainer.settings.SettingsActivity
 import io.github.wandersalamander.vocabtrainer.streak.StreakAlarmScheduler
@@ -168,6 +169,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textGuessLong = findViewById(R.id.textGuessLong),
             textStreak = findViewById(R.id.textStreak),
             textStreakShield = findViewById(R.id.textStreakShield),
+            textStreakScore = findViewById(R.id.textStreakScore),
+            textStreakScoreFloater = findViewById(R.id.textStreakScoreFloater),
             textLifetimeLabel = findViewById(R.id.textLifetimeLabel),
             segLifetimeMastered = findViewById(R.id.segLifetimeMastered),
             segLifetimeRemaining = findViewById(R.id.segLifetimeRemaining),
@@ -212,6 +215,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         if (vocabDictionary.csvData.isEmpty()) return
         refreshLifetimeBar(applicationContext, views, vocabDictionary)
         refreshActiveBar(applicationContext, views, vocabDictionary)
+        refreshLifetimeScoreBadge(applicationContext, views, vocabDictionary)
     }
 
     private fun wireQuizControllerListeners() {

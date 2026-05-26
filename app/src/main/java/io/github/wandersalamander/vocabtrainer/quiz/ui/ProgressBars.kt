@@ -14,6 +14,7 @@ import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.dictionary.ActiveSetCounts
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
+import io.github.wandersalamander.vocabtrainer.progress.LifetimeScoreTracker
 import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.progress.SkillFinishedTracker
 import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
@@ -97,6 +98,27 @@ internal fun refreshActiveBar(
     dictionary.computeActiveSetCounts(),
     readSkillFinishedToday(context),
 )
+
+/**
+ * Repaints the streak-row knowledge score badge (`⭐ {score}`). Reads from
+ * [LifetimeScoreTracker], which backfills lazily from the lifetime mastered
+ * count on first call so pre-v5 / fresh-language users don't see zero.
+ *
+ * Shared between [MainActivity.renderInitialProgressBars] (initial idle
+ * render before QuizController exists) and [ProgressBarAnimator.refreshAll]
+ * (per-round refresh — the animator additionally pops the badge and fires
+ * the goldenrod "+N" floater on increment).
+ */
+internal fun refreshLifetimeScoreBadge(
+    context: Context,
+    views: QuizViews,
+    dictionary: MyDictionary,
+): Long {
+    val score = LifetimeScoreTracker.current(context, dictionary)
+    views.textStreakScore.text = "⭐ $score"
+    views.textStreakScore.contentDescription = "Knowledge score: $score"
+    return score
+}
 
 internal fun readSkillFinishedToday(context: Context) = ActiveSkillFinishedToday(
     read = SkillFinishedTracker.todayCount(context, Skill.READ),

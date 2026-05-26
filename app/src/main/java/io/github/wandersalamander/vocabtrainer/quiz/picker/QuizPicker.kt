@@ -2,7 +2,6 @@ package io.github.wandersalamander.vocabtrainer.quiz.picker
 
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
-import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 
 private const val RECENT_WORDS_CAPACITY = 20
 private const val RECENT_FOREIGN_AVOID_COUNT = 4
@@ -68,7 +67,7 @@ internal class QuizPicker(
         newCandidates: Boolean,
         listeningEnabled: Boolean,
         avoidCurrentForeign: String?,
-    ): Pair<Vocab, Skill> {
+    ): PickerResult {
         // When listening is off the LISTEN skill is excluded from the pool —
         // getInactiveVocab always returns READ so it doesn't need the filter.
         val skillFilter: (Skill) -> Boolean =
@@ -89,7 +88,7 @@ internal class QuizPicker(
             .takeLast(RECENT_FOREIGN_AVOID_COUNT)
             .toSet() + setOfNotNull(avoidCurrentForeign)
         var attempts = 0
-        while (pick.first.foreign in avoid && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
+        while (pick.vocab.foreign in avoid && attempts < WRONG_VOCAB_PICK_ATTEMPTS) {
             pick = round.select()
             attempts++
         }

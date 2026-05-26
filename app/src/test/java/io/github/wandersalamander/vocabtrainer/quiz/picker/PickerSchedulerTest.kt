@@ -47,7 +47,7 @@ class PickerSchedulerTest {
             fallback = fallbackPicker(),
         )
         // Round 1: refresh not due (1 < 5) → fallback.
-        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
     }
 
     @Test fun precedenceHigherStrategyWins() {
@@ -60,7 +60,7 @@ class PickerSchedulerTest {
             fallback = fallbackPicker(),
         )
         // Both due the same round → registration-order precedence picks "high".
-        assertEquals("high", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("high", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
     }
 
     @Test fun nullStrategyFallsThroughToNextThenFallback() {
@@ -72,7 +72,7 @@ class PickerSchedulerTest {
             ),
             fallback = fallbackPicker(),
         )
-        assertEquals("uniform", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("uniform", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
     }
 
     @Test fun everyNthFiresOnTheIntervalRounds() {
@@ -83,7 +83,7 @@ class PickerSchedulerTest {
             ),
             fallback = fallbackPicker(),
         )
-        val seen = (1..6).map { scheduler.beginRound(ctx(dict)).select().first.foreign }
+        val seen = (1..6).map { scheduler.beginRound(ctx(dict)).select().vocab.foreign }
         assertEquals(listOf("fb", "fb", "refresh", "fb", "fb", "refresh"), seen)
     }
 
@@ -100,11 +100,11 @@ class PickerSchedulerTest {
         )
         scheduler.beginRound(ctx(dict)).select() // r1: tick→1, not due
         // r2: tick→2, due but empty → fallback; counter NOT reset.
-        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
         hasMastered = true
         // r3: tick→3 (still ≥ 2) → refresh finally serves. Proves a due-but-empty
         // slot doesn't lose its turn.
-        assertEquals("refresh", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("refresh", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
     }
 
     @Test fun reRollWithinRoundDoesNotAdvanceCadence() {
@@ -120,7 +120,7 @@ class PickerSchedulerTest {
         repeat(10) { round1.select() }
         // Round 2: a single legit tick→2, still < 5. If the re-rolls had each
         // ticked, the counter would be past 5 and refresh would fire here.
-        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
     }
 
     @Test fun newCandidatesRunsOnlyIntroductionAndDoesNotTickCadence() {
@@ -133,12 +133,12 @@ class PickerSchedulerTest {
             fallback = fallbackPicker(),
         )
         // New-word round: only introduction is eligible; refresh must NOT tick.
-        assertEquals("intro", scheduler.beginRound(ctx(dict, newCandidates = true)).select().first.foreign)
+        assertEquals("intro", scheduler.beginRound(ctx(dict, newCandidates = true)).select().vocab.foreign)
         // r2 normal: refresh tick→1 (not due) → fallback.
-        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("fb", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
         // r3 normal: tick→2 (due) → refresh. Had the new-word round ticked,
         // refresh would have fired on r2 instead.
-        assertEquals("refresh", scheduler.beginRound(ctx(dict)).select().first.foreign)
+        assertEquals("refresh", scheduler.beginRound(ctx(dict)).select().vocab.foreign)
     }
 
     @Test fun duplicatePickerIdsRejected() {
