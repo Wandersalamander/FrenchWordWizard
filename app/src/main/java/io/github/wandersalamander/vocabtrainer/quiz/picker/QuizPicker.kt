@@ -12,7 +12,7 @@ private const val WRONG_VOCAB_PICK_ATTEMPTS = 50
 // granted to a due mastered (word, skill) pair, so post-mastery retention gets
 // a guaranteed slot regardless of how crowded the active pool is. Skipped when
 // no mastered pair has gone stale.
-private const val MASTERED_REFRESH_INTERVAL = 20
+private const val MASTERED_REFRESH_INTERVAL = 10
 
 // Backup safety floor on the active pool: every Nth round is granted to a
 // uniform random pick from active pairs, ignoring sortValue weights. Catches
