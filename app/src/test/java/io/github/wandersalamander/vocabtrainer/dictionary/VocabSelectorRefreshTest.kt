@@ -1,0 +1,151 @@
+package io.github.wandersalamander.vocabtrainer.dictionary
+
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Test
+import java.io.ByteArrayInputStream
+
+/**
+ * Selection-policy tests for [pickMasteredVocabToRefresh]: the two-tier
+ * priority (shortest [SkillStats.refreshIntervalDays] first; within the band,
+ * weighted by overdue × (nFailed + 1)).
+ */
+class VocabSelectorRefreshTest {
+
+    private val dayMs = 86_400_000L
+
+    private fun dictionaryOf(lines: List<String>): MyDictionary {
+        val csv = lines.joinToString("\n")
+        return MyDictionary(ByteArrayInputStream(csv.toByteArray()))
+    }
+
+    /**
+     * Force a (vocab, skill) into the mastered/refresh pool with a given
+     * interval and idle days. Uses [SkillStats.fastTracked] to short-circuit
+     * fpb below the mastery threshold so the test doesn't need to engineer a
+     * long clean-view sequence.
+     */
+    private fun SkillStats.makeRefreshEligible(
+        intervalDays: Float,
+        idleDays: Long,
+        now: Long,
+        nFailed: Float = 0f,
+    ) {
+        nTimesViewed = 5
+        nTimesFailed = nFailed
+        fastTracked = true
+        refreshIntervalDays = intervalDays
+        lastDisplayed = now - idleDays * dayMs
+    }
+
+    @Test fun returnsNullWhenNothingIsDue() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        // Mastered but just shown: well within its 1-day interval.
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 0, now = now,
+        )
+        assertNull(dict.pickMasteredVocabToRefresh(now = now))
+    }
+
+    @Test fun pickPrefersShortestIntervalBand() {
+        // Two due pairs: one at 1-day interval, one at 16-day interval. Both
+        // way overdue. The 16-day word must never surface while the 1-day is
+        // also eligible — that's the fragility-first priority.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 30, now = now,
+        )
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 16f, idleDays = 100, now = now,
+        )
+
+        repeat(200) {
+            val pick = dict.pickMasteredVocabToRefresh(now = now)
+            assertNotNull(pick)
+            assertEquals(
+                "long-interval word leaked through fragility priority",
+                "h1", pick!!.first.hash,
+            )
+        }
+    }
+
+    @Test fun pickWeightsByFailureCountWithinBand() {
+        // Three pairs all at the same 1-day band, all equally overdue. The
+        // high-failure word should dominate selections, but never-failed words
+        // still get a non-zero share (nFailed + 1 floor).
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+            "Buch\tbook\t1\th3\tDas Buch ist gut.\tBuch.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 2, now = now, nFailed = 0f,
+        )
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 2, now = now, nFailed = 2f,
+        )
+        dict.csvData[2].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 2, now = now, nFailed = 10f,
+        )
+
+        val picks = mutableMapOf<String, Int>()
+        repeat(3_000) {
+            val (vocab, _) = dict.pickMasteredVocabToRefresh(now = now)!!
+            picks[vocab.hash] = (picks[vocab.hash] ?: 0) + 1
+        }
+        val h1 = picks["h1"] ?: 0  // weight 1
+        val h2 = picks["h2"] ?: 0  // weight 3
+        val h3 = picks["h3"] ?: 0  // weight 11
+        // Ordering must reflect the weights, well above sampling noise across 3k draws.
+        assertTrue("hardest word should dominate: h1=$h1 h2=$h2 h3=$h3", h3 > h2)
+        assertTrue("medium-fail should beat clean: h1=$h1 h2=$h2", h2 > h1)
+        // Clean word still gets some share (no starvation).
+        assertTrue("clean word should not be starved: h1=$h1", h1 > 0)
+    }
+
+    @Test fun longIntervalBandSurfacesWhenShortBandIsEmpty() {
+        // Only a 32-day mastered pair is due — picker must pick it rather than
+        // returning null just because no 1-day candidates exist.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 32f, idleDays = 60, now = now,
+        )
+        val pick = dict.pickMasteredVocabToRefresh(now = now)
+        assertNotNull(pick)
+        assertEquals("h1", pick!!.first.hash)
+    }
+
+    @Test fun nonOverdueShortIntervalDoesNotMaskOverdueLongInterval() {
+        // A 1-day pair that's NOT actually due (score == 0) shouldn't be a
+        // candidate at all — so the longer-interval overdue pair should win.
+        // Pins the precondition: the interval-band priority only applies to
+        // the eligible pool, not to all mastered pairs.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 0, now = now,  // not due
+        )
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 8f, idleDays = 30, now = now,  // overdue
+        )
+        val pick = dict.pickMasteredVocabToRefresh(now = now)
+        assertNotNull(pick)
+        assertEquals("h2", pick!!.first.hash)
+    }
+}

@@ -145,31 +145,52 @@ private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {
 
 /**
  * Pick a mastered (word, skill) pair whose recall has likely decayed past
- * its stability window, weighted by how overdue it is. Returns null when
- * no mastered pair is due yet (e.g. early users with mostly active words,
- * or right after every mastered pair has been refreshed). [skillFilter]
- * excludes skills the same way [getActiveVocabWeighted] does.
+ * its refresh interval. Returns null when no mastered pair is due yet (e.g.
+ * early users with mostly active words, or right after every mastered pair
+ * has been refreshed). [skillFilter] excludes skills the same way
+ * [getActiveVocabWeighted] does.
+ *
+ * Selection is two-tiered:
+ *   1. Strict priority on the shortest [SkillStats.refreshIntervalDays] in
+ *      the eligible pool — fragile (recently learned or recently failed)
+ *      pairs surface before stable long-interval ones, since missing a
+ *      1-day refresh costs more than missing a 64-day one.
+ *   2. Within that interval band, weighted-random by overdue ratio ×
+ *      (nTimesFailed + 1) — historically harder pairs lift, without
+ *      entirely starving never-failed pairs.
  */
 fun MyDictionary.pickMasteredVocabToRefresh(
     skillFilter: (Skill) -> Boolean = { true },
+    now: Long = System.currentTimeMillis(),
 ): Pair<Vocab, Skill>? {
-    val now = System.currentTimeMillis()
-    val candidates: List<Pair<Pair<Vocab, Skill>, Double>> = csvData.flatMap { vocab ->
+    data class Candidate(
+        val pair: Pair<Vocab, Skill>,
+        val overdueScore: Double,
+        val intervalDays: Float,
+        val nFailed: Float,
+    )
+    val candidates = csvData.flatMap { vocab ->
         if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
         Skill.ladder.mapNotNull { skill ->
             if (!skillFilter(skill)) return@mapNotNull null
             if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
             val score = vocab.failureProbabilityMasteredWords(skill, now)
-            if (score > 0.0) (vocab to skill) to score else null
+            if (score <= 0.0) return@mapNotNull null
+            val stats = vocab.stats(skill)
+            Candidate(vocab to skill, score, stats.refreshIntervalDays, stats.nTimesFailed)
         }
     }
     if (candidates.isEmpty()) return null
-    val total = candidates.sumOf { it.second }
+
+    val minInterval = candidates.minOf { it.intervalDays }
+    val band = candidates.filter { it.intervalDays == minInterval }
+
+    val total = band.sumOf { it.overdueScore * (it.nFailed + 1f) }
     val randomValue = Random.nextDouble(0.0, total)
     var sum = 0.0
-    for ((pair, weight) in candidates) {
-        sum += weight
-        if (sum >= randomValue) return pair
+    for (c in band) {
+        sum += c.overdueScore * (c.nFailed + 1f)
+        if (sum >= randomValue) return c.pair
     }
-    return candidates.last().first
+    return band.last().pair
 }
