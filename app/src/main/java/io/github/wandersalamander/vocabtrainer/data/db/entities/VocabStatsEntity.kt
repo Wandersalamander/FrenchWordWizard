@@ -39,4 +39,15 @@ data class VocabStatsEntity(
      */
     @ColumnInfo(defaultValue = "0")
     val fastTracked: Boolean = false,
+    /**
+     * Doubling post-mastery refresh schedule in days. Maintained by
+     * [io.github.wandersalamander.vocabtrainer.dictionary.SkillStats.applyRoundCommit]
+     * — clean refresh while mastered doubles it, hint holds, full fail resets
+     * to 1.0. Read by [io.github.wandersalamander.vocabtrainer.dictionary.Vocab.failureProbabilityMasteredWords]
+     * to gate refresh eligibility. Default 1.0 for pre-v6 rows means existing
+     * mastered pairs become refresh-eligible 1 day after their last view —
+     * intentional, since the old stability formula over-stabilized them.
+     */
+    @ColumnInfo(defaultValue = "1.0")
+    val refreshIntervalDays: Float = 1f,
 )

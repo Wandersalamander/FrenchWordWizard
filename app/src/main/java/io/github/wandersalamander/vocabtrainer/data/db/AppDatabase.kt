@@ -46,7 +46,7 @@ import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
         LifetimeScoreEntity::class,
         MetadataEntity::class,
     ],
-    version = 5,
+    version = 6,
     // JSON schemas are exported to app/schemas/<AppDatabase>/<version>.json
     // (configured via the ksp room.schemaLocation arg in build.gradle).
     // MigrationTestHelper reads them; commit the generated files alongside
@@ -70,7 +70,7 @@ abstract class AppDatabase : RoomDatabase() {
         // Current schema version. MUST equal @Database(version = …) above.
         // Exposed so migration tests assert against one version instead of a
         // scattered literal; MigrationCoverageTest fails if the two drift.
-        internal const val SCHEMA_VERSION = 5
+        internal const val SCHEMA_VERSION = 6
 
         @Volatile
         private var instance: AppDatabase? = null
@@ -182,12 +182,32 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Adds [VocabStatsEntity.refreshIntervalDays] (REAL NOT NULL, default
+         * 1.0). Replaces the prior streak-based stability formula in
+         * [io.github.wandersalamander.vocabtrainer.dictionary.Vocab.failureProbabilityMasteredWords]
+         * with a doubling refresh schedule maintained per (vocab, skill) on
+         * [io.github.wandersalamander.vocabtrainer.dictionary.SkillStats]. Purely
+         * additive — every pre-v6 row decodes to 1.0, meaning existing mastered
+         * pairs become refresh-eligible 1 day after their last view. That's
+         * intentional: the old formula over-stabilized words, so this thaw is
+         * the migration we want.
+         */
+        internal val MIGRATION_5_6 = object : Migration(5, 6) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "ALTER TABLE `vocab_stats` " +
+                        "ADD COLUMN `refreshIntervalDays` REAL NOT NULL DEFAULT 1.0"
+                )
+            }
+        }
+
         // Single source of truth for the migrations get() applies.
         // MigrationCoverageTest exercises this same array through the real
         // builder, so registering a migration here wires it into prod AND the
         // coverage test at once. Declared after MIGRATION_2_3 so the property
         // initializer sees a non-null value.
         internal val ALL_MIGRATIONS: Array<Migration> =
-            arrayOf(MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+            arrayOf(MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
     }
 }

@@ -4,7 +4,6 @@ import io.github.wandersalamander.vocabtrainer.data.VocabInteraction
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -501,17 +500,15 @@ class SchedulingMathTest {
         assertEquals(0.0, v.failureProbabilityMasteredWords(Skill.READ, now = 0L), 1e-9)
     }
 
-    @Test fun masteredRefresh_isZeroWithinStabilityWindow() {
+    @Test fun masteredRefresh_isZeroWithinInterval() {
         val v = newVocab()
         val stats = v.stats(Skill.READ)
-        // Mastered (many clean views, fast view times so the slow-gate doesn't
-        // pre-empt the stability check).
         stats.nTimesViewed = 100
         stats.nTimesFailed = 0f
         stats.viewTimeMilli = 1_500L
         stats.viewTimeMilli_prev = 1_500L
         val now = 1_700_000_000_000L
-        stats.lastDisplayed = now  // just shown
+        stats.lastDisplayed = now  // just shown — 0 days < default 1-day interval
         assertEquals(0.0, v.failureProbabilityMasteredWords(Skill.READ, now), 1e-9)
     }
 
@@ -522,10 +519,9 @@ class SchedulingMathTest {
         stats.nTimesFailed = 0f
         stats.viewTimeMilli = 1_500L
         stats.viewTimeMilli_prev = 1_500L
-        // Failed once long ago, then a long clean streak ending at lastDisplayed.
         val now = 1_700_000_000_000L
-        stats.lastTimeFailed = now - 100L * DAY_MS
-        stats.lastDisplayed = now - 90L * DAY_MS  // 10 days since the failure, then 90 days idle
+        // 90 days idle on a default 1-day interval → very overdue, score caps.
+        stats.lastDisplayed = now - 90L * DAY_MS
         val score = v.failureProbabilityMasteredWords(Skill.READ, now)
         assertTrue("should be overdue (>0), was $score", score > 0.0)
     }
@@ -538,65 +534,113 @@ class SchedulingMathTest {
         stats.viewTimeMilli = 1_500L
         stats.viewTimeMilli_prev = 1_500L
         val now = 1_700_000_000_000L
-        // Streak: 30 days; idle: years -> overdue ratio absurdly high.
-        stats.lastTimeFailed = now - 365L * 10 * DAY_MS
+        // Years idle — overdue ratio would be huge without the cap.
         stats.lastDisplayed = now - 365L * 9 * DAY_MS
         val score = v.failureProbabilityMasteredWords(Skill.READ, now)
-        // The implementation caps the overdue ratio; verify it doesn't blow up.
         assertTrue("score should be finite", score.isFinite())
         assertTrue("score should be bounded (<=3.0 per OVERDUE_CAP)", score <= 3.0 + 1e-9)
     }
 
-    @Test fun masteredRefresh_legacyWithFailuresUsesFloor() {
-        // Regression for the legacy bug: a mastered record with nTimesFailed > 0
-        // but lastTimeFailed == 0L (pre-feature install) used to fall through to
-        // the implicit-views branch, which could over-stabilize the word for up
-        // to REFRESH_CAP_DAYS. The fix pins it at the 7-day floor so the word
-        // cycles back into refresh on its normal cadence.
-        val legacy = newVocab()
-        val legacyStats = legacy.stats(Skill.READ)
-        legacyStats.nTimesViewed = 100
-        legacyStats.nTimesFailed = 0.5f  // historical failures but timestamp lost
-        legacyStats.lastTimeFailed = 0L
-        legacyStats.viewTimeMilli = 1_500L
-        legacyStats.viewTimeMilli_prev = 1_500L
-        val now = 1_700_000_000_000L
-        legacyStats.lastDisplayed = now - 30L * DAY_MS  // 30 days idle
-
-        val cleanRecord = newVocab()
-        val cleanStats = cleanRecord.stats(Skill.READ)
-        cleanStats.nTimesViewed = 100
-        cleanStats.nTimesFailed = 0f
-        cleanStats.lastTimeFailed = 0L
-        cleanStats.viewTimeMilli = 1_500L
-        cleanStats.viewTimeMilli_prev = 1_500L
-        cleanStats.lastDisplayed = now - 30L * DAY_MS
-
-        val legacyScore = legacy.failureProbabilityMasteredWords(Skill.READ, now)
-        val cleanScore = cleanRecord.failureProbabilityMasteredWords(Skill.READ, now)
-
-        assertTrue("legacy mastered with history should be considered overdue at 30d idle, was $legacyScore",
-            legacyScore > 0.0)
-        // The truly-clean record (nTimesFailed == 0) gets the implicit views
-        // streak, which at nTimesViewed=100 saturates the cap — it should NOT
-        // be flagged as overdue at the same 30-day idle window.
-        assertEquals("clean record should be within stability", 0.0, cleanScore, 1e-9)
-        assertNotEquals("legacy and clean should now diverge", legacyScore, cleanScore)
-    }
-
-    @Test fun masteredRefresh_cleanRecordUsesImplicitViewsStreak() {
-        // No failures ever, no timestamp — implicit streak from nTimesViewed.
-        // With high nTimesViewed the streak hits the cap and the word is stable
-        // through a moderate idle window.
+    @Test fun masteredRefresh_eligibilityGatedByRefreshIntervalDays() {
+        // Within the current interval → 0; past it → > 0. nTimesViewed and
+        // nTimesFailed no longer affect the gate, only the per-pair schedule.
         val v = newVocab()
         val stats = v.stats(Skill.READ)
-        stats.nTimesViewed = 50
+        stats.nTimesViewed = 100
         stats.nTimesFailed = 0f
-        stats.lastTimeFailed = 0L
         stats.viewTimeMilli = 1_500L
         stats.viewTimeMilli_prev = 1_500L
+        stats.refreshIntervalDays = 4f
         val now = 1_700_000_000_000L
-        stats.lastDisplayed = now - 10L * DAY_MS  // small idle, well within implicit streak
+
+        // 3 days idle, schedule says 4 → not yet due.
+        stats.lastDisplayed = now - 3L * DAY_MS
         assertEquals(0.0, v.failureProbabilityMasteredWords(Skill.READ, now), 1e-9)
+
+        // 5 days idle, schedule says 4 → overdue ratio 5/4.
+        stats.lastDisplayed = now - 5L * DAY_MS
+        assertEquals(5.0 / 4.0, v.failureProbabilityMasteredWords(Skill.READ, now), 1e-9)
+    }
+
+    // ---------- Post-mastery refresh schedule (SkillStats.applyRoundCommit) ----------
+
+    /**
+     * Build a SkillStats that's already considered mastered, by setting
+     * fastTracked=true so [SkillStats.failureProbability] short-circuits to
+     * [SkillStats.FAST_TRACKED_FPB] (< Vocab.SKILL_FINISHED_THRESHOLD). Avoids
+     * the need to engineer a real ~10-clean-view sequence in setup.
+     */
+    private fun masteredStats(refreshIntervalDays: Float = 1f): SkillStats = SkillStats(
+        viewTimeMilli = 1_500L,
+        viewTimeMilli_prev = 1_500L,
+        nTimesViewed = 5,
+        nTimesFailed = 0f,
+        fastTracked = true,
+        refreshIntervalDays = refreshIntervalDays,
+    )
+
+    @Test fun refreshInterval_doublesOnCleanRoundAfterMastery() {
+        val s = masteredStats(refreshIntervalDays = 2f)
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = 1_000L)
+        assertEquals(4f, s.refreshIntervalDays, 1e-6f)
+    }
+
+    @Test fun refreshInterval_holdsSteadyOnHint() {
+        val s = masteredStats(refreshIntervalDays = 4f)
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0.5f, nowMs = 1_000L)
+        assertEquals("hint must not advance the schedule", 4f, s.refreshIntervalDays, 1e-6f)
+    }
+
+    @Test fun refreshInterval_resetsToOneOnFullFail() {
+        val s = masteredStats(refreshIntervalDays = 16f)
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 1f, nowMs = 1_000L)
+        assertEquals(1f, s.refreshIntervalDays, 1e-6f)
+    }
+
+    @Test fun refreshInterval_doesNotDoubleOnMasteryEntryRound() {
+        // Pre-round: nViewed=5, nFailed=0, fast → fpb = 0.5/5 = 0.1, which is
+        // exactly at the threshold (not strictly below) so wasMasteredBefore
+        // is false. The clean round drops post-round fpb under 0.1, crossing
+        // into mastery — but the interval should still be the default 1, not
+        // 2, so the user sees the first refresh one day later (not two).
+        val s = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 5,
+            nTimesFailed = 0f,
+        )
+        assertEquals("setup precondition: pre-round not yet mastered",
+            0.1f, s.failureProbability(), 1e-6f)
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = 1_000L)
+        assertTrue("setup precondition: post-round now mastered",
+            s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD)
+        assertEquals("entry round must not double", 1f, s.refreshIntervalDays, 1e-6f)
+    }
+
+    @Test fun refreshInterval_capsAtMaximum() {
+        val s = masteredStats(refreshIntervalDays = SkillStats.MAX_REFRESH_INTERVAL_DAYS)
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = 1_000L)
+        assertEquals(
+            SkillStats.MAX_REFRESH_INTERVAL_DAYS,
+            s.refreshIntervalDays,
+            1e-6f,
+        )
+    }
+
+    @Test fun refreshInterval_doesNotDoubleOnCleanActiveRound() {
+        // Clean round on an un-mastered pair — the field is stored on every
+        // SkillStats but must not start growing until the pair is actually in
+        // the refresh pool, otherwise heavily-drilled words would saturate the
+        // schedule before their first refresh ever fires.
+        val s = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 2,
+            nTimesFailed = 1f,  // fpb = 0.5/2 + (1 - 0.25) * 0.5 ≈ 0.625
+        )
+        assertTrue("setup precondition: pre-round far from mastery",
+            s.failureProbability() > Vocab.SKILL_FINISHED_THRESHOLD)
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = 1_000L)
+        assertEquals(1f, s.refreshIntervalDays, 1e-6f)
     }
 }

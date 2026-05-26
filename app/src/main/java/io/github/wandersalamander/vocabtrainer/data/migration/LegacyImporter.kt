@@ -109,6 +109,10 @@ object LegacyImporter {
                     lastDisplayed = fields.lastDisplayed ?: 0L,
                     lastFailed = fields.lastTimeFailed ?: 0L,
                     lastModifiedMs = now,
+                    // Pre-Room imports never tracked a refresh schedule —
+                    // start at the 1-day floor and let the doubling earn the
+                    // longer intervals via real refreshes.
+                    refreshIntervalDays = 1f,
                 )
             }
             if (statsRows.isNotEmpty()) db.vocabDao().upsertStatsBulk(statsRows)

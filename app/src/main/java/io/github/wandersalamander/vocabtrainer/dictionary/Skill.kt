@@ -52,6 +52,18 @@ data class SkillStats(
      * penalty, or by QuizController on a later slow round.
      */
     var fastTracked: Boolean = false,
+    /**
+     * Post-mastery refresh cadence in days. Read by
+     * [io.github.wandersalamander.vocabtrainer.dictionary.Vocab.failureProbabilityMasteredWords]
+     * to decide when a mastered (word, skill) pair becomes refresh-eligible
+     * again. Doubles on every clean refresh of an already-mastered pair (1 → 2
+     * → 4 → 8 …, capped at [MAX_REFRESH_INTERVAL_DAYS]), holds steady when the
+     * user needed a hint, resets to 1 on a full fail. The doubling only fires
+     * AFTER mastery — the round that first crosses the threshold leaves the
+     * interval at its current value, so a freshly mastered pair surfaces 1 day
+     * later, exactly once, before the schedule starts growing.
+     */
+    var refreshIntervalDays: Float = 1f,
 ) {
     /** Single entry point for failure events so the counter and timestamp stay in sync. */
     fun recordFailure(amount: Float) {
@@ -102,6 +114,11 @@ data class SkillStats(
      * collapses them from the log; simulation skips them).
      */
     fun applyRoundCommit(timeElapsedMs: Long, failAmount: Float, nowMs: Long) {
+        // Snapshot the pre-round mastery state for the refresh-interval update
+        // below. Any mid-round recordFailure has already landed by now, so this
+        // is the fpb the picker saw when selecting this round (a clean round
+        // can't shift it; only failures can, and those are reflected here).
+        val wasMasteredBefore = failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
         nTimesViewed += 1
         viewTimeMilli_prev = viewTimeMilli
         viewTimeMilli = (
@@ -110,6 +127,21 @@ data class SkillStats(
             ).toLong()
         lastDisplayed = nowMs
         recordInteraction(failAmount, nowMs)
+        when {
+            // Full fail (post-mastery or active drilling alike): the next
+            // mastered re-entry starts the schedule over at 1 day.
+            failAmount >= 1f -> refreshIntervalDays = 1f
+            // Hint: held the schedule steady; the next refresh fires at the
+            // same interval rather than punishing the user for needing a nudge.
+            failAmount > 0f -> Unit
+            // Clean refresh of an already-mastered pair: earn a longer gap.
+            // The mastery-entry round itself (wasMasteredBefore == false) is
+            // skipped so the user sees the first post-mastery refresh exactly
+            // 1 day out.
+            wasMasteredBefore ->
+                refreshIntervalDays =
+                    (refreshIntervalDays * 2f).coerceAtMost(MAX_REFRESH_INTERVAL_DAYS)
+        }
     }
 
     /**
@@ -128,6 +160,7 @@ data class SkillStats(
         lastTimeFailed = other.lastTimeFailed
         recentInteractions = other.recentInteractions
         fastTracked = other.fastTracked
+        refreshIntervalDays = other.refreshIntervalDays
     }
 
     fun failureProbability(): Float {
@@ -332,5 +365,10 @@ data class SkillStats(
         // Local copy of the day-in-millis constant (Vocab keeps its own private
         // one) so SkillStats' clean-streak math is self-contained.
         private const val MILLIS_PER_DAY = 86_400_000.0
+
+        // Ceiling for the doubling refresh schedule. After ~7-8 successful
+        // post-mastery refreshes the interval saturates here. Matches the
+        // prior Vocab.REFRESH_CAP_DAYS so the long-tail behavior is unchanged.
+        const val MAX_REFRESH_INTERVAL_DAYS = 180f
     }
 }

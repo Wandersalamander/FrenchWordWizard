@@ -71,6 +71,7 @@ data class Vocab(
             stats.lastTimeFailed = saved.lastFailed
             stats.recentInteractions = saved.recentInteractions
             stats.fastTracked = saved.fastTracked
+            stats.refreshIntervalDays = saved.refreshIntervalDays
         }
         ignore = snapshot.ignore
         flaggedHard = snapshot.flaggedHard
@@ -94,6 +95,7 @@ data class Vocab(
                 lastFailed = stats.lastTimeFailed,
                 recentInteractions = stats.recentInteractions,
                 fastTracked = stats.fastTracked,
+                refreshIntervalDays = stats.refreshIntervalDays,
             )
         }
         p.save(
@@ -162,10 +164,14 @@ data class Vocab(
     /**
      * For a (word, skill) pair that has already been mastered, an
      * approximation of how likely the user has forgotten it: 0.0 while still
-     * comfortably within the pair's expected stability window, then climbing
-     * with the overdue ratio (1.0 = just past due, capped at [OVERDUE_CAP]).
+     * within the pair's current refresh interval (see
+     * [SkillStats.refreshIntervalDays]), then climbing with the overdue ratio
+     * (1.0 = just past due, capped at [OVERDUE_CAP]).
+     *
      * Returns 0.0 for pairs that aren't yet mastered. Used by the cadence-based
-     * mastered-refresh picker to weight the candidate pool.
+     * mastered-refresh picker to weight the candidate pool. The schedule grows
+     * by doubling on each clean post-mastery refresh — the interval itself is
+     * updated inside [SkillStats.applyRoundCommit]; this function just reads it.
      */
     fun failureProbabilityMasteredWords(
         skill: Skill,
@@ -174,24 +180,9 @@ data class Vocab(
         val s = stats(skill)
         if (s.failureProbability() >= SKILL_FINISHED_THRESHOLD) return 0.0
         val daysSinceLastDisplayed = (now - s.lastDisplayed) / MILLIS_PER_DAY
-        val cleanStreakDays = when {
-            s.lastTimeFailed > 0L && s.lastDisplayed > s.lastTimeFailed ->
-                (s.lastDisplayed - s.lastTimeFailed) / MILLIS_PER_DAY
-            s.nTimesFailed > 0f ->
-                // Legacy record: has failed historically but the timestamp wasn't
-                // tracked back then. Don't credit it with an implicit clean streak —
-                // pin to the floor so it cycles back into refresh on its normal cadence
-                // instead of getting over-stabilized.
-                REFRESH_FLOOR_DAYS
-            else ->
-                // Never failed for this skill — no streak anchor. Each clean view
-                // contributes a few days of implicit stability instead.
-                s.nTimesViewed * VIEW_AS_STREAK_DAYS
-        }
-        val stabilityDays = (cleanStreakDays + REFRESH_FLOOR_DAYS)
-            .coerceIn(REFRESH_FLOOR_DAYS, REFRESH_CAP_DAYS)
-        if (daysSinceLastDisplayed < stabilityDays) return 0.0
-        return (daysSinceLastDisplayed / stabilityDays).coerceAtMost(OVERDUE_CAP)
+        val intervalDays = s.refreshIntervalDays.toDouble()
+        if (daysSinceLastDisplayed < intervalDays) return 0.0
+        return (daysSinceLastDisplayed / intervalDays).coerceAtMost(OVERDUE_CAP)
     }
 
     fun pronounceableEn(): String = EnglishAbbreviations.expand(english)
@@ -240,11 +231,9 @@ data class Vocab(
             return CLOSING_BOOST_MAX - (CLOSING_BOOST_MAX - 1.0) * t
         }
 
-        // Refresh pool tuning. See [failureProbabilityMasteredWords] for how
-        // these combine.
-        private const val REFRESH_FLOOR_DAYS = 7.0
-        private const val REFRESH_CAP_DAYS = 180.0
-        private const val VIEW_AS_STREAK_DAYS = 3.0
+        // Refresh pool tuning. The interval itself lives on [SkillStats]; this
+        // only caps how overdue a single pair's weight can grow, so one very
+        // stale word doesn't dominate the weighted picker.
         private const val OVERDUE_CAP = 3.0
         private const val MILLIS_PER_DAY = 86_400_000.0
 

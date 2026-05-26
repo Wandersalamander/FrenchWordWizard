@@ -64,4 +64,6 @@ data class SkillStatsSnapshot(
     val recentInteractions: List<VocabInteraction> = emptyList(),
     /** See [VocabStatsEntity.fastTracked]. */
     val fastTracked: Boolean = false,
+    /** See [VocabStatsEntity.refreshIntervalDays]. */
+    val refreshIntervalDays: Float = 1f,
 )
