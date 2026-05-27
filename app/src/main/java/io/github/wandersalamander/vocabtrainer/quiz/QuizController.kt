@@ -226,6 +226,11 @@ class QuizController(
             // without a spot check, regardless of which button or which path
             // (threshold crossing, fast-track) would have caused it.
             startSpotCheck()
+        } else if (currentVocab != null && currentRoundFromRefreshPool) {
+            // Refresh-pool word: a clean commit doubles refreshIntervalDays,
+            // so the doubling has to be earned by verified recall — fast
+            // Next-presses must not buy a longer interval without evidence.
+            startSpotCheck()
         } else if (currentVocab != null && Random.nextDouble() < SPOT_CHECK_PROBABILITY) {
             startSpotCheck()
         } else {
