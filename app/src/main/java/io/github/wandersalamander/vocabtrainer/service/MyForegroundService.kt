@@ -10,6 +10,10 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
+import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.getActiveVocabWeighted
@@ -125,7 +129,12 @@ class MyForegroundService : Service() {
         // reflected in this service's notification. Cheap — a Map lookup per
         // Vocab; the old SharedPreferences-listener dirty-bit isn't needed.
         vocabDictionary.reloadPreferences()
-        val (vocab, _) = vocabDictionary.getActiveVocabWeighted()
+        val threshold = AppPrefs.get(this)
+            .getInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
+            .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+        val (vocab, _) = vocabDictionary.getActiveVocabWeighted(
+            autoIntroduceThreshold = threshold,
+        )
 
         val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)

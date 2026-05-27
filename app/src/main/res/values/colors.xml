@@ -92,4 +92,11 @@
          carries the warm tone visually regardless). -->
     <color name="streak_count_color">#9A3412</color>
     <color name="streak_shield_color">#75715E</color>
+
+    <!-- Auto-add threshold stepper digit + button colour. Raw monokai_yellow
+         (#E6DB74) sits around 1.3:1 against cream and fails large-text
+         contrast outright; this deepened olive-mustard tone reads cleanly
+         against the cream card surface. Night override below reverts to the
+         canonical Monokai yellow for the dark canvas. -->
+    <color name="auto_add_color">#7A6300</color>
 </resources>

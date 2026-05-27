@@ -64,5 +64,5 @@ class ActiveWeightedPicker : PickerStrategy {
     override val id = PickerId.ACTIVE_WEIGHTED
     override val cadence = Cadence.Always
     override fun pick(ctx: PickContext): Pair<Vocab, Skill> =
-        ctx.dictionary.getActiveVocabWeighted(ctx.skillFilter)
+        ctx.dictionary.getActiveVocabWeighted(ctx.skillFilter, ctx.autoIntroduceThreshold)
 }

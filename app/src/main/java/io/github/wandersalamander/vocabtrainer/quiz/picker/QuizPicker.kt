@@ -1,5 +1,6 @@
 package io.github.wandersalamander.vocabtrainer.quiz.picker
 
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 
@@ -39,6 +40,7 @@ private const val UNIFORM_ACTIVE_INTERVAL = 20
  */
 internal class QuizPicker(
     private val dictionary: MyDictionary,
+    private val autoIntroduceThresholdProvider: () -> Int = { AUTO_INTRODUCE_THRESHOLD },
 ) {
     private val recentWords = ArrayDeque<String>()
 
@@ -72,7 +74,12 @@ internal class QuizPicker(
         // getInactiveVocab always returns READ so it doesn't need the filter.
         val skillFilter: (Skill) -> Boolean =
             if (listeningEnabled) ({ true }) else ({ it != Skill.LISTEN })
-        val ctx = PickContext(dictionary, newCandidates, skillFilter)
+        val ctx = PickContext(
+            dictionary = dictionary,
+            newCandidates = newCandidates,
+            skillFilter = skillFilter,
+            autoIntroduceThreshold = autoIntroduceThresholdProvider(),
+        )
 
         // beginRound ticks cadence ONCE; the anti-repeat re-rolls below reuse
         // the same round so they don't advance any periodic slot.

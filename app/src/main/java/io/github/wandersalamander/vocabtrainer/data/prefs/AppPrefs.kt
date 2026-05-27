@@ -23,6 +23,7 @@ object AppPrefs {
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"
+    const val KEY_AUTO_ADD_THRESHOLD = "auto_add_threshold"
 
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)

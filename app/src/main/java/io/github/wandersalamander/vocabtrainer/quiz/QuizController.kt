@@ -11,8 +11,12 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
+import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
@@ -123,7 +127,17 @@ class QuizController(
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
-    private val picker = QuizPicker(vocabDictionary)
+    // Picker re-reads the user's auto-add threshold each pick so changing it
+    // in Settings takes effect on the very next round — no QuizController
+    // rebuild required.
+    private val picker = QuizPicker(
+        dictionary = vocabDictionary,
+        autoIntroduceThresholdProvider = {
+            AppPrefs.get(activity)
+                .getInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
+                .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+        },
+    )
     private val sentenceManager = SentenceManager(
         activity = activity,
         views = views,

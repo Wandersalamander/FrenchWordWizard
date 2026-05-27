@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Yellow keycap-style stepper button for the auto-add threshold control.
+     Rounded square (10dp) with a 1.5dp yellow outline and translucent fill,
+     so the buttons read as soft "key caps" rather than heavy MaterialButtons
+     — keeps the focus on the numeric value between them. The selector swaps
+     to a low-alpha yellow fill on press for tactile feedback without losing
+     the outlined silhouette. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="#33E6DB74" />
+            <stroke android:width="1.5dp" android:color="@color/auto_add_color" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="1.5dp" android:color="@color/auto_add_color" />
+        </shape>
+    </item>
+</selector>

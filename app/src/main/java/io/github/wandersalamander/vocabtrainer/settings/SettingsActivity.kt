@@ -23,6 +23,9 @@ import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
 import io.github.wandersalamander.vocabtrainer.dictionary.openDictionaryStream
@@ -148,8 +151,47 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
+        setupAutoAddSection()
         setupStreakSection()
         setupResetProgressSection()
+    }
+
+    private fun setupAutoAddSection() {
+        val prefs = AppPrefs.get(this)
+        val valueText = findViewById<TextView>(R.id.autoAddValueText)
+        val decreaseButton = findViewById<TextView>(R.id.autoAddDecreaseButton)
+        val increaseButton = findViewById<TextView>(R.id.autoAddIncreaseButton)
+
+        fun render(value: Int) {
+            valueText.text = value.toString()
+            // The TextView itself reads as "5", so we lift the role onto the
+            // contentDescription with the unit included — TalkBack users get
+            // "Minimum active words: 5" instead of a bare digit.
+            valueText.contentDescription = "Minimum active words: $value"
+            // Boundary buttons go to 35% opacity so the floor/ceiling reads
+            // visually before the no-op tap explains it.
+            decreaseButton.isEnabled = value > AUTO_INTRODUCE_THRESHOLD_MIN
+            decreaseButton.alpha = if (decreaseButton.isEnabled) 1f else 0.35f
+            increaseButton.isEnabled = value < AUTO_INTRODUCE_THRESHOLD_MAX
+            increaseButton.alpha = if (increaseButton.isEnabled) 1f else 0.35f
+        }
+
+        fun current(): Int = prefs.getInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
+            .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+
+        fun update(delta: Int) {
+            val next = (current() + delta)
+                .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+            prefs.edit().putInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, next).apply()
+            render(next)
+        }
+
+        render(current())
+
+        // No debounce: this is a stepper, the user expects rapid taps to land
+        // 1:1 against the value rather than getting swallowed.
+        decreaseButton.setOnClickListener { update(-1) }
+        increaseButton.setOnClickListener { update(+1) }
     }
 
     private fun setupStreakSection() {

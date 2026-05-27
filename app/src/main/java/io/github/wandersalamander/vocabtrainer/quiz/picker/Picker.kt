@@ -1,5 +1,6 @@
 package io.github.wandersalamander.vocabtrainer.quiz.picker
 
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
@@ -76,9 +77,16 @@ sealed interface Cadence {
  *
  * [skillFilter] excludes skills from the candidate pool (e.g. LISTEN when the
  * user has muted listening mode).
+ *
+ * [autoIntroduceThreshold] is the user-configured "minimum active words"
+ * setting from [AppPrefs.KEY_AUTO_ADD_THRESHOLD] — the weighted picker falls
+ * back to introducing a fresh word when the distinct active-word count is
+ * below this. Defaulted to [AUTO_INTRODUCE_THRESHOLD] for tests/foreground
+ * paths that don't read prefs.
  */
 class PickContext(
     val dictionary: MyDictionary,
     val newCandidates: Boolean,
     val skillFilter: (Skill) -> Boolean,
+    val autoIntroduceThreshold: Int = AUTO_INTRODUCE_THRESHOLD,
 )

@@ -136,6 +136,102 @@
         </RadioGroup>
     </LinearLayout>
 
+    <!-- ============================ ACTIVE POOL ============================
+         Auto-add threshold stepper. Yellow stripe — the unused fifth Monokai
+         accent in the settings page — keeps the new control distinct from
+         language (cyan) / sentences (green) / AI (pink) / streak (orange) /
+         reset (purple). The numeric value is the focal point: a 56sp olive-
+         mustard monospace digit flanked by keycap-style ± buttons that read
+         as IDE chrome rather than heavy MaterialButtons. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_yellow"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="Active pool"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A fresh word is pulled in automatically whenever the active pool dips below this number — so the + New word button stops feeling mandatory."
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:lineSpacingExtra="2sp" />
+
+        <!-- Stepper row: outlined keycap buttons flanking the big yellow
+             digit. The value TextView is a polite live region so TalkBack
+             announces the new number whenever ± fires. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/autoAddDecreaseButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_stepper_button_yellow"
+                android:clickable="true"
+                android:contentDescription="Decrease minimum active words"
+                android:focusable="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="−"
+                android:textColor="@color/auto_add_color"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/autoAddValueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:accessibilityLiveRegion="polite"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/auto_add_color"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/autoAddIncreaseButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_stepper_button_yellow"
+                android:clickable="true"
+                android:contentDescription="Increase minimum active words"
+                android:focusable="true"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/auto_add_color"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/CardEyebrow"
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="MIN ACTIVE WORDS · 1–20" />
+    </LinearLayout>
+
     <!-- ============================ ON-DEVICE AI ============================
          Status TextView + action buttons stay as-is; the prose footer is
          restructured into iconified bullets matching dialog_streak_info /

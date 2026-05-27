@@ -27,10 +27,18 @@ import kotlin.random.Random
 // match the expected sequence.
 const val ESSENTIALS_IMPORTANCE: Int = 0
 
-// Auto-pull a fresh inactive word whenever the count of distinct
-// currently-drilling words falls below this — keeps the rotation varied
-// for beginners without overwhelming them.
+// Default auto-pull threshold when the user hasn't set one yet. The active
+// callers read [AppPrefs.KEY_AUTO_ADD_THRESHOLD] and pass it through to
+// [getActiveVocabWeighted]; this is the fallback for paths without prefs
+// access (tests, foreground service) and the initial value for the settings
+// stepper. Keeps the rotation varied for beginners without overwhelming.
 const val AUTO_INTRODUCE_THRESHOLD: Int = 5
+
+// Range surfaced in Settings — picked so the stepper bottoms out one
+// above zero (auto-add still kicks in only when the pool is empty) and
+// tops out somewhere that requires deliberate user intent.
+const val AUTO_INTRODUCE_THRESHOLD_MIN: Int = 1
+const val AUTO_INTRODUCE_THRESHOLD_MAX: Int = 20
 
 fun MyDictionary.getInactiveVocab(): Pair<Vocab, Skill> {
     val firstSkill = Skill.ladder.first()
@@ -67,13 +75,14 @@ private fun pickNextInactive(candidates: List<Vocab>, minImportance: Int): Vocab
  */
 fun MyDictionary.getActiveVocabWeighted(
     skillFilter: (Skill) -> Boolean = { true },
+    autoIntroduceThreshold: Int = AUTO_INTRODUCE_THRESHOLD,
 ): Pair<Vocab, Skill> {
     val activePairs = collectActivePairs(skillFilter)
     // Gate on distinct *words*, not (word, skill) pair count — otherwise
     // LISTEN/INVERT unlocks inflate the pool from 3 distinct words and
     // freeze new-word intake.
     val distinctActiveWords = activePairs.distinctBy { it.first.hash }.size
-    if (distinctActiveWords < AUTO_INTRODUCE_THRESHOLD) {
+    if (distinctActiveWords < autoIntroduceThreshold) {
         return pickFallback(skillFilter)
     }
     return pickWeighted(activePairs)

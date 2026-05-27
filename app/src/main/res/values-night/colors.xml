@@ -34,4 +34,8 @@
     <color name="today_count_color">#E6DB74</color>
     <color name="streak_count_color">#FD971F</color>
     <color name="streak_shield_color">#BCB59A</color>
+
+    <!-- Dark mode: the canonical Monokai yellow already clears 4.5:1 against
+         bg_lift, so the auto-add stepper reverts to the bright accent. -->
+    <color name="auto_add_color">#E6DB74</color>
 </resources>
