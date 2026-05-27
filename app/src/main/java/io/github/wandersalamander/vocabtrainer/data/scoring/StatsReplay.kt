@@ -102,9 +102,14 @@ object StatsReplay {
         if (fastTracking) {
             stats.fastTracked = true
         } else if (stats.fastTracked) {
-            val slowNow = maxOf(stats.viewTimeMilli, stats.viewTimeMilli_prev) >
-                SkillStats.SLOW_VIEW_TIME_MAX_MS
-            if (slowNow) stats.fastTracked = false
+            // Mirror the live path: use the round's actual elapsed time, not
+            // the EMA. The EMA is anchored to the DEFAULT_VIEW_TIME_MS sentinel
+            // for the first 2-3 rounds of a pair's history, which would falsely
+            // revoke fast-track on the very first refresh round even when the
+            // user actually answered quickly. See QuizController.applyFastTrackGate.
+            if (entry.viewTimeMs > SkillStats.SLOW_VIEW_TIME_MAX_MS) {
+                stats.fastTracked = false
+            }
         }
     }
 }

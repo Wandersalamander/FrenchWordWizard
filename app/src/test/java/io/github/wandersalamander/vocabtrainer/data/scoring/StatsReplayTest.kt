@@ -131,19 +131,39 @@ class StatsReplayTest {
     }
 
     @Test fun fastTrackedFlagRevokedByLaterSlowRound() {
-        // Two later slow rounds push the EMA samples above SLOW_VIEW_TIME_MAX_MS;
-        // the slow-revocation in applyEntry must clear the flag so the slow gate
-        // can re-active the pair (the safety the formula short-circuit would
-        // otherwise bypass).
+        // A later slow round (this round's actual elapsedMs > SLOW_VIEW_TIME_MAX_MS)
+        // must revoke fast-track trust so the slow gate can reactivate the pair.
         val stats = StatsReplay.rebuild(
             listOf(
                 entry(t = 1_000L, viewMs = 1_500L),              // fast-track set
-                entry(t = 2_000L, viewMs = 8_000L),              // slow
-                entry(t = 3_000L, viewMs = 8_000L),              // slow → both EMA samples > 5s
+                entry(t = 2_000L, viewMs = 8_000L),              // slow → revoke
             ),
             foreignLetterCount = 5,
         )
         assertFalse("slow later rounds must revoke fast-track trust", stats.fastTracked)
+    }
+
+    @Test fun fastTrackedFlagSurvivesCleanFastRefresh() {
+        // Regression for the "refresh kicked mastered words to active drilling"
+        // bug: a fast-tracked pair has nViewed=1, so viewTimeMilli_prev is still
+        // pinned to DEFAULT_VIEW_TIME_MS (10s) from the sentinel. The prior
+        // EMA-based revocation check fired on every refresh round regardless
+        // of actual user speed; the fix uses the round's real elapsedMs.
+        val stats = StatsReplay.rebuild(
+            listOf(
+                entry(t = 1_000L, viewMs = 1_500L),              // fast-track set
+                entry(t = 2_000L, viewMs = 2_000L),              // fast refresh → keep
+            ),
+            foreignLetterCount = 5,
+        )
+        assertTrue(
+            "a clean fast refresh must preserve fast-track",
+            stats.fastTracked,
+        )
+        assertTrue(
+            "fast-tracked pair must remain below mastery threshold",
+            stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD,
+        )
     }
 
     @Test fun recentInteractionsWindowReflectsTheLog() {

@@ -912,9 +912,15 @@ class QuizController(
         if (fastTracking) {
             stats.fastTracked = true
         } else if (stats.fastTracked) {
-            val slowNow = maxOf(stats.viewTimeMilli, stats.viewTimeMilli_prev) >
-                SkillStats.SLOW_VIEW_TIME_MAX_MS
-            if (slowNow) stats.fastTracked = false
+            // Check THIS round's actual elapsed time, not the EMA. A
+            // fast-tracked pair has nViewed=1, so [SkillStats.viewTimeMilli_prev]
+            // is still pinned to [SkillStats.DEFAULT_VIEW_TIME_MS] (10s) from
+            // the initial sentinel — the EMA-based check would then revoke
+            // every refresh round regardless of actual user speed, kicking
+            // mastered words back to active drilling on a clean recall (which
+            // was the reported bug). The post-EMA check now happens against
+            // the round's real wall-clock time.
+            if (activeViewTime > SkillStats.SLOW_VIEW_TIME_MAX_MS) stats.fastTracked = false
         }
     }
 
