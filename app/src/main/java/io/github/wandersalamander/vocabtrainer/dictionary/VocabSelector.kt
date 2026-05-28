@@ -78,11 +78,16 @@ fun MyDictionary.getActiveVocabWeighted(
     autoIntroduceThreshold: Int = AUTO_INTRODUCE_THRESHOLD,
 ): Pair<Vocab, Skill> {
     val activePairs = collectActivePairs(skillFilter)
-    // Gate on distinct *words*, not (word, skill) pair count — otherwise
-    // LISTEN/INVERT unlocks inflate the pool from 3 distinct words and
-    // freeze new-word intake.
-    val distinctActiveWords = activePairs.distinctBy { it.first.hash }.size
-    if (distinctActiveWords < autoIntroduceThreshold) {
+    // Gate the auto-add on words still active in READ *only* — not distinct
+    // words across all skills. New words always enter via READ, so the real
+    // question behind "do we need a fresh word?" is "how many words am I still
+    // learning to read?". A word whose READ has retired (now drilling only
+    // LISTEN/INVERT) has already made room for a new one and must not keep the
+    // gate shut; counting any-active-skill would let a LISTEN/INVERT backlog
+    // freeze all new-word intake. Each (word, READ) pair is unique in
+    // activePairs, so this count is already the distinct READ-word count.
+    val activeReadWords = activePairs.count { it.second == Skill.READ }
+    if (activeReadWords < autoIntroduceThreshold) {
         return pickFallback(skillFilter)
     }
     return pickWeighted(activePairs)

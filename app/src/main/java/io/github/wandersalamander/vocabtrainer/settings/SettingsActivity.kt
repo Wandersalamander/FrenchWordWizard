@@ -166,8 +166,8 @@ class SettingsActivity : AppCompatActivity() {
             valueText.text = value.toString()
             // The TextView itself reads as "5", so we lift the role onto the
             // contentDescription with the unit included — TalkBack users get
-            // "Minimum active words: 5" instead of a bare digit.
-            valueText.contentDescription = "Minimum active words: $value"
+            // "Minimum words in reading: 5" instead of a bare digit.
+            valueText.contentDescription = "Minimum words in reading: $value"
             // Boundary buttons go to 35% opacity so the floor/ceiling reads
             // visually before the no-op tap explains it.
             decreaseButton.isEnabled = value > AUTO_INTRODUCE_THRESHOLD_MIN

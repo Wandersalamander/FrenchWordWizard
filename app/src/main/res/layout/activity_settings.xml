@@ -165,7 +165,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A fresh word is pulled in automatically whenever the active pool dips below this number — so the + New word button stops feeling mandatory."
+            android:text="A fresh word is pulled in automatically whenever the number of words you're still learning to read dips below this — so the + New word button stops feeling mandatory. Words you've finished reading (still drilling for listening or recall) don't count."
             android:textSize="14sp"
             android:textColor="?android:attr/textColorSecondary"
             android:lineSpacingExtra="2sp" />
@@ -229,7 +229,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="6dp"
             android:gravity="center"
-            android:text="MIN ACTIVE WORDS · 1–20" />
+            android:text="MIN WORDS IN READING · 1–20" />
     </LinearLayout>
 
     <!-- ============================ ON-DEVICE AI ============================
