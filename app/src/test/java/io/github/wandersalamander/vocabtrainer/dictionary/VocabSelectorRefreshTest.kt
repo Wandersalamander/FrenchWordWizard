@@ -23,19 +23,27 @@ class VocabSelectorRefreshTest {
 
     /**
      * Force a (vocab, skill) into the mastered/refresh pool with a given
-     * interval and idle days. Uses [SkillStats.fastTracked] to short-circuit
-     * fpb below the mastery threshold so the test doesn't need to engineer a
-     * long clean-view sequence.
+     * interval and idle days.
+     *
+     * Defaults to [SkillStats.fastTracked] = true, which short-circuits fpb
+     * below the mastery threshold so a test doesn't need to engineer a long
+     * clean-view sequence (and so a high [nFailed] still reads as mastered).
+     * Pass `fastTracked = false` for a pair "drilled" to mastery the long way:
+     * fast view samples + many clean views drive the natural fpb below the cut
+     * (0.5 / nViewed = 0.05 here) without the slow gate flooring it back up.
      */
     private fun SkillStats.makeRefreshEligible(
         intervalDays: Float,
         idleDays: Long,
         now: Long,
         nFailed: Float = 0f,
+        fastTracked: Boolean = true,
     ) {
-        nTimesViewed = 5
+        nTimesViewed = 10
         nTimesFailed = nFailed
-        fastTracked = true
+        viewTimeMilli = 1_000L
+        viewTimeMilli_prev = 1_000L
+        this.fastTracked = fastTracked
         refreshIntervalDays = intervalDays
         lastDisplayed = now - idleDays * dayMs
     }
@@ -143,6 +151,83 @@ class VocabSelectorRefreshTest {
         )
         dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
             intervalDays = 8f, idleDays = 30, now = now,  // overdue
+        )
+        val pick = dict.pickMasteredVocabToRefresh(now = now)
+        assertNotNull(pick)
+        assertEquals("h2", pick!!.first.hash)
+    }
+
+    @Test fun drilledPairIsPreferredOverFastTrackedInSameBand() {
+        // Two due pairs in the same 1-day band: one drilled through the active
+        // pool, one fast-tracked. The drilled pair must take every slot — a
+        // fast-tracked pair (cleared on first sight, never really practised) is
+        // the weakest evidence of learning and shouldn't consume a retention
+        // slot while a drilled pair is due.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 5, now = now, fastTracked = false,
+        )
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 5, now = now, fastTracked = true,
+        )
+
+        repeat(200) {
+            val pick = dict.pickMasteredVocabToRefresh(now = now)
+            assertNotNull(pick)
+            assertEquals(
+                "fast-tracked pair leaked through while a drilled pair was due",
+                "h1", pick!!.first.hash,
+            )
+        }
+    }
+
+    @Test fun drilledPairOutranksFastTrackedEvenAtLongerInterval() {
+        // Drilled-pair priority precedes the interval tier. The drilled pair is
+        // due at a long 16-day interval; the fast-tracked pair is due at the
+        // fragile 1-day interval. The drilled pair must still win — the
+        // drilled-vs-fast-tracked split is applied before the shortest-interval
+        // band, not the other way round.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 16f, idleDays = 100, now = now, fastTracked = false,
+        )
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 5, now = now, fastTracked = true,
+        )
+
+        repeat(200) {
+            val pick = dict.pickMasteredVocabToRefresh(now = now)
+            assertNotNull(pick)
+            assertEquals(
+                "short-interval fast-tracked pair beat the drilled pair",
+                "h1", pick!!.first.hash,
+            )
+        }
+    }
+
+    @Test fun fastTrackedPairSurfacesWhenNoDrilledPairIsDue() {
+        // Only a fast-tracked pair is due (the drilled pair is still well within
+        // its interval). The picker must fall back to the fast-tracked pair
+        // rather than returning null — "only pick fast-tracked if there are no
+        // other words to choose from".
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+        ))
+        val now = 1_700_000_000_000L
+        dict.csvData[0].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 8f, idleDays = 0, now = now, fastTracked = false,  // not due
+        )
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(
+            intervalDays = 1f, idleDays = 5, now = now, fastTracked = true,  // due
         )
         val pick = dict.pickMasteredVocabToRefresh(now = now)
         assertNotNull(pick)

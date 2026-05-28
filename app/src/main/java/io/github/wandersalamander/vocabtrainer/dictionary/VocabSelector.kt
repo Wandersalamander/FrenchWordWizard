@@ -164,12 +164,20 @@ private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {
  * has been refreshed). [skillFilter] excludes skills the same way
  * [getActiveVocabWeighted] does.
  *
- * Selection is two-tiered:
- *   1. Strict priority on the shortest [SkillStats.refreshIntervalDays] in
- *      the eligible pool — fragile (recently learned or recently failed)
- *      pairs surface before stable long-interval ones, since missing a
- *      1-day refresh costs more than missing a 64-day one.
- *   2. Within that interval band, weighted-random by overdue ratio ×
+ * Selection is tiered:
+ *   1. Drilled-pair priority: a pair that earned mastery through active-pool
+ *      practice always outranks a [SkillStats.fastTracked] one (cleared on
+ *      its first exposure, never actually drilled). Fast-tracked pairs only
+ *      enter the draw when no drilled pair is due — they're the weakest
+ *      evidence of real learning, so they don't consume a retention slot
+ *      while a genuinely drilled pair is waiting. This precedes the interval
+ *      tier: a drilled pair due at a long interval still beats a fast-tracked
+ *      pair due at a short one.
+ *   2. Within the chosen pool, strict priority on the shortest
+ *      [SkillStats.refreshIntervalDays] — fragile (recently learned or
+ *      recently failed) pairs surface before stable long-interval ones, since
+ *      missing a 1-day refresh costs more than missing a 64-day one.
+ *   3. Within that interval band, weighted-random by overdue ratio ×
  *      (nTimesFailed + 1) — historically harder pairs lift, without
  *      entirely starving never-failed pairs.
  */
@@ -182,6 +190,7 @@ fun MyDictionary.pickMasteredVocabToRefresh(
         val overdueScore: Double,
         val intervalDays: Float,
         val nFailed: Float,
+        val fastTracked: Boolean,
     )
     val candidates = csvData.flatMap { vocab ->
         if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
@@ -191,13 +200,21 @@ fun MyDictionary.pickMasteredVocabToRefresh(
             val score = vocab.failureProbabilityMasteredWords(skill, now)
             if (score <= 0.0) return@mapNotNull null
             val stats = vocab.stats(skill)
-            Candidate(vocab to skill, score, stats.refreshIntervalDays, stats.nTimesFailed)
+            Candidate(
+                vocab to skill, score, stats.refreshIntervalDays,
+                stats.nTimesFailed, stats.fastTracked,
+            )
         }
     }
     if (candidates.isEmpty()) return null
 
-    val minInterval = candidates.minOf { it.intervalDays }
-    val band = candidates.filter { it.intervalDays == minInterval }
+    // Tier 1: prefer pairs drilled through the active pool; fast-tracked pairs
+    // only surface when no drilled pair is due (see kdoc).
+    val drilled = candidates.filter { !it.fastTracked }
+    val pool = if (drilled.isNotEmpty()) drilled else candidates
+
+    val minInterval = pool.minOf { it.intervalDays }
+    val band = pool.filter { it.intervalDays == minInterval }
 
     val total = band.sumOf { it.overdueScore * (it.nFailed + 1f) }
     val randomValue = Random.nextDouble(0.0, total)
