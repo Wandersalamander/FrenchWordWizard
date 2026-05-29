@@ -21,11 +21,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import io.github.wandersalamander.vocabtrainer.R
+import io.github.wandersalamander.vocabtrainer.applySystemBarAndActionBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.backup.ProgressBackup
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
+import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
+import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
@@ -59,7 +62,13 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
+        // Pad the inner LinearLayout (not the ScrollView): the ScrollView keeps
+        // its edge-to-edge bounds so the scrollbar runs the full height, while
+        // the content starts below the action bar and tucks under it on scroll.
+        findViewById<View>(R.id.contentRoot)
+            .applySystemBarAndActionBarInsetsAsPadding(themeActionBarHeightPx())
 
         val prefs = AppPrefs.get(this)
         val currentLanguage = Language.fromPrefs(this)

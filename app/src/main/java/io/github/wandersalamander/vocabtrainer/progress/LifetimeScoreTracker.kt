@@ -113,18 +113,4 @@ object LifetimeScoreTracker {
     internal fun clearCache() {
         cache.clear()
     }
-
-    /** Importer entry point. */
-    internal fun importLanguage(languageCode: String, score: Long) {
-        cache[languageCode] = score
-        DataLayer.writeScope.launch {
-            DataLayer.database.lifetimeScoreDao().upsert(
-                LifetimeScoreEntity(
-                    languageCode = languageCode,
-                    score = score,
-                    lastModifiedMs = System.currentTimeMillis(),
-                )
-            )
-        }
-    }
 }

@@ -17,17 +17,22 @@ android {
     // the manifest. Independent of applicationId so we can rename the source
     // tree without changing the installed-app identity on user devices.
     namespace 'io.github.wandersalamander.vocabtrainer'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
-        // Intentionally NOT updated alongside the namespace rename — keeping
-        // the original applicationId means existing installs (and their
-        // streak/mastery/vocab progress) survive the refactor.
-        applicationId "com.example.myapplication"
+        // The app's permanent Play Store identity (reverse-DNS form; Play does
+        // not verify domain ownership, so a site at this domain isn't required).
+        // Changed off the original com.example.myapplication — which Play bans —
+        // for the first store release. A new applicationId installs as a fresh
+        // app with an empty data dir, so it does NOT carry old installs over:
+        // users move their progress via Settings → Backup & restore (see
+        // ProgressBackup). Independent of `namespace` above, which stays
+        // io.github.wandersalamander.vocabtrainer.
+        applicationId "com.wandersalamander.vocabtrainer"
         minSdk 26
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        targetSdk 35
+        versionCode 2
+        versionName "20260529.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,11 +45,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     // Bundle the exported Room schema JSONs into the androidTest APK so

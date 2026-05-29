@@ -210,26 +210,4 @@ object StreakTracker {
     fun setReminderTime(@Suppress("UNUSED_PARAMETER") context: Context, hour: Int, minute: Int) {
         persist(state.copy(reminderHour = hour, reminderMinute = minute))
     }
-
-    /** Importer entry point — writes the loaded state without a roundtrip through persist. */
-    internal fun importState(
-        current: Int,
-        lastDate: String?,
-        longest: Int,
-        freezes: Int,
-        reminderEnabled: Boolean,
-        reminderHour: Int,
-        reminderMinute: Int,
-    ) {
-        state = State(
-            current = current,
-            lastDate = parseDate(lastDate),
-            longest = longest,
-            freezes = freezes,
-            reminderEnabled = reminderEnabled,
-            reminderHour = reminderHour,
-            reminderMinute = reminderMinute,
-        )
-        persist(state)
-    }
 }

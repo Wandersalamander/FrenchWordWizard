@@ -19,9 +19,8 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        // packageName mirrors applicationId, which we deliberately keep as
-        // com.example.myapplication so existing installs don't lose data.
-        // The Kotlin namespace is io.github.wandersalamander.vocabtrainer.
-        assertEquals("com.example.myapplication", appContext.packageName)
+        // packageName mirrors applicationId — the published Play Store identity.
+        // The Kotlin namespace is the separate io.github.wandersalamander.vocabtrainer.
+        assertEquals("com.wandersalamander.vocabtrainer", appContext.packageName)
     }
 }

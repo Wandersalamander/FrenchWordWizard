@@ -31,7 +31,18 @@
             android:name=".service.MyForegroundService"
             android:foregroundServiceType="specialUse"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false">
+            <!-- Required by Play Console for any specialUse FGS targeting API 34+:
+                 declare why none of the typed FGS categories fit. This service
+                 surfaces a passively-glanceable vocab word in the notification
+                 shade — not media, not data sync, not location, not a connected
+                 device. The user opted in via the install/notification grant,
+                 the cadence is 30s (battery-friendly), and the work doesn't
+                 belong in any of the typed FGS buckets. -->
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="passive_vocab_glance_notification" />
+        </service>
         <receiver
             android:name=".streak.StreakReminderReceiver"
             android:exported="false" />

@@ -5,6 +5,7 @@
      feature colors — the lifted card_surface + olive edge is enough to
      mark it as a panel distinct from the cream page. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contentRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"

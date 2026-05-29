@@ -22,10 +22,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import io.github.wandersalamander.vocabtrainer.R
+import io.github.wandersalamander.vocabtrainer.applySystemBarAndActionBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
+import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
+import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
@@ -79,7 +82,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         workAroundDexReloadBug()
 
         sounds = SoundEffects(this)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        // Push the root LinearLayout below the status bar + window-decor action
+        // bar (which under edge-to-edge no longer reserves a strip of its own)
+        // and above the gesture-nav bar. See ViewExt for why this preserves the
+        // cards' clip-to-padding floater behaviour.
+        findViewById<View>(R.id.contentRoot)
+            .applySystemBarAndActionBarInsetsAsPadding(themeActionBarHeightPx())
 
         // Kick off LLM init in the background. No-op on devices without a
         // model; isReady stays false and the quiz silently falls back to CSV

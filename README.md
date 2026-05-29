@@ -25,7 +25,7 @@ On first launch you'll be prompted to download the model from HuggingFace (~2.59
 
 ```
 adb push gemma-4-E2B-it.litertlm \
-  /sdcard/Android/data/com.example.myapplication/files/llm/model.litertlm
+  /sdcard/Android/data/com.wandersalamander.vocabtrainer/files/llm/model.litertlm
 ```
 
 The model file path is per-app external storage, so no root is required.
@@ -53,9 +53,11 @@ app/src/main/java/io/github/wandersalamander/vocabtrainer/
     └── migration/ # LegacyImporter (one-shot SharedPrefs → Room copy)
 ```
 
-The Android `applicationId` deliberately stays as `com.example.myapplication`
-(see [app/build.gradle](app/build.gradle)) so user installs retain their
-streak/mastery/vocab progress across the Kotlin-namespace rename.
+The Android `applicationId` is `com.wandersalamander.vocabtrainer`
+(see [app/build.gradle](app/build.gradle)) — the published Play Store identity,
+independent of the `io.github.wandersalamander.vocabtrainer` Kotlin namespace.
+Because changing it installs as a fresh app with empty storage, progress moves
+between builds via Settings → Backup & restore (see `data/backup/ProgressBackup`).
 
 Vocabulary CSVs live in [app/src/main/assets](app/src/main/assets) under one folder per language.
 

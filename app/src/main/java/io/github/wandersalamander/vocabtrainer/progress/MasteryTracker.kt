@@ -86,19 +86,4 @@ object MasteryTracker {
     internal fun clearCache() {
         cache.clear()
     }
-
-    /** Importer entry point. */
-    internal fun importLanguage(languageCode: String, date: String, count: Int) {
-        cache[languageCode] = Entry(date = date, count = count)
-        DataLayer.writeScope.launch {
-            DataLayer.database.dailyMasteredCountDao().upsert(
-                DailyMasteredCountEntity(
-                    languageCode = languageCode,
-                    date = date,
-                    count = count,
-                    lastModifiedMs = System.currentTimeMillis(),
-                )
-            )
-        }
-    }
 }
