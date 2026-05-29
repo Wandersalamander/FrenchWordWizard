@@ -1,6 +1,7 @@
 package io.github.wandersalamander.vocabtrainer.settings
 
 import android.app.TimePickerDialog
+import android.net.Uri
 import android.os.Bundle
 import android.text.format.Formatter
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
@@ -19,6 +21,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import io.github.wandersalamander.vocabtrainer.R
+import io.github.wandersalamander.vocabtrainer.data.backup.ProgressBackup
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
@@ -36,9 +39,24 @@ import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 class SettingsActivity : AppCompatActivity() {
+    // SAF launchers for the Backup & restore section. Registered as properties
+    // so they're wired up before the activity reaches STARTED. CreateDocument
+    // hands back a writable Uri for a new file; OpenDocument hands back a
+    // readable Uri for one the user picked.
+    private val exportLauncher = registerForActivityResult(
+        ActivityResultContracts.CreateDocument("application/json")
+    ) { uri -> uri?.let { performExport(it) } }
+
+    private val importLauncher = registerForActivityResult(
+        ActivityResultContracts.OpenDocument()
+    ) { uri -> uri?.let { performImport(it) } }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -153,6 +171,7 @@ class SettingsActivity : AppCompatActivity() {
 
         setupAutoAddSection()
         setupStreakSection()
+        setupBackupSection()
         setupResetProgressSection()
     }
 
@@ -290,6 +309,90 @@ class SettingsActivity : AppCompatActivity() {
             }
             dialog.show()
         }
+    }
+
+    private fun setupBackupSection() {
+        findViewById<Button>(R.id.exportProgressButton).setDebouncedOnClickListener {
+            exportLauncher.launch(defaultBackupFileName())
+        }
+        findViewById<Button>(R.id.importProgressButton).setDebouncedOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Import progress?")
+                .setMessage(
+                    "Pick a backup file to restore. Its entries are merged into your current " +
+                        "progress — anything with the same word/skill is overwritten."
+                )
+                .setNegativeButton("Cancel", null)
+                .setPositiveButton("Choose file") { _, _ ->
+                    // "*/*" so a backup the file manager tagged with an unexpected MIME type
+                    // is still selectable — the contents are validated on import.
+                    importLauncher.launch(arrayOf("*/*"))
+                }
+                .show()
+        }
+    }
+
+    private fun defaultBackupFileName(): String {
+        val date = SimpleDateFormat("yyyyMMdd", Locale.US).format(Date())
+        return "vocabtrainer-progress-$date.json"
+    }
+
+    private fun performExport(uri: Uri) {
+        lifecycleScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                runCatching {
+                    val json = ProgressBackup.export(this@SettingsActivity)
+                    (contentResolver.openOutputStream(uri)
+                        ?: throw IOException("Couldn't open the chosen file for writing."))
+                        .use { it.write(json.toByteArray(Charsets.UTF_8)) }
+                }
+            }
+            result.onSuccess {
+                Toast.makeText(this@SettingsActivity, "Progress exported.", Toast.LENGTH_SHORT).show()
+            }.onFailure {
+                showBackupError("Export failed", "Couldn't write the backup file. Please try again.")
+            }
+        }
+    }
+
+    private fun performImport(uri: Uri) {
+        lifecycleScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                runCatching {
+                    (contentResolver.openInputStream(uri)
+                        ?: throw IOException("Couldn't open the chosen file for reading."))
+                        .use { ProgressBackup.import(this@SettingsActivity, it) }
+                }
+            }
+            result.onSuccess { summary -> showImportResult(summary) }
+                .onFailure { e ->
+                    val msg = (e as? ProgressBackup.InvalidBackupException)?.message
+                        ?: "Couldn't read this file as a backup. Please pick the file you exported."
+                    showBackupError("Import failed", msg)
+                }
+        }
+    }
+
+    private fun showImportResult(summary: ProgressBackup.ImportSummary) {
+        val streakLine = if (summary.streakImported) "\n• Streak restored" else ""
+        AlertDialog.Builder(this)
+            .setTitle("Progress imported")
+            .setMessage(
+                "Restored ${summary.distinctWords} words " +
+                    "(${summary.statRows} skill rows, ${summary.reviewLogRows} review log entries)." +
+                    streakLine +
+                    "\n\nReturn to practice to see your progress reloaded."
+            )
+            .setPositiveButton("OK", null)
+            .show()
+    }
+
+    private fun showBackupError(title: String, message: String) {
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("OK", null)
+            .show()
     }
 
     private suspend fun wipeProgressFor(language: Language): Int = withContext(Dispatchers.IO) {

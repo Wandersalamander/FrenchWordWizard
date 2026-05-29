@@ -10,6 +10,10 @@ interface LifetimeScoreDao {
     @Query("SELECT * FROM lifetime_score WHERE languageCode = :languageCode")
     suspend fun load(languageCode: String): LifetimeScoreEntity?
 
+    /** All rows — used by the progress backup export. */
+    @Query("SELECT * FROM lifetime_score")
+    suspend fun loadAll(): List<LifetimeScoreEntity>
+
     @Upsert
     suspend fun upsert(entry: LifetimeScoreEntity)
 }

@@ -10,6 +10,10 @@ interface DailyMasteredCountDao {
     @Query("SELECT * FROM daily_mastered_count WHERE languageCode = :languageCode")
     suspend fun load(languageCode: String): DailyMasteredCountEntity?
 
+    /** All rows — used by the progress backup export. */
+    @Query("SELECT * FROM daily_mastered_count")
+    suspend fun loadAll(): List<DailyMasteredCountEntity>
+
     @Upsert
     suspend fun upsert(entry: DailyMasteredCountEntity)
 }

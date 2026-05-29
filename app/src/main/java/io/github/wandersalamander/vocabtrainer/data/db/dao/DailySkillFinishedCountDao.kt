@@ -17,6 +17,10 @@ interface DailySkillFinishedCountDao {
     @Query("SELECT * FROM daily_skill_finished_count WHERE languageCode = :languageCode")
     suspend fun loadAllForLanguage(languageCode: String): List<DailySkillFinishedCountEntity>
 
+    /** All rows — used by the progress backup export. */
+    @Query("SELECT * FROM daily_skill_finished_count")
+    suspend fun loadAll(): List<DailySkillFinishedCountEntity>
+
     @Upsert
     suspend fun upsert(entry: DailySkillFinishedCountEntity)
 

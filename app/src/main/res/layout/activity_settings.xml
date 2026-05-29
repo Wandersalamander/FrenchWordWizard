@@ -459,6 +459,61 @@
             android:textColor="?android:attr/textColorSecondary" />
     </LinearLayout>
 
+    <!-- ========================== BACKUP & RESTORE =========================
+         Plain (un-accented) card: export every bit of progress to a JSON file
+         and import it back. The motivating case is the applicationId rename —
+         changing it gives Android a fresh data directory, so this is how
+         progress crosses from the old install to the new one. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_plain"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="Backup &amp; restore"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save all your progress — per-word stats, streak, daily counts and settings — to a file, then load it back on a new install. The downloadable AI model isn't included."
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:lineSpacingExtra="2sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/exportProgressButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Export" />
+
+            <Button
+                android:id="@+id/importProgressButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Import" />
+        </LinearLayout>
+    </LinearLayout>
+
     <!-- ========================== RESET PROGRESS ===========================
          Purple stripe — the only Monokai accent not used on the quiz screen,
          so destructive settings get their own identity without colliding

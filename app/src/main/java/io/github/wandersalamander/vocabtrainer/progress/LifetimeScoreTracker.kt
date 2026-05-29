@@ -104,6 +104,16 @@ object LifetimeScoreTracker {
         return next
     }
 
+    /**
+     * Drop the in-memory cache so the next read lazy-reloads from Room. Called
+     * after a progress-backup import replaces the underlying rows, since this
+     * tracker has no preload step and would otherwise keep serving the score it
+     * cached (or backfilled) before the import.
+     */
+    internal fun clearCache() {
+        cache.clear()
+    }
+
     /** Importer entry point. */
     internal fun importLanguage(languageCode: String, score: Long) {
         cache[languageCode] = score

@@ -108,6 +108,17 @@ object SkillFinishedTracker {
         return next
     }
 
+    /**
+     * Drop the in-memory cache (and the loaded-languages set) so the next read
+     * lazy-reloads from Room. Called after a progress-backup import replaces the
+     * underlying rows, since this tracker has no preload step and would
+     * otherwise keep serving the per-skill counts it cached before the import.
+     */
+    internal fun clearCache() {
+        cache.clear()
+        loadedLanguages.clear()
+    }
+
     /** Importer entry point. */
     internal fun importEntry(languageCode: String, skill: Skill, date: String, count: Int) {
         cache[Key(languageCode, skill)] = Entry(date, count)
