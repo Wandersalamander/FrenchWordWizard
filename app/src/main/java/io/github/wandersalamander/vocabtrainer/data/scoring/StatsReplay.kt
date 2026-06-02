@@ -2,7 +2,9 @@ package io.github.wandersalamander.vocabtrainer.data.scoring
 
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
 import io.github.wandersalamander.vocabtrainer.data.ReviewLogEntry
+import io.github.wandersalamander.vocabtrainer.data.SpotCheckResult
 import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats
+import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 
 /**
  * Reconstructs a [SkillStats] from a chronological log of [ReviewLogEntry]s
@@ -57,6 +59,10 @@ object StatsReplay {
         // Capture priorViews BEFORE we increment — the fast-track gate keys
         // off it (matches saveCurrentVocab using the round-start snapshot).
         val priorViews = stats.nTimesViewed
+        // Round-start mastery, captured before the mid-round failure / commit
+        // mutate the stats — mirrors QuizController's round-start snapshot.
+        // Drives the re-verified-mastery branch below.
+        val wasMasteredBefore = stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
         val failAmount = RoundScoring.failAmount(entry, foreignLetterCount)
         val penaltyMs = if (entry.commitButton == CommitButton.FAIL) RoundScoring.FAIL_PENALTY_MS else 0L
 
@@ -91,6 +97,18 @@ object StatsReplay {
         // for the first ladder skill and a TODO for the rest: a future
         // cross-skill replay walker should thread the actual predecessor
         // state per timestamp, restoring full live↔replay equivalence.
+        // Re-verified mastery: an already-mastered pair re-shown and passed on
+        // its spot check stays mastered regardless of recall time. Mirrors
+        // QuizController.applyFastTrackGate's verifiedAlreadyMastered branch
+        // exactly, keyed on the log's spot-check result + round-start mastery.
+        val verifiedAlreadyMastered = penaltyMs == 0L &&
+            entry.spotCheckResult == SpotCheckResult.PASSED &&
+            wasMasteredBefore
+        if (verifiedAlreadyMastered) {
+            stats.fastTracked = true
+            return
+        }
+
         val fastTracking = penaltyMs == 0L && FastTrack.isCandidate(
             priorViews = priorViews,
             tipUsed = entry.tipUsed,

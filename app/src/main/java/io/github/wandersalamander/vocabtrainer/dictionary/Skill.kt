@@ -370,5 +370,14 @@ data class SkillStats(
         // post-mastery refreshes the interval saturates here. Matches the
         // prior Vocab.REFRESH_CAP_DAYS so the long-tail behavior is unchanged.
         const val MAX_REFRESH_INTERVAL_DAYS = 180f
+
+        // Initial refresh gap for a pair that reached mastery via the fast-track
+        // gate (trivial first-exposure clean round) rather than through the
+        // normal drilling-then-crossing path. A fast-tracked pair never sat in
+        // the active pool, so the default 1-day first refresh would resurface it
+        // the very next day — too eager for a word the user clearly already
+        // knew. Start its schedule further out (it still doubles from here on
+        // clean refreshes, and resets to 1 day on any failure).
+        const val FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS = 7f
     }
 }

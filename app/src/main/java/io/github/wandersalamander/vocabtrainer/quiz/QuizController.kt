@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
+import io.github.wandersalamander.vocabtrainer.data.SpotCheckResult
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
@@ -1053,6 +1054,25 @@ class QuizController(
         penalty: Long,
         activeViewTime: Long,
     ) {
+        // Re-verified mastery: a pair that was ALREADY mastered at round start
+        // and passes its spot check stays mastered, however long recall took.
+        // Refresh-pool picks are always spot-checked (see onNextClick), so this
+        // is the path every refresh round commits through. Without it the
+        // slow-view-time gate (the revocation branch below, and SLOW_FPB_FLOOR
+        // in failureProbability) demotes a slow-but-correct recall back to
+        // active drilling — exactly the recall a spaced refresh is meant to
+        // reward. Trusting the check via the fastTracked short-circuit keeps the
+        // pair out of the active pool and lets applyRoundCommit's interval
+        // doubling stand. Keyed on round-start mastery + a passed check (not the
+        // picker source) so StatsReplay reconstructs the flag identically.
+        val verifiedAlreadyMastered = penalty == 0L &&
+            roundFacts.spotCheckResult == SpotCheckResult.PASSED &&
+            (snapshot?.failureProbability() ?: 1f) < Vocab.SKILL_FINISHED_THRESHOLD
+        if (verifiedAlreadyMastered) {
+            stats.fastTracked = true
+            return
+        }
+
         val fastTracking = penalty == 0L && FastTrack.isCandidate(
             priorViews = snapshot?.nTimesViewed ?: 0,
             tipUsed = roundFacts.tipUsed,
@@ -1063,6 +1083,16 @@ class QuizController(
             predecessorFastTracked = predecessorFastTracked(vocab, currentSkill),
         )
         if (fastTracking) {
+            // First-exposure mastery: push the first refresh gap out so the
+            // word isn't resurfaced tomorrow. Only on the flag's flip to true
+            // (isCandidate requires priorViews == 0, so this branch is itself a
+            // one-shot, but guard anyway) and never clobber a longer interval a
+            // prior clean refresh may have already earned.
+            if (!stats.fastTracked) {
+                stats.refreshIntervalDays = stats.refreshIntervalDays.coerceAtLeast(
+                    SkillStats.FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS,
+                )
+            }
             stats.fastTracked = true
         } else if (stats.fastTracked) {
             // Check THIS round's actual elapsed time, not the EMA. A

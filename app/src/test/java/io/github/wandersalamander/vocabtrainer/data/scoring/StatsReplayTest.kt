@@ -166,6 +166,65 @@ class StatsReplayTest {
         )
     }
 
+    @Test fun passedSpotCheckKeepsMasteryDespiteSlowRecall() {
+        // Regression for "mastered words that get checked still slip back into
+        // the active pool": a mastered pair re-shown from the refresh pool is
+        // always spot-checked. Recall after a multi-day gap is legitimately
+        // slow (viewMs > SLOW_VIEW_TIME_MAX_MS), which WOULD trip the slow gate
+        // and revoke mastery — but a PASSED spot check is direct verification,
+        // so the pair must stay mastered. Contrast fastTrackedFlagRevokedBy-
+        // LaterSlowRound, where the identical slow round has no passed check.
+        val stats = StatsReplay.rebuild(
+            listOf(
+                entry(t = 1_000L, viewMs = 1_500L),                       // mastered
+                entry(t = 2_000L, viewMs = 8_000L, spot = SpotCheckResult.PASSED), // slow but verified
+            ),
+            foreignLetterCount = 5,
+        )
+        assertTrue(
+            "a passed spot check on an already-mastered pair must keep it mastered",
+            stats.fastTracked,
+        )
+        assertTrue(
+            stats.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+    }
+
+    @Test fun passedSpotCheckDoesNotMasterANotYetMasteredPair() {
+        // Guard the round-start-mastery key: a passed spot check on a pair that
+        // was NOT mastered at round start (here a slow first exposure, so no
+        // fast-track and fpb still high) must NOT promote it. The re-verified-
+        // mastery branch only protects pairs that were already mastered.
+        val stats = StatsReplay.rebuild(
+            listOf(entry(t = 1_000L, viewMs = 8_000L, spot = SpotCheckResult.PASSED)),
+            foreignLetterCount = 5,
+        )
+        assertFalse(
+            "a passed check can't master a pair that wasn't mastered at round start",
+            stats.fastTracked,
+        )
+        assertTrue(
+            stats.failureProbability() >= Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+    }
+
+    @Test fun failedSpotCheckStillRevokesMastery() {
+        // The complement: a mastered pair whose spot check FAILS (FAIL commit →
+        // penalty) loses mastery as usual — the re-verified branch is gated on
+        // a passed check, so the penalty path's revocation still applies.
+        val stats = StatsReplay.rebuild(
+            listOf(
+                entry(t = 1_000L, viewMs = 1_500L),                       // mastered
+                entry(
+                    t = 2_000L, viewMs = 8_000L,
+                    commit = CommitButton.FAIL, spot = SpotCheckResult.FAILED,
+                ),
+            ),
+            foreignLetterCount = 5,
+        )
+        assertFalse("a failed spot check must revoke mastery", stats.fastTracked)
+    }
+
     @Test fun recentInteractionsWindowReflectsTheLog() {
         // The rolling 10-entry window is bookkeeping inside SkillStats — replay
         // calling recordInteraction(failAmount) per round must produce the same
