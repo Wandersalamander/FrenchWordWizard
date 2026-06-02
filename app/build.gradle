@@ -42,6 +42,13 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Bundle native debug symbols (LiteRT-LM .so libs, Room's SQLite)
+            // into the .aab so Play can symbolicate native crashes and ANRs.
+            // Symbols live in bundle metadata Play strips on upload, so they
+            // don't ship to devices or affect installed app size.
+            ndk {
+                debugSymbolLevel 'FULL'
+            }
         }
     }
     compileOptions {
