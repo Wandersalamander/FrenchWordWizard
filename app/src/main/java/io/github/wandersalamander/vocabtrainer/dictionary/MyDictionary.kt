@@ -32,6 +32,15 @@ data class ActiveSetCounts(
 )
 
 /**
+ * Mastered vs. active (word, skill) pair counts, summed over all skills. See
+ * [MyDictionary.computeStudiedPairCounts].
+ */
+data class StudiedPairCounts(
+    val mastered: Int,
+    val active: Int,
+)
+
+/**
  * The bundled vocab collection for the active language plus the per-vocab
  * persistence cache. Owns [csvData] (the loaded Vocab list) and a few
  * aggregate queries that drive the on-screen progress bars and the LLM's
@@ -88,6 +97,31 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
     }
 
     /**
+     * Count of fully-mastered words with at least one (word, skill) pair past
+     * its refresh interval — i.e. how many already-learned words are ready to
+     * resurface for repetition right now. Each word counts once regardless of
+     * how many of its skill pairs are due, so this is a clean subset of
+     * [computeLifetimeMasteredCount] (no dividing by the number of skills).
+     * Reuses that function's "fully mastered" gate, then
+     * [Vocab.failureProbabilityMasteredWords] (> 0 == mastered AND overdue).
+     */
+    fun computeDueMasteredCount(now: Long = System.currentTimeMillis()): Int {
+        var due = 0
+        for (vocab in csvData) {
+            if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
+            val fullyMastered = Skill.ladder.all { skill ->
+                val s = vocab.stats(skill)
+                s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
+            }
+            if (!fullyMastered) continue
+            if (Skill.ladder.any { vocab.failureProbabilityMasteredWords(it, now) > 0.0 }) {
+                due++
+            }
+        }
+        return due
+    }
+
+    /**
      * Per-skill count of (word, skill) pairs in the active drilling pool —
      * unlocked, introduced for that skill, and still above the mastery
      * threshold. Drives the active-set composition bar.
@@ -111,6 +145,31 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
             }
         }
         return ActiveSetCounts(read, listen, invert)
+    }
+
+    /**
+     * Introduced (word, skill) pairs split by the mastery threshold and summed
+     * over all skills — [StudiedPairCounts.mastered] = pairs handed off to the
+     * refresh pool (failureProbability < threshold), [StudiedPairCounts.active]
+     * = pairs still being drilled. Pairs are counted per skill and summed, NOT
+     * divided back to whole words, so a word mastered in two skills and active
+     * in one adds 2 to mastered and 1 to active. Same domain split the pickers
+     * use, so [StudiedPairCounts.active] equals the sum of [computeActiveSetCounts].
+     * Drives the adaptive mastered-refresh cadence in QuizPicker.
+     */
+    fun computeStudiedPairCounts(): StudiedPairCounts {
+        var mastered = 0
+        var active = 0
+        for (vocab in csvData) {
+            if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
+            for (skill in Skill.ladder) {
+                if (!vocab.isSkillUnlocked(skill)) continue
+                val s = vocab.stats(skill)
+                if (s.nTimesViewed == 0) continue
+                if (s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) mastered++ else active++
+            }
+        }
+        return StudiedPairCounts(mastered, active)
     }
 
     /**

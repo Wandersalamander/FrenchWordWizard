@@ -31,9 +31,15 @@ class IntroductionPicker : PickerStrategy {
  * scheduler then leaves this picker's cadence past threshold so the next round
  * retries instead of waiting a full interval.
  */
-class RefreshPicker(intervalRounds: Int) : PickerStrategy {
+class RefreshPicker(private val intervalProvider: () -> Int) : PickerStrategy {
     override val id = PickerId.REFRESH
-    override val cadence = Cadence.EveryNth(intervalRounds)
+
+    // Dynamic interval: QuizPicker recomputes it once per round from the current
+    // mastered:active pair ratio (see masteredRefreshInterval), so the cadence
+    // tightens toward every-other-round as the deck shifts to maintenance. The
+    // scheduler reads this getter each round when ticking eligibility.
+    override val cadence: Cadence get() = Cadence.EveryNth(intervalProvider())
+
     override fun pick(ctx: PickContext): Pair<Vocab, Skill>? =
         ctx.dictionary.pickMasteredVocabToRefresh(ctx.skillFilter)
 }

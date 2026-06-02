@@ -86,6 +86,12 @@
          today-counts share one source of truth. -->
     <color name="lifetime_count_color">#3F7E0E</color>
     <color name="today_count_color">#B45309</color>
+    <!-- "N due" accent on the lifetime label — mastered words ready to
+         resurface for review. Monokai pink: the one accent not already used by
+         a count/segment, so it stays distinct from the warm today_count (gain
+         vs. pending work). Deepened (monokai_pink_dark) to read on the green
+         card; values-night reverts to the raw monokai_pink. -->
+    <color name="due_count_color">#C71B5C</color>
 
     <!-- Streak counter digit colour. Darker than monokai_orange so the
          number reads against cream (the 🔥 emoji is system-coloured and

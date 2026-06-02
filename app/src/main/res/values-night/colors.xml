@@ -32,6 +32,7 @@
     <color name="seg_invert">#AE81FF</color>
     <color name="lifetime_count_color">#A6E22E</color>
     <color name="today_count_color">#E6DB74</color>
+    <color name="due_count_color">#F92672</color>
     <color name="streak_count_color">#FD971F</color>
     <color name="streak_shield_color">#BCB59A</color>
 

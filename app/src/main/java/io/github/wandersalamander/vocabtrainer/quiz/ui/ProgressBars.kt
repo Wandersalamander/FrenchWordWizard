@@ -76,7 +76,8 @@ internal fun refreshLifetimeBar(
     setSegmentWeight(views.segLifetimeMastered, mastered)
     setSegmentWeight(views.segLifetimeRemaining, remaining)
     val today = MasteryTracker.todayCount(context)
-    views.textLifetimeLabel.text = buildLifetimeLabel(context, mastered, today, total)
+    val due = dictionary.computeDueMasteredCount()
+    views.textLifetimeLabel.text = buildLifetimeLabel(context, mastered, today, due, total)
     // The card is the only accessibility-focusable element in the lifetime
     // block (the bar/label rows are flagged importantForAccessibility="no" in
     // activity_main.xml), so its contentDescription is what TalkBack reads.
@@ -85,6 +86,7 @@ internal fun refreshLifetimeBar(
         append("Total progress: ")
         append("$mastered of $total words mastered")
         if (today > 0) append(", plus $today today")
+        if (due > 0) append(", $due due for review")
     }
 }
 
@@ -163,24 +165,46 @@ private fun buildLifetimeLabel(
     context: Context,
     mastered: Int,
     today: Int,
+    due: Int,
     total: Int,
 ): CharSequence {
     val sb = SpannableStringBuilder()
     appendColored(context, sb, mastered.toString(), R.color.lifetime_count_color)
     appendColored(context, sb, " / $total", R.color.card_text_muted)
+    // "+N" (gold) = words mastered today; "N due" (pink) = already-mastered
+    // words ready to resurface for review. Deliberately different hues: the two
+    // are opposite in valence (progress gained vs. work pending), so reusing the
+    // gold for both would make them read as the same kind of number.
     if (today > 0) {
         appendColored(context, sb, "  ·  ", R.color.card_text_muted)
-        val start = sb.length
-        sb.append("+$today")
-        sb.setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(context, R.color.today_count_color)),
-            start,
-            sb.length,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE,
-        )
-        sb.setSpan(StyleSpan(Typeface.BOLD), start, sb.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        appendBoldColored(context, sb, "+$today", R.color.today_count_color)
+    }
+    if (due > 0) {
+        appendColored(context, sb, "  ·  ", R.color.card_text_muted)
+        appendBoldColored(context, sb, "$due due", R.color.due_count_color)
     }
     return sb
+}
+
+/**
+ * Appends [text] in [colorRes], bold. Shared by the lifetime label's "+N today"
+ * and "N due" accents so the two highlights are built identically.
+ */
+private fun appendBoldColored(
+    context: Context,
+    sb: SpannableStringBuilder,
+    text: String,
+    @ColorRes colorRes: Int,
+) {
+    val start = sb.length
+    sb.append(text)
+    sb.setSpan(
+        ForegroundColorSpan(ContextCompat.getColor(context, colorRes)),
+        start,
+        sb.length,
+        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE,
+    )
+    sb.setSpan(StyleSpan(Typeface.BOLD), start, sb.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 }
 
 private fun buildActiveLabel(
