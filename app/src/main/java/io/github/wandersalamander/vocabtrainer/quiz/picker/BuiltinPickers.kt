@@ -22,7 +22,7 @@ class IntroductionPicker : PickerStrategy {
     override val id = PickerId.INTRODUCTION
     override val cadence = Cadence.OnNewCandidates
     override fun pick(ctx: PickContext): Pair<Vocab, Skill>? =
-        if (ctx.newCandidates) ctx.dictionary.getInactiveVocab() else null
+        if (ctx.newCandidates) ctx.dictionary.getInactiveVocab(ctx.frontier) else null
 }
 
 /**
@@ -64,5 +64,7 @@ class ActiveWeightedPicker : PickerStrategy {
     override val id = PickerId.ACTIVE_WEIGHTED
     override val cadence = Cadence.Always
     override fun pick(ctx: PickContext): Pair<Vocab, Skill> =
-        ctx.dictionary.getActiveVocabWeighted(ctx.skillFilter, ctx.autoIntroduceThreshold)
+        ctx.dictionary.getActiveVocabWeighted(
+            ctx.skillFilter, ctx.autoIntroduceThreshold, ctx.frontier,
+        )
 }

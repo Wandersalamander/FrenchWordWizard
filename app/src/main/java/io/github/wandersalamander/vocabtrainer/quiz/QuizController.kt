@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -127,9 +128,9 @@ class QuizController(
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
-    // Picker re-reads the user's auto-add threshold each pick so changing it
-    // in Settings takes effect on the very next round — no QuizController
-    // rebuild required.
+    // Picker re-reads the user's auto-add threshold and the calibrated frontier
+    // each pick so changing the threshold in Settings — or finishing calibration
+    // — takes effect on the very next round, no QuizController rebuild required.
     private val picker = QuizPicker(
         dictionary = vocabDictionary,
         autoIntroduceThresholdProvider = {
@@ -137,6 +138,7 @@ class QuizController(
                 .getInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
                 .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
         },
+        frontierProvider = { AppPrefs.calibrationFrontier(activity, language.code) },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -211,13 +213,24 @@ class QuizController(
     // of falling back to the Next-flow defaults.
     private var spotCheckOriginatedFromNewClick: Boolean = false
 
+    // Non-null only while the once-per-language calibration probe runs on the
+    // main screen. While set, Next/Fail feed the session (see onNextClick /
+    // onFailClick) and every commit path — scoring, streak, TTS, LLM,
+    // spot-check, persistence — is bypassed; calibration never sets
+    // currentVocab, so the normal flow (all gated on currentVocab != null)
+    // stays inert. The only output is the frontier, saved once on finish.
+    private var calibration: CalibrationSession? = null
+    private val inCalibration: Boolean get() = calibration != null
+
     fun onFailClick() {
+        if (inCalibration) { answerCalibration(known = false); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) exitSpotCheck(wasWrong = true)
         else revealAllVocabData(showNextVocab = true)
     }
 
     fun onNextClick() {
+        if (inCalibration) { answerCalibration(known = true); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = false)
@@ -438,6 +451,12 @@ class QuizController(
         } else 0L
         pauseWallClockMs = 0L
         progressBars.rebaseline()
+        if (inCalibration) {
+            // Calibration owns the screen; a resume only re-anchors timing.
+            // Never dismiss/advance — that belongs to the normal-play path.
+            markResumed()
+            return
+        }
         if (pausedMs >= LONG_PAUSE_DISMISS_THRESHOLD_MS && currentVocab != null) {
             // dismissCurrentVocab's downstream updateVocab re-anchors startTime,
             // so markResumed isn't needed on this branch.
@@ -517,6 +536,121 @@ class QuizController(
                 updateVocab(0, newCandidates = false, commitButton = CommitButton.LEARNED)
             }
         }
+    }
+
+    // ─── Calibration ────────────────────────────────────────────────────
+    // Once-per-language first-launch probe. Reuses the Next/Fail buttons as a
+    // binary "I know it" / "I don't" and produces a single integer (the
+    // frontier tier) consumed by the new-word picker. See CalibrationSession
+    // for the decision logic; this section is purely the on-screen driver.
+
+    /**
+     * Begin calibration: build a [CalibrationSession] over the dictionary's
+     * importance tiers and show the first probed word. Called by MainActivity
+     * on a fresh, never-introduced language (after the first-launch tutorial).
+     * A dictionary that yields no probe words finishes the session at once and
+     * hands straight off to normal play with a beginner (null) frontier.
+     */
+    fun startCalibration() {
+        val tiers = vocabDictionary.csvData.map { it.importance }.distinct().sorted()
+        calibration = CalibrationSession(
+            tiers = tiers,
+            sampleTier = { tier, count ->
+                val pool = vocabDictionary.csvData.filter { it.importance == tier && !it.ignore }
+                // Tier 0 (essentials) is probed in CSV order so the most
+                // fundamental words come first; higher tiers sample at random
+                // so the probe isn't anchored to one corner of the tier.
+                if (tier == 0) pool.take(count) else pool.shuffled().take(count)
+            },
+        )
+        enterCalibrationUi()
+        Toast.makeText(
+            activity,
+            "Quick calibration: tap ✓ for words you already know, ✗ for ones you don't.",
+            Toast.LENGTH_LONG,
+        ).show()
+        renderCalibrationWord()
+    }
+
+    /** Reconfigure the quiz surface for binary known/unknown answers. */
+    private fun enterCalibrationUi() {
+        // INVISIBLE, not GONE, so the layout doesn't reflow; restored on exit.
+        listOf(views.buttonNew, views.buttonTip, views.buttonHard, views.buttonLearned)
+            .forEach { it.visibility = View.INVISIBLE }
+        views.buttonNext.text = "✓ I know it"
+        views.buttonFail.text = "✗ I don't"
+        views.buttonNext.isEnabled = true
+        views.buttonNext.isClickable = true
+        views.buttonFail.isEnabled = true
+        views.buttonFail.isClickable = true
+        views.cardVocab.pullEnabled = false
+        // Sets the eyebrow colour; renderCalibrationWord refines the text to
+        // "CALIBRATING · LEVEL n" per probed tier.
+        views.textVocabEyebrow.text = "CALIBRATING"
+        views.textVocabEyebrow.setTextColor(ContextCompat.getColor(activity, R.color.card_eyebrow))
+        views.textEn.visibility = View.INVISIBLE
+        views.textGuessLong.visibility = View.INVISIBLE
+    }
+
+    /** Show the pending probe word, or finish when the session is exhausted. */
+    private fun renderCalibrationWord() {
+        val word = calibration?.nextWord()
+        if (word == null) {
+            finishCalibration()
+            return
+        }
+        views.textForeign.text = word.foreign
+        // word.importance is the tier currently being probed; show it so the
+        // eyebrow climbs as the probe advances through the levels.
+        views.textVocabEyebrow.text = "CALIBRATING · LEVEL ${word.importance}"
+        // Recognition check, not a study round: no tap-to-replay, no TTS.
+        views.textForeign.setOnClickListener(null)
+        views.textForeign.isClickable = false
+        views.textScore.text = "Do you know this word?"
+        views.textScore.contentDescription = "Calibration. Do you know this word?"
+        views.cardVocab.pop(peakScale = 1.04f)
+    }
+
+    /** Feed one binary answer to the session and advance (or finish). */
+    private fun answerCalibration(known: Boolean) {
+        val session = calibration ?: return
+        session.recordAnswer(known)
+        if (session.isFinished) finishCalibration() else renderCalibrationWord()
+    }
+
+    /**
+     * Persist the frontier, tear down calibration UI, and hand off to normal
+     * play by loading the first real word — now biased by the frontier we just
+     * saved (the picker reads it fresh on every pick).
+     */
+    private fun finishCalibration() {
+        val session = calibration ?: return
+        AppPrefs.saveCalibration(activity, language.code, session.frontier)
+        calibration = null
+        exitCalibrationUi()
+
+        // Report the placement: the frontier level reached out of the highest
+        // tier in this language. NO_FRONTIER (no tier cleared) reads as beginner
+        // rather than "level -1".
+        val maxTier = vocabDictionary.csvData.maxOfOrNull { it.importance } ?: 0
+        val message = if (session.frontier < 0) {
+            "Calibration complete — starting at the beginning (max level $maxTier)."
+        } else {
+            "Calibration complete — level ${session.frontier} of $maxTier."
+        }
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
+
+        updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
+    }
+
+    /**
+     * Restore the buttons hidden by [enterCalibrationUi]. Labels, the eyebrow,
+     * and the learned button are reset by the normal round render that
+     * [finishCalibration]'s updateVocab triggers immediately afterward.
+     */
+    private fun exitCalibrationUi() {
+        listOf(views.buttonNew, views.buttonTip, views.buttonHard, views.buttonLearned)
+            .forEach { it.visibility = View.VISIBLE }
     }
 
     private fun showTip() {

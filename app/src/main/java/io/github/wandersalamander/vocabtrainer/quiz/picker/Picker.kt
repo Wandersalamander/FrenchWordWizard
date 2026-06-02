@@ -83,10 +83,17 @@ sealed interface Cadence {
  * back to introducing a fresh word when the distinct active-word count is
  * below this. Defaulted to [AUTO_INTRODUCE_THRESHOLD] for tests/foreground
  * paths that don't read prefs.
+ *
+ * [frontier] is the per-language calibrated knowledge tier from
+ * [AppPrefs.calibrationFrontier]: when non-null it biases new-word
+ * introduction toward the band [0, frontier] (geometric decay, peak at the
+ * frontier). Null — the default — is today's true-beginner behavior
+ * (introduce the lowest un-introduced tier first).
  */
 class PickContext(
     val dictionary: MyDictionary,
     val newCandidates: Boolean,
     val skillFilter: (Skill) -> Boolean,
     val autoIntroduceThreshold: Int = AUTO_INTRODUCE_THRESHOLD,
+    val frontier: Int? = null,
 )

@@ -30,6 +30,7 @@ import kotlinx.coroutines.launch
 
 class MyForegroundService : Service() {
     private lateinit var vocabDictionary: MyDictionary
+    private lateinit var language: Language
 
     // Scope tied to the service lifecycle. Cancelled in onDestroy so any
     // in-flight delay()/update unwinds cleanly instead of leaking a thread.
@@ -79,7 +80,7 @@ class MyForegroundService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        val language = Language.fromPrefs(this)
+        language = Language.fromPrefs(this)
         vocabDictionary = MyDictionary(openDictionaryStream(this, language), DataLayer.vocabPersistence)
 
         startForeground(NOTIFICATION_ID, createNotification().build())
@@ -134,6 +135,7 @@ class MyForegroundService : Service() {
             .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
         val (vocab, _) = vocabDictionary.getActiveVocabWeighted(
             autoIntroduceThreshold = threshold,
+            frontier = AppPrefs.calibrationFrontier(this, language.code),
         )
 
         val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)

@@ -41,6 +41,7 @@ private const val UNIFORM_ACTIVE_INTERVAL = 20
 internal class QuizPicker(
     private val dictionary: MyDictionary,
     private val autoIntroduceThresholdProvider: () -> Int = { AUTO_INTRODUCE_THRESHOLD },
+    private val frontierProvider: () -> Int? = { null },
 ) {
     private val recentWords = ArrayDeque<String>()
 
@@ -79,6 +80,7 @@ internal class QuizPicker(
             newCandidates = newCandidates,
             skillFilter = skillFilter,
             autoIntroduceThreshold = autoIntroduceThresholdProvider(),
+            frontier = frontierProvider(),
         )
 
         // beginRound ticks cadence ONCE; the anti-repeat re-rolls below reuse

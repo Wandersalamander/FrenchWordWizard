@@ -1,5 +1,6 @@
 package io.github.wandersalamander.vocabtrainer.dictionary
 
+import kotlin.math.pow
 import kotlin.random.Random
 
 /*
@@ -40,15 +41,28 @@ const val AUTO_INTRODUCE_THRESHOLD: Int = 5
 const val AUTO_INTRODUCE_THRESHOLD_MIN: Int = 1
 const val AUTO_INTRODUCE_THRESHOLD_MAX: Int = 20
 
-fun MyDictionary.getInactiveVocab(): Pair<Vocab, Skill> {
+// Geometric decay applied across importance tiers when a calibration frontier F
+// is set. Tier F is introduced at full weight and each step below it at × this
+// factor (tier F-1 at 0.5, F-2 at 0.25, …); tiers above F are excluded
+// entirely. Biases new words toward the highest tier the user already knows
+// while still trickling in the occasional lower-tier word they might have
+// missed. Unused on the true-beginner path (no frontier → lowest tier first).
+const val INTRODUCTION_TIER_DECAY: Double = 0.5
+
+/**
+ * Pick the next not-yet-introduced word, always paired with the first skill on
+ * the ladder (new words always enter via READ). Falls back to
+ * [getActiveVocabWeighted] when every word has already been introduced.
+ *
+ * [frontier] is the calibrated knowledge tier (see [INTRODUCTION_TIER_DECAY]):
+ * when non-null it biases introduction toward the band [0, frontier]; null is
+ * the true-beginner default (lowest un-introduced tier first).
+ */
+fun MyDictionary.getInactiveVocab(frontier: Int? = null): Pair<Vocab, Skill> {
     val firstSkill = Skill.ladder.first()
-    val inactiveCsvData = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
-    if (inactiveCsvData.isEmpty()) {
-        return getActiveVocabWeighted()
-    }
-    val minImportance = inactiveCsvData.minOf { it.importance }
-    val candidates = inactiveCsvData.filter { it.importance == minImportance }
-    return pickNextInactive(candidates, minImportance) to firstSkill
+    val word = pickInactiveWord(frontier)
+        ?: return getActiveVocabWeighted(frontier = frontier)
+    return word to firstSkill
 }
 
 /**
@@ -76,6 +90,7 @@ private fun pickNextInactive(candidates: List<Vocab>, minImportance: Int): Vocab
 fun MyDictionary.getActiveVocabWeighted(
     skillFilter: (Skill) -> Boolean = { true },
     autoIntroduceThreshold: Int = AUTO_INTRODUCE_THRESHOLD,
+    frontier: Int? = null,
 ): Pair<Vocab, Skill> {
     val activePairs = collectActivePairs(skillFilter)
     // Gate the auto-add on words still active in READ *only* — not distinct
@@ -88,7 +103,7 @@ fun MyDictionary.getActiveVocabWeighted(
     // activePairs, so this count is already the distinct READ-word count.
     val activeReadWords = activePairs.count { it.second == Skill.READ }
     if (activeReadWords < autoIntroduceThreshold) {
-        return pickFallback(skillFilter)
+        return pickFallback(skillFilter, frontier)
     }
     return pickWeighted(activePairs)
 }
@@ -123,14 +138,10 @@ private fun MyDictionary.collectActivePairs(
 
 private fun MyDictionary.pickFallback(
     skillFilter: (Skill) -> Boolean,
+    frontier: Int? = null,
 ): Pair<Vocab, Skill> {
     val firstSkill = Skill.ladder.first()
-    val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
-    if (inactive.isNotEmpty()) {
-        val minImportance = inactive.minOf { it.importance }
-        val candidates = inactive.filter { it.importance == minImportance }
-        return pickNextInactive(candidates, minImportance) to firstSkill
-    }
+    pickInactiveWord(frontier)?.let { return it to firstSkill }
     val available = csvData.filter {
         !it.ignore && !(it.hasBeenIntroduced() && it.isFullyLearned())
     }
@@ -144,6 +155,52 @@ private fun MyDictionary.pickFallback(
         skillFilter(it) && pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
     } ?: firstSkill
     return pickedVocab to pickedSkill
+}
+
+/**
+ * The next not-yet-introduced (non-ignored) word, or null when every word has
+ * already been introduced. Shared by [getInactiveVocab] and [pickFallback].
+ *
+ * With a calibrated [frontier], while the band [0, frontier] still holds
+ * un-introduced words a tier within it is chosen by geometric decay
+ * ([INTRODUCTION_TIER_DECAY], peak at the frontier) and tiers above the
+ * frontier are never offered. Once that band is exhausted — or when [frontier]
+ * is null — it falls back to the lowest un-introduced tier, which is how the
+ * frontier advances past F on its own (exhaustion-based: the lowest remaining
+ * tier is then F+1). Within the chosen tier, essentials (tier 0) come in strict
+ * CSV order and higher tiers at random (see [pickNextInactive]).
+ */
+private fun MyDictionary.pickInactiveWord(frontier: Int? = null): Vocab? {
+    val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
+    if (inactive.isEmpty()) return null
+
+    if (frontier != null) {
+        val band = inactive.filter { it.importance <= frontier }
+        if (band.isNotEmpty()) {
+            val tier = pickTierByDecay(band.map { it.importance }.distinct(), frontier)
+            return pickNextInactive(band.filter { it.importance == tier }, tier)
+        }
+    }
+
+    val minImportance = inactive.minOf { it.importance }
+    return pickNextInactive(inactive.filter { it.importance == minImportance }, minImportance)
+}
+
+/**
+ * Weighted-random tier choice over the [tiers] present in the band, each
+ * weighted [INTRODUCTION_TIER_DECAY]^(frontier − tier): the frontier tier (or
+ * the highest tier available below it) peaks and each lower tier decays
+ * geometrically. [tiers] must be non-empty and all ≤ [frontier].
+ */
+private fun pickTierByDecay(tiers: List<Int>, frontier: Int): Int {
+    val total = tiers.sumOf { INTRODUCTION_TIER_DECAY.pow(frontier - it) }
+    val randomValue = Random.nextDouble(0.0, total)
+    var sum = 0.0
+    for (tier in tiers) {
+        sum += INTRODUCTION_TIER_DECAY.pow(frontier - tier)
+        if (sum >= randomValue) return tier
+    }
+    return tiers.last()
 }
 
 private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {

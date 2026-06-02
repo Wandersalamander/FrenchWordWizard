@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         wireQuizControllerListeners()
         quizController.refreshStreakBadge()
 
-        maybeShowTutorial(prefs)
+        startFirstRunFlow(prefs)
     }
 
     private fun workAroundDexReloadBug() {
@@ -239,21 +239,45 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         quizController.setupVocabCardPull()
     }
 
-    private fun maybeShowTutorial(prefs: SharedPreferences) {
-        if (prefs.getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)) return
-        // TapTargetView overlays each highlighted view in turn; it's not
-        // navigable via TalkBack swipe gestures and effectively traps SR
-        // users on a screen they can't operate. Skip the auto-tour when
-        // a screen reader is active. Don't persist the seen-flag in that
-        // case — if the user later disables TalkBack, the tour should
-        // still pop on the next fresh launch. The menu "Show tutorial"
-        // entry remains the manual escape hatch either way.
+    /**
+     * First-launch sequencing: show the button tutorial (when unseen and no
+     * screen reader is active), then start calibration once the tour ends.
+     * When the tutorial is skipped, go straight to the calibration check.
+     *
+     * TapTargetView overlays each highlighted view in turn; it's not navigable
+     * via TalkBack swipe gestures and effectively traps SR users on a screen
+     * they can't operate, so the visual tour is skipped when a screen reader is
+     * active (and the seen-flag isn't persisted in that case — see
+     * showTutorial). Calibration uses the regular buttons and announces itself
+     * with a banner, so it still runs for SR users.
+     */
+    private fun startFirstRunFlow(prefs: SharedPreferences) {
+        val tutorialSeen = prefs.getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)
         val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
-        if (am.isTouchExplorationEnabled) return
-        findViewById<View>(android.R.id.content).post { showTutorial() }
+        val screenReaderActive = am.isTouchExplorationEnabled
+        val root = findViewById<View>(android.R.id.content)
+        if (!tutorialSeen && !screenReaderActive) {
+            root.post { showTutorial(onFinished = ::maybeStartCalibration) }
+        } else {
+            root.post { maybeStartCalibration() }
+        }
     }
 
-    private fun showTutorial() {
+    /**
+     * Start the once-per-language calibration probe, but only on a genuinely
+     * fresh language: calibration hasn't already run for it
+     * ([AppPrefs.isCalibrationDone]) and nothing has been introduced yet. The
+     * emptiness check stops upgrading or mid-learning users from being probed
+     * retroactively; a language wipe clears both signals (see
+     * SettingsActivity.wipeProgressFor) so a wiped language re-calibrates.
+     */
+    private fun maybeStartCalibration() {
+        if (AppPrefs.isCalibrationDone(this, language.code)) return
+        if (vocabDictionary.csvData.any { it.hasBeenIntroduced() }) return
+        quizController.startCalibration()
+    }
+
+    private fun showTutorial(onFinished: () -> Unit = {}) {
         fun target(view: View, title: String, description: String) =
             TapTarget.forView(view, title, description)
                 .tintTarget(false)
@@ -292,9 +316,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             .targets(steps)
             .continueOnCancel(true)
             .listener(object : TapTargetSequence.Listener {
-                override fun onSequenceFinish() { restoreBadges() }
+                // Fire once whether the tour completes or is dismissed, so the
+                // first-run handoff to calibration runs in either case.
+                private var ended = false
+                private fun end() {
+                    if (ended) return
+                    ended = true
+                    restoreBadges()
+                    onFinished()
+                }
+                override fun onSequenceFinish() = end()
                 override fun onSequenceStep(target: TapTarget, targetClicked: Boolean) {}
-                override fun onSequenceCanceled(target: TapTarget) { restoreBadges() }
+                override fun onSequenceCanceled(target: TapTarget) = end()
             })
             .start()
 
