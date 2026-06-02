@@ -291,6 +291,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_card_green"
         android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
         android:orientation="vertical"
         android:paddingHorizontal="18dp"
         android:paddingTop="12dp"
@@ -354,6 +355,7 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
         android:orientation="vertical"
         android:paddingHorizontal="18dp"
         android:paddingTop="12dp"
@@ -514,19 +516,9 @@
                 android:id="@+id/button_tip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:minHeight="48dp"
                 android:text="💡 Hint" />
-
-            <Button
-                android:id="@+id/button_new"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:minHeight="48dp"
-                android:text="+ New word" />
         </LinearLayout>
     </LinearLayout>
 

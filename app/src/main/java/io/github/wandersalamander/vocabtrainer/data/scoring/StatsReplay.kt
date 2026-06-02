@@ -118,6 +118,15 @@ object StatsReplay {
             elapsedMs = entry.viewTimeMs,
         )
         if (fastTracking) {
+            // First-exposure mastery: push the first refresh gap out so the
+            // word isn't resurfaced tomorrow. Only on the flag's flip to true,
+            // never clobbering a longer interval a prior clean refresh earned.
+            // Mirrors QuizController.applyFastTrackGate's fastTracking branch.
+            if (!stats.fastTracked) {
+                stats.refreshIntervalDays = stats.refreshIntervalDays.coerceAtLeast(
+                    SkillStats.FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS,
+                )
+            }
             stats.fastTracked = true
         } else if (stats.fastTracked) {
             // Mirror the live path: use the round's actual elapsed time, not

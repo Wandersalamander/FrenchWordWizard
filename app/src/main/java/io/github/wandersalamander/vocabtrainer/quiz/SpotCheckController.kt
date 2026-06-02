@@ -54,8 +54,6 @@ internal class SpotCheckController(
         views.textVocabEyebrow.text = "SELF-CHECK · DID YOU KNOW IT?"
         views.buttonFail.text = "✗ Wrong"
         views.buttonNext.text = "✓ Correct"
-        views.buttonNew.isEnabled = false
-        views.buttonNew.isClickable = false
         views.buttonTip.isEnabled = false
         views.buttonTip.isClickable = false
         views.cardVocab.pullEnabled = false

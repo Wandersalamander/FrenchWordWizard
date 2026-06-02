@@ -10,6 +10,7 @@ import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import io.github.wandersalamander.vocabtrainer.R
+import io.github.wandersalamander.vocabtrainer.progress.LifetimeScoreTracker
 import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
 import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 
@@ -30,7 +31,7 @@ internal class StreakBadgeView(
      * already, but other services key off the node's class name.
      */
     fun setupRoles() {
-        listOf(views.textStreak, views.textStreakShield).forEach { badge ->
+        listOf(views.textStreak, views.textStreakShield, views.textStreakScore).forEach { badge ->
             ViewCompat.setAccessibilityDelegate(badge, object : AccessibilityDelegateCompat() {
                 override fun onInitializeAccessibilityNodeInfo(
                     host: View,
@@ -41,6 +42,10 @@ internal class StreakBadgeView(
                 }
             })
         }
+        // The score badge's text is repainted per-round by refreshLifetimeScoreBadge
+        // (not by this class), so its click handler is wired once here rather than
+        // in refresh(). The dialog reads the live score from the badge at tap time.
+        views.textStreakScore.setOnClickListener { showScoreExplanation() }
     }
 
     /**
@@ -51,21 +56,24 @@ internal class StreakBadgeView(
         val ctx = activity.applicationContext
         val streak = StreakTracker.currentStreak(ctx)
         val shields = StreakTracker.freezesAvailable(ctx)
-        views.textStreak.text = if (streak > 0) "🔥 $streak" else ""
+        // Always render the flame, even at 0 ("🔥 0"). The badge has a fixed
+        // 48dp min size, so blanking the text on day 0 leaves an empty-looking
+        // tap target rather than collapsing it — and the first-launch tutorial
+        // spotlights this view, so an empty badge reads as "highlighting
+        // nothing". Showing the real count keeps the highlight pointed at
+        // something concrete and lets day-0 users tap to learn how streaks work.
+        views.textStreak.text = "🔥 $streak"
         // Without a dynamic contentDescription, TalkBack reads the literal
         // glyphs ("fire emoji 12") or skips the value entirely. Spell out
         // the count and unit so SR users get the same information as the
         // visible badge.
         views.textStreak.contentDescription = when {
-            streak <= 0 -> null
+            streak <= 0 -> "No streak yet, tap for details"
             streak == 1 -> "1 day streak, tap for details"
             else -> "$streak day streak, tap for details"
         }
-        // Only expose the flame as a tap target when there's a streak to
-        // explain — wrap_content collapses the empty state, so there's
-        // nothing meaningful to tap on day 0.
-        views.textStreak.isClickable = streak > 0
-        views.textStreak.isFocusable = streak > 0
+        views.textStreak.isClickable = true
+        views.textStreak.isFocusable = true
         views.textStreak.setOnClickListener { showStreakExplanation() }
         views.textStreakShield.text = "🛡️ $shields"
         views.textStreakShield.contentDescription = when (shields) {
@@ -104,6 +112,27 @@ internal class StreakBadgeView(
         view.findViewById<TextView>(R.id.shieldDialogEarn).text =
             "Earn one shield every ${StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of streak " +
                 "(up to ${StreakTracker.MAX_FREEZES} stockpiled)."
+        AlertDialog.Builder(activity)
+            .setView(view)
+            .setPositiveButton("Got it", null)
+            .show()
+    }
+
+    private fun showScoreExplanation() {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_score_info, null)
+        view.findViewById<TextView>(R.id.scoreDialogMastery).text =
+            "Master a word in a skill: +${LifetimeScoreTracker.SCORE_PER_SKILL_MASTERY}."
+        view.findViewById<TextView>(R.id.scoreDialogRefresh).text =
+            "Pass a review of a mastered word: +${LifetimeScoreTracker.SCORE_PER_REFRESH_PASS}."
+        // Pull the current score off the live badge ("⭐ 247") rather than
+        // re-reading the tracker — keeps this view dependency-free (no Context
+        // / dictionary) and always matches what the user sees.
+        val score = views.textStreakScore.text.filter { it.isDigit() }
+        if (score.isNotEmpty() && score != "0") {
+            val current = view.findViewById<TextView>(R.id.scoreDialogCurrent)
+            current.text = "Your score: $score"
+            current.visibility = View.VISIBLE
+        }
         AlertDialog.Builder(activity)
             .setView(view)
             .setPositiveButton("Got it", null)

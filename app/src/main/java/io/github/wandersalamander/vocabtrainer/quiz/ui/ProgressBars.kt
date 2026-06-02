@@ -87,6 +87,7 @@ internal fun refreshLifetimeBar(
         append("$mastered of $total words mastered")
         if (today > 0) append(", plus $today today")
         if (due > 0) append(", $due due for review")
+        append(", tap for details")
     }
 }
 
@@ -118,7 +119,7 @@ internal fun refreshLifetimeScoreBadge(
 ): Long {
     val score = LifetimeScoreTracker.current(context, dictionary)
     views.textStreakScore.text = "⭐ $score"
-    views.textStreakScore.contentDescription = "Knowledge score: $score"
+    views.textStreakScore.contentDescription = "Knowledge score: $score, tap for details"
     return score
 }
 
@@ -151,6 +152,7 @@ internal fun refreshActiveBar(
         if (todayFinished.listen > 0) append(" (${todayFinished.listen} finished today)")
         append(", ${counts.invert} invert")
         if (todayFinished.invert > 0) append(" (${todayFinished.invert} finished today)")
+        append(", tap for details")
     }
 }
 

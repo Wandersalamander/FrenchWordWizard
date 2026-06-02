@@ -165,7 +165,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         val views = QuizViews(
             buttonFail = findViewById(R.id.button_fail),
             buttonNext = findViewById(R.id.button_next),
-            buttonNew = findViewById(R.id.button_new),
             buttonTip = findViewById(R.id.button_tip),
             buttonHard = findViewById(R.id.button_hard),
             buttonLearned = findViewById(R.id.button_learned),
@@ -205,10 +204,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     private fun disableQuizButtonsUntilFirstWord() {
-        // These three are click-triggered actions that need an active vocab to
-        // operate on. QuizController re-enables them via setQuizButtonsEnabled
-        // once updateVocab has installed the first word.
-        listOf(views.buttonFail, views.buttonNew, views.buttonTip).forEach {
+        // These click-triggered actions need an active vocab to operate on.
+        // QuizController re-enables them via setQuizButtonsEnabled once
+        // updateVocab has installed the first word.
+        listOf(views.buttonFail, views.buttonTip).forEach {
             it.isClickable = false
             it.isEnabled = false
         }
@@ -231,11 +230,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     private fun wireQuizControllerListeners() {
         views.buttonFail.setDebouncedOnClickListener { quizController.onFailClick() }
         views.buttonNext.setDebouncedOnClickListener { quizController.onNextClick() }
-        views.buttonNew.setDebouncedOnClickListener { quizController.onNewClick() }
         views.buttonTip.setOnClickListener { quizController.onTipClick() }
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
         quizController.setupLearnedButton()
         quizController.setupStreakBadgeRoles()
+        quizController.setupProgressCardInfo()
         quizController.setupVocabCardPull()
     }
 
@@ -283,21 +282,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 .tintTarget(false)
                 .cancelable(true)
 
-        // The streak badge is normally empty until the user has practiced;
-        // seed a placeholder value so the TapTarget has something visible to
-        // highlight during the first-launch tour. The shield badge already
-        // shows "🛡️ 0" by default, so no seeding is needed for it. Cleared
-        // back to the real state when the sequence ends.
-        val seededStreak = views.textStreak.text.isNullOrEmpty()
-        if (seededStreak) views.textStreak.text = "🔥 0"
-        val restoreBadges = { if (seededStreak) quizController.refreshStreakBadge() }
-
+        // The streak badge always renders a real value ("🔥 0" on day 0; see
+        // StreakBadgeView.refresh), so the "Daily streak" TapTarget below has a
+        // concrete, visible target — no placeholder seeding needed.
         val steps = mutableListOf(
             target(views.textForeign, "The word", "Recall what this foreign word means before tapping any button below."),
             target(views.buttonNext, "Know it", "Tap when you know the word. The next one loads — occasionally a spot-check pops up so you can confirm you really got it right."),
             target(views.buttonFail, "Reveal", "Tap when the word stumped you. Reveals the translation and an example sentence, then loads the next word."),
             target(views.buttonTip, "Hint", "Reveals an example sentence using the word and reads it aloud. Costs a small score penalty — one hint per word."),
-            target(views.buttonNew, "New word", "Skips this word and pulls a fresh one you've never seen, expanding your active pool."),
             target(views.buttonHard, "Flag as hard", "Marks the word as tough so it shows up more often. Tap again to unflag."),
             target(views.buttonLearned, "Mark as learned", "First tap reveals the answer so you can check yourself. Tap again to retire the word — you won't see it again."),
             target(views.textStreak, "Daily streak", "Counts consecutive days you've practiced. Even one round keeps the streak alive. Tap any time for a refresher."),
@@ -322,7 +314,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 private fun end() {
                     if (ended) return
                     ended = true
-                    restoreBadges()
                     onFinished()
                 }
                 override fun onSequenceFinish() = end()

@@ -32,6 +32,7 @@ import io.github.wandersalamander.vocabtrainer.progress.SkillFinishedTracker
 import io.github.wandersalamander.vocabtrainer.quiz.picker.PickerId
 import io.github.wandersalamander.vocabtrainer.quiz.picker.QuizPicker
 import io.github.wandersalamander.vocabtrainer.quiz.ui.ProgressBarAnimator
+import io.github.wandersalamander.vocabtrainer.quiz.ui.ProgressCardInfoView
 import io.github.wandersalamander.vocabtrainer.quiz.ui.StreakBadgeView
 import io.github.wandersalamander.vocabtrainer.quiz.ui.SwipeableVocabCard
 import io.github.wandersalamander.vocabtrainer.quiz.ui.TipBehavior
@@ -47,7 +48,6 @@ import kotlinx.coroutines.launch
 data class QuizViews(
     val buttonFail: Button,
     val buttonNext: Button,
-    val buttonNew: Button,
     val buttonTip: Button,
     val buttonHard: Button,
     val buttonLearned: Button,
@@ -128,6 +128,7 @@ class QuizController(
     private val language: Language,
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
+    private val progressCardInfo = ProgressCardInfoView(activity, views)
     private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
     // Picker re-reads the user's auto-add threshold and the calibrated frontier
     // each pick so changing the threshold in Settings — or finishing calibration
@@ -207,12 +208,6 @@ class QuizController(
     // from every user-action handler, and frozen into a ReviewLogEntry by
     // saveCurrentVocab. See RoundFacts kdoc for the raw-fact philosophy.
     private val roundFacts = RoundFacts()
-
-    // True iff the currently-active spot check was triggered by an +New press
-    // (as opposed to Next or a random check). Read by [exitSpotCheck] so the
-    // resolution advances with newCandidates=true and commits as NEW, instead
-    // of falling back to the Next-flow defaults.
-    private var spotCheckOriginatedFromNewClick: Boolean = false
 
     // Non-null only while the once-per-language calibration probe runs on the
     // main screen. While set, Next/Fail feed the session (see onNextClick /
@@ -340,30 +335,6 @@ class QuizController(
         if (idx <= 0) return true
         val predecessor = Skill.ladder[idx - 1]
         return vocab.stats(predecessor).fastTracked
-    }
-
-    fun onNewClick() {
-        val vocab = currentVocab ?: return
-        if (vocab.hasBeenIntroduced()) {
-            // Already-introduced word: the user wants to set it aside and
-            // pull a fresh one. No commit — the active pair's stats stay put
-            // until the user actually engages with it later.
-            dismissCurrentVocab(newCandidates = true)
-        } else {
-            // Fresh, never-seen word: a +New press here means "I already
-            // know this one, give me another." Route through the Know-it
-            // path so FastTrack can promote it, with the same mastery
-            // spot-check gate as onNextClick so the flag can't flip on
-            // unverified. Lets the user hammer through a long list of
-            // already-known vocabulary.
-            roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
-            if (wouldMasterOnCommit()) {
-                spotCheckOriginatedFromNewClick = true
-                startSpotCheck()
-            } else {
-                updateVocab(0, newCandidates = true, commitButton = CommitButton.NEW)
-            }
-        }
     }
 
     fun onTipClick() {
@@ -518,6 +489,8 @@ class QuizController(
 
     fun setupStreakBadgeRoles() = streakBadge.setupRoles()
 
+    fun setupProgressCardInfo() = progressCardInfo.setup()
+
     fun setupLearnedButton() {
         views.buttonLearned.text = "✓"
         views.buttonLearned.setDebouncedOnClickListener {
@@ -576,7 +549,7 @@ class QuizController(
     /** Reconfigure the quiz surface for binary known/unknown answers. */
     private fun enterCalibrationUi() {
         // INVISIBLE, not GONE, so the layout doesn't reflow; restored on exit.
-        listOf(views.buttonNew, views.buttonTip, views.buttonHard, views.buttonLearned)
+        listOf(views.buttonTip, views.buttonHard, views.buttonLearned)
             .forEach { it.visibility = View.INVISIBLE }
         views.buttonNext.text = "✓ I know it"
         views.buttonFail.text = "✗ I don't"
@@ -650,7 +623,7 @@ class QuizController(
      * [finishCalibration]'s updateVocab triggers immediately afterward.
      */
     private fun exitCalibrationUi() {
-        listOf(views.buttonNew, views.buttonTip, views.buttonHard, views.buttonLearned)
+        listOf(views.buttonTip, views.buttonHard, views.buttonLearned)
             .forEach { it.visibility = View.VISIBLE }
     }
 
@@ -757,23 +730,14 @@ class QuizController(
     private fun exitSpotCheck(wasWrong: Boolean) {
         spotCheck.exit()
         roundFacts.recordSpotCheckResult(passed = !wasWrong)
-        val fromNew = spotCheckOriginatedFromNewClick
-        spotCheckOriginatedFromNewClick = false
         // updateVocab → applyFailurePenaltyAndPersist records the failure
         // because penalty > 0; don't double-count it here. The commit kind
-        // reflects both the spot-check outcome AND the originating button:
-        // ✓ Correct via +New stays a NEW commit, ✓ Correct via Next a NEXT,
-        // ✗ Wrong is always FAIL regardless of origin. newCandidates honors
-        // the originating button's intent so a passed +New still pulls a
-        // fresh inactive word.
+        // reflects the spot-check outcome: ✓ Correct is a NEXT commit,
+        // ✗ Wrong is a FAIL.
         updateVocab(
             penalty = if (wasWrong) RoundScoring.FAIL_PENALTY_MS else 0L,
-            newCandidates = fromNew,
-            commitButton = when {
-                wasWrong -> CommitButton.FAIL
-                fromNew -> CommitButton.NEW
-                else -> CommitButton.NEXT
-            },
+            newCandidates = false,
+            commitButton = if (wasWrong) CommitButton.FAIL else CommitButton.NEXT,
         )
     }
 
@@ -898,11 +862,6 @@ class QuizController(
         views.textVocabEyebrow.text = "WORD"
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
-        // Defensive: spot-check origin shouldn't survive a round transition.
-        // exitSpotCheck clears it on the normal path; this catches any path
-        // that bypasses exitSpotCheck (e.g. future code that advances while
-        // spot check was still active).
-        spotCheckOriginatedFromNewClick = false
     }
 
     /**
@@ -1222,8 +1181,6 @@ class QuizController(
         views.buttonFail.isClickable = enabled
         views.buttonNext.isEnabled = enabled
         views.buttonNext.isClickable = enabled
-        views.buttonNew.isEnabled = enabled
-        views.buttonNew.isClickable = enabled
         // Tip's applicability is skill-dependent — e.g. INVERT disables it
         // because the example sentence would contain the answer word.
         val tipApplicable = enabled && currentSkill.flow.tipAllowed
