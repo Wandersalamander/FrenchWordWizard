@@ -49,7 +49,7 @@ la ricetta	recipe	3	a86565d9964029e885411d61516a2879	La ricetta della pasta al p
 il cuoco	cook / chef	3	c3d99554d5e2eace9909d51f7b5911d9	Il cuoco di questo ristorante è famoso in tutta la regione per la sua creatività in cucina.	Un bravo cuoco.
 il cameriere	waiter	3	b6b80f1dcb2e62a97152a7052df341e8	Il cameriere è stato molto gentile e ci ha consigliato i migliori piatti del menu di stasera.	Cameriere, il conto!
 ordinare	to order	3	728daaadf4b13e9848df9a607b051650	Cosa volete ordinare per cena stasera al ristorante in centro città vicino al teatro?	Ordino la pasta.
-servire	to serve / to need (mi serve)	3	af96cef361334119e8eeac2174ebbd8e	Il cameriere ci ha appena servito il primo piatto in questo ristorante elegante del centro storico.	Mi serve subito.
+servire	to serve / to need	3	af96cef361334119e8eeac2174ebbd8e	Il cameriere ci ha appena servito il primo piatto in questo ristorante elegante del centro storico.	Mi serve subito.
 assaggiare	to taste	3	53b1a0fa36215408be5158537dbce814	Voglio assaggiare il dolce della casa che il cuoco ha preparato per i clienti speciali oggi.	Vuoi assaggiare?
 gustare	to enjoy / savor	3	0ffe5b904a95ec2881b6376b5a29b55b	Mi piace gustare un buon vino rosso accompagnato da un piatto di formaggi misti italiani.	Gusto il pranzo.
 bollire	to boil	3	76f36e857e6de9a7f1f71cdc48ff6ec7	Devo bollire l'acqua per la pasta prima di aggiungerla quando l'acqua è ben calda nella pentola.	L'acqua bolle.
