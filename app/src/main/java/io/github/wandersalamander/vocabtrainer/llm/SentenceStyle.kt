@@ -72,6 +72,18 @@ object ForeignCultureStyle : SentenceStyle {
             "an Italian gelateria",
             "a small village in the Dolomites",
         )
+        Language.PORTUGUESE -> listOf(
+            "Portuguese cuisine",
+            "a Lisbon tram",
+            "the Algarve coast",
+            "a pastelaria with pastéis de nata",
+            "fado music",
+            "the Douro valley vineyards",
+            "Porto's riverside",
+            "a village in the Alentejo",
+            "a Portuguese family meal",
+            "the Sintra hills",
+        )
         Language.CHINESE -> listOf(
             "Chinese cuisine",
             "a hutong in Beijing",

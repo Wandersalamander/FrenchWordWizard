@@ -215,6 +215,16 @@ private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {
 }
 
 /**
+ * A word's easier ladder skills are snoozed for this long after any *harder*
+ * mastered skill of the same word is refreshed (see tier 0 in
+ * [pickMasteredVocabToRefresh]). One day so the same word never resurfaces
+ * twice in a sitting; by the time the easier skill comes back the extra wait
+ * has accrued, so the late-review bonus in [SkillStats.applyRoundCommit]
+ * stretches its interval on its own — no explicit cross-skill crediting.
+ */
+const val MASTERED_REFRESH_SIBLING_SNOOZE_MS: Long = 86_400_000L
+
+/**
  * Pick a mastered (word, skill) pair whose recall has likely decayed past
  * its refresh interval. Returns null when no mastered pair is due yet (e.g.
  * early users with mostly active words, or right after every mastered pair
@@ -222,6 +232,16 @@ private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {
  * [getActiveVocabWeighted] does.
  *
  * Selection is tiered:
+ *   0. One-per-word, hardest skill: a word's three ladder skills are
+ *      correlated recall of the same vocabulary, so the refresh pool surfaces
+ *      only the *hardest* (highest-ladder) skill currently due for a word —
+ *      recalling it is the strongest single signal the word still holds. The
+ *      word's easier skills are snoozed for [MASTERED_REFRESH_SIBLING_SNOOZE_MS]
+ *      after any harder skill is refreshed; this is derived from the harder
+ *      skill's [SkillStats.lastDisplayed] (no stored flag) so the easier
+ *      skill's own schedule is left untouched and resurfaces a day later with
+ *      the extra wait intact. No cross-skill crediting — the stagger plus the
+ *      elapsed-anchored doubling space the easier skills on their own.
  *   1. Drilled-pair priority: a pair that earned mastery through active-pool
  *      practice always outranks a [SkillStats.fastTracked] one (cleared on
  *      its first exposure, never actually drilled). Fast-tracked pairs only
@@ -265,10 +285,28 @@ fun MyDictionary.pickMasteredVocabToRefresh(
     }
     if (candidates.isEmpty()) return null
 
+    // Tier 0: collapse each word to its single hardest due skill, and drop that
+    // representative entirely while a harder mastered sibling is still inside
+    // the snooze window — the easier skills wait a day, then return on their own.
+    val perWord = candidates
+        .groupBy { it.pair.first }
+        .mapNotNull { (vocab, group) ->
+            val rep = group.maxByOrNull { Skill.ladder.indexOf(it.pair.second) }!!
+            val repIdx = Skill.ladder.indexOf(rep.pair.second)
+            val snoozedByHarder = Skill.ladder.drop(repIdx + 1).any { harder ->
+                skillFilter(harder) &&
+                    vocab.isSkillUnlocked(harder) &&
+                    vocab.stats(harder).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
+                    now - vocab.stats(harder).lastDisplayed < MASTERED_REFRESH_SIBLING_SNOOZE_MS
+            }
+            if (snoozedByHarder) null else rep
+        }
+    if (perWord.isEmpty()) return null
+
     // Tier 1: prefer pairs drilled through the active pool; fast-tracked pairs
     // only surface when no drilled pair is due (see kdoc).
-    val drilled = candidates.filter { !it.fastTracked }
-    val pool = if (drilled.isNotEmpty()) drilled else candidates
+    val drilled = perWord.filter { !it.fastTracked }
+    val pool = if (drilled.isNotEmpty()) drilled else perWord
 
     val minInterval = pool.minOf { it.intervalDays }
     val band = pool.filter { it.intervalDays == minInterval }

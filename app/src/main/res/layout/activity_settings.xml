@@ -76,6 +76,14 @@
                 android:padding="8dp" />
 
             <RadioButton
+                android:id="@+id/radioPortuguese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Português (Portuguese)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
                 android:id="@+id/radioChinese"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -102,6 +102,13 @@ interface TtsHelper {
      * while a worker was already mid-await).
      */
     suspend fun speakSentenceAndAwait(sentence: CharSequence)
+
+    /**
+     * Immediately flush any in-flight and queued speech. Called when the app
+     * goes to the background so the current word (and an already-queued next
+     * word) don't keep talking over the now-hidden quiz.
+     */
+    fun stop()
 }
 
 private const val SPOT_CHECK_PROBABILITY = 0.2
@@ -450,6 +457,13 @@ class QuizController(
         elapsedBeforePause += now - startTime
         startTime = now
         pauseWallClockMs = now
+        // Silence everything the moment we lose the foreground: stop the
+        // in-flight/queued TTS (otherwise the current word and an already-queued
+        // next word keep talking for up to ~5s over the hidden quiz), drop any
+        // deferred round-start speech, and cut the SoundPool chimes.
+        cancelPendingRoundStartTts()
+        tts.stop()
+        sounds.stopAll()
     }
 
     /**

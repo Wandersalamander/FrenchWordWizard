@@ -213,6 +213,83 @@ class VocabSelectorRefreshTest {
         }
     }
 
+    // ---------- Tier 0: one-per-word, hardest skill, sibling snooze ----------
+
+    @Test fun surfacesHardestSkillWhenMultipleSkillsDueForSameWord() {
+        // READ and INVERT both due for the same word. The refresh pool must
+        // surface only the hardest (INVERT) — the easier skill is represented
+        // by it, not shown alongside it.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).makeRefreshEligible(intervalDays = 1f, idleDays = 5, now = now)
+        v.stats(Skill.INVERT).makeRefreshEligible(intervalDays = 1f, idleDays = 5, now = now)
+
+        repeat(50) {
+            val pick = dict.pickMasteredVocabToRefresh(now = now)
+            assertNotNull(pick)
+            assertEquals("hardest skill should represent the word", Skill.INVERT, pick!!.second)
+        }
+    }
+
+    @Test fun easierSkillSnoozedWhileHarderRefreshedWithinWindow() {
+        // INVERT was refreshed just now (not due — long interval). READ is due,
+        // but it must be snoozed because a harder mastered sibling was shown
+        // inside the snooze window — so the only due word yields nothing.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).makeRefreshEligible(intervalDays = 1f, idleDays = 5, now = now)
+        v.stats(Skill.INVERT).makeRefreshEligible(intervalDays = 8f, idleDays = 0, now = now)
+
+        assertNull(
+            "easier skill must stay snoozed behind a freshly refreshed harder one",
+            dict.pickMasteredVocabToRefresh(now = now),
+        )
+    }
+
+    @Test fun easierSkillResurfacesAfterSnoozeExpires() {
+        // Same setup, but the harder skill (INVERT) was refreshed 2 days ago —
+        // past the 1-day snooze — so READ is free to surface again. INVERT
+        // itself is still well within its 8-day interval, so it isn't due.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).makeRefreshEligible(intervalDays = 1f, idleDays = 5, now = now)
+        v.stats(Skill.INVERT).makeRefreshEligible(intervalDays = 8f, idleDays = 2, now = now)
+
+        val pick = dict.pickMasteredVocabToRefresh(now = now)
+        assertNotNull(pick)
+        assertEquals("easier skill should resurface once the snooze lapses", Skill.READ, pick!!.second)
+    }
+
+    @Test fun otherWordsStillSurfaceWhileOneWordIsSnoozed() {
+        // Word A's READ is snoozed behind its freshly-refreshed INVERT, but a
+        // second word B is independently due — the snooze is per-word and must
+        // not suppress unrelated words.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\th1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\th2\tDas Auto fährt.\tAuto.",
+        ))
+        val now = 1_700_000_000_000L
+        val a = dict.csvData[0]
+        a.stats(Skill.READ).makeRefreshEligible(intervalDays = 1f, idleDays = 5, now = now)
+        a.stats(Skill.INVERT).makeRefreshEligible(intervalDays = 8f, idleDays = 0, now = now)
+        dict.csvData[1].stats(Skill.READ).makeRefreshEligible(intervalDays = 1f, idleDays = 5, now = now)
+
+        repeat(50) {
+            val pick = dict.pickMasteredVocabToRefresh(now = now)
+            assertNotNull(pick)
+            assertEquals("only the un-snoozed word should surface", "h2", pick!!.first.hash)
+        }
+    }
+
     @Test fun fastTrackedPairSurfacesWhenNoDrilledPairIsDue() {
         // Only a fast-tracked pair is due (the drilled pair is still well within
         // its interval). The picker must fall back to the fast-tracked pair

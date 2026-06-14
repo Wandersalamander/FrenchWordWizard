@@ -56,12 +56,18 @@ data class SkillStats(
      * Post-mastery refresh cadence in days. Read by
      * [io.github.wandersalamander.vocabtrainer.dictionary.Vocab.failureProbabilityMasteredWords]
      * to decide when a mastered (word, skill) pair becomes refresh-eligible
-     * again. Doubles on every clean refresh of an already-mastered pair (1 → 2
-     * → 4 → 8 …, capped at [MAX_REFRESH_INTERVAL_DAYS]), holds steady when the
-     * user needed a hint, resets to 1 on a full fail. The doubling only fires
-     * AFTER mastery — the round that first crosses the threshold leaves the
-     * interval at its current value, so a freshly mastered pair surfaces 1 day
-     * later, exactly once, before the schedule starts growing.
+     * again. On a clean refresh of an already-mastered pair it doubles (1 → 2 →
+     * 4 → 8 …, capped at [MAX_REFRESH_INTERVAL_DAYS]); holds steady when the user
+     * needed a hint; resets to 1 on a full fail. The doubling only fires AFTER
+     * mastery — the round that first crosses the threshold leaves the interval at
+     * its current value, so a freshly mastered pair surfaces 1 day later, exactly
+     * once, before the schedule starts growing.
+     *
+     * The doubling is anchored on whichever is longer: this scheduled value or
+     * the *actual* time the user went without seeing the pair (the late-review
+     * bonus). A clean recall 7 days after a 2-day schedule proves ~7-day
+     * retention, so the next gap jumps to ~14, not 4 — the user reaching the app
+     * late and still succeeding shouldn't be punished with a short re-show.
      */
     var refreshIntervalDays: Float = 1f,
 ) {
@@ -119,6 +125,16 @@ data class SkillStats(
         // is the fpb the picker saw when selecting this round (a clean round
         // can't shift it; only failures can, and those are reflected here).
         val wasMasteredBefore = failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
+        // Actual gap since this pair was last shown, captured BEFORE lastDisplayed
+        // is overwritten below. For a clean post-mastery refresh this is the real
+        // time the user retained the pair — which can far exceed the scheduled
+        // refreshIntervalDays when they returned to the app late. 0 for a pair
+        // that's never been displayed (lastDisplayed still at the epoch).
+        val elapsedDays = if (lastDisplayed > 0L) {
+            ((nowMs - lastDisplayed).toDouble() / MILLIS_PER_DAY).toFloat()
+        } else {
+            0f
+        }
         nTimesViewed += 1
         viewTimeMilli_prev = viewTimeMilli
         viewTimeMilli = (
@@ -134,13 +150,18 @@ data class SkillStats(
             // Hint: held the schedule steady; the next refresh fires at the
             // same interval rather than punishing the user for needing a nudge.
             failAmount > 0f -> Unit
-            // Clean refresh of an already-mastered pair: earn a longer gap.
+            // Clean refresh of an already-mastered pair: earn a longer gap. The
+            // doubling anchors on whichever is longer — the scheduled interval or
+            // the actual elapsed gap (late-review bonus): recalling cleanly 7 days
+            // after a 2-day schedule earns ~14, not 4. maxOf guards the rare
+            // early-recall case from shrinking the schedule below the old doubling.
             // The mastery-entry round itself (wasMasteredBefore == false) is
             // skipped so the user sees the first post-mastery refresh exactly
             // 1 day out.
             wasMasteredBefore ->
                 refreshIntervalDays =
-                    (refreshIntervalDays * 2f).coerceAtMost(MAX_REFRESH_INTERVAL_DAYS)
+                    (maxOf(refreshIntervalDays, elapsedDays) * 2f)
+                        .coerceAtMost(MAX_REFRESH_INTERVAL_DAYS)
         }
     }
 

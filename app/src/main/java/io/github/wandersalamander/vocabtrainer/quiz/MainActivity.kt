@@ -6,9 +6,14 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.database.ContentObserver
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.provider.Settings
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
@@ -17,6 +22,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityManager
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -59,6 +65,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     private lateinit var sounds: SoundEffects
     private lateinit var serviceIntent: Intent
     private lateinit var views: QuizViews
+    private lateinit var audioManager: AudioManager
+
+    // Listening exercises are pointless with no audio, so we watch the media
+    // volume while in the foreground and auto-disable listening mode when it
+    // hits zero. Settings.System fires for any system setting; the handler just
+    // re-checks the volume, which is cheap. Registered in onResume / dropped in
+    // onPause so it never fires while backgrounded.
+    private val volumeObserver = object : ContentObserver(Handler(Looper.getMainLooper())) {
+        override fun onChange(selfChange: Boolean) {
+            syncListeningModeWithVolume()
+        }
+    }
 
     // Snapshot of the per-language wipe timestamp at startup. If the user wipes
     // this language from Settings, the stored timestamp moves forward and we
@@ -82,6 +100,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         workAroundDexReloadBug()
 
         sounds = SoundEffects(this)
+        audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         // Push the root LinearLayout below the status bar + window-decor action
@@ -119,6 +138,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         )
         wireQuizControllerListeners()
         quizController.refreshStreakBadge()
+
+        // Launched with the device already muted: start with listening off so
+        // the user isn't dropped into silent listening rounds. The onResume that
+        // follows won't double-toast — listening is already off by then.
+        syncListeningModeWithVolume()
 
         startFirstRunFlow(prefs)
     }
@@ -353,8 +377,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        menu.findItem(R.id.menu_listening_mode)?.isChecked =
-            quizController.isListeningModeEnabled()
+        // Greyed out (not just unchecked) while muted: there's nothing to hear,
+        // so the toggle is unavailable until the user restores sound.
+        val muted = isMediaMuted()
+        menu.findItem(R.id.menu_listening_mode)?.apply {
+            isEnabled = !muted
+            isChecked = quizController.isListeningModeEnabled()
+        }
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -439,6 +468,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
     }
 
+    override fun stop() {
+        if (!::textToSpeech.isInitialized) return
+        textToSpeech.stop()
+        // stop() doesn't deliver onDone, so release any coroutine parked in
+        // speakSentenceAndAwait rather than leaving it suspended until resume.
+        pendingTtsDone?.complete(Unit)
+    }
+
     override fun onDestroy() {
         if (::textToSpeech.isInitialized) {
             textToSpeech.stop()
@@ -466,13 +503,43 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
         quizController.onAppResumed()
         quizController.refreshStreakBadge()
+        // Catch a volume change that happened while we were backgrounded, then
+        // keep watching for live changes (e.g. the user thumbing volume to zero
+        // mid-session).
+        contentResolver.registerContentObserver(Settings.System.CONTENT_URI, true, volumeObserver)
+        syncListeningModeWithVolume()
     }
 
     override fun onPause() {
         if (::quizController.isInitialized) {
             quizController.markPaused()
         }
+        contentResolver.unregisterContentObserver(volumeObserver)
         super.onPause()
+    }
+
+    /** True when the media stream — where TTS plays — is at zero volume. */
+    private fun isMediaMuted(): Boolean =
+        audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0
+
+    /**
+     * Listening exercises need audible TTS, so when the device media volume is
+     * muted we auto-disable listening mode (with a hint) and refresh the
+     * overflow menu so its toggle reflects the change. We deliberately do NOT
+     * auto-re-enable on unmute: the user opts back in from the menu so we never
+     * surprise them with sudden speech.
+     */
+    private fun syncListeningModeWithVolume() {
+        if (!::quizController.isInitialized) return
+        if (isMediaMuted() && quizController.isListeningModeEnabled()) {
+            quizController.setListeningModeEnabled(false)
+            Toast.makeText(
+                this,
+                "Sound off — listening paused",
+                Toast.LENGTH_LONG,
+            ).show()
+        }
+        invalidateOptionsMenu()
     }
 
     private fun ensureNotificationPermissionThenStartService() {

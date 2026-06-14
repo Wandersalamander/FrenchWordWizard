@@ -77,18 +77,21 @@ class SettingsActivity : AppCompatActivity() {
         val radioFrench = findViewById<RadioButton>(R.id.radioFrench)
         val radioGerman = findViewById<RadioButton>(R.id.radioGerman)
         val radioItalian = findViewById<RadioButton>(R.id.radioItalian)
+        val radioPortuguese = findViewById<RadioButton>(R.id.radioPortuguese)
         val radioChinese = findViewById<RadioButton>(R.id.radioChinese)
 
         val radioByLanguage = mapOf(
             Language.FRENCH to radioFrench,
             Language.GERMAN to radioGerman,
             Language.ITALIAN to radioItalian,
+            Language.PORTUGUESE to radioPortuguese,
             Language.CHINESE to radioChinese,
         )
         val languageByRadioId = mapOf(
             R.id.radioFrench to Language.FRENCH,
             R.id.radioGerman to Language.GERMAN,
             R.id.radioItalian to Language.ITALIAN,
+            R.id.radioPortuguese to Language.PORTUGUESE,
             R.id.radioChinese to Language.CHINESE,
         )
 

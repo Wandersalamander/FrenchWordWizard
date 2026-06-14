@@ -585,6 +585,47 @@ class SchedulingMathTest {
         assertEquals(4f, s.refreshIntervalDays, 1e-6f)
     }
 
+    @Test fun refreshInterval_lateCleanRecallDoublesActualElapsedNotSchedule() {
+        // Scheduled at 2 days but the user didn't return for 7 and still recalled
+        // it cleanly: the next gap anchors on the demonstrated ~7-day retention
+        // (×2 = 14), NOT the stale 2-day schedule (which would give 4).
+        val s = masteredStats(refreshIntervalDays = 2f)
+        val now = 1_700_000_000_000L
+        s.lastDisplayed = now - 7L * DAY_MS
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = now)
+        assertEquals(14f, s.refreshIntervalDays, 1e-3f)
+    }
+
+    @Test fun refreshInterval_earlyCleanRecallStillDoublesSchedule() {
+        // If a mastered pair is refreshed before its interval elapses, the
+        // elapsed-time anchor must not shrink the schedule below the old
+        // doubling: maxOf(schedule, elapsed) keeps it at schedule × 2.
+        val s = masteredStats(refreshIntervalDays = 8f)
+        val now = 1_700_000_000_000L
+        s.lastDisplayed = now - 1L * DAY_MS  // only 1 day idle, schedule says 8
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = now)
+        assertEquals(16f, s.refreshIntervalDays, 1e-6f)
+    }
+
+    @Test fun refreshInterval_lateCleanRecallStillCapsAtMaximum() {
+        // A very late recall (×2 would overshoot) is still bounded by the cap.
+        val s = masteredStats(refreshIntervalDays = 4f)
+        val now = 1_700_000_000_000L
+        s.lastDisplayed = now - 200L * DAY_MS  // 200 days late → ×2 = 400, capped
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = now)
+        assertEquals(SkillStats.MAX_REFRESH_INTERVAL_DAYS, s.refreshIntervalDays, 1e-6f)
+    }
+
+    @Test fun refreshInterval_lateHintDoesNotGetElapsedBonus() {
+        // A late round that needed a hint is only partial retention evidence:
+        // it holds the schedule steady (no elapsed bonus, same as an on-time hint).
+        val s = masteredStats(refreshIntervalDays = 4f)
+        val now = 1_700_000_000_000L
+        s.lastDisplayed = now - 30L * DAY_MS
+        s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0.5f, nowMs = now)
+        assertEquals(4f, s.refreshIntervalDays, 1e-6f)
+    }
+
     @Test fun refreshInterval_holdsSteadyOnHint() {
         val s = masteredStats(refreshIntervalDays = 4f)
         s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0.5f, nowMs = 1_000L)

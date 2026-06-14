@@ -50,6 +50,16 @@ class SoundEffects(context: Context) {
         soundPool.play(spotCheckSoundId, 0.7f, 0.7f, 1, 0, 1f)
     }
 
+    /**
+     * Pause every active stream — used when the app goes to the background so a
+     * chime that's still ringing doesn't bleed past the foreground. autoPause
+     * (not stop) keeps the loaded samples so the next playSuccess/playSpotCheck
+     * starts instantly without a reload.
+     */
+    fun stopAll() {
+        soundPool.autoPause()
+    }
+
     fun release() {
         soundPool.release()
     }

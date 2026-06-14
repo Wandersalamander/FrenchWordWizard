@@ -97,6 +97,36 @@ enum class Language(
             "P.S." to "Post Scriptum",
         ),
     ),
+    PORTUGUESE(
+        code = "pt",
+        // European Portuguese (pt-PT): the bundled dictionary uses pt-PT
+        // vocabulary (e.g. comboio, autocarro, telemóvel, pequeno-almoço) and
+        // this locale drives TTS toward a Portugal voice rather than pt-BR.
+        locale = Locale("pt", "PT"),
+        assetFolder = "portuguese",
+        greeting = "Aprenda português!",
+        englishName = "Portuguese",
+        abbreviations = mapOf(
+            "Sr." to "Senhor",
+            "Sra." to "Senhora",
+            "Dr." to "Doutor",
+            "Dra." to "Doutora",
+            "Prof." to "Professor",
+            "Eng." to "Engenheiro",
+            "etc." to "et cetera",
+            "p. ex." to "por exemplo",
+            "ex." to "exemplo",
+            "n.º" to "número",
+            "pág." to "página",
+            "séc." to "século",
+            "tel." to "telefone",
+            "a.C." to "antes de Cristo",
+            "d.C." to "depois de Cristo",
+            "St." to "São",
+            "i.e." to "isto é",
+            "cf." to "confira",
+        ),
+    ),
     CHINESE(
         code = "zh",
         locale = Locale.SIMPLIFIED_CHINESE,
