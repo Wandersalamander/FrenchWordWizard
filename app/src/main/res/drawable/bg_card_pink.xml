@@ -4,8 +4,10 @@
      so it reads as a flush "syntax token" marker on the panel header. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Accent fills the whole card shape; it shows through as the top accent
-         only where the surface layer above doesn't cover it. -->
-    <item>
+         only where the surface layer above doesn't cover it. Carries an id
+         because QuizController.applyCardAccent recolours this layer each round
+         (looked up by id, so reordering the layers here stays safe). -->
+    <item android:id="@+id/card_accent">
         <shape android:shape="rectangle">
             <corners android:radius="14dp" />
             <solid android:color="@color/monokai_pink" />

@@ -882,14 +882,16 @@ class QuizController(
      * Recolour the vocab card's top accent stripe to match [skill] — or paint
      * it gold ([R.color.today_count_color]) when [useRefreshAccent] is set, so
      * a refresh-pool round is visually distinct from regular drilling. The
-     * stripe is the second item in [R.drawable.bg_card_pink]'s layer-list; we
-     * mutate its in-memory copy so other views referencing the same drawable
+     * stripe is the [R.id.card_accent] layer of [R.drawable.bg_card_pink] (the
+     * full-bleed accent that shows through as the top band); we look it up by
+     * id rather than by index so it survives the layer-list being reordered.
+     * We mutate the in-memory copy so other views referencing the same drawable
      * resource aren't dragged along. Mutating an already-mutated drawable is
      * a no-op, so calling this each round is safe.
      */
     private fun applyCardAccent(card: View, skill: Skill, useRefreshAccent: Boolean) {
         val bg = card.background.mutate() as LayerDrawable
-        val stripe = bg.getDrawable(1) as GradientDrawable
+        val stripe = bg.findDrawableByLayerId(R.id.card_accent) as GradientDrawable
         val colorRes =
             if (useRefreshAccent) R.color.today_count_color else skill.accentColorRes()
         stripe.setColor(ContextCompat.getColor(activity, colorRes))
