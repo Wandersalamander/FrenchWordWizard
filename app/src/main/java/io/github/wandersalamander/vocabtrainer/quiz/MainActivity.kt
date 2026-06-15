@@ -22,9 +22,11 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import io.github.wandersalamander.vocabtrainer.R
@@ -56,6 +58,9 @@ import java.util.Locale
 
 private const val TAG = "MainActivity"
 private const val UTTERANCE_AWAITABLE = "awaitable_sentence"
+
+// Group id for the dynamically-built language submenu items (radio group).
+private const val MENU_GROUP_LANGUAGE = 1
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper {
     private lateinit var textToSpeech: TextToSpeech
@@ -373,7 +378,54 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
+        setupLanguageMenu(menu)
         return true
+    }
+
+    /**
+     * Fill in the action-bar flag button: its title becomes the current
+     * language's flag, and tapping it opens a submenu listing every language.
+     * Built from [Language.values] so it stays in sync with the enum — the menu
+     * XML carries only a placeholder submenu item, cleared here. Picking a
+     * language persists it and recreates the activity, the same path [onResume]
+     * takes when returning from Settings with a changed language.
+     */
+    private fun setupLanguageMenu(menu: Menu) {
+        val item = menu.findItem(R.id.menu_language) ?: return
+        // Custom action view (not a text menu item) so the flag emoji renders at
+        // full opacity — the default action-item text color is <100% alpha, which
+        // fades color-emoji glyphs and leaves the flag looking greyed out.
+        val flagView = item.actionView as? TextView ?: return
+        flagView.text = language.flag
+        // A bare flag emoji says nothing to TalkBack — give the action a label.
+        flagView.contentDescription = "Change language, currently ${language.englishName}"
+        flagView.setOnClickListener { showLanguagePopup(it) }
+    }
+
+    /**
+     * Drop-down language chooser anchored to the flag button. Built from
+     * [Language.values] as an exclusive (radio) group with the current language
+     * checked; picking one routes through [onLanguageSelected].
+     */
+    private fun showLanguagePopup(anchor: View) {
+        val popup = PopupMenu(this, anchor)
+        var current: MenuItem? = null
+        Language.values().forEachIndexed { index, lang ->
+            val mi = popup.menu.add(MENU_GROUP_LANGUAGE, index, index, "${lang.flag}  ${lang.englishName}")
+            mi.setOnMenuItemClickListener { onLanguageSelected(lang); true }
+            if (lang == language) current = mi
+        }
+        popup.menu.setGroupCheckable(MENU_GROUP_LANGUAGE, true, true)
+        current?.isChecked = true
+        popup.show()
+    }
+
+    private fun onLanguageSelected(selected: Language) {
+        if (selected == language) return
+        // Mirror SettingsActivity's language write, then recreate so onCreate
+        // re-reads the language and rebuilds the dictionary/views around it.
+        AppPrefs.get(this).edit().putString(AppPrefs.KEY_APP_LANGUAGE, selected.code).apply()
+        recreate()
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Language flag button, shown in the action bar (left of the overflow).
+         Uses a custom action view so the flag emoji renders at full opacity;
+         its text + click are wired in MainActivity, where a tap opens a
+         PopupMenu of languages built from Language.values(). -->
+    <item
+        android:id="@+id/menu_language"
+        android:title="Language"
+        app:actionLayout="@layout/action_language_flag"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu_listening_mode"
         android:title="Listening exercises"

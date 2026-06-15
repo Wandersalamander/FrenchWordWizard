@@ -71,36 +71,10 @@ class SettingsActivity : AppCompatActivity() {
             .applySystemBarAndActionBarInsetsAsPadding(themeActionBarHeightPx())
 
         val prefs = AppPrefs.get(this)
-        val currentLanguage = Language.fromPrefs(this)
 
-        val radioGroup = findViewById<RadioGroup>(R.id.languageRadioGroup)
-        val radioFrench = findViewById<RadioButton>(R.id.radioFrench)
-        val radioGerman = findViewById<RadioButton>(R.id.radioGerman)
-        val radioItalian = findViewById<RadioButton>(R.id.radioItalian)
-        val radioPortuguese = findViewById<RadioButton>(R.id.radioPortuguese)
-        val radioChinese = findViewById<RadioButton>(R.id.radioChinese)
-
-        val radioByLanguage = mapOf(
-            Language.FRENCH to radioFrench,
-            Language.GERMAN to radioGerman,
-            Language.ITALIAN to radioItalian,
-            Language.PORTUGUESE to radioPortuguese,
-            Language.CHINESE to radioChinese,
-        )
-        val languageByRadioId = mapOf(
-            R.id.radioFrench to Language.FRENCH,
-            R.id.radioGerman to Language.GERMAN,
-            R.id.radioItalian to Language.ITALIAN,
-            R.id.radioPortuguese to Language.PORTUGUESE,
-            R.id.radioChinese to Language.CHINESE,
-        )
-
-        radioByLanguage[currentLanguage]?.isChecked = true
-
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            val language = languageByRadioId[checkedId] ?: Language.DEFAULT
-            prefs.edit().putString(AppPrefs.KEY_APP_LANGUAGE, language.code).apply()
-        }
+        // Language is chosen from the flag button on the main screen
+        // (MainActivity.setupLanguageMenu), so Settings no longer hosts a
+        // language selector.
 
         // Sentence-source preference: easy / hard / LLM. Defaults to EASY for
         // fresh installs so new users get the gentlest material out of the box.

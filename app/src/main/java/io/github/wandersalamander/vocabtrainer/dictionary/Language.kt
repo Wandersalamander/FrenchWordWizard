@@ -12,6 +12,7 @@ enum class Language(
     val assetFolder: String,
     val greeting: String,
     val englishName: String,
+    val flag: String,
     private val abbreviations: Map<String, String>,
 ) {
     FRENCH(
@@ -20,6 +21,7 @@ enum class Language(
         assetFolder = "french",
         greeting = "Apprenez le français !",
         englishName = "French",
+        flag = "🇫🇷",
         abbreviations = mapOf(
             "Jr." to "Junior",
             "qc." to "quelque chose",
@@ -45,6 +47,7 @@ enum class Language(
         assetFolder = "german",
         greeting = "Lerne Deutsch!",
         englishName = "German",
+        flag = "🇩🇪",
         abbreviations = mapOf(
             "z.B." to "zum Beispiel",
             "usw." to "und so weiter",
@@ -74,6 +77,7 @@ enum class Language(
         assetFolder = "italian",
         greeting = "Impara l'italiano!",
         englishName = "Italian",
+        flag = "🇮🇹",
         abbreviations = mapOf(
             "Sig.ra" to "Signora",
             "Sig.na" to "Signorina",
@@ -106,6 +110,7 @@ enum class Language(
         assetFolder = "portuguese",
         greeting = "Aprenda português!",
         englishName = "Portuguese",
+        flag = "🇵🇹",
         abbreviations = mapOf(
             "Sr." to "Senhor",
             "Sra." to "Senhora",
@@ -133,6 +138,7 @@ enum class Language(
         assetFolder = "chinese",
         greeting = "学习中文吧！",
         englishName = "Chinese",
+        flag = "🇨🇳",
         abbreviations = emptyMap(),
     ) {
         override fun expandAbbreviations(input: String): String =
