@@ -31,8 +31,8 @@ android {
         applicationId "com.wandersalamander.vocabtrainer"
         minSdk 26
         targetSdk 35
-        versionCode 5
-        versionName "20260614.0"
+        versionCode 6
+        versionName "20260615.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -74,7 +74,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.recyclerview:recFyclerview:1.3.2'
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.3'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
