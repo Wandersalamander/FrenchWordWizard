@@ -93,65 +93,17 @@
         </RadioGroup>
     </LinearLayout>
 
-    <!-- ========================= EXAMPLE SENTENCES ========================= -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/bg_card_green"
-        android:orientation="vertical"
-        android:paddingHorizontal="18dp"
-        android:paddingTop="14dp"
-        android:paddingBottom="18dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:accessibilityHeading="true"
-            android:labelFor="@+id/sentenceSourceRadioGroup"
-            android:text="Example sentences"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <RadioGroup
-            android:id="@+id/sentenceSourceRadioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/radioSentenceEasy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Easy (short)"
-                android:textSize="18sp"
-                android:padding="8dp" />
-
-            <RadioButton
-                android:id="@+id/radioSentenceHard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hard (long)"
-                android:textSize="18sp"
-                android:padding="8dp" />
-
-            <RadioButton
-                android:id="@+id/radioSentenceLlm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AI-generated (requires model)"
-                android:textSize="18sp"
-                android:padding="8dp" />
-        </RadioGroup>
-    </LinearLayout>
-
     <!-- ============================ ACTIVE POOL ============================
          Auto-add threshold stepper. Yellow stripe — the unused fifth Monokai
          accent in the settings page — keeps the new control distinct from
          language (cyan) / sentences (green) / AI (pink) / streak (orange) /
          reset (purple). The numeric value is the focal point: a 56sp olive-
          mustard monospace digit flanked by keycap-style ± buttons that read
-         as IDE chrome rather than heavy MaterialButtons. -->
+         as IDE chrome rather than heavy MaterialButtons.
+
+         Sits directly above Example sentences, which in turn groups with the
+         On-device AI card so the AI-generated sentence option reads next to
+         the model download it depends on. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -239,6 +191,60 @@
             android:layout_marginTop="6dp"
             android:gravity="center"
             android:text="MIN WORDS IN READING · 1–20" />
+    </LinearLayout>
+
+    <!-- ========================= EXAMPLE SENTENCES =========================
+         Placed just above On-device AI so the "AI-generated" option reads
+         next to the model download it depends on. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_green"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:labelFor="@+id/sentenceSourceRadioGroup"
+            android:text="Example sentences"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/sentenceSourceRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioSentenceEasy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy (short)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioSentenceHard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hard (long)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/radioSentenceLlm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI-generated (requires model)"
+                android:textSize="18sp"
+                android:padding="8dp" />
+        </RadioGroup>
     </LinearLayout>
 
     <!-- ============================ ON-DEVICE AI ============================

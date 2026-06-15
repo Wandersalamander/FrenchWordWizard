@@ -3,19 +3,35 @@
      bar — picked over orange/purple to keep the four card stripes visually
      distinct). -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Accent fills the whole card shape; it shows through as the top accent
+         only where the surface layer above doesn't cover it. -->
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="14dp" />
-            <solid android:color="@color/card_surface" />
-            <stroke android:width="1dp" android:color="@color/card_edge" />
+            <solid android:color="@color/monokai_cyan" />
         </shape>
     </item>
-    <item android:height="3dp" android:gravity="top">
+    <!-- Surface covers everything except the top 3dp. Its top corners are the
+         outer radius minus the stripe height (14 − 3 = 11dp) so the exposed
+         accent is an even band that follows the card's rounded top corners
+         instead of overhanging or squaring off. NB: no stroke here — a stroked
+         fill is inset by half the stroke width, which would let the accent leak
+         as a hairline rim down the sides/bottom. The edge is the layer below. -->
+    <item android:top="3dp">
         <shape android:shape="rectangle">
             <corners
-                android:topLeftRadius="14dp"
-                android:topRightRadius="14dp" />
-            <solid android:color="@color/monokai_cyan" />
+                android:topLeftRadius="11dp"
+                android:topRightRadius="11dp"
+                android:bottomLeftRadius="14dp"
+                android:bottomRightRadius="14dp" />
+            <solid android:color="@color/card_surface" />
+        </shape>
+    </item>
+    <!-- Hairline card edge, traced around the full rounded rectangle. -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <stroke android:width="1dp" android:color="@color/card_edge" />
         </shape>
     </item>
 </layer-list>

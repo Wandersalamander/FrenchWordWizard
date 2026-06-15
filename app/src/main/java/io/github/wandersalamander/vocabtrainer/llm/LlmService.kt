@@ -3,6 +3,7 @@ package io.github.wandersalamander.vocabtrainer.llm
 import android.content.Context
 import android.util.Log
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
+import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
 import com.google.ai.edge.litertlm.Backend
 import com.google.ai.edge.litertlm.ConversationConfig
 import com.google.ai.edge.litertlm.Engine
@@ -219,6 +220,14 @@ object LlmService {
                 appContext.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
                     .edit().putString(KEY_DOWNLOADED_URL, MODEL_URL).apply()
                 Log.i(TAG, "Model download complete (${target.length()} bytes)")
+                // A user-initiated download that succeeds is an explicit opt-in
+                // to AI sentences — switch the example-sentence preference to LLM
+                // so the feature turns on without a second trip to Settings.
+                // Done here (not in SettingsActivity) so it sticks even if the
+                // user left the screen during the multi-GB download. The quiz
+                // only actually uses the LLM once warmup reaches Ready; until
+                // then it falls back to CSV sentences.
+                SentenceSource.persist(appContext, SentenceSource.LLM)
                 // Reset to NotDownloaded then re-warmup so it transitions Initializing -> Ready.
                 _status.value = Status.NotDownloaded
                 warmup(appContext)

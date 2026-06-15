@@ -32,5 +32,12 @@ enum class SentenceSource(val storageValue: String) {
 
         fun fromContext(context: Context): SentenceSource =
             fromPrefs(AppPrefs.get(context))
+
+        /** Persist [source] as the example-sentence preference. */
+        fun persist(context: Context, source: SentenceSource) {
+            AppPrefs.get(context).edit()
+                .putString(AppPrefs.KEY_SENTENCE_SOURCE, source.storageValue)
+                .apply()
+        }
     }
 }

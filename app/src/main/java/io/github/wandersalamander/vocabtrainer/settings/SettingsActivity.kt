@@ -122,7 +122,7 @@ class SettingsActivity : AppCompatActivity() {
         radioSentenceLlm.isEnabled = false
         sentenceGroup.setOnCheckedChangeListener { _, checkedId ->
             val source = sourceByRadioId[checkedId] ?: SentenceSource.DEFAULT
-            prefs.edit().putString(AppPrefs.KEY_SENTENCE_SOURCE, source.storageValue).apply()
+            SentenceSource.persist(this, source)
         }
 
         // AI status — kick off init in case the user opened settings before MainActivity ran,
@@ -172,6 +172,15 @@ class SettingsActivity : AppCompatActivity() {
                     // selection. During Initializing/Downloading we don't yank
                     // an existing selection — the model is on its way.
                     radioSentenceLlm.isEnabled = status is LlmService.Status.Ready
+                    // A successful download flips the persisted pref to LLM (see
+                    // LlmService.startDownload). If that happened while this
+                    // screen was open — or the user reopened Settings with an LLM
+                    // pref already saved — reflect it now that the radio is usable.
+                    if (status is LlmService.Status.Ready &&
+                        SentenceSource.fromPrefs(prefs) == SentenceSource.LLM
+                    ) {
+                        radioSentenceLlm.isChecked = true
+                    }
                     val modelGone = status is LlmService.Status.NotDownloaded ||
                         status is LlmService.Status.Unavailable
                     if (modelGone && radioSentenceLlm.isChecked) {
