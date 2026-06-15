@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom action-bar view for the language flag button. A plain TextView so
+     the flag emoji renders at full opacity: the default text-action-item color
+     carries <100% alpha, which fades color-emoji glyphs and leaves the flag
+     looking greyed out. The text colour's RGB is ignored by colour-emoji glyphs
+     (they carry their own colours) — only its full alpha matters here. Text and
+     click are wired up in MainActivity.setupLanguageMenu. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/language_flag"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:minWidth="48dp"
+    android:gravity="center"
+    android:paddingHorizontal="10dp"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:clickable="true"
+    android:focusable="true"
+    android:textColor="@android:color/white"
+    android:textSize="20sp" />
