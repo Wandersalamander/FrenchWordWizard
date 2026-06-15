@@ -225,6 +225,48 @@ private fun pickWeighted(pairs: List<Pair<Vocab, Skill>>): Pair<Vocab, Skill> {
 const val MASTERED_REFRESH_SIBLING_SNOOZE_MS: Long = 86_400_000L
 
 /**
+ * The single (word, skill) pair this word would currently contribute to the
+ * refresh pool, or null if the word has nothing surfaceable right now. This is
+ * tier 0 of the refresh policy, factored out so the picker
+ * ([pickMasteredVocabToRefresh]) and the "N due" badge
+ * ([MyDictionary.computeDueMasteredCount]) can't disagree about what counts as
+ * due — the badge must never claim a word the picker would skip.
+ *
+ * A word's three ladder skills are correlated recall of the same vocabulary, so
+ * the pool surfaces only the *hardest* (highest-ladder) skill currently due —
+ * recalling it is the strongest single signal the word still holds. The word's
+ * easier skills are snoozed for [MASTERED_REFRESH_SIBLING_SNOOZE_MS] after any
+ * harder skill is refreshed; that snooze is *derived* from the harder skill's
+ * [SkillStats.lastDisplayed] (no stored flag) so the easier skill's own schedule
+ * is left untouched and resurfaces a day later with the extra wait intact. No
+ * cross-skill crediting — the stagger plus the elapsed-anchored doubling space
+ * the easier skills on their own.
+ *
+ * Returns null when the word is ignored / not introduced, when no skill is past
+ * its interval, or when the only due skills are snoozed behind a harder one.
+ */
+fun Vocab.surfaceableRefreshSkill(
+    skillFilter: (Skill) -> Boolean = { true },
+    now: Long = System.currentTimeMillis(),
+): Skill? {
+    if (ignore || !hasBeenIntroduced()) return null
+    // Hardest (highest-ladder) skill currently due for refresh.
+    val rep = Skill.ladder.lastOrNull { skill ->
+        skillFilter(skill) &&
+            isSkillUnlocked(skill) &&
+            failureProbabilityMasteredWords(skill, now) > 0.0
+    } ?: return null
+    val repIdx = Skill.ladder.indexOf(rep)
+    val snoozedByHarder = Skill.ladder.drop(repIdx + 1).any { harder ->
+        skillFilter(harder) &&
+            isSkillUnlocked(harder) &&
+            stats(harder).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
+            now - stats(harder).lastDisplayed < MASTERED_REFRESH_SIBLING_SNOOZE_MS
+    }
+    return if (snoozedByHarder) null else rep
+}
+
+/**
  * Pick a mastered (word, skill) pair whose recall has likely decayed past
  * its refresh interval. Returns null when no mastered pair is due yet (e.g.
  * early users with mostly active words, or right after every mastered pair
@@ -232,16 +274,9 @@ const val MASTERED_REFRESH_SIBLING_SNOOZE_MS: Long = 86_400_000L
  * [getActiveVocabWeighted] does.
  *
  * Selection is tiered:
- *   0. One-per-word, hardest skill: a word's three ladder skills are
- *      correlated recall of the same vocabulary, so the refresh pool surfaces
- *      only the *hardest* (highest-ladder) skill currently due for a word —
- *      recalling it is the strongest single signal the word still holds. The
- *      word's easier skills are snoozed for [MASTERED_REFRESH_SIBLING_SNOOZE_MS]
- *      after any harder skill is refreshed; this is derived from the harder
- *      skill's [SkillStats.lastDisplayed] (no stored flag) so the easier
- *      skill's own schedule is left untouched and resurfaces a day later with
- *      the extra wait intact. No cross-skill crediting — the stagger plus the
- *      elapsed-anchored doubling space the easier skills on their own.
+ *   0. One-per-word, hardest skill, with sibling snooze — see
+ *      [surfaceableRefreshSkill] for the rationale. Each word contributes at
+ *      most one candidate (its hardest due, un-snoozed skill).
  *   1. Drilled-pair priority: a pair that earned mastery through active-pool
  *      practice always outranks a [SkillStats.fastTracked] one (cleared on
  *      its first exposure, never actually drilled). Fast-tracked pairs only
@@ -269,44 +304,24 @@ fun MyDictionary.pickMasteredVocabToRefresh(
         val nFailed: Float,
         val fastTracked: Boolean,
     )
-    val candidates = csvData.flatMap { vocab ->
-        if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
-        Skill.ladder.mapNotNull { skill ->
-            if (!skillFilter(skill)) return@mapNotNull null
-            if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
-            val score = vocab.failureProbabilityMasteredWords(skill, now)
-            if (score <= 0.0) return@mapNotNull null
-            val stats = vocab.stats(skill)
-            Candidate(
-                vocab to skill, score, stats.refreshIntervalDays,
-                stats.nTimesFailed, stats.fastTracked,
-            )
-        }
+    // Tier 0: one candidate per word — its hardest due, un-snoozed skill.
+    val candidates = csvData.mapNotNull { vocab ->
+        val skill = vocab.surfaceableRefreshSkill(skillFilter, now) ?: return@mapNotNull null
+        val stats = vocab.stats(skill)
+        Candidate(
+            vocab to skill,
+            vocab.failureProbabilityMasteredWords(skill, now),
+            stats.refreshIntervalDays,
+            stats.nTimesFailed,
+            stats.fastTracked,
+        )
     }
     if (candidates.isEmpty()) return null
 
-    // Tier 0: collapse each word to its single hardest due skill, and drop that
-    // representative entirely while a harder mastered sibling is still inside
-    // the snooze window — the easier skills wait a day, then return on their own.
-    val perWord = candidates
-        .groupBy { it.pair.first }
-        .mapNotNull { (vocab, group) ->
-            val rep = group.maxByOrNull { Skill.ladder.indexOf(it.pair.second) }!!
-            val repIdx = Skill.ladder.indexOf(rep.pair.second)
-            val snoozedByHarder = Skill.ladder.drop(repIdx + 1).any { harder ->
-                skillFilter(harder) &&
-                    vocab.isSkillUnlocked(harder) &&
-                    vocab.stats(harder).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
-                    now - vocab.stats(harder).lastDisplayed < MASTERED_REFRESH_SIBLING_SNOOZE_MS
-            }
-            if (snoozedByHarder) null else rep
-        }
-    if (perWord.isEmpty()) return null
-
     // Tier 1: prefer pairs drilled through the active pool; fast-tracked pairs
     // only surface when no drilled pair is due (see kdoc).
-    val drilled = perWord.filter { !it.fastTracked }
-    val pool = if (drilled.isNotEmpty()) drilled else perWord
+    val drilled = candidates.filter { !it.fastTracked }
+    val pool = if (drilled.isNotEmpty()) drilled else candidates
 
     val minInterval = pool.minOf { it.intervalDays }
     val band = pool.filter { it.intervalDays == minInterval }

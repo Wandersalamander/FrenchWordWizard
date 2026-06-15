@@ -97,13 +97,18 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
     }
 
     /**
-     * Count of fully-mastered words with at least one (word, skill) pair past
-     * its refresh interval — i.e. how many already-learned words are ready to
-     * resurface for repetition right now. Each word counts once regardless of
-     * how many of its skill pairs are due, so this is a clean subset of
-     * [computeLifetimeMasteredCount] (no dividing by the number of skills).
-     * Reuses that function's "fully mastered" gate, then
-     * [Vocab.failureProbabilityMasteredWords] (> 0 == mastered AND overdue).
+     * Count of fully-mastered words the refresh pool would actually surface
+     * right now — i.e. how many already-learned words are ready to resurface for
+     * repetition. Each word counts once regardless of how many of its skill
+     * pairs are due, so this is a clean subset of [computeLifetimeMasteredCount]
+     * (no dividing by the number of skills).
+     *
+     * Two gates: (1) this function's "fully mastered" check (all ladder skills
+     * retired below threshold), and (2) [Vocab.surfaceableRefreshSkill] — the
+     * SAME tier-0 decision the picker uses, so a word whose only due skills are
+     * snoozed behind a recently-refreshed harder sibling is NOT counted. Without
+     * gate (2) the badge would over-count by exactly the words refreshed within
+     * the last day (their easier skills read as "due" but won't be surfaced).
      */
     fun computeDueMasteredCount(now: Long = System.currentTimeMillis()): Int {
         var due = 0
@@ -114,7 +119,7 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
                 s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
             }
             if (!fullyMastered) continue
-            if (Skill.ladder.any { vocab.failureProbabilityMasteredWords(it, now) > 0.0 }) {
+            if (vocab.surfaceableRefreshSkill(now = now) != null) {
                 due++
             }
         }

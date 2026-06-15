@@ -36,6 +36,15 @@ class MyDictionaryProgressTest {
         nTimesFailed = 2f
     }
 
+    private val dayMs = 86_400_000L
+
+    /** Mastered, with an explicit refresh interval and last-shown time. */
+    private fun SkillStats.markMasteredWithSchedule(intervalDays: Float, lastDisplayedMs: Long) {
+        markMastered()
+        refreshIntervalDays = intervalDays
+        lastDisplayed = lastDisplayedMs
+    }
+
     @Test fun lifetimeMastered_emptyDictionaryIsZero() {
         assertEquals(0, dictionaryOf(emptyList()).computeLifetimeMasteredCount())
     }
@@ -106,6 +115,69 @@ class MyDictionaryProgressTest {
         vocab.stats(Skill.READ).markStruggling()
         vocab.ignore = true
         assertEquals(ActiveSetCounts(0, 0, 0), dict.computeActiveSetCounts())
+    }
+
+    // ---------- computeDueMasteredCount: snooze-aware "N due" badge ----------
+
+    @Test fun dueMastered_emptyDictionaryIsZero() {
+        assertEquals(0, dictionaryOf(emptyList()).computeDueMasteredCount(now = 1_700_000_000_000L))
+    }
+
+    @Test fun dueMastered_countsFullyMasteredWordWhoseHardestSkillIsDue() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        // All three skills mastered and well overdue → INVERT (hardest) is due
+        // and nothing harder can snooze it, so the word is surfaceable.
+        for (skill in Skill.ladder) {
+            v.stats(skill).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        }
+        assertEquals(1, dict.computeDueMasteredCount(now))
+    }
+
+    @Test fun dueMastered_excludesWordWhoseOnlyDueSkillIsSnoozedBehindHarder() {
+        // The over-count the snooze introduced: READ is past its interval, but
+        // the harder skills were refreshed moments ago. The picker would snooze
+        // READ for a day, so the badge must not count this word as due.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now)
+        v.stats(Skill.INVERT).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now)
+        assertEquals(0, dict.computeDueMasteredCount(now))
+    }
+
+    @Test fun dueMastered_countsWordAgainOnceSnoozeExpires() {
+        // Same shape, but the harder skills were refreshed 2 days ago — past the
+        // 1-day snooze — so READ resurfaces and the word is due again.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        v.stats(Skill.INVERT).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        assertEquals(1, dict.computeDueMasteredCount(now))
+    }
+
+    @Test fun dueMastered_excludesPartiallyMasteredWord() {
+        // READ mastered and due, but INVERT is still being drilled — the word
+        // isn't fully mastered, so it never enters the lifetime "N due" count.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        v.stats(Skill.INVERT).markStruggling()
+        assertEquals(0, dict.computeDueMasteredCount(now))
     }
 
     @Test fun introducedForeignWords_startsEmpty() {
