@@ -1,11 +1,4 @@
-我 (wǒ)	I; me	1	61bac2bafbd3b6c28be8059fedf16f2c	我是中国人,我住在北京已经十年了。	我是学生。
-你 (nǐ)	you	1	0d87b0152a12d0e25df10e4ac7041a80	你今天过得怎么样,有没有什么有趣的事情？	你好吗？
-他 (tā)	he; him	1	f3ab538e23341080204724d23daf99b5	他是我最好的朋友,我们一起长大。	他在家。
-她 (tā)	she; her	1	2da0c3efedba1345f9ac4c26d5c94fc6	她每天早上都会去公园跑步锻炼身体。	她很漂亮。
 它 (tā)	it	1	9e35b509ca7b6a305481c33bd0a765c0	这只小猫很可爱,它喜欢在沙发上睡觉。	它很可爱。
-我们 (wǒmen)	we; us	1	168129e338503810304b3b57e4b01e39	我们这个周末打算一起去爬山,你要不要来？	我们走吧。
-你们 (nǐmen)	you (plural)	1	19781b2de37aecd3b0170b22b71e6bc8	你们什么时候能完成这个重要的项目？	你们好。
-他们 (tāmen)	they; them	1	7ee53505b282cea751aaefba1e87585d	他们刚从上海出差回来,带了很多礼物。	他们在哪儿？
 自己 (zìjǐ)	oneself; self	1	5a3f3258c7a0fbf0750496c7d9ee5a69	你要相信自己,不要总是依赖别人的帮助。	靠自己。
 大家 (dàjiā)	everyone	1	988349993e28965baae2eefe1c0b4ca7	大家都来了,我们可以开始今天的会议了。	大家好。
 不是 (búshì)	to not be	1	77e2fbb10166160ccd9f1c42fc349a87	这不是我的手机,我的应该是黑色的那一个。	这不是。
@@ -14,18 +7,13 @@
 在 (zài)	at; in; to be at	1	594b1748ceb3fa9b218456a01bcf7395	我现在在地铁上,大概二十分钟后到。	他在家。
 去 (qù)	to go	1	e8e76ccdb2e354f7a348e959239089ca	我打算下个月去深圳出差一周。	去哪儿？
 来 (lái)	to come	1	7884f8bb95c3651826248787686d9fe6	欢迎你来北京,我请你吃正宗的烤鸭。	过来。
-要 (yào)	to want; will; need	1	7fadba16cc073d4441da5021b7a328a2	你要不要再喝一杯茶,我刚泡好的。	我要走了。
-想 (xiǎng)	to think; to want	1	501c1b38d60451db879e1d9c0e5b40a8	我想明年去上海工作发展我的事业。	我想你。
-会 (huì)	can; will; know how	1	e95f83d44109b7227229ee54afad7929	她会说三种语言,真的很厉害。	我会做。
 能 (néng)	be able to; can	1	d108f34f2b396596517cab815aa6b3cf	这个周末你能帮我搬家吗？我请你吃饭。	我不能去。
 可以 (kěyǐ)	may; can	1	0d66a020d1e32eb0a2d0095a9a1611bb	我可以借用一下你的笔吗？我的没墨了。	可以吗？
 应该 (yīnggāi)	should; ought to	1	89caf46995b84c3f3e88da4b4cf6e184	你应该多注意休息,不能每天都熬夜工作。	你应该去。
 必须 (bìxū)	must; have to	1	4b1e0d5a7e7070b4508247f941491397	我们必须在六点前到达机场,要不然来不及。	必须做。
 喜欢 (xǐhuān)	to like	1	b5765548684cd442efe9c79b0a5b5f41	我特别喜欢吃四川菜,虽然有点辣。	我喜欢你。
-爱 (ài)	to love	1	4936cac8d0319da85b56c48238aeaeef	我爱我的家人,无论发生什么事情。	我爱你。
 看 (kàn)	to look; to see; to read	1	214bd1190fb4c312cc6166b34cc9266a	昨晚我看了一部很感人的电影,差点哭了。	看看。
 听 (tīng)	to listen; to hear	1	1e7fcec24a9c28bf3d66afa8a2c90d35	我每天上班的路上都会听播客学英语。	听一下。
-说 (shuō)	to say; to speak	1	bee4df3a62f72cd0be9cb602fc24435f	老师说我们明天要进行一次重要的考试。	你说什么？
 讲 (jiǎng)	to talk; to tell	1	e7587b4be5250541d97ab91d28eb9c95	她讲了一个很有趣的童年故事给我们听。	讲故事。
 做 (zuò)	to do; to make	1	9b19d18dda42150e472d6431b500031e	你下班以后做什么,要不要一起吃晚饭？	做作业。
 干 (gàn)	to do; to work	1	ae2ad4ee584c0aea0836b4c333aa7ef6	你在干什么？我已经叫你好几次了。	干活。
@@ -42,8 +30,6 @@
 买 (mǎi)	to buy	1	78ceff3a6f0b3ae09a6935a631a66ed3	我妈让我下班顺路去超市买点蔬菜回来。	买东西。
 卖 (mài)	to sell	1	1421b444d55f5ade07b9c56df2219ad2	这家店卖的水果又新鲜又便宜,我经常去。	卖完了。
 用 (yòng)	to use	1	a1710efb4e239336834f7779a758845d	这台机器怎么用？说明书我看不太懂。	很有用。
-知道 (zhīdào)	to know (a fact)	1	ffa6d15ec8e4b7ecbe31c516b9fa7c04	你知道明天的会议改到几点了吗？	我知道。
-认识 (rènshi)	to know (a person)	1	31926bbe3875300d8dbea1f5322388b8	很高兴认识你,以后请多关照。	认识你。
 觉得 (juéde)	to feel; to think	1	d29c8a2a30ee9fd5c5ea74852df4ee7c	我觉得这个方案还可以再完善一下。	我觉得好。
 学 (xué)	to learn; to study	1	6fb751dabb07d59e7c42a84dcd948106	我最近在学中文,希望明年能流利地交流。	学习。
 教 (jiāo)	to teach	1	4ea73f279e7466d31e0a299508f4735b	张老师教我们数学,他讲课特别清楚。	教我。
@@ -59,10 +45,8 @@
 对不起 (duìbùqǐ)	sorry	1	3e3cce4f2d7ac3de88ec49fedf220df8	对不起,我迟到了,路上堵车太严重。	对不起。
 没关系 (méiguānxi)	it doesn't matter	1	77237e9dacec776bbd17ce4c6d9da4f2	没关系,我也是刚到没几分钟。	没关系。
 的 (de)	's; of	1	5bb37173c91bbe153ccb126594d4b290	这是我的电脑,请不要随便动里面的文件。	我的书。
-了 (le)	did; now (completed / changed)	1	fddf72b3dd7ff5c305c2bb8e3356d36d	我已经吃过饭了,谢谢你的邀请。	我懂了。
 着 (zhe)	-ing (ongoing)	1	2988ebcf25a250cc5e42d3cb63c1c6b5	他在沙发上躺着看电视,看得很入迷。	开着门。
 过 (guo)	ever; have done (experience)	1	c723a47cbf52e8b38655765e213a3c72	我去过上海好几次,那里的小笼包很有名。	吃过了。
-吗 (ma)	? (yes/no question)	1	ef33bc5a4e0d5040de3ce556d19fdba5	你今天会来参加我的生日聚会吗？	好吗？
 呢 (ne)	and...? (follow-up question)	1	5b5f629838fa89fe77775d40a83dfc80	我喝咖啡,你呢,你想喝点什么？	你呢？
 吧 (ba)	let's; right? (suggestion)	1	7536d9f248884a13e42c6ce1641b3389	我们一起去看电影吧,听说这部口碑很好。	走吧。
 啊 (a)	! (exclamation)	1	463ff05f5f9090eac98019eada278058	这个风景真美啊,我以前没注意过。	好啊。
@@ -85,9 +69,6 @@
 万 (wàn)	ten thousand	1	56e1bf81d7552cd2fb842ee5b0217c1b	北京的房价平均每平方米超过五万。	十万。
 半 (bàn)	half	1	ae9c01155183f71e73312e446198d38c	我们坐了半个小时的地铁才到。	一半。
 几 (jǐ)	how many; several	1	4a6589f9c4277159a273d8d234a21d7f	你家里有几口人,都做什么工作？	几个？
-多少 (duōshǎo)	how much; how many	1	9d8b68242738d6c3add0185fc33af78a	这件衣服多少钱？我觉得挺好看的。	多少钱？
-什么 (shénme)	what	1	18d3970c6fbe98336ab5e62be4bd7a07	你周末一般做什么,有什么爱好吗？	什么？
-谁 (shéi)	who	1	f88b4b580851576372665e67924fdbad	这本书是谁的？我刚才在桌子上看到的。	是谁？
 哪 (nǎ)	which	1	9be1857cf7aa71e2c31d574c2e38d3d2	这几件衣服你比较喜欢哪一件？	哪个？
 哪儿 (nǎr)	where	1	ecad12cba7b2ce8949cf1509785fc827	你昨天晚上去哪儿了,我打你电话没人接。	去哪儿？
 怎么样 (zěnmeyàng)	how about; how is it	1	6bf53e0feeda1a47cb7a77f564a804de	这家餐厅怎么样,你觉得味道好吗？	怎么样？
@@ -145,7 +126,6 @@
 马上 (mǎshàng)	immediately	1	b8bc3683dae862ec9f56521fd78a78df	请稍等一下,我马上就过去找您。	马上来。
 立刻 (lìkè)	immediately	1	864cfc36efb7570e021a8e7f3423ffd6	接到电话以后,他立刻赶到了医院。	立刻走。
 一会儿 (yíhuìr)	a moment	1	93cd48656ace5ce754da0375f036f407	请等我一会儿,我去洗手间。	一会儿见。
-好 (hǎo)	good; well	1	686754cd62b5c42529b60c5138e5e1d4	这本书写得很好,我推荐给你看看。	很好。
 不好 (bùhǎo)	not good; bad	1	401485682d78b991d56a75a77b56445e	最近天气不好,经常下雨,不能出门。	不好意思。
 大 (dà)	big; large	1	13b6cc70a14acb1ae411e604ccc272cf	我家的客厅特别大,可以放下两个沙发。	大房子。
 小 (xiǎo)	small	1	109299075499293f1301b0aa31162d4d	这个手机的屏幕有点小,看东西不太方便。	小心。
@@ -177,17 +157,17 @@
 忙 (máng)	busy	1	c73227c67709ad03f8d0ec5c9e561af7	我最近工作特别忙,经常加班到很晚。	很忙。
 有空 (yǒukòng)	have time; be free	1	621367c32c3be7a3a8075a2d9c0bb88e	这周末你有空吗？我们一起去逛街。	你有空吗?
 累 (lèi)	tired	1	b9428c1b70143f1dad8ac9ff13783f67	今天工作了一整天,我累得不想动了。	太累了。
-饿 (è)	hungry	1	401e3a9dfd42b5f1dee525ebf95b1bdb	我饿了,你想吃点什么？	好饿。
-渴 (kě)	thirsty	1	160af789a13bc392e1b8e7ffe141514e	跑了那么久,我已经渴得不行了。	好渴。
 冷 (lěng)	cold	1	bf6ed5fe788a595d39f91c3716773adb	北京冬天很冷,你要多穿点衣服。	好冷。
 热 (rè)	hot	1	2c09a2e831eb29b4f576431224884a5e	深圳夏天特别热,你要注意防晒。	好热。
 人 (rén)	person; people	1	6b4c3d1fbad1bcc6099804a7a3d345fc	这个公园里有很多人在跑步锻炼。	好人。
 事 (shì)	matter; thing; affair	1	a90ba1e839e367299e969f6c900d8bff	我最近有件重要的事想跟你商量。	没事。
 东西 (dōngxi)	thing; stuff	1	1c9ed1d6e7aba28be23382fe69499522	我去超市买点东西,你需要什么吗？	什么东西？
 地方 (dìfang)	place	1	31701fd526727519a4fe72ae5311a9ff	这个地方风景真好,适合度假。	好地方。
-名字 (míngzi)	name	1	e20d25a71b4eb9e68b5f976137bb3d8c	请问您贵姓,我能记一下您的名字吗？	叫什么名字？
 朋友 (péngyou)	friend	1	67e50fd2a9ee0f944a55d20d4f83a962	她是我最好的朋友,我们认识十多年了。	好朋友。
 家 (jiā)	home; family	1	3a45e3cc40e65797df1c8dac5bb996eb	下班以后我直接回家,不去别的地方。	我家。
 中国 (Zhōngguó)	China	1	cbf00709e6bafa26bf4aa44afc28a5d3	中国是一个历史悠久的多民族国家。	中国人。
 美国 (Měiguó)	United States	1	3ba07e0f5c6ae5105f25ed1fb9542847	我哥哥在美国读博士,已经五年没回家了。	去美国。
 日本 (Rìběn)	Japan	1	4ef4a262fb9169cf18cd5e7067342805	这次假期我打算去日本旅游一周。	日本人。
+客气 (kèqi)	polite; courteous	1	7ff1bbf93137e8c7da7be22a76ab0ebf	他对每一位客人都很客气,大家都很喜欢他。	别客气。
+祝 (zhù)	to wish (someone something)	1	aafb0751ad612ea6424cfa3f21aa5d09	祝你生日快乐,也祝你工作顺利。	祝你好运。
+好运 (hǎoyùn)	good luck; good fortune	1	72a4261fb247ae80c57acb773e42615d	考试之前,妈妈祝我好运,让我不要太紧张。	祝你好运。

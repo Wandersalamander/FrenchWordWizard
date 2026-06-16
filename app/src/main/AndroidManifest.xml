@@ -56,6 +56,11 @@
             </intent-filter>
         </receiver>
         <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication.Onboarding" />
+        <activity
             android:name=".settings.SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

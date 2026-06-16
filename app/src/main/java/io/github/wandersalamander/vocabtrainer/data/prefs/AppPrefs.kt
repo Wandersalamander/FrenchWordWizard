@@ -21,6 +21,11 @@ object AppPrefs {
     const val NAME = "vocabulary_preferences"
 
     const val KEY_APP_LANGUAGE = "app_language"
+    // First-ever-launch setup gate. False until the user completes the
+    // onboarding screen (language + active-pool choice); MainActivity bounces to
+    // OnboardingActivity while false. Global (not per-language): the first run
+    // configures the very first language, after which the app is "set up".
+    const val KEY_ONBOARDING_DONE = "onboarding_done"
     const val KEY_TUTORIAL_SHOWN = "tutorial_shown"
     const val KEY_SPOT_CHECK_TUTORIAL_SHOWN = "spot_check_tutorial_shown"
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
@@ -49,8 +54,63 @@ object AppPrefs {
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
 
+    /** Whether first-run setup (the onboarding screen) has been completed. */
+    fun isOnboardingDone(context: Context): Boolean =
+        get(context).getBoolean(KEY_ONBOARDING_DONE, false)
+
+    /**
+     * One-time migration for installs that predate the onboarding screen. The
+     * onboarding flag is new, so it defaults to false for everyone — but an
+     * existing user must NOT be bounced back through setup (which would also
+     * overwrite their language and active-pool). If the flag is unset yet the
+     * prefs already carry any marker only a past launch could have written
+     * (tutorial seen, a chosen language, a tuned/legacy threshold, or a
+     * completed calibration), seed the flag as done. Genuinely fresh installs
+     * have none of these and stay false, so they see onboarding. Idempotent and
+     * cheap (one SharedPreferences read); run once from Application.onCreate.
+     */
+    fun migrateOnboardingFlagIfNeeded(context: Context) {
+        val prefs = get(context)
+        if (prefs.contains(KEY_ONBOARDING_DONE)) return
+        val establishedInstall = prefs.all.keys.any { key ->
+            key == KEY_TUTORIAL_SHOWN ||
+                key == KEY_APP_LANGUAGE ||
+                key == KEY_AUTO_ADD_THRESHOLD ||
+                key.startsWith(KEY_CALIBRATION_DONE_PREFIX) ||
+                key.startsWith(KEY_AUTO_ADD_THRESHOLD_PREFIX)
+        }
+        if (establishedInstall) {
+            prefs.edit().putBoolean(KEY_ONBOARDING_DONE, true).apply()
+        }
+    }
+
+    /**
+     * Persist the first-run choices in one commit: the chosen language, its
+     * active-pool threshold, and the done flag. Writing them together means a
+     * launch can never observe a half-applied setup (e.g. done=true but no
+     * language). The threshold is coerced into the valid range.
+     */
+    fun completeOnboarding(context: Context, languageCode: String, threshold: Int) {
+        val coerced = threshold.coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+        get(context).edit()
+            .putString(KEY_APP_LANGUAGE, languageCode)
+            .putInt(autoAddThresholdKey(languageCode), coerced)
+            .putBoolean(KEY_ONBOARDING_DONE, true)
+            .apply()
+    }
+
     fun autoAddThresholdKey(languageCode: String): String =
         "$KEY_AUTO_ADD_THRESHOLD_PREFIX$languageCode"
+
+    /**
+     * Whether the user has explicitly chosen an active-pool size for
+     * [languageCode] (vs. silently inheriting the legacy global / default).
+     * Drives the once-per-language pool prompt: a fresh language asks for its
+     * size, but a language already configured (including the first one, set on
+     * the onboarding screen) skips straight to the level check.
+     */
+    fun hasAutoAddThreshold(context: Context, languageCode: String): Boolean =
+        get(context).contains(autoAddThresholdKey(languageCode))
 
     /**
      * The auto-add threshold for [languageCode], coerced into the valid range.
@@ -70,6 +130,17 @@ object AppPrefs {
     fun setAutoAddThreshold(context: Context, languageCode: String, value: Int) {
         val coerced = value.coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
         get(context).edit().putInt(autoAddThresholdKey(languageCode), coerced).apply()
+    }
+
+    /**
+     * Forget the chosen active-pool size for [languageCode], so [hasAutoAddThreshold]
+     * reports false again and the once-per-language pool prompt re-appears on the
+     * next visit. Called from the language-wipe path: a wipe makes the language
+     * fresh, and the pool choice — like the calibration frontier — was tied to
+     * that now-deleted progress, so it should be re-asked rather than carried over.
+     */
+    fun clearAutoAddThreshold(context: Context, languageCode: String) {
+        get(context).edit().remove(autoAddThresholdKey(languageCode)).apply()
     }
 
     fun calibrationDoneKey(languageCode: String): String =

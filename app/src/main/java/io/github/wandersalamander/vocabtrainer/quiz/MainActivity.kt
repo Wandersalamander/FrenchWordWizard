@@ -3,7 +3,6 @@ package io.github.wandersalamander.vocabtrainer.quiz
 import android.Manifest
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.database.ContentObserver
@@ -25,6 +24,7 @@ import android.view.accessibility.AccessibilityManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
@@ -32,11 +32,14 @@ import androidx.core.content.ContextCompat
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.applySystemBarAndActionBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
+import io.github.wandersalamander.vocabtrainer.onboarding.OnboardingActivity
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
 import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
 import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
@@ -100,6 +103,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // First-ever launch: bounce to setup before touching services, TTS, or
+        // the dictionary. OnboardingActivity persists the language + active-pool
+        // choice and relaunches us (CLEAR_TASK), so by the time we get back here
+        // onboarding is done and the rest of onCreate runs normally.
+        if (!AppPrefs.isOnboardingDone(this)) {
+            startActivity(Intent(this, OnboardingActivity::class.java))
+            finish()
+            return
+        }
+
         serviceIntent = Intent(this, MyForegroundService::class.java)
         ensureNotificationPermissionThenStartService()
         workAroundDexReloadBug()
@@ -123,7 +137,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         setupTextToSpeech()
         setupNotificationChannels()
 
-        val prefs = AppPrefs.get(this)
         language = Language.fromPrefs(this)
         languageWipeTimestampAtStart = LanguageWipeRepository.timestampFor(language.code)
         vocabDictionary = MyDictionary(openDictionaryStream(this, language), DataLayer.vocabPersistence)
@@ -140,6 +153,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             tts = this,
             vocabDictionary = vocabDictionary,
             language = language,
+            // Tutorial follows the level check: fire it the moment calibration
+            // hands off to the first real word (no-op if already seen).
+            onCalibrationFinished = ::maybeShowTutorial,
         )
         wireQuizControllerListeners()
         quizController.refreshStreakBadge()
@@ -149,7 +165,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // follows won't double-toast — listening is already off by then.
         syncListeningModeWithVolume()
 
-        startFirstRunFlow(prefs)
+        startFirstRunFlow()
     }
 
     private fun workAroundDexReloadBug() {
@@ -268,44 +284,123 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     /**
-     * First-launch sequencing: show the button tutorial (when unseen and no
-     * screen reader is active), then start calibration once the tour ends.
-     * When the tutorial is skipped, go straight to the calibration check.
+     * First-launch sequencing. Language and active-pool selection already
+     * happened in OnboardingActivity, so what's left is: run the once-per-
+     * language level check on a fresh language, then show the button tutorial
+     * once there's a real word on the card. The tutorial deliberately follows
+     * calibration (QuizController.finishCalibration calls back via
+     * [onCalibrationFinished] → [maybeShowTutorial]) — teaching the buttons is
+     * meaningless before any word is shown. When no calibration is due
+     * (returning user / already-calibrated language) the pending tutorial, if
+     * any, is shown right away instead.
+     */
+    private fun startFirstRunFlow() {
+        val root = findViewById<View>(android.R.id.content)
+        if (willCalibrate()) {
+            root.post { beginFreshLanguageSetup() }
+        } else {
+            root.post { maybeShowTutorial() }
+        }
+    }
+
+    /**
+     * Per-language first-visit setup, run once for every unlearned language (not
+     * just on first install): ask for the active-pool size, then start the level
+     * check. The pool prompt is skipped when the language already has a chosen
+     * size — which is the case for the very first language (set on the
+     * onboarding screen) and any language tuned earlier in Settings — so it
+     * never double-asks. The placement dialog and (first-ever) tutorial follow
+     * from QuizController.finishCalibration as usual.
+     */
+    private fun beginFreshLanguageSetup() {
+        if (AppPrefs.hasAutoAddThreshold(this, language.code)) {
+            quizController.startCalibration()
+        } else {
+            showActivePoolSetupDialog { quizController.startCalibration() }
+        }
+    }
+
+    /**
+     * Once-per-language active-pool chooser. Pre-filled with the inherited
+     * default, persists the chosen size for [language] on close, then invokes
+     * [onChosen] (start calibration). Non-cancelable with a single button so the
+     * size is always committed before the level check begins.
+     */
+    private fun showActivePoolSetupDialog(onChosen: () -> Unit) {
+        val view = layoutInflater.inflate(R.layout.dialog_active_pool_setup, null)
+        val headline = view.findViewById<TextView>(R.id.poolSetupHeadline)
+        val sub = view.findViewById<TextView>(R.id.poolSetupSub)
+        val valueText = view.findViewById<TextView>(R.id.poolSetupValue)
+        val decrease = view.findViewById<TextView>(R.id.poolSetupDecrease)
+        val increase = view.findViewById<TextView>(R.id.poolSetupIncrease)
+        val button = view.findViewById<TextView>(R.id.poolSetupButton)
+
+        headline.text = "${language.flag}  ${language.englishName}"
+        sub.text = "New language! How many words should stay in rotation while you " +
+            "learn ${language.englishName}? You can change this any time in Settings."
+
+        var value = AppPrefs.autoAddThreshold(this, language.code)
+        fun render() {
+            valueText.text = value.toString()
+            valueText.contentDescription = "Words in rotation: $value"
+            decrease.isEnabled = value > AUTO_INTRODUCE_THRESHOLD_MIN
+            decrease.alpha = if (decrease.isEnabled) 1f else 0.35f
+            increase.isEnabled = value < AUTO_INTRODUCE_THRESHOLD_MAX
+            increase.alpha = if (increase.isEnabled) 1f else 0.35f
+        }
+        decrease.setOnClickListener {
+            value = (value - 1).coerceAtLeast(AUTO_INTRODUCE_THRESHOLD_MIN); render()
+        }
+        increase.setOnClickListener {
+            value = (value + 1).coerceAtMost(AUTO_INTRODUCE_THRESHOLD_MAX); render()
+        }
+        render()
+
+        val dialog = AlertDialog.Builder(this).setView(view).setCancelable(false).create()
+        var committed = false
+        dialog.setOnDismissListener {
+            if (committed) return@setOnDismissListener
+            committed = true
+            AppPrefs.setAutoAddThreshold(this, language.code, value)
+            onChosen()
+        }
+        button.setOnClickListener { dialog.dismiss() }
+        dialog.show()
+    }
+
+    /**
+     * Whether the once-per-language calibration probe is due: it hasn't already
+     * run for this language ([AppPrefs.isCalibrationDone]) and nothing has been
+     * introduced yet. The emptiness check stops upgrading or mid-learning users
+     * from being probed retroactively; a language wipe clears both signals (see
+     * SettingsActivity.wipeProgressFor) so a wiped language re-calibrates.
+     */
+    private fun willCalibrate(): Boolean {
+        if (AppPrefs.isCalibrationDone(this, language.code)) return false
+        return vocabDictionary.csvData.none { it.hasBeenIntroduced() }
+    }
+
+    /**
+     * Show the one-time button tutorial, unless it's already been seen or a
+     * screen reader is active. Idempotent (the seen-flag check), so it's safe
+     * to call from either first-run branch and from QuizController the moment
+     * calibration hands off to the first word.
      *
      * TapTargetView overlays each highlighted view in turn; it's not navigable
      * via TalkBack swipe gestures and effectively traps SR users on a screen
      * they can't operate, so the visual tour is skipped when a screen reader is
      * active (and the seen-flag isn't persisted in that case — see
-     * showTutorial). Calibration uses the regular buttons and announces itself
-     * with a banner, so it still runs for SR users.
+     * showTutorial). Calibration itself uses the regular buttons and announces
+     * itself with a banner, so it still runs for SR users.
      */
-    private fun startFirstRunFlow(prefs: SharedPreferences) {
-        val tutorialSeen = prefs.getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)
+    fun maybeShowTutorial() {
+        if (AppPrefs.get(this).getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)) return
         val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
-        val screenReaderActive = am.isTouchExplorationEnabled
-        val root = findViewById<View>(android.R.id.content)
-        if (!tutorialSeen && !screenReaderActive) {
-            root.post { showTutorial(onFinished = ::maybeStartCalibration) }
-        } else {
-            root.post { maybeStartCalibration() }
-        }
+        if (am.isTouchExplorationEnabled) return
+        showTutorial()
     }
 
-    /**
-     * Start the once-per-language calibration probe, but only on a genuinely
-     * fresh language: calibration hasn't already run for it
-     * ([AppPrefs.isCalibrationDone]) and nothing has been introduced yet. The
-     * emptiness check stops upgrading or mid-learning users from being probed
-     * retroactively; a language wipe clears both signals (see
-     * SettingsActivity.wipeProgressFor) so a wiped language re-calibrates.
-     */
-    private fun maybeStartCalibration() {
-        if (AppPrefs.isCalibrationDone(this, language.code)) return
-        if (vocabDictionary.csvData.any { it.hasBeenIntroduced() }) return
-        quizController.startCalibration()
-    }
-
-    private fun showTutorial(onFinished: () -> Unit = {}) {
+    private fun showTutorial() {
         fun target(view: View, title: String, description: String) =
             TapTarget.forView(view, title, description)
                 .tintTarget(false)
@@ -336,19 +431,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         TapTargetSequence(this)
             .targets(steps)
             .continueOnCancel(true)
-            .listener(object : TapTargetSequence.Listener {
-                // Fire once whether the tour completes or is dismissed, so the
-                // first-run handoff to calibration runs in either case.
-                private var ended = false
-                private fun end() {
-                    if (ended) return
-                    ended = true
-                    onFinished()
-                }
-                override fun onSequenceFinish() = end()
-                override fun onSequenceStep(target: TapTarget, targetClicked: Boolean) {}
-                override fun onSequenceCanceled(target: TapTarget) = end()
-            })
             .start()
 
         AppPrefs.get(this).edit().putBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, true).apply()
@@ -536,13 +618,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         if (::quizController.isInitialized) {
             quizController.stopThinkingAnimation()
         }
-        stopService(serviceIntent)
-        sounds.release()
+        // Both are set only after the first-run onboarding redirect early-returns
+        // out of onCreate; guard so a redirected-and-finished instance tears down
+        // cleanly instead of hitting an uninitialized lateinit.
+        if (::serviceIntent.isInitialized) stopService(serviceIntent)
+        if (::sounds.isInitialized) sounds.release()
         super.onDestroy()
     }
 
     override fun onResume() {
         super.onResume()
+        // On the first-run onboarding redirect, onCreate early-returns before
+        // any of these are set. onResume is normally skipped when finishing in
+        // onCreate, but guard anyway so no OEM lifecycle quirk dereferences an
+        // uninitialized lateinit here.
+        if (!::quizController.isInitialized) return
         val savedLanguage = Language.fromPrefs(this)
         if (savedLanguage != language) {
             recreate()

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Once-per-language active-pool prompt, shown before the level check when the
+     user enters a language they haven't set up yet (e.g. switched to it via the
+     selector). Mirrors the Settings "Active pool" stepper — same cream-tuned
+     keycap buttons and olive-mustard digit — wrapped in a dialog with a green
+     "continue" button that saves and proceeds to calibration. The first
+     language is configured on the onboarding screen instead, so this never
+     double-prompts on first launch. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/poolSetupHeadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
+        android:gravity="center"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="🇩🇪  German" />
+
+    <TextView
+        android:id="@+id/poolSetupSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:lineSpacingExtra="2sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="14sp"
+        tools:text="New language! How many words should stay in rotation while you learn German?" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/poolSetupDecrease"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_stepper_button_yellow"
+            android:clickable="true"
+            android:contentDescription="Fewer words in rotation"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="−"
+            android:textColor="@color/auto_add_color"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/poolSetupValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:accessibilityLiveRegion="polite"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:textColor="@color/auto_add_color"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            tools:text="5" />
+
+        <TextView
+            android:id="@+id/poolSetupIncrease"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_stepper_button_yellow"
+            android:clickable="true"
+            android:contentDescription="More words in rotation"
+            android:focusable="true"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/auto_add_color"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/CardEyebrow"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="WORDS AT ONCE · 1–40" />
+
+    <TextView
+        android:id="@+id/poolSetupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/bg_onb_cta"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:minHeight="52dp"
+        android:paddingVertical="14dp"
+        android:text="Continue  →"
+        android:textColor="@color/monokai_bg"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+</LinearLayout>

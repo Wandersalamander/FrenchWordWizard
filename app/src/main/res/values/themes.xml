@@ -38,6 +38,19 @@
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
+    <!-- First-run setup screen. No action bar (full-bleed editor canvas) and a
+         dark Monokai window background so the screen reads as the editor itself
+         before the cream "document" (the main quiz screen) opens. Status bar
+         keeps the shared Monokai BG with light icons. -->
+    <style name="Theme.MyApplication.Onboarding" parent="Theme.MyApplication">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/monokai_bg</item>
+        <item name="android:statusBarColor">@color/monokai_bg</item>
+        <item name="android:navigationBarColor">@color/monokai_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
     <style name="Widget.MyApplication.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
         <item name="background">@color/monokai_bg</item>
         <item name="elevation">2dp</item>

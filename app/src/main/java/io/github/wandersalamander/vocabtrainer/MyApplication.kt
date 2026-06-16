@@ -3,6 +3,7 @@ package io.github.wandersalamander.vocabtrainer
 import android.app.Application
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.migration.LegacyImporter
+import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -26,6 +27,9 @@ import kotlinx.coroutines.withContext
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        // Seed the onboarding flag for installs that predate the setup screen,
+        // before MainActivity can read it and wrongly redirect an existing user.
+        AppPrefs.migrateOnboardingFlagIfNeeded(this)
         DataLayer.init(this)
         // All three suspending calls dispatch to Dispatchers.IO internally
         // (Room's @Dao suspend methods), so wrapping in withContext(IO) keeps

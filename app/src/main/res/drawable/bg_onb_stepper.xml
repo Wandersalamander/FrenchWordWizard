@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Keycap-style ± stepper for the words-in-rotation control, tuned for the
+     dark editor canvas. Same outlined-keycap language as the Settings stepper
+     but in canonical Monokai yellow (the "number" accent) since it sits on the
+     dark BG here rather than cream. Low-alpha yellow fill on press. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="#33E6DB74" />
+            <stroke android:width="1.5dp" android:color="@color/monokai_yellow" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="1.5dp" android:color="@color/monokai_yellow" />
+        </shape>
+    </item>
+</selector>

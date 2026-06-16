@@ -423,10 +423,12 @@ class SettingsActivity : AppCompatActivity() {
         editor.apply()
 
         // A wipe empties the language, so its calibration frontier (a fact
-        // derived from the now-deleted progress) is stale. Forget it: on the
-        // next open the language looks fresh and re-calibrates, exactly like a
-        // first install.
+        // derived from the now-deleted progress) is stale, as is the chosen
+        // active-pool size. Forget both: on the next open the language looks
+        // fresh — it re-asks for words-at-a-time and re-calibrates, exactly like
+        // a first install.
         AppPrefs.clearCalibration(this@SettingsActivity, language.code)
+        AppPrefs.clearAutoAddThreshold(this@SettingsActivity, language.code)
 
         LanguageWipeRepository.recordWipe(language.code)
         removed.coerceAtLeast(hashes.size)

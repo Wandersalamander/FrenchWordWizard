@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Primary "run setup" CTA. Solid Monokai green — the string/"go" accent — so
+     the action to commit the config and start reads as a run/execute button in
+     the editor metaphor. Darkens on press. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <solid android:color="#8BBE27" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <solid android:color="@color/monokai_green" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One selectable language row on the first-run setup screen. The root
+     LinearLayout carries the bg_onb_lang_tile state-list (cyan highlight when
+     selected) and is toggled via View.isSelected in OnboardingActivity. Flag
+     on the left, English name + native greeting stacked in the middle, and a
+     selection marker on the right that flips to a cyan ● when chosen. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_onb_lang_tile"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="64dp"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
+
+    <TextView
+        android:id="@+id/onbLangFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:importantForAccessibility="no"
+        android:textSize="26sp"
+        tools:text="🇫🇷" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/onbLangName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="@color/monokai_fg"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="French" />
+
+        <TextView
+            android:id="@+id/onbLangGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/monokai_comment_light"
+            android:textSize="12sp"
+            tools:text="Apprenez le français !" />
+    </LinearLayout>
+
+    <!-- Selection marker. Empty ring "○" when unselected, filled cyan "●" when
+         selected — set in code alongside isSelected so the state reads without
+         relying on the border alone (and carries through to TalkBack via the
+         row's contentDescription). -->
+    <TextView
+        android:id="@+id/onbLangMark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:importantForAccessibility="no"
+        android:text="○"
+        android:textColor="@color/monokai_comment"
+        android:textSize="18sp" />
+</LinearLayout>

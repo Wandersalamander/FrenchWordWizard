@@ -2,13 +2,18 @@ package io.github.wandersalamander.vocabtrainer.quiz
 
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.RelativeSizeSpan
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
@@ -130,6 +135,11 @@ class QuizController(
     private val tts: TtsHelper,
     private val vocabDictionary: MyDictionary,
     private val language: Language,
+    // Invoked once, right after calibration hands off to the first real word.
+    // The host uses it to show the button tutorial only after the level check
+    // (not before it). No-op by default so tests/headless construction need
+    // not supply it.
+    private val onCalibrationFinished: () -> Unit = {},
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressCardInfo = ProgressCardInfoView(activity, views, language.code)
@@ -604,7 +614,8 @@ class QuizController(
     /**
      * Persist the frontier, tear down calibration UI, and hand off to normal
      * play by loading the first real word — now biased by the frontier we just
-     * saved (the picker reads it fresh on every pick).
+     * saved (the picker reads it fresh on every pick). Then celebrate the
+     * placement in a dialog; dismissing it triggers the button tutorial.
      */
     private fun finishCalibration() {
         val session = calibration ?: return
@@ -612,18 +623,67 @@ class QuizController(
         calibration = null
         exitCalibrationUi()
 
-        // Report the placement: the frontier level reached out of the highest
-        // tier in this language. NO_FRONTIER (no tier cleared) reads as beginner
-        // rather than "level -1".
         val maxTier = vocabDictionary.csvData.maxOfOrNull { it.importance } ?: 0
-        val message = if (session.frontier < 0) {
-            "Calibration complete — starting at the beginning (max level $maxTier)."
-        } else {
-            "Calibration complete — level ${session.frontier} of $maxTier."
-        }
-        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
-
         updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
+
+        // First real word is on the card behind the dialog. The button tutorial
+        // (deferred so it highlights a real word, not the calibration banner)
+        // fires once the user dismisses the placement dialog. No-op if already
+        // seen / a screen reader is active.
+        showCalibrationResultDialog(session.frontier, maxTier) { onCalibrationFinished() }
+    }
+
+    /**
+     * Celebratory placement dialog shown the moment calibration ends. Levels are
+     * presented 1-indexed and friendly: the frontier is the highest importance
+     * tier the user cleared, so "Level F+1 / maxTier+1" reads as how far up the
+     * bands they already know; [NO_FRONTIER] (no tier cleared) is framed as a
+     * fresh beginner rather than "level -1". The dialog is non-cancelable with a
+     * single "go" button, and [onAcknowledged] runs exactly once when it closes
+     * so the first round (and tutorial) only begin after the user taps through.
+     */
+    private fun showCalibrationResultDialog(
+        frontier: Int,
+        maxTier: Int,
+        onAcknowledged: () -> Unit,
+    ) {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_calibration_result, null)
+        val headline = view.findViewById<TextView>(R.id.calResultHeadline)
+        val level = view.findViewById<TextView>(R.id.calResultLevel)
+        val sub = view.findViewById<TextView>(R.id.calResultSub)
+        val button = view.findViewById<TextView>(R.id.calResultButton)
+
+        if (frontier < 0) {
+            headline.text = "Welcome aboard!"
+            level.text = "Beginner"
+            sub.text = "We'll start you with the essentials and build up from there."
+        } else {
+            headline.text = "Nicely done!"
+            // "Level" sits on its own line, half-size, above the big "N / total"
+            // figure so the number is the focal point rather than one long line.
+            val figure = "${frontier + 1} / ${maxTier + 1}"
+            level.text = SpannableString("Level\n$figure").apply {
+                setSpan(RelativeSizeSpan(0.5f), 0, "Level".length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+            level.contentDescription = "Level ${frontier + 1} of ${maxTier + 1}"
+            sub.text =
+                "You already know words up to here. We'll start around this level and adapt as you go."
+        }
+
+        val dialog = AlertDialog.Builder(activity)
+            .setView(view)
+            .setCancelable(false)
+            .create()
+        // Run the handoff exactly once, on any close path (button is the only
+        // one here since the dialog is non-cancelable, but guard regardless).
+        var acknowledged = false
+        dialog.setOnDismissListener {
+            if (acknowledged) return@setOnDismissListener
+            acknowledged = true
+            onAcknowledged()
+        }
+        button.setOnClickListener { dialog.dismiss() }
+        dialog.show()
     }
 
     /**
@@ -833,6 +893,14 @@ class QuizController(
         if (deferForSuccessChime) {
             pendingRoundStartTtsJob = activity.lifecycleScope.launch {
                 delay(POST_SUCCESS_TTS_DELAY_MS)
+                // lifecycleScope keeps running while merely backgrounded, so the
+                // markPaused() cancel can lose the race against this resume right
+                // at the delay boundary — the speak() would then reach the engine
+                // after tts.stop() already fired and leak audio over the hidden
+                // quiz. Re-check we're still foregrounded before speaking.
+                if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+                    return@launch
+                }
                 currentSkill.flow.ttsAtRoundStart(vocab, tts)
             }
         } else {
