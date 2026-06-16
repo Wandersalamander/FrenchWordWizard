@@ -657,23 +657,32 @@ class QuizController(
         setQuizButtonsEnabled(false)
 
         activity.lifecycleScope.launch {
-            val sentence = sentenceManager.generateAndShow(
-                vocab,
-                currentSkill,
-                listeningEnabled,
-                maskWhenListening = true,
-            )
-            tts.speakSentenceAndAwait(sentence)
-            delay(1000)
-            views.buttonFail.isEnabled = true
-            views.buttonFail.isClickable = true
-            views.buttonNext.isEnabled = true
-            views.buttonNext.isClickable = true
-            // Tip stays disabled — one tip per word.
-            // Re-enable the pull-down so a second pull can fire Fail. The
-            // wider setQuizButtonsEnabled isn't used here because it would
-            // un-disable Tip.
-            views.cardVocab.pullEnabled = isPullDownSkill(currentSkill)
+            try {
+                val sentence = sentenceManager.generateAndShow(
+                    vocab,
+                    currentSkill,
+                    listeningEnabled,
+                    maskWhenListening = true,
+                )
+                tts.speakSentenceAndAwait(sentence)
+                delay(1000)
+            } finally {
+                // Always restore the controls, even if generation/TTS threw or
+                // the coroutine was cancelled (e.g. the app was backgrounded
+                // mid-tip — lifecycleScope cancels and speakSentenceAndAwait
+                // re-throws CancellationException). Without this finally the
+                // re-enable was skipped and every button stayed dead, with no
+                // recovery on a short resume since that path doesn't re-render.
+                views.buttonFail.isEnabled = true
+                views.buttonFail.isClickable = true
+                views.buttonNext.isEnabled = true
+                views.buttonNext.isClickable = true
+                // Tip stays disabled — one tip per word.
+                // Re-enable the pull-down so a second pull can fire Fail. The
+                // wider setQuizButtonsEnabled isn't used here because it would
+                // un-disable Tip.
+                views.cardVocab.pullEnabled = isPullDownSkill(currentSkill)
+            }
         }
     }
 

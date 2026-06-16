@@ -91,6 +91,7 @@ enum class Language(
             "etc." to "eccetera",
             "p.es." to "per esempio",
             "es." to "esempio",
+            "p.p." to "participio passato",
             "pag." to "pagina",
             "num." to "numero",
             "tel." to "telefono",
@@ -175,6 +176,8 @@ enum class Language(
 object EnglishAbbreviations {
     private val map = mapOf(
         "vs." to "versus",
+        "e.g." to "for example",
+        "i.e." to "that is",
         "sth." to "something",
         "stb." to "somebody",
         "Mr." to "Mister",
@@ -183,6 +186,8 @@ object EnglishAbbreviations {
         "Dr." to "Doctor",
         "qn." to "someone",
         "qc." to "something",
+        "jmd." to "someone",
+        "jmdn." to "someone",
         "sb." to "somebody",
         "Ms." to "Miss",
         "Mrs." to "Misses",
@@ -191,8 +196,41 @@ object EnglishAbbreviations {
     )
     private val regex = map.keys.joinToString("|") { Regex.escape(it) }.toRegex()
 
+    // Grammatical tags used in the gloss, e.g. "you make (pl)", "(subj. pl)",
+    // "(adj.) superior", "excuse (n.)", "player (m/f)". Stripping the parens
+    // leaves the bare abbreviation, which the TTS engine then voices as the
+    // wrong word — "pl" becomes "place", "m." becomes "metres". Expanding each
+    // tag to the term it stands for fixes the audio; the on-screen gloss still
+    // shows the compact form (only pronounceableEn() runs through here).
+    //
+    // Multi-letter tags are matched as whole words (\b…\b, trailing "."
+    // optional) so they never fire inside "simple" or "adjust". Single-letter
+    // tags would be hopelessly greedy that way, so they're recognised only in
+    // the parenthesised form they always take — "(m.)", "(f.)", "(n.)",
+    // "(m/f)" — via a "(" look-behind, with the "." kept mandatory so "(n.)"
+    // is never confused with the word "(noun)".
+    private val wordTags = mapOf(
+        "pl" to "plural",
+        "subj" to "subjunctive",
+        "adj" to "adjective",
+    )
+    private val parenTags = mapOf(
+        "m/f" to "masculine or feminine",
+        "m." to "masculine",
+        "f." to "feminine",
+        "n." to "noun",
+    )
+    private val wordTagRegex =
+        wordTags.keys.joinToString("|") { Regex.escape(it) }
+            .let { """\b(?:$it)\b\.?""".toRegex() }
+    private val parenTagRegex =
+        parenTags.keys.joinToString("|") { Regex.escape(it) }
+            .let { """(?<=\()(?:$it)""".toRegex() }
+
     fun expand(input: String): String =
         regex.replace(input) { map[it.value] ?: it.value }
+            .let { s -> wordTagRegex.replace(s) { wordTags[it.value.trimEnd('.')] ?: it.value } }
+            .let { s -> parenTagRegex.replace(s) { parenTags[it.value] ?: it.value } }
             .replace("(", "")
             .replace(")", "")
 }
