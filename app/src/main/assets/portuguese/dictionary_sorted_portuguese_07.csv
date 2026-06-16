@@ -28,13 +28,13 @@ caracol	snail	7	04de71dfb76e3e2656a1fba5ce7630d0	O caracol deslizava lentamente 
 caranguejo	crab	7	8b5b3399dc33d985a700a18a9f22b0d8	O caranguejo escondeu-se rapidamente debaixo de uma pedra assim que a maré começou a baixar.	O caranguejo anda de lado.
 carinho	affection / tenderness	7	f3ca5faa60ecabc22fad691ff9d1f016	Trata os filhos com tanto carinho que eles crescem seguros e felizes.	Faz tudo com carinho.
 carta de condução	driving licence	7	af1cace36a9bc648795bf6427a1fe447	Esqueci-me da carta de condução em casa e tive de voltar atrás antes de seguir viagem.	Tira a carta de condução.
-cascata	waterfall	7	a2ce929c1a7e744255f5e5e1b5c4c9c3	A cascata caía de grande altura e formava uma piscina natural de água cristalina lá em baixo.	A cascata é linda.
+cascata	waterfall	7	696cd4d315c81347a15848631254e816	A cascata caía de grande altura e formava uma piscina natural de água cristalina lá em baixo.	A cascata é linda.
 castigo	punishment	7	d2ac473559323489421747601740046c	O castigo deve ser proporcional à gravidade da falta cometida pela pessoa em causa.	Mereceu o castigo.
 certeza	certainty	7	a78fa663ea8cd4525f345d91aa9c24ba	Não havia certeza alguma sobre o desfecho, mas decidiram avançar com o projeto ambicioso.	Tenho a certeza.
 champô	shampoo	7	7de92fe0e3101c6678a6254279501e3c	Acabou-se o champô esta manhã, por isso tenho de passar no supermercado depois do trabalho.	Preciso de comprar champô.
 cheque	cheque	7	c42b053ef8c36f950ff37a0897d3a963	Já quase ninguém usa cheque para pagar, porque hoje em dia tudo se faz por transferência.	Passei um cheque.
 chouriço	chorizo	7	63f02e6f9b3265374dc96808a5018855	O chouriço assado na brasa é um petisco tradicional que se serve a arder.	O chouriço é fumado.
-ciclismo	cycling	7	07caca02f543c403998b2533c0ee645b	O ciclismo é um desporto muito exigente, sobretudo nas etapas de montanha.	Gosto de ciclismo.
+ciclismo	cycling	7	d72c20167c452e6d808ff918661f1775	O ciclismo é um desporto muito exigente, sobretudo nas etapas de montanha.	Gosto de ciclismo.
 ciumento	jealous	7	549fdfdf35c19384404f254e06fb35c5	Era um namorado ciumento que não suportava vê-la conversar com outros rapazes.	Ele é muito ciumento.
 claramente	clearly	7	6e66a0d1f1a0674a87a98658e1fa1008	Ela explicou claramente todas as regras para que ninguém ficasse com dúvidas.	Vejo claramente.
 cobarde	coward	7	541132f8d758702f12d81c8c6e0898ff	Não passa de um cobarde, pois foge sempre que tem de enfrentar as consequências dos seus atos.	Não sejas cobarde.
@@ -61,13 +61,13 @@ consequência	consequence	7	2e17d8679ceeb08d71b9fad651606500	Toda a ação tem u
 construir	to build	7	31478b4adaf16296d51f2a66b3d88072	Os meus avós construíram esta casa com as próprias mãos pouco depois de se casarem.	Vamos construir uma ponte.
 contabilista	accountant	7	e2d9703f76b9dc427a26db4d61779bc3	A contabilista organizou todas as faturas da empresa antes do fim do prazo dos impostos.	A contabilista fez as contas.
 contacto	contact	7	0d87b5c76b4c480a107b621cc67f469d	Guardei o contacto do canalizador no telemóvel para o caso de voltar a ter problemas com a água.	Guarda o meu contacto.
-conto	short story	7	e40183041fa86f4abe9c0dafc5c7be87	O conto é curto, mas o seu final deixa o leitor a pensar muito tempo.	Li um conto triste.
+conto	short story	7	b5e7e5a0be6258399fc1a8052a89a161	O conto é curto, mas o seu final deixa o leitor a pensar muito tempo.	Li um conto triste.
 copiar	to copy	7	b6658a99983f408ce233fa16f8ddd0d0	Tive de copiar todo o texto à mão porque a impressora se avariou mesmo antes do prazo.	Copia isto para mim.
 coro	choir	7	bd721a246bd2c364e6bc6c1daa4503de	O coro da igreja cantou durante a missa de Natal.	O coro é afinado.
 correio eletrónico	email	7	d12df7b2773f15c40c6323768615c357	Enviei-lhe um correio eletrónico com todos os documentos, mas ele ainda não respondeu até hoje.	Recebi um correio eletrónico.
 coruja	owl	7	172be8d3e19e805c6afb130056fe6e1b	A coruja caçava em silêncio durante a noite, voando sem fazer qualquer ruído pela floresta.	A coruja vê de noite.
 costela	rib	7	8d17caa4649a668261069262a13c4a41	Caiu da bicicleta e partiu uma costela, pelo que respirar fundo se tornou bastante doloroso.	Ele partiu uma costela.
-costume	custom/habit	7	4f99e8ee797ac7727600ce4bc5b28e5f	É costume nesta região celebrar a colheita com uma grande festa que reúne toda a aldeia.	É um velho costume.
+costume	custom/habit	7	dd12380762692f5f7d1e23923837fb0d	É costume nesta região celebrar a colheita com uma grande festa que reúne toda a aldeia.	É um velho costume.
 costura	seam/sewing	7	f14c3719cb77fc63e8ef52da6ec65505	A costura da camisa rebentou no ombro depois de tantas lavagens ao longo dos anos.	A costura está aberta.
 costureira	seamstress	7	04b74feae2f9c5967edc33b66a465499	A costureira ajustou o vestido em poucos minutos para que ficasse perfeito no corpo da noiva.	A costureira cose bem.
 couve	cabbage / kale	7	5779a2c5efecaa6c45833f93794286e1	O caldo verde leva couve cortada bem fininha, batata e rodelas de chouriço.	A couve está cozida.
@@ -104,7 +104,7 @@ detergente	detergent	7	2ddba7abf663154479e745d3b491e411	Deitei um pouco de deter
 determinado	determined	7	88834da7b145efb1acf3fa24271d0d7e	Era uma mulher determinada que não desistia dos seus objetivos por mais difíceis que fossem.	Ele é muito determinado.
 dever	duty	7	d46463582ac9e92083346f4bf7923a99	É dever de cada cidadão respeitar as leis e contribuir para o bem comum da comunidade.	Cumpri o meu dever.
 diamante	diamond	7	b28307049aa6c6b722c22bf282b29c96	O anel de noivado tinha um diamante pequeno mas de uma transparência impressionante.	O diamante brilha.
-diploma	diploma	7	e42094e44cf3201366abb7ff2ad817a8	Recebi o diploma numa cerimónia solene onde os familiares aplaudiram cada estudante que subia ao palco.	Tenho o meu diploma.
+diploma	diploma	7	9bedd29c9e404896f3cd0a02d4253f17	Recebi o diploma numa cerimónia solene onde os familiares aplaudiram cada estudante que subia ao palco.	Tenho o meu diploma.
 discussão	argument	7	bb2b36bbf66250f8c3dea6a9ea72b4c6	Tiveram uma discussão por causa de uma ninharia, mas fizeram logo as pazes.	A discussão foi curta.
 discutir	to argue/discuss	7	372cef000d4baaf28c71bf08235edba4	Os dois irmãos discutiram durante horas sobre quem ficaria com a casa dos pais.	Não vamos discutir agora.
 divertir	to amuse	7	c70b1ece6c4c6005b7e6588e26631619	As crianças divertiram-se imenso no parque aquático e não queriam de modo algum ir embora.	Diverte-te na festa.
@@ -115,7 +115,7 @@ durar	to last	7	6575609f9bc52a7ed5a3d524155d91c0	A reunião durou muito mais tem
 duração	duration / length of time	7	9138eaa467030b9c9ec89a02afb0a360	A duração do filme é de quase três horas, por isso convém ir à casa de banho antes.	Qual é a duração?
 débito	debit	7	853a6af8f9e0a4a2fec0ce2739530901	O pagamento da água é feito por débito direto todos os meses na minha conta.	É um cartão de débito.
 dívida	debt	7	9287844ffffb49ef440daa9c26b2321f	Demoraram anos a pagar a dívida da casa, mas finalmente conseguiram libertar-se dela.	Tenho uma dívida.
-economia	economy	7	0dcbfa3e8507c240d9f372a0b8053885	A economia do país tem crescido lentamente, mas o desemprego continua a ser uma preocupação.	A economia melhorou.
+economia	economy	7	fdbd7e563611325133219c22885f3f9c	A economia do país tem crescido lentamente, mas o desemprego continua a ser uma preocupação.	A economia melhorou.
 económico	economical/cheap	7	3368950a163b7300b36791b3834e05aa	Optámos por um carro mais económico que gasta pouco combustível nas viagens longas.	É um carro económico.
 edredão	duvet	7	37ef2b61aeeecdac8f91bb3f4736e815	No inverno trocamos o cobertor fino por um edredão quente cheio de penas.	O edredão é quente.
 educar	to raise / educate	7	8bab9d90e10db123c4d4443d2638fe3f	Educar uma criança exige paciência, regras claras e muito amor todos os dias.	É difícil educar filhos.
@@ -131,7 +131,7 @@ encomendar	to order	7	03defaa30be3f95d5ac631399e32a2b8	Decidimos encomendar o ja
 engolir	to swallow	7	e4cbc22066ffa9c02804a79d1f4dcc7a	Tenho a garganta tão inflamada que me custa imenso engolir até a água mais fresca.	Custa-me engolir agora.
 ensino	teaching/education	7	a63029141726c8947bef29d1ea153950	O ensino público melhorou nas últimas décadas, embora ainda haja muito por fazer nas escolas rurais.	O ensino é gratuito.
 entusiasmado	excited/enthusiastic	7	f1e17e505f3d9684be59710a310f7a16	Os miúdos estavam entusiasmados com a viagem e não paravam de falar sobre o que iam ver.	Ele está entusiasmado.
-entusiasmo	enthusiasm	7	3c1f670565fdc02148da4e105deed4b2	Falava do novo projeto com tanto entusiasmo que acabou por convencer toda a equipa.	Tenho muito entusiasmo.
+entusiasmo	enthusiasm	7	54801dcf3bb2db7a30db989b9cf6059b	Falava do novo projeto com tanto entusiasmo que acabou por convencer toda a equipa.	Tenho muito entusiasmo.
 envergonhado	embarrassed/ashamed	7	b1bca025736ca1fd97ca099f971d593f	Ficou envergonhado quando se apercebeu de que tinha trocado o nome da pessoa à sua frente.	Sinto-me muito envergonhado.
 equação	equation	7	727fb46db4c0c8b0a301fdb43040d51c	Resolvi a equação isolando a incógnita de um dos lados e simplificando os termos semelhantes.	A equação tem solução.
 escultura	sculpture	7	5b0e4a9701c236911aaa621988f3a0b0	A escultura de bronze ficou colocada no centro da praça principal.	Vi uma escultura antiga.
@@ -148,13 +148,13 @@ fado	fado (Portuguese music)	7	ee9c84c388cc87a19ca0c7001065a7fa	O fado é uma da
 faltar	to be lacking/miss	7	1a3473c4d0e1475a56ca5bd1a791c13e	Faltam ainda alguns ingredientes para a receita, por isso tenho de ir ao supermercado.	Falta pouco para acabar.
 felizmente	fortunately	7	23f713f8cc8ba62450268870340fd8bd	Felizmente o médico chegou a tempo e conseguiu salvar o doente.	Felizmente correu bem.
 ferida	wound	7	ac9b8f3ebeebaf3418f2d9980a8d7ef4	A enfermeira limpou cuidadosamente a ferida e colocou um penso novo para evitar qualquer infeção.	A ferida está a sarar.
-ferro	iron	7	d8a1238ea725543b45d0154c5be0cd11	O velho portão de ferro chiava sempre que alguém o abria à entrada da quinta.	O ferro é pesado.
+ferro	iron	7	2af71b8bdf90a72e60016123798983e3	O velho portão de ferro chiava sempre que alguém o abria à entrada da quinta.	O ferro é pesado.
 ferro de engomar	iron	7	8ad75d0e761437b0fcc6e8e39b7e0374	Liguei o ferro de engomar para alisar as camisas antes da reunião de amanhã.	Preciso do ferro de engomar.
 ferry	ferry	7	46171b077997b166bb30cf5494eff2f8	Apanhámos o ferry para atravessar o rio com o carro, evitando assim um longo desvio pela ponte.	O ferry parte às nove.
 ficheiro	file	7	195cad2f29391243f62fce87a9cf1ca2	Enviei-te o ficheiro por correio eletrónico, mas parece que era demasiado grande e não chegou.	Abre este ficheiro.
 fiel	faithful	7	2a8a0f866eb612758443559d32e0b750	Apesar de todas as tentações, manteve-se fiel aos seus princípios e à pessoa que amava.	Ele é muito fiel.
 figo	fig	7	43f8351edd38358e4bdb2b4616158bf8	No final do verão, a figueira do quintal enche-se de figos doces e maduros muito apetitosos.	O figo é doce.
-filosofia	philosophy	7	8d9cf576c5110bbc3c74a5cc5112a51f	A filosofia leva-nos a questionar ideias que sempre tomámos como certas sem nunca refletir.	A filosofia faz pensar.
+filosofia	philosophy	7	997f2582ba87be865213de9385a3f280	A filosofia leva-nos a questionar ideias que sempre tomámos como certas sem nunca refletir.	A filosofia faz pensar.
 finanças	finances	7	0ccbd2d01aeaf43afaac791648ac4939	As finanças da família andavam desorganizadas, por isso decidiram fazer um orçamento mensal.	As finanças vão bem.
 fogo de artifício	fireworks	7	a1f43673048b546c9edb5c0bc6db454d	O fogo de artifício iluminou o céu durante a passagem de ano.	O fogo é lindo.
 fogão	stove	7	b48cb7fa2c31d5c347e4564a4b82275f	O fogão da cozinha tem quatro bicos a gás onde aqueço as panelas todas ao mesmo tempo.	Acende o fogão.

@@ -29,7 +29,7 @@ ventoinha	fan	10	8b309824f8e6eb5ceab02b021d5b8e64	No verão ligo a ventoinha do 
 verso	verse/line of poetry	10	deddf600588287d4f91c7cccd5556894	Cada verso deste poema tem uma musicalidade impressionante.	Decorei um verso.
 videira	grapevine	10	e9b9f3284b290a937ea22f94b847f2de	A videira trepava pela parede da casa e dava sombra ao pátio durante os meses de verão.	A videira tem uvas.
 virtude	virtue	10	2b1a571a98b2b3c028a743c006709f2a	A paciência é uma virtude rara que poucas pessoas conseguem cultivar ao longo da vida.	A paciência é virtude.
-visto	visa	10	90b7f3b0d1be9775e27d698bd3e25387	Tive de pedir um visto na embaixada antes de poder viajar para aquele país distante.	Preciso de um visto.
+visto	visa	10	4227e93223361bf625d257c1d5612437	Tive de pedir um visto na embaixada antes de poder viajar para aquele país distante.	Preciso de um visto.
 viúva	widow	10	472ae6b4ccf424a8b1176e94da484e3c	A viúva recebeu o apoio de toda a vizinhança nos meses difíceis que se seguiram.	A viúva mora ao lado.
 viúvo	widower	10	b72edfc5c7cb61c3e53870d5da42abb4	Ficou viúvo muito cedo e teve de criar os filhos sozinho com grande dedicação.	Ele é viúvo.
 vício	vice/addiction	10	229f7c48dc89e33eb1e22c4d51622c17	O vício do jogo arruinou-lhe a vida e afastou-o de todos os que o amavam verdadeiramente.	Largou o vício.
@@ -81,7 +81,7 @@ deslizamento	landslide	10	6d79e53e6d58e0467961a46918dc88f7	O deslizamento de ter
 diabetes	diabetes	10	c35b49da1b6dd679a48d67f456bc7aaf	Quem tem diabetes deve controlar cuidadosamente os níveis de açúcar no sangue ao longo de todo o dia.	Ele sofre de diabetes.
 dispendioso	costly	10	887b56328faab37bf931e813dbe5d26d	O relógio que ele queria era tão dispendioso que decidiu poupar durante um ano.	É muito dispendioso.
 doutoramento	doctorate/PhD	10	3d4950fb3b9457783aa361300d422a8d	O doutoramento exige anos de investigação original e a defesa pública de uma tese perante especialistas.	Ele fez doutoramento.
-duna	dune	10	22dc7ba595fddf34804a5f7454e001a2	A duna de areia movia-se lentamente com o vento e mudava de forma todos os anos.	A duna é alta.
+duna	dune	10	3d80e332b38b4b9ad144210916ba2610	A duna de areia movia-se lentamente com o vento e mudava de forma todos os anos.	A duna é alta.
 ecrã tátil	touchscreen	10	38c7c9905b776133467e4e3fa220d589	O ecrã tátil deixou de responder corretamente e às vezes carrego num sítio e ele escolhe outro.	O ecrã tátil é prático.
 emagrecer	to lose weight	10	429dd2240d4f4466274be3fd6b959019	Depois de mudar de alimentação e começar a caminhar, emagreceu vários quilos em poucos meses.	Quero emagrecer um pouco.
 empenhado	committed/dedicated	10	31179ad29c3bf3305102e3f669172185	Mostrou-se sempre empenhado no trabalho e nunca poupou esforços para ajudar a equipa.	Ele está muito empenhado.
@@ -102,7 +102,7 @@ fornecedor	supplier	10	508d8551746abc424d003003c11a8b30	A padaria mudou de forne
 fratura	fracture	10	0a33a5de832fb1798aaa67605227d4cb	A radiografia confirmou uma fratura no pulso, por isso o médico colocou um gesso durante seis semanas.	Teve uma fratura no braço.
 fôlego	breath/stamina	10	1509ff14fe650399d76f7b338ef67b13	Subi as escadas a correr e cheguei lá acima completamente sem fôlego, com o coração a bater forte.	Estou sem fôlego nenhum.
 gafanhoto	grasshopper	10	f517d84d36bdc7d0c542926d8e0b8e29	O gafanhoto saltou de repente da relva e desapareceu por entre as plantas mais altas do jardim.	O gafanhoto salta muito.
-golfo	gulf	10	c2924aa800f8f089b8e2a22a211aec27	O golfo abria-se entre duas faixas de terra e as suas águas eram surpreendentemente quentes.	O golfo é vasto.
+golfo	gulf	10	6e1caeb70c90898b9cd02ccea7011fc5	O golfo abria-se entre duas faixas de terra e as suas águas eram surpreendentemente quentes.	O golfo é vasto.
 gratificação	bonus/tip	10	b3dabf3450245d84bda4088cc4dd3ed4	No fim do ano, a empresa costuma dar uma gratificação aos funcionários mais dedicados.	Recebi uma gratificação.
 herdeiro	heir	10	cb0b0b8b7bedc65f710e801e0731882c	O herdeiro da quinta decidiu continuar o trabalho que o pai começara há décadas.	Ele é o único herdeiro.
 hesitante	hesitant	10	6d48dbb30936536691c400e041e035ea	Respondeu de forma hesitante, como se não tivesse a certeza absoluta do que estava a dizer.	Ele ficou hesitante.
@@ -131,7 +131,7 @@ miradouro	viewpoint	10	1082e4b40e67b4b951f1af4561f34bf7	Do miradouro avista-se t
 musculação	weight training	10	90a22f3187a6fa172f6c870ccfe8925b	A musculação ajudou-o a fortalecer as costas e a aliviar as dores que sentia há anos.	Ele faz musculação à noite.
 musgo	moss	10	ca83f49b9db58ede954ffae7406bb4f8	O musgo cobria as pedras húmidas junto à cascata e tornava o chão escorregadio.	O musgo é verde.
 mão de obra	labor/workforce	10	1ad1749b9a6d9886817d08ac75c52a87	A falta de mão de obra qualificada é um dos grandes desafios das empresas industriais.	Falta mão de obra.
-nervo	nerve	10	5442d96e5089f853eb990395860ae9ec	O médico explicou que a dor na perna vinha de um nervo comprimido na zona inferior das costas.	É um nervo entalado.
+nervo	nerve	10	70c2f8969e8b194958678ef7a88c950e	O médico explicou que a dor na perna vinha de um nervo comprimido na zona inferior das costas.	É um nervo entalado.
 olfato	smell (sense)	10	c09b41077fb0b43af4f1f644848bbf0e	Quando estou constipado, perco quase por completo o olfato e a comida deixa de ter qualquer sabor.	Perdi o olfato hoje.
 orgulho próprio	self-respect	10	b5c46c9fa7c6e525348eaa3d0da51f87	É importante ter orgulho próprio e não deixar que os outros nos tratem com desprezo.	Tem orgulho próprio.
 orvalho	dew	10	9ae5bdc58f37d3b242a8c077a5d500f5	O orvalho da manhã brilhava sobre a relva quando saímos cedo para passear pelo campo.	O orvalho molha a relva.

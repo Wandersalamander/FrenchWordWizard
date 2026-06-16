@@ -76,7 +76,7 @@
         android:gravity="center"
         android:minHeight="52dp"
         android:paddingVertical="14dp"
-        android:text="Start learning  →"
+        android:text="Continue  →"
         android:textColor="@color/monokai_bg"
         android:textSize="17sp"
         android:textStyle="bold" />

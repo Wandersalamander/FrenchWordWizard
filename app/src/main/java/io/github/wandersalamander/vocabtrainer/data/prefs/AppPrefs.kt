@@ -85,16 +85,16 @@ object AppPrefs {
     }
 
     /**
-     * Persist the first-run choices in one commit: the chosen language, its
-     * active-pool threshold, and the done flag. Writing them together means a
-     * launch can never observe a half-applied setup (e.g. done=true but no
-     * language). The threshold is coerced into the valid range.
+     * Persist the first-run choices in one commit: the chosen language and the
+     * done flag. Writing them together means a launch can never observe a
+     * half-applied setup (e.g. done=true but no language). The active-pool size
+     * is NOT set here — it's chosen after the level check (see
+     * MainActivity.onAssessmentComplete), so the first language asks for it the
+     * same way every later language does.
      */
-    fun completeOnboarding(context: Context, languageCode: String, threshold: Int) {
-        val coerced = threshold.coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+    fun completeOnboarding(context: Context, languageCode: String) {
         get(context).edit()
             .putString(KEY_APP_LANGUAGE, languageCode)
-            .putInt(autoAddThresholdKey(languageCode), coerced)
             .putBoolean(KEY_ONBOARDING_DONE, true)
             .apply()
     }

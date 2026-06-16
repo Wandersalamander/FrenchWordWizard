@@ -137,6 +137,17 @@ class CalibrationSession(
     }
 
     /**
+     * Abandon the probe immediately as a true beginner: the frontier is forced
+     * to [NO_FRONTIER] regardless of any tiers cleared so far, and the session
+     * finishes. Backs the "I'm a beginner — skip" affordance, where the user has
+     * explicitly declared they're starting from nothing.
+     */
+    fun skip() {
+        lastClearedTier = NO_FRONTIER
+        finish()
+    }
+
+    /**
      * Load the first tier at or after [start] that yields a non-empty sample and
      * reset the per-tier counters. Finishes the session when no such tier
      * remains (every probed tier cleared → frontier is the last cleared tier).

@@ -153,9 +153,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             tts = this,
             vocabDictionary = vocabDictionary,
             language = language,
-            // Tutorial follows the level check: fire it the moment calibration
-            // hands off to the first real word (no-op if already seen).
-            onCalibrationFinished = ::maybeShowTutorial,
+            // After the level check + placement dialog, MainActivity asks for
+            // the active-pool size, starts drilling, then (first run) the tutorial.
+            onAssessmentComplete = ::onAssessmentComplete,
         )
         wireQuizControllerListeners()
         quizController.refreshStreakBadge()
@@ -284,47 +284,56 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     /**
-     * First-launch sequencing. Language and active-pool selection already
-     * happened in OnboardingActivity, so what's left is: run the once-per-
-     * language level check on a fresh language, then show the button tutorial
-     * once there's a real word on the card. The tutorial deliberately follows
-     * calibration (QuizController.finishCalibration calls back via
-     * [onCalibrationFinished] → [maybeShowTutorial]) — teaching the buttons is
-     * meaningless before any word is shown. When no calibration is due
-     * (returning user / already-calibrated language) the pending tutorial, if
-     * any, is shown right away instead.
+     * First-launch sequencing. Language selection already happened in
+     * OnboardingActivity, so what's left for a fresh language is: run the level
+     * check, then (via [onAssessmentComplete]) ask the active-pool size, begin
+     * drilling, and finally — once there's a real word on the card — the button
+     * tutorial. The tutorial deliberately follows the assessment; teaching the
+     * buttons is meaningless before any word is shown. When no calibration is
+     * due (returning user / already-calibrated language) the pending tutorial,
+     * if any, is shown right away instead.
      */
     private fun startFirstRunFlow() {
         val root = findViewById<View>(android.R.id.content)
         if (willCalibrate()) {
-            root.post { beginFreshLanguageSetup() }
+            // Level check first. The pool prompt and (first-ever) tutorial run
+            // afterwards via onAssessmentComplete, so assessment and drill setup
+            // stay separate steps.
+            root.post { quizController.startCalibration() }
         } else {
             root.post { maybeShowTutorial() }
         }
     }
 
     /**
-     * Per-language first-visit setup, run once for every unlearned language (not
-     * just on first install): ask for the active-pool size, then start the level
-     * check. The pool prompt is skipped when the language already has a chosen
-     * size — which is the case for the very first language (set on the
-     * onboarding screen) and any language tuned earlier in Settings — so it
-     * never double-asks. The placement dialog and (first-ever) tutorial follow
-     * from QuizController.finishCalibration as usual.
+     * Called by QuizController once the level check and its placement dialog
+     * have been dismissed. Asks for the active-pool size here — after the
+     * assessment, so language placement and drill configuration stay separate —
+     * unless this language already has a chosen size (any language tuned earlier
+     * in Settings). Then drilling begins and, first run only, the tutorial.
+     *
+     * Run once per unlearned language, not just first install: switching to a
+     * fresh language via the selector lands here the same way.
      */
-    private fun beginFreshLanguageSetup() {
+    private fun onAssessmentComplete() {
         if (AppPrefs.hasAutoAddThreshold(this, language.code)) {
-            quizController.startCalibration()
+            startDrilling()
         } else {
-            showActivePoolSetupDialog { quizController.startCalibration() }
+            showActivePoolSetupDialog { startDrilling() }
         }
     }
 
+    /** Load the first real drill word, then show the one-time tutorial over it. */
+    private fun startDrilling() {
+        quizController.beginDrillingAfterAssessment()
+        maybeShowTutorial()
+    }
+
     /**
-     * Once-per-language active-pool chooser. Pre-filled with the inherited
-     * default, persists the chosen size for [language] on close, then invokes
-     * [onChosen] (start calibration). Non-cancelable with a single button so the
-     * size is always committed before the level check begins.
+     * Once-per-language active-pool chooser, shown after the level check.
+     * Pre-filled with the inherited default, persists the chosen size for
+     * [language] on close, then invokes [onChosen] (begin drilling).
+     * Non-cancelable with a single button so the size is always committed first.
      */
     private fun showActivePoolSetupDialog(onChosen: () -> Unit) {
         val view = layoutInflater.inflate(R.layout.dialog_active_pool_setup, null)

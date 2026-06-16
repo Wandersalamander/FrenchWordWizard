@@ -8,7 +8,7 @@ puxar	to pull	4	e3a7db24646ea0ef03d942108dfb8ee1	Ela puxou a cortina para deixar
 Páscoa	Easter	4	aaa82ea8e3b7d79b8e43ed3b355c4fc4	Na Páscoa, é tradição comer amêndoas e o folar caseiro.	A Páscoa é em abril.
 público	audience/public	4	2bd3118bf83df1faebaf4ffa0b3014d1	O público aplaudiu de pé no final da apresentação.	O público gostou.
 quadrado	square	4	09a4d5f079cd155d3163e492262371db	Desenhei um quadrado perfeito no quadro para explicar o problema de geometria à turma.	A praça é quadrada.
-quadro	picture / painting	4	0ab752018f8bd7b0408bb88b36f3f5aa	Penduraram um quadro do pintor local na parede principal da sala de estar.	O quadro é bonito.
+quadro	picture / painting	4	d5559570c767c285a618cc91d5fc82ba	Penduraram um quadro do pintor local na parede principal da sala de estar.	O quadro é bonito.
 quarenta	forty	4	7b8c6a00a6e0998350838e7db6bf8d38	A viagem de comboio até à capital demora cerca de quarenta minutos a esta hora.	São quarenta graus.
 quente	hot / warm	4	45f6bd3e53ac531ed75b3437f05a2805	A sopa ainda está demasiado quente, por isso é melhor esperares uns minutos antes de a começares a comer.	A água está quente.
 quilómetro	kilometre	4	bd40ca522b3e010157228b7daa7695f4	A aldeia fica a apenas três quilómetros daqui, podemos ir a pé sem problema nenhum.	São cinco quilómetros.
@@ -28,7 +28,7 @@ resultado	result	4	c3a217d3df9d1f7ebea12fbb00f3a0a0	O resultado da experiência 
 reunião	meeting	4	7e150283e606d9fa65a21822d75c8414	A reunião durou mais de duas horas porque ninguém conseguia chegar a um acordo final.	A reunião é amanhã.
 revista	magazine	4	61c060041a93525481b4c16c811fce51	Comprei uma revista de viagens para ler durante o voo.	A revista é interessante.
 rir	to laugh	4	aeec645249be520c2b20c9d4b33912ee	Rimo-nos durante toda a noite com as histórias que o tio contava sobre a sua juventude.	Não te rias de mim.
-rosa	rose	4	84109ae4b4178430b8174b1dfef9162b	A rosa vermelha é considerada o símbolo do amor e perfuma todo o jardim na primavera.	A rosa cheira bem.
+rosa	rose	4	9832f0b68ede54da6a3a29ea4c400124	A rosa vermelha é considerada o símbolo do amor e perfuma todo o jardim na primavera.	A rosa cheira bem.
 rápido	fast / quick	4	bda24596a455cb7d60b7eefcf3de5307	O novo comboio é tão rápido que faz a ligação entre as duas cidades em pouco mais de duas horas.	Foi muito rápido.
 régua	ruler	4	2d12bb4130e5d25aed5a0ad9cd976537	Tracei a linha com a régua para que o gráfico ficasse direito e bem apresentado.	A régua mede trinta centímetros.
 saia	skirt	4	8c777d5e4421ab51ae5bab66aea5ed46	Ela comprou uma saia comprida estampada para usar na festa de casamento da prima.	A saia é vermelha.
@@ -38,12 +38,12 @@ sala de estar	living room	4	9ba5937c768cdb96d1226075d0479740	A sala de estar tem
 sala de jantar	dining room	4	48d8454a767a7de5cc8fadb2a4ee4c6c	Na sala de jantar há uma mesa comprida onde cabe toda a família ao domingo.	Comemos na sala de jantar.
 salário	salary/wage	4	55b58446e978115f60daab0bfff66f8f	O salário mínimo nacional subiu este ano, mas muitas famílias continuam a ter dificuldades.	O salário é baixo.
 sandálias	sandals	4	050bf01400089fe13b7afc1ec8ff2943	No verão ando de sandálias na praia porque é mais fresco do que sapatos fechados.	Uso sandálias na praia.
-sangue	blood	4	2e33a38d91c121d6643623576c04185c	A enfermeira retirou-me sangue do braço para fazer as análises que o médico tinha pedido.	Vi sangue na ferida.
+sangue	blood	4	e03119ebcf1478c66ee775e467ac928e	A enfermeira retirou-me sangue do braço para fazer as análises que o médico tinha pedido.	Vi sangue na ferida.
 saudável	healthy	4	86b94f29e446b69a27f2fbc388d8c596	Uma alimentação saudável e exercício regular ajudam a prevenir muitas doenças ao longo da vida.	Ele leva uma vida saudável.
 seguir	to follow/continue	4	4fd76e8e679bbde8563ff888c12e4d92	Basta seguir sempre em frente por esta rua até chegares à praça onde fica a estação.	Segue por aqui.
 segundo	second	4	2b7b10774e36faa3a432def8887429b4	A contagem decrescente chegou ao último segundo e todos gritaram de alegria à meia-noite.	Espera um segundo.
 selo	stamp	4	1621cc04cf6caf2ec930d560101f41c1	Preciso de comprar um selo para enviar esta carta à minha avó que vive no estrangeiro.	Comprei um selo novo.
-sentimento	feeling	4	36197789e51be9f173b7a4949023e635	É difícil pôr em palavras o sentimento de paz que se vive naquele lugar tão tranquilo.	Que belo sentimento.
+sentimento	feeling	4	22f4319df7cfc540f30b95357cd87e1a	É difícil pôr em palavras o sentimento de paz que se vive naquele lugar tão tranquilo.	Que belo sentimento.
 servir	to serve	4	629fe602c9df1aa2cc6a8d7db597191b	O empregado veio servir o vinho antes de trazer o prato principal à mesa.	Vou servir a sopa.
 serviço	service	4	105da97051f64d430d771e850096654e	O restaurante é conhecido pela boa comida e pelo serviço atencioso dos empregados.	O serviço foi rápido.
 sessenta	sixty	4	79d0d389c3f9cc7ef4ab321a85dedfae	Uma hora tem sessenta minutos, tal como cada minuto tem sessenta segundos certos.	Ele tem sessenta anos.
@@ -61,18 +61,18 @@ sumo	juice	4	098f1fb4853ebd038e54d615b2b294c5	De manhã faço um sumo de laranja
 sétimo	seventh	4	7025d09968c4d2cfefc01ff68b099eaa	No sétimo dia da viagem decidimos finalmente descansar e ficar junto da piscina do hotel.	Estou no sétimo lugar.
 tamanho	size	4	101666a09a35db7fe69a0c90211af965	Este casaco não é do meu tamanho, vou ter de o trocar por um maior.	Que tamanho usas?
 tapete	rug / carpet	4	b47e13d22389eea9375681ebafee20b2	Pusemos um tapete macio em frente ao sofá para o chão não estar tão frio.	O tapete é macio.
-teatro	theatre	4	4c16f83f480928bb12fc21f7fb0e85ec	Fomos ao teatro ver uma peça clássica encenada por um grupo local.	O teatro está cheio.
+teatro	theatre	4	404ec78c36f02f606a1adfa2dceab1ec	Fomos ao teatro ver uma peça clássica encenada por um grupo local.	O teatro está cheio.
 telhado	roof	4	b4e8d51f63329639422f339ef2b996bc	O telhado da casa antiga tinha telhas partidas que deixavam entrar a chuva no sótão.	O telhado tem telhas.
-temperatura	temperature	4	ee9cf3b7ac113ccd7af311804b2be8ff	A temperatura desceu bruscamente durante a noite e de manhã estava tudo coberto de gelo.	A temperatura está baixa.
+temperatura	temperature	4	273aa41dbec7f65d9eef08b5493883fa	A temperatura desceu bruscamente durante a noite e de manhã estava tudo coberto de gelo.	A temperatura está baixa.
 tempestade	storm	4	8809a64dff2c0420374a5d3e8552b9e3	A tempestade derrubou várias árvores na aldeia e deixou muitas casas sem eletricidade durante a noite.	A tempestade foi forte.
 tentar	to try	4	f0654c6040eee8286eaccf1f3ff86473	Tentei várias vezes contactá-lo por telefone, mas a chamada caía sempre na caixa de voz.	Tenta outra vez.
 teto	ceiling	4	d8ee97d78c13c9f094e4048c8427a4fd	No teto da sala pendurámos um candeeiro novo que ilumina toda a divisão.	O teto é alto.
 texto	text	4	62059a74e9330e9dc2f537f712b8797c	O texto narrativo que lemos contava a história de uma viagem por terras desconhecidas.	Lê o texto todo.
 tocar	to touch	4	a88fcdf2a458912005b4982f5d1a877e	Não devias tocar na ferida com as mãos sujas, porque podes provocar uma infeção perigosa.	Não toques nisso, por favor.
-tosse	cough	4	2c64d76b5f6ce7ee810ee1d355f63bd6	A tosse seca não me deixava dormir, por isso fui à farmácia comprar um xarope para aliviar a garganta.	Tenho uma tosse forte.
+tosse	cough	4	389b1a80c250b1c43bc62f50ba73a557	A tosse seca não me deixava dormir, por isso fui à farmácia comprar um xarope para aliviar a garganta.	Tenho uma tosse forte.
 total	total	4	fbb44b4487415b134bce9c790a27fe5e	O total a pagar, com o desconto incluído, foi de trinta e dois euros.	Quanto é o total?
 trabalhador	worker/hardworking	4	7c2fcba91dd84d08f6152e8754683fb7	Ele é um trabalhador dedicado que nunca falta e cumpre sempre os prazos com rigor.	Ele é muito trabalhador.
-triste	sad	4	535500fa8ed249a3c394dd6da143923d	Fiquei bastante triste com a notícia, mas sei que faz parte da vida e que, com tempo, há de passar.	Por que estás triste?
+triste	sad	4	a3492954e61bfd5b668278d0f2e6acde	Fiquei bastante triste com a notícia, mas sei que faz parte da vida e que, com tempo, há de passar.	Por que estás triste?
 tristeza	sadness	4	d9292c5677b5989aae01a86a509201d5	Uma grande tristeza apoderou-se de todos quando souberam da partida do velho professor.	Sinto muita tristeza.
 trocar	to exchange	4	093bb289ee7cb4790556ec26a425e020	Quero trocar esta camisola por um tamanho maior, mas trouxe o talão da compra.	Posso trocar isto?
 trocos	change (coins)	4	67559b52df05f47921510569bca25b36	O senhor da padaria deu-me os trocos certos e ainda me desejou um bom dia.	Guarda os trocos.
@@ -108,7 +108,7 @@ agradecer	to thank	4	dd2e238d878845035d295948d2b4d9a6	Quero agradecer a todos os
 agricultura	agriculture	4	e41f7c326423d84355bd1e3529cce56b	A agricultura biológica tem ganho cada vez mais importância entre os jovens produtores do país.	A agricultura é importante.
 algodão	cotton	4	2fdcae2b9421cbae2a41fcf1e177ebc7	Prefiro lençóis de algodão porque são frescos e agradáveis ao toque durante a noite.	A camisa é de algodão.
 alívio	relief	4	8086ce2a7c9558ee843ed9a67127ac49	Foi com grande alívio que recebi a notícia de que o exame tinha corrido melhor do que esperava.	Que alívio enorme.
-ambiente	environment	4	0149c3083ec080ee00b622bd2495525d	A proteção do ambiente tornou-se uma preocupação cada vez mais importante para a população.	O ambiente está limpo.
+ambiente	environment	4	83f727e87492ba80d86cfa463eb07959	A proteção do ambiente tornou-se uma preocupação cada vez mais importante para a população.	O ambiente está limpo.
 amor	love	4	5da2297bad6924526e48e00dbfc3c27a	O amor entre eles era tão evidente que bastava vê-los juntos por um instante para o sentir no ar.	O amor é cego.
 amável	friendly/kind	4	35f8159d5b83deb6e924ec5ed38530fb	A senhora foi muito amável e ofereceu-se para nos indicar o caminho até à estação.	Ela é muito amável.
 ansioso	anxious	4	54b8b9c696b7b9aaac9b374a10420af1	Ela andava ansiosa há dias, sem conseguir dormir, à espera dos resultados das análises.	Sinto-me muito ansioso.
@@ -139,14 +139,14 @@ bacalhau	cod (salt cod)	4	65a64219bee1527a36dcf405531d29ee	Dizem que há mil man
 bairro	neighbourhood	4	f9722df7619e68acb8f1c2e5ea61e9be	Cresci num bairro tranquilo onde toda a gente se conhecia e as portas ficavam sempre abertas.	Gosto do meu bairro.
 balde	bucket	4	d3249da819444bc1605cffeae40fb4c4	Enchi o balde de água com detergente para lavar o chão da cozinha.	O balde está cheio.
 baleia	whale	4	2c71eb929d684ff32182bb096ddc5914	A baleia é o maior animal do planeta e vive nos oceanos profundos de todo o mundo.	A baleia é gigante.
-banco	stool / bench	4	4ab10179e578c4421552ab639aef64aa	Usei um banco baixo para alcançar os pratos que estavam no armário mais alto.	Sento-me no banco.
+banco	stool / bench	4	a3f5d2daa8941a1ceda6a98bd789ee71	Usei um banco baixo para alcançar os pratos que estavam no armário mais alto.	Sento-me no banco.
 banheira	bathtub	4	931cd53b47410b22c1592d6f174f1964	À noite enchemos a banheira de água quente para o bebé tomar um banho relaxante.	A banheira está cheia.
 barbeiro	barber	4	6321ab6bcc07a6ca98d1325cbaca0634	O barbeiro cortou-lhe o cabelo e aparou a barba enquanto conversavam sobre futebol.	O barbeiro corta cabelo.
 basquetebol	basketball	4	a6702e9670b2e2601d7f90ce51b1d88d	O basquetebol é cada vez mais popular entre os jovens portugueses.	Ele joga basquetebol.
 bateria	battery	4	f2721b21aa69c3fc97f2f360309d3c81	A bateria do telemóvel já não dura o dia inteiro e tenho de o carregar a meio da tarde.	A bateria está fraca.
 bigode	moustache	4	94fea3a5c1a28e936b5e363f1780c5e7	O avô usava um bigode grisalho bem aparado de que se orgulhava bastante.	O bigode dele é branco.
 bilheteira	ticket office	4	40de1c5d7e1564ddf556dc2851c2c1ef	Dirigi-me à bilheteira para perguntar se ainda havia lugares disponíveis no comboio das oito da manhã.	A bilheteira está fechada.
-biologia	biology	4	6c1ea7d75a46b979a0e4a56c8285740f	A biologia ensina-nos como funcionam as células e como os seres vivos se adaptam ao ambiente.	Estudo biologia.
+biologia	biology	4	13ffbe022b84057ad2b59ba082839418	A biologia ensina-nos como funcionam as células e como os seres vivos se adaptam ao ambiente.	Estudo biologia.
 biscoito	biscuit	4	9db02f37b26dc814ed0bb7d820752e79	Ao lanche mergulho um biscoito no leite morno antes de o comer.	Come um biscoito.
 blusa	blouse	4	7a71c80c33d3a8b6f2247f026dad946c	Ela passou a ferro a blusa de seda para usar na apresentação de amanhã de manhã.	A blusa é branca.
 bolacha	cookie / cracker	4	9ef20ec6832a9c4adfb35c2ae1d86f85	Comprei um pacote de bolachas de água e sal para acompanhar o queijo.	Quero uma bolacha.
@@ -160,7 +160,7 @@ cachecol	scarf	4	61289ef46a3bbee76531fec042039371	Enrolou o cachecol vermelho ao
 calculadora	calculator	4	3dce934c192212f770ed747cc36ee1eb	Usei a calculadora para confirmar o resultado, mas o professor pediu para mostrarmos todos os passos.	Esqueci a calculadora.
 calçar	to put on (footwear)	4	aa384655cc72097f9ebefd9b4d16150c	Antes de sair tens de calçar as botas porque o chão lá fora está cheio de lama.	Vou calçar os sapatos.
 camião	lorry/truck	4	09c52ec4eee2dfccad24ca99a4a072ee	Um camião carregado de madeira avariou na autoestrada e provocou uma longa fila de trânsito.	O camião é enorme.
-candidato	candidate/applicant	4	91decb248f8a7be12263b3988d28cdf0	Cada candidato teve dez minutos para apresentar as suas ideias perante o júri da empresa.	Sou candidato à vaga.
+candidato	candidate/applicant	4	4fa102ce2240f066e86a79552f723e23	Cada candidato teve dez minutos para apresentar as suas ideias perante o júri da empresa.	Sou candidato à vaga.
 capítulo	chapter	4	10af90684b158b96f221d51c3c08bff0	O último capítulo do livro foi o mais emocionante de toda a história.	Li só um capítulo.
 careca	bald	4	8b90a78926a1f8b86d7f7972d4e08a66	O tio ficou careca muito cedo e por isso usa quase sempre um boné na rua.	Ele é careca.
 carinhoso	affectionate	4	e102e760c4498290c928988bd62a69ae	O meu pai era um homem carinhoso, que nunca tinha vergonha de demonstrar o seu afeto.	Ele é muito carinhoso.
@@ -175,7 +175,7 @@ cauda	tail	4	7ce373045d7e1feede467546d20f3b10	O cão abanava a cauda alegremente
 causa	cause	4	b36a035d99171a31b4170bb6bd3176fa	A causa do incêndio ainda não foi determinada pelas autoridades responsáveis pela investigação.	Qual foi a causa.
 cave	cellar / basement	4	e386df9ee22e271da0b7d489447870ff	Na cave guardamos as garrafas de vinho, porque ali está sempre fresco e escuro.	A cave é fria.
 celebrar	to celebrate	4	43005a21d0c3de7806ce4a6ec4cd6ef3	Vamos celebrar o aniversário dela com um jantar entre amigos.	Vamos celebrar juntos.
-cena	scene	4	31ff4c4538fe1c10d6c340776be75822	A cena final do filme deixou toda a sala em silêncio absoluto.	A cena foi intensa.
+cena	scene	4	3f06d69bc393b71279de38432a8ce9cc	A cena final do filme deixou toda a sala em silêncio absoluto.	A cena foi intensa.
 centro comercial	shopping centre	4	2f69857c1de5dcfc586a0fb503bfc934	Aos domingos chuvosos, muita gente passa a tarde no centro comercial a ver montras.	Vamos ao centro comercial.
 centímetro	centimetre	4	ef6f67f737184a5594c975eacc35420c	A mesa é apenas um centímetro mais larga do que o espaço junto à parede.	Mede dez centímetros.
 cereja	cherry	4	34f9f657c2d1c5ecdd4ff9405307d7d3	As cerejas do Fundão são famosas em todo o país pela sua doçura e cor vermelha intensa.	A cereja é vermelha.
@@ -185,7 +185,7 @@ cheirar	to smell	4	8afea8eacc8c49128d1fa470478feb6f	A cozinha cheirava tão bem 
 chuva	rain	4	9264ef46e8a9529f6c8daa99b1f741b4	A chuva caiu sem parar durante toda a noite e, de manhã, as ruas estavam completamente alagadas.	Está a chuva.
 chávena	cup (tea/coffee)	4	21b776bfefb4ccffe8111a90e50d6ae6	Bebi a minha chávena de café com leite enquanto lia o jornal de manhã.	A chávena está cheia.
 cidadão	citizen	4	c0b0a460a785546ad6361bf9adbbbca3	Como cidadão responsável, ele participa ativamente nas decisões que afetam a sua comunidade local.	Sou cidadão português.
-clima	climate	4	091bdc9e09a07e55e7bb14c8f4348ecf	O clima desta região é ameno, com invernos suaves e verões longos e bastante secos.	O clima é agradável.
+clima	climate	4	64697ca6cdccddf60686a20bed0002ba	O clima desta região é ameno, com invernos suaves e verões longos e bastante secos.	O clima é agradável.
 cobertor	blanket	4	fba6fc536c9230024fe8b959d1a328c1	Nas noites frias de inverno, ponho um cobertor de lã grosso por cima do edredão.	Preciso de um cobertor.
 cobra	snake	4	b2afdf253f6c1391022115bbca0cd8b0	A cobra deslizava silenciosamente por entre as ervas altas à procura de um sítio para se aquecer.	A cobra rasteja.
 cola	glue	4	a1e05ee2564dbf16b04f09a23d482d06	Colei a perna partida da cadeira com cola forte e deixei secar de um dia para o outro.	A cola está seca.
@@ -210,10 +210,10 @@ coração	heart	4	7d9e8d029fd823aec5dc4d71716afa4d	O médico disse que o meu cor
 corpo	body	4	7b7dfa84c3c8cdd74272b5c61d792ebb	Depois de meses a treinar com regularidade, sinto o corpo muito mais forte e cheio de energia.	O corpo precisa de descanso.
 correto	correct	4	c54a778666109483e946f2ad7d279ef9	A tua resposta está correta, mas explica melhor o raciocínio que usaste.	Está correto.
 corrida	run/running	4	3a8408b8edf55d67e22554f2bfec8d85	A corrida da manhã ao longo do rio é a melhor forma que conheço de começar bem o dia.	Adoro a corrida matinal.
-costa	coast	4	2fe44044f40217387daaf299f2eb7340	A costa portuguesa é conhecida pelas suas praias douradas e pelas falésias impressionantes.	A costa é linda.
+costa	coast	4	9696cf5928c3663351b5d4a824431b83	A costa portuguesa é conhecida pelas suas praias douradas e pelas falésias impressionantes.	A costa é linda.
 couro	leather	4	ce7c64b3b56bb1a6f12d1c575fbce516	A mala de couro envelheceu bem e ficou ainda mais bonita com o passar dos anos.	O cinto é de couro.
 criança	child	4	0db86e6f6adeb981e81f627e46a1721a	Quando era criança passava os verões inteiros em casa dos meus avós, na aldeia onde a minha mãe nasceu.	A criança está a dormir.
 crime	crime	4	bc8fba5b68a7babc05ec51771bf6be21	O crime ficou impune durante muitos anos até que novas provas surgiram inesperadamente.	Cometeu um crime.
 cuecas	underpants/knickers	4	c9bb4b5247fffb911ee35c883e8022f4	Pôs umas cuecas lavadas e vestiu-se rapidamente porque já estava atrasado.	As cuecas estão na gaveta.
 culpa	guilt	4	6a15b615e7eab8883637e54fb2977b01	Carregava a culpa daquele erro há anos, mesmo sabendo que ninguém o tinha responsabilizado.	A culpa é minha.
-cultura	culture	4	e6da8e51b4510f9c253957d20dfd3090	A cultura de um povo manifesta-se na sua língua, na sua arte e nos seus costumes quotidianos.	Adoro esta cultura.
+cultura	culture	4	419f235f6f7c9ae320fd0daacedefd28	A cultura de um povo manifesta-se na sua língua, na sua arte e nos seus costumes quotidianos.	Adoro esta cultura.

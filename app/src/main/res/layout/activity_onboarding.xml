@@ -55,11 +55,11 @@
             android:layout_marginTop="10dp"
             android:fontFamily="monospace"
             android:lineSpacingExtra="3sp"
-            android:text="Two choices and you're in. A quick level check comes next, then you start learning."
+            android:text="Pick the language you want to learn. A quick level check comes next, then you're in."
             android:textColor="@color/monokai_comment_light"
             android:textSize="14sp" />
 
-        <!-- ======================= 1 · LANGUAGE ======================= -->
+        <!-- ========================= LANGUAGE ========================= -->
         <TextView
             android:id="@+id/onbLangHeading"
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             android:accessibilityHeading="true"
             android:fontFamily="monospace"
             android:letterSpacing="0.05"
-            android:text="// 1 — language"
+            android:text="// language"
             android:textColor="@color/monokai_pink"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -81,98 +81,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:orientation="vertical" />
-
-        <!-- ===================== 2 · WORDS IN ROTATION ===================== -->
-        <TextView
-            android:id="@+id/onbPoolHeading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:accessibilityHeading="true"
-            android:fontFamily="monospace"
-            android:letterSpacing="0.05"
-            android:text="// 2 — words in rotation"
-            android:textColor="@color/monokai_pink"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/onbPoolDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="monospace"
-            android:lineSpacingExtra="3sp"
-            android:text="How many words you're actively learning at once. A fresh word is pulled in whenever you dip below this. Start small — you can raise it any time in Settings."
-            android:textColor="@color/monokai_comment_light"
-            android:textSize="14sp" />
-
-        <!-- Stepper: yellow keycap ± flanking a big yellow number, matching the
-             Active-pool control in Settings but on the dark canvas. -->
-        <LinearLayout
-            android:id="@+id/onbStepperRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/onbPoolDecrease"
-                android:layout_width="58dp"
-                android:layout_height="58dp"
-                android:background="@drawable/bg_onb_stepper"
-                android:clickable="true"
-                android:contentDescription="Fewer words in rotation"
-                android:focusable="true"
-                android:fontFamily="monospace"
-                android:gravity="center"
-                android:text="−"
-                android:textColor="@color/monokai_yellow"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/onbPoolValue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:accessibilityLiveRegion="polite"
-                android:fontFamily="monospace"
-                android:gravity="center"
-                android:textColor="@color/monokai_yellow"
-                android:textSize="60sp"
-                android:textStyle="bold"
-                tools:text="5" />
-
-            <TextView
-                android:id="@+id/onbPoolIncrease"
-                android:layout_width="58dp"
-                android:layout_height="58dp"
-                android:background="@drawable/bg_onb_stepper"
-                android:clickable="true"
-                android:contentDescription="More words in rotation"
-                android:focusable="true"
-                android:fontFamily="monospace"
-                android:gravity="center"
-                android:text="+"
-                android:textColor="@color/monokai_yellow"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/onbPoolCaption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:fontFamily="monospace"
-            android:gravity="center"
-            android:letterSpacing="0.15"
-            android:text="WORDS AT ONCE · 1–40"
-            android:textColor="@color/monokai_comment"
-            android:textSize="11sp"
-            android:textStyle="bold" />
 
         <!-- ============================ COMMIT ============================ -->
         <TextView
@@ -187,7 +95,7 @@
             android:gravity="center"
             android:minHeight="56dp"
             android:paddingVertical="16dp"
-            android:text="▸  run setup"
+            android:text="▸  start"
             android:textColor="@color/monokai_bg"
             android:textSize="18sp"
             android:textStyle="bold" />

@@ -135,11 +135,11 @@ class QuizController(
     private val tts: TtsHelper,
     private val vocabDictionary: MyDictionary,
     private val language: Language,
-    // Invoked once, right after calibration hands off to the first real word.
-    // The host uses it to show the button tutorial only after the level check
-    // (not before it). No-op by default so tests/headless construction need
-    // not supply it.
-    private val onCalibrationFinished: () -> Unit = {},
+    // Invoked once when the level check and its placement dialog are done. The
+    // host uses it to ask the active-pool size, begin drilling (see
+    // [beginDrillingAfterAssessment]), and show the first-run tutorial. No-op by
+    // default so tests/headless construction need not supply it.
+    private val onAssessmentComplete: () -> Unit = {},
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressCardInfo = ProgressCardInfoView(activity, views, language.code)
@@ -350,8 +350,22 @@ class QuizController(
     }
 
     fun onTipClick() {
+        // During calibration the Tip button is repurposed as the "skip — I'm a
+        // beginner" action (see enterCalibrationUi), so route it there instead.
+        if (inCalibration) { skipCalibration(); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         showTip()
+    }
+
+    /**
+     * Abandon the level check and start as a true beginner. The session ends
+     * with [NO_FRONTIER] regardless of any tiers cleared so far — the user has
+     * explicitly said they're starting from nothing — and the normal finish path
+     * (placement dialog → pool prompt → drill) takes over.
+     */
+    private fun skipCalibration() {
+        calibration?.skip()
+        finishCalibration()
     }
 
     /**
@@ -568,7 +582,7 @@ class QuizController(
     /** Reconfigure the quiz surface for binary known/unknown answers. */
     private fun enterCalibrationUi() {
         // INVISIBLE, not GONE, so the layout doesn't reflow; restored on exit.
-        listOf(views.buttonTip, views.buttonHard, views.buttonLearned)
+        listOf(views.buttonHard, views.buttonLearned)
             .forEach { it.visibility = View.INVISIBLE }
         views.buttonNext.text = "✓ I know it"
         views.buttonFail.text = "✗ I don't"
@@ -576,6 +590,14 @@ class QuizController(
         views.buttonNext.isClickable = true
         views.buttonFail.isEnabled = true
         views.buttonFail.isClickable = true
+        // Repurpose the (otherwise unused) Tip button as a skip: a learner who
+        // knows they're starting from zero can bail straight to beginner instead
+        // of tapping ✗ through every probe. onTipClick routes here while
+        // inCalibration; exitCalibrationUi restores the Hint label.
+        views.buttonTip.visibility = View.VISIBLE
+        views.buttonTip.text = "I'm a total beginner — skip"
+        views.buttonTip.isEnabled = true
+        views.buttonTip.isClickable = true
         views.cardVocab.pullEnabled = false
         // Sets the eyebrow colour; renderCalibrationWord refines the text to
         // "CALIBRATING · LEVEL n" per probed tier.
@@ -612,10 +634,12 @@ class QuizController(
     }
 
     /**
-     * Persist the frontier, tear down calibration UI, and hand off to normal
-     * play by loading the first real word — now biased by the frontier we just
-     * saved (the picker reads it fresh on every pick). Then celebrate the
-     * placement in a dialog; dismissing it triggers the button tutorial.
+     * Persist the frontier, tear down calibration UI, and celebrate the
+     * placement in a dialog. Dismissing the dialog calls [onAssessmentComplete]
+     * — the host then asks the active-pool size and begins drilling via
+     * [beginDrillingAfterAssessment]. The first drill word is deliberately NOT
+     * loaded here: it waits until after the pool size is chosen (so the picker
+     * uses the right threshold) and so no word speaks behind the dialogs.
      */
     private fun finishCalibration() {
         val session = calibration ?: return
@@ -624,13 +648,17 @@ class QuizController(
         exitCalibrationUi()
 
         val maxTier = vocabDictionary.csvData.maxOfOrNull { it.importance } ?: 0
-        updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
+        showCalibrationResultDialog(session.frontier, maxTier) { onAssessmentComplete() }
+    }
 
-        // First real word is on the card behind the dialog. The button tutorial
-        // (deferred so it highlights a real word, not the calibration banner)
-        // fires once the user dismisses the placement dialog. No-op if already
-        // seen / a screen reader is active.
-        showCalibrationResultDialog(session.frontier, maxTier) { onCalibrationFinished() }
+    /**
+     * Load the first real drill word, biased by the frontier saved in
+     * [finishCalibration] (the picker reads it fresh on every pick). Called by
+     * the host after the placement dialog and active-pool prompt, to hand off
+     * from assessment into normal play.
+     */
+    fun beginDrillingAfterAssessment() {
+        updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
     }
 
     /**
@@ -687,13 +715,16 @@ class QuizController(
     }
 
     /**
-     * Restore the buttons hidden by [enterCalibrationUi]. Labels, the eyebrow,
-     * and the learned button are reset by the normal round render that
-     * [finishCalibration]'s updateVocab triggers immediately afterward.
+     * Restore the buttons touched by [enterCalibrationUi]. The eyebrow and the
+     * learned button are reset by the normal round render that
+     * [beginDrillingAfterAssessment] triggers; the Tip button's Hint label is
+     * restored here because it was repurposed as the skip action and the round
+     * render doesn't rewrite it.
      */
     private fun exitCalibrationUi() {
         listOf(views.buttonTip, views.buttonHard, views.buttonLearned)
             .forEach { it.visibility = View.VISIBLE }
+        views.buttonTip.text = "💡 Hint"
     }
 
     private fun showTip() {
