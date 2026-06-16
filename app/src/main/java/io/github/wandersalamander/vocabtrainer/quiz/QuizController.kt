@@ -16,9 +16,6 @@ import io.github.wandersalamander.vocabtrainer.data.SpotCheckResult
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
-import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
-import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
-import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
@@ -135,7 +132,7 @@ class QuizController(
     private val language: Language,
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
-    private val progressCardInfo = ProgressCardInfoView(activity, views)
+    private val progressCardInfo = ProgressCardInfoView(activity, views, language.code)
     private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
     // Picker re-reads the user's auto-add threshold and the calibrated frontier
     // each pick so changing the threshold in Settings — or finishing calibration
@@ -143,9 +140,7 @@ class QuizController(
     private val picker = QuizPicker(
         dictionary = vocabDictionary,
         autoIntroduceThresholdProvider = {
-            AppPrefs.get(activity)
-                .getInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
-                .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+            AppPrefs.autoAddThreshold(activity, language.code)
         },
         frontierProvider = { AppPrefs.calibrationFrontier(activity, language.code) },
     )

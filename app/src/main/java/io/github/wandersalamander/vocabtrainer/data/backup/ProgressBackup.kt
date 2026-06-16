@@ -83,6 +83,15 @@ object ProgressBackup {
         AppPrefs.KEY_AUTO_ADD_THRESHOLD,
     )
 
+    /**
+     * Whether [key] should ride the backup. The fixed whitelist plus the
+     * per-language auto-add threshold keys, which share a prefix (one per
+     * language code) rather than a single fixed name — so we match by prefix the
+     * way the picker reads them.
+     */
+    private fun isBackedUpPrefKey(key: String): Boolean =
+        key in PREF_KEYS || key.startsWith(AppPrefs.KEY_AUTO_ADD_THRESHOLD_PREFIX)
+
     /** Thrown when the document isn't a backup we can read. */
     class InvalidBackupException(message: String) : Exception(message)
 
@@ -159,7 +168,7 @@ object ProgressBackup {
     private fun exportPrefs(context: Context): JSONObject {
         val out = JSONObject()
         for ((key, value) in AppPrefs.get(context).all) {
-            if (key !in PREF_KEYS || value == null) continue
+            if (!isBackedUpPrefKey(key) || value == null) continue
             val cell = JSONObject()
             when (value) {
                 is Boolean -> cell.put("type", "boolean").put("value", value)
@@ -263,7 +272,7 @@ object ProgressBackup {
         val editor = AppPrefs.get(context).edit()
         var count = 0
         for (key in prefs.keys()) {
-            if (key !in PREF_KEYS) continue
+            if (!isBackedUpPrefKey(key)) continue
             val cell = prefs.optJSONObject(key) ?: continue
             when (cell.optString("type")) {
                 "boolean" -> editor.putBoolean(key, cell.optBoolean("value"))

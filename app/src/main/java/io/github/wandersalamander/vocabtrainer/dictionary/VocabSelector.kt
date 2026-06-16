@@ -37,9 +37,13 @@ const val AUTO_INTRODUCE_THRESHOLD: Int = 5
 
 // Range surfaced in Settings — picked so the stepper bottoms out one
 // above zero (auto-add still kicks in only when the pool is empty) and
-// tops out somewhere that requires deliberate user intent.
+// tops out somewhere that requires deliberate user intent. The ceiling is
+// a soft UX guardrail, not a technical limit: it's only used to clamp the
+// value and disable the "+" key. 40 leaves room for a near-fluent language
+// to run a large top-up pool while still flagging that big pools dilute how
+// often any single word resurfaces.
 const val AUTO_INTRODUCE_THRESHOLD_MIN: Int = 1
-const val AUTO_INTRODUCE_THRESHOLD_MAX: Int = 20
+const val AUTO_INTRODUCE_THRESHOLD_MAX: Int = 40
 
 // Geometric decay applied across importance tiers when a calibration frontier F
 // is set. Tier F is introduced at full weight and each step below it at × this

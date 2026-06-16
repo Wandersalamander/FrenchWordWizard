@@ -2,6 +2,9 @@ package io.github.wandersalamander.vocabtrainer.data.prefs
 
 import android.content.Context
 import android.content.SharedPreferences
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 
 /**
  * Small app-local UI settings only. Used to be the single source for every
@@ -23,7 +26,19 @@ object AppPrefs {
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"
+
+    // Legacy GLOBAL auto-add threshold. Kept only as the one-time migration
+    // source: when a language has no per-language value yet, [autoAddThreshold]
+    // falls back to this so anyone who tuned the old single setting keeps it on
+    // every language. New writes go to the per-language key below.
     const val KEY_AUTO_ADD_THRESHOLD = "auto_add_threshold"
+
+    // Per-language auto-add threshold (the "minimum words in reading" floor that
+    // pulls in a fresh word). Per-language because how aggressively to introduce
+    // new words is a per-language choice — a near-fluent language wants a bigger
+    // pool than one just started. Real key is the prefix plus the language code,
+    // mirroring the calibration keys below.
+    const val KEY_AUTO_ADD_THRESHOLD_PREFIX = "auto_add_threshold_"
 
     // Calibration keys are per-language: calibration runs once per language and
     // its single output (the frontier tier F) biases that language's new-word
@@ -33,6 +48,29 @@ object AppPrefs {
 
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
+
+    fun autoAddThresholdKey(languageCode: String): String =
+        "$KEY_AUTO_ADD_THRESHOLD_PREFIX$languageCode"
+
+    /**
+     * The auto-add threshold for [languageCode], coerced into the valid range.
+     * Reads the per-language key, falling back (one-time inherit) to the legacy
+     * global value and finally the built-in default — so existing users who'd
+     * tuned the single global setting see no change, while each language can now
+     * be set independently.
+     */
+    fun autoAddThreshold(context: Context, languageCode: String): Int {
+        val prefs = get(context)
+        val legacyGlobal = prefs.getInt(KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
+        return prefs.getInt(autoAddThresholdKey(languageCode), legacyGlobal)
+            .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+    }
+
+    /** Persist the per-language auto-add threshold, coerced into the valid range. */
+    fun setAutoAddThreshold(context: Context, languageCode: String, value: Int) {
+        val coerced = value.coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+        get(context).edit().putInt(autoAddThresholdKey(languageCode), coerced).apply()
+    }
 
     fun calibrationDoneKey(languageCode: String): String =
         "$KEY_CALIBRATION_DONE_PREFIX$languageCode"

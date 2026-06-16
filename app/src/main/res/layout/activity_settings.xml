@@ -4,6 +4,7 @@
      pane" system as the main quiz screen. The page title sits outside the
      cards as a plain h1; section headings live inside each card. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -52,8 +53,20 @@
             android:accessibilityHeading="true"
             android:text="Active pool"
             android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Per-language scope indicator. Set in code to "for 🇫🇷 French" so the
+             knob doesn't read as a global setting — each language keeps its own
+             threshold. -->
+        <TextView
+            android:id="@+id/autoAddLanguageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_marginBottom="6dp" />
+            android:textColor="@color/auto_add_color"
+            tools:text="for 🇫🇷 French" />
 
         <TextView
             android:layout_width="match_parent"
@@ -79,7 +92,7 @@
                 android:layout_height="56dp"
                 android:background="@drawable/bg_stepper_button_yellow"
                 android:clickable="true"
-                android:contentDescription="Decrease minimum active words"
+                android:contentDescription="Fewer words at once"
                 android:focusable="true"
                 android:fontFamily="monospace"
                 android:gravity="center"
@@ -107,7 +120,7 @@
                 android:layout_height="56dp"
                 android:background="@drawable/bg_stepper_button_yellow"
                 android:clickable="true"
-                android:contentDescription="Increase minimum active words"
+                android:contentDescription="More words at once"
                 android:focusable="true"
                 android:fontFamily="monospace"
                 android:gravity="center"
@@ -122,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="6dp"
             android:gravity="center"
-            android:text="MIN WORDS IN READING · 1–20" />
+            android:text="WORDS AT ONCE · 1–40" />
     </LinearLayout>
 
     <!-- ========================= EXAMPLE SENTENCES =========================

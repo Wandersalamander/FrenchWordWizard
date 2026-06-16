@@ -29,7 +29,6 @@ import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
 import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
 import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
-import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
@@ -171,17 +170,23 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupAutoAddSection() {
-        val prefs = AppPrefs.get(this)
+        // The threshold is per-language; this screen tunes whichever language is
+        // currently selected. The label below makes that scope explicit so the
+        // knob doesn't read as a global setting.
+        val language = Language.fromPrefs(this)
         val valueText = findViewById<TextView>(R.id.autoAddValueText)
         val decreaseButton = findViewById<TextView>(R.id.autoAddDecreaseButton)
         val increaseButton = findViewById<TextView>(R.id.autoAddIncreaseButton)
+
+        findViewById<TextView>(R.id.autoAddLanguageLabel).text =
+            "for ${language.flag} ${language.englishName}"
 
         fun render(value: Int) {
             valueText.text = value.toString()
             // The TextView itself reads as "5", so we lift the role onto the
             // contentDescription with the unit included — TalkBack users get
-            // "Minimum words in reading: 5" instead of a bare digit.
-            valueText.contentDescription = "Minimum words in reading: $value"
+            // "Words to learn at once: 5" instead of a bare digit.
+            valueText.contentDescription = "Words to learn at once: $value"
             // Boundary buttons go to 35% opacity so the floor/ceiling reads
             // visually before the no-op tap explains it.
             decreaseButton.isEnabled = value > AUTO_INTRODUCE_THRESHOLD_MIN
@@ -190,14 +195,12 @@ class SettingsActivity : AppCompatActivity() {
             increaseButton.alpha = if (increaseButton.isEnabled) 1f else 0.35f
         }
 
-        fun current(): Int = prefs.getInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, AUTO_INTRODUCE_THRESHOLD)
-            .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
+        fun current(): Int = AppPrefs.autoAddThreshold(this, language.code)
 
         fun update(delta: Int) {
-            val next = (current() + delta)
-                .coerceIn(AUTO_INTRODUCE_THRESHOLD_MIN, AUTO_INTRODUCE_THRESHOLD_MAX)
-            prefs.edit().putInt(AppPrefs.KEY_AUTO_ADD_THRESHOLD, next).apply()
-            render(next)
+            val next = current() + delta
+            AppPrefs.setAutoAddThreshold(this, language.code, next)
+            render(AppPrefs.autoAddThreshold(this, language.code))
         }
 
         render(current())
