@@ -3,7 +3,6 @@ package io.github.wandersalamander.vocabtrainer.dictionary
 import io.github.wandersalamander.vocabtrainer.data.VocabInteraction
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
