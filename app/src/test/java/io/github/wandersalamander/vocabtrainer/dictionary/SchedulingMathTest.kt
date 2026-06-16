@@ -580,9 +580,11 @@ class SchedulingMathTest {
     )
 
     @Test fun refreshInterval_doublesOnCleanRoundAfterMastery() {
+        // 2 → ×2 = 4, then jittered by the per-round factor (seeded on nowMs so
+        // it matches what StatsReplay reconstructs from the log).
         val s = masteredStats(refreshIntervalDays = 2f)
         s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = 1_000L)
-        assertEquals(4f, s.refreshIntervalDays, 1e-6f)
+        assertEquals(4f * SkillStats.refreshJitterFactor(1_000L), s.refreshIntervalDays, 1e-4f)
     }
 
     @Test fun refreshInterval_lateCleanRecallDoublesActualElapsedNotSchedule() {
@@ -593,7 +595,7 @@ class SchedulingMathTest {
         val now = 1_700_000_000_000L
         s.lastDisplayed = now - 7L * DAY_MS
         s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = now)
-        assertEquals(14f, s.refreshIntervalDays, 1e-3f)
+        assertEquals(14f * SkillStats.refreshJitterFactor(now), s.refreshIntervalDays, 1e-3f)
     }
 
     @Test fun refreshInterval_earlyCleanRecallStillDoublesSchedule() {
@@ -604,7 +606,7 @@ class SchedulingMathTest {
         val now = 1_700_000_000_000L
         s.lastDisplayed = now - 1L * DAY_MS  // only 1 day idle, schedule says 8
         s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = now)
-        assertEquals(16f, s.refreshIntervalDays, 1e-6f)
+        assertEquals(16f * SkillStats.refreshJitterFactor(now), s.refreshIntervalDays, 1e-3f)
     }
 
     @Test fun refreshInterval_lateCleanRecallStillCapsAtMaximum() {
@@ -642,8 +644,9 @@ class SchedulingMathTest {
         // Pre-round: nViewed=5, nFailed=0, fast → fpb = 0.5/5 = 0.1, which is
         // exactly at the threshold (not strictly below) so wasMasteredBefore
         // is false. The clean round drops post-round fpb under 0.1, crossing
-        // into mastery — but the interval should still be the default 1, not
-        // 2, so the user sees the first refresh one day later (not two).
+        // into mastery — the first gap is seeded around the 1-day base (NOT
+        // doubled to 2), then jittered, so the user sees the first refresh
+        // roughly a day later rather than two.
         val s = SkillStats(
             viewTimeMilli = 1_500L,
             viewTimeMilli_prev = 1_500L,
@@ -655,7 +658,16 @@ class SchedulingMathTest {
         s.applyRoundCommit(timeElapsedMs = 1_500L, failAmount = 0f, nowMs = 1_000L)
         assertTrue("setup precondition: post-round now mastered",
             s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD)
-        assertEquals("entry round must not double", 1f, s.refreshIntervalDays, 1e-6f)
+        assertEquals(
+            "entry round seeds the jittered 1-day base, not a doubled 2",
+            SkillStats.BASE_REFRESH_INTERVAL_DAYS * SkillStats.refreshJitterFactor(1_000L),
+            s.refreshIntervalDays,
+            1e-4f,
+        )
+        assertTrue(
+            "entry-round gap must stay within ±25% of the 1-day base",
+            s.refreshIntervalDays in 0.75f..1.25f,
+        )
     }
 
     @Test fun refreshInterval_capsAtMaximum() {

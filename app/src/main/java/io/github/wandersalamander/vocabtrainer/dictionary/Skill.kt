@@ -145,7 +145,9 @@ data class SkillStats(
         recordInteraction(failAmount, nowMs)
         when {
             // Full fail (post-mastery or active drilling alike): the next
-            // mastered re-entry starts the schedule over at 1 day.
+            // mastered re-entry starts the schedule over at 1 day. Kept exact —
+            // a missed word's first re-check is a hard 1-day floor, not a
+            // jittered target.
             failAmount >= 1f -> refreshIntervalDays = 1f
             // Hint: held the schedule steady; the next refresh fires at the
             // same interval rather than punishing the user for needing a nudge.
@@ -155,13 +157,22 @@ data class SkillStats(
             // the actual elapsed gap (late-review bonus): recalling cleanly 7 days
             // after a 2-day schedule earns ~14, not 4. maxOf guards the rare
             // early-recall case from shrinking the schedule below the old doubling.
-            // The mastery-entry round itself (wasMasteredBefore == false) is
-            // skipped so the user sees the first post-mastery refresh exactly
-            // 1 day out.
+            // The doubled gap is then jittered ±REFRESH_JITTER_FRACTION so the
+            // ladder's phase scatters and a cohort mastered together doesn't keep
+            // re-converging on the same due day (see refreshJitterFactor).
             wasMasteredBefore ->
                 refreshIntervalDays =
-                    (maxOf(refreshIntervalDays, elapsedDays) * 2f)
+                    (maxOf(refreshIntervalDays, elapsedDays) * 2f * refreshJitterFactor(nowMs))
                         .coerceAtMost(MAX_REFRESH_INTERVAL_DAYS)
+            // Clean round that just crossed into mastery (wasMasteredBefore was
+            // false, post-round fpb is now under the threshold): seed the first
+            // post-mastery gap jittered around the 1-day base, so drilled words
+            // mastered in the same sitting don't all surface their first refresh
+            // tomorrow. Non-crossing active-drilling rounds fail this guard and
+            // fall through untouched — the field isn't read until the pair is
+            // actually in the refresh pool, so it must not grow during drilling.
+            failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD ->
+                refreshIntervalDays = BASE_REFRESH_INTERVAL_DAYS * refreshJitterFactor(nowMs)
         }
     }
 
@@ -391,6 +402,36 @@ data class SkillStats(
         // post-mastery refreshes the interval saturates here. Matches the
         // prior Vocab.REFRESH_CAP_DAYS so the long-tail behavior is unchanged.
         const val MAX_REFRESH_INTERVAL_DAYS = 180f
+
+        // 1-day base for a drilled pair's first post-mastery refresh, before the
+        // per-round jitter below is applied at the mastery-crossing round.
+        const val BASE_REFRESH_INTERVAL_DAYS = 1f
+
+        // Spread applied to every post-mastery refresh gap: the stored interval is
+        // multiplied by a per-round factor in [1 - this, 1 + this). De-syncs a
+        // cohort of words mastered in one sitting that would otherwise all fall
+        // due on the same day; mean 1.0 keeps the doubling ladder's average pace
+        // (1 → 2 → 4 …) unchanged, only scattering its phase.
+        const val REFRESH_JITTER_FRACTION = 0.25f
+
+        /**
+         * Per-round multiplier in
+         * [1 - [REFRESH_JITTER_FRACTION], 1 + [REFRESH_JITTER_FRACTION]) used to
+         * jitter the post-mastery refresh schedule.
+         *
+         * Seeded by the round timestamp [seedMs] — NOT a clock or RNG read — on
+         * purpose: the live commit and the event-sourcing replay both run
+         * [applyRoundCommit] and feed it the same nowMs (the live path stamps it
+         * onto the log entry; replay feeds that timestamp back), so both compute
+         * an identical schedule. A clock/RNG seed would diverge on replay and a
+         * word rebuilt from the log would land on a different due date.
+         */
+        fun refreshJitterFactor(seedMs: Long): Float {
+            // hashCode mixes the high/low halves of the Long; mask off the sign,
+            // divide by 2^31 → [0, 1).
+            val unit = (seedMs.hashCode() and 0x7fffffff) / 2_147_483_648f
+            return (1f - REFRESH_JITTER_FRACTION) + unit * (2f * REFRESH_JITTER_FRACTION)
+        }
 
         // Initial refresh gap for a pair that reached mastery via the fast-track
         // gate (trivial first-exposure clean round) rather than through the
