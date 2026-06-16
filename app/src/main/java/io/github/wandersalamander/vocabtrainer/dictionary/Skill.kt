@@ -1,6 +1,7 @@
 package io.github.wandersalamander.vocabtrainer.dictionary
 
 import io.github.wandersalamander.vocabtrainer.data.VocabInteraction
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 /**
@@ -13,8 +14,8 @@ import java.util.concurrent.TimeUnit
  * even if the predecessor's stats later drift back up — the unlock is sticky.
  *
  * The enum's [name] (READ / LISTEN / INVERT) is the value persisted in Room
- * via [io.github.wandersalamander.vocabtrainer.data.Converters]. Renaming an enum case
- * would orphan existing rows — add a new case instead.
+ * via [io.github.wandersalamander.vocabtrainer.data.db.Converters]. Renaming an
+ * enum case would orphan existing rows — add a new case instead.
  */
 enum class Skill(
     val displayName: String,
@@ -319,7 +320,7 @@ data class SkillStats(
         TimeUnit.MILLISECONDS.toMinutes(System.currentTimeMillis() - lastDisplayed)
 
     fun getTimeString(): String =
-        String.format("⧖ %.1f s", meanTimeViewedMilli() / 1e3)
+        String.format(Locale.getDefault(), "⧖ %.1f s", meanTimeViewedMilli() / 1e3)
 
     fun getStarsString(): String {
         val successProbability = (1.0f - failureProbability()).coerceIn(0.0f, 1.0f)
