@@ -1063,13 +1063,16 @@ class QuizController(
         )
         if (fastTracking) {
             // First-exposure mastery: push the first refresh gap out so the
-            // word isn't resurfaced tomorrow. Only on the flag's flip to true
-            // (isCandidate requires priorViews == 0, so this branch is itself a
-            // one-shot, but guard anyway) and never clobber a longer interval a
-            // prior clean refresh may have already earned.
+            // word isn't resurfaced tomorrow. The gap is jittered per (hash,
+            // skill) so a whole sitting's worth of fast-tracked words don't all
+            // fall due on the same day — see fastTrackInitialRefreshIntervalDays.
+            // Only on the flag's flip to true (isCandidate requires
+            // priorViews == 0, so this branch is itself a one-shot, but guard
+            // anyway) and never clobber a longer interval a prior clean refresh
+            // may have already earned.
             if (!stats.fastTracked) {
                 stats.refreshIntervalDays = stats.refreshIntervalDays.coerceAtLeast(
-                    SkillStats.FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS,
+                    SkillStats.fastTrackInitialRefreshIntervalDays(vocab.hash, currentSkill),
                 )
             }
             stats.fastTracked = true

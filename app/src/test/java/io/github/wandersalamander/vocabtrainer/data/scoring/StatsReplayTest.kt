@@ -74,9 +74,11 @@ class StatsReplayTest {
 
     @Test fun firstRoundFastTrackBumpsRefreshInterval() {
         // Drift guard: QuizController.applyFastTrackGate pushes the first refresh
-        // gap out to FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS when the flag flips
-        // on. Replay must do the same, else rebuilding a fast-tracked word from
-        // the log (backup restore / cache rebuild) resurfaces it ~6 days early.
+        // gap out to the jittered fast-track interval when the flag flips on.
+        // Replay must compute the SAME per-(hash, skill) gap, else rebuilding a
+        // fast-tracked word from the log (backup restore / cache rebuild) lands
+        // on a different schedule than the live path chose. entry() uses
+        // vocabHash="h", skill=READ, so we expect exactly that pair's gap.
         val stats = StatsReplay.rebuild(
             listOf(entry(t = 1_000L, viewMs = 1_500L)),
             foreignLetterCount = 5,
@@ -84,9 +86,14 @@ class StatsReplayTest {
         assertTrue("trivial first round must fast-track", stats.fastTracked)
         assertEquals(
             "fast-track flip must bump the refresh interval, mirroring the live path",
-            SkillStats.FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS,
+            SkillStats.fastTrackInitialRefreshIntervalDays("h", Skill.READ),
             stats.refreshIntervalDays,
             1e-6f,
+        )
+        assertTrue(
+            "jittered gap must stay within the configured window",
+            stats.refreshIntervalDays >= SkillStats.FAST_TRACK_REFRESH_MIN_DAYS &&
+                stats.refreshIntervalDays < SkillStats.FAST_TRACK_REFRESH_MAX_DAYS,
         )
     }
 

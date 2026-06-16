@@ -121,10 +121,12 @@ object StatsReplay {
             // First-exposure mastery: push the first refresh gap out so the
             // word isn't resurfaced tomorrow. Only on the flag's flip to true,
             // never clobbering a longer interval a prior clean refresh earned.
-            // Mirrors QuizController.applyFastTrackGate's fastTracking branch.
+            // Mirrors QuizController.applyFastTrackGate's fastTracking branch —
+            // including the per-(hash, skill) jitter, which must match the live
+            // path exactly (keyed on identity, not a clock, for that reason).
             if (!stats.fastTracked) {
                 stats.refreshIntervalDays = stats.refreshIntervalDays.coerceAtLeast(
-                    SkillStats.FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS,
+                    SkillStats.fastTrackInitialRefreshIntervalDays(entry.vocabHash, entry.skill),
                 )
             }
             stats.fastTracked = true

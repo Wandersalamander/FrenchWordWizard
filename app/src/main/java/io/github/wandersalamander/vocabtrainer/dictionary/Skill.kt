@@ -396,9 +396,39 @@ data class SkillStats(
         // gate (trivial first-exposure clean round) rather than through the
         // normal drilling-then-crossing path. A fast-tracked pair never sat in
         // the active pool, so the default 1-day first refresh would resurface it
-        // the very next day — too eager for a word the user clearly already
-        // knew. Start its schedule further out (it still doubles from here on
-        // clean refreshes, and resets to 1 day on any failure).
-        const val FAST_TRACK_INITIAL_REFRESH_INTERVAL_DAYS = 7f
+        // the very next day — too eager for a word the user clearly already knew.
+        //
+        // Spread across a [MIN, MAX) window instead of a single fixed day: a user
+        // who clears a big batch of new words in one sitting (e.g. an intermediate
+        // speaker breezing through essentials) would otherwise have every one of
+        // them fall due on the SAME day a week later — a thundering herd of
+        // hundreds of refreshes at once. Jittering the first gap by word identity
+        // de-synchronizes the cohort into a smooth daily trickle, and the spread
+        // persists because the schedule doubles from each pair's own gap.
+        const val FAST_TRACK_REFRESH_MIN_DAYS = 3f
+        const val FAST_TRACK_REFRESH_MAX_DAYS = 10f
+
+        /**
+         * Deterministic first-refresh gap for a freshly fast-tracked (hash, skill)
+         * pair, uniform in
+         * [[FAST_TRACK_REFRESH_MIN_DAYS], [FAST_TRACK_REFRESH_MAX_DAYS]).
+         *
+         * Keyed on the pair identity, NOT a clock or RNG, on purpose: the live
+         * commit ([io.github.wandersalamander.vocabtrainer.quiz.QuizController]'s
+         * fast-track gate) and the event-sourcing replay
+         * ([io.github.wandersalamander.vocabtrainer.data.scoring.StatsReplay]) each
+         * compute this independently and MUST agree — a word rebuilt from the log
+         * (backup restore / cache rebuild) has to land on the same schedule the
+         * live path chose. [String.hashCode] is stable on the JVM, so the same
+         * pair always maps to the same gap; different words scatter uniformly,
+         * which is exactly the cohort-smoothing we want.
+         */
+        fun fastTrackInitialRefreshIntervalDays(hash: String, skill: Skill): Float {
+            val seed = "$hash ${skill.name}".hashCode()
+            // Clear the sign bit → [0, 2^31); divide by 2^31 → [0, 1).
+            val unit = (seed and 0x7fffffff) / 2_147_483_648f
+            return FAST_TRACK_REFRESH_MIN_DAYS +
+                unit * (FAST_TRACK_REFRESH_MAX_DAYS - FAST_TRACK_REFRESH_MIN_DAYS)
+        }
     }
 }
