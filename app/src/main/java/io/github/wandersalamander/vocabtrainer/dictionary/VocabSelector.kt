@@ -135,8 +135,12 @@ private fun MyDictionary.collectActivePairs(
         if (vocab.ignore || !vocab.hasBeenIntroduced()) return@flatMap emptyList()
         Skill.ladder.mapNotNull { skill ->
             if (!skillFilter(skill)) return@mapNotNull null
-            if (!vocab.isSkillUnlocked(skill)) return@mapNotNull null
-            if (vocab.sortValue(skill) > 0.0) vocab to skill else null
+            // Active pool = unlocked pairs not yet mastered (PairState.Active),
+            // plus freshly-unlocked New pairs that enter rotation here. This is
+            // exactly the old `isSkillUnlocked && sortValue > 0` membership —
+            // the refresh pool (DueForRefresh) is now a different state branch,
+            // so the two pools are disjoint by construction.
+            if (vocab.state(skill).isActiveDraw) vocab to skill else null
         }
     }
 
@@ -154,9 +158,10 @@ private fun MyDictionary.pickFallback(
     }
     val pickedVocab = available[Random.nextInt(available.size)]
     // The vocab may have one or more skills retired; pick the first one
-    // that's actually active so we don't waste a round on a retired skill.
+    // that's actually an active-pool draw so we don't waste a round on a
+    // retired (mastered) skill.
     val pickedSkill = Skill.ladder.firstOrNull {
-        skillFilter(it) && pickedVocab.isSkillUnlocked(it) && pickedVocab.sortValue(it) > 0.0
+        skillFilter(it) && pickedVocab.state(it).isActiveDraw
     } ?: firstSkill
     return pickedVocab to pickedSkill
 }
@@ -254,17 +259,17 @@ fun Vocab.surfaceableRefreshSkill(
     now: Long = System.currentTimeMillis(),
 ): Skill? {
     if (ignore || !hasBeenIntroduced()) return null
-    // Hardest (highest-ladder) skill currently due for refresh.
+    // Hardest (highest-ladder) skill currently due for refresh — i.e. whose
+    // state is DueForRefresh (mastered, unlocked, past its interval).
     val rep = Skill.ladder.lastOrNull { skill ->
-        skillFilter(skill) &&
-            isSkillUnlocked(skill) &&
-            failureProbabilityMasteredWords(skill, now) > 0.0
+        skillFilter(skill) && state(skill, now) is PairState.DueForRefresh
     } ?: return null
     val repIdx = Skill.ladder.indexOf(rep)
+    // A harder sibling that's mastered (Mastered or DueForRefresh → isLearned)
+    // and was shown inside the snooze window keeps the easier skill dormant.
     val snoozedByHarder = Skill.ladder.drop(repIdx + 1).any { harder ->
         skillFilter(harder) &&
-            isSkillUnlocked(harder) &&
-            stats(harder).failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD &&
+            state(harder, now).isLearned &&
             now - stats(harder).lastDisplayed < MASTERED_REFRESH_SIBLING_SNOOZE_MS
     }
     return if (snoozedByHarder) null else rep
