@@ -180,6 +180,70 @@ class MyDictionaryProgressTest {
         assertEquals(0, dict.computeDueMasteredCount(now))
     }
 
+    // ---------- computeStudiedPairCounts: per-skill mastered/active split ----------
+
+    @Test fun studiedPairs_emptyDictionaryIsZero() {
+        assertEquals(StudiedPairCounts(0, 0), dictionaryOf(emptyList()).computeStudiedPairCounts())
+    }
+
+    @Test fun studiedPairs_untouchedWordContributesNothing() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        assertEquals(StudiedPairCounts(0, 0), dict.computeStudiedPairCounts())
+    }
+
+    @Test fun studiedPairs_ignoredWordContributesNothing() {
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val vocab = dict.csvData[0]
+        vocab.stats(Skill.READ).markStruggling()
+        vocab.ignore = true
+        assertEquals(StudiedPairCounts(0, 0), dict.computeStudiedPairCounts())
+    }
+
+    @Test fun studiedPairs_countsPairsPerSkillAndBucketsByMastery() {
+        // Same fixture as activeSet_perSkillPairsCountIndependently: pairs are
+        // counted per (word, skill) and summed across skills, then split by the
+        // mastery threshold (mastered = fpb below threshold, active = at/above).
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",   // READ active
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",         // READ mastered, LISTEN active
+            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",      // READ + LISTEN mastered, INVERT active
+            "Tisch\ttable\t1\thash4\tDer Tisch ist alt.\tTisch.",  // untouched → ignored
+        ))
+        dict.csvData[0].stats(Skill.READ).markStruggling()
+        dict.csvData[1].stats(Skill.READ).markMastered()
+        dict.csvData[1].stats(Skill.LISTEN).markStruggling()
+        dict.csvData[2].stats(Skill.READ).markMastered()
+        dict.csvData[2].stats(Skill.LISTEN).markMastered()
+        dict.csvData[2].stats(Skill.INVERT).markStruggling()
+        // mastered = Auto.READ + Buch.READ + Buch.LISTEN = 3
+        // active   = Haus.READ + Auto.LISTEN + Buch.INVERT = 3
+        assertEquals(StudiedPairCounts(mastered = 3, active = 3), dict.computeStudiedPairCounts())
+    }
+
+    @Test fun studiedPairs_activeHalfEqualsActiveSetCountsSum() {
+        // Documented invariant the mastered-refresh cadence relies on: the
+        // active half of computeStudiedPairCounts is exactly the sum of the
+        // per-skill active-set bar (same gating, only the bucketing differs).
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",
+            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",
+        ))
+        dict.csvData[0].stats(Skill.READ).markStruggling()
+        dict.csvData[1].stats(Skill.READ).markMastered()
+        dict.csvData[1].stats(Skill.LISTEN).markStruggling()
+        dict.csvData[2].stats(Skill.READ).markMastered()
+        dict.csvData[2].stats(Skill.LISTEN).markMastered()
+        dict.csvData[2].stats(Skill.INVERT).markStruggling()
+        val active = dict.computeActiveSetCounts()
+        val studied = dict.computeStudiedPairCounts()
+        assertEquals(active.read + active.listen + active.invert, studied.active)
+    }
+
     @Test fun introducedForeignWords_startsEmpty() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
