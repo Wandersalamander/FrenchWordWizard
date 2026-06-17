@@ -119,10 +119,7 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
         for (vocab in csvData) {
             if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
             for (skill in Skill.ladder) {
-                if (!vocab.isSkillUnlocked(skill)) continue
-                val s = vocab.stats(skill)
-                if (s.nTimesViewed == 0) continue
-                if (s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) continue
+                if (vocab.state(skill) !is PairState.Active) continue
                 when (skill) {
                     Skill.READ -> read++
                     Skill.LISTEN -> listen++
@@ -149,10 +146,11 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
         for (vocab in csvData) {
             if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
             for (skill in Skill.ladder) {
-                if (!vocab.isSkillUnlocked(skill)) continue
-                val s = vocab.stats(skill)
-                if (s.nTimesViewed == 0) continue
-                if (s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD) mastered++ else active++
+                when (vocab.state(skill)) {
+                    is PairState.Active -> active++
+                    PairState.Mastered, is PairState.DueForRefresh -> mastered++
+                    PairState.Locked, PairState.New -> {}
+                }
             }
         }
         return StudiedPairCounts(mastered, active)

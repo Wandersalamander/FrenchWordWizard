@@ -134,23 +134,38 @@ data class Vocab(
 
     /**
      * Single source of truth for "this word is fully mastered": every ladder
-     * skill has been practiced at least once AND retired below
-     * [SKILL_FINISHED_THRESHOLD]. The `nTimesViewed > 0` guard is belt-and-braces
-     * — an unviewed skill already reports [SkillStats.failureProbability] 1.0 so
-     * it can't pass the threshold anyway — but stating it keeps the predicate
-     * correct if that sentinel ever changes, and matches the count loops in
-     * [MyDictionary] / [io.github.wandersalamander.vocabtrainer.quiz.QuizController]
-     * that now delegate here.
-     *
-     * Does NOT account for [ignore]; callers layer that on top, because its
-     * meaning differs (an ignored word counts as mastered for the lifetime bar
-     * but is excluded from the refresh pool).
+     * skill's [state] is [PairState.isLearned]. Delegates to the one classifier
+     * so what "mastered" means is decided in exactly one place; callers layer
+     * [ignore] on top, because its meaning differs (an ignored word counts as
+     * mastered for the lifetime bar but is excluded from the refresh pool).
      */
     fun isFullyLearned(): Boolean =
-        Skill.ladder.all { skill ->
-            val s = stats(skill)
-            s.nTimesViewed > 0 && s.failureProbability() < SKILL_FINISHED_THRESHOLD
+        Skill.ladder.all { state(it).isLearned }
+
+    /**
+     * Classify a (word, skill) pair into the single [PairState] taxonomy — the
+     * one place that answers "what state is this pair in?" (ADR 0001 §4.1).
+     * Every count loop and mastery predicate reads this instead of re-deriving
+     * the threshold / active-refresh partition inline.
+     *
+     * Behaviour-preserving: the boundaries and the carried weights come straight
+     * from the existing [isSkillUnlocked] / [SkillStats.failureProbability] /
+     * [sortValue] / [overdueRefreshWeight] functions, so the classification is
+     * byte-identical to today's scattered predicates — this step only
+     * consolidates them.
+     */
+    fun state(skill: Skill, now: Long = System.currentTimeMillis()): PairState {
+        if (!isSkillUnlocked(skill)) return PairState.Locked
+        val s = stats(skill)
+        if (s.nTimesViewed == 0) return PairState.New
+        if (s.failureProbability() >= SKILL_FINISHED_THRESHOLD) {
+            // Above the mastery cut → still drilling. The draw weight rides
+            // inside the state so the active and refresh pools never overlap.
+            return PairState.Active(sortValue(skill))
         }
+        val overdue = overdueRefreshWeight(s, now)
+        return if (overdue > 0.0) PairState.DueForRefresh(overdue) else PairState.Mastered
+    }
 
     fun sortValue(skill: Skill = Skill.READ): Double {
         val s = stats(skill)
@@ -195,6 +210,18 @@ data class Vocab(
     ): Double {
         val s = stats(skill)
         if (s.failureProbability() >= SKILL_FINISHED_THRESHOLD) return 0.0
+        return overdueRefreshWeight(s, now)
+    }
+
+    /**
+     * Refresh-pool draw weight for an already-mastered pair: 0.0 while still
+     * within its [SkillStats.refreshIntervalDays] window, then the overdue ratio
+     * (1.0 = just past due, capped at [OVERDUE_CAP]). Split out from
+     * [failureProbabilityMasteredWords] so [state] can reuse it without a second
+     * [SkillStats.failureProbability] call — by the time [state] reaches here it
+     * already knows the pair is below the mastery threshold.
+     */
+    private fun overdueRefreshWeight(s: SkillStats, now: Long): Double {
         val daysSinceLastDisplayed = (now - s.lastDisplayed) / MILLIS_PER_DAY
         val intervalDays = s.refreshIntervalDays.toDouble()
         if (daysSinceLastDisplayed < intervalDays) return 0.0
