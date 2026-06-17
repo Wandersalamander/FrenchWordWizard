@@ -4,7 +4,6 @@ import android.content.Context
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.db.entities.DailySkillFinishedCountEntity
-import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -37,7 +36,7 @@ object SkillFinishedTracker {
     private val loadedLanguages = ConcurrentHashMap.newKeySet<String>()
 
     private fun activeLanguageCode(context: Context): String =
-        AppPrefs.get(context).getString(AppPrefs.KEY_APP_LANGUAGE, null) ?: Language.DEFAULT.code
+        AppPrefs.activeLanguageCode(context)
 
     private fun ensureLanguageLoaded(languageCode: String) {
         if (loadedLanguages.contains(languageCode)) return

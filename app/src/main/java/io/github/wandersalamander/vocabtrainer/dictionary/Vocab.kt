@@ -132,9 +132,25 @@ data class Vocab(
         return stats(predecessor).failureProbability() < skill.unlockThreshold
     }
 
-    /** True when every skill in the ladder is retired below the finished threshold. */
+    /**
+     * Single source of truth for "this word is fully mastered": every ladder
+     * skill has been practiced at least once AND retired below
+     * [SKILL_FINISHED_THRESHOLD]. The `nTimesViewed > 0` guard is belt-and-braces
+     * — an unviewed skill already reports [SkillStats.failureProbability] 1.0 so
+     * it can't pass the threshold anyway — but stating it keeps the predicate
+     * correct if that sentinel ever changes, and matches the count loops in
+     * [MyDictionary] / [io.github.wandersalamander.vocabtrainer.quiz.QuizController]
+     * that now delegate here.
+     *
+     * Does NOT account for [ignore]; callers layer that on top, because its
+     * meaning differs (an ignored word counts as mastered for the lifetime bar
+     * but is excluded from the refresh pool).
+     */
     fun isFullyLearned(): Boolean =
-        Skill.ladder.all { stats(it).failureProbability() < SKILL_FINISHED_THRESHOLD }
+        Skill.ladder.all { skill ->
+            val s = stats(skill)
+            s.nTimesViewed > 0 && s.failureProbability() < SKILL_FINISHED_THRESHOLD
+        }
 
     fun sortValue(skill: Skill = Skill.READ): Double {
         val s = stats(skill)

@@ -79,22 +79,8 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
      * either ignored, or every ladder skill has been introduced AND retired
      * below SKILL_FINISHED_THRESHOLD. Single pass over [csvData].
      */
-    fun computeLifetimeMasteredCount(): Int {
-        var mastered = 0
-        for (vocab in csvData) {
-            if (vocab.ignore) {
-                mastered++
-                continue
-            }
-            if (!vocab.hasBeenIntroduced()) continue
-            val fully = Skill.ladder.all { skill ->
-                val s = vocab.stats(skill)
-                s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
-            }
-            if (fully) mastered++
-        }
-        return mastered
-    }
+    fun computeLifetimeMasteredCount(): Int =
+        csvData.count { it.ignore || it.isFullyLearned() }
 
     /**
      * Count of fully-mastered words the refresh pool would actually surface
@@ -113,12 +99,7 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
     fun computeDueMasteredCount(now: Long = System.currentTimeMillis()): Int {
         var due = 0
         for (vocab in csvData) {
-            if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
-            val fullyMastered = Skill.ladder.all { skill ->
-                val s = vocab.stats(skill)
-                s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
-            }
-            if (!fullyMastered) continue
+            if (vocab.ignore || !vocab.isFullyLearned()) continue
             if (vocab.surfaceableRefreshSkill(now = now) != null) {
                 due++
             }

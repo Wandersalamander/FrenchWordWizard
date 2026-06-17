@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
+import io.github.wandersalamander.vocabtrainer.dictionary.Language
 
 /**
  * Small app-local UI settings only. Used to be the single source for every
@@ -53,6 +54,15 @@ object AppPrefs {
 
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
+
+    /**
+     * The active language's code, or [Language.DEFAULT]'s code when none has
+     * been chosen yet. The per-language progress trackers (mastery, lifetime
+     * score, skill-finished counts) all scope their state by this, so the lookup
+     * lives here next to [KEY_APP_LANGUAGE] instead of being re-derived in each.
+     */
+    fun activeLanguageCode(context: Context): String =
+        get(context).getString(KEY_APP_LANGUAGE, null) ?: Language.DEFAULT.code
 
     /** Whether first-run setup (the onboarding screen) has been completed. */
     fun isOnboardingDone(context: Context): Boolean =

@@ -41,6 +41,7 @@ import io.github.wandersalamander.vocabtrainer.quiz.ui.TipBehavior
 import io.github.wandersalamander.vocabtrainer.quiz.ui.accentColorRes
 import io.github.wandersalamander.vocabtrainer.quiz.ui.flow
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
+import io.github.wandersalamander.vocabtrainer.setInteractive
 import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 import kotlin.random.Random
 import kotlinx.coroutines.Job
@@ -586,18 +587,15 @@ class QuizController(
             .forEach { it.visibility = View.INVISIBLE }
         views.buttonNext.text = "✓ I know it"
         views.buttonFail.text = "✗ I don't"
-        views.buttonNext.isEnabled = true
-        views.buttonNext.isClickable = true
-        views.buttonFail.isEnabled = true
-        views.buttonFail.isClickable = true
+        views.buttonNext.setInteractive(true)
+        views.buttonFail.setInteractive(true)
         // Repurpose the (otherwise unused) Tip button as a skip: a learner who
         // knows they're starting from zero can bail straight to beginner instead
         // of tapping ✗ through every probe. onTipClick routes here while
         // inCalibration; exitCalibrationUi restores the Hint label.
         views.buttonTip.visibility = View.VISIBLE
         views.buttonTip.text = "I'm a total beginner — skip"
-        views.buttonTip.isEnabled = true
-        views.buttonTip.isClickable = true
+        views.buttonTip.setInteractive(true)
         views.cardVocab.pullEnabled = false
         // Sets the eyebrow colour; renderCalibrationWord refines the text to
         // "CALIBRATING · LEVEL n" per probed tier.
@@ -759,10 +757,8 @@ class QuizController(
                 // re-throws CancellationException). Without this finally the
                 // re-enable was skipped and every button stayed dead, with no
                 // recovery on a short resume since that path doesn't re-render.
-                views.buttonFail.isEnabled = true
-                views.buttonFail.isClickable = true
-                views.buttonNext.isEnabled = true
-                views.buttonNext.isClickable = true
+                views.buttonFail.setInteractive(true)
+                views.buttonNext.setInteractive(true)
                 // Tip stays disabled — one tip per word.
                 // Re-enable the pull-down so a second pull can fire Fail. The
                 // wider setQuizButtonsEnabled isn't used here because it would
@@ -785,8 +781,7 @@ class QuizController(
         roundFacts.recordProgressiveReveal()
         currentSkill.flow.applyProgressiveReveal(vocab, views, progressiveRevealCount)
         if (progressiveRevealCount >= letterCount) {
-            views.buttonTip.isEnabled = false
-            views.buttonTip.isClickable = false
+            views.buttonTip.setInteractive(false)
             onFailClick()
         }
     }
@@ -1280,13 +1275,10 @@ class QuizController(
         nowMs = nowMs,
     )
 
-    private fun isFullyMasteredNow(vocab: Vocab): Boolean {
-        if (vocab.ignore) return true
-        return Skill.ladder.all { skill ->
-            val s = vocab.stats(skill)
-            s.nTimesViewed > 0 && s.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD
-        }
-    }
+    // Ignored words count as mastered here (and for the lifetime bar); the
+    // "all ladder skills retired" check is Vocab's single definition.
+    private fun isFullyMasteredNow(vocab: Vocab): Boolean =
+        vocab.ignore || vocab.isFullyLearned()
 
     /**
      * Refresh the streak badge from persistent state. Public so
@@ -1299,15 +1291,11 @@ class QuizController(
     fun stopThinkingAnimation() = sentenceManager.stopThinkingAnimation()
 
     private fun setQuizButtonsEnabled(enabled: Boolean) {
-        views.buttonFail.isEnabled = enabled
-        views.buttonFail.isClickable = enabled
-        views.buttonNext.isEnabled = enabled
-        views.buttonNext.isClickable = enabled
+        views.buttonFail.setInteractive(enabled)
+        views.buttonNext.setInteractive(enabled)
         // Tip's applicability is skill-dependent — e.g. INVERT disables it
         // because the example sentence would contain the answer word.
-        val tipApplicable = enabled && currentSkill.flow.tipAllowed
-        views.buttonTip.isEnabled = tipApplicable
-        views.buttonTip.isClickable = tipApplicable
+        views.buttonTip.setInteractive(enabled && currentSkill.flow.tipAllowed)
         views.cardVocab.pullEnabled = enabled && isPullDownSkill(currentSkill)
     }
 

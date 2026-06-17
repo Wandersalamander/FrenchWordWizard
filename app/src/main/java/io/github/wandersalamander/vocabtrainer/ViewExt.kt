@@ -28,6 +28,17 @@ fun View.setDebouncedOnClickListener(
 }
 
 /**
+ * Toggle this view as an interactive control, setting [View.isEnabled] and
+ * [View.isClickable] together. The quiz UI always flips the two in lockstep;
+ * bundling them collapses the repeated two-line pairs and removes the risk of
+ * setting one without the other.
+ */
+fun View.setInteractive(interactive: Boolean) {
+    isEnabled = interactive
+    isClickable = interactive
+}
+
+/**
  * Brief scale-up-then-back "pop" used to draw attention to a view that just
  * updated. [peakScale] is the apex; default suits small labels (the lifetime
  * counter, an active-bar label). Pass something modest like 1.04f for larger

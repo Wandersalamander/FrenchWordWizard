@@ -4,7 +4,6 @@ import android.content.Context
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.db.entities.LifetimeScoreEntity
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
-import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -45,7 +44,7 @@ object LifetimeScoreTracker {
     private val cache = ConcurrentHashMap<String, Long>()
 
     private fun activeLanguageCode(context: Context): String =
-        AppPrefs.get(context).getString(AppPrefs.KEY_APP_LANGUAGE, null) ?: Language.DEFAULT.code
+        AppPrefs.activeLanguageCode(context)
 
     /**
      * Current score for the active language, hydrating the cache on the first

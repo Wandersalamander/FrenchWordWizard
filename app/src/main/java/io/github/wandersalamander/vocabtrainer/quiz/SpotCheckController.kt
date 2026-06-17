@@ -10,6 +10,7 @@ import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.quiz.ui.flow
+import io.github.wandersalamander.vocabtrainer.setInteractive
 
 /**
  * Drives the spot-check verification mode: the card reframes itself
@@ -54,8 +55,7 @@ internal class SpotCheckController(
         views.textVocabEyebrow.text = "SELF-CHECK · DID YOU KNOW IT?"
         views.buttonFail.text = "✗ Wrong"
         views.buttonNext.text = "✓ Correct"
-        views.buttonTip.isEnabled = false
-        views.buttonTip.isClickable = false
+        views.buttonTip.setInteractive(false)
         views.cardVocab.pullEnabled = false
 
         val vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator

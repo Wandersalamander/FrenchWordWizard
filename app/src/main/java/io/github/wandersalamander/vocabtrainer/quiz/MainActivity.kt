@@ -37,6 +37,7 @@ import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
 import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
+import io.github.wandersalamander.vocabtrainer.setInteractive
 import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
@@ -252,10 +253,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // These click-triggered actions need an active vocab to operate on.
         // QuizController re-enables them via setQuizButtonsEnabled once
         // updateVocab has installed the first word.
-        listOf(views.buttonFail, views.buttonTip).forEach {
-            it.isClickable = false
-            it.isEnabled = false
-        }
+        listOf(views.buttonFail, views.buttonTip).forEach { it.setInteractive(false) }
     }
 
     private fun renderInitialIdleState() {
@@ -575,32 +573,42 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         )
     }
 
+    /**
+     * Single entry point for every TTS utterance: select the [locale] (foreign
+     * vs. English voice) and enqueue [text] under [queueMode]. A non-null
+     * [utteranceId] wires the awaitable progress callback (see
+     * [speakSentenceAndAwait]); null is a fire-and-forget speak.
+     */
+    private fun speak(
+        text: CharSequence,
+        locale: Locale,
+        queueMode: Int,
+        utteranceId: String? = null,
+    ) {
+        textToSpeech.language = locale
+        val params = utteranceId?.let {
+            Bundle().apply { putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, it) }
+        }
+        textToSpeech.speak(text, queueMode, params, utteranceId)
+    }
+
     override fun speakForeignWord(vocab: Vocab, flush: Boolean) {
-        val word = vocab.pronounceableForeign(language)
-        textToSpeech.language = language.locale
         val mode = if (flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
-        textToSpeech.speak(word, mode, null, null)
+        speak(vocab.pronounceableForeign(language), language.locale, mode)
     }
 
     override fun speakEnglishWord(vocab: Vocab) {
-        val word = vocab.pronounceableEn()
-        textToSpeech.language = Locale.ENGLISH
-        textToSpeech.speak(word, TextToSpeech.QUEUE_ADD, null, null)
+        speak(vocab.pronounceableEn(), Locale.ENGLISH, TextToSpeech.QUEUE_ADD)
     }
 
     override fun speakSentence(sentence: CharSequence) {
-        textToSpeech.language = language.locale
-        textToSpeech.speak(sentence, TextToSpeech.QUEUE_FLUSH, null, null)
+        speak(sentence, language.locale, TextToSpeech.QUEUE_FLUSH)
     }
 
     override suspend fun speakSentenceAndAwait(sentence: CharSequence) {
         val done = CompletableDeferred<Unit>()
         pendingTtsDone = done
-        textToSpeech.language = language.locale
-        val params = Bundle().apply {
-            putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, UTTERANCE_AWAITABLE)
-        }
-        textToSpeech.speak(sentence, TextToSpeech.QUEUE_ADD, params, UTTERANCE_AWAITABLE)
+        speak(sentence, language.locale, TextToSpeech.QUEUE_ADD, UTTERANCE_AWAITABLE)
         try {
             done.await()
         } catch (e: CancellationException) {
