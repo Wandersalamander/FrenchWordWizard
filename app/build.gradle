@@ -31,8 +31,8 @@ android {
         applicationId "com.wandersalamander.vocabtrainer"
         minSdk 26
         targetSdk 35
-        versionCode 9
-        versionName "20260616.1"
+        versionCode 10
+        versionName "20260619.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
