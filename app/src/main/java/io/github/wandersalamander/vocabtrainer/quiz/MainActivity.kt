@@ -12,6 +12,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.provider.Settings
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
@@ -20,7 +21,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.view.accessibility.AccessibilityManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -53,6 +53,7 @@ import io.github.wandersalamander.vocabtrainer.service.MyForegroundService
 import io.github.wandersalamander.vocabtrainer.settings.SettingsActivity
 import io.github.wandersalamander.vocabtrainer.streak.StreakAlarmScheduler
 import io.github.wandersalamander.vocabtrainer.streak.StreakNotifications
+import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 import io.github.wandersalamander.vocabtrainer.wordlist.WordListActivity
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
@@ -65,6 +66,12 @@ private const val UTTERANCE_AWAITABLE = "awaitable_sentence"
 
 // Group id for the dynamically-built language submenu items (radio group).
 private const val MENU_GROUP_LANGUAGE = 1
+
+// Offer streak reminders (and request notification permission) only after the
+// user has actually used the app this long in total. A cold-start permission
+// prompt gets reflexively denied; an in-context ask once the habit is forming
+// converts far better. Foreground time only — see onResume/onPause.
+private const val REMINDER_USAGE_THRESHOLD_MS = 10 * 60 * 1000L
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper {
     private lateinit var textToSpeech: TextToSpeech
@@ -98,9 +105,23 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     @Volatile
     private var pendingTtsDone: CompletableDeferred<Unit>? = null
 
+    // Wall-clock anchor (elapsedRealtime) for the current foreground session,
+    // stamped in onResume and drained into the cumulative usage total in onPause.
+    // 0 means "no live session" so onPause doesn't double-count across recreate.
+    private var sessionStartRealtimeMs: Long = 0L
+
     private val requestNotificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
-    ) { granted -> if (granted) startVocabService() }
+    ) { granted ->
+        // Only ever launched from the in-context streak-reminder opt-in (see
+        // maybeAskAboutReminders). On grant, arm the daily reminder; on denial
+        // the reminder option stays on but silent until the user enables
+        // notifications in system settings.
+        if (granted) {
+            StreakAlarmScheduler.schedule(this)
+            Toast.makeText(this, "Daily reminder set", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,7 +137,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
 
         serviceIntent = Intent(this, MyForegroundService::class.java)
-        ensureNotificationPermissionThenStartService()
+        // Start the passive-glance service regardless of notification permission:
+        // on Android 13+ the foreground service still runs, its low-priority
+        // notification simply stays hidden until the user grants permission via
+        // the in-context streak-reminder prompt (see maybeAskAboutReminders).
+        startVocabService()
         workAroundDexReloadBug()
 
         sounds = SoundEffects(this)
@@ -154,9 +179,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             tts = this,
             vocabDictionary = vocabDictionary,
             language = language,
-            // After the level check + placement dialog, MainActivity asks for
-            // the active-pool size, starts drilling, then (first run) the tutorial.
+            // After the level check + placement dialog, MainActivity (later
+            // languages only) asks for the active-pool size, then begins drilling.
             onAssessmentComplete = ::onAssessmentComplete,
+            // Just-in-time onboarding: each control introduces itself the first
+            // time it's relevant, instead of one up-front tour over everything.
+            coachEvents = CoachMarks(this, views),
         )
         wireQuizControllerListeners()
         quizController.refreshStreakBadge()
@@ -283,23 +311,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     /**
      * First-launch sequencing. Language selection already happened in
-     * OnboardingActivity, so what's left for a fresh language is: run the level
-     * check, then (via [onAssessmentComplete]) ask the active-pool size, begin
-     * drilling, and finally — once there's a real word on the card — the button
-     * tutorial. The tutorial deliberately follows the assessment; teaching the
-     * buttons is meaningless before any word is shown. When no calibration is
-     * due (returning user / already-calibrated language) the pending tutorial,
-     * if any, is shown right away instead.
+     * OnboardingActivity, so what's left for a fresh language is the level check;
+     * everything after it (the active-pool size for later languages, and the
+     * first drill word) is driven from [onAssessmentComplete]. Onboarding itself
+     * is now just-in-time: each control coaches itself from the round flow (see
+     * [CoachMarks]) rather than an up-front tour, so there's nothing to show
+     * proactively for an already-calibrated language — the else case is
+     * intentionally absent.
      */
     private fun startFirstRunFlow() {
-        val root = findViewById<View>(android.R.id.content)
         if (willCalibrate()) {
-            // Level check first. The pool prompt and (first-ever) tutorial run
-            // afterwards via onAssessmentComplete, so assessment and drill setup
-            // stay separate steps.
-            root.post { quizController.startCalibration() }
-        } else {
-            root.post { maybeShowTutorial() }
+            findViewById<View>(android.R.id.content).post { quizController.startCalibration() }
         }
     }
 
@@ -321,10 +343,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
     }
 
-    /** Load the first real drill word, then show the one-time tutorial over it. */
+    /**
+     * Hand off from assessment to normal play by loading the first real drill
+     * word. The core-loop coach mark is raised from
+     * [QuizController.beginDrillingAfterAssessment] the moment that word is on
+     * the card; every other control coaches itself later via the round flow.
+     */
     private fun startDrilling() {
         quizController.beginDrillingAfterAssessment()
-        maybeShowTutorial()
     }
 
     /**
@@ -388,25 +414,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     }
 
     /**
-     * Show the one-time button tutorial, unless it's already been seen or a
-     * screen reader is active. Idempotent (the seen-flag check), so it's safe
-     * to call from either first-run branch and from QuizController the moment
-     * calibration hands off to the first word.
+     * The full guided tour over every control, now shown only on demand from the
+     * ⋮ overflow menu ("Tutorial"). First-run onboarding no longer fires this
+     * automatically — [CoachMarks] introduces each control just-in-time instead —
+     * but a user who wants the whole map at once can still summon it, and doing so
+     * sets [AppPrefs.KEY_TUTORIAL_SHOWN], which suppresses the per-control coach
+     * marks (the tour already covered them).
      *
-     * TapTargetView overlays each highlighted view in turn; it's not navigable
-     * via TalkBack swipe gestures and effectively traps SR users on a screen
-     * they can't operate, so the visual tour is skipped when a screen reader is
-     * active (and the seen-flag isn't persisted in that case — see
-     * showTutorial). Calibration itself uses the regular buttons and announces
-     * itself with a banner, so it still runs for SR users.
+     * TapTargetView overlays each highlighted view in turn and isn't navigable
+     * via TalkBack, so this is best-effort for sighted users; the controls all
+     * carry contentDescriptions for screen readers regardless.
      */
-    fun maybeShowTutorial() {
-        if (AppPrefs.get(this).getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)) return
-        val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
-        if (am.isTouchExplorationEnabled) return
-        showTutorial()
-    }
-
     private fun showTutorial() {
         fun target(view: View, title: String, description: String) =
             TapTarget.forView(view, title, description)
@@ -667,6 +685,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // mid-session).
         contentResolver.registerContentObserver(Settings.System.CONTENT_URI, true, volumeObserver)
         syncListeningModeWithVolume()
+        // Start counting this foreground session, then (once enough total usage
+        // has accrued) offer streak reminders in context.
+        sessionStartRealtimeMs = SystemClock.elapsedRealtime()
+        maybeAskAboutReminders()
     }
 
     override fun onPause() {
@@ -674,6 +696,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             quizController.markPaused()
         }
         contentResolver.unregisterContentObserver(volumeObserver)
+        if (sessionStartRealtimeMs > 0L) {
+            AppPrefs.addUsageMs(this, SystemClock.elapsedRealtime() - sessionStartRealtimeMs)
+            sessionStartRealtimeMs = 0L
+        }
         super.onPause()
     }
 
@@ -701,15 +727,43 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         invalidateOptionsMenu()
     }
 
-    private fun ensureNotificationPermissionThenStartService() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
-            ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
-                == PackageManager.PERMISSION_GRANTED
-        ) {
-            startVocabService()
-            return
-        }
-        requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+    /**
+     * Once the user has spent [REMINDER_USAGE_THRESHOLD_MS] in the app, offer
+     * daily streak reminders — and only then request notification permission.
+     * Shown at most once (the flag is set the moment it appears, so dismissing it
+     * counts as "not now"). Skipped on pre-13 devices (permission is implicit)
+     * and once permission is already granted. "Yes" keeps the reminder option on,
+     * arms the alarm, and launches the system permission prompt; the grant itself
+     * is handled by [requestNotificationPermission].
+     */
+    private fun maybeAskAboutReminders() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+            == PackageManager.PERMISSION_GRANTED
+        ) return
+        if (AppPrefs.isReminderPromptDone(this)) return
+        if (AppPrefs.totalUsageMs(this) < REMINDER_USAGE_THRESHOLD_MS) return
+
+        AppPrefs.setReminderPromptDone(this)
+        val time = String.format(
+            Locale.US,
+            "%02d:%02d",
+            StreakTracker.reminderHour(this),
+            StreakTracker.reminderMinute(this),
+        )
+        AlertDialog.Builder(this)
+            .setTitle("Keep your streak alive?")
+            .setMessage(
+                "Want a daily reminder at $time so a busy day doesn't cost you your " +
+                    "streak? You can change the time or turn it off anytime in Settings."
+            )
+            .setPositiveButton("Yes, remind me") { _, _ ->
+                StreakTracker.setReminderEnabled(this, true)
+                StreakAlarmScheduler.schedule(this)
+                requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+            .setNegativeButton("Not now", null)
+            .show()
     }
 
     private fun startVocabService() {

@@ -29,6 +29,27 @@ object AppPrefs {
     const val KEY_ONBOARDING_DONE = "onboarding_done"
     const val KEY_TUTORIAL_SHOWN = "tutorial_shown"
     const val KEY_SPOT_CHECK_TUTORIAL_SHOWN = "spot_check_tutorial_shown"
+
+    // Just-in-time coach marks (see CoachMarks). Instead of the old nine-target
+    // tutorial firehose the instant the first word loaded, a control introduces
+    // itself the first time it becomes relevant. The calibration mark is the one
+    // that isn't a drilling control: it gives the level-check a persistent
+    // "what to press" anchor in place of a toast that vanished. Write-once
+    // booleans, global (the controls/test are the same on every language) — like
+    // KEY_TUTORIAL_SHOWN, which (the full tour, run from the menu) suppresses all
+    // of these.
+    const val KEY_COACH_CALIBRATION_SHOWN = "coach_calibration_shown"
+    const val KEY_COACH_CORE_SHOWN = "coach_core_shown"
+    const val KEY_COACH_HINT_SHOWN = "coach_hint_shown"
+    const val KEY_COACH_FLAG_SHOWN = "coach_flag_shown"
+    const val KEY_COACH_POOL_SHOWN = "coach_pool_shown"
+
+    // Cumulative in-app foreground time (ms) and a once-only flag for the
+    // streak-reminder opt-in. Rather than a cold-start notification prompt (which
+    // gets reflexively denied), we wait until the user has actually used the app
+    // for a while, then offer reminders in context — see MainActivity.
+    const val KEY_TOTAL_USAGE_MS = "total_usage_ms"
+    const val KEY_REMINDER_PROMPT_DONE = "reminder_prompt_done"
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"
@@ -68,6 +89,24 @@ object AppPrefs {
     fun isOnboardingDone(context: Context): Boolean =
         get(context).getBoolean(KEY_ONBOARDING_DONE, false)
 
+    /** Cumulative foreground time across all sessions, in milliseconds. */
+    fun totalUsageMs(context: Context): Long =
+        get(context).getLong(KEY_TOTAL_USAGE_MS, 0L)
+
+    /** Add [deltaMs] of foreground time to the running total (ignores non-positive). */
+    fun addUsageMs(context: Context, deltaMs: Long) {
+        if (deltaMs <= 0L) return
+        get(context).edit().putLong(KEY_TOTAL_USAGE_MS, totalUsageMs(context) + deltaMs).apply()
+    }
+
+    /** Whether the one-time streak-reminder opt-in prompt has already been shown. */
+    fun isReminderPromptDone(context: Context): Boolean =
+        get(context).getBoolean(KEY_REMINDER_PROMPT_DONE, false)
+
+    fun setReminderPromptDone(context: Context) {
+        get(context).edit().putBoolean(KEY_REMINDER_PROMPT_DONE, true).apply()
+    }
+
     /**
      * One-time migration for installs that predate the onboarding screen. The
      * onboarding flag is new, so it defaults to false for everyone — but an
@@ -95,17 +134,26 @@ object AppPrefs {
     }
 
     /**
-     * Persist the first-run choices in one commit: the chosen language and the
-     * done flag. Writing them together means a launch can never observe a
-     * half-applied setup (e.g. done=true but no language). The active-pool size
-     * is NOT set here — it's chosen after the level check (see
-     * MainActivity.onAssessmentComplete), so the first language asks for it the
-     * same way every later language does.
+     * Persist the first-run choices in one commit: the chosen language, the done
+     * flag, and the first language's active-pool size (seeded to the built-in
+     * default). Writing them together means a launch can never observe a
+     * half-applied setup (e.g. done=true but no language).
+     *
+     * Seeding the pool size here is what lets the first language skip the
+     * post-calibration pool prompt ([MainActivity.onAssessmentComplete] gates on
+     * [hasAutoAddThreshold]): a brand-new user has no basis to answer "how many
+     * words in rotation?" before they've drilled a single word, so we pick a
+     * sensible default and leave it editable later (the ACTIVE WORDS card and
+     * Settings → Active pool). Switching to a *further* language still prompts —
+     * by then the user knows what the number means. The default matches
+     * [autoAddThreshold]'s fallback, so seeding only fixes the value a fresh
+     * install would have computed anyway.
      */
     fun completeOnboarding(context: Context, languageCode: String) {
         get(context).edit()
             .putString(KEY_APP_LANGUAGE, languageCode)
             .putBoolean(KEY_ONBOARDING_DONE, true)
+            .putInt(autoAddThresholdKey(languageCode), AUTO_INTRODUCE_THRESHOLD)
             .apply()
     }
 

@@ -45,85 +45,145 @@
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp" />
 
+    <!-- ============ WHAT THE THREE NUMBERS MEAN ============
+         A colour-matched mini-table: each (illustrative) number sits above its
+         skill in the SAME colour the live card label and the bar segment use
+         (seg_read / seg_listen / seg_invert), so the colour ties each number to
+         its skill at a glance. Keep these colours in sync with
+         ProgressBars.buildActiveLabel / Skill.accentColorRes. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:orientation="vertical">
+        android:baselineAligned="false"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="32dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="👀"
-                android:textSize="22sp" />
+                android:fontFamily="monospace"
+                android:text="8"
+                android:textColor="@color/seg_read"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:lineSpacingExtra="2sp"
-                android:text="The three numbers are words in progress for each skill: Reading, Listening and Recall."
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="15sp" />
+                android:layout_marginTop="2dp"
+                android:text="Reading"
+                android:textColor="@color/seg_read"
+                android:textSize="13sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="32dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="🔓"
-                android:textSize="22sp" />
+                android:fontFamily="monospace"
+                android:text="5"
+                android:textColor="@color/seg_listen"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:lineSpacingExtra="2sp"
-                android:text="Master a word's Reading and it unlocks Listening, then Recall — each skill builds on the last."
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="15sp" />
+                android:layout_marginTop="2dp"
+                android:text="Listening"
+                android:textColor="@color/seg_listen"
+                android:textSize="13sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="32dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="⭐"
-                android:textSize="22sp" />
+                android:fontFamily="monospace"
+                android:text="1"
+                android:textColor="@color/seg_invert"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:lineSpacingExtra="2sp"
-                android:text="A gold &quot;+N&quot; beside a skill counts what you've finished there today."
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="15sp" />
+                android:layout_marginTop="2dp"
+                android:text="Recall"
+                android:textColor="@color/seg_invert"
+                android:textSize="13sp"
+                android:textStyle="bold" />
         </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:lineSpacingExtra="2sp"
+        android:text="Words you're drilling right now. Each skill unlocks the next: master Reading, then Listening, then Recall."
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="14sp" />
+
+    <!-- The optional per-skill "finished today" count: a skill renders a second
+         number after its active count (e.g. "8 2"), the today-count in gold
+         (today_count_color). Shown here as its own mini-example. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="8"
+            android:textColor="@color/seg_read"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text=" 2"
+            android:textColor="@color/today_count_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:lineSpacingExtra="2sp"
+            android:text="A second number after a skill is how many you finished there today."
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <!-- ===================== AUTO-ADD THRESHOLD =====================

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Explainer for the TOTAL PROGRESS card. Mirrors dialog_streak_info /
-     dialog_score_info: hero emoji + title + subtitle + iconified bullets that
-     decode the three parts of the card's label ("{mastered} / {total}  ·  +N  ·  N due"). -->
+<!-- Explainer for the TOTAL PROGRESS card. Hero emoji + title + subtitle, then a
+     colour-matched worked example of the card's label
+     ("{mastered} / {total}  ·  +N  ·  N due") and a decode of each part — the gold
+     "+N today" and pink "N due" shown in their real colours (matches dialog_active_info). -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,10 +41,75 @@
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp" />
 
+    <!-- ============ DECODE THE LABEL ============
+         A colour-matched worked example of the card's label, then a decode of
+         each part in its real colour: mastered count (lifetime_count_color), the
+         gold "+N today" (today_count_color) and the pink "N due" (due_count_color).
+         Numbers are illustrative. Keep colours in sync with
+         ProgressBars.buildLifetimeLabel. -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="22dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="40"
+            android:textColor="@color/lifetime_count_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text=" / 300"
+            android:textColor="@color/card_text_muted"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="  ·  "
+            android:textColor="@color/card_text_muted"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="+3"
+            android:textColor="@color/today_count_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="  ·  "
+            android:textColor="@color/card_text_muted"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="2 due"
+            android:textColor="@color/due_count_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -53,7 +119,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="32dp"
+                android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="✅"
@@ -65,7 +131,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:lineSpacingExtra="2sp"
-                android:text="The bar fills as you master words — the count shows how many of all the words in this language you've learned."
+                android:text="Words you've mastered, out of every word in this language — the bar fills as you go."
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -78,11 +144,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="32dp"
+                android:layout_width="56dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="monospace"
                 android:gravity="center"
-                android:text="⭐"
-                android:textSize="22sp" />
+                android:text="+N"
+                android:textColor="@color/today_count_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
@@ -90,7 +159,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:lineSpacingExtra="2sp"
-                android:text="&quot;+N&quot; counts the words you've mastered today."
+                android:text="Words you mastered today — your fresh progress this session."
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -103,11 +172,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="32dp"
+                android:layout_width="56dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="monospace"
                 android:gravity="center"
-                android:text="🔄"
-                android:textSize="22sp" />
+                android:text="N due"
+                android:textColor="@color/due_count_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
@@ -115,7 +187,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:lineSpacingExtra="2sp"
-                android:text="&quot;N due&quot; is mastered words ready to resurface for a quick review."
+                android:text="Already-mastered words ready to resurface for a quick review."
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="15sp" />
         </LinearLayout>

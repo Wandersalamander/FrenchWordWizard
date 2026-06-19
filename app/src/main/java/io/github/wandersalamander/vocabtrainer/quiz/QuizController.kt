@@ -1,11 +1,13 @@
 package io.github.wandersalamander.vocabtrainer.quiz
 
+import android.content.Context
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.RelativeSizeSpan
 import android.view.View
+import android.view.accessibility.AccessibilityManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -21,6 +23,7 @@ import io.github.wandersalamander.vocabtrainer.data.SpotCheckResult
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
+import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
@@ -122,6 +125,17 @@ private const val POST_SUCCESS_TTS_DELAY_MS = 500L
 // resume: the user has lost context on it, so saving a Next/Fail based on a
 // stale view would corrupt the stats.
 private const val LONG_PAUSE_DISMISS_THRESHOLD_MS = 30 * 1000L
+// How long the user may dwell on a hintable word before the Hint coach mark
+// offers itself — long enough that a confident answer never trips it, short
+// enough to catch someone who's stuck and hasn't spotted the button.
+private const val HINT_DWELL_MS = 10_000L
+// Pool-variety nudge: after this many committed rounds with no new word entering
+// the pool (cycling the same set), and at most this many failures in that
+// stretch (so we nudge a cruiser, not a struggler), suggest rotating more —
+// gated additionally on the pool still being small. At the default pool of 5
+// this is ~2.5 full cycles, so the repetition is genuinely felt.
+private const val POOL_NUDGE_ROUNDS = 12
+private const val POOL_NUDGE_MAX_FAILS = 3
 
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
@@ -137,10 +151,15 @@ class QuizController(
     private val vocabDictionary: MyDictionary,
     private val language: Language,
     // Invoked once when the level check and its placement dialog are done. The
-    // host uses it to ask the active-pool size, begin drilling (see
-    // [beginDrillingAfterAssessment]), and show the first-run tutorial. No-op by
-    // default so tests/headless construction need not supply it.
+    // host uses it to ask the active-pool size (later languages only) and begin
+    // drilling (see [beginDrillingAfterAssessment]). No-op by default so
+    // tests/headless construction need not supply it.
     private val onAssessmentComplete: () -> Unit = {},
+    // Just-in-time onboarding hooks. The controller raises round-flow events;
+    // CoachMarks (wired by MainActivity) turns the first relevant one into a
+    // single coach mark. No-op default so tests/headless construction supply
+    // nothing and behaviour is unchanged. See [CoachEvents].
+    private val coachEvents: CoachEvents = object : CoachEvents {},
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressCardInfo = ProgressCardInfoView(activity, views, language.code)
@@ -196,6 +215,18 @@ class QuizController(
     // saved (which are the same round, since save runs before the next pick).
     private var currentRoundFromRefreshPool: Boolean = false
 
+    // True iff the round being displayed/committed was a brand-new word
+    // introduction (PickerId.INTRODUCTION). Same lifecycle as
+    // currentRoundFromRefreshPool (set at pick, read at the next commit); drives
+    // the pool-variety nudge below.
+    private var currentRoundIsNewWord: Boolean = false
+
+    // Pool-variety nudge counters (in-session): committed rounds since the last
+    // new word entered the pool, and how many of those were failures. See
+    // maybeNudgeLargerPool.
+    private var roundsSinceNewWord: Int = 0
+    private var failsSinceNewWord: Int = 0
+
     // Session-scoped: when false, LISTEN words and their tip sentences are
     // shown unmasked (e.g. the user is on a train without headphones).
     // Toggled via the menu; the next word picks up the new state.
@@ -217,6 +248,11 @@ class QuizController(
     // previous round's word never speaks over the new one.
     private var pendingRoundStartTtsJob: Job? = null
 
+    // Held while the dwell-triggered Hint coach mark is pending (armed when a
+    // hintable word renders, fires after HINT_DWELL_MS if the user is still
+    // stuck on it). Cancelled on any action or round transition.
+    private var pendingHintCoachJob: Job? = null
+
     // Per-round observation accumulator. Reset in resetRoundState, mutated
     // from every user-action handler, and frozen into a ReviewLogEntry by
     // saveCurrentVocab. See RoundFacts kdoc for the raw-fact philosophy.
@@ -234,13 +270,18 @@ class QuizController(
     fun onFailClick() {
         if (inCalibration) { answerCalibration(known = false); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
-        if (spotCheck.isActive) exitSpotCheck(wasWrong = true)
-        else revealAllVocabData(showNextVocab = true)
+        cancelPendingHintCoach()
+        if (spotCheck.isActive) {
+            exitSpotCheck(wasWrong = true)
+        } else {
+            revealAllVocabData(showNextVocab = true)
+        }
     }
 
     fun onNextClick() {
         if (inCalibration) { answerCalibration(known = true); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        cancelPendingHintCoach()
         if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = false)
         } else if (currentVocab != null && wouldMasterOnCommit()) {
@@ -355,6 +396,10 @@ class QuizController(
         // beginner" action (see enterCalibrationUi), so route it there instead.
         if (inCalibration) { skipCalibration(); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        // The user found Hint on their own — cancel the dwell timer and ensure
+        // its coach mark never appears.
+        cancelPendingHintCoach()
+        coachEvents.onHintUsed()
         showTip()
     }
 
@@ -482,6 +527,7 @@ class QuizController(
         // next word keep talking for up to ~5s over the hidden quiz), drop any
         // deferred round-start speech, and cut the SoundPool chimes.
         cancelPendingRoundStartTts()
+        cancelPendingHintCoach()
         tts.stop()
         sounds.stopAll()
     }
@@ -572,12 +618,24 @@ class QuizController(
             },
         )
         enterCalibrationUi()
-        Toast.makeText(
-            activity,
-            "Quick calibration: tap ✓ for words you already know, ✗ for ones you don't.",
-            Toast.LENGTH_LONG,
-        ).show()
         renderCalibrationWord()
+        // Sighted users get the persistent on-screen coach mark below
+        // (onCalibrationStarted), so a toast would just obstruct it. The coach
+        // mark is skipped under a screen reader, so fall back to the spoken toast
+        // only in that case.
+        if (isScreenReaderActive()) {
+            Toast.makeText(
+                activity,
+                "Quick calibration: tap ✓ for words you already know, ✗ for ones you don't.",
+                Toast.LENGTH_LONG,
+            ).show()
+        }
+        coachEvents.onCalibrationStarted()
+    }
+
+    private fun isScreenReaderActive(): Boolean {
+        val am = activity.getSystemService(Context.ACCESSIBILITY_SERVICE) as AccessibilityManager
+        return am.isTouchExplorationEnabled
     }
 
     /** Reconfigure the quiz surface for binary known/unknown answers. */
@@ -657,6 +715,8 @@ class QuizController(
      */
     fun beginDrillingAfterAssessment() {
         updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
+        // First real word is now on the card — introduce the core ✓/✗ loop.
+        coachEvents.onFirstRealWord()
     }
 
     /**
@@ -852,6 +912,7 @@ class QuizController(
         saveVocab: Boolean = true,
     ) {
         cancelPendingRoundStartTts()
+        cancelPendingHintCoach()
         val successPlayed = applyFailurePenaltyAndPersist(penalty, commitButton, saveVocab)
         val vocab = advanceToNextDistinctVocab(newCandidates)
 
@@ -870,6 +931,33 @@ class QuizController(
     private fun cancelPendingRoundStartTts() {
         pendingRoundStartTtsJob?.cancel()
         pendingRoundStartTtsJob = null
+    }
+
+    /**
+     * Arm the dwell-triggered Hint coach for the current word: [HINT_DWELL_MS]
+     * later, if the user is STILL on the same word (no answer, no reveal, no
+     * spot check) and we're foregrounded, raise [CoachEvents.onHintAvailable] so
+     * the hint introduces itself only to someone who seems stuck. No-op for
+     * skills without a hint. CoachMarks still paces/dedups the actual mark (and
+     * won't show it at all once the user has used Hint themselves).
+     */
+    private fun armHintDwellCoach() {
+        cancelPendingHintCoach()
+        if (!views.buttonTip.isEnabled) return
+        val armedVocab = currentVocab ?: return
+        pendingHintCoachJob = activity.lifecycleScope.launch {
+            delay(HINT_DWELL_MS)
+            if (currentVocab === armedVocab && !spotCheck.isActive &&
+                activity.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
+            ) {
+                coachEvents.onHintAvailable()
+            }
+        }
+    }
+
+    private fun cancelPendingHintCoach() {
+        pendingHintCoachJob?.cancel()
+        pendingHintCoachJob = null
     }
 
     /**
@@ -895,6 +983,10 @@ class QuizController(
         applyCardAccent(views.cardVocab, currentSkill, currentRoundFromRefreshPool)
         applyVocabEyebrow(currentRoundFromRefreshPool)
         views.cardVocab.pop(peakScale = 1.04f)
+
+        // Arm the dwell-triggered Hint coach: it surfaces only if the user
+        // lingers on this (hintable) word without acting — not on every word.
+        armHintDwellCoach()
     }
 
     /**
@@ -959,6 +1051,7 @@ class QuizController(
         currentVocab = result.vocab
         currentSkill = result.skill
         currentRoundFromRefreshPool = result.source == PickerId.REFRESH
+        currentRoundIsNewWord = result.source == PickerId.INTRODUCTION
         return result.vocab
     }
 
@@ -1217,6 +1310,9 @@ class QuizController(
     ) {
         val streak = StreakTracker.recordPracticeToday(activity.applicationContext)
         streakBadge.surfaceResult(streak)
+        // Ticks the coach-mark pacing counter (the streak itself has no coach —
+        // its badge is already tap-to-explain).
+        coachEvents.onRoundCommitted()
         if (!wasFullyMastered && isFullyMasteredNow(vocab)) {
             MasteryTracker.recordMasteredToday(activity.applicationContext)
         }
@@ -1225,6 +1321,33 @@ class QuizController(
                 activity.applicationContext,
                 LifetimeScoreTracker.SCORE_PER_REFRESH_PASS,
             )
+        }
+        maybeNudgeLargerPool(penalty)
+    }
+
+    /**
+     * Pool-variety nudge bookkeeping, run once per committed round. Counts how
+     * long the user has been cycling the existing pool with no new word entering,
+     * and how cleanly. A long, mostly-clean stretch on a still-small pool means
+     * they're cruising the same handful of words — exactly when "rotate more at
+     * once" helps. A new introduction (a word mastered + backfilled, or a manual
+     * New) resets the streak; a failing stretch suppresses the nudge, since
+     * adding words to someone who's struggling would only pile on. CoachMarks
+     * shows the actual mark once, under its own gates.
+     */
+    private fun maybeNudgeLargerPool(penalty: Long) {
+        if (currentRoundIsNewWord) {
+            roundsSinceNewWord = 0
+            failsSinceNewWord = 0
+            return
+        }
+        roundsSinceNewWord++
+        if (penalty > 0L) failsSinceNewWord++
+        if (roundsSinceNewWord >= POOL_NUDGE_ROUNDS &&
+            failsSinceNewWord <= POOL_NUDGE_MAX_FAILS &&
+            AppPrefs.autoAddThreshold(activity, language.code) <= AUTO_INTRODUCE_THRESHOLD
+        ) {
+            coachEvents.onPoolStale()
         }
     }
 

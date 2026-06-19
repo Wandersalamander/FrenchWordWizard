@@ -108,11 +108,12 @@ internal class SpotCheckController(
             return
         }
         AlertDialog.Builder(activity)
-            .setTitle("Spot check!")
+            .setTitle("Quick self-check")
             .setMessage(
-                "Every now and then, the app pauses to verify you actually knew the word. " +
-                    "The answer is revealed above.\n\n" +
-                    "Tap ✓ Correct if you got it right, or ✗ Wrong if not."
+                "Every so often we double-check a word — especially one you answered " +
+                    "quickly — to make sure it really stuck. The answer's now shown above.\n\n" +
+                    "Just be honest: tap ✓ Correct if you knew it, or ✗ Wrong if not. " +
+                    "Getting one wrong simply brings it back for a little more practice."
             )
             .setPositiveButton("Got it", null)
             .show()
