@@ -39,4 +39,9 @@
     <!-- Dark mode: the canonical Monokai yellow already clears 4.5:1 against
          bg_lift, so the auto-add stepper reverts to the bright accent. -->
     <color name="auto_add_color">#E6DB74</color>
+
+    <!-- Dark mode keeps the Monokai canvas as the top bar with light content —
+         the same look as before, now expressed through the shared tokens. -->
+    <color name="top_bar_bg">@color/monokai_bg</color>
+    <color name="top_bar_content">@color/monokai_fg</color>
 </resources>

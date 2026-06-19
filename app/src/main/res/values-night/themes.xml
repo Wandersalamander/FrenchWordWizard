@@ -27,8 +27,11 @@
         <item name="android:textColorSecondary">@color/monokai_comment_light</item>
         <item name="android:textColorTertiary">@color/monokai_comment</item>
 
+        <!-- Top bar stays the dark Monokai canvas with light content (the
+             DarkActionBar parent's overlay handles the content); expressed via
+             the shared top_bar_bg token so it tracks the light theme's wiring. -->
         <item name="actionBarStyle">@style/Widget.MyApplication.ActionBar</item>
-        <item name="android:statusBarColor">@color/monokai_bg</item>
+        <item name="android:statusBarColor">@color/top_bar_bg</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

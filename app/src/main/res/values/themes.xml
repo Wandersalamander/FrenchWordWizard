@@ -31,11 +31,15 @@
         <item name="android:textColorSecondary">@color/monokai_comment</item>
         <item name="android:textColorTertiary">@color/monokai_comment_light</item>
 
-        <!-- Action bar + status bar share Monokai BG so the top of every
-             screen reads as a code-editor frame. -->
+        <!-- Top bar (status + action bar) follows the system theme: a light
+             cream bar with dark content in light mode (the night variant keeps
+             the dark Monokai bar). windowLightStatusBar=true darkens the
+             status-bar icons so they read on cream; actionBarTheme overrides the
+             always-light content the DarkActionBar parent would otherwise force. -->
         <item name="actionBarStyle">@style/Widget.MyApplication.ActionBar</item>
-        <item name="android:statusBarColor">@color/monokai_bg</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.MyApplication.ActionBar</item>
+        <item name="android:statusBarColor">@color/top_bar_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <!-- First-run setup screen. No action bar (full-bleed editor canvas) and a
@@ -52,8 +56,18 @@
     </style>
 
     <style name="Widget.MyApplication.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
-        <item name="background">@color/monokai_bg</item>
+        <item name="background">@color/top_bar_bg</item>
         <item name="elevation">2dp</item>
+    </style>
+
+    <!-- Action bar title + overflow/back icons follow the theme via
+         top_bar_content (dark on the light bar, light on the dark bar),
+         overriding the always-light content the DarkActionBar parent forces.
+         Applied only by the light theme; the night theme keeps the parent's
+         dark-overlay (light content) on its dark bar. -->
+    <style name="ThemeOverlay.MyApplication.ActionBar" parent="">
+        <item name="android:textColorPrimary">@color/top_bar_content</item>
+        <item name="colorControlNormal">@color/top_bar_content</item>
     </style>
 
     <!-- IDE-style section eyebrow used above the data inside the three small

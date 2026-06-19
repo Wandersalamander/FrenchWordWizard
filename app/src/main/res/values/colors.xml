@@ -83,9 +83,13 @@
 
     <!-- Mode-aware variants of the lifetime/today label highlights. Reused
          by the active-pool "-N today" suffix and its floater so both
-         today-counts share one source of truth. -->
+         today-counts share one source of truth. today_count is a deepened gold
+         (the light sibling of dark-mode monokai_yellow) — deliberately a yellower
+         gold than seg_read's amber-orange (#B45309), since the two can sit side
+         by side in the ACTIVE WORDS label ("8 2") and must stay distinguishable.
+         ~5:1 on the card surface. -->
     <color name="lifetime_count_color">#3F7E0E</color>
-    <color name="today_count_color">#B45309</color>
+    <color name="today_count_color">#8A6A00</color>
     <!-- "N due" accent on the lifetime label — mastered words ready to
          resurface for review. Monokai pink: the one accent not already used by
          a count/segment, so it stays distinct from the warm today_count (gain
@@ -105,4 +109,11 @@
          against the cream card surface. Night override below reverts to the
          canonical Monokai yellow for the dark canvas. -->
     <color name="auto_add_color">#7A6300</color>
+
+    <!-- Top bar (status bar + action bar). The top chrome now follows the
+         system theme instead of the old always-dark editor frame: light mode is
+         the cream surface with dark title/icons (top_bar_content); values-night
+         flips both to the Monokai canvas with light content. -->
+    <color name="top_bar_bg">@color/cream_surface</color>
+    <color name="top_bar_content">@color/monokai_bg</color>
 </resources>
