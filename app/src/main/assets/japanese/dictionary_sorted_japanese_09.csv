@@ -10,7 +10,7 @@
 胎児 (taiji)	fetus	9	cba4cbcca204722c31e140274d5a9c07	超音波で胎児の心臓の動きを確認した。	胎児が育つ。
 腫瘍 (shuyō)	tumor	9	10e021dec1e32c27063e283d205d0230	検査の結果、胃に小さな腫瘍が見つかった。	腫瘍を取り除く。
 鼓動 (kodō)	heartbeat	9	d170abd1cf5395dd13d49acf8c04e734	緊張のあまり心臓の鼓動が速くなった。	鼓動が高鳴る。
-脈拍 (myakuhaku)	pulse (rate)	9	ad7547be653cbe300215906435ab0963	看護師が患者の脈拍を静かに測っている。	脈拍を計る。
+脈拍 (myakuhaku)	pulse (rate)	9	ad7547be653cbe300215906435ab0963	看護師が患者の脈拍を静かに測っている。	脈拍を測る。
 炎症 (enshō)	inflammation	9	0268300e4c6469484ef554a0fca7d2a6	傷口に炎症が起きて熱を持ってしまった。	炎症を抑える。
 麻痺 (mahi)	paralysis	9	725b3e7007a9476950eda7d8f0dbd6ad	脳の病気で体の左半分に麻痺が残った。	手が麻痺する。
 後遺症 (kōishō)	aftereffects, sequelae	9	b0d933123310a6ca5331abef254ed3b5	事故の後遺症で今も歩くのがつらいそうだ。	後遺症が残る。
