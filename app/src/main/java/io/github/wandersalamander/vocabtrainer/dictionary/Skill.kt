@@ -204,7 +204,11 @@ data class SkillStats(
         // detected by QuizController — so once that happens the formula below
         // takes over normally.
         if (fastTracked) return FAST_TRACKED_FPB
-        val base = 0.5f / nTimesViewed.toFloat()
+        // Sample-size prior. An unbroken clean streak collapses it faster than
+        // the linear 1/n (see [streakConfidenceViews]) so a word answered
+        // cleanly a few times in a row masters in ~3 reps instead of ~6;
+        // counterRate keeps the *observed* fail fraction on the true view count.
+        val base = 0.5f / (nTimesViewed.toFloat() + streakConfidenceViews())
         val counterRate = (nTimesFailed / nTimesViewed.toFloat()).coerceIn(0f, 1f)
 
         // Blend the lifetime counter rate with a recency-weighted rate over
@@ -314,6 +318,32 @@ data class SkillStats(
         return count
     }
 
+    /**
+     * Extra "virtual views" an unbroken trailing clean streak credits to the
+     * sample-size prior (`base` in [failureProbability]), so consistent recall
+     * collapses the prior faster than the linear 1/n.
+     *
+     * A streak of length s (newest end of the window, reset to 0 by any penalty
+     * — see [trailingCleanReps]) is worth [STREAK_CONFIDENCE_BASE]^(s−1) − 1
+     * views. A single clean rep (s < 2) earns nothing — this rewards a *streak*,
+     * not one lucky pass — while three clean reps in a row drop the prior under
+     * the mastery threshold (≈3 reps to master vs ≈6 without). The streak counts
+     * correctness only; the slow-view floor in [failureProbability] still pins a
+     * slow answer at [SLOW_FPB_FLOOR], so the shortcut requires the reps to be
+     * BOTH correct AND fast. Capped at [STREAK_CONFIDENCE_MAX_REPS] so a long
+     * clean-but-slow streak (held active by the floor) can't drive the prior's
+     * denominator arbitrarily large.
+     *
+     * Returns 0 for an empty window (migrated rows, fresh skills) or any window
+     * whose newest entry is a penalty, so the formula collapses to today's exact
+     * 1/n behaviour until a real clean streak accumulates.
+     */
+    private fun streakConfidenceViews(): Float {
+        val s = trailingCleanReps().coerceAtMost(STREAK_CONFIDENCE_MAX_REPS)
+        if (s < 2) return 0f
+        return (Math.pow(STREAK_CONFIDENCE_BASE, (s - 1).toDouble()) - 1.0).toFloat()
+    }
+
     fun meanTimeViewedMilli(): Double = viewTimeMilli.toDouble()
 
     fun viewedMinutesAgo(): Long =
@@ -394,6 +424,22 @@ data class SkillStats(
         // where a single correct answer across weeks would otherwise collapse
         // the counter on its own.
         const val COUNTER_DISCOUNT_MIN_REPS = 3f
+
+        // Geometric base for the clean-streak confidence bonus in
+        // [streakConfidenceViews]: an unbroken clean streak of length s credits
+        // BASE^(s−1) − 1 "virtual views" to the sample-size prior. 2.0 ⇒ each
+        // further clean rep roughly doubles the credited evidence, landing a
+        // flawless fast word at mastery in ≈3 reps (vs ≈6 on the bare 1/n prior).
+        // Raise to push easy words out sooner; lower toward 1.0 to fall back
+        // toward the linear prior. The slow-view floor still gates on speed, so
+        // this only ever accelerates correct-AND-fast pairs.
+        const val STREAK_CONFIDENCE_BASE = 2.0
+
+        // Cap on the streak length fed to [streakConfidenceViews]. A pair masters
+        // long before a streak this long under normal play; the cap only bounds
+        // the pathological clean-but-slow case (pinned at [SLOW_FPB_FLOOR] while
+        // its clean streak keeps growing) so the prior stays well-conditioned.
+        const val STREAK_CONFIDENCE_MAX_REPS = 6
 
         // Local copy of the day-in-millis constant (Vocab keeps its own private
         // one) so SkillStats' clean-streak math is self-contained.

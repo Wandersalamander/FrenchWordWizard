@@ -291,6 +291,94 @@ class SchedulingMathTest {
         assertEquals(0.262552f, s.failureProbability(), 1e-4f)
     }
 
+    // ---------- Clean-and-fast streak confidence bonus ----------
+
+    @Test fun fpb_fastCleanStreakMastersInAboutThreeReps() {
+        // Three clean, fast reps in a row: the streak confidence bonus collapses
+        // the sample-size prior so the pair crosses the mastery threshold at ~3
+        // reps. The empty-window twin (same counters, no streak signal) still
+        // sits on the bare 0.5/n prior (0.167) and is NOT yet mastered — proving
+        // the streak, not the raw view count, is what accelerates.
+        val streak = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 3,
+            nTimesFailed = 0f,
+            recentInteractions = window(0f, 0f, 0f),
+        )
+        val noStreakTwin = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 3,
+            nTimesFailed = 0f,
+            recentInteractions = emptyList(),
+        )
+        assertTrue(
+            "fast clean streak should master by ~3 reps, was ${streak.failureProbability()}",
+            streak.failureProbability() < Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+        assertTrue(
+            "no-streak twin stays on the linear prior, was ${noStreakTwin.failureProbability()}",
+            noStreakTwin.failureProbability() >= Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+    }
+
+    @Test fun fpb_slowCleanStreakStaysActive() {
+        // Same three clean reps but slow: the rule is "correct AND fast", so the
+        // slow-view floor must keep the streak out of mastery.
+        val s = SkillStats(
+            viewTimeMilli = 7_000L,
+            viewTimeMilli_prev = 6_000L,
+            nTimesViewed = 3,
+            nTimesFailed = 0f,
+            recentInteractions = window(0f, 0f, 0f),
+        )
+        assertEquals(SkillStats.SLOW_FPB_FLOOR, s.failureProbability(), 1e-6f)
+    }
+
+    @Test fun fpb_singleCleanRepEarnsNoStreakBonus() {
+        // A streak of one is not a streak: the bonus must be zero so a single
+        // lucky pass can't accelerate mastery (and so legacy rows with a lone
+        // trailing clean rep keep the exact 1/n prior). base = 0.5/4 = 0.125.
+        val one = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 4,
+            nTimesFailed = 0f,
+            recentInteractions = window(0f),
+        )
+        assertEquals(0.125f, one.failureProbability(), 1e-6f)
+    }
+
+    @Test fun fpb_recentFailResetsStreakBonus() {
+        // A window ending on a failure has trailing clean streak 0 → no bonus,
+        // so an intermittent failer can't ride a stale earlier streak into
+        // mastery. The clean-ending twin (identical counters) gets the bonus and
+        // scores strictly lower.
+        val endsOnFail = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 6,
+            nTimesFailed = 1f,
+            recentInteractions = window(0f, 0f, 0f, 0f, 0f, 1f),
+        )
+        val endsClean = SkillStats(
+            viewTimeMilli = 1_500L,
+            viewTimeMilli_prev = 1_500L,
+            nTimesViewed = 6,
+            nTimesFailed = 1f,
+            recentInteractions = window(1f, 0f, 0f, 0f, 0f, 0f),
+        )
+        assertTrue(
+            "a fresh fail must keep the pair above mastery, was ${endsOnFail.failureProbability()}",
+            endsOnFail.failureProbability() >= Vocab.SKILL_FINISHED_THRESHOLD,
+        )
+        assertTrue(
+            "the clean-ending streak twin should score strictly lower",
+            endsClean.failureProbability() < endsOnFail.failureProbability(),
+        )
+    }
+
     @Test fun recordInteraction_appendsAndTrimsToMax() {
         val s = SkillStats(nTimesViewed = 0, nTimesFailed = 0f)
         repeat(SkillStats.MAX_INTERACTIONS + 5) { i ->
