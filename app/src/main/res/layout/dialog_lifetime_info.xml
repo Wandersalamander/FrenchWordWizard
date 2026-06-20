@@ -58,18 +58,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="40"
+            android:id="@+id/lifetimeInfoMastered"
             android:textColor="@color/lifetime_count_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="40" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text=" / 300"
+            android:id="@+id/lifetimeInfoTotal"
             android:textColor="@color/card_text_muted"
-            android:textSize="16sp" />
+            android:textSize="14sp"
+            tools:text=" / 300" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,16 +79,17 @@
             android:fontFamily="monospace"
             android:text=" · "
             android:textColor="@color/card_text_muted"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="+3"
+            android:id="@+id/lifetimeInfoToday"
             android:textColor="@color/today_count_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="+3" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,16 +97,17 @@
             android:fontFamily="monospace"
             android:text=" · "
             android:textColor="@color/card_text_muted"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="2 due"
+            android:id="@+id/lifetimeInfoDue"
             android:textColor="@color/due_count_color"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="2 due" />
     </LinearLayout>
 
     <LinearLayout

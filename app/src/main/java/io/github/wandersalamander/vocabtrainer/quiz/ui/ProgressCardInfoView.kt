@@ -13,6 +13,7 @@ import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
+import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
 
 /**
@@ -39,7 +40,7 @@ internal class ProgressCardInfoView(
     private val dictionary: MyDictionary,
 ) {
     fun setup() {
-        wire(views.cardLifetime, R.layout.dialog_lifetime_info)
+        wire(views.cardLifetime, R.layout.dialog_lifetime_info, ::bindLifetimeDialog)
         wire(views.cardActive, R.layout.dialog_active_info, ::bindActiveDialog)
     }
 
@@ -63,6 +64,25 @@ internal class ProgressCardInfoView(
                 .setPositiveButton("Got it", null)
                 .show()
         }
+    }
+
+    /**
+     * Fill the TOTAL PROGRESS dialog's worked example with the user's live
+     * numbers — mastered / total, today's gain, and the due-for-review count —
+     * so it matches the real card instead of confusing placeholders. All four
+     * are shown including 0: the live card label hides a zero "+today" / "due",
+     * but the explainer shows the format with the real value either way (same
+     * rule as the ACTIVE WORDS gold example).
+     */
+    private fun bindLifetimeDialog(root: View) {
+        val total = dictionary.csvData.size
+        val mastered = dictionary.computeLifetimeMasteredCount()
+        val today = MasteryTracker.todayCount(activity)
+        val due = dictionary.computeDueMasteredCount()
+        root.findViewById<TextView>(R.id.lifetimeInfoMastered).text = mastered.toString()
+        root.findViewById<TextView>(R.id.lifetimeInfoTotal).text = " / $total"
+        root.findViewById<TextView>(R.id.lifetimeInfoToday).text = "+$today"
+        root.findViewById<TextView>(R.id.lifetimeInfoDue).text = "$due due"
     }
 
     /**
