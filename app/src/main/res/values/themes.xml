@@ -40,19 +40,25 @@
         <item name="actionBarTheme">@style/ThemeOverlay.MyApplication.ActionBar</item>
         <item name="android:statusBarColor">@color/top_bar_bg</item>
         <item name="android:windowLightStatusBar">true</item>
+
+        <!-- De-stock the standard controls so they read as part of the app
+             rather than default Android: the popups + action-bar overflow sit on
+             a themed surface, and buttons drop the heavy ALL-CAPS Material look. -->
+        <item name="popupMenuStyle">@style/Widget.MyApplication.PopupMenu</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.MyApplication.PopupMenu.Overflow</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.MyApplication.Popup</item>
+        <item name="materialButtonStyle">@style/Widget.MyApplication.Button</item>
     </style>
 
-    <!-- First-run setup screen. No action bar (full-bleed editor canvas) and a
-         dark Monokai window background so the screen reads as the editor itself
-         before the cream "document" (the main quiz screen) opens. Status bar
-         keeps the shared Monokai BG with light icons. -->
+    <!-- First-run setup screen. No action bar (full-bleed editor canvas); the
+         window background, status bar, and icon tint all follow the system
+         theme via the parent — cream paper in light, the Monokai canvas in dark
+         — so the setup matches the rest of the app instead of being hardwired
+         dark. -->
     <style name="Theme.MyApplication.Onboarding" parent="Theme.MyApplication">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/monokai_bg</item>
-        <item name="android:statusBarColor">@color/monokai_bg</item>
-        <item name="android:navigationBarColor">@color/monokai_bg</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
     </style>
 
     <style name="Widget.MyApplication.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
@@ -84,5 +90,38 @@
         <item name="android:letterSpacing">0.15</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/card_eyebrow</item>
+    </style>
+
+    <!-- Popups (the ⋮ overflow and the language picker) on the app's own surface
+         — a rounded card_surface pane with the same olive hairline as the cards —
+         instead of the default white/grey Android popup. -->
+    <style name="Widget.MyApplication.PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_popup</item>
+    </style>
+
+    <style name="Widget.MyApplication.PopupMenu.Overflow" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/bg_popup</item>
+        <item name="android:overlapAnchor">true</item>
+    </style>
+
+    <!-- Makes the action-bar overflow popup follow the app surface + text in BOTH
+         modes. The DarkActionBar parent otherwise forces a light popup, which
+         looks stock in light mode and would go dark-on-dark once the background
+         is themed in night mode. card_surface and vocab_text are both mode-aware,
+         so text stays readable on the surface either way. -->
+    <style name="ThemeOverlay.MyApplication.Popup" parent="ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">@color/card_surface</item>
+        <item name="colorSurface">@color/card_surface</item>
+        <item name="android:textColorPrimary">@color/vocab_text</item>
+    </style>
+
+    <!-- App buttons: keep the pink fill but drop the heavy stock-Material look —
+         no ALL-CAPS, flat (no elevation), and rounded to match the editor chrome.
+         Buttons with their own style (the ⚑/✓ icon buttons) or explicit tint
+         (the danger Reset button) keep their overrides. -->
+    <style name="Widget.MyApplication.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="elevation">0dp</item>
     </style>
 </resources>

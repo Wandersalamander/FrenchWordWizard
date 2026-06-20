@@ -87,18 +87,6 @@ object LlmService {
 
     val isReady: Boolean get() = _status.value is Status.Ready
 
-    // Sliding window of recently generated sentences. We pass these back to
-    // the model as a "do NOT produce these" list. Without it, common words
-    // (e.g. "essere" → always "Io sono felice.") collapse to the same output
-    // every call regardless of seed/temperature, because the probability mass
-    // for short sentences is too concentrated.
-    //
-    // Cross-language and cross-word — small enough (5 entries) that mixing
-    // languages is harmless. Lost on app restart, which is fine; the goal is
-    // anti-repetition within a session, not a permanent record.
-    private const val RECENT_SENTENCES_CAPACITY = 5
-    private val recentSentences = ArrayDeque<String>()
-
     // How many recent / ever-seen words to offer the model per call. The split
     // mixes freshness (recent) with breadth (long-tail) so sentences don't
     // recycle the same 20 words; the cap stops the model from packing several
@@ -288,7 +276,6 @@ object LlmService {
 
         val prompt = buildPrompt(word, translation, recent, everSeen, language, maxImportance)
         val result = runInference(e, prompt, timeoutMs, word)
-        if (result != null) recordRecentSentence(result)
         return result
     }
 
@@ -298,14 +285,7 @@ object LlmService {
      *  - a single [SentenceStyle] flavour chosen per call (cultural framing
      *    or a difficulty-gated grammar construct — see [SentenceStyles.pick]),
      *  - a small random pool of previously-studied words (optional ingredients
-     *    the model may weave in for variety), and
-     *  - an "avoid these" list drawn from recently emitted sentences (anti-
-     *    repetition; without it common short words collapse to the same
-     *    output every call regardless of seed/temperature).
-     *
-     * The avoid list is snapshotted under [recentSentences]'s monitor so a
-     * concurrent successful generation appending to the deque can't tear the
-     * read.
+     *    the model may weave in for variety).
      */
     private fun buildPrompt(
         word: String,
@@ -318,18 +298,11 @@ object LlmService {
         val sampledWords = sampleStudiedWords(word, recent, everSeen)
         val recentClause = if (sampledWords.isEmpty()) "" else
             " You may also naturally include some previously studied words if it fits: ${sampledWords.joinToString(", ")}."
-        val avoidClause = synchronized(recentSentences) {
-            if (recentSentences.isEmpty()) "" else {
-                val list = recentSentences.joinToString("; ") { "\"$it\"" }
-                " IMPORTANT: do NOT produce any of these previously generated sentences (or trivial paraphrases). Make a clearly different one: $list."
-            }
-        }
         val styleClause = SentenceStyles.pick(maxImportance).promptFragment(language)
         return "Write one short example sentence in ${language.englishName} " +
                 " using the word \"$word\" (English meaning: \"$translation\")." +
                 styleClause +
                 recentClause +
-                avoidClause +
                 " Output ONLY the sentence, no quotes, no translation, no explanation."
     }
 
@@ -405,20 +378,6 @@ object LlmService {
         temperature = SAMPLER_TEMPERATURE,
         seed = Random.nextInt(),
     )
-
-    /**
-     * Remember a successful generation so the next prompt can ask the model
-     * to avoid it. Bounded to [RECENT_SENTENCES_CAPACITY] — older entries
-     * fall out the front.
-     */
-    private fun recordRecentSentence(sentence: String) {
-        synchronized(recentSentences) {
-            recentSentences.addLast(sentence)
-            while (recentSentences.size > RECENT_SENTENCES_CAPACITY) {
-                recentSentences.removeFirst()
-            }
-        }
-    }
 
     private fun cleanup(raw: String?): String? {
         if (raw.isNullOrBlank()) return null

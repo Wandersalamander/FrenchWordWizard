@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- First-run editor canvas. A near-flat vertical gradient over Monokai BG:
-     a touch lifted at the top (bg_lift) settling into the canonical editor
-     background, so the screen reads as a deep editor pane the setup is typed
-     into. Deliberately subtle — the color comes from the syntax-accent
-     controls layered on top, not the backdrop. -->
+<!-- First-run canvas: the themed window background as a flat fill — cream paper
+     in light, the Monokai editor canvas in dark — so the first-run screen uses
+     exactly the same surface colour as every other screen. (Previously a bespoke
+     dark gradient; flattened to the shared palette for consistency.) -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <gradient
-        android:angle="270"
-        android:startColor="@color/monokai_bg_lift"
-        android:centerColor="@color/monokai_bg"
-        android:endColor="@color/monokai_bg" />
+    <solid android:color="?android:attr/colorBackground" />
 </shape>

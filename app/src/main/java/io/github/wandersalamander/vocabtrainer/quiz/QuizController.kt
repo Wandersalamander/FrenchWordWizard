@@ -52,9 +52,14 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 data class QuizViews(
-    val buttonFail: Button,
-    val buttonNext: Button,
-    val buttonTip: Button,
+    // The three primary action buttons are flat TextView "editor chrome"
+    // controls (bg_btn_primary / bg_btn_ghost in activity_main.xml), not
+    // MaterialButtons — typed as TextView so the selector background and the
+    // setInteractive alpha-dim apply. buttonHard / buttonLearned stay the small
+    // borderless ⚑ / ✓ MaterialButtons inside the vocab card.
+    val buttonFail: TextView,
+    val buttonNext: TextView,
+    val buttonTip: TextView,
     val buttonHard: Button,
     val buttonLearned: Button,
     val cardVocab: SwipeableVocabCard,

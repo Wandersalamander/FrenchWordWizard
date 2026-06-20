@@ -27,15 +27,21 @@ fun View.setDebouncedOnClickListener(
     }
 }
 
+/** Alpha applied to a control dimmed by [setInteractive] while disabled. */
+private const val DISABLED_ALPHA = 0.4f
+
 /**
- * Toggle this view as an interactive control, setting [View.isEnabled] and
- * [View.isClickable] together. The quiz UI always flips the two in lockstep;
- * bundling them collapses the repeated two-line pairs and removes the risk of
- * setting one without the other.
+ * Toggle this view as an interactive control: [View.isEnabled], [View.isClickable],
+ * and an alpha dim while disabled, all flipped in lockstep. The quiz UI always
+ * moves these together; bundling them collapses the repeated pairs and removes
+ * the risk of setting one without the other. The dim restores the disabled fade
+ * the action buttons used to get for free as MaterialButtons, now that they're
+ * flat TextViews with a selector background (see bg_btn_ghost / bg_btn_primary).
  */
 fun View.setInteractive(interactive: Boolean) {
     isEnabled = interactive
     isClickable = interactive
+    alpha = if (interactive) 1f else DISABLED_ALPHA
 }
 
 /**

@@ -467,16 +467,19 @@
     </LinearLayout>
 
     <!-- =========================== ACTION BUTTONS ===========================
-         Clean 2×2 grid via two horizontal rows. Each row hands its two
-         children equal weight so buttons span the full available width with
-         a uniform 16dp inter-column gap (8dp + 8dp). The destructive Fail and
-         the primary Next sit on the top row (more reachable thumb zone). -->
+         Flat "editor chrome" buttons — TextView + a rounded solid background
+         rather than heavy MaterialButtons. All three share ONE colour (the app's
+         primary pink, bg_btn_action) so they read as equally tappable and none
+         nudges the user toward "Know it" over an honest "Reveal". Reveal and Know
+         it share the top row (equal weight, 16dp inter-column gap = 8dp + 8dp) in
+         the reachable thumb zone; Hint spans the row below. The block has no
+         horizontal padding, so the buttons' outer edges line up with the progress
+         cards above. Disabled state is the alpha dim from View.setInteractive. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:paddingHorizontal="8dp">
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
         <!-- maxLines is intentionally left unset so labels can wrap at the
              user's preferred font scale (a11y "Largest" can double the
@@ -487,23 +490,41 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/button_fail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/bg_btn_action"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
                 android:minHeight="48dp"
-                android:text="✗ Reveal" />
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:text="✗ Reveal"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-            <Button
+            <TextView
                 android:id="@+id/button_next"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/bg_btn_action"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
                 android:minHeight="48dp"
-                android:text="✓ Know it" />
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:text="✓ Know it"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -512,13 +533,22 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/button_tip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/bg_btn_action"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
                 android:minHeight="48dp"
-                android:text="💡 Hint" />
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:text="💡 Hint"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

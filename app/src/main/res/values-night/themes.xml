@@ -33,5 +33,13 @@
         <item name="actionBarStyle">@style/Widget.MyApplication.ActionBar</item>
         <item name="android:statusBarColor">@color/top_bar_bg</item>
         <item name="android:windowLightStatusBar">false</item>
+
+        <!-- De-stock the standard controls; see the light theme for rationale.
+             The styles themselves are shared (defined in values/themes.xml) and
+             resolve their mode-aware colours here. -->
+        <item name="popupMenuStyle">@style/Widget.MyApplication.PopupMenu</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.MyApplication.PopupMenu.Overflow</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.MyApplication.Popup</item>
+        <item name="materialButtonStyle">@style/Widget.MyApplication.Button</item>
     </style>
 </resources>

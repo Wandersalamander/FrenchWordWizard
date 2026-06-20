@@ -96,7 +96,7 @@ class OnboardingActivity : AppCompatActivity() {
             mark.setTextColor(
                 ContextCompat.getColor(
                     this,
-                    if (isSelected) R.color.monokai_cyan else R.color.monokai_comment,
+                    if (isSelected) R.color.seg_listen else R.color.card_text_muted,
                 ),
             )
             // The bare flag/name carry no selection cue for TalkBack, so state
