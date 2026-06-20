@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Themed popup / menu surface: the app's card_surface (warm cream in light,
+     the lifted Monokai panel in dark) with the same olive hairline and rounded
+     corners as the cards, so the ⋮ overflow and the language picker read as the
+     app's own editor panes instead of a default white Android popup. Both colours
+     are mode-aware tokens, so it tracks light and dark. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="14dp" />
+    <solid android:color="@color/card_surface" />
+    <stroke android:width="1dp" android:color="@color/card_edge" />
+    <padding android:top="6dp" android:bottom="6dp" />
+</shape>

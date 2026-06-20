@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The three quiz action buttons (Reveal / Know it / Hint). One shared fill in
+     the app's primary pink (monokai_pink_dark — the same colour the dialog
+     confirm buttons use) so all three read as equally tappable and none nudges
+     the user toward a particular answer. Flat and rounded to match the editor
+     chrome; press brightens to the lighter Monokai pink (both are palette
+     colours, so no off-palette pressed shade is introduced). -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <solid android:color="@color/monokai_pink" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <solid android:color="@color/monokai_pink_dark" />
+        </shape>
+    </item>
+</selector>

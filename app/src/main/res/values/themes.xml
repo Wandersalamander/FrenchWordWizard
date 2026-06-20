@@ -121,7 +121,7 @@
          (the danger Reset button) keep their overrides. -->
     <style name="Widget.MyApplication.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textAllCaps">false</item>
-        <item name="cornerRadius">12dp</item>
+        <item name="cornerRadius">14dp</item>
         <item name="elevation">0dp</item>
     </style>
 </resources>
