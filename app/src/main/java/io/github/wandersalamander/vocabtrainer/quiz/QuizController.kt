@@ -164,7 +164,7 @@ class QuizController(
     private val coachEvents: CoachEvents = object : CoachEvents {},
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
-    private val progressCardInfo = ProgressCardInfoView(activity, views, language.code)
+    private val progressCardInfo = ProgressCardInfoView(activity, views, language.code, vocabDictionary)
     private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
     // Picker re-reads the user's auto-add threshold and the calibrated frontier
     // each pick so changing the threshold in Settings — or finishing calibration

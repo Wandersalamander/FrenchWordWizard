@@ -12,6 +12,7 @@ import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
+import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
 
 /**
@@ -35,10 +36,11 @@ internal class ProgressCardInfoView(
     private val activity: AppCompatActivity,
     private val views: QuizViews,
     private val languageCode: String,
+    private val dictionary: MyDictionary,
 ) {
     fun setup() {
         wire(views.cardLifetime, R.layout.dialog_lifetime_info)
-        wire(views.cardActive, R.layout.dialog_active_info, ::bindThresholdStepper)
+        wire(views.cardActive, R.layout.dialog_active_info, ::bindActiveDialog)
     }
 
     private fun wire(card: View, layoutRes: Int, bind: ((View) -> Unit)? = null) {
@@ -61,6 +63,30 @@ internal class ProgressCardInfoView(
                 .setPositiveButton("Got it", null)
                 .show()
         }
+    }
+
+    /**
+     * Fill the ACTIVE WORDS dialog with the user's live numbers instead of
+     * placeholders — the three per-skill active counts and the gold
+     * "finished today" example — so the explainer matches the real card and
+     * isn't confusing. Then wire the embedded auto-add threshold stepper.
+     *
+     * 0 is shown wherever it's the real value. The gold example deliberately
+     * shows its today-count even when 0 (here only) — the live card label omits
+     * a 0 today-count, but in the explainer "8 0" makes the "second number =
+     * finished today" idea concrete on a fresh day. The example reuses Reading
+     * (its active count + its finished-today count) to match the first column.
+     */
+    private fun bindActiveDialog(root: View) {
+        val counts = dictionary.computeActiveSetCounts()
+        val today = readSkillFinishedToday(activity)
+        root.findViewById<TextView>(R.id.activeInfoRead).text = counts.read.toString()
+        root.findViewById<TextView>(R.id.activeInfoListen).text = counts.listen.toString()
+        root.findViewById<TextView>(R.id.activeInfoInvert).text = counts.invert.toString()
+        root.findViewById<TextView>(R.id.activeInfoTodayActive).text = counts.read.toString()
+        root.findViewById<TextView>(R.id.activeInfoTodayGold).text = " ${today.read}"
+
+        bindThresholdStepper(root)
     }
 
     /**
