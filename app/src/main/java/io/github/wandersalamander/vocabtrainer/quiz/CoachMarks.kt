@@ -124,6 +124,9 @@ class CoachMarks(
             title = "Seeing the same words?",
             description = "Your rotation is small, so words come back fast. Tap here to keep " +
                 "more in play at once for more variety.",
+            // Tapping the hint opens the ACTIVE WORDS stepper, same as tapping
+            // the card normally — no second tap needed.
+            onTapped = { views.cardActive.performClick() },
         )
     }
 
@@ -241,6 +244,7 @@ class CoachMarks(
         title: String,
         description: String,
         hugText: Boolean = false,
+        onTapped: (() -> Unit)? = null,
     ) {
         if (prefs.getBoolean(AppPrefs.KEY_TUTORIAL_SHOWN, false)) return
         if (flag in shown) return
@@ -273,6 +277,10 @@ class CoachMarks(
                     override fun onTargetClick(view: TapTargetView) {
                         super.onTargetClick(view) // dismisses
                         markVisible = false
+                        // Tapping the highlighted target acts as if the user
+                        // tapped it for real (e.g. the pool nudge opens the
+                        // ACTIVE WORDS stepper). Tapping outside to cancel does not.
+                        onTapped?.invoke()
                     }
 
                     override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {

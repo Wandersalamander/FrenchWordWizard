@@ -1,8 +1,13 @@
 package io.github.wandersalamander.vocabtrainer.settings
 
+import android.Manifest
 import android.app.TimePickerDialog
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.text.format.Formatter
 import android.view.View
 import android.widget.ArrayAdapter
@@ -16,6 +21,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -36,6 +42,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
 import io.github.wandersalamander.vocabtrainer.dictionary.openDictionaryStream
 import io.github.wandersalamander.vocabtrainer.dictionary.parseVocabHash
 import io.github.wandersalamander.vocabtrainer.llm.LlmService
+import io.github.wandersalamander.vocabtrainer.service.MyForegroundService
 import io.github.wandersalamander.vocabtrainer.streak.StreakAlarmScheduler
 import io.github.wandersalamander.vocabtrainer.streak.StreakTracker
 import kotlinx.coroutines.Dispatchers
@@ -58,6 +65,18 @@ class SettingsActivity : AppCompatActivity() {
     private val importLauncher = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
     ) { uri -> uri?.let { performImport(it) } }
+
+    // Notification permission for the opt-in word-glance service. Registered as a
+    // property so it's wired before STARTED. The service is started before the
+    // result arrives; on grant its (previously suppressed) notification surfaces.
+    private val requestNotificationPermission = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) {
+        // Covers both opt-ins (word-glance service + streak reminder). The glance
+        // notification surfaces on grant by itself; refresh the streak reminder's
+        // permission warning so it clears the moment access is given.
+        refreshStreakPermissionWarning()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -165,6 +184,7 @@ class SettingsActivity : AppCompatActivity() {
 
         setupAutoAddSection()
         setupStreakSection()
+        setupVocabServiceSection()
         setupBackupSection()
         setupResetProgressSection()
     }
@@ -247,6 +267,14 @@ class SettingsActivity : AppCompatActivity() {
             timeButton.isEnabled = isChecked
             // schedule() handles both arming and cancelling based on the flag.
             StreakAlarmScheduler.schedule(this)
+            // Turning the reminder on is the moment to (first-time) request the
+            // notification permission it needs; the warning row covers the rest.
+            if (isChecked) requestNotificationPermissionIfNeeded()
+            refreshStreakPermissionWarning()
+        }
+
+        findViewById<Button>(R.id.streakPermissionButton).setDebouncedOnClickListener {
+            openAppNotificationSettings()
         }
 
         timeButton.setDebouncedOnClickListener {
@@ -264,6 +292,62 @@ class SettingsActivity : AppCompatActivity() {
                 true,  // 24-hour view; matches the "21:00" default semantics
             ).show()
         }
+
+        refreshStreakPermissionWarning()
+    }
+
+    private fun setupVocabServiceSection() {
+        val switchView = findViewById<SwitchCompat>(R.id.vocabServiceSwitch)
+        switchView.isChecked = AppPrefs.isVocabServiceEnabled(this)
+        switchView.setOnCheckedChangeListener { _, isChecked ->
+            AppPrefs.setVocabServiceEnabled(this, isChecked)
+            val intent = Intent(this, MyForegroundService::class.java)
+            if (isChecked) {
+                ContextCompat.startForegroundService(this, intent)
+                // 13+: the foreground notification stays hidden until permission
+                // is granted, so ask for it the moment the user opts in.
+                requestNotificationPermissionIfNeeded()
+            } else {
+                stopService(intent)
+            }
+        }
+    }
+
+    /** Request POST_NOTIFICATIONS if this is Android 13+ and it's not yet granted. */
+    private fun requestNotificationPermissionIfNeeded() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+            ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+    }
+
+    /**
+     * Show the streak-reminder "notifications are off" warning + shortcut only
+     * when the reminder is on yet notifications can't reach the user (permission
+     * not granted, or the app's notifications disabled in system settings).
+     * [NotificationManagerCompat.areNotificationsEnabled] reflects both.
+     */
+    private fun refreshStreakPermissionWarning() {
+        val warning = findViewById<View>(R.id.streakPermissionWarning) ?: return
+        val blocked = !NotificationManagerCompat.from(this).areNotificationsEnabled()
+        warning.visibility =
+            if (StreakTracker.isReminderEnabled(this) && blocked) View.VISIBLE else View.GONE
+    }
+
+    private fun openAppNotificationSettings() {
+        startActivity(
+            Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                .putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Catch the user returning from the system notification settings (or the
+        // permission dialog) so the warning clears as soon as access is granted.
+        refreshStreakPermissionWarning()
     }
 
     private fun setupResetProgressSection() {

@@ -1,0 +1,251 @@
+双子 (futago)	twins	4	49a34221c72aa21379a9d593e7d32a0d	彼女は双子の赤ちゃんを産みました。	双子の兄弟がいる。
+年齢 (nenrei)	age	4	753783b9637a8c3b0a479e5df1b8a1b7	申込書に年齢を書いてください。	年齢を聞く。
+性格 (seikaku)	personality	4	a12e543f8d506fe4bd19914ae5de1145	彼は明るくて優しい性格です。	性格がいい。
+独身 (dokushin)	single (unmarried)	4	bc7a52004654d068e45d6629484c3088	兄はまだ独身で一人暮らしです。	彼は独身だ。
+血液型 (ketsuekigata)	blood type	4	755d41379bcafe4f094a99d060ad3338	日本では血液型で性格を話します。	血液型は何ですか。
+腰 (koshi)	lower back	4	7773cc0cea69644a43121e362dd630aa	重い荷物を持って腰を痛めました。	腰が痛い。
+皮膚 (hifu)	skin	4	c13fadd06c10de9b3fc26f9486f7387a	冬になると皮膚が乾燥します。	皮膚が弱い。
+骨 (hone)	bone	4	b3d309313ddcd4690bf902fb80554755	スキーで足の骨を折りました。	骨が折れた。
+筋肉 (kinniku)	muscle	4	597b824840b6813771bbae05015f902b	毎日運動して筋肉をつけています。	筋肉が痛い。
+内臓 (naizō)	internal organs	4	e6c717ccba20ff2b29ba9057481b0a25	お酒の飲みすぎは内臓に悪いです。	内臓が弱い。
+呼吸 (kokyū)	breathing	4	29e68492a6d66de6405ef0a054f75536	緊張したら深く呼吸してください。	呼吸が苦しい。
+健康 (kenkō)	health	4	c4249367378697fcbc6df1e3a1a6f869	健康のために毎朝散歩しています。	健康が一番だ。
+体調 (taichō)	physical condition	4	fde60f12cdaf99a37587eaf81b9e724e	最近体調があまりよくありません。	体調が悪い。
+症状 (shōjō)	symptom	4	91cd1729a6faadf00e7a04dea62eb408	どんな症状があるか教えてください。	症状を話す。
+治療 (chiryō)	medical treatment	4	d073783c67d6645e642c9c373e2e10f1	その病気の治療には時間がかかります。	治療を受ける。
+診察 (shinsatsu)	medical examination	4	d4bbb66877cf026b74e8a5022f41abd3	午後から医者の診察を受けます。	診察を待つ。
+検査 (kensa)	medical test	4	a7c740f95bf894ff31a489f1743eb227	病院で血液の検査をしてもらいました。	検査を受ける。
+手術 (shujutsu)	surgery	4	0fde1e33378e160642eec1fa1f1e4432	来週、母が手術を受けます。	手術が終わった。
+治る (naoru)	to heal	4	f06474ce6d5ecb7d9bc066d2e99e3efb	風邪は薬を飲んだらすぐ治りました。	傷が治る。
+電子レンジ (denshirenji)	microwave oven	4	338898246f9e16d27fdbb93765aa6c9d	お弁当を電子レンジで温めた。	電子レンジで温める。
+炊飯器 (suihanki)	rice cooker	4	63d62289682f00919a2d185aae0f96af	炊飯器でご飯を炊いておいた。	炊飯器を使う。
+包丁 (hōchō)	kitchen knife	4	e9c4bfd3bc43c5f21fe42a1f30e7c243	この包丁はとてもよく切れる。	包丁で切る。
+皿 (sara)	plate; dish	4	113704a877b44651037d1fafcca280e7	食べ終わったら皿を洗ってください。	皿を洗う。
+味噌汁 (misoshiru)	miso soup	4	d8ba049db9a2074770807daed0fb1c5f	朝ごはんに温かい味噌汁を飲んだ。	味噌汁が好きだ。
+茹でる (yuderu)	to boil (in water)	4	3c77f80a9a8079a73419e0caf5ab8062	野菜を三分ほど茹でてください。	卵を茹でる。
+食器 (shokki)	tableware; dishes	4	bcbe902a1111c20f276002b86b6dbdd4	夕食の後で食器を全部洗った。	食器を片づける。
+居間 (ima)	living room	4	3a1565172ed96f55c102121f404cdb36	家族はみんな居間でテレビを見ている。	居間で休む。
+廊下 (rōka)	hallway; corridor	4	0bb4e02c353bcf3e56f290a3460f1a90	廊下を走らないでください。	廊下は静かだ。
+枕 (makura)	pillow	4	f7e180dd9fcadff86b7943ca33cac043	この枕は柔らかくてよく眠れる。	枕が高い。
+暖房 (danbō)	heating	4	803ffc3c6972bc004e028daeb7362631	寒いので暖房をつけてください。	暖房をつける。
+冷房 (reibō)	air conditioning (cooling)	4	0b3b30eb9aba42dea659ff98f60cac88	夏は冷房がないと眠れない。	冷房をつける。
+就職 (shūshoku)	finding a job	4	3156d21498c476cabf607bb4c788387c	来年の春に就職する予定です。	兄が就職した。
+採用 (saiyō)	hiring	4	bd31004d48a23e95a992c904f58641a1	その会社に採用されてうれしい。	採用が決まった。
+出勤 (shukkin)	going to work	4	798cdf7f5465275439a5947e2875a1f1	今日は朝早く出勤しました。	九時に出勤する。
+欠勤 (kekkin)	absence from work	4	78b9d501cab278851688c6c06b79899f	風邪で昨日は欠勤しました。	今日は欠勤です。
+休憩 (kyūkei)	break (rest)	4	9fa74bed7bbbdd545e643222a75987cd	昼に一時間の休憩を取ります。	少し休憩しよう。
+担当 (tantō)	in charge of	4	1fc0f542a053cb31ed135c789ec4be87	この仕事は私が担当します。	私の担当です。
+名刺 (meishi)	business card	4	e2db5ba49bd2d077a5c972ced1a1b501	初対面で名刺を交換しました。	名刺をください。
+営業 (eigyō)	sales; business hours	4	0e055838c22aed65047680d3ea13a011	この店は夜十時まで営業しています。	営業は何時まで？
+留学 (ryūgaku)	studying abroad	4	a5ccc58c3301a62ee28b075de3cdff3c	来年アメリカへ留学したいです。	日本に留学する。
+奨学金 (shōgakukin)	scholarship	4	d75770056729ad1e60ec4bdc0a54e705	奨学金のおかげで大学に通えます。	奨学金をもらう。
+講義 (kōgi)	lecture	4	8ab3bf40f38f18a3762a986a408b33a7	教授の講義はとても面白かった。	講義を聞く。
+割引 (waribiki)	discount	4	ae73a4427a925128a381d3f190076719	このシャツは三割引で買えました。	学生は割引がある。
+現金 (genkin)	cash	4	edbd3c57e81a41848341afe2b1be52e5	この店はカードより現金の方がいい。	現金で払う。
+レジ (reji)	checkout register	4	97a2e9f732eeb59670a146ca78bc9a33	レジの前に長い列ができています。	レジで払う。
+在庫 (zaiko)	stock (inventory)	4	84ac29996fa198ff598efc96ed2a777d	その商品は今、在庫がありません。	在庫を調べる。
+購入 (kōnyū)	purchase	4	3517fea146f8ee108d9cc8b64b809836	新しいパソコンを購入しました。	切符を購入する。
+予算 (yosan)	budget	4	3348804f47865f4e5bdf479f01256fd0	旅行の予算は十万円です。	予算を決める。
+口座 (kōza)	bank account	4	2ae78252a362214e0dcce0d6a8d519fc	銀行で新しい口座を作りました。	口座にお金を入れる。
+恥ずかしい (hazukashii)	embarrassed, shy	4	642bcd586de14ea9450a3ddd230208b9	人前で話すのは恥ずかしい。	少し恥ずかしい。
+羨ましい (urayamashii)	envious	4	25efa2c38b0bb6b1d7408c516763a2c3	彼の新しい車が羨ましい。	本当に羨ましい。
+優しい (yasashii)	kind, gentle	4	b28135f8cc4a0382bbf559998cd5a297	彼女はいつも優しい言葉をかけてくれる。	先生は優しい。
+気を付ける (kiotsukeru)	to be careful	4	1eef1a3e5b75d526b679e1067359a551	車に気を付けて帰ってください。	足元に気を付けて。
+気分転換 (kibuntenkan)	change of mood	4	2c7db873da3cb90c29d21251a32ed4f9	散歩は気分転換にちょうどいい。	気分転換しよう。
+夢中 (muchū)	absorbed, crazy about	4	213953980b7131917f981c29d0683212	弟はゲームに夢中になっている。	漫画に夢中だ。
+楽しみ (tanoshimi)	anticipation, pleasure	4	77bc5c12c84a5c4c5c3cb31940af95ca	来週の旅行がとても楽しみだ。	明日が楽しみ。
+思いやり (omoiyari)	consideration, empathy	4	d601fdccb637f08d7695e415924168b7	彼女は思いやりのある人だ。	思いやりが大切だ。
+理解する (rikaisuru)	to understand	4	b7f7dd2a634c5e05f896ba9d7fca981a	先生の説明をしっかり理解した。	よく理解できた。
+相談する (sōdansuru)	to consult, discuss	4	1f76b873f740a3ce15b4aae507f30164	進路について先生に相談した。	友達に相談する。
+連絡する (renrakusuru)	to contact, get in touch	4	5a4df6a94f8979b404aecd93b7bce56d	着いたら必ず連絡してください。	後で連絡する。
+説明する (setsumeisuru)	to explain	4	a87287b7d4342df864fb12fb660f57e4	使い方をもう一度説明してください。	理由を説明する。
+挨拶 (aisatsu)	greeting	4	3bd82f6f55adf286da17a09b600210f7	近所の人に元気よく挨拶した。	挨拶をする。
+褒める (homeru)	to praise	4	7ce9615bd1930d5884e2375884a27dce	先生は私の作文を褒めてくれた。	子供を褒める。
+謝る (ayamaru)	to apologize	4	f4d7b08dde382edb30c8cbc7a50b03a8	遅れたことを正直に謝った。	すぐに謝る。
+季節 (kisetsu)	season	4	c8c14b6b3f1d9025697b0bb0263d6ecb	日本には四つの季節があります。	好きな季節は？
+梅雨 (tsuyu)	rainy season	4	913178c91a3b181828981dd028bcf8e8	六月になると梅雨が始まります。	梅雨が明けた。
+植物 (shokubutsu)	plant	4	d8b29099e12e52961c9408143c36737b	この部屋にはいろいろな植物がある。	植物を育てる。
+亀 (kame)	turtle	4	c180bb44af0c8cc739ca2c085b868712	池の石の上で亀が休んでいる。	亀は遅い。
+蛇 (hebi)	snake	4	40dab3e52e251350fe01e14309d88ad1	草むらで突然蛇に出会った。	蛇が怖い。
+狼 (ōkami)	wolf	4	470eaa60236b92e3c51ebbeeca82d574	昔この山には狼が住んでいた。	狼が鳴く。
+枯れる (kareru)	to wither	4	36dfb1a6c83ff26404fb45c95bf5ca25	水をやらないと花はすぐ枯れる。	花が枯れた。
+道路 (dōro)	road	4	1fcf70c075c57e439fca8b446da8c4cb	この道路は工事のため通れません。	道路を渡る。
+高速道路 (kōsoku dōro)	highway	4	335f114ade1631f50ec0dab08c33a1cb	高速道路を使えば一時間で着きます。	高速道路は速い。
+大通り (ōdōri)	main street	4	dc1984d1c41c6172a378977fdfa23ca7	駅前の大通りはいつも人が多い。	大通りを歩く。
+渋滞 (jūtai)	traffic jam	4	8b69e8a48324ecb754824cf3dbd20116	連休は道がひどく渋滞します。	渋滞に巻き込まれた。
+通勤 (tsūkin)	commuting (to work)	4	6749160f16dc83b1a44250d45f53f1d1	毎日電車で一時間通勤しています。	通勤は大変だ。
+満員 (man'in)	full (of people)	4	33d74efc60718c9c527b337fb69b1923	朝の電車はいつも満員です。	バスが満員だ。
+混む (komu)	to get crowded	4	185ae9eecc019f7451d1b04c29a7493a	週末はこの店がとても混みます。	電車が混む。
+列車 (ressha)	train (formal)	4	b5e1c34552b196a5b5bbae9bd882cd70	次の列車は十時に出発します。	列車に乗る。
+特急 (tokkyū)	limited express	4	3abfaff089317bd57c21600a4acca16c	特急に乗れば早く着きますよ。	特急は速い。
+各駅停車 (kakueki teisha)	local train	4	a07ffbdc9de99f262d72df162eac6023	各駅停車は時間がかかります。	各駅停車に乗る。
+線路 (senro)	railway track	4	b92259dc2124d096060dbf4d065ede8c	線路の近くで遊んではいけません。	線路を見る。
+改札 (kaisatsu)	ticket gate	4	60e81de5ccaf4eb2f6cab337315a20dc	改札の前で友達を待っています。	改札を通る。
+運賃 (unchin)	fare	4	3b588ca117776ad5084c20aff3b26688	ここからの運賃はいくらですか。	運賃を払う。
+定期券 (teikiken)	commuter pass	4	25295df4b9b201d29b870b387a88b956	会社まで定期券を買いました。	定期券を見せる。
+片道 (katamichi)	one way	4	92cab74911bf8af66b51efe6960c57d3	片道の切符を一枚ください。	片道は安い。
+往復 (ōfuku)	round trip	4	a93cb4162f02feb86bc9a9e9c881122f	東京まで往復で予約しました。	往復の切符。
+経由 (keiyu)	via (route)	4	35d63aa3f695198e1917525f5b09ab0c	大阪経由で福岡へ行きます。	駅を経由する。
+到着 (tōchaku)	arrival	4	6a525c8d52c3aa2567e478242bb87486	飛行機の到着が一時間遅れました。	到着を待つ。
+出口 (deguchi)	exit	4	ea6069ff269cb7546ff5505056ae74ae	北の出口で待ち合わせましょう。	出口を探す。
+入口 (iriguchi)	entrance	4	1e044c659b598a436cd78908701025a2	建物の入口で名前を書きます。	入口はあそこだ。
+標識 (hyōshiki)	road sign	4	12be5123e4ef8987d3bc41b3265411d2	道路標識をよく見て運転してください。	標識が見える。
+方向 (hōkō)	direction	4	8af420c3bc803125c73191c923e4248e	駅はこの方向で合っていますか。	方向が違う。
+距離 (kyori)	distance	4	45dd6c7ff325cd87a1978f87962874ec	駅から家までの距離はどれくらいですか。	距離が近い。
+周辺 (shūhen)	surrounding area	4	bce8aca8638612f61b1af912cc1bb415	駅の周辺にはお店がたくさんあります。	周辺を歩く。
+観光地 (kankōchi)	tourist spot	4	8ceebb20e037f9a4b9db09161df7b2a9	京都は人気の観光地です。	観光地へ行く。
+名所 (meisho)	famous sight	4	0f53adf39a2cb1337e11cd7c5a3a4955	この町には名所がいくつもあります。	名所を見る。
+首都 (shuto)	capital city	4	48b82d884c47bc4eeadebdb43f8dcaf8	日本の首都は東京です。	首都は大きい。
+迷う (mayou)	to get lost	4	369abdaac5580473cbf4df0d5cbb93f9	知らない町で道に迷ってしまいました。	道に迷う。
+泊まる (tomaru)	to stay overnight	4	5c92dc9ebd79696883719b0f8ea4c50e	今夜は駅前のホテルに泊まります。	友達の家に泊まる。
+向かう (mukau)	to head toward	4	74dbdb760461445d95458ba90e8961b4	今から空港に向かうところです。	駅に向かう。
+給料 (kyūryō)	salary	4	b59933215abdf713e4975a411c1b918c	今月から少し給料が上がりました。	給料が出た。
+残業 (zangyō)	overtime work	4	935917d618c3b4b7874a3975e0707163	昨日は遅くまで残業をしました。	今日は残業だ。
+資料 (shiryō)	documents (materials)	4	626c30cfdb5a5547e1640560c26ffecd	会議の資料を十部コピーしてください。	資料を読む。
+締め切り (shimekiri)	deadline	4	d2f939b27678512905c8eb6afcc583fd	レポートの締め切りは明日の朝です。	締め切りが近い。
+面接 (mensetsu)	job interview	4	5a29afd7c3c6575c9d9c963b764c26d2	来週、新しい会社の面接を受けます。	面接が怖い。
+履歴書 (rirekisho)	résumé	4	c1540692c26e439be0f4b20d22b68787	応募する前に履歴書を書きました。	履歴書を出す。
+出張 (shutchō)	business trip	4	7750b65277f606278a38bcacd874ba34	来月、大阪へ三日間出張します。	出張に行く。
+上司 (jōshi)	boss (superior)	4	a29bfc9193f66968daaadbf97e4367d2	上司に新しい計画を相談しました。	上司は優しい。
+同僚 (dōryō)	coworker	4	e8d21da6e4a066802fb35880c475b0a1	同僚と一緒に昼ご飯を食べました。	同僚と話す。
+部長 (buchō)	department head	4	3ff59132aedf53aa97335258080520c3	部長が今日の会議で話します。	部長を待つ。
+職場 (shokuba)	workplace	4	0b83561c5c0f5dfba18bd8000f715381	私の職場は駅からとても近いです。	職場へ行く。
+成績 (seiseki)	grades	4	30b385825dd764755ed9ea472cb33349	今学期は成績がとても良かったです。	成績が上がる。
+先輩 (senpai)	senior (school/work)	4	5fe6241a0b002b42624cc54a75e751d5	先輩がテストの勉強を手伝ってくれた。	先輩に聞く。
+給食 (kyūshoku)	school lunch	4	17d09687dffa66ec6700cf06f2baa6ad	今日の給食はカレーライスでした。	給食がうまい。
+値引き (nebiki)	discount	4	2b8f34cac378b2789e15e34d28bd4d1e	店員さんが少し値引きしてくれました。	値引きが嬉しい。
+会計 (kaikei)	checkout (bill)	4	7067158f501d3991fd0e153f2d34c0c8	食事のあとレジで会計をしました。	会計をする。
+領収書 (ryōshūsho)	receipt	4	c4284e14c1bbedb4195d143847ac7f9a	会社のために領収書をもらいました。	領収書をください。
+消費税 (shōhizei)	consumption tax	4	085580b6b3ce066643062a174c4ded91	この値段には消費税が入っています。	消費税が高い。
+商品 (shōhin)	merchandise	4	2f66fa4ab64baf61414da06c9d143874	この店は新しい商品がとても多い。	商品を選ぶ。
+感情 (kanjō)	emotion	4	4cbdcff7991fdf64e3ce4c5c4c9e8d8a	彼は感情をあまり顔に出しません。	感情を表す。
+感動 (kandō)	being moved (emotionally)	4	d571ef0e70049a9b4ce146d70f6f25bb	その映画の最後にとても感動しました。	話に感動する。
+緊張 (kinchō)	nervousness, tension	4	b5c12d3880608e1ffc64b136f942cf76	面接の前はいつもとても緊張します。	緊張がほぐれる。
+我慢 (gaman)	patience, endurance	4	b0771c5a27a039b2e486809981c3e9bc	痛くても泣かずに我慢しました。	我慢が大事だ。
+悩む (nayamu)	to worry, to be troubled	4	c6073c49a24a467f38552ee5e63c1cf2	将来の仕事のことで毎日悩んでいます。	一人で悩む。
+後悔 (kōkai)	regret	4	9ba0d5de978506f072b9461ae09ab4ff	あの時謝らなかったことを後悔しています。	後で後悔する。
+満足 (manzoku)	satisfaction	4	b427e86a950eb4b13a1637b9303f8627	今回の旅行にはとても満足しています。	結果に満足する。
+不安 (fuan)	anxiety, unease	4	7036fe8f9e77ecd58121381bb6a90a24	試験の結果が不安でよく眠れません。	不安になる。
+期待 (kitai)	expectation, hope	4	b6ac00c32d1f61ebf29757a1bbd51c21	みんなが新しい店の開店を期待しています。	期待が大きい。
+自信 (jishin)	self-confidence	4	3ea45b86d606ba2ef909ba86c07c9f98	たくさん練習したので試合に自信があります。	自信を持つ。
+態度 (taido)	attitude	4	cf57bf7477de50f193324df85d0a6a8e	彼の失礼な態度にみんな怒りました。	態度が悪い。
+印象 (inshō)	impression	4	0edfb68f7866d682133296cca193bd4f	初めて会った時の印象はとても良かったです。	印象に残る。
+想像 (sōzō)	imagination	4	f862d3ef0cf9c31aced2e6999a79513a	百年後の世界を想像するのは楽しいです。	想像が難しい。
+表現 (hyōgen)	expression (in words)	4	2c4b2042faf87a113e83a15d0b152a4e	自分の気持ちを言葉で表現するのは難しい。	うまく表現する。
+議論 (giron)	discussion, debate	4	507c6b89d796e346ea3b982b3480bda2	その問題について長い時間議論しました。	議論を続ける。
+発表 (happyō)	announcement, presentation	4	7de0ae458a157f0e7e34fbdcfa387680	来週、研究の結果を学校で発表します。	結果を発表する。
+報告 (hōkoku)	report	4	5749aed23cbacd4df75d13dfeb9cb9f8	出張のことを後で部長に報告します。	結果を報告する。
+断る (kotowaru)	to refuse, to decline	4	fe9216cdfbdfdbf14a60681d7311d385	忙しかったので飲み会の誘いを断りました。	丁寧に断る。
+誘う (sasou)	to invite, to ask along	4	a1909d8d2fb37eee03cd734d4000ce7e	週末に友達を映画に誘うつもりです。	食事に誘う。
+招待 (shōtai)	invitation	4	476d6313f202efcd35c68d5b9ef183f9	友人の結婚式に招待されました。	家に招待する。
+感謝 (kansha)	gratitude	4	a84963e3a44d6fef983b677fd402efde	助けてくれた人たちに心から感謝しています。	感謝を伝える。
+尊敬 (sonkei)	respect	4	93a9b0df8b506bb6d350fe9ca49d40c0	私はいつも父をとても尊敬しています。	先生を尊敬する。
+迷惑 (meiwaku)	trouble, nuisance	4	5ec92816a342251952bb53442905a791	夜遅くに電話して迷惑をかけました。	迷惑をかける。
+政府 (seifu)	government	4	69d5c4268d9147bc322b873db37507ad	政府は新しい法律を作ると発表しました。	政府が決める。
+選挙 (senkyo)	election	4	df00586d1708646211917d69eec06408	来月、市長を決める選挙があります。	選挙に行く。
+国民 (kokumin)	citizens, the people	4	784ba3cb2a2032622da3daaa8e77deb4	この問題は国民みんなで考えるべきです。	国民の声。
+環境 (kankyō)	environment	4	72a4b04065425d9ce7565a976e705e51	私たちは地球の環境を守る必要があります。	環境を守る。
+義務 (gimu)	duty, obligation	4	f3faf4a932bf56daab0cef151c04ccd7	税金を払うのは国民の義務です。	義務を果たす。
+権利 (kenri)	right (entitlement)	4	744935b3b55e1081cf74f05dbef699d8	だれにでも自由に意見を言う権利があります。	権利を守る。
+差別 (sabetsu)	discrimination	4	412e570ce3bf050576b5b9c0398b8d84	国や宗教による差別をなくしたいです。	差別はいけない。
+運転する (unten suru)	to drive	4	47d1f6df0e153ff67d7362773789eabd	父は毎朝、車を運転して会社へ行きます。	車を運転する。
+利用する (riyō suru)	to use (utilize)	4	95f85e9ee8cee490e0ce1290d8c123cb	駅前の図書館をよく利用しています。	バスを利用する。
+移動する (idō suru)	to move (relocate)	4	77fdeeaf4bee5886cce2e79711c215cd	次の会議室へ静かに移動してください。	前の席に移動する。
+出かける (dekakeru)	to go out	4	d1767e375eded10de4430603ced69f2b	明日は朝早く買い物に出かけます。	今から出かける。
+訪ねる (tazuneru)	to visit	4	85d19f26fd00827f773e1a09c9a63e32	久しぶりに祖母の家を訪ねました。	友達を訪ねる。
+届く (todoku)	to reach (arrive)	4	a22eead6fa1da42dc6dd9bff4021ecd5	昨日注文した本がやっと届きました。	手紙が届く。
+届ける (todokeru)	to deliver	4	62c117cd03675129026b451159f56b04	忘れ物を交番に届けてあげました。	荷物を届ける。
+受ける (ukeru)	to take (a test)	4	945af80739d245f25ab2bceeb522d864	来週、日本語の試験を受ける予定です。	授業を受ける。
+止める (tomeru)	to stop (something)	4	b52125583d6b95079ef2c62dff60ef13	店の前に自転車を止めてもいいですか。	車を止める。
+触る (sawaru)	to touch	4	1eccd7e3fb6c6858936c14720db8abb9	美術館の作品には触らないでください。	犬に触る。
+捕まえる (tsukamaeru)	to catch	4	93a0abaf93cfc2ff0212483f71f4c73a	子供が公園で大きな虫を捕まえた。	魚を捕まえる。
+混ぜる (mazeru)	to mix	4	8c856b462d7036e047445d8be4361f2f	卵と砂糖をよく混ぜてください。	よく混ぜる。
+包む (tsutsumu)	to wrap	4	b52c3c3bfbb804123309594f3e45c098	プレゼントをきれいな紙で包みました。	お土産を包む。
+曲げる (mageru)	to bend	4	662e09da7994858cd94f5766d970c562	この針金を手で簡単に曲げられます。	指を曲げる。
+伸ばす (nobasu)	to stretch (extend)	4	2a7d995f28b2dc36d41d95e649fa0849	毎朝、体を伸ばす運動をしています。	手を伸ばす。
+回る (mawaru)	to go around	4	dd013929154e8865cd86968aeadeb863	観光バスで町を一周回りました。	周りを回る。
+回す (mawasu)	to turn (spin)	4	907fa235bf66bb33db4268811985b8d5	このハンドルを右に回してください。	こまを回す。
+流れる (nagareru)	to flow	4	11963d0f455dae359c1a0497e178de74	この川は町の真ん中を流れています。	水が流れる。
+流す (nagasu)	to wash away (let flow)	4	b226f6dd59b3e8bbe640f7772fc687a8	使ったあとは水でよく流してください。	トイレを流す。
+引っ越す (hikkosu)	to move house	4	3d644bd348f2548baad04a79018a163a	来月、駅の近くのアパートに引っ越します。	東京に引っ越す。
+続く (tsuzuku)	to continue (intransitive)	4	ad124ce048cdde156ed5f634d096f9cd	暑い日が来週まで続くそうです。	雨が続く。
+残る (nokoru)	to remain	4	b822eb2855b31ca0a0e86fc4f184b596	ご飯がまだ少し残っています。	会社に残る。
+残す (nokosu)	to leave behind	4	5060a6615516c23bb56b9ecc23136b98	野菜を残さないで食べてください。	メモを残す。
+確かめる (tashikameru)	to confirm (check)	4	5a18a955ad7ad3c020343193f7da1407	出かける前に鍵を確かめました。	答えを確かめる。
+調べる (shiraberu)	to look up (investigate)	4	dd9f9c4e35d0835acd082bfaed19d18f	分からない言葉を辞書で調べます。	道を調べる。
+試す (tamesu)	to try (test)	4	f1da24704e90e84aca0bd554341df2f5	新しい方法を一度試してみましょう。	味を試す。
+過ごす (sugosu)	to spend (time)	4	9a07adc1ff4173c4976ae0dffaea5867	夏休みは家族と海で過ごしました。	楽しく過ごす。
+暮らす (kurasu)	to live (get by)	4	8241c42e215e8511a482d74df0fc08c8	祖父は田舎で一人で暮らしています。	元気に暮らす。
+参加する (sanka suru)	to participate	4	f19de92ff09f6b17ad3819bff4bab11a	来週のお祭りに友達と参加します。	会議に参加する。
+増やす (fuyasu)	to increase (something)	4	f5a3085232b90182e8954b914d86768a	少しずつ貯金を増やしたいです。	数を増やす。
+目的 (mokuteki)	purpose; aim	4	b649d2232cf07b5495a7b8c7a6d7bb1d	この旅行の目的は何ですか。	目的が分からない。
+結果 (kekka)	result; outcome	4	be77cf7e0f64a6bf1c76ed89bd0735d9	試験の結果はまだ出ていません。	結果が楽しみだ。
+内容 (naiyō)	content; substance	4	1ef4621c81b54a6d87fac082cec96fc2	この本の内容はとても面白い。	内容を確認する。
+状態 (jōtai)	condition; state	4	e8bebfc34942a31e6d784cb2849133ec	今の道路の状態はあまり良くない。	いい状態だ。
+関係 (kankei)	relationship; relation	4	7c08d89f5ecfc88fe9b8495b70375ad3	二人の関係はとても良いそうだ。	関係がない。
+場合 (baai)	case; situation	4	c6a90c1321181799810b42d48bb48897	雨が降る場合は中止します。	その場合は休む。
+様子 (yōsu)	appearance; state of things	4	d991c219ea9466abc51a9b46a6d249ac	彼女は元気がない様子だった。	外の様子を見る。
+感じ (kanji)	feeling; sense; impression	4	6a8a7834be1b51fa166e001815ebbcbb	この部屋は暖かい感じがする。	いい感じだ。
+価値 (kachi)	value; worth	4	66e9c5675657e426786467a18dbe11a5	この絵には高い価値があるそうだ。	価値がある。
+性質 (seishitsu)	nature; property	4	cb6060cd4cfb0de5a06ef317d9819d55	水と油は性質が全く違う。	やさしい性質だ。
+表情 (hyōjō)	facial expression	4	71da8167b4818bb433218252279726f7	彼女は嬉しそうな表情をしていた。	暗い表情だ。
+能力 (nōryoku)	ability; capability	4	bbab872eab70dbe09f66864fe0e36807	彼女は人を助ける能力がある。	能力を伸ばす。
+現在 (genzai)	the present; currently	4	07b407c1f9964bfced62d9281fdfdc1c	現在この店は閉まっています。	現在準備中だ。
+過去 (kako)	the past	4	5d12e9898a6f32f1f5decdbb4e5d6555	過去のことはもう忘れましょう。	過去を振り返る。
+未来 (mirai)	the future	4	d55aef560b14d0ab6cc45dcf41298d2c	明るい未来を信じています。	未来を考える。
+瞬間 (shunkan)	moment; instant	4	bb9cf6d62ddda7b585ed392091c3f646	ドアが開いた瞬間に驚いた。	その瞬間に泣いた。
+当時 (tōji)	at that time; back then	4	a24a839b2f5072c60d30993583a43ff5	当時はまだ学生でとても若かった。	当時は安かった。
+翌日 (yokujitsu)	the next day	4	d9d07bbb70051e5346c06dfb4000cda4	翌日の朝はとても早く起きた。	翌日に帰る。
+現代 (gendai)	modern times; today	4	c482e4556525ca18ad7cce94dd51c152	現代の生活は便利になりました。	現代の音楽が好きだ。
+時代 (jidai)	era; period; age	4	f0f3df20151d5cbf1753909dae040e63	学生時代の友達と久しぶりに会った。	いい時代だった。
+出来事 (dekigoto)	event; happening	4	abd3ddd973567b9cf87e96b6e22c8064	今日は色々な出来事があった。	悲しい出来事だ。
+正しい (tadashii)	correct; right	4	c54b75c947fd1570c8031b761607dd47	正しい答えを一つ選んでください。	正しい道だ。
+等しい (hitoshii)	equal; identical	4	13103bf897810c90ee1e2ba58988d88c	二つの線の長さは等しいです。	金額が等しい。
+厳しい (kibishii)	strict; severe	4	d0e7369f9b71c3a3581f3025aa31e3d0	あの先生はとても厳しい人だ。	寒さが厳しい。
+詳しい (kuwashii)	detailed; well-informed	4	65d5922982c727e15484210d4d8596a7	彼はこの町の歴史に詳しい。	詳しい話を聞く。
+珍しい (mezurashii)	rare; unusual	4	bb3899c8403abd605cfbc73e6a124cef	こんなに珍しい花は見たことがない。	珍しい鳥だ。
+貴重 (kichō)	valuable; precious	4	2ac823362c5c9b243a6f21751a83a798	これはとても貴重な経験になった。	貴重な時間だ。
+確実 (kakujitsu)	certain; reliable	4	440a0f470478890a92bdaed89ea1a475	成功するという確実な方法はない。	確実な情報だ。
+平気 (heiki)	fine; unconcerned	4	6202ca76205dacaba75c536ad11be6b3	少しくらい寒くても平気です。	私は平気だ。
+豊か (yutaka)	abundant; rich	4	23e8ab86d7c64190b9812fc169f3f117	この国は自然が豊かで美しい。	心が豊かだ。
+兄弟 (kyōdai)	siblings; brothers	4	e57d698f2c6d143a397abdefc34919c5	私は兄弟が三人いて末っ子です。	兄弟が多い。
+姉妹 (shimai)	sisters	4	1a21cee30edface859bde22abd8be369	あの三姉妹はみんな顔が似ています。	姉妹で出かける。
+他人 (tanin)	stranger; others	4	43f5e981a426916e3263951d2fc1f8eb	困っている他人を放っておけません。	他人に優しい。
+知人 (chijin)	acquaintance	4	47cbb8e8fed6b427a02bfabc086e85e5	パーティーで古い知人に偶然会いました。	知人が増えた。
+高齢 (kōrei)	old age; elderly	4	7d3c702ac567b332fc717ba88a8a91ee	この町は高齢の人がとても多いです。	祖父は高齢だ。
+額 (hitai)	forehead	4	7b8b836704c8299fe83e7c4058aa8ba9	暑くて額から汗が流れてきました。	額が広い。
+唇 (kuchibiru)	lips	4	0954febab16a69c33134c42d3b24c541	冬は唇がすぐに乾いてしまいます。	唇が赤い。
+肌 (hada)	skin (complexion)	4	ef86197a650f2e7ebe548bd1b7f0b2fe	彼女は色が白くて肌がきれいです。	肌が荒れる。
+爪 (tsume)	nail (finger/toe)	4	18ae232a64f8b47f5e5a4fcae3182968	爪が伸びたので短く切りました。	爪を切る。
+肘 (hiji)	elbow	4	c86026c2d119ad43d5743169804371a5	転んで肘を強くぶつけました。	肘が痛い。
+膝 (hiza)	knee	4	bd3ad60865316fecc9f3461d33f6606c	年を取って膝が痛くなりました。	膝をつく。
+腹 (hara)	belly; stomach	4	8f5a9cc12011b320a330930744a31065	食べ過ぎて腹がいっぱいです。	腹が痛い。
+心臓 (shinzō)	heart (organ)	4	255da80ae9647cb7719b6f783bff538b	驚いて心臓が速く動いています。	心臓が強い。
+患者 (kanja)	patient (medical)	4	1b13f1478013a953d179160d8129f614	その医者は患者にとても親切です。	患者が多い。
+医師 (ishi)	physician; doctor	4	7866c299b2908865b847b41497a03ace	具合が悪いので医師に診てもらいました。	医師になる。
+看護師 (kangoshi)	nurse	4	8b6850ef0d40e23e14cc71ae81b9b6e2	看護師が毎日体温を測りに来ます。	看護師を呼ぶ。
+退院 (taiin)	discharge from hospital	4	1052be713bd0f27898459e1d96dafbaf	体調が良くなって来週退院します。	無事に退院した。
+予防 (yobō)	prevention	4	99e1e5161ecc59633b144ebacc89e466	風邪の予防には手洗いが大切です。	病気を予防する。
+体温 (taion)	body temperature	4	79090754b02e05d582d74a9b6a1c2ecc	毎朝体温を測って記録しています。	体温が高い。
+太る (futoru)	to gain weight	4	3005a1556baa421a44663ca0d6d0c826	運動しないと最近すぐに太ります。	少し太った。
+痩せる (yaseru)	to lose weight	4	24fa4b6f336fa08ff752f852dc8ad959	病気をして三キロも痩せました。	少し痩せたい。
+命 (inochi)	life	4	75cf520c9d9a89a03c2a945f2f1e230f	医者は多くの人の命を救っています。	命が大切だ。
+食事 (shokuji)	meal	4	e2743c7fd5931c206f89af418c40da35	家族で食事をするのが好きです。	食事の時間だ。
+食欲 (shokuyoku)	appetite	4	2bb1d1f247f66aec5e37804430884b8c	暑いと食欲がなくなる。	今日は食欲がある。
+栄養 (eiyō)	nutrition	4	271279a44304aac4ad5befd589bd6fb7	野菜は栄養がたっぷりある。	栄養を取ろう。
+材料 (zairyō)	ingredients	4	26d8a68ca17d131d83cc4ad436d7dea4	料理の材料を買いに行く。	材料が足りない。
+調味料 (chōmiryō)	seasoning	4	f3e82d2b90acb6418bb3c0af6074f956	棚に調味料が並んでいる。	調味料を入れる。
+炒める (itameru)	to stir-fry	4	1a8c49722a8dfff647c454912ae34d26	野菜を油でさっと炒める。	卵を炒める。
+蒸す (musu)	to steam	4	9949ec50c5ffce806c4ab585543ddec7	野菜を蒸すと甘くなる。	パンを蒸す。
+揚げる (ageru)	to deep-fry	4	bfff60418c418cc1d81d563e38dabdd2	鶏肉を熱い油で揚げる。	天ぷらを揚げる。
+注ぐ (sosogu)	to pour	4	f5d1fcf2e9868680d31c6f55c852af19	コップに水を静かに注ぐ。	お茶を注ぐ。
+酒 (sake)	alcohol / sake	4	0a1a0f0a15f8b5e3ce30a4de2efc25ba	父は毎晩お酒を飲む。	お酒は飲まない。
+酔う (you)	to get drunk	4	83b91e2e53b31acae78cae6d924ab30b	ビールを飲みすぎて酔った。	少し酔った。
+残り物 (nokorimono)	leftovers	4	3d51af2c4769a1d24ea0f5c5890abaac	昨日の残り物を温めて食べた。	残り物がある。
+干す (hosu)	to hang out to dry	4	2c8f7303e6ebfe50f38778f359b3bb7b	洗った服を外に干す。	布団を干す。
+畳む (tatamu)	to fold	4	0dd63628395d116f76d92a1f2e241c70	乾いた服をきれいに畳む。	服を畳む。
+家事 (kaji)	housework	4	28b2abd70a673c10126f22ff34062d9a	夫婦で家事を分担している。	家事が多い。
+大家 (ōya)	landlord	4	24968350ef884f861d6aac0160b22925	家賃を大家に毎月払う。	大家に会う。
+家賃 (yachin)	rent	4	f9159923da0f8683cb4bc7368fb38466	このアパートは家賃が高い。	家賃を払う。
+光熱費 (kōnetsuhi)	utility bills	4	7d741ecf91c8823e2b23205f723e2de0	冬は光熱費が高くなる。	光熱費を払う。
+蛇口 (jaguchi)	faucet / tap	4	be3098ba09ce95f7b1b42e5a373dcf22	蛇口をひねると水が出る。	蛇口を閉める。

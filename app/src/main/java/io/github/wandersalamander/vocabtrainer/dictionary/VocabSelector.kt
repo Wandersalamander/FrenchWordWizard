@@ -46,21 +46,24 @@ const val AUTO_INTRODUCE_THRESHOLD_MIN: Int = 1
 const val AUTO_INTRODUCE_THRESHOLD_MAX: Int = 40
 
 // Geometric decay applied across importance tiers when a calibration frontier F
-// is set. Tier F is introduced at full weight and each step below it at × this
-// factor (tier F-1 at 0.5, F-2 at 0.25, …); tiers above F are excluded
-// entirely. Biases new words toward the highest tier the user already knows
-// while still trickling in the occasional lower-tier word they might have
-// missed. Unused on the true-beginner path (no frontier → lowest tier first).
-const val INTRODUCTION_TIER_DECAY: Double = 0.5
+// is set. New words PEAK at tier F+1 — the first tier the user did NOT clear,
+// i.e. their genuine learning edge — and each tier below it gets × this factor
+// (F at 0.25, F-1 at 0.0625, …); tiers above F+1 are excluded entirely. So a
+// placed user is fed mostly-new words from F+1, with only a light trickle of
+// review from the tiers they already cleared (catching the few they missed and
+// banking known words as mastered). Unused on the true-beginner path (no
+// frontier → lowest tier first). See [pickInactiveWord].
+const val INTRODUCTION_TIER_DECAY: Double = 0.25
 
 /**
  * Pick the next not-yet-introduced word, always paired with the first skill on
  * the ladder (new words always enter via READ). Falls back to
  * [getActiveVocabWeighted] when every word has already been introduced.
  *
- * [frontier] is the calibrated knowledge tier (see [INTRODUCTION_TIER_DECAY]):
- * when non-null it biases introduction toward the band [0, frontier]; null is
- * the true-beginner default (lowest un-introduced tier first).
+ * [frontier] is the calibrated highest-cleared tier (see [INTRODUCTION_TIER_DECAY]):
+ * when non-null it biases introduction toward the band [0, frontier+1], peaking
+ * at frontier+1 (the learning edge); null is the true-beginner default (lowest
+ * un-introduced tier first).
  */
 fun MyDictionary.getInactiveVocab(frontier: Int? = null): Pair<Vocab, Skill> {
     val firstSkill = Skill.ladder.first()
@@ -170,23 +173,27 @@ private fun MyDictionary.pickFallback(
  * The next not-yet-introduced (non-ignored) word, or null when every word has
  * already been introduced. Shared by [getInactiveVocab] and [pickFallback].
  *
- * With a calibrated [frontier], while the band [0, frontier] still holds
+ * With a calibrated [frontier] F, while the band [0, F+1] still holds
  * un-introduced words a tier within it is chosen by geometric decay
- * ([INTRODUCTION_TIER_DECAY], peak at the frontier) and tiers above the
- * frontier are never offered. Once that band is exhausted — or when [frontier]
- * is null — it falls back to the lowest un-introduced tier, which is how the
- * frontier advances past F on its own (exhaustion-based: the lowest remaining
- * tier is then F+1). Within the chosen tier, essentials (tier 0) come in strict
- * CSV order and higher tiers at random (see [pickNextInactive]).
+ * ([INTRODUCTION_TIER_DECAY], peak at F+1 — the first un-cleared tier) and tiers
+ * above F+1 are never offered. Once that band is exhausted — or when [frontier]
+ * is null — it falls back to the lowest un-introduced tier, which is how
+ * introduction advances past F+1 on its own (exhaustion-based: the lowest
+ * remaining tier is then F+2). Within the chosen tier, essentials (tier 0) come
+ * in strict CSV order and higher tiers at random (see [pickNextInactive]).
  */
 private fun MyDictionary.pickInactiveWord(frontier: Int? = null): Vocab? {
     val inactive = csvData.filter { !it.hasBeenIntroduced() && !it.ignore }
     if (inactive.isEmpty()) return null
 
     if (frontier != null) {
-        val band = inactive.filter { it.importance <= frontier }
+        // Teach one tier ABOVE the highest cleared frontier: F+1 is the first
+        // tier the user did NOT clear — their learning edge — so new words peak
+        // there, with the cleared tiers below only trickling in for review.
+        val peakTier = frontier + 1
+        val band = inactive.filter { it.importance <= peakTier }
         if (band.isNotEmpty()) {
-            val tier = pickTierByDecay(band.map { it.importance }.distinct(), frontier)
+            val tier = pickTierByDecay(band.map { it.importance }.distinct(), peakTier)
             return pickNextInactive(band.filter { it.importance == tier }, tier)
         }
     }
@@ -197,16 +204,16 @@ private fun MyDictionary.pickInactiveWord(frontier: Int? = null): Vocab? {
 
 /**
  * Weighted-random tier choice over the [tiers] present in the band, each
- * weighted [INTRODUCTION_TIER_DECAY]^(frontier − tier): the frontier tier (or
- * the highest tier available below it) peaks and each lower tier decays
- * geometrically. [tiers] must be non-empty and all ≤ [frontier].
+ * weighted [INTRODUCTION_TIER_DECAY]^([peakTier] − tier): the [peakTier] (or the
+ * highest tier available below it) peaks and each lower tier decays
+ * geometrically. [tiers] must be non-empty and all ≤ [peakTier].
  */
-private fun pickTierByDecay(tiers: List<Int>, frontier: Int): Int {
-    val total = tiers.sumOf { INTRODUCTION_TIER_DECAY.pow(frontier - it) }
+private fun pickTierByDecay(tiers: List<Int>, peakTier: Int): Int {
+    val total = tiers.sumOf { INTRODUCTION_TIER_DECAY.pow(peakTier - it) }
     val randomValue = Random.nextDouble(0.0, total)
     var sum = 0.0
     for (tier in tiers) {
-        sum += INTRODUCTION_TIER_DECAY.pow(frontier - tier)
+        sum += INTRODUCTION_TIER_DECAY.pow(peakTier - tier)
         if (sum >= randomValue) return tier
     }
     return tiers.last()

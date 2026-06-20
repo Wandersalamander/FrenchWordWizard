@@ -133,6 +133,26 @@ enum class Language(
             "cf." to "confira",
         ),
     ),
+    FINNISH(
+        code = "fi",
+        // Finnish (fi-FI). There is no Locale.FINNISH constant, so construct it
+        // (as PORTUGUESE does); this drives TTS toward a Finnish voice and tags
+        // the foreign text views with the right locale.
+        locale = Locale("fi", "FI"),
+        assetFolder = "finnish",
+        greeting = "Opi suomea!",
+        englishName = "Finnish",
+        flag = "🇫🇮",
+        // The bundled corpus is fully spelled out, so these only matter if
+        // abbreviated vocab is added later. Kept to safe multi-letter keys with
+        // a mandatory trailing period — never single letters like "n.", which
+        // would fire on the sentence-final period of any word ending in -n.
+        abbreviations = mapOf(
+            "esim." to "esimerkiksi",
+            "jne." to "ja niin edelleen",
+            "yms." to "ynnä muuta sellaista",
+        ),
+    ),
     CHINESE(
         code = "zh",
         locale = Locale.SIMPLIFIED_CHINESE,
@@ -142,6 +162,21 @@ enum class Language(
         flag = "🇨🇳",
         abbreviations = emptyMap(),
     ) {
+        override fun expandAbbreviations(input: String): String =
+            input.replace(pinyinParenRegex, "").trim()
+    },
+    JAPANESE(
+        code = "ja",
+        locale = Locale.JAPANESE,
+        assetFolder = "japanese",
+        greeting = "日本語を学ぼう！",
+        englishName = "Japanese",
+        flag = "🇯🇵",
+        abbreviations = emptyMap(),
+    ) {
+        // Headwords are stored as "漢字かな (rōmaji)"; strip the reading paren the
+        // same way Chinese strips pinyin so TTS speaks the kanji/kana while the
+        // on-screen headword keeps its reading.
         override fun expandAbbreviations(input: String): String =
             input.replace(pinyinParenRegex, "").trim()
     };

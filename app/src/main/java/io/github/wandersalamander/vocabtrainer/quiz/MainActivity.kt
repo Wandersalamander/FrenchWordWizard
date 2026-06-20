@@ -137,11 +137,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
 
         serviceIntent = Intent(this, MyForegroundService::class.java)
-        // Start the passive-glance service regardless of notification permission:
-        // on Android 13+ the foreground service still runs, its low-priority
-        // notification simply stays hidden until the user grants permission via
-        // the in-context streak-reminder prompt (see maybeAskAboutReminders).
-        startVocabService()
+        // The passive "word in the notification" glance service is opt-in
+        // (Settings → Word notification, default off), so only start it when the
+        // user has turned it on. On Android 13+ it also needs notification
+        // permission to actually show — requested when they flip it on in Settings.
+        if (AppPrefs.isVocabServiceEnabled(this)) startVocabService()
         workAroundDexReloadBug()
 
         sounds = SoundEffects(this)

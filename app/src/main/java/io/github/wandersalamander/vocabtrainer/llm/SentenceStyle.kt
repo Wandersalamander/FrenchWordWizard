@@ -84,6 +84,18 @@ object ForeignCultureStyle : SentenceStyle {
             "a Portuguese family meal",
             "the Sintra hills",
         )
+        Language.FINNISH -> listOf(
+            "Finnish cuisine",
+            "a lakeside summer cottage",
+            "a sauna evening",
+            "a Helsinki tram",
+            "the Finnish forest while picking berries",
+            "a Midsummer celebration",
+            "a snowy day in Lapland",
+            "a coffee break with cinnamon buns",
+            "the northern lights",
+            "a cross-country skiing trip",
+        )
         Language.CHINESE -> listOf(
             "Chinese cuisine",
             "a hutong in Beijing",
@@ -95,6 +107,18 @@ object ForeignCultureStyle : SentenceStyle {
             "a Sichuan kitchen",
             "the Yangtze river",
             "a temple festival",
+        )
+        Language.JAPANESE -> listOf(
+            "Japanese cuisine",
+            "a Tokyo neighbourhood",
+            "a ramen shop",
+            "cherry-blossom season",
+            "a traditional ryokan inn",
+            "Mount Fuji",
+            "a Shinto shrine",
+            "a Kyoto temple",
+            "a konbini (convenience store)",
+            "the shinkansen bullet train",
         )
     }
 }

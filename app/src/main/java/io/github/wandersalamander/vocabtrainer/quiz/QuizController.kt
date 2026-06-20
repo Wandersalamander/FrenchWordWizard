@@ -129,13 +129,10 @@ private const val LONG_PAUSE_DISMISS_THRESHOLD_MS = 30 * 1000L
 // offers itself — long enough that a confident answer never trips it, short
 // enough to catch someone who's stuck and hasn't spotted the button.
 private const val HINT_DWELL_MS = 10_000L
-// Pool-variety nudge: after this many committed rounds with no new word entering
-// the pool (cycling the same set), and at most this many failures in that
-// stretch (so we nudge a cruiser, not a struggler), suggest rotating more —
-// gated additionally on the pool still being small. At the default pool of 5
-// this is ~2.5 full cycles, so the repetition is genuinely felt.
-private const val POOL_NUDGE_ROUNDS = 12
-private const val POOL_NUDGE_MAX_FAILS = 3
+// Pool-variety nudge: once the reading pool has filled to its (small/default)
+// threshold, wait this many more committed rounds — by then the user has watched
+// the same handful of words cycle for a while — then suggest rotating more.
+private const val POOL_NUDGE_ROUNDS_AFTER_FULL = 20
 
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
@@ -215,17 +212,11 @@ class QuizController(
     // saved (which are the same round, since save runs before the next pick).
     private var currentRoundFromRefreshPool: Boolean = false
 
-    // True iff the round being displayed/committed was a brand-new word
-    // introduction (PickerId.INTRODUCTION). Same lifecycle as
-    // currentRoundFromRefreshPool (set at pick, read at the next commit); drives
-    // the pool-variety nudge below.
-    private var currentRoundIsNewWord: Boolean = false
-
-    // Pool-variety nudge counters (in-session): committed rounds since the last
-    // new word entered the pool, and how many of those were failures. See
-    // maybeNudgeLargerPool.
-    private var roundsSinceNewWord: Int = 0
-    private var failsSinceNewWord: Int = 0
+    // Pool-variety nudge state (in-session): whether the reading pool has reached
+    // its threshold yet, and how many committed rounds the user has done since it
+    // did. See maybeNudgeLargerPool.
+    private var poolHasFilled: Boolean = false
+    private var roundsSincePoolFilled: Int = 0
 
     // Session-scoped: when false, LISTEN words and their tip sentences are
     // shown unmasked (e.g. the user is on a train without headphones).
@@ -1051,7 +1042,6 @@ class QuizController(
         currentVocab = result.vocab
         currentSkill = result.skill
         currentRoundFromRefreshPool = result.source == PickerId.REFRESH
-        currentRoundIsNewWord = result.source == PickerId.INTRODUCTION
         return result.vocab
     }
 
@@ -1322,31 +1312,28 @@ class QuizController(
                 LifetimeScoreTracker.SCORE_PER_REFRESH_PASS,
             )
         }
-        maybeNudgeLargerPool(penalty)
+        maybeNudgeLargerPool()
     }
 
     /**
-     * Pool-variety nudge bookkeeping, run once per committed round. Counts how
-     * long the user has been cycling the existing pool with no new word entering,
-     * and how cleanly. A long, mostly-clean stretch on a still-small pool means
-     * they're cruising the same handful of words — exactly when "rotate more at
-     * once" helps. A new introduction (a word mastered + backfilled, or a manual
-     * New) resets the streak; a failing stretch suppresses the nudge, since
-     * adding words to someone who's struggling would only pile on. CoachMarks
-     * shows the actual mark once, under its own gates.
+     * Pool-variety nudge bookkeeping, run once per committed round. Once the
+     * reading pool has filled to its threshold (the default for an untouched
+     * user) and the user has drilled [POOL_NUDGE_ROUNDS_AFTER_FULL] rounds since,
+     * they've watched the same small set cycle for a while — the moment to
+     * suggest rotating more. Only fires while the pool is still small (a user who
+     * already widened it knows the control). CoachMarks shows the mark once.
      */
-    private fun maybeNudgeLargerPool(penalty: Long) {
-        if (currentRoundIsNewWord) {
-            roundsSinceNewWord = 0
-            failsSinceNewWord = 0
+    private fun maybeNudgeLargerPool() {
+        val threshold = AppPrefs.autoAddThreshold(activity, language.code)
+        if (threshold > AUTO_INTRODUCE_THRESHOLD) return
+        if (!poolHasFilled) {
+            // "Filled to the default": the reading rotation has reached the
+            // threshold, so the picker has stopped pulling in fresh words.
+            if (vocabDictionary.computeActiveSetCounts().read >= threshold) poolHasFilled = true
             return
         }
-        roundsSinceNewWord++
-        if (penalty > 0L) failsSinceNewWord++
-        if (roundsSinceNewWord >= POOL_NUDGE_ROUNDS &&
-            failsSinceNewWord <= POOL_NUDGE_MAX_FAILS &&
-            AppPrefs.autoAddThreshold(activity, language.code) <= AUTO_INTRODUCE_THRESHOLD
-        ) {
+        roundsSincePoolFilled++
+        if (roundsSincePoolFilled >= POOL_NUDGE_ROUNDS_AFTER_FULL) {
             coachEvents.onPoolStale()
         }
     }

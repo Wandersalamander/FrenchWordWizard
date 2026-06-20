@@ -417,6 +417,79 @@
             android:text="A notification fires at this time only when you have a streak going and haven't practiced yet today."
             android:textSize="13sp"
             android:textColor="?android:attr/textColorSecondary" />
+
+        <!-- Acknowledge + shortcut: shown only when the reminder is on but the OS
+             notification permission (or the app's notifications) is off, so the
+             reminder would silently never fire. Toggled in setupStreakSection;
+             the button deep-links to the app's system notification settings. -->
+        <LinearLayout
+            android:id="@+id/streakPermissionWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠ Notifications are off, so your reminder won't show."
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/danger" />
+
+            <Button
+                android:id="@+id/streakPermissionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Turn on notifications" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ======================== WORD NOTIFICATION ==========================
+         Opt-in passive glance: a quiet ongoing notification showing a practice
+         word to look at between sessions. Cyan stripe — the remaining Monokai
+         accent — and default OFF: MyForegroundService only starts when this is
+         on (see MainActivity.onCreate); flipping it on requests notification
+         permission so the word can actually show. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_cyan"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="Word notification"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/vocabServiceSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Show a word in the notification shade"
+            android:textSize="16sp"
+            android:paddingVertical="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Keeps a quiet, ongoing notification with a practice word to glance at between sessions. Off by default; needs notification permission to show."
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:lineSpacingExtra="2sp" />
     </LinearLayout>
 
     <!-- ========================== BACKUP & RESTORE =========================

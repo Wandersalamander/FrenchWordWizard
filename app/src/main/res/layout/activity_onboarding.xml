@@ -2,113 +2,121 @@
 <!-- First-run setup, themed as the code editor the rest of the app lives in:
      a dark Monokai canvas you "fill in" like a config file. Monospace
      throughout; section labels read as // comments; the language is a cyan
-     value, the word count a yellow number, and the commit button a green
-     run/execute action. ScrollView so the whole config fits on short screens
-     and at large font scales. Entrance is staggered in OnboardingActivity. -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     value and the commit button a green run/execute action.
+
+     Layout: the header and the "start" button stay PINNED; only the language
+     list scrolls, inside the weighted ScrollView between them — so "start" is
+     always reachable no matter how many languages ship. Entrance is staggered
+     in OnboardingActivity. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/onbScroll"
+    android:id="@+id/onbRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_onb_root"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:paddingHorizontal="22dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="28dp">
 
-    <LinearLayout
-        android:id="@+id/onbRoot"
+    <!-- ========================= HEADER (pinned) ========================= -->
+    <!-- Editor "breadcrumb" so the screen frames itself as a file you're
+         editing rather than a generic welcome card. -->
+    <TextView
+        android:id="@+id/onbCrumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.1"
+        android:text="~/vocab · first run"
+        android:textColor="@color/monokai_comment_light"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/onbTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:accessibilityHeading="true"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="2sp"
+        android:text="Set up\nyour studies."
+        android:textColor="@color/monokai_fg"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/onbSubtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="22dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="28dp">
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:lineSpacingExtra="3sp"
+        android:text="Pick the language you want to learn. A quick level check comes next, then you're in."
+        android:textColor="@color/monokai_comment_light"
+        android:textSize="14sp" />
 
-        <!-- ============================ HEADER ============================ -->
-        <!-- Editor "breadcrumb" so the screen frames itself as a file you're
-             editing rather than a generic welcome card. -->
-        <TextView
-            android:id="@+id/onbCrumb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:letterSpacing="0.1"
-            android:text="~/vocab · first run"
-            android:textColor="@color/monokai_comment_light"
-            android:textSize="12sp" />
+    <!-- ========================= LANGUAGE ========================= -->
+    <TextView
+        android:id="@+id/onbLangHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:accessibilityHeading="true"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.05"
+        android:text="// language"
+        android:textColor="@color/monokai_pink"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/onbTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:accessibilityHeading="true"
-            android:fontFamily="monospace"
-            android:lineSpacingExtra="2sp"
-            android:text="Set up\nyour studies."
-            android:textColor="@color/monokai_fg"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+    <!-- Only the language list scrolls. Weighted to 0dp/1 so it takes exactly
+         the space left between the pinned header and the pinned commit button;
+         on short screens / large font scales the list scrolls within it while
+         "start" stays put. Populated in code from Language.values() with
+         inflated item_onb_language rows. -->
+    <ScrollView
+        android:id="@+id/onbLangScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="14dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
 
-        <TextView
-            android:id="@+id/onbSubtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="monospace"
-            android:lineSpacingExtra="3sp"
-            android:text="Pick the language you want to learn. A quick level check comes next, then you're in."
-            android:textColor="@color/monokai_comment_light"
-            android:textSize="14sp" />
-
-        <!-- ========================= LANGUAGE ========================= -->
-        <TextView
-            android:id="@+id/onbLangHeading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:accessibilityHeading="true"
-            android:fontFamily="monospace"
-            android:letterSpacing="0.05"
-            android:text="// language"
-            android:textColor="@color/monokai_pink"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <!-- Populated in code from Language.values() with inflated
-             item_onb_language rows. -->
         <LinearLayout
             android:id="@+id/onbLanguageList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
             android:orientation="vertical" />
+    </ScrollView>
 
-        <!-- ============================ COMMIT ============================ -->
-        <TextView
-            android:id="@+id/onbBegin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:background="@drawable/bg_onb_cta"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="monospace"
-            android:gravity="center"
-            android:minHeight="56dp"
-            android:paddingVertical="16dp"
-            android:text="▸  start"
-            android:textColor="@color/monokai_bg"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+    <!-- ========================= COMMIT (pinned) ========================= -->
+    <TextView
+        android:id="@+id/onbBegin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_onb_cta"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:minHeight="56dp"
+        android:paddingVertical="16dp"
+        android:text="▸  start"
+        android:textColor="@color/monokai_bg"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/onbFooter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:fontFamily="monospace"
-            android:gravity="center"
-            android:text="Everything here is editable later in Settings."
-            android:textColor="@color/monokai_comment"
-            android:textSize="12sp" />
-    </LinearLayout>
-</ScrollView>
+    <TextView
+        android:id="@+id/onbFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="Everything here is editable later in Settings."
+        android:textColor="@color/monokai_comment"
+        android:textSize="12sp" />
+</LinearLayout>

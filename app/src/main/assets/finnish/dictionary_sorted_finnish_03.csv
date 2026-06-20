@@ -1,0 +1,196 @@
+kukka	flower	3	94387e13403b4b7b6c1b13b21301bdc2	Ostin äidille kauniin punaisen kukan hänen syntymäpäiväkseen ja vein sen kotiin maljakossa.	Tämä kukka on kaunis.
+eläin	animal	3	57445e2edfdf51636a9c3474aa64589c	Metsässä asuu paljon villejä eläimiä, joita näkee harvoin keskellä päivää.	Koira on eläin.
+hevonen	horse	3	670d88ae26961a489aae24d345b39d9a	Lapsena haaveilin omasta hevosesta ja kävin joka viikonloppu ratsastustallilla katsomassa hevosia.	Hevonen juoksee nopeasti.
+lintu	bird	3	6d5dedd87ada4c0b5005c72610672617	Aamulla pieni lintu lauloi ikkunan takana niin kovaa, että heräsin ennen herätyskelloa.	Lintu lentää taivaalla.
+järvi	lake	3	949b2dc7bef8c6db7ddc104d760dd8e8	Mökkimme sijaitsee kauniin järven rannalla, ja kesäisin uimme siellä lähes joka päivä.	Järvi on tyyni.
+joki	river	3	11395b0f8c08d37074d8a67d9da57da7	Kaupungin läpi virtaa leveä joki, jonka yli on rakennettu monta vanhaa kivisiltaa.	Joki virtaa hitaasti.
+ranta	shore / beach	3	51ce93e2f168060e20940ba74d8431cd	Vietimme koko lämpimän päivän rannalla, uimme meressä ja söimme eväitä auringossa.	Menemme rannalle uimaan.
+yksitoista	eleven	3	a10f720449ffba939124e5c759f351f2	Bussi lähtee yksitoista minuuttia yli kahdeksan, joten meidän pitää kiirehtiä pysäkille.	Kello on yksitoista.
+kaksitoista	twelve	3	f46eb3668b0ca9f5aaf44fa9e5c6405a	Vuodessa on kaksitoista kuukautta, ja jokainen niistä tuntuu kuluvan yhä nopeammin.	Kello on kaksitoista.
+kaksikymmentä	twenty	3	cf8a39c0565677cb91d670dfc43d4f15	Juhliin tuli yhteensä kaksikymmentä vierasta, joten jouduin lainaamaan naapurilta lisää tuoleja.	Heitä on kaksikymmentä.
+sata	hundred	3	cc5b3ba82492df7968cf0db028336a85	Tämän vanhan talon rakentamisesta on jo yli sata vuotta, mutta se on yhä tukeva.	Sata euroa riittää.
+tuhat	thousand	3	daa8317b69e16c05cef2ca100659d2a4	Konsertissa oli tuhat ihmistä, ja sali tuntui täyttyvän aivan viimeistä paikkaa myöten.	Tuhat euroa on paljon.
+nolla	zero	3	21cdce774e105d593f6ea43014412b28	Ulkona on tänään nolla astetta, joten tiet ovat liukkaita ja kannattaa pukeutua lämpimästi.	Lämpötila on nolla.
+ensimmäinen	first	3	bd11e3ebdad9dcbcc9aad0ab03399778	Muistan yhä ensimmäisen työpäiväni, jolloin olin niin hermostunut, etten saanut sanaakaan suustani.	Tämä on ensimmäinen kerta.
+viimeinen	last / final	3	acbafc2e93537e92d837dff54b694c10	Söin lautaselta viimeisen palan ja totesin, että ruoka oli todella maistunut kaikille.	Tämä on viimeinen kerta.
+puoli	half	3	231f515a34e085e1dc6f3c22d6a83882	Söin vain puolet annoksesta, koska se oli niin suuri, etten jaksanut syödä loppuun.	Otan puolet omenasta.
+kerta	a time / an occasion	3	14983e943eac5b1826bc684290ebaae8	Tämä on jo kolmas kerta tällä viikolla, kun juna myöhästyy useita minuutteja.	Ensi kerralla onnistuu.
+kerran	once	3	dc38a49b1132fb2f45fb310b2c3a2056	Kävin Lapissa vain kerran lapsena, mutta muistan sen matkan yhä hyvin tarkasti.	Kävin siellä kerran.
+hetki	a moment	3	05e4449812168cded056a65a6660a9f9	Odota hetki, niin etsin avaimet laukustani ennen kuin lähdemme yhdessä ulos.	Odota pieni hetki.
+minuutti	minute	3	e4f56d32341de55d0c852ce623efea6c	Bussi lähtee viiden minuutin kuluttua, joten meidän täytyy juosta pysäkille heti.	Yksi minuutti riittää.
+kuukausi	month	3	af1e07a0f0177f55c6c11caecdd79864	Olen asunut tässä kaupungissa jo kolme kuukautta, mutta tunnen vasta muutaman naapurin.	Ensi kuukausi alkaa pian.
+iltapäivä	afternoon	3	27c207741db98d3c64c679d703ec1faf	Tänä iltapäivänä juon kahvit ystäväni kanssa ja sitten käymme kävelyllä puistossa.	Iltapäivä on rauhallinen.
+yli	past / over	3	9dea42037ff08782f1269f1bacdb1af2	Kello on jo yli kymmenen, joten meidän kannattaa lähteä kotiin ennen viimeistä bussia.	Kello on yli viisi.
+viikonloppu	weekend	3	4ca94628d167986028d70f3b63bd4d23	Ensi viikonloppuna lähdemme mökille uimaan ja viettämään aikaa rauhassa koko perheen kanssa.	Viikonloppu on pian.
+aamulla	in the morning	3	1f7fe8482e287d61f20a44d38358fb2c	Aamulla juon aina kupin kahvia ja luen uutiset ennen kuin lähden töihin.	Nähdään huomenna aamulla.
+illalla	in the evening	3	e61f8790b5f99d030260b6edc0de4c2e	Illalla katson yleensä televisiota sohvalla ja menen nukkumaan melko aikaisin arkipäivisin.	Tavataan tänään illalla.
+aikaisin	early	3	72aacdf89b7dc56edc2c45d1d465b713	Heräsin tänään hyvin aikaisin, koska minulla oli tärkeä kokous jo kahdeksalta aamulla.	Menen nukkumaan aikaisin.
+myöhään	late	3	4eb03e85853332a8c39b8b01410edd6f	Eilen jäin töihin niin myöhään, että pääsin kotiin vasta puolenyön jälkeen.	Tulin kotiin myöhään.
+heti	immediately / right away	3	26fba8d1f56c3ec927c9a12b6f0b49bf	Soita minulle heti, kun pääset perille, niin tiedän, että matka sujui hyvin.	Tulen heti takaisin.
+pian	soon	3	df05afaddca1aee1146756dcdfc454db	Kesäloma alkaa jo pian, ja olen suunnitellut monta mukavaa matkaa ystävien kanssa.	Nähdään taas pian.
+kohta	soon / shortly	3	dd902935b42a28fdf67575e9b3aa5385	Ruoka on kohta valmista, joten kattakaa pöytä ja kutsukaa lapset sisälle pihalta.	Olen kohta valmis.
+joskus	sometimes	3	982e8530e361ec141d6b9e9b927f2378	Joskus illalla kävelen järven rantaan katsomaan auringonlaskua, kun sää on kaunis ja tyyni.	Käyn siellä joskus.
+koskaan	ever / never (with negation)	3	8671b749ad7c96b67771f313c20aeff4	En ole koskaan käynyt ulkomailla, mutta haaveilen pitkästä matkasta jonnekin lämpimään.	En tee sitä koskaan.
+taas	again	3	2c75e9f93e484043b49c4b2ce278025d	Olet taas unohtanut sulkea ikkunan, ja nyt koko huone on aivan kylmä.	Sataa taas vettä.
+ennen	before	3	a339be59d3ca2bb855d93b32e04c268f	Ennen nukkumaanmenoa luen aina vähän kirjaa, koska se auttaa minua rauhoittumaan illalla.	Pese kädet ennen ruokaa.
+jälkeen	after	3	69c2fc5a2c08374fa63c4643d3d9cb21	Ruoan jälkeen menimme kävelylle puistoon, koska sää oli yllättävän lämmin ja aurinkoinen.	Tule töiden jälkeen.
+viime	last (previous)	3	30b1be1df07f504b92c8645c19797be9	Viime viikolla kävin lääkärissä, ja onneksi kaikki tulokset olivat täysin kunnossa.	Viime kesä oli lämmin.
+ensi	next (upcoming)	3	9b09f695cd4d7559c8b0291549e0333f	Ensi viikolla minulla on tärkeä koe, joten minun täytyy lukea ahkerasti joka ilta.	Ensi vuonna muutan pois.
+seuraava	next / following	3	6f2351dd8b19f33ebb2a13c892fb7c68	Seuraava juna lähtee vasta tunnin kuluttua, joten ehdimme hyvin juoda kahvit asemalla.	Seuraava asema on suuri.
+vähemmän	less / fewer	3	38b849dd911481d6c285873f2aabb5df	Yritän syödä vähemmän sokeria, koska huomasin, että voin paljon paremmin ilman sitä.	Söin tänään vähemmän.
+liikaa	too much / too many	3	b58ac29ff8c6a5b05d3296af9b90ce5b	Join eilen liikaa kahvia, enkä saanut illalla unta moneen tuntiin sängyssä pyöriessäni.	Syöt aivan liikaa.
+tarpeeksi	enough	3	fa99fd667de41359d3968d307a6b8e2f	Meillä on tarpeeksi ruokaa koko viikoksi, joten kaupassa ei tarvitse käydä uudelleen.	Nyt on tarpeeksi.
+jokainen	each / every	3	532073cd0ff299f5b30f754e93cd2be4	Jokainen oppilas sai opettajalta oman kirjan, joka piti palauttaa lukukauden lopussa.	Jokainen sai lahjan.
+moni	many	3	735735aa594d4a2eda923d866879d5f2	Moni ystäväni on jo muuttanut toiseen kaupunkiin työn perässä, joten näemme harvoin.	Moni ihminen tuli.
+muutama	a few	3	5318b088770c3811e1f03f6c9b125ccc	Minulla on vielä muutama tehtävä jäljellä, ennen kuin voin lähteä rauhassa lomalle.	Otin muutaman omenan.
+jokin	some / something	3	65e56c75bd222a6f9fab9ab8c178e513	Jokin tässä asiassa vaivaa minua, mutta en osaa vielä tarkasti sanoa, mikä se on.	Jokin ääni kuuluu tuolta.
+osa	part / portion	3	43f38d003c06cca6687b5991a52787c1	Suuri osa ihmisistä lähti juhlista jo aikaisin, koska seuraavana päivänä oli töitä.	Osa kakusta jäi.
+melkein	almost	3	d5a16ac965a24eef5f0e7fcc1f527a62	Olin melkein myöhässä kokouksesta, koska bussi juuttui pahaan ruuhkaan keskellä kaupunkia.	Olen melkein valmis.
+noin	about / approximately	3	f3676e4e8c742b98d2124820cc6b121f	Matka mökille kestää noin kaksi tuntia autolla, jos tiellä ei ole liikaa ruuhkaa.	Tulen noin kello viisi.
+pystyä	to be able to / can manage	3	7fadd4b170a8400970ff63a38df9fa92	En pystynyt nostamaan raskasta laatikkoa yksin, joten pyysin naapuria auttamaan minua.	Pystyn tekemään sen.
+seisoa	to stand	3	4ff0e52cecfa0081fcf3a5b5572d1c94	Jouduin seisomaan bussissa koko matkan, koska kaikki istumapaikat olivat jo varattuja.	Hän seisoo ovella.
+uida	to swim	3	0f23e0c18c98be5d004f4519d2265d0b	Kesäisin käymme melkein joka päivä uimassa järvessä, kun vesi on tarpeeksi lämmintä.	Opettelen uimaan järvessä.
+kulkea	to go / to move along / to travel	3	2a7ef69b0e94010e19a80420dc79f791	Kuljen joka aamu saman reitin töihin, ja matkan varrella tervehdin aina samoja naapureita.	Juna kulkee hitaasti.
+palata	to return / to come back	3	c0721a7e782fc5cbd94eb8b5c7ba308b	Palaan lomalta ensi maanantaina ja toivon, että työt eivät ole kasaantuneet liikaa.	Palaan kohta takaisin.
+nostaa	to lift / to raise	3	f4bd72a00ba06f9980d3ee34ccb7c893	Pyysin kaveria auttamaan, kun en jaksanut yksin nostaa raskasta sohvaa portaita ylös.	Nosta laukku pöydälle.
+kantaa	to carry	3	6f5a6bc5900da83dfe255ee040037944	Kannoin kaikki raskaat ostoskassit neljänteen kerrokseen, koska hissi oli taas rikki.	Kannan laukkua kotiin.
+heittää	to throw	3	590569e6f325513d674276fa17c7d4ab	Lapset heittivät palloa pihalla niin kauan, että aurinko alkoi jo laskea metsän taakse.	Heitä pallo minulle.
+vetää	to pull	3	e5add0a02d1fe772dc08dff9b1c901af	Vedin oven kiinni varovasti, jotta en herättäisi nukkuvaa vauvaa viereisessä huoneessa.	Vedä ovi kiinni.
+kääntyä	to turn (oneself)	3	0e48a19add9d48aa843bc591cd6ce4ec	Käänny risteyksessä oikealle, niin näet kaupan heti vasemmalla puolella tien vieressä.	Käänny seuraavasta vasemmalle.
+kääntää	to turn / to translate	3	37b6f474e85d6dba52f28dcb03673089	Käänsin koko tekstin suomeksi, mutta muutama vaikea sana tuotti minulle paljon päänvaivaa.	Käännä sivu, kiitos.
+hypätä	to jump	3	f22680d88722eb86d1599e5abbf1ce23	Lapset hyppäsivät innoissaan laiturilta järveen, vaikka vesi oli vielä melko kylmää kesäkuussa.	Hyppää veteen rohkeasti.
+pudota	to fall / to drop	3	21b76b2740cc671affa5c9b1cad7b836	Lasi putosi pöydältä lattialle ja meni rikki, joten jouduin siivoamaan sirpaleet heti.	Avain putosi maahan.
+pyytää	to ask for / to request	3	202e5a7015038528c3a14e5d77250e93	Pyysin opettajalta lisäaikaa tehtävään, koska olin ollut sairaana koko edellisen viikon.	Pyydän sinulta apua.
+luvata	to promise	3	26a4c31c5ec8af011f50b0494c56aab8	Lupasin ystävälleni auttaa muutossa, joten en voi perua sitä, vaikka olen väsynyt.	Lupaan tulla ajoissa.
+kiittää	to thank	3	8d1972d13437882e2f8891e43e4f280c	Halusin kiittää naapuria avusta, joten vein hänelle pienen lahjan ja itse leipomani kakun.	Kiitän sinua avusta.
+keskustella	to discuss / to converse	3	1401a349de0b4d584e5644e098265886	Keskustelimme ystävän kanssa pitkään matkasuunnitelmista istuen mukavasti kahvilassa koko iltapäivän.	Keskustelemme asiasta huomenna.
+jutella	to chat	3	6f44ee73e88f2eb6d4f12cd8169653d2	Istuimme kahvilassa pari tuntia ja juttelimme niitä näitä vanhoista yhteisistä kavereistamme.	Juttelin naapurin kanssa.
+huutaa	to shout / to yell	3	260313d12acd56e9c80cc4d2741251e0	Valmentaja huusi pelaajille ohjeita kentän laidalta, mutta kukaan ei kuullut häntä kovan musiikin takia.	Älä huuda minulle.
+kutsua	to invite / to call	3	13f3d6209b96f6a71f17007dd5e8ddc2	Kutsuimme kaikki sukulaiset ja ystävät juhliin, joten talo oli illalla aivan täynnä iloisia ihmisiä.	Kutsuin hänet kylään.
+miettiä	to think over / to ponder	3	4a6aae0da3891ddd2386987f1b5ea471	Olen miettinyt jo pitkään, kannattaisiko minun vaihtaa työpaikkaa vai jäädä tähän tuttuun tehtävään.	Mietin asiaa hetken.
+huomata	to notice	3	05c05f55dcd7338a888cc6a0871cfeaa	Huomasin vasta kotona, että olin unohtanut lompakkoni kaupan kassalle ihan kiireen keskellä.	En huomannut sinua.
+toivoa	to hope / to wish	3	e35a1c11cef8c8f446995008a15b015f	Toivon todella, että huominen sää pysyy poutaisena, koska olemme suunnitelleet pitkän retken metsään.	Toivon sinulle hyvää.
+pelätä	to be afraid / to fear	3	673092efcecca98636be2b6d2362a224	Pieni lapsi pelkäsi pimeää niin kovasti, ettei suostunut nukkumaan ilman yövaloa huoneessaan.	Pelkään koiria.
+päättää	to decide / to end	3	fce498ddad59c98abdbfb731451dbc36	Pitkän pohdinnan jälkeen päätimme yhdessä, että muutamme ensi keväänä lähemmäs lasten koulua.	Päätin lähteä kotiin.
+aikoa	to intend / to be going to	3	b54c8def3c4992703e204c6abd78c31e	Aion ensi viikonloppuna siivota koko varaston ja heittää vihdoin pois kaiken turhan tavaran.	Aion mennä nukkumaan.
+tuntua	to feel like / to seem	3	49a2c7f23a5954f7e635f38a864c7155	Tämä viikko on tuntunut todella pitkältä, vaikka mitään erityisen raskasta ei ole oikeastaan tapahtunut.	Tuntuu hyvältä.
+vaikuttaa	to influence / to seem	3	24a75306a4bade986385bab43dc6e979	Liiallinen kahvin juonti vaikuttaa selvästi uneeni, sillä nukahtaminen on viime aikoina ollut vaikeaa.	Hän vaikuttaa väsyneeltä.
+työskennellä	to work	3	3e45eec12e0af83ef5eeec184d500c0c	Olen työskennellyt samassa yrityksessä jo kymmenen vuotta, mutta nyt kaipaisin jotain ihan uutta haastetta.	Työskentelen kotona tänään.
+rakentaa	to build	3	37e88e4be736f542cbe01592eae02a7e	Naapurit rakentavat parhaillaan uutta saunaa rantaan, ja vasaran ääni kuuluu meille asti joka päivä.	Rakennamme uuden talon.
+pelata	to play (a game)	3	e58f3b20f378633c30b93168a3016eb6	Lapset pelasivat koko illan lautapelejä olohuoneen lattialla, kunnes oli viimein aika mennä nukkumaan.	Pelataan jalkapalloa.
+laulaa	to sing	3	59dcd0d44fa906660377cfb602c7d34c	Mummo lauloi meille lapsuudessa joka ilta saman tutun kehtolaulun ennen kuin sammutti valot.	Hän laulaa kauniisti.
+tanssia	to dance	3	d8f1a72d3c4d4855a5237279bd1bc2fc	Häissä tanssittiin myöhään yöhön asti, ja jopa ujoimmat vieraat innostuivat lopulta lattialle.	Tanssitaan yhdessä.
+nauraa	to laugh	3	e5c6df8d1edb523c4d2649c5d0149be2	Nauroimme niin kovasti vanhalle vitsille, että silmistämme valuivat kyyneleet ja vatsaan koski.	Älä naura minulle.
+itkeä	to cry	3	e8486d7dd471715a66c78a820a8c3010	Vauva itki koko yön korvakivun takia, joten emme saaneet kunnolla nukuttua hetkeäkään.	Lapsi itkee kovasti.
+koskea	to touch / to concern / to hurt	3	7441ea29ac32727a4c37c2a2d2244e4a	Älä koske kuumaan liesilevyyn paljain käsin, koska siitä voi tulla todella ikävä palovamma.	Polveeni koskee.
+muuttua	to change (become different)	3	9d99abde5051fa838ceedcc07ad80796	Sää muuttui yllättäen sateiseksi juuri silloin, kun olimme lähdössä pitkälle pyöräretkelle.	Sää muuttui kylmäksi.
+lisätä	to add / to increase	3	314fa5ef5d1f0093bd00d0f0add2b7a6	Lisää keittoon vielä vähän suolaa ja mustapippuria, niin maku paranee huomattavasti.	Lisää vähän sokeria.
+loppua	to end / to run out	3	b7993951f4ac88a330c47b51ef67211c	Maito loppui juuri aamulla, joten jouduin lähtemään kauppaan ennen aamiaisen valmistamista.	Raha loppui.
+onnistua	to succeed	3	49a9743565ad97c17ae8cdc35a3e17f7	Yritimme monta kertaa, ja lopulta onnistuimme kokoamaan uuden kaapin ilman mitään ylimääräisiä osia.	Onnistuin vihdoin.
+lyhyt	short	3	481d5e9d764ebf374ad10885bb6159d9	Kesäloma tuntui tänä vuonna todella lyhyeltä, vaikka olin oikeasti vapaalla kokonaiset kolme viikkoa.	Tie on lyhyt.
+korkea	high / tall	3	445c2bb2f58a6777945b28f3270dc0a4	Talon katolle nouseminen tuntui pelottavalta, koska tikkaat olivat todella korkeat ja huojuivat tuulessa.	Vuori on korkea.
+paha	bad / evil / nasty	3	ac3a620cddea3458b3db29cebedc76f1	Hänellä oli koko päivän paha mieli riidasta, eikä mikään tuntunut piristävän häntä illallakaan.	Tämä on paha juttu.
+mukava	comfortable / pleasant / nice	3	33b05a333e2bfae343f4c7d841ddb810	Uusi nojatuoli on niin mukava, että nukahdan siihen melkein joka ilta kirjaa lukiessani.	Tämä sohva on mukava.
+ihana	wonderful / lovely	3	e7817f32e4a4ee9b6cd669bf9ab9f1a7	Ilta järven rannalla oli aivan ihana, kun aurinko laski hitaasti ja vesi oli peilityyni.	Sää on ihana.
+mahtava	awesome / mighty	3	ce8e080920dbec4f7d4a8085328f9ffc	Konsertti oli niin mahtava kokemus, että puhuimme siitä innoissamme vielä viikkoja jälkeenpäin.	Tämä on mahtava idea.
+kaunis	beautiful	3	aeda2806569848bb4f892ae3436e75a4	Syksyn värit metsässä olivat tänä vuonna poikkeuksellisen kauniit, kun lehdet hehkuivat punaisina ja keltaisina.	Hän on kaunis.
+kamala	terrible / awful	3	a7c9fc01b4cd16552c2d678ee3d0d29b	Eilinen myrsky oli aivan kamala, sillä tuuli kaatoi puita teille ja katkaisi sähköt koko kylästä.	Sää on kamala.
+kauhea	horrible / dreadful	3	a04645b9f3b9a360a8f162a0cb2ab93c	Minulla oli aamulla kauhea kiire töihin, joten ehdin juoda vain puolikkaan kupin kahvia.	Tämä on kauhea paikka.
+hirveä	horrible / terrible	3	b42d51f6b0d6bac90b39c17bfdc8e147	Liikenteessä oli aamulla hirveä ruuhka onnettomuuden takia, ja olin myöhässä kokouksesta lähes tunnin.	Minulla on hirveä jano.
+väärä	wrong / false	3	7898a38bc3bba8e28a16c873a561680b	Annoin vahingossa väärän osoitteen taksikuskille, joten ajoimme aivan toiselle puolelle kaupunkia.	Tämä on väärä vastaus.
+varma	sure / certain	3	434eb8d3ae761237261a98bee14f21ca	En ole vielä aivan varma siitä, ehdinkö juhliin, koska töitä on tällä viikolla todella paljon.	Olen varma asiasta.
+selvä	clear / sober / okay	3	4503fd4fb787cbe3b6513637bd9c1d12	Opettajan ohjeet olivat niin selvät, että jokainen oppilas ymmärsi tehtävän heti ensimmäisellä kuulemalla.	Selvä, teen sen.
+nopea	fast / quick	3	2564e64ee4446d36a93d71989327218c	Uusi juna on niin nopea, että matka pääkaupunkiin lyheni lähes tunnilla entiseen verrattuna.	Auto on nopea.
+hidas	slow	3	bd7bd1e08994ba8fdc15764284162497	Verkkoyhteys oli mökillä niin hidas, ettei yhdenkään videon katsominen tuntunut käytännössä lainkaan mahdolliselta.	Tietokone on hidas.
+täysi	full	3	8bd76667e05086bf4e67005213e4d817	Bussi oli aamulla niin täysi, etten mahtunut kyytiin ja jouduin odottamaan seuraavaa vuoroa.	Lasi on täysi.
+tyhjä	empty	3	e3cdbe2a7be88a1b942bf3008d92d78d	Jääkaappi oli loman jälkeen aivan tyhjä, joten meidän oli pakko lähteä heti suurelle ruokaostokselle.	Pullo on tyhjä.
+raskas	heavy	3	45da3b98ff3ad3a013f8bffede34a145	Matkalaukku oli niin raskas, että jouduin pyytämään apua sen nostamiseen junan tavarahyllylle.	Tämä laatikko on raskas.
+kevyt	light (weight)	3	7c173d2918d5d18b01d55b37e39204bb	Otin reissulle mukaan vain kevyen rinkan, koska halusin liikkua nopeasti enkä kantaa turhaa painoa.	Tämä takki on kevyt.
+kova	hard / loud / tough	3	1e09167fe2d57c9ac66a8bdfbf3550e7	Sängyn patja oli hotellissa niin kova, etten saanut kunnolla nukuttua koko yön aikana.	Leipä on kova.
+pehmeä	soft	3	0c30fcb57772c4af1ef0567e8ec770df	Uusi tyyny on niin pehmeä ja mukava, että nukahdan nykyään paljon nopeammin kuin ennen.	Sänky on pehmeä.
+vahva	strong	3	d9bb9ba644ae7e91ecaa6bc4b2d7aed2	Aamukahvi oli niin vahva, että sydämeni hakkasi koko aamupäivän enkä saanut keskityttyä mihinkään.	Hän on vahva.
+tylsä	boring / dull / blunt	3	dc85e8a448f531363ce4809f94708570	Elokuva oli niin tylsä, että puolet katsojista nukahti jo ennen kuin juoni edes kunnolla alkoi.	Tämä kirja on tylsä.
+hauska	fun / funny	3	f273bc33c2dc3a2444e151ad5555caca	Eilinen ilta kavereiden kanssa oli todella hauska, ja nauroimme yhdessä vanhoille muistoille pitkään.	Tämä peli on hauska.
+iloinen	happy / glad	3	f74cdb8584ad97cdf5d6560596da6982	Olin todella iloinen, kun vanha ystäväni soitti yllättäen ja kertoi tulevansa käymään ensi viikolla.	Lapsi on iloinen.
+surullinen	sad	3	537584268893a41d9e9f77cceb6fe887	Elokuvan loppu oli niin surullinen, että moni katsoja pyyhki silmistään kyyneleitä salista poistuessaan.	Hän on surullinen.
+vihainen	angry	3	885b4e49f165ba28dc8dd1cbb2983b46	Naapuri oli todella vihainen yöllisestä metelistä ja tuli aamulla valittamaan asiasta heti ovellemme.	Äiti on vihainen.
+onnellinen	happy	3	01fbe0f0f54d2f6f605f38366697104e	He näyttivät häissään niin onnellisilta, että ilo tuntui tarttuvan kaikkiin paikalla olleisiin vieraisiin.	Olen onnellinen.
+ystävällinen	friendly / kind	3	1affc896938f1fe71d3392842d68e051	Kaupan myyjä oli niin ystävällinen ja avulias, että löysin hänen avullaan oikean tuotteen heti.	Hän on ystävällinen.
+tyhmä	stupid	3	69320f7dda898629040d7ca458414d31	Tein eilen aika tyhmän virheen, kun lähetin sähköpostin väärälle henkilölle koko työporukan nähden.	Tämä oli tyhmä idea.
+erilainen	different	3	c8981a0c204747d6fad299e9bf9b1856	Kaksoset näyttävät samanlaisilta, mutta luonteeltaan he ovat täysin erilaisia kuin yö ja päivä.	Tämä on erilainen.
+samanlainen	similar / alike	3	6f05a7a31ddd44ef5702ff0119f15703	Ostin lopulta lähes samanlaisen takin kuin siskollani, koska se istui minulle todella hyvin.	Meillä on samanlainen paita.
+tavallinen	ordinary / usual	3	0eedde90c04e4924e14ffa37e78ccb0d	Se oli aivan tavallinen arkipäivä, kunnes illalla saimme yllättäen iloisen uutisen puhelimitse.	Tämä on tavallinen päivä.
+normaali	normal	3	755cd87c9b39e2ab360a7e70527be9ff	Lääkäri sanoi, että verikokeiden tulokset olivat täysin normaalit eikä syytä huoleen ole lainkaan.	Kaikki on normaalia.
+outo	strange / weird	3	2f9c6d6b09425a094f24327b524d2d99	Kuulin yöllä keittiöstä oudon äänen ja menin tarkistamaan, mutta kaikki näytti olevan ihan kunnossa.	Tämä maku on outo.
+huonosti	badly	3	be45cad89fd76b4856fa8393a4eda3c1	Nukuin viime yönä todella huonosti, joten koko päivän keskittyminen töihin tuntui erityisen vaikealta.	Nukuin huonosti.
+nopeasti	quickly	3	8cc1f38a01a9535430aef50cb938bf3d	Söin aamiaisen niin nopeasti, että ehdin juuri ja juuri ensimmäiseen bussiin ennen sen lähtöä.	Hän juoksee nopeasti.
+hitaasti	slowly	3	bd94c4c6afbdeb28a9c202714f6b5b46	Liikenne eteni aamuruuhkassa niin hitaasti, että ehdin lukea melkein kokonaisen luvun kirjastani.	Kävele hitaasti.
+kovaa	loudly / fast / hard	3	45baf8d72cb7dd0bdc200ca5af90ac4b	Naapurit soittivat musiikkia niin kovaa, etten kuullut omia ajatuksiani enkä saanut nukuttua lainkaan.	Älä puhu niin kovaa.
+hiljaa	quietly / slowly	3	69d721fdc50893b16e08b92e21fbe60c	Puhuimme hiljaa keittiössä, jotta emme herättäisi vauvaa, joka oli vihdoin nukahtanut viereiseen huoneeseen.	Puhu hiljaa.
+hiljainen	quiet / silent	3	ead4503632778e9c98f3db09206c3dd4	Kirjasto oli sunnuntaiaamuna niin hiljainen, että pystyin keskittymään lukemiseen ilman pienintäkään häiriötä.	Huone on hiljainen.
+yhdessä	together	3	08be66c182457517136349815f3470c1	Vietimme koko viikonlopun yhdessä mökillä, uimme järvessä ja paistoimme makkaraa nuotiolla iltaisin.	Tehdään tämä yhdessä.
+yksin	alone	3	81f203c27b0daa851819ee4cbc1f23dd	Asuin ensimmäisen vuoden täysin yksin uudessa kaupungissa, ennen kuin sain vihdoin uusia ystäviä.	Olen kotona yksin.
+oikein	very / correctly	3	9698e71f27244a2b07f426d2ad3b5069	Vastasit kysymykseen aivan oikein, vaikka se oli mielestäni todella vaikea ja monimutkainen.	Teit sen oikein.
+melko	fairly / quite	3	05030b6de04ebc49f5e78e572aa68ec0	Sää on tänään melko kylmä, joten ota lämmin takki mukaan ennen kuin lähdet ulos.	Olen melko väsynyt.
+täysin	completely / fully	3	f047e3e30af6c1fd7530c6250dc39b89	Olen täysin samaa mieltä kanssasi siitä, että meidän pitäisi lähteä matkalle ensi kesänä.	Akku on täysin tyhjä.
+erittäin	extremely / very	3	d8a2d78bbf15a4ae55bfc9b5a66b140f	Tämä ravintola on erittäin suosittu, joten kannattaa varata pöytä hyvissä ajoin etukäteen.	Ruoka oli erittäin hyvää.
+lähes	nearly	3	0923c13970a7788d17d167f2c84d64d7	Olen lukenut tätä kirjaa jo lähes kaksi viikkoa, mutta se on edelleen kesken.	Olen lähes valmis.
+yleensä	usually	3	05ebc4ec0c62566d5151f654b39dd71e	Yleensä herään aamulla seitsemältä, mutta viikonloppuisin nukun mielelläni hieman pidempään.	Yleensä juon kahvia.
+joka päivä	every day	3	e3b2fc3500d892c96d3210d28d82ed2b	Käyn joka päivä lenkillä metsässä, koska se piristää mieltä ja pitää kunnon hyvänä.	Syön puuroa joka päivä.
+uudelleen	again / anew	3	3966b5a4ca9c1baae68c2355ef16276f	Jos ohjelma ei toimi kunnolla, kokeile käynnistää tietokone uudelleen ja avaa sovellus sen jälkeen.	Yritä uudelleen.
+pitää jostakin	to like something	3	860dfdc085dff72912cc81c21e67ba85	Pidän kovasti suomalaisesta luonnosta, erityisesti syksyllä, kun lehdet vaihtavat väriään metsässä.	Pidän tästä laulusta.
+ladata	to charge / to load / to download	3	e7757d936b63c4a67d878fc4cbc73e21	Muista ladata puhelin täyteen illalla, ettei akku lopu kesken huomisen pitkän työpäivän.	Lataan uuden sovelluksen.
+internet	the internet	3	e070503dc6eb5df8ef4f6d6523d39879	Etsin internetistä tietoa parhaista matkakohteista, mutta vaihtoehtoja oli niin paljon, etten osannut päättää.	Internet on hidas tänään.
+verkko	network / web / grid	3	d76c071ab1da0bda5b13d235038890d2	Junassa langaton verkko toimii usein huonosti, joten lataan tärkeät tiedostot jo ennen matkaa.	Verkko ei toimi.
+wifi	Wi-Fi	3	5f27dde10bfa8adadfd122521b0a01ef	Kahvilan wifi on ilmainen, mutta sinun täytyy kysyä salasana tiskiltä ennen kuin pääset verkkoon.	Mikä on wifin salasana?
+salasana	password	3	e7e941b1f09f266540c6780db51d5f58	Vaihdoin salasanan pidemmäksi ja turvallisemmaksi, koska vanha oli aivan liian helppo arvata.	Unohdin salasanan.
+sovellus	application / app	3	79a396bdfdb565d8af873591555a936f	Lataa tämä sovellus puhelimeesi, niin voit seurata junien aikatauluja ja ostaa liput suoraan kännykällä.	Tämä sovellus on hyvä.
+ohjelma	program / software / show	3	87a4769c03a3296c842dfba37fa140fa	Illan ohjelma alkaa kahdeksalta, joten ehdimme vielä syödä rauhassa ennen kuin se alkaa televisiossa.	Katson tätä ohjelmaa.
+peli	game	3	2cc8c139b110ce0fcd563c869ac85f6a	Lapset pelasivat pelejä koko illan, joten muistutin heitä, että nukkumaan pitää mennä ajoissa.	Tämä peli on hauska.
+video	video	3	701d5cbd7d1762773fc8adf4cde79aa2	Katsoin netistä videon, jossa opetettiin tekemään tämä ruoka helposti ja nopeasti kotona alusta loppuun.	Katson lyhyen videon.
+sivu	page / side	3	175360e22123d582fac25eb85767842c	Avaa kirjan sivu kolmekymmentä, niin voimme lukea tehtävän yhdessä ja vastata kysymyksiin vihkoon.	Käännä sivu.
+hakea	to search / to fetch / to apply for	3	9cec76f98bdbe8c4b6bbabf7115a5205	Päätin hakea uutta työpaikkaa, koska halusin oppia uusia asioita ja saada lisää vastuuta.	Haen lapset koulusta.
+painaa	to press / to push / to weigh	3	7adbebf6b6ef67b07c4a13efbd9e64bb	Paina nappia kaksi sekuntia, niin laite käynnistyy ja valo alkaa vilkkua sinisenä.	Paina tästä napista.
+seurata	to follow / to watch / to track	3	806fdd037be4dfa240f0aa70c5999000	Seuraan tarkasti uutisia maailman tapahtumista, mutta joskus se tuntuu raskaalta ja stressaavalta arjessa.	Seuraan tätä tiliä.
+uutinen	news item / piece of news	3	833cac1ec67b7284e871aa6223e1d013	Luin lehdestä mielenkiintoisen uutisen uudesta sillasta, joka rakennetaan kaupunkimme keskustaan ensi vuonna.	Sain hyvän uutisen.
+uutiset	the news	3	5d1c812f6944d8eb4073c62e49e7083c	Katson uutiset joka ilta kahdeksalta, jotta tiedän, mitä maailmalla ja Suomessa on sinä päivänä tapahtunut.	Uutiset alkavat nyt.
+elokuva	movie / film	3	426e09a8e6b5fc66ce16a6d93e4c2b29	Kävimme eilen katsomassa elokuvan, joka oli niin jännittävä, etten malttanut irrottaa katsettani valkokankaasta.	Katsotaan elokuva illalla.
+ääni	sound / voice / vote	3	9c3ac870cc0c4c1b4497fac0bd2ef44d	Naapurin koira haukkui yöllä niin kovalla äänellä, etten saanut nukuttua moneen tuntiin lainkaan.	Kuulin oudon äänen.
+tieto	information / knowledge / data	3	669a773d2cfa91b8bd0267f7a5cc299b	Tarvitsen lisää tietoa tästä aiheesta, ennen kuin pystyn tekemään lopullisen päätöksen koko perheen puolesta.	Tämä on tärkeä tieto.
+toimia	to work / to function / to act	3	d5a3e8647444131dcd596e57cc8119e7	Uusi pesukone toimii hienosti, mutta sen käyttöohje oli niin sekava, että jouduin soittamaan asiakaspalveluun.	Tämä ei toimi.
+ongelma	problem	3	37fee92434be55e760e925f2091dd1a3	Meillä on pieni ongelma matkasuunnitelmassa, koska lento myöhästyi emmekä ehdi jatkoyhteyteen ajoissa.	Minulla on ongelma.
+merkki	sign / brand / mark / character	3	e604d81f0a8e5e6f8360d90ecc6652bd	Tien varressa oli merkki, joka kielsi pysäköinnin, joten jouduimme etsimään autolle paikan kauempaa.	Mikä merkki tuo on?
+vai	or (in questions)	3	6825e367626d14c6580fdc500546a2b5	Haluatko juoda kahvia vai teetä, vai ottaisitko mieluummin lasin kylmää vettä ruoan kanssa?	Tuletko sinä vai minä?
+vaikka	although / even though / even if	3	035de960126e2e9a3e6a9da1dd77f01d	Lähdimme metsään kävelylle, vaikka sää näytti sateiselta ja taivas oli täynnä tummia pilviä.	Tulen, vaikka sataa.
+kuin	than / as (in comparisons)	3	f919c99c95aac152f5201248c8faf79c	Tämä talvi on ollut paljon kylmempi kuin viime vuonna, ja lunta on satanut tavallista enemmän.	Hän on pidempi kuin minä.
+siis	so / therefore / thus	3	1ad7601a928742ffcba312ae33d7812b	Kauppa menee jo kohta kiinni, meidän pitää siis lähteä heti, jos haluamme ehtiä ostoksille.	Olet siis valmis.
+kuitenkin	however / still / nevertheless	3	567c41ae816c679e37826f9aac632aaf	Sää oli huono ja kylmä, mutta päätimme kuitenkin lähteä retkelle, koska olimme suunnitelleet sitä pitkään.	Tulin kuitenkin paikalle.
+esimerkiksi	for example	3	d6b326f6c4997f61569daaf7eb57bfb1	Voit harrastaa monia lajeja talvella, esimerkiksi hiihtoa, luistelua tai pitkiä kävelyretkiä lumisessa metsässä.	Pidän hedelmistä, esimerkiksi omenoista.
+tietysti	of course	3	8908f8604d5e3437d341574a7057936d	Tietysti autan sinua muutossa ensi viikonloppuna, kunhan muistat ilmoittaa minulle ajoissa tarkan kellonajan.	Tietysti tulen mukaan.
+varmaan	probably / surely	3	1343187fdf14eb441b91cfe467b126b0	He ovat varmaan jo matkalla tänne, koska he lähtivät kotoa yli tunti sitten ja matka on lyhyt.	Hän on varmaan kotona.
+varmasti	certainly / surely	3	7f61c9296633acf50249254cb379def0	Tämä lääke auttaa varmasti päänsärkyyn, mutta muista ottaa se ruoan kanssa, ettei vatsa ala oireilla.	Tulen varmasti huomenna.
+mikään	any / anything (in negatives)	3	8ab139f533a29684803610bc2da0bf7d	Mikään ruoka ei maistunut minulle eilen illalla, koska olin niin väsynyt pitkän työpäivän jälkeen.	Mikään ei toimi.
+kukaan	anyone / no one (in negatives)	3	82bd20cc29b5faeaca554e115cff21d9	Kukaan ei tiennyt vastausta opettajan kysymykseen, joten luokassa oli pitkään aivan hiljaista ja kiusallista.	Kukaan ei tullut.
+muu	other / else	3	bc10bac5767cf0be78c89e48bf4e2cb6	En halunnut mitään muuta lahjaksi kuin yhteistä aikaa perheen kanssa rauhallisena joulun pyhänä.	Onko muuta asiaa?
+itse	self / oneself	3	968eaaaa068ce8f93361f2f6f88b562a	Tein itse koko ruoan alusta loppuun, vaikka resepti oli pitkä ja vaati paljon kärsivällisyyttä.	Tein sen itse.
+ilman	without	3	8e633fe77acab4fdf3a7f45f29a2af91	Lähdin aamulla kiireessä töihin ilman aamupalaa, joten olin keskipäivällä todella nälkäinen ja väsynyt.	En tule ilman sinua.
+takia	because of / due to	3	8a9bf7c3136a923451f435c13e36b96d	Juna myöhästyi lumimyrskyn takia, joten jouduimme odottamaan asemalla kylmässä lähes kokonaisen tunnin.	Tulin sinun takiasi.
+mukaan	according to / along with	3	404d5a6db6cf635f83ecfd39043b80fc	Sääennusteen mukaan huomenna sataa lunta, joten kannattaa ottaa lämpimät vaatteet ja kunnon kengät mukaan.	Ota kirja mukaan.
+päällä	on top of / on	3	ab7c9e875d2ad24a5791ac7e7fe36ad0	Avaimet ovat pöydän päällä keittiössä, lasin vieressä, mihin jätin ne eilen illalla kotiin tultuani.	Kissa on tuolin päällä.
+alla	under / below	3	beb10db7751f292cfcfe970ec9d77dce	Kissa nukkuu mielellään sängyn alla, koska siellä on hämärää ja rauhallista keskellä kiireistä päivää.	Koira on pöydän alla.
+ulkona	outside	3	d65b7c42bc109ab4547f356d64864a0f	Lapset leikkivät ulkona koko iltapäivän, vaikka oli kylmä, ja tulivat sisään vasta pimeän tultua.	Ulkona sataa lunta.
+juttu	thing / story / matter	3	1861cb360c38cff88164240f07b3d17a	Minulla olisi yksi tärkeä juttu, josta haluaisin puhua kanssasi rauhassa heti tämän kokouksen jälkeen.	Se on hieno juttu.
+tapa	way / manner / habit / custom	3	8cf5b730efa9b94e99463d5480968231	Hänellä on tapana juoda kahvi joka aamu sanomalehden ääressä ennen kuin lähtee kiireellä töihin.	Se on hyvä tapa.
+syy	reason / cause	3	ce7f64b0d15b9b6a38420d22d81c15ce	En tiedä tarkkaa syytä, miksi hän ei tullut juhliin, mutta toivottavasti mitään pahaa ei sattunut.	Mikä on syy?
+ajatus	thought / idea	3	d436f32ca8011291f513ef86cd1b73f2	Minulle tuli yhtäkkiä hyvä ajatus, miten voisimme ratkaista tämän ongelman ilman suuria kustannuksia tai vaivaa.	Se on hyvä ajatus.
+idea	idea	3	dbe5ad581aaf8233cc4683b502376846	Sinulla oli loistava idea järjestää yllätysjuhlat, mutta meidän pitää suunnitella kaikki tarkasti, ettei se paljastu etukäteen.	Minulla on idea.
+mieli	mind / mood / opinion	3	08a463b0da040bdded77f38594d8d839	Minun mieleni muuttui täysin, kun kuulin uutiset, ja päätin lopulta jäädä kotiin koko viikonlopuksi.	Minulla on hyvä mieli.
+mahdollisuus	possibility / chance / opportunity	3	17dff49bc53a1b340952c838f50f41c7	Sain töissä mahdollisuuden matkustaa ulkomaille ensi keväänä, enkä halua missään tapauksessa jättää sitä käyttämättä.	Tässä on hyvä mahdollisuus.
+tilanne	situation	3	81cc59dec690952a13b97bdc04789cb4	Tilanne työpaikalla on muuttunut viime kuukausina paljon, mutta uskon silti, että kaikki järjestyy lopulta hyvin.	Tilanne on vaikea.
+muutos	change	3	551953bf98fd212c7feb435acda6b066	Sään äkillinen muutos yllätti meidät metsässä täysin, joten jouduimme palaamaan kotiin paljon suunniteltua aikaisemmin.	Tämä on iso muutos.
+tapaus	case / instance / event	3	d365d336bb1271ea1f2a534d0eddea44	Tämä on hyvin harvinainen tapaus, jossa lääkäri suosittelee lepoa lääkkeiden sijaan parin viikon ajaksi.	Se oli outo tapaus.
+mahdollinen	possible	3	4c170b55fd1f2b8e8311f504a9b4355a	Yritämme löytää parhaan mahdollisen ratkaisun ongelmaan, jotta kaikki osapuolet olisivat lopputulokseen tyytyväisiä ja onnellisia.	Onko se mahdollista?
+loppu	end	3	3b4bbcd11f86c42f48664233bd4edce8	Elokuvan loppu oli niin yllättävä ja koskettava, että koko sali oli pitkään aivan hiljaa lopputeksteissä.	Kirjan loppu on hyvä.
+alku	beginning / start	3	7b1a639e1cc5674223a70e92725a543f	Vuoden alku oli kiireinen ja raskas, mutta nyt keväällä elämä on rauhoittunut huomattavasti mukavammaksi.	Tämä on vasta alku.
+ainakin	at least	3	55b4811876fdef5bd7872b261edabf04	En tiedä, ehdinkö juhliin, mutta ainakin yritän tulla käymään hetkeksi illan aikana, jos vain pääsen.	Soita ainakin minulle.
+vasta	only / not until	3	08b420b34c7fecad498dd876dd5de65d	Pääsin kotiin töistä vasta myöhään illalla, joten en ehtinyt laittaa kunnon ruokaa lainkaan.	Tulin vasta äsken.

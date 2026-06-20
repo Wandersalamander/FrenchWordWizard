@@ -1,0 +1,54 @@
+こんにちは (konnichiwa)	hello / hi	0	29e6adc303e459341b7fecbf37ef069f	こんにちは、お久しぶりですね、お元気にしていましたか。	こんにちは。
+さようなら (sayōnara)	goodbye	0	129519c57259222ece6954d7d36306a1	それではさようなら、また近いうちにお会いしましょう。	さようなら。
+おはようございます (ohayō gozaimasu)	good morning	0	dd9882a1d2ed615742b4ea05b8b02a59	おはようございます、今日もよろしくお願いします。	おはよう。
+こんばんは (konbanwa)	good evening	0	ce8de15977e84e33f37b07a8654ea773	こんばんは、今夜はお越しいただきありがとうございます。	こんばんは。
+おやすみなさい (oyasuminasai)	good night	0	634cb3ae2dcab9b10224070400679add	もう遅いので、おやすみなさい、また明日。	おやすみ。
+お願いします (onegai shimasu)	please	0	e3df0ab8dbed2e663c10729ac78d1994	すみませんが、こちらをお願いします。	お願いします。
+ありがとうございます (arigatō gozaimasu)	thank you	0	d6c129d58eabed0ce8ac99b7300d1424	ご親切にしていただき、ありがとうございます。	ありがとう。
+どうもありがとうございます (dōmo arigatō gozaimasu)	thank you very much	0	154c11b33a9413c9a86edea0ce707a46	いろいろお世話になりまして、どうもありがとうございます。	どうもありがとう。
+どういたしまして (dō itashimashite)	you're welcome	0	23aec56d301784d4360ac820a9dea69f	どういたしまして、いつでもお手伝いしますよ。	どういたしまして。
+すみません (sumimasen)	excuse me / sorry	0	6095e8f2407fe5475f1927672eba42e1	すみません、駅はどこか教えていただけますか。	すみません。
+ごめんなさい (gomen nasai)	I'm sorry	0	8da1b22dc915dcc83a4a792f213487ed	昨日のことは本当にごめんなさい、傷つけるつもりはありませんでした。	ごめんなさい。
+はい (hai)	yes	0	a2ba163b9b6062ab141943d86b2f5262	はい、おっしゃる通りで、私も賛成です。	はい。
+いいえ (iie)	no	0	f9ecfb6fbc6355e2d5fd93d8245dfad5	いいえ、それは私のものではありません。	いいえ。
+たぶん (tabun)	maybe	0	b7e33af11a38ca6a3965bb24baedaca6	たぶん明日は雨が降ると思います。	たぶん。
+お元気ですか (ogenki desu ka)	how are you?	0	226ea198855fd987537c72db5072b1bd	お久しぶりですが、お元気ですか。	元気？
+元気です (genki desu)	I'm fine	0	97a313a5db32b6e3a18d5e7f0b4b112f	おかげさまで、とても元気です。	元気です。
+お名前は何ですか (onamae wa nan desu ka)	what's your name?	0	e3d6c086644a0fca5f0bb62ab4e23e5d	すみませんが、お名前は何ですか。	名前は？
+私の名前は…です (watashi no namae wa … desu)	my name is ...	0	04ec308ce44ca554902e521935d35219	はじめまして、私の名前は田中です。	…です。
+はじめまして (hajimemashite)	nice to meet you	0	8c907c76200266ab42b58a76f4932251	はじめまして、どうぞよろしくお願いします。	はじめまして。
+英語を話せますか (eigo o hanasemasu ka)	do you speak English?	0	d8b46c7e789fa3f19eb062c51a8de860	すみませんが、英語を話せますか。	英語、話せますか？
+わかりません (wakarimasen)	I don't understand	0	32d7ca3aa18e57cbc3deff832479d141	すみません、意味がよくわかりません。	わかりません。
+知りません (shirimasen)	I don't know	0	3f2df5450391a2b8161d3287a9018edb	申し訳ありませんが、それは知りません。	知りません。
+助けて (tasukete)	help!	0	da78c574b3162abc7c42c4c06e3ecd00	誰か助けて、ここから出られません。	助けて！
+もっとゆっくり話してください (motto yukkuri hanashite kudasai)	please speak more slowly	0	cbd260c45bafd9df7147c152f0404f94	日本語がまだ下手なので、もっとゆっくり話してください。	ゆっくりお願いします。
+もう一度言ってもらえますか (mō ichido itte moraemasu ka)	can you repeat that?	0	05da55ec4325259273083b53e7da89ce	よく聞こえなかったので、もう一度言ってもらえますか。	もう一度お願いします。
+…は何と言いますか (… wa nan to iimasu ka)	how do you say ...?	0	b9b183d180ef48a4493003c714a88b61	これは日本語で何と言いますか。	何と言いますか？
+どこ (doko)	where?	0	965eff8f9217233f18a7991f8c173f1a	すみません、駅はどこですか。	どこ？
+いつ (itsu)	when?	0	9ba252ca825ec35caa90633ae7753bf4	次の電車はいつ来ますか。	いつ？
+なぜ (naze)	why?	0	3ff080c449138f82836c95b98e5cb724	なぜ電車はこんなに遅れているのですか。	なぜ？
+どうやって (dō yatte)	how?	0	284b29c7a7dd2fef04139df9efa5ba39	駅まではどうやって行けばいいですか。	どうやって？
+誰 (dare)	who?	0	f5131a2212a15c5f208d86f74df634f3	あそこに立っている人は誰ですか。	誰？
+何 (nani)	what?	0	18d2e1f8bcd25ca6993df2f0c414e2c9	それは一体何ですか。	何？
+いくらですか (ikura desu ka)	how much is it?	0	cd4b3692d124716d7bd858cb76e1e0c8	すみません、これはいくらですか。	いくらですか？
+トイレはどこですか (toire wa doko desu ka)	where is the toilet?	0	e47decebec60b2bc3be64ed60c8cd12b	すみませんが、トイレはどこですか。	トイレはどこ？
+…が欲しいです (… ga hoshii desu)	I would like ...	0	b44a97f385b923b3f0880d6d7c8ed437	メニューを見て、これが欲しいです。	これが欲しいです。
+お会計をお願いします (okaikei o onegai shimasu)	the bill, please	0	bf3bf781ee16f301dccb4fc62d26d413	すみません、そろそろお会計をお願いします。	お会計お願いします。
+水 (mizu)	water	0	4a9acfd90c495e11f210da1603200b73	すみません、お水を一杯ください。	水。
+食べ物 (tabemono)	food	0	42aa6464026703e5b2253943add9c965	この辺りに何かおいしい食べ物はありますか。	食べ物。
+お腹が空きました (onaka ga sukimashita)	I'm hungry	0	cf25af80d7e879a02864b9c6124a9006	朝から何も食べていないので、お腹が空きました。	お腹空いた。
+喉が渇きました (nodo ga kawakimashita)	I'm thirsty	0	d74c96c1d97eff771255682bbabb12a0	暑くて喉が渇きましたので、飲み物が欲しいです。	喉が渇いた。
+乾杯 (kanpai)	cheers!	0	e5a0918a00d85c914d1bd889b4d08595	今日はお疲れさまでした、では乾杯しましょう。	乾杯！
+今日 (kyō)	today	0	c14220e9fe8c648cabe97317eb8f9462	今日はとても良い天気ですね。	今日。
+明日 (ashita)	tomorrow	0	f2606cd25b41c213ca941814728fe6f2	明日の朝、また駅で会いましょう。	明日。
+昨日 (kinō)	yesterday	0	dc5621e35abeb004f36a3f4110ede94a	昨日は一日中雨が降っていました。	昨日。
+今 (ima)	now	0	12a3d17b9c55ef5158456e261a0ec4a1	今すぐそちらに向かいます。	今。
+右に (migi ni)	to the right	0	c5df44ce7f948d1d8f8a73f2f9c1db8a	次の角を右に曲がってください。	右に。
+左に (hidari ni)	to the left	0	adcfab6cad4baf02ff2976ce2b9abc61	あの信号を左に曲がると駅があります。	左に。
+まっすぐ (massugu)	straight ahead	0	b34b8111b4108837a0c2725acba496c7	この道をまっすぐ行ってください。	まっすぐ。
+止まって (tomatte)	stop!	0	ea19cb478391b965f1d9569791b077f9	危ないので、そこで止まってください。	止まって！
+開いている (aite iru)	open	0	b6e9c441fcf788db2b5a1ab4abb941b6	この店はまだ開いていますか。	開いている。
+閉まっている (shimatte iru)	closed	0	ca66d05ced18ba743783726aed42e5a0	残念ながら、その店はもう閉まっています。	閉まっている。
+愛しています (aishite imasu)	I love you	0	c339b27f11bb2954e8c99d3a3cbc519b	これからもずっとあなたを愛しています。	愛してる。
+ようこそ (yōkoso)	welcome	0	bc15285de47312c59bb5c1b87fe713a6	日本へようこそ、お会いできて嬉しいです。	ようこそ。
+頑張ってください (ganbatte kudasai)	good luck	0	73a1ec469ec58dfba07d57517446429e	明日の試験、頑張ってください。	頑張って。

@@ -1,0 +1,219 @@
+親族 (shinzoku)	kin, relatives	9	137be26a012b75904627e7f077e814b3	遺産をめぐって親族の間で争いが起きた。	親族が集まる。
+末裔 (matsuei)	descendant, scion	9	468870f0cde6cd663bd8b180f94cdbd1	彼は古い武士の家系の末裔だと言われている。	王家の末裔。
+祖先 (sosen)	ancestors	9	e3ad22657c892b1555c29ee6918cc80e	我々の祖先は遠い昔この島に渡ってきた。	祖先を敬う。
+系譜 (keifu)	genealogy, lineage	9	f527ca32eda85e0d1cda0514f38f0a98	その一族の系譜は数百年前までさかのぼれる。	系譜をたどる。
+遺伝 (iden)	heredity	9	4b21ba448d39bf6a79e42f563a1902a3	この病気は遺伝によるものだと診断された。	遺伝の影響だ。
+戸籍 (koseki)	family register	9	aa6bd7c111ff3bd364ebe4338189f8c6	結婚すると二人は新しい戸籍を作ります。	戸籍を取る。
+扶助 (fujo)	aid, support (of dependents)	9	4f2cea30e92cb181b3f45c050089314f	国は生活に困る人々に扶助を行っている。	扶助を受ける。
+看護 (kango)	nursing (care of the sick)	9	bbb98479f864159ef3e1527e94ab58ff	彼女は病院で患者の看護にあたっている。	看護の仕事。
+老衰 (rōsui)	death from old age	9	aac472e75b321388a2372589295430ff	祖母は大きな病もなく老衰で亡くなった。	老衰で逝く。
+胎児 (taiji)	fetus	9	cba4cbcca204722c31e140274d5a9c07	超音波で胎児の心臓の動きを確認した。	胎児が育つ。
+腫瘍 (shuyō)	tumor	9	10e021dec1e32c27063e283d205d0230	検査の結果、胃に小さな腫瘍が見つかった。	腫瘍を取り除く。
+鼓動 (kodō)	heartbeat	9	d170abd1cf5395dd13d49acf8c04e734	緊張のあまり心臓の鼓動が速くなった。	鼓動が高鳴る。
+脈拍 (myakuhaku)	pulse (rate)	9	ad7547be653cbe300215906435ab0963	看護師が患者の脈拍を静かに測っている。	脈拍を計る。
+炎症 (enshō)	inflammation	9	0268300e4c6469484ef554a0fca7d2a6	傷口に炎症が起きて熱を持ってしまった。	炎症を抑える。
+麻痺 (mahi)	paralysis	9	725b3e7007a9476950eda7d8f0dbd6ad	脳の病気で体の左半分に麻痺が残った。	手が麻痺する。
+後遺症 (kōishō)	aftereffects, sequelae	9	b0d933123310a6ca5331abef254ed3b5	事故の後遺症で今も歩くのがつらいそうだ。	後遺症が残る。
+衰弱 (suijaku)	debilitation, weakening	9	58de2b9d76e93054716130a46591e8a7	長い闘病で彼の体はすっかり衰弱していた。	衰弱が進む。
+患う (wazurau)	to suffer from (illness)	9	8c8f2034d74626eff363ad7dd1f67d5a	祖父は晩年に重い病を患っていた。	病を患う。
+治癒 (chiyu)	healing, cure	9	6722b8448465169a011bf7c31e3f853c	早期に発見すれば治癒する可能性が高い。	傷が治癒する。
+危篤 (kitoku)	critical condition (near death)	9	f7a20d02f291b7731e8b770efbb628bb	祖父が危篤だと聞いて急いで病院へ向かった。	危篤に陥る。
+昏睡 (konsui)	coma	9	2bc278413234a54158324a36ee1aadb3	事故の後、彼は数日間昏睡状態が続いた。	昏睡に陥る。
+完治 (kanchi)	full recovery, complete cure	9	23165ff860cef53c47f41e7216686306	骨折は三か月ほどでようやく完治した。	病気が完治する。
+潜伏 (senpuku)	incubation, latency	9	25855329b654acf04bdf4a3e823e6170	このウイルスは潜伏期間が長いと言われる。	潜伏期間。
+摂取 (sesshu)	intake (of food, nutrients)	9	7f58a31d8a9507e9418f26e5a27454f5	塩分の摂取を控えるよう医師に言われた。	水分を摂取する。
+重体 (jūtai)	serious (critical) condition	9	98fcc8f7dd9f9971e67083706b57a07a	事故で運転手が意識不明の重体となった。	重体に陥る。
+発症 (hasshō)	onset of symptoms	9	dc249e54d58d43707ab8d82005e94155	この病気は高齢になってから発症しやすい。	症状が発症する。
+処方 (shohō)	prescription	9	c4b6eb343f5313040e530dcfee283172	医師は熱を下げる薬を処方してくれた。	薬を処方する。
+容体 (yōdai)	patient's condition	9	3153ff4fc223db9cdb0801006110f3ba	手術の後、彼女の容体は少しずつ安定した。	容体が急変する。
+体格 (taikaku)	physique, build	9	2dea88173d0769306570bd99ebeafc82	彼は兄に比べてがっしりした体格をしている。	体格がいい。
+風味 (fūmi)	flavor, savor	9	4ebb52fe5922d522f2ff95484a4b5f83	この味噌汁は出汁の風味がよく効いている。	風味がいい。
+香ばしい (kōbashii)	fragrant (roasted)	9	4979e36cb65b91c5065869ba489291fc	焼きたてのパンの香ばしい匂いが部屋に漂う。	香ばしい香りだ。
+芳醇 (hōjun)	mellow, rich (aroma)	9	cce5054a14f2074852f838e260a37b8f	このワインは芳醇な香りが口の中に広がる。	芳醇な味わい。
+渋い (shibui)	astringent, tart	9	c0ee74f83639da00869fe47440628a4c	熟していない柿はとても渋くて食べられない。	このお茶は渋い。
+舌触り (shitazawari)	texture on the tongue	9	6bfc239bd231df7eebcf27a471accd8e	なめらかな舌触りのプリンが好きだ。	舌触りがいい。
+歯ごたえ (hagotae)	chewy texture, firm bite	9	d03a264fcffeee3c97d8ecc3388b0d23	このきゅうりは新鮮で歯ごたえがいい。	歯ごたえがある。
+食感 (shokkan)	mouthfeel, texture	9	be132506a87af85d7f1cab886cf56ce7	もちもちした食感の麺がこの店の自慢だ。	食感が楽しい。
+旬 (shun)	seasonal peak (food)	9	c215ab70055491e3ba02845e3249c8cd	今は秋刀魚が旬でとてもおいしい時期だ。	旬の野菜。
+漬ける (tsukeru)	to pickle, marinate	9	767a5932e7e3bdae2d72be062c01e808	母は毎年自分で梅を塩に漬けている。	野菜を漬ける。
+賞味 (shōmi)	to savor, relish	9	8fb54cc8a122b9b91b6599963cd60b01	旅館では旬の食材を心ゆくまで賞味した。	料理を賞味する。
+美食 (bishoku)	gourmet eating	9	4b16e4257bb7a6847b48edefe65f005a	彼は世界中を旅して美食を追い求めている。	美食を楽しむ。
+粗食 (soshoku)	plain diet	9	7d89ff8f655e692f5aff2eaf50df45ed	祖父は健康のため一生粗食を続けてきた。	粗食に慣れる。
+住居 (jūkyo)	dwelling, residence	9	0b1524651cfa423d3a2f224783f3d441	都心では住居の費用が年々高くなっている。	新しい住居。
+住まい (sumai)	one's home, residence	9	bd83ddf0f1d7e5d27fdf1915b48f204a	定年後は静かな田舎に住まいを移したい。	快適な住まい。
+邸宅 (teitaku)	mansion, residence	9	a717091778d9a634e210d0235a2e28e6	丘の上に立派な邸宅が建っている。	大きな邸宅。
+別荘 (bessō)	villa, second home	9	adb4b368f43e251595592ff2b67d6fb0	夏は湖のそばの別荘で過ごすのが楽しみだ。	山の別荘。
+軒 (noki)	eaves	9	c1b9a6f263e190c299dd99634542c742	雨が強くて軒の下で雨宿りをした。	軒に吊るす。
+敷地 (shikichi)	site, grounds	9	915e740b8b6ec377f03bd1791e289e84	この家は広い敷地に建てられている。	敷地が広い。
+改築 (kaichiku)	renovation, rebuilding	9	92f6b829c5051321157c22c8c79aab45	古くなった台所を思い切って改築した。	家を改築する。
+老朽 (rōkyū)	dilapidation, decay	9	3a07d6007701e6293bca59e619490d59	この建物は老朽が進んで取り壊される。	老朽した家。
+質素 (shisso)	frugal, plain	9	a9031fc566ffb4ca8ffff9868b12a0c3	彼女は収入が多いのに質素な生活をしている。	質素な暮らし。
+日課 (nikka)	daily routine	9	043a619fe25d6157e525e255bbd8a8ec	毎朝の散歩が長年の私の日課になっている。	日課を続ける。
+営み (itonami)	life activity, conduct	9	e0a114849dc1bd829acf5a1de8d31dff	昔ながらの暮らしの営みが今も受け継がれている。	日々の営み。
+倹約 (ken'yaku)	thrift, economizing	9	31b0230901c3941984191d549443ca6b	将来に備えて毎月こつこつ倹約している。	倹約を心がける。
+衣食住 (ishokujū)	food, clothing and shelter	9	66d3fec70a97da43a2cec600c13bf545	衣食住が満たされて初めて心に余裕が生まれる。	衣食住が整う。
+団欒 (danran)	cozy family gathering	9	b3cff1ea9042cb9bb6b2316ebe474dbe	食卓を囲んでの家族の団欒が何よりの幸せだ。	一家団欒の時間。
+生態系 (seitaikei)	ecosystem	9	934c4e9f7ce7fd89f193f9e125cc1749	森林の開発で繊細な生態系が崩れつつある。	生態系を守る。
+食物連鎖 (shokumotsurensa)	food chain	9	8ab37ffdc1880c193372cc49a9cd1baa	小さな昆虫も食物連鎖の重要な一部だ。	食物連鎖の頂点。
+越冬 (ettō)	overwintering	9	68cbc831eaf45d85f0f4bd5629d05de8	この蝶は成虫のまま落ち葉の下で越冬する。	鳥が越冬する。
+群生 (gunsei)	growing in colonies	9	e0380690b852c2ec12efbe95dd146cfd	湿った岩場には珍しい高山植物が群生していた。	花が群生する。
+枯渇 (kokatsu)	depletion, drying up	9	f037caf8ff80090203b9355fa4fd5b4d	地下水の枯渇が周辺の田畑を脅かしている。	資源が枯渇する。
+干潟 (higata)	tidal flat	9	d56168a214335b0beab54798b9ba3222	潮が引いた干潟で無数の蟹が動き回っていた。	干潟で遊ぶ。
+湧水 (yūsui)	spring water	9	b0d2f0c7a54ce16cb2366efa913c0e44	村の人々は山裾の湧水を大切に守ってきた。	湧水が冷たい。
+旋風 (senpū)	whirlwind	9	cf92b3df16e7e8dd7904ba0a45d8cefa	乾いた畑の上に砂を巻き上げる旋風が立った。	旋風が起こる。
+霜柱 (shimobashira)	frost columns (in soil)	9	622d692f0d543e8b99f5c06dfa803fcb	冷え込んだ朝、畑の土に霜柱が立っていた。	霜柱を踏む。
+樹齢 (jurei)	age of a tree	9	c99a5e9eaae2c3f61c99e0630c71c63b	この杉は樹齢千年を超えると言われている。	樹齢を調べる。
+朽ちる (kuchiru)	to rot, to decay	9	b23f10de6d614fe8b2a352fd911b700c	倒れた大木が森の奥で静かに朽ちていた。	木が朽ちる。
+冬眠 (tōmin)	hibernation	9	cff90e5002d7fb64a6e6ce6af9fcd20d	熊は寒さの厳しい間を穴の中で冬眠して過ごす。	蛙が冬眠する。
+繁茂 (hanmo)	luxuriant growth	9	12271d47837cbd83e1370b8261a0f16f	手入れを怠った庭には雑草が繁茂していた。	草木が繁茂する。
+常緑樹 (jōryokuju)	evergreen tree	9	0fc8cfc16c81845233573a3865d07c9e	この一帯は冬でも葉を落とさない常緑樹に覆われている。	常緑樹を植える。
+捕食 (hoshoku)	predation	9	faad8f57ef17ca57c88c02ac1d8fca26	梟は夜になると小さな獲物を捕食する。	獲物を捕食する。
+天敵 (tenteki)	natural enemy	9	9f23638344cbc8a51a39b191c5d1d022	この害虫には天敵がほとんどいないため増え続ける。	天敵が現れる。
+渡り鳥 (wataridori)	migratory bird	9	c05555a38c180fa105cab8570c0d9a19	秋になると渡り鳥の群れが南へ向かって飛んでいく。	渡り鳥が来る。
+受粉 (jufun)	pollination	9	d78159b099ff89aaaecd4871051138f8	蜂が花から花へと飛び回って受粉を助けている。	花が受粉する。
+光合成 (kōgōsei)	photosynthesis	9	1db502cde24553ea2aab2dd53e15dbd9	植物は太陽の光を浴びて光合成を行っている。	葉で光合成する。
+浸食 (shinshoku)	erosion	9	df09c0a57b426c84219cf4a81547c33a	激しい波が長い年月をかけて海岸を浸食した。	川が岸を浸食する。
+地殻 (chikaku)	Earth's crust	9	7d914066ee70fae96a10c734ca2ca1dc	地殻の大きな変動が山脈を形づくってきた。	地殻が動く。
+干潮 (kanchō)	low tide, ebb tide	9	73fef6565b34e46ed10d0d890222cfe4	干潮の時間になると沖まで歩いて渡れる。	干潮を待つ。
+暖流 (danryū)	warm ocean current	9	51970e7159597d9141f549c38e21122e	この海域は暖流の影響で冬でも比較的温かい。	暖流が流れる。
+凪 (nagi)	calm (wind dying down)	9	cb7fb995cb74155d959543b6f06807af	夕方になると風がやみ、海は静かな凪になった。	朝の凪。
+肥沃 (hiyoku)	fertile (soil)	9	617fb3e92f7255178560cca378581ee9	川の流域には作物がよく育つ肥沃な土地が広がる。	肥沃な大地。
+湿原 (shitsugen)	marshland, moor	9	c6a67d2444463b204f6defcc557684a7	広大な湿原には珍しい水鳥が数多く生息している。	湿原を歩く。
+珊瑚 (sango)	coral	9	d975bd9df76af6d6df1315dc1518db9c	暖かい海の浅瀬に色とりどりの珊瑚が広がっていた。	珊瑚が美しい。
+樹液 (jueki)	tree sap	9	067a718d4bfd23e08233546806a7ab5d	夏の夜、甲虫が木の樹液に群がっていた。	樹液を吸う。
+年輪 (nenrin)	tree ring, growth ring	9	507262aad6e324fc9dc03b79f63eea67	切り株の年輪を数えると木の年齢が分かる。	年輪を数える。
+倒木 (tōboku)	fallen tree	9	31ba8cf540deb9e18e04bf289ab41970	台風の後、山道は何本もの倒木で塞がれていた。	倒木をまたぐ。
+過疎 (kaso)	depopulation	9	7735b144a97f96e4157020ab022873ab	若者が都会へ出て村の過疎が深刻になった。	過疎が進む。
+過密 (kamitsu)	overcrowding	9	ec989ab9c5ec989e9efa992e3f498520	都心の過密な人口が大きな問題となっている。	過密な都市。
+都心 (toshin)	city center	9	29d1600fa73759ef336e468ce69aa532	都心の地価は年々上がり続けている。	都心に住む。
+市街地 (shigaichi)	urban area	9	56550cd5ae7ca1a0078530eae6a61d32	駅前の市街地は再開発が進んでいる。	市街地に入る。
+界隈 (kaiwai)	neighborhood, vicinity	9	71a0291fa5c6b57e1f2668c55c6bdfe3	この界隈は昔ながらの店が多く残っている。	駅の界隈。
+近郊 (kinkō)	suburbs, outskirts	9	1b38dfee4ab3814790384642af997ee4	都市の近郊には新しい住宅地が広がっている。	東京の近郊。
+沿線 (ensen)	along the railway line	9	35cf582a9915a26483c27fa31067fa81	この沿線には大学がいくつも並んでいる。	沿線に住む。
+街道 (kaidō)	highway, old main road	9	7754b53dd9a22332f99b8c9cb1cafaf7	昔この街道は多くの旅人で賑わっていた。	街道を歩く。
+雑踏 (zattō)	hustle and bustle, crowd	9	a45184b9463bee839b29bc9344e66337	年末の駅は買い物客の雑踏でごった返していた。	雑踏を抜ける。
+喧騒 (kensō)	din, hubbub	9	b0eb2fa6f851d711618bd3f33918a0cf	都会の喧騒を離れて静かな山で過ごしたい。	街の喧騒。
+賑わう (nigiwau)	to bustle, thrive	9	4328a23768b52311a1bb7355619e9e77	祭りの夜、商店街は大勢の人で賑わった。	店が賑わう。
+廃墟 (haikyo)	ruins, abandoned site	9	566f9e8a6b5416eadd1f791d59b2ac0d	丘の上には古い工場の廃墟が残っている。	廃墟を訪ねる。
+旧跡 (kyūseki)	historic site	9	348c0fd46d2766538678fa6affd45952	この町には名所旧跡が数多く点在している。	旧跡を巡る。
+景勝 (keishō)	scenic beauty	9	9f44d7af8436dbdba8272364a8e45722	この湾は昔から景勝の地として知られている。	景勝の地。
+古都 (koto)	ancient capital	9	0c8638f4cf8b84998ebf199c957b324c	京都は千年の歴史を持つ古都として有名だ。	古都を歩く。
+港湾 (kōwan)	harbor, port (facilities)	9	35ef2a45dc44904de2f02e131946b4a0	この都市は港湾を中心に貿易で栄えてきた。	港湾を整備する。
+埠頭 (futō)	wharf, pier	9	7f65dee3a778b4e9d595f2acdf96650f	大型の貨物船が埠頭に静かに停泊している。	埠頭に着く。
+桟橋 (sanbashi)	jetty, landing pier	9	9610fb573558cc7789cff52150ae36b9	観光客は桟橋から小さな船に乗り込んだ。	桟橋を渡る。
+寄港 (kikō)	port call, stopping at port	9	531a234f1a03a861ffe74e2f3d2c707a	客船は神戸に一日だけ寄港する予定だ。	港に寄港する。
+航路 (kōro)	sea route, air route	9	4bb1826707a19c9b8ff75c26ab8beef3	この島と本土を結ぶ航路は週に三便ある。	航路を開く。
+漂流 (hyōryū)	drifting (at sea)	9	a7289d54305b9faf7c7509aac37e1fc1	漁師は嵐で船を失い数日間海を漂流した。	海を漂流する。
+上陸 (jōriku)	landing, going ashore	9	08880f42300381582fdec2c5131fdcd2	探検隊はようやく未知の島に上陸した。	島に上陸する。
+放浪 (hōrō)	wandering, roaming	9	38e03b12131fee1fd0f464aaa2fb823f	彼は若い頃、各地を放浪して暮らしていた。	世界を放浪する。
+郷愁 (kyōshū)	nostalgia, homesickness	9	09df18501ad1e3e275e09a9a79d867f4	故郷の風景を見て深い郷愁を覚えた。	郷愁を誘う。
+紀行 (kikō)	travel writing	9	dd318b0fd3d2e4fe3dd257bc13940b73	彼の書いた紀行はこの地方の魅力を伝えている。	紀行を読む。
+逗留 (tōryū)	sojourn, prolonged stay	9	5da3c4e76675730b1ace1d6b05ccf98c	画家はこの宿に一か月ほど逗留したという。	温泉に逗留する。
+巡礼 (junrei)	pilgrimage	9	25b6d08859bbdba8b28f8dbd8e1c8d58	昔から多くの人がこの寺へ巡礼に訪れる。	巡礼の旅。
+要衝 (yōshō)	strategic point, key location	9	060bad28579d5631a216b80f1b6be954	この町は古くから交通の要衝として栄えた。	交通の要衝。
+高架橋 (kōkakyō)	elevated bridge, viaduct	9	0c394ffc7a40954eca40517d7c263f78	新しい鉄道の高架橋が川の上を渡っている。	高架橋を渡る。
+眺望 (chōbō)	view, vista	9	08e213b430aeb8aa44e47b4df6a91e5e	山頂の展望台からは町全体の眺望が楽しめる。	眺望がいい。
+左遷 (sasen)	demotion (transfer)	9	6c8ba62832cadd9cd978f8cacf123a18	上司に逆らった彼は地方支社へ左遷された。	左遷を言い渡される。
+出向 (shukkō)	secondment, loan to another firm	9	a2cadd53137860068432ae11edfbe2f3	彼は来月から子会社へ出向することになった。	系列会社に出向する。
+栄転 (eiten)	promotional transfer	9	cc3799ab8e29ee9207226ffd5ed06618	課長は本社の部長に栄転していった。	栄転を祝う。
+稟議 (ringi)	circular approval system	9	db53ac83a85c5e6d0736fe9c1e065a4c	新しい設備の導入は稟議を通さねばならない。	稟議にかける。
+斡旋 (assen)	placement, mediation	9	cab8f5107d003747c1d08ab3f8c25029	職業安定所が求職者の就職を斡旋している。	仕事を斡旋する。
+罷免 (himen)	dismissal from office	9	c9692daf6d6e9788300d7ba333482818	不祥事の責任を取って大臣は罷免された。	役員を罷免する。
+嘱託 (shokutaku)	contract appointee	9	484f0562068284ed7d80cef868ea3067	定年後は嘱託として週三日だけ働いている。	嘱託で勤める。
+勤続 (kinzoku)	continuous service	9	6b7ab34472f12f6d43b3cd220aff06e4	勤続三十年の社員が表彰を受けた。	勤続年数が長い。
+履行 (rikō)	fulfillment (of duty)	9	284219d09d77d420155e51518da86277	両社は契約の履行をめぐって対立している。	義務を履行する。
+隠居 (inkyo)	retirement into private life	9	538c53689e2b26d5a57f045ea2ef04bf	祖父は家業を息子に譲って隠居した。	田舎で隠居する。
+融資 (yūshi)	financing, loan	9	68cc16c9ccd5e8885891f57c836ada28	銀行は事業の拡大に多額の融資を行った。	融資を受ける。
+担保 (tanpo)	collateral, security	9	c361a50f8c7ee61b89ed894e2b3e0aa4	彼は自宅を担保にして資金を借り入れた。	担保を差し出す。
+債務 (saimu)	debt, liability	9	419e447810f28c71c81dcf6f164bd83d	会社は膨大な債務を抱えて倒産した。	債務を返済する。
+債券 (saiken)	bond (finance)	9	3bfc9636c7a378ac7dc0a411139c4267	国は財源確保のため新たな債券を発行した。	債券を買う。
+配当 (haitō)	dividend	9	c3a1b59b42261fd3b54b44baa25d1f71	今期は業績が好調で株主への配当が増えた。	配当を受け取る。
+元本 (ganpon)	principal (capital)	9	53124558e9eeca1aeee2c401dba90d19	この投資は元本が保証されていない。	元本を割る。
+譲渡 (jōto)	transfer, assignment	9	68a29660fdc258c87e4953c1c107b212	彼は保有する株式を友人に譲渡した。	権利を譲渡する。
+滞納 (tainō)	delinquency in payment	9	8b2e1d3a20130f70ad60bbdef8f54978	家賃の滞納が続き退去を求められた。	税金を滞納する。
+黒字 (kuroji)	surplus, being in the black	9	ac712a8980afd1b4b5e787d3b79dd3f1	地道な経営でついに会社は黒字に転じた。	黒字を出す。
+為替 (kawase)	exchange, money order	9	70625317025deec512840bb7a4b37fb8	円安が進み為替の変動が輸出を後押しした。	為替が動く。
+卸売 (oroshiuri)	wholesale	9	5481663ff97825de7d6873122f7f1198	この問屋は全国の小売店に卸売をしている。	卸売で仕入れる。
+小売 (kouri)	retail	9	e4b5eccb966b55233927e7cae4155847	大手の小売業が地方への出店を加速させている。	小売の値段。
+廉価 (renka)	low price, inexpensive	9	312f1b312294733e93b7d4684b5ee7d4	この機種は性能の割に廉価で人気が高い。	廉価で売る。
+購買 (kōbai)	purchasing, buying	9	4dcd3222b8df5c7c74af569ae6b50c6c	不況で消費者の購買意欲が低下している。	購買力が落ちる。
+商談 (shōdan)	business negotiation	9	9e865d8ad9887da2aa48b3fad48e343e	粘り強い交渉の末、商談がようやくまとまった。	商談が成立する。
+履修 (rishū)	taking a course	9	77d436bc1f7a155f36f9d5e73d9f6001	卒業に必要な科目をすべて履修し終えた。	授業を履修する。
+教鞭 (kyōben)	teaching (career)	9	087ff6612b816cc58e1ee9f958bee0a0	彼は長年この大学で教鞭を執ってきた。	教鞭を執る。
+学府 (gakufu)	seat of learning	9	998065be1159d44694aba643d6818d78	その大学は国内最高の学府と称えられている。	最高学府を出る。
+留年 (ryūnen)	repeating a school year	9	d7f270e9300dd2ace6afaa3312a06825	単位が足りず彼は一年留年してしまった。	留年が決まる。
+休学 (kyūgaku)	leave of absence from school	9	708a1bd76c8905ba4679102a1f869038	病気の療養のため一年間休学することにした。	大学を休学する。
+憤慨 (fungai)	indignation	9	769878d8d692be29163d3dccce00ee96	彼の無責任な態度に憤慨した。	とても憤慨した。
+惜別 (sekibetsu)	reluctant parting	9	28b7f2ae828a7a88a3df12f67ffd7a8a	惜別の情を胸に駅で見送った。	惜別の歌。
+慈悲 (jihi)	mercy, compassion	9	dff2d5ea795ad1f203f448cf1f8bbc03	どうか慈悲の心で彼を許してください。	慈悲深い人。
+自負 (jifu)	pride, self-confidence	9	75be3867fb94986751ed3402f39763e9	自分の仕事に自負を持っている。	強い自負がある。
+自制 (jisei)	self-control	9	4cab7ff70443852afd0e208b565a7ec1	怒りを自制するのは難しかった。	自制が必要だ。
+懸念 (kenen)	concern, apprehension	9	451f2f6f3aa8ce688e183209d9e2bd18	将来について深い懸念を抱いている。	懸念がある。
+洞察 (dōsatsu)	insight	9	4b6e88393a8d8b97a3811bc5d31c5abb	彼女は人間心理への鋭い洞察を持つ。	洞察が深い。
+思索 (shisaku)	contemplation	9	37cb083e16a7cdf759af598ac2741945	静かな部屋で深い思索にふけった。	思索にふける。
+自覚 (jikaku)	self-awareness	9	57e45341258750b5952af113a66e0002	責任者としての自覚が足りない。	自覚が芽生える。
+配慮 (hairyo)	consideration	9	25a476fa5b295f1338fb6cdcd1929ea8	相手の立場に配慮した発言を心がける。	配慮が必要だ。
+示唆 (shisa)	suggestion, implication	9	8e1e0aff345bd22e9f038aa32391fc81	その報告は重大な問題を示唆している。	示唆に富む話。
+婉曲 (enkyoku)	euphemism, indirectness	9	59dff906dca7e75c99478f4f14b884bc	婉曲な表現で断りの意を伝えた。	婉曲に言う。
+釈明 (shakumei)	explanation, justification	9	9b69c0d2fd3c67672db41066a7ac3b38	彼は遅刻について釈明を求められた。	釈明を聞く。
+軋轢 (atsureki)	friction, discord	9	a634f07d1508ab6b8b61427ba2576eda	部署間の軋轢が業務に影響を与えた。	軋轢が生じる。
+偏向 (henkō)	bias, slant	9	6c3e8f87eb2bc95cff697b2e6cfa8f72	その報道には明らかな偏向がある。	偏向を避ける。
+疎外 (sogai)	alienation	9	bbea9c9d981e97f3b25f8125f9aeccb9	集団の中で疎外感を抱くことがある。	疎外感がある。
+規範 (kihan)	norm, standard	9	fb99cb1eeb028af1340fb127b03b5e80	社会の規範に従って行動する。	道徳の規範。
+連帯 (rentai)	solidarity	9	23f902fd141cb38b9cc1d038e32c65e9	被災地への連帯の意を表明した。	連帯を深める。
+擁護 (yōgo)	advocacy, protection	9	94b42c2261c884500aa34050a0ad4d86	言論の自由を断固として擁護する。	人権を擁護する。
+赴く (omomuku)	to head for, proceed to	9	f3130af8057fe5f01ec21d6625fe1563	彼は来月から海外の支店へ赴くことになった。	任地へ赴く。
+携わる (tazusawaru)	to be engaged in	9	646ae952e6a0365bd880d4ac1c933f2b	長年この研究に携わってきたことを誇りに思う。	教育に携わる。
+操る (ayatsuru)	to manipulate, handle	9	052c7edd2d7c570f5ed7fde7726b6d17	彼は四つの言語を自在に操ることができる。	機械を操る。
+促す (unagasu)	to urge, prompt	9	88c3b954fe0d642f0ea95c5038fc2726	司会者は参加者に発言を促した。	注意を促す。
+廃れる (sutareru)	to fall into disuse	9	5f015d77cec17bdea61b7066c3c64903	その古い習慣は今ではすっかり廃れてしまった。	流行が廃れる。
+培う (tsuchikau)	to cultivate, foster	9	b87a8d9d6a6c82efc30c4336b8d79504	留学を通して国際的な感覚を培ってきた。	実力を培う。
+葬る (hōmuru)	to bury, consign to oblivion	9	6ffd22ebc6067881338756e70fc8b4cc	その不祥事は闇に葬られようとしていた。	秘密を葬る。
+滞る (todokōru)	to be delayed, stagnate	9	a8435b224e7be98ca6c40ed1ef0bbb71	資金不足で工事がすっかり滞っている。	支払いが滞る。
+凌ぐ (shinogu)	to endure; to surpass	9	0684b138883d62fdcd01c8e66f88e6b1	わずかな蓄えで何とか冬を凌いだ。	暑さを凌ぐ。
+挑む (idomu)	to challenge, take on	9	c5ff39c7fe06e9798d9bcbf2fbd36136	彼は未踏の山頂に単身で挑んだ。	記録に挑む。
+育む (hagukumu)	to nurture, foster	9	f5e432e257fe0344372de2bebd317d84	自然の中で子供の豊かな心を育みたい。	愛を育む。
+遂げる (togeru)	to accomplish, achieve	9	5de80d7a06a5601363c3962a4e7409ef	彼は長年の夢をついに遂げた。	成長を遂げる。
+陥る (ochiiru)	to fall into (a state)	9	d722d3a3ab1531a3de96e4b78a15d65e	会社は一時深刻な経営難に陥った。	混乱に陥る。
+統べる (suberu)	to rule, govern	9	7590e4ceab9b2d0155732f2e97fb42fd	かつて一人の王が広大な国を統べていた。	国を統べる。
+託す (takusu)	to entrust	9	826c26fb8f6560634b9207b3749e31b9	父は事業の全てを息子に託した。	思いを託す。
+廃する (haisuru)	to abolish	9	7083d2a8146bcd06ebfce535d35a86f6	政府は時代遅れの制度を廃することにした。	旧制を廃する。
+廃止 (haishi)	abolition, repeal	9	019b0eb0185599ef9d512fa878f7bc51	その路線は乗客の減少で廃止が決まった。	制度を廃止する。
+駆使 (kushi)	full command, free use	9	cfc016044448906e78cfe786b10877a1	彼は最新の技術を駆使して作品を仕上げた。	知識を駆使する。
+奔走 (honsō)	running about, busy efforts	9	0e43dbcb6717268ebb2634e9587d7917	彼は資金集めのために各地を奔走した。	準備に奔走する。
+遂行 (suikō)	execution, carrying out	9	4b821da7691fa61cdd003d378a6d018c	困難な任務を最後まで遂行した。	計画を遂行する。
+邁進 (maishin)	pushing forward, striving	9	068e9121a2474b2b3d033a6b6e8963f4	目標の達成に向けて日々邁進している。	研究に邁進する。
+画策 (kakusaku)	scheming, maneuvering	9	840a29ebafb685d6f16672cdbdaa700c	彼らは裏で政権の転覆を画策していた。	陰で画策する。
+模索 (mosaku)	groping, fumbling for	9	c68a85e26e079b58db1994e2cdb42898	会社は新たな活路を懸命に模索している。	解決策を模索する。
+翻弄 (honrō)	being toyed with, tossed about	9	6f9b7b03c99bf551739b57a6bbf7c432	小舟は荒波に翻弄され続けた。	運命に翻弄される。
+逸脱 (itsudatsu)	deviation, departure	9	259f3c3edf55b76d8edbc961d24547da	彼の行動は常識から大きく逸脱していた。	規則から逸脱する。
+錯綜 (sakusō)	intricacy, tangle	9	4abac05ad44120f4ce9b90d151318a19	事件は利害が錯綜して真相が見えない。	情報が錯綜する。
+歴然 (rekizen)	obvious, evident	9	5f3b73715d4417bc96c06353a3ee061d	両者の実力の差は歴然としている。	歴然たる事実。
+明瞭 (meiryō)	clear, distinct	9	43dc708853c5edb78e5d075f4796163e	彼女は要点を明瞭に説明してくれた。	明瞭な発音。
+煩雑 (hanzatsu)	complicated, troublesome	9	d8096d3dbbd419977f67e5e18114d1e0	手続きが煩雑で時間ばかりかかってしまう。	煩雑な作業。
+精緻 (seichi)	elaborate, minute	9	f49315d5fd5c7deb5c6e1e445606a45b	その理論は精緻な論理で組み立てられている。	精緻な細工。
+円満 (enman)	harmonious, amicable	9	5a4edf74bff3293449b7087a73872c4a	両者は話し合いで円満に解決した。	円満な家庭。
+画一的 (kakuitsuteki)	uniform, standardized	9	8f3aea8db1f73db97a89e7e780756987	画一的な教育では個性が育ちにくい。	画一的な対応。
+普遍 (fuhen)	universal	9	fe60a5f032b50c9d8e4884c80a10f5f1	愛は時代を超えた普遍の主題である。	普遍の真理。
+潜在 (senzai)	latent, potential	9	95e6c1716463489389353b4293b70962	彼にはまだ潜在する力が眠っている。	潜在能力。
+顕在 (kenzai)	manifest, actualized	9	30adb1d0225009d7543ada28e90a064b	問題がついに顕在化して表に出てきた。	矛盾が顕在する。
+漠然 (bakuzen)	vague, hazy	9	3687ce42e7b0090996bf19f58fcf6521	将来について漠然とした不安を抱えている。	漠然とした夢。
+微細 (bisai)	minute, fine	9	8e0aea0b67e017b45c8651bb136b0b69	顕微鏡で微細な傷まで観察できる。	微細な粒子。
+瞬時 (shunji)	instant, moment	9	c4cbccbcddea639c8500cb77c21e9894	事故は瞬時の出来事で避けようがなかった。	瞬時に消える。
+束の間 (tsukanoma)	brief moment, fleeting	9	61ac88c7dd3e24b7b31c8ca1c53b0dcc	休暇は束の間の安らぎを与えてくれた。	束の間の夢。
+寸時 (sunji)	a moment, brief time	9	7a50a67908d078992e791d698615d527	締め切りが迫り寸時も無駄にできない。	寸時を惜しむ。
+悠久 (yūkyū)	eternity, perpetuity	9	0d25e1982231cf6b8ec8f8fc6f9c4ef2	悠久の歴史を持つ古都を訪ねた。	悠久の時。
+永続 (eizoku)	permanence, continuance	9	b775c9137c509e442ed33078295285b7	制度の永続には不断の努力が欠かせない。	永続を願う。
+未曽有 (mizō)	unprecedented	9	a020f70b6b44745ae6d81c7e9b794744	その国は未曽有の経済危機に見舞われた。	未曽有の災害。
+変遷 (hensen)	transition, changes over time	9	144dd65feef8180374a96d0e569c6509	言葉の意味は時代とともに変遷してきた。	歴史の変遷。
+過渡 (kato)	transitional phase	9	82fe1c620fe62f929d8a55393a65c325	社会は今、大きな過渡期を迎えている。	過渡期にある。
+既成 (kisei)	established, existing	9	12aea7a4c492d059b7a493dde955d849	彼は既成の概念にとらわれずに発想する。	既成の事実。
+観念 (kannen)	idea, notion	9	464e4562e827ef41d93ed00178bc276e	彼は固定観念にとらわれて柔軟さを欠く。	時間の観念。
+真髄 (shinzui)	essence, quintessence	9	38c45df039bf98b8fd6d2719e1e3bc5e	長年の修行で芸の真髄に達した。	芸の真髄。
+概観 (gaikan)	overview, general survey	9	0c140c6d7ee296bb821ef5966d4cec89	まず全体を概観してから細部に入ろう。	全体を概観する。
+範疇 (hanchū)	category, scope	9	5dad2236288d20869e20b1248338df0f	その行為はもはや常識の範疇を超えている。	同じ範疇だ。
+背反 (haihan)	contradiction, antinomy	9	3ee4dd9f560eefd02f4dcdc2315e5708	理想と現実が背反して苦悩している。	二律背反。
+依拠 (ikyo)	to be grounded on	9	1a0e14ee438a638a213af397dc69fd3e	この結論は確かな統計に依拠している。	資料に依拠する。
+逆説 (gyakusetsu)	paradox	9	6447c91f9046dd08fe864975dcc346f7	急がば回れとは含蓄のある逆説である。	逆説的な話。
+抽象 (chūshō)	abstraction	9	c91f885315ed4fe0a0264bac210e45b6	話があまりに抽象的で具体例が欲しい。	抽象的な概念。
+帰結 (kiketsu)	consequence, conclusion	9	43dfc492c42207f5c9df66e22f8598a7	その失敗は怠慢の当然の帰結だった。	論理の帰結。

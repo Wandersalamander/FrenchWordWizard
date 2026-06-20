@@ -7,10 +7,11 @@ import java.io.ByteArrayInputStream
 
 /**
  * Tests for the calibration-frontier bias in new-word introduction
- * ([getInactiveVocab]): geometric decay toward the frontier tier
- * ([INTRODUCTION_TIER_DECAY]), the hard ceiling at the frontier, and the
- * exhaustion-based hand-off to the lowest un-introduced tier above it. The
- * frontier integer is never mutated — advancement is purely "the band ran out".
+ * ([getInactiveVocab]): geometric decay ([INTRODUCTION_TIER_DECAY]) PEAKING at
+ * tier frontier+1 (the first un-cleared tier — the learning edge), the hard
+ * ceiling at frontier+1, and the exhaustion-based hand-off to the lowest
+ * un-introduced tier above it. The frontier integer is never mutated —
+ * advancement is purely "the band ran out".
  */
 class VocabSelectorIntroductionTest {
 
@@ -39,36 +40,38 @@ class VocabSelectorIntroductionTest {
         }
     }
 
-    @Test fun frontierNeverIntroducesAboveTheFrontierTier() {
-        // F = 2: tiers 3,4,5 exist but must never surface while [0,2] still has
-        // un-introduced words. This is the "don't show above frontier" rule.
+    @Test fun introductionNeverGoesAboveOneTierPastFrontier() {
+        // F = 2 → learning edge is tier 3 (F+1). Tiers 4,5 exist but must never
+        // surface while [0,3] still has un-introduced words; tier 3 (the edge) IS
+        // now fair game — that's the point: give a placed user genuinely new vocab.
         val dict = dictWithTiers(listOf(0, 1, 2, 3, 4, 5))
         repeat(2_000) {
             val (vocab, _) = dict.getInactiveVocab(frontier = 2)
             assertTrue(
-                "tier ${vocab.importance} leaked above frontier 2",
-                vocab.importance <= 2,
+                "tier ${vocab.importance} leaked above frontier+1 (3)",
+                vocab.importance <= 3,
             )
         }
     }
 
-    @Test fun frontierPeaksAtFrontierTierAndDecaysDownward() {
-        // One word per tier 0..3, F = 3. Decay 0.5 → expected proportions
-        // ~0.53 / 0.27 / 0.13 / 0.07. Assert the strict monotonic ordering (gaps
-        // are ~10+ sigma over 4k draws) and that no lower tier is starved.
+    @Test fun introductionPeaksAtOneTierPastFrontierAndDecaysDownward() {
+        // One word per tier 0..3, F = 2 → peak at the first un-cleared tier (3).
+        // Decay 0.25 → expected proportions ~0.75 / 0.19 / 0.047 / 0.012. Assert
+        // strict monotonic ordering (gaps are many sigma over 4k draws) and that
+        // even the lowest cleared tier still trickles in (not starved).
         val dict = dictWithTiers(listOf(0, 1, 2, 3))
         val counts = IntArray(4)
         repeat(4_000) {
-            val (vocab, _) = dict.getInactiveVocab(frontier = 3)
+            val (vocab, _) = dict.getInactiveVocab(frontier = 2)
             counts[vocab.importance]++
         }
-        assertTrue("frontier tier should dominate: ${counts.toList()}", counts[3] > counts[2])
+        assertTrue("edge tier (F+1) should dominate: ${counts.toList()}", counts[3] > counts[2])
         assertTrue("tier2 > tier1: ${counts.toList()}", counts[2] > counts[1])
         assertTrue("tier1 > tier0: ${counts.toList()}", counts[1] > counts[0])
         assertTrue("no tier starved: ${counts.toList()}", counts[0] > 0)
-        // Frontier tier carries a clear plurality (expected ~0.53 >> 0.33).
+        // The edge tier carries a clear plurality (expected ~0.75 >> 0.33).
         assertTrue(
-            "frontier tier should be the plurality: ${counts.toList()}",
+            "edge tier should be the plurality: ${counts.toList()}",
             counts[3] > 4_000 / 3,
         )
     }
@@ -77,7 +80,7 @@ class VocabSelectorIntroductionTest {
         // Calibrated F = 10 but the CSV tops out at tier 2 (a language with
         // fewer tiers, or calibration overshoot). The whole pool is in band;
         // relative decay still makes the highest available tier dominate (the
-        // weights stay in 4:2:1 ratio regardless of the absolute exponent).
+        // weights keep their 16:4:1 ratio regardless of the absolute exponent).
         val dict = dictWithTiers(listOf(0, 1, 2))
         val counts = IntArray(3)
         repeat(4_000) {
@@ -90,9 +93,9 @@ class VocabSelectorIntroductionTest {
     }
 
     @Test fun frontierZeroRespectsCsvOrderWithinEssentials() {
-        // F = 0 ("knows only essentials"): only tier 0 is eligible and tier-0
-        // introduction is strict CSV order. Each introduced word hands off to
-        // the next in the file sequence.
+        // F = 0 → edge is tier 1, but this dict has only tier 0, so tier-0
+        // introduction (strict CSV order) is what's exercised: each introduced
+        // word hands off to the next in the file sequence.
         val dict = dictionaryOf(listOf(
             "alpha\ta\t0\tha\tHard a.\tEasy a.",
             "bravo\tb\t0\thb\tHard b.\tEasy b.",
@@ -107,28 +110,29 @@ class VocabSelectorIntroductionTest {
         assertEquals(listOf("ha", "hb", "hc"), order)
     }
 
-    @Test fun exhaustedBandClimbsToNextTierAboveFrontier() {
-        // F = 2 with tiers 0..4. Introduce every word in the band [0,2]; the
-        // picker must fall through to the lowest un-introduced tier (3),
-        // proving exhaustion-based advancement without mutating the frontier.
+    @Test fun exhaustedBandClimbsToNextTierAbove() {
+        // F = 2 → band [0,3]. Introduce every word in it; the picker must fall
+        // through to the lowest un-introduced tier (4), proving exhaustion-based
+        // advancement past the edge without mutating the frontier.
         val dict = dictWithTiers(listOf(0, 1, 2, 3, 4))
-        dict.csvData.filter { it.importance <= 2 }.forEach { markIntroduced(it) }
+        dict.csvData.filter { it.importance <= 3 }.forEach { markIntroduced(it) }
         repeat(100) {
             val (vocab, _) = dict.getInactiveVocab(frontier = 2)
-            assertEquals("must climb to the lowest un-introduced tier", 3, vocab.importance)
+            assertEquals("must climb to the lowest un-introduced tier", 4, vocab.importance)
         }
     }
 
-    @Test fun partiallyExhaustedFrontierTierStillBiasesRemainingBand() {
-        // The frontier tier (2) is fully introduced but lower tiers (0,1)
-        // remain. The band is now {0,1}; decay should peak at the highest
-        // still-available tier (1) and never resurface the exhausted tier 2.
+    @Test fun exhaustedTopTiersStillBiasTheRemainingBand() {
+        // F = 2 but the CSV tops out at tier 2 (no tier-3 edge), and tier 2 is
+        // fully introduced. The band is now {0,1}; decay should peak at the
+        // highest still-available tier (1) and never resurface the exhausted
+        // higher tier.
         val dict = dictWithTiers(listOf(0, 1, 2))
         dict.csvData.filter { it.importance == 2 }.forEach { markIntroduced(it) }
         val counts = IntArray(2)
         repeat(2_000) {
             val (vocab, _) = dict.getInactiveVocab(frontier = 2)
-            assertTrue("exhausted frontier tier must not resurface", vocab.importance < 2)
+            assertTrue("exhausted higher tier must not resurface", vocab.importance < 2)
             counts[vocab.importance]++
         }
         assertTrue("highest remaining tier should dominate: ${counts.toList()}", counts[1] > counts[0])

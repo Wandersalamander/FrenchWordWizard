@@ -50,6 +50,10 @@ object AppPrefs {
     // for a while, then offer reminders in context — see MainActivity.
     const val KEY_TOTAL_USAGE_MS = "total_usage_ms"
     const val KEY_REMINDER_PROMPT_DONE = "reminder_prompt_done"
+
+    // Whether the passive "word in the notification shade" foreground service is
+    // on. Opt-in: default false, toggled from Settings → Word notification.
+    const val KEY_VOCAB_SERVICE_ENABLED = "vocab_service_enabled"
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"
@@ -105,6 +109,14 @@ object AppPrefs {
 
     fun setReminderPromptDone(context: Context) {
         get(context).edit().putBoolean(KEY_REMINDER_PROMPT_DONE, true).apply()
+    }
+
+    /** Whether the passive word-in-the-notification glance service is on (default off). */
+    fun isVocabServiceEnabled(context: Context): Boolean =
+        get(context).getBoolean(KEY_VOCAB_SERVICE_ENABLED, false)
+
+    fun setVocabServiceEnabled(context: Context, enabled: Boolean) {
+        get(context).edit().putBoolean(KEY_VOCAB_SERVICE_ENABLED, enabled).apply()
     }
 
     /**
