@@ -1570,6 +1570,9 @@ class QuizController(
                 views.buttonNext.setInteractive(false)
             }
             SpeakPhase.RECORDING -> {
+                // Clear the "Hold to speak" prompt so the briefly-empty waveform
+                // doesn't flash it during the reaction-time skip before bars start.
+                views.recordingWaveform.idleText = ""
                 views.textScore.text = "● Recording…"
                 views.buttonFail.setInteractive(false)
                 views.buttonNext.setInteractive(false)

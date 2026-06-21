@@ -3,6 +3,7 @@ package io.github.wandersalamander.vocabtrainer.quiz
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.MediaRecorder
+import android.media.audiofx.LoudnessEnhancer
 import android.os.Build
 import android.os.SystemClock
 import android.util.Log
@@ -13,6 +14,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.quiz.ui.RecordingWaveformView
 import java.io.File
+import kotlin.math.log10
 import kotlin.math.sqrt
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
@@ -58,11 +60,18 @@ internal class SpeakingController(
     private var phase: SpeakPhase = SpeakPhase.IDLE
     private var recorder: MediaRecorder? = null
     private var player: MediaPlayer? = null
+    private var enhancer: LoudnessEnhancer? = null  // boosts a quiet take on playback
     private var playbackJob: Job? = null   // the auto-play (model + take) after a record
     private var replayJob: Job? = null     // a manual tap-to-replay of the take
     private var ampJob: Job? = null        // amplitude polling while recording
+    private var pendingStartJob: Job? = null // delayed (reaction-skip) recorder start
     private var recordStartMs: Long = 0L
     private var foreignToSpeak: CharSequence = ""
+
+    // Per-poll mic peaks (linear, 0..32767) for the current take; used to pick a
+    // playback gain that matches the take's loudness to the model TTS.
+    private val recLevels = ArrayList<Float>()
+    private var playbackGain = 1f
 
     /** True once a take has been recorded and reviewed this round (gates Next). */
     var hasRecorded: Boolean = false
@@ -82,6 +91,8 @@ internal class SpeakingController(
         abortPlayback()
         abortRecorder()
         hasRecorded = false
+        recLevels.clear()
+        playbackGain = 1f
         waveform.reset()
         phase = SpeakPhase.IDLE
     }
@@ -97,48 +108,72 @@ internal class SpeakingController(
         phase = if (hasRecorded) SpeakPhase.REVIEWED else SpeakPhase.IDLE
     }
 
-    /** Hold engaged on the widget: start (or re-start) capturing the user's take. */
+    /**
+     * Hold engaged on the widget: show the "recording" UI immediately, but begin
+     * the actual capture [RECORD_START_SKIP_MS] later — the user needs ~200ms to
+     * react and start talking after seeing the hint, and that leading silence
+     * shouldn't be recorded (the bars then start right as they begin speaking).
+     */
     fun startRecording() {
         abortPlayback()
         abortRecorder()
         // A fresh take invalidates any prior one (the file is overwritten), so
         // clear the waveform and the recorded flag until this take completes.
         hasRecorded = false
+        recLevels.clear()
         waveform.reset()
-        val rec = try {
-            buildRecorder().apply {
-                prepare()
-                start()
+        setPhase(SpeakPhase.RECORDING)   // immediate visual hint; capture starts below
+        pendingStartJob = activity.lifecycleScope.launch {
+            delay(RECORD_START_SKIP_MS)
+            val rec = try {
+                buildRecorder().apply {
+                    prepare()
+                    start()
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "Recorder init failed", e)
+                releaseRecorderQuietly()
+                Toast.makeText(activity, "Couldn't access the microphone", Toast.LENGTH_SHORT)
+                    .show()
+                setPhase(SpeakPhase.IDLE)
+                return@launch
             }
-        } catch (e: Exception) {
-            Log.w(TAG, "Recorder init failed", e)
-            releaseRecorderQuietly()
-            Toast.makeText(activity, "Couldn't access the microphone", Toast.LENGTH_SHORT).show()
-            setPhase(SpeakPhase.IDLE)
-            return
+            recorder = rec
+            recordStartMs = SystemClock.elapsedRealtime()
+            startAmpPolling()
         }
-        recorder = rec
-        recordStartMs = SystemClock.elapsedRealtime()
-        startAmpPolling()
-        setPhase(SpeakPhase.RECORDING)
     }
 
     /**
-     * Hold released: stop recording and, if it was long enough, auto-play the
-     * foreign-word TTS then the take. Too-short holds are discarded back to IDLE.
+     * Hold released: keep recording [RECORD_TAIL_MS] longer so the end of the word
+     * isn't clipped, then auto-play the foreign-word TTS and the take. A hold too
+     * short for capture to have begun — or too short overall — is discarded.
      */
     fun stopAndPlayback() {
         if (phase != SpeakPhase.RECORDING) return
-        cancelAmpPolling()
-        val heldMs = SystemClock.elapsedRealtime() - recordStartMs
-        val stopped = stopRecorderQuietly()
-        if (!stopped || heldMs < MIN_RECORD_MS || !outputFile.exists()) {
+        if (recorder == null) {
+            // Released before capture even began (held < RECORD_START_SKIP_MS):
+            // nothing to keep, so drop the pending start and reset.
+            pendingStartJob?.cancel()
+            pendingStartJob = null
+            cancelAmpPolling()
             waveform.reset()
             setPhase(SpeakPhase.IDLE)
             return
         }
-        setPhase(SpeakPhase.PLAYING)
         playbackJob = activity.lifecycleScope.launch {
+            // Tail: keep the mic open a beat past the release, then stop.
+            delay(RECORD_TAIL_MS)
+            cancelAmpPolling()
+            val heldMs = SystemClock.elapsedRealtime() - recordStartMs
+            val stopped = stopRecorderQuietly()
+            if (!stopped || heldMs < MIN_RECORD_MS || !outputFile.exists()) {
+                waveform.reset()
+                setPhase(SpeakPhase.IDLE)
+                return@launch
+            }
+            playbackGain = computeNormalizationGain()
+            setPhase(SpeakPhase.PLAYING)
             try {
                 // Model pronunciation first (foreign locale, awaits TTS done)...
                 tts.speakSentenceAndAwait(foreignToSpeak)
@@ -161,6 +196,8 @@ internal class SpeakingController(
     /** Hold cancelled (pointer left / interrupted): discard the in-flight take. */
     fun cancelRecording() {
         if (phase != SpeakPhase.RECORDING) return
+        pendingStartJob?.cancel()
+        pendingStartJob = null
         cancelAmpPolling()
         stopRecorderQuietly()
         waveform.reset()
@@ -205,6 +242,44 @@ internal class SpeakingController(
         onState(p)
     }
 
+    /**
+     * Pick a playback gain that lifts this take toward the model TTS's loudness.
+     * The take (MediaPlayer, USAGE_MEDIA) and the TTS both play on STREAM_MUSIC
+     * at the same media volume, so matching their *digital* levels matches what
+     * the ear hears. We estimate the take's speech level from a high percentile
+     * of the per-poll mic peaks — ignoring silent gaps and the odd transient —
+     * and scale it toward [TARGET_LEVEL]. Clamped so a near-silent take can't
+     * amplify room noise to full volume.
+     */
+    private fun computeNormalizationGain(): Float {
+        if (recLevels.isEmpty()) return 1f
+        val sorted = recLevels.sorted()
+        val level = sorted[(sorted.size * 9 / 10).coerceAtMost(sorted.size - 1)]
+        if (level < SILENCE_FLOOR) return 1f
+        return (TARGET_LEVEL / level).coerceIn(MIN_GAIN, MAX_GAIN)
+    }
+
+    /**
+     * Apply [playbackGain] to [mp]: attenuation rides MediaPlayer's own volume,
+     * but a boost needs a LoudnessEnhancer (player volume can't exceed 1.0; the
+     * enhancer also has an internal limiter, so the lift won't clip harshly).
+     */
+    private fun applyGain(mp: MediaPlayer) {
+        if (playbackGain <= 1f) {
+            mp.setVolume(playbackGain, playbackGain)
+            return
+        }
+        enhancer = try {
+            LoudnessEnhancer(mp.audioSessionId).apply {
+                setTargetGain((2000.0 * log10(playbackGain.toDouble())).toInt())
+                enabled = true
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "LoudnessEnhancer unavailable", e)
+            null
+        }
+    }
+
     private fun startAmpPolling() {
         ampJob = activity.lifecycleScope.launch {
             while (true) {
@@ -215,8 +290,10 @@ internal class SpeakingController(
                 } catch (e: Exception) {
                     0
                 }
+                val linear = amp.coerceAtLeast(0).toFloat()
+                recLevels.add(linear)
                 // Perceptual (sqrt) scaling so quiet speech still moves the bars.
-                waveform.addSample(sqrt(amp.coerceAtLeast(0).toFloat() / MAX_AMPLITUDE))
+                waveform.addSample(sqrt(linear / MAX_AMPLITUDE))
             }
         }
     }
@@ -234,9 +311,14 @@ internal class SpeakingController(
             MediaRecorder()
         }
         return rec.apply {
-            setAudioSource(MediaRecorder.AudioSource.MIC)
+            // VOICE_RECOGNITION is tuned for speech and skips the aggressive AGC
+            // of the default MIC source, so levels stay consistent (better input
+            // for normalization) and the timbre stays true for self-comparison.
+            setAudioSource(MediaRecorder.AudioSource.VOICE_RECOGNITION)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
             setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+            setAudioSamplingRate(44_100)
+            setAudioEncodingBitRate(96_000)
             setOutputFile(outputFile.absolutePath)
         }
     }
@@ -259,6 +341,8 @@ internal class SpeakingController(
     }
 
     private fun abortRecorder() {
+        pendingStartJob?.cancel()
+        pendingStartJob = null
         cancelAmpPolling()
         val rec = recorder ?: return
         recorder = null
@@ -291,6 +375,7 @@ internal class SpeakingController(
             )
             mp.setDataSource(outputFile.absolutePath)
             mp.prepare()
+            applyGain(mp)
             mp.start()
             val duration = mp.duration.coerceAtLeast(1)
             // isPlaying flips false at completion; delay() throws on cancellation.
@@ -322,6 +407,11 @@ internal class SpeakingController(
 
     private fun releasePlayerQuietly() {
         try {
+            enhancer?.release()
+        } catch (_: Exception) {
+        }
+        enhancer = null
+        try {
             player?.release()
         } catch (_: Exception) {
         }
@@ -331,8 +421,16 @@ internal class SpeakingController(
     companion object {
         private const val TAG = "SpeakingController"
 
-        // Recordings shorter than this are discarded (mostly silence / a slip).
+        // Recordings shorter than this (hold-engage to release) are discarded
+        // (mostly silence / a slip).
         private const val MIN_RECORD_MS = 250L
+
+        // The capture window is shifted +200ms on both ends: skip the user's
+        // reaction time after the "recording" hint (so the leading silence isn't
+        // recorded), and keep the mic open a beat past release so the tail of the
+        // word isn't clipped.
+        private const val RECORD_START_SKIP_MS = 200L
+        private const val RECORD_TAIL_MS = 200L
 
         // Amplitude poll cadence while recording → one waveform bar each.
         private const val AMP_POLL_MS = 60L
@@ -343,5 +441,17 @@ internal class SpeakingController(
         // MediaRecorder.getMaxAmplitude() is 16-bit full scale; speech rarely
         // nears it, so the sqrt scaling lifts the typical range into view.
         private const val MAX_AMPLITUDE = 32767f
+
+        // Loudness-match target for a take's 90th-percentile peak, in 16-bit
+        // full-scale units (~-6 dBFS). Most TTS voices master around here; nudge
+        // up/down if the model still sounds louder/quieter than the take.
+        private const val TARGET_LEVEL = 16_000f
+
+        // Below this the take is treated as silence (don't amplify room noise).
+        private const val SILENCE_FLOOR = 800f
+
+        // Gain clamp: never cut a loud take below half, never boost past +18 dB.
+        private const val MIN_GAIN = 0.5f
+        private const val MAX_GAIN = 8f
     }
 }
