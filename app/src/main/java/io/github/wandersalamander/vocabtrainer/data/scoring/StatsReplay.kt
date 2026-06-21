@@ -3,6 +3,7 @@ package io.github.wandersalamander.vocabtrainer.data.scoring
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
 import io.github.wandersalamander.vocabtrainer.data.ReviewLogEntry
 import io.github.wandersalamander.vocabtrainer.data.SpotCheckResult
+import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.SkillStats
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 
@@ -41,8 +42,13 @@ object StatsReplay {
      * reveal triangular penalty.
      */
     fun rebuild(entries: List<ReviewLogEntry>, foreignLetterCount: Int): SkillStats {
-        val stats = SkillStats()
-        for (entry in entries.sortedBy { it.timestampMs }) {
+        val sorted = entries.sortedBy { it.timestampMs }
+        // SPEAK skips the slow-view mastery floor (slowness is inherent), so the
+        // rebuilt stats must carry the same per-skill flag as the live map —
+        // derive it from the entries' skill (a rebuild is one (vocab, skill) pair).
+        val skill = sorted.firstOrNull()?.skill
+        val stats = SkillStats(slowViewFloorEnabled = skill != Skill.SPEAK)
+        for (entry in sorted) {
             applyEntry(stats, entry, foreignLetterCount)
         }
         return stats

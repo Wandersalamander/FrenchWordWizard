@@ -33,7 +33,12 @@ data class Vocab(
     val exampleEasy: String,
     val persistence: VocabPersistence? = null,
 ) {
-    val skillStats: Map<Skill, SkillStats> = Skill.ladder.associateWith { SkillStats() }
+    val skillStats: Map<Skill, SkillStats> =
+        Skill.ladder.associateWith { skill ->
+            // SPEAK is exempt from the slow-view mastery floor — speaking is
+            // inherently slow, so a slow round there shouldn't block mastery.
+            SkillStats(slowViewFloorEnabled = skill != Skill.SPEAK)
+        }
 
     var ignore: Boolean = false
     var flaggedHard: Boolean = false

@@ -73,6 +73,15 @@ data class SkillStats(
      * late and still succeeding shouldn't be punished with a short re-show.
      */
     var refreshIntervalDays: Float = 1f,
+    /**
+     * Whether the sustained-slowness mastery floor applies (see
+     * [failureProbability]). True for every skill except SPEAK, where slowness is
+     * inherent (hold-to-record, then listen to the model and your own take), so a
+     * slow round must NOT block mastery. NOT persisted — derived from the skill
+     * when the per-skill map is built (see Vocab.skillStats) and in StatsReplay;
+     * a data-class [copy] preserves it, keeping round-start snapshots correct.
+     */
+    var slowViewFloorEnabled: Boolean = true,
 ) {
     /** Single entry point for failure events so the counter and timestamp stay in sync. */
     fun recordFailure(amount: Float) {
@@ -243,7 +252,12 @@ data class SkillStats(
         // exceeds SLOW_VIEW_TIME_MAX_MS, floor the reported fpb just above the
         // mastery cut so the (word, skill) pair stays in the active pool. Both
         // rounds must be fast for the pair to slip through.
-        return if (clamped < SLOW_FPB_FLOOR &&
+        //
+        // Skipped for SPEAK ([slowViewFloorEnabled] = false): speaking rounds are
+        // inherently slow (record + listen to the model + listen to your take), so
+        // slowness there is expected, not a sign of struggling — it must not block
+        // pronunciation mastery.
+        return if (slowViewFloorEnabled && clamped < SLOW_FPB_FLOOR &&
             maxOf(viewTimeMilli, viewTimeMilli_prev) > SLOW_VIEW_TIME_MAX_MS) {
             SLOW_FPB_FLOOR
         } else {
