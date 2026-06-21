@@ -2,7 +2,6 @@ package io.github.wandersalamander.vocabtrainer
 
 import android.app.Activity
 import android.os.SystemClock
-import android.util.TypedValue
 import android.view.View
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -75,36 +74,29 @@ internal fun Activity.enableEdgeToEdge() {
 }
 
 /**
- * Pixel height of the AppCompat-themed action bar for this activity. Returns
- * 0 when the theme has no action bar (NoActionBar variants).
- */
-internal fun Activity.themeActionBarHeightPx(): Int {
-    val tv = TypedValue()
-    return if (theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
-        TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
-    } else 0
-}
-
-/**
- * Push the receiver below the status bar + window-decor action bar and above
- * the gesture-nav bar. Edge-to-edge (targetSdk 35) removes the system's
- * automatic reservation for those strips, so the activity's content otherwise
- * draws underneath them. Adds the inset values on top of whatever padding the
- * view already had — the existing 14dp / 20dp room used by activity_main's
- * cards stays exactly the same after this.
+ * Pad the receiver by the system-bar insets under edge-to-edge: status bar at
+ * the top, gesture-nav bar at the bottom, plus any side insets.
  *
- * Pass [actionBarHeightPx] = [themeActionBarHeightPx] when the activity uses
- * the window-decor AppCompat ActionBar (which under edge-to-edge no longer
- * reserves a strip of its own); pass 0 on screens with their own Toolbar.
+ * On screens with the window-decor AppCompat ActionBar, appcompat 1.7 reports a
+ * top inset here that ALREADY includes the action-bar height (status bar +
+ * action bar), so applying that top inset alone drops the content just below the
+ * bar. Older appcompat reported only the status bar, which is why this used to
+ * add the action-bar height on top — doing that now double-counts and leaves a
+ * gap the height of the action bar. Screens with no action bar simply get the
+ * status-bar height in the top inset, so the same code is correct there too.
  *
- * `clipToPadding=false` is preserved so animation floaters (e.g. the goldenrod
- * "+N" / "-N" deltas that lift OUT of the streak / active cards) still draw
- * through the padded region above their parent card.
+ * Apply this to the scrolling container (e.g. the ScrollView) rather than its
+ * inner content so that, with clipToPadding on, the insets clip scrolled rows
+ * above the nav bar (and below the action bar) instead of letting them slide
+ * under. Adds onto whatever padding the view already had; `clipToPadding=false`
+ * is preserved so animation floaters (e.g. the goldenrod "+N" / "-N" deltas that
+ * lift OUT of the streak / active cards) still draw through the padded region
+ * above their parent card.
  *
  * Idempotent — calling twice replaces the previous listener via Android's
  * single-listener contract on the same view.
  */
-internal fun View.applySystemBarAndActionBarInsetsAsPadding(actionBarHeightPx: Int) {
+internal fun View.applySystemBarInsetsAsPadding() {
     val initialLeft = paddingLeft
     val initialTop = paddingTop
     val initialRight = paddingRight
@@ -113,7 +105,7 @@ internal fun View.applySystemBarAndActionBarInsetsAsPadding(actionBarHeightPx: I
         val bars = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
         v.updatePadding(
             left = initialLeft + bars.left,
-            top = initialTop + bars.top + actionBarHeightPx,
+            top = initialTop + bars.top,
             right = initialRight + bars.right,
             bottom = initialBottom + bars.bottom,
         )

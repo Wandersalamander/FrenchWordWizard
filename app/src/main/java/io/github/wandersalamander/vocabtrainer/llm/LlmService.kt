@@ -349,10 +349,11 @@ object LlmService {
                     Log.i(TAG, "generating with LLM (prompt=$prompt)")
                     val convConfig = ConversationConfig(samplerConfig = newSamplerConfig())
                     val responseText: String = engine.createConversation(convConfig).use { conv ->
-                        // Message has no .text accessor; toString() returns
-                        // the concatenated Contents text (verified against
-                        // litert-lm source: Message.kt overrides
-                        // toString() = contents.toString()).
+                        // Message.toString() returns the concatenated Contents
+                        // text — the SDK's own getting-started guide prints the
+                        // returned Message directly, relying on this. (0.13.1
+                        // also added a Message.text accessor; toString() is kept
+                        // as the equivalent so this line is unchanged by the bump.)
                         conv.sendMessage(prompt).toString()
                     }
                     cleanup(responseText)

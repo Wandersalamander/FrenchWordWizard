@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import io.github.wandersalamander.vocabtrainer.R
-import io.github.wandersalamander.vocabtrainer.applySystemBarAndActionBarInsetsAsPadding
+import io.github.wandersalamander.vocabtrainer.applySystemBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
@@ -44,10 +44,10 @@ class OnboardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_onboarding)
-        // No action bar on this screen, so pass 0 — only the status/nav bar
-        // insets are added to the scroll content's existing padding.
+        // No action bar here, so the reported top inset is just the status bar,
+        // added to this topmost content's existing padding.
         findViewById<View>(R.id.onbRoot)
-            .applySystemBarAndActionBarInsetsAsPadding(0)
+            .applySystemBarInsetsAsPadding()
 
         selected = defaultLanguage()
 

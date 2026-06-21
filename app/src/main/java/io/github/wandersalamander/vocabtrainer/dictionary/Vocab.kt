@@ -251,7 +251,7 @@ data class Vocab(
         const val CLOSING_BOOST_MAX = 4.0
 
         /**
-         * Counteracts near-mastered starvation. [failureProbability] enters
+         * Counteracts near-mastered starvation. [SkillStats.failureProbability] enters
          * [sortValue] as a *multiplier*, so a pair a clean round or two from
          * mastery gets a tiny weight and loses every weighted draw to fresher
          * pairs — lingering in the active pool indefinitely. This ramps a boost
@@ -273,7 +273,7 @@ data class Vocab(
          */
         internal fun closingBoost(fpb: Float): Double {
             val bandTop = SkillStats.SLOW_FPB_FLOOR
-            if (fpb >= bandTop || bandTop <= SKILL_FINISHED_THRESHOLD) return 1.0
+            if (fpb >= bandTop) return 1.0
             val t = ((fpb - SKILL_FINISHED_THRESHOLD) / (bandTop - SKILL_FINISHED_THRESHOLD))
                 .coerceIn(0f, 1f)
             return CLOSING_BOOST_MAX - (CLOSING_BOOST_MAX - 1.0) * t

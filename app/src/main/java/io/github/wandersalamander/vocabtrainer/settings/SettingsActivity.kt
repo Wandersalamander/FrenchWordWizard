@@ -27,14 +27,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import io.github.wandersalamander.vocabtrainer.R
-import io.github.wandersalamander.vocabtrainer.applySystemBarAndActionBarInsetsAsPadding
+import io.github.wandersalamander.vocabtrainer.applySystemBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.backup.ProgressBackup
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.data.LanguageWipeRepository
 import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
-import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
@@ -82,11 +81,12 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
-        // Pad the inner LinearLayout (not the ScrollView): the ScrollView keeps
-        // its edge-to-edge bounds so the scrollbar runs the full height, while
-        // the content starts below the action bar and tucks under it on scroll.
-        findViewById<View>(R.id.contentRoot)
-            .applySystemBarAndActionBarInsetsAsPadding(themeActionBarHeightPx())
+        // Pad the ScrollView itself, not the inner content: with clipToPadding
+        // on, the insets clip scrolled rows above the nav bar (and below the
+        // action bar) instead of letting them slide under. appcompat 1.7 folds
+        // the action-bar height into the top inset, so applying it is enough.
+        findViewById<View>(R.id.settingsScroll)
+            .applySystemBarInsetsAsPadding()
 
         val prefs = AppPrefs.get(this)
 

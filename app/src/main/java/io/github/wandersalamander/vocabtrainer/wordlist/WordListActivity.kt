@@ -12,12 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.github.wandersalamander.vocabtrainer.R
-import io.github.wandersalamander.vocabtrainer.applySystemBarAndActionBarInsetsAsPadding
+import io.github.wandersalamander.vocabtrainer.applySystemBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.DataLayer
 import io.github.wandersalamander.vocabtrainer.enableEdgeToEdge
 import io.github.wandersalamander.vocabtrainer.setDebouncedOnClickListener
-import io.github.wandersalamander.vocabtrainer.themeActionBarHeightPx
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
 import io.github.wandersalamander.vocabtrainer.dictionary.Skill
@@ -61,7 +60,7 @@ class WordListActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_word_list)
         findViewById<View>(R.id.contentRoot)
-            .applySystemBarAndActionBarInsetsAsPadding(themeActionBarHeightPx())
+            .applySystemBarInsetsAsPadding()
 
         val prefs = AppPrefs.get(this)
         val language = Language.fromPrefs(this)

@@ -17,7 +17,7 @@ android {
     // the manifest. Independent of applicationId so we can rename the source
     // tree without changing the installed-app identity on user devices.
     namespace 'io.github.wandersalamander.vocabtrainer'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         // The app's permanent Play Store identity (reverse-DNS form; Play does
@@ -55,9 +55,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = '17'
-    }
 
     // Bundle the exported Room schema JSONs into the androidTest APK so
     // MigrationTestHelper can find them at runtime via the assets folder.
@@ -68,16 +65,26 @@ android {
     }
 }
 
+// Kotlin compiler options. Lives in the top-level kotlin { compilerOptions { } }
+// block because the android { kotlinOptions { } } form is deprecated in the
+// Kotlin Gradle plugin (2.0+); the typed JvmTarget enum replaces the old
+// jvmTarget = '17' string.
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
-    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.3'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.14.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.15.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.11.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0'
     // Room (SQLite) — replaces SharedPreferences as the source of truth for
     // per-vocab stats, streak state, and daily counters. Repository layer
     // (io.github.wandersalamander.vocabtrainer.data) hides the storage backend so future
@@ -86,17 +93,17 @@ dependencies {
     //
     // 2.8.x is the line that ships KSP2 support; earlier versions fail with
     // "unexpected jvm signature V" against Kotlin 2.2.x suspend DAOs.
-    implementation 'androidx.room:room-runtime:2.8.2'
-    implementation 'androidx.room:room-ktx:2.8.2'
-    ksp 'androidx.room:room-compiler:2.8.2'
+    implementation 'androidx.room:room-runtime:2.8.4'
+    implementation 'androidx.room:room-ktx:2.8.4'
+    ksp 'androidx.room:room-compiler:2.8.4'
     // LiteRT-LM SDK — used to load .litertlm model files (Gemma 4 family).
     // We migrated off com.google.mediapipe:tasks-genai because Gemma 4 only
     // ships in the .litertlm format.
-    implementation 'com.google.ai.edge.litertlm:litertlm-android:0.11.0'
+    implementation 'com.google.ai.edge.litertlm:litertlm-android:0.13.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
     // MigrationTestHelper for schema-validated migration tests. Reads the
     // JSON schemas exported via the ksp room.schemaLocation arg above.
-    androidTestImplementation 'androidx.room:room-testing:2.8.2'
+    androidTestImplementation 'androidx.room:room-testing:2.8.4'
 }
