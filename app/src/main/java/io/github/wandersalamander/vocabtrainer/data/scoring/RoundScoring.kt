@@ -23,11 +23,31 @@ object RoundScoring {
     /** Penalty for using the sentence tip ("show me an example"). */
     const val SENTENCE_TIP_PENALTY: Float = 0.25f
 
+    /**
+     * SPEAK opt-in hint: penalty for tapping the foreign word to hear the model
+     * pronunciation *before* recording an attempt. Charged once per round (it's a
+     * tip flavor — [TipUsed.SPEAK_REVEAL]); replaying the model *after* a take to
+     * compare is free. Sized like the sentence tip — a real but non-fatal hint.
+     */
+    const val SPEAK_REVEAL_PENALTY: Float = 0.25f
+
     /** Penalty per tap on a masked element (masked word or masked sentence) to replay TTS. */
     const val MASK_TAP_PENALTY: Float = 0.10f
 
     /** Penalty for an outright fail (Reveal click, or spot-check "Wrong"). */
     const val FAIL_PENALTY: Float = 1.0f
+
+    /**
+     * SPEAK only: penalty per *re-record* — each take after the first. The first
+     * take is the task itself (free); re-recording signals the user wasn't happy
+     * with their attempt, the same kind of "struggle tell" as a mask tap. Capped
+     * at [SPEAK_MAX_PENALIZED_RERECORDS] re-records so a fussy-but-eventually-
+     * "Good" round stays at/under one [FAIL_PENALTY] rather than ballooning.
+     */
+    const val SPEAK_RERECORD_PENALTY: Float = 0.25f
+
+    /** Re-records beyond this many stop accruing penalty (cap = N × penalty). */
+    const val SPEAK_MAX_PENALIZED_RERECORDS: Int = 4
 
     /**
      * View-time padding the EMA absorbs on a fail round (the "fail flash" pause
@@ -50,14 +70,27 @@ object RoundScoring {
     }
 
     /**
+     * Penalty for a round in which the user recorded [recordings] SPEAK takes.
+     * The first take is free; each subsequent take costs [SPEAK_RERECORD_PENALTY],
+     * capped at [SPEAK_MAX_PENALIZED_RERECORDS] re-records. Returns 0 for
+     * [recordings] ≤ 1 (and for non-SPEAK rounds, which log 0).
+     */
+    fun speakReRecordPenalty(recordings: Int): Float {
+        val penalized = (recordings - 1).coerceIn(0, SPEAK_MAX_PENALIZED_RERECORDS)
+        return penalized * SPEAK_RERECORD_PENALTY
+    }
+
+    /**
      * Total failAmount the round contributes to the (vocab, skill) pair's
      * stats. Sum of every penalty event encoded in [entry]:
      *
      *  - [CommitButton.FAIL] (raw Reveal click or spot-check Wrong) → [FAIL_PENALTY]
      *  - [TipUsed.SENTENCE] → [SENTENCE_TIP_PENALTY]
+     *  - [TipUsed.SPEAK_REVEAL] → [SPEAK_REVEAL_PENALTY] (SPEAK pre-attempt hint)
      *  - [TipUsed.PROGRESSIVE_REVEAL] → sum of [progressiveRevealPenalty]
      *    over the count in `entry.progressiveReveals`
      *  - each `wordMaskTaps` / `sentenceMaskTaps` → [MASK_TAP_PENALTY]
+     *  - SPEAK re-records (takes after the first) → [speakReRecordPenalty]
      *
      * [foreignLetterCount] is the letter count of the word's foreign text,
      * needed only to evaluate the progressive-reveal triangular formula.
@@ -70,6 +103,7 @@ object RoundScoring {
         if (entry.commitButton == CommitButton.FAIL) amount += FAIL_PENALTY
         when (entry.tipUsed) {
             TipUsed.SENTENCE -> amount += SENTENCE_TIP_PENALTY
+            TipUsed.SPEAK_REVEAL -> amount += SPEAK_REVEAL_PENALTY
             TipUsed.PROGRESSIVE_REVEAL -> {
                 for (i in 1..entry.progressiveReveals) {
                     amount += progressiveRevealPenalty(i, foreignLetterCount)
@@ -79,6 +113,7 @@ object RoundScoring {
         }
         amount += entry.wordMaskTaps * MASK_TAP_PENALTY
         amount += entry.sentenceMaskTaps * MASK_TAP_PENALTY
+        amount += speakReRecordPenalty(entry.speakRecordings)
         return amount
     }
 }

@@ -24,6 +24,7 @@ class FastTrackTest {
         sentenceMaskTaps: Int = 0,
         progressiveReveals: Int = 0,
         elapsedMs: Long = 1_500L,
+        speakReRecords: Int = 0,
         predecessorFastTracked: Boolean = true,
     ): Boolean = FastTrack.isCandidate(
         priorViews = priorViews,
@@ -32,6 +33,7 @@ class FastTrackTest {
         sentenceMaskTaps = sentenceMaskTaps,
         progressiveReveals = progressiveReveals,
         elapsedMs = elapsedMs,
+        speakReRecords = speakReRecords,
         predecessorFastTracked = predecessorFastTracked,
     )
 
@@ -53,6 +55,12 @@ class FastTrackTest {
         assertFalse(candidate(tipUsed = TipUsed.PROGRESSIVE_REVEAL))
     }
 
+    @Test fun speakRevealTipDisqualifies() {
+        // SPEAK's opt-in "hear it before attempting" is a tip flavor — a round
+        // that needed it isn't a trivially-known pass.
+        assertFalse(candidate(tipUsed = TipUsed.SPEAK_REVEAL))
+    }
+
     @Test fun wordMaskTapDisqualifies() {
         // Tapping the masked foreign word to replay TTS is a "I need help" signal
         // even if the user eventually answered correctly — not a trivial pass.
@@ -61,6 +69,12 @@ class FastTrackTest {
 
     @Test fun sentenceMaskTapDisqualifies() {
         assertFalse(candidate(sentenceMaskTaps = 1))
+    }
+
+    @Test fun reRecordedSpeakRoundDisqualifies() {
+        // A SPEAK first exposure that needed a retake isn't a trivially-known
+        // pass — same disqualification a mask tap or tip already triggers.
+        assertFalse(candidate(speakReRecords = 1))
     }
 
     @Test fun progressiveRevealsCountDisqualifies() {

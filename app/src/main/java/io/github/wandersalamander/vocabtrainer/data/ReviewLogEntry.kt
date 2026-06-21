@@ -37,6 +37,13 @@ data class ReviewLogEntry(
     /** Visible-word taps (no penalty — just a TTS replay). */
     val wordReplays: Int,
     val sentenceMaskTaps: Int,
+    /**
+     * SPEAK only: how many takes the user recorded this round. 0 = none (pre-
+     * record fail or a non-SPEAK skill), 1 = a single clean take (free), ≥2 =
+     * re-records — each one beyond the first is penalized (see
+     * [io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring.speakReRecordPenalty]).
+     */
+    val speakRecordings: Int,
     val spotCheckResult: SpotCheckResult,
     /** Effective sentence-source setting at the time of the round. */
     val sentenceSource: SentenceSource,
@@ -66,8 +73,12 @@ data class ReviewLogEntry(
  */
 enum class CommitButton { NEXT, FAIL, NEW, LEARNED, OTHER }
 
-/** Which tip flavor (if any) the user invoked. */
-enum class TipUsed { NONE, SENTENCE, PROGRESSIVE_REVEAL }
+/**
+ * Which tip flavor (if any) the user invoked. [SPEAK_REVEAL] is the SPEAK tier's
+ * opt-in "hear the model before attempting" hint — modelled as a tip so it
+ * scores and blocks fast-track via the same paths as the other flavors.
+ */
+enum class TipUsed { NONE, SENTENCE, PROGRESSIVE_REVEAL, SPEAK_REVEAL }
 
 /** Spot-check outcome for this round, or NONE if no spot check was triggered. */
 enum class SpotCheckResult { NONE, PASSED, FAILED }

@@ -82,12 +82,15 @@ internal object FastTrack {
         sentenceMaskTaps: Int,
         progressiveReveals: Int,
         elapsedMs: Long,
+        speakReRecords: Int = 0,
         predecessorFastTracked: Boolean = true,
     ): Boolean {
         if (!predecessorFastTracked) return false
         if (priorViews > MAX_PRIOR_VIEWS) return false
         if (tipUsed != TipUsed.NONE) return false
         if (wordMaskTaps > 0 || sentenceMaskTaps > 0 || progressiveReveals > 0) return false
+        // A SPEAK exposure that needed a retake isn't a "trivially known" pass.
+        if (speakReRecords > 0) return false
         return elapsedMs in 0..MAX_VIEW_MS
     }
 }

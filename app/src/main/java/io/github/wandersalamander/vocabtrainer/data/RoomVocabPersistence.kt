@@ -83,6 +83,7 @@ class RoomVocabPersistence(
         wordMaskTaps = wordMaskTaps,
         wordReplays = wordReplays,
         sentenceMaskTaps = sentenceMaskTaps,
+        speakRecordings = speakRecordings,
         spotCheckResult = spotCheckResult,
         sentenceSource = sentenceSource,
         listeningEnabled = listeningEnabled,

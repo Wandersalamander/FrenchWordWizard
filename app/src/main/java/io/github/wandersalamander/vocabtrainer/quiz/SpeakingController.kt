@@ -54,6 +54,9 @@ internal class SpeakingController(
     private val language: Language,
     private val waveform: RecordingWaveformView,
     private val onState: (SpeakPhase) -> Unit,
+    // Fired once each time a take finishes recording (the file is ready), before
+    // the model+take auto-play. The host counts these to penalize re-records.
+    private val onTakeRecorded: () -> Unit = {},
 ) {
     private val outputFile: File by lazy { File(activity.cacheDir, "speak_take.m4a") }
 
@@ -110,7 +113,7 @@ internal class SpeakingController(
 
     /**
      * Hold engaged on the widget: show the "recording" UI immediately, but begin
-     * the actual capture [RECORD_START_SKIP_MS] later — the user needs ~200ms to
+     * the actual capture [RECORD_START_SKIP_MS] later — the user needs ~100ms to
      * react and start talking after seeing the hint, and that leading silence
      * shouldn't be recorded (the bars then start right as they begin speaking).
      */
@@ -173,6 +176,7 @@ internal class SpeakingController(
                 return@launch
             }
             playbackGain = computeNormalizationGain()
+            onTakeRecorded()
             setPhase(SpeakPhase.PLAYING)
             try {
                 // Model pronunciation first (foreign locale, awaits TTS done)...
@@ -425,12 +429,12 @@ internal class SpeakingController(
         // (mostly silence / a slip).
         private const val MIN_RECORD_MS = 250L
 
-        // The capture window is shifted +200ms on both ends: skip the user's
+        // The capture window is shifted +100ms on both ends: skip the user's
         // reaction time after the "recording" hint (so the leading silence isn't
         // recorded), and keep the mic open a beat past release so the tail of the
         // word isn't clipped.
-        private const val RECORD_START_SKIP_MS = 200L
-        private const val RECORD_TAIL_MS = 200L
+        private const val RECORD_START_SKIP_MS = 100L
+        private const val RECORD_TAIL_MS = 100L
 
         // Amplitude poll cadence while recording → one waveform bar each.
         private const val AMP_POLL_MS = 60L

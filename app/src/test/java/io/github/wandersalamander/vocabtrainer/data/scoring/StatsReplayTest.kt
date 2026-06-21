@@ -40,6 +40,7 @@ class StatsReplayTest {
         progressiveReveals = reveals,
         wordMaskTaps = wordMask, sentenceMaskTaps = sentenceMask,
         wordReplays = 0,
+        speakRecordings = 0,
         spotCheckResult = spot,
         sentenceSource = SentenceSource.EASY,
         listeningEnabled = true,

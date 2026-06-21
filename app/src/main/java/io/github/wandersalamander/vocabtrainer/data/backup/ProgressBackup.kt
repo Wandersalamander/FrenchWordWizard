@@ -399,6 +399,7 @@ object ProgressBackup {
         put("wordMaskTaps", e.wordMaskTaps)
         put("wordReplays", e.wordReplays)
         put("sentenceMaskTaps", e.sentenceMaskTaps)
+        put("speakRecordings", e.speakRecordings)
         put("spotCheckResult", e.spotCheckResult.name)
         put("sentenceSource", e.sentenceSource.name)
         put("listeningEnabled", e.listeningEnabled)
@@ -425,6 +426,7 @@ object ProgressBackup {
             wordMaskTaps = o.optInt("wordMaskTaps"),
             wordReplays = o.optInt("wordReplays"),
             sentenceMaskTaps = o.optInt("sentenceMaskTaps"),
+            speakRecordings = o.optInt("speakRecordings"),
             spotCheckResult = spotCheckResult,
             sentenceSource = sentenceSource,
             listeningEnabled = o.optBoolean("listeningEnabled"),

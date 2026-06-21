@@ -46,7 +46,7 @@ import io.github.wandersalamander.vocabtrainer.data.db.entities.VocabStatsEntity
         LifetimeScoreEntity::class,
         MetadataEntity::class,
     ],
-    version = 6,
+    version = 7,
     // JSON schemas are exported to app/schemas/<AppDatabase>/<version>.json
     // (configured via the ksp room.schemaLocation arg in build.gradle).
     // MigrationTestHelper reads them; commit the generated files alongside
@@ -70,7 +70,7 @@ abstract class AppDatabase : RoomDatabase() {
         // Current schema version. MUST equal @Database(version = …) above.
         // Exposed so migration tests assert against one version instead of a
         // scattered literal; MigrationCoverageTest fails if the two drift.
-        internal const val SCHEMA_VERSION = 6
+        internal const val SCHEMA_VERSION = 7
 
         @Volatile
         private var instance: AppDatabase? = null
@@ -202,12 +202,30 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Adds [VocabReviewLogEntity.speakRecordings] (INTEGER NOT NULL,
+         * default 0) — the per-round count of SPEAK takes, used by
+         * [io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring.speakReRecordPenalty]
+         * to charge each re-record. Purely additive — every pre-v7 row decodes
+         * to 0 (no takes captured), which yields zero re-record penalty on
+         * replay. That's correct: the fact didn't exist before this version, so
+         * history re-derives exactly as it scored at the time.
+         */
+        internal val MIGRATION_6_7 = object : Migration(6, 7) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "ALTER TABLE `vocab_review_log` " +
+                        "ADD COLUMN `speak_recordings` INTEGER NOT NULL DEFAULT 0"
+                )
+            }
+        }
+
         // Single source of truth for the migrations get() applies.
         // MigrationCoverageTest exercises this same array through the real
         // builder, so registering a migration here wires it into prod AND the
         // coverage test at once. Declared after MIGRATION_2_3 so the property
         // initializer sees a non-null value.
         internal val ALL_MIGRATIONS: Array<Migration> =
-            arrayOf(MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
+            arrayOf(MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7)
     }
 }

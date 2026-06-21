@@ -250,10 +250,11 @@ internal object SpeakFlow : SkillFlow {
         views.textForeign.isClickable = true
     }
 
-    // Speak the foreign word at round start so the user hears the target to say.
-    // (No longer an answer to hide — it's on screen — so there's nothing to leak.)
-    override fun ttsAtRoundStart(vocab: Vocab, tts: TtsHelper) =
-        tts.speakForeignWord(vocab, flush = true)
+    // No round-start audio: hearing the target before attempting is an opt-in
+    // hint (tap the foreign word), scored via RoundScoring.SPEAK_REVEAL_PENALTY.
+    // Auto-playing it would hand over the pronunciation for free and undercut the
+    // production attempt — the model still plays in the post-record compare.
+    override fun ttsAtRoundStart(vocab: Vocab, tts: TtsHelper) = Unit
 
     override fun ttsOnReveal(vocab: Vocab, tts: TtsHelper) =
         tts.speakForeignWord(vocab, flush = true)

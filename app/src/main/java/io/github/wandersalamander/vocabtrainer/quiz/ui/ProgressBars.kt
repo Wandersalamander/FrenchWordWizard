@@ -30,11 +30,36 @@ internal data class ActiveSkillFinishedToday(
     val speak: Int,
 )
 
-// Separator literal used between the three per-skill segments in
-// textActiveLabel. QuizController.animateActiveDelta also uses it to map digit
-// indices back to character offsets for getPrimaryHorizontal, so the two
-// renderers must agree on the exact glyphs.
+// Separator literal between the four per-skill segments in textActiveLabel.
+// ProgressBarAnimator.segmentRightEdgeXInLabel also needs its length to map digit
+// indices back to character offsets for getPrimaryHorizontal, so the renderer and
+// the floater math must agree on the exact glyphs — both pick it via
+// [activeLabelSeparator].
 internal const val ACTIVE_LABEL_SEPARATOR = "  ·  "
+
+// Tightened separator used once any visible count is multi-digit: the label is
+// end-aligned with no left bound, so wide numbers would otherwise push it left
+// under the ACTIVE WORDS eyebrow. Trades the airy padding for fit only when
+// needed.
+internal const val ACTIVE_LABEL_SEPARATOR_TIGHT = " · "
+
+/**
+ * Inter-skill separator for the active label: the airy default, tightened to
+ * [ACTIVE_LABEL_SEPARATOR_TIGHT] as soon as any rendered count reaches two
+ * digits. Keyed on the same counts the label is built from, so the renderer and
+ * the floater offset math (which needs the separator's length) always agree on
+ * what was drawn.
+ */
+internal fun activeLabelSeparator(
+    counts: ActiveSetCounts,
+    today: ActiveSkillFinishedToday,
+): String {
+    val anyMultiDigit = counts.read >= 10 || counts.listen >= 10 ||
+        counts.invert >= 10 || counts.speak >= 10 ||
+        today.read >= 10 || today.listen >= 10 ||
+        today.invert >= 10 || today.speak >= 10
+    return if (anyMultiDigit) ACTIVE_LABEL_SEPARATOR_TIGHT else ACTIVE_LABEL_SEPARATOR
+}
 
 // Joiner between a skill's active count and its goldenrod "today-finished"
 // suffix. Just a space — gives "8 2" with the gold-coloured "2" reading as a
@@ -221,12 +246,13 @@ private fun buildActiveLabel(
     todayFinished: ActiveSkillFinishedToday,
 ): CharSequence {
     val sb = SpannableStringBuilder()
+    val separator = activeLabelSeparator(counts, todayFinished)
     appendActiveSkillRun(context, sb, counts.read, todayFinished.read, R.color.seg_read)
-    appendColored(context, sb, ACTIVE_LABEL_SEPARATOR, R.color.card_text_muted)
+    appendColored(context, sb, separator, R.color.card_text_muted)
     appendActiveSkillRun(context, sb, counts.listen, todayFinished.listen, R.color.seg_listen)
-    appendColored(context, sb, ACTIVE_LABEL_SEPARATOR, R.color.card_text_muted)
+    appendColored(context, sb, separator, R.color.card_text_muted)
     appendActiveSkillRun(context, sb, counts.invert, todayFinished.invert, R.color.seg_invert)
-    appendColored(context, sb, ACTIVE_LABEL_SEPARATOR, R.color.card_text_muted)
+    appendColored(context, sb, separator, R.color.card_text_muted)
     appendActiveSkillRun(context, sb, counts.speak, todayFinished.speak, R.color.seg_speak)
     return sb
 }

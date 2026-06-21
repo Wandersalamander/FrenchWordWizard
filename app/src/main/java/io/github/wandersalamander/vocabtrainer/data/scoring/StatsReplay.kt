@@ -116,6 +116,7 @@ object StatsReplay {
             sentenceMaskTaps = entry.sentenceMaskTaps,
             progressiveReveals = entry.progressiveReveals,
             elapsedMs = entry.viewTimeMs,
+            speakReRecords = (entry.speakRecordings - 1).coerceAtLeast(0),
         )
         if (fastTracking) {
             // First-exposure mastery: push the first refresh gap out so the

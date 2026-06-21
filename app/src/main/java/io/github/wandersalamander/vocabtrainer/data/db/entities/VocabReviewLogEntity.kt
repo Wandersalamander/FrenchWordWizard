@@ -61,6 +61,8 @@ data class VocabReviewLogEntity(
     val wordReplays: Int,
     @ColumnInfo(name = "sentence_mask_taps")
     val sentenceMaskTaps: Int,
+    @ColumnInfo(name = "speak_recordings")
+    val speakRecordings: Int,
     @ColumnInfo(name = "spot_check_result")
     val spotCheckResult: SpotCheckResult,
     @ColumnInfo(name = "sentence_source")

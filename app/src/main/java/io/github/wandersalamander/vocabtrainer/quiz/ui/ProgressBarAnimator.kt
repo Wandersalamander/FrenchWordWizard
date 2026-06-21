@@ -195,7 +195,7 @@ internal class ProgressBarAnimator(
         val listenSeg = perSkillRunLength(counts.listen, todayFinished.listen)
         val invertSeg = perSkillRunLength(counts.invert, todayFinished.invert)
         val speakSeg = perSkillRunLength(counts.speak, todayFinished.speak)
-        val sepLen = ACTIVE_LABEL_SEPARATOR.length
+        val sepLen = activeLabelSeparator(counts, todayFinished).length
         val expectedEnd = readSeg + sepLen + listenSeg + sepLen + invertSeg + sepLen + speakSeg
         if (layout.text.length < expectedEnd) return null
         val end = when (group) {

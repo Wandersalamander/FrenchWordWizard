@@ -35,6 +35,9 @@ class RoundFacts {
         private set
     var sentenceMaskTaps: Int = 0
         private set
+    /** SPEAK only: takes recorded this round (1 = free first take, ≥2 = re-records). */
+    var speakRecordings: Int = 0
+        private set
     var spotCheckResult: SpotCheckResult = SpotCheckResult.NONE
         private set
 
@@ -47,6 +50,7 @@ class RoundFacts {
         wordMaskTaps = 0
         wordReplays = 0
         sentenceMaskTaps = 0
+        speakRecordings = 0
         spotCheckResult = SpotCheckResult.NONE
     }
 
@@ -64,6 +68,17 @@ class RoundFacts {
         tipUsed = TipUsed.SENTENCE
     }
 
+    /**
+     * SPEAK: the user tapped the foreign word to hear the model pronunciation
+     * before attempting — an opt-in hint, recorded as a tip flavor so it scores
+     * ([io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring.SPEAK_REVEAL_PENALTY])
+     * and blocks fast-track. First call this round sets it; later taps are no-ops
+     * (the hint is already spent).
+     */
+    fun recordSpeakReveal() {
+        if (tipUsed == TipUsed.NONE) tipUsed = TipUsed.SPEAK_REVEAL
+    }
+
     fun recordProgressiveReveal() {
         if (tipUsed == TipUsed.NONE) tipUsed = TipUsed.PROGRESSIVE_REVEAL
         progressiveReveals += 1
@@ -72,6 +87,8 @@ class RoundFacts {
     fun recordWordMaskTap() { wordMaskTaps += 1 }
     fun recordWordReplay() { wordReplays += 1 }
     fun recordSentenceMaskTap() { sentenceMaskTaps += 1 }
+    /** A SPEAK take finished recording (call once per completed take). */
+    fun recordSpeakRecording() { speakRecordings += 1 }
 
     fun recordSpotCheckResult(passed: Boolean) {
         spotCheckResult = if (passed) SpotCheckResult.PASSED else SpotCheckResult.FAILED
@@ -108,6 +125,7 @@ class RoundFacts {
             wordMaskTaps = wordMaskTaps,
             wordReplays = wordReplays,
             sentenceMaskTaps = sentenceMaskTaps,
+            speakRecordings = speakRecordings,
             spotCheckResult = spotCheckResult,
             sentenceSource = sentenceSource,
             listeningEnabled = listeningEnabled,

@@ -22,6 +22,7 @@ import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.data.CommitButton
 import io.github.wandersalamander.vocabtrainer.data.SpotCheckResult
+import io.github.wandersalamander.vocabtrainer.data.TipUsed
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.data.scoring.FastTrack
 import io.github.wandersalamander.vocabtrainer.data.scoring.RoundScoring
@@ -217,6 +218,7 @@ class QuizController(
         language = language,
         waveform = views.recordingWaveform,
         onState = ::onSpeakState,
+        onTakeRecorded = ::onSpeakTakeRecorded,
     )
 
     var currentVocab: Vocab? = null
@@ -397,6 +399,7 @@ class QuizController(
             sentenceMaskTaps = roundFacts.sentenceMaskTaps,
             progressiveReveals = roundFacts.progressiveReveals,
             elapsedMs = activeViewTime,
+            speakReRecords = (roundFacts.speakRecordings - 1).coerceAtLeast(0),
             predecessorFastTracked = predecessorFastTracked(vocab, currentSkill),
         )
     }
@@ -1284,6 +1287,7 @@ class QuizController(
             sentenceMaskTaps = roundFacts.sentenceMaskTaps,
             progressiveReveals = roundFacts.progressiveReveals,
             elapsedMs = activeViewTime,
+            speakReRecords = (roundFacts.speakRecordings - 1).coerceAtLeast(0),
             predecessorFastTracked = predecessorFastTracked(vocab, currentSkill),
         )
         if (fastTracking) {
@@ -1487,9 +1491,12 @@ class QuizController(
     }
 
     /**
-     * Replay the foreign word when the user taps the already-visible word —
-     * e.g. in READ, or in LISTEN with listening disabled. No penalty: the
-     * answer was on screen anyway, the tap is just a "say it again" convenience.
+     * Replay the foreign word when the user taps the already-visible word. In
+     * READ / LISTEN-disabled it's a free "say it again" — the answer was on
+     * screen anyway. In SPEAK the foreign word IS the answer being produced, so
+     * hearing it *before* a take is an opt-in hint
+     * ([RoundScoring.SPEAK_REVEAL_PENALTY]); replaying it *after* a take to
+     * compare stays free.
      */
     private fun onWordReplayed() {
         val vocab = currentVocab ?: return
@@ -1498,6 +1505,20 @@ class QuizController(
             // any in-flight take replay first, and ignore while recording/playing.
             if (speaking.isBusy) return
             speaking.stopReplay()
+            roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+            if (!speaking.hasRecorded) {
+                // Pre-attempt: hearing the target is an opt-in hint. Score it once
+                // (a tip flavor → also blocks fast-track) so "attempt first" stays
+                // the default path.
+                if (roundFacts.tipUsed == TipUsed.NONE) {
+                    vocab.stats(currentSkill).recordFailure(RoundScoring.SPEAK_REVEAL_PENALTY)
+                }
+                roundFacts.recordSpeakReveal()
+            } else {
+                roundFacts.recordWordReplay()
+            }
+            tts.speakForeignWord(vocab, flush = true)
+            return
         }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         roundFacts.recordWordReplay()
@@ -1593,6 +1614,23 @@ class QuizController(
         // setQuizButtonsEnabled leaves the Hint button disabled for SPEAK
         // (tipAllowed = false); the "Can't speak" pause must stay available.
         views.buttonTip.setInteractive(true)
+    }
+
+    /**
+     * A SPEAK take just finished recording (fired by [SpeakingController]). The
+     * first take is the task itself and is free; every re-record after it is a
+     * struggle tell, charged like a mask tap up to a cap
+     * ([RoundScoring.SPEAK_MAX_PENALIZED_RERECORDS]). Recorded as a fact for the
+     * log AND applied live, so this round's failAmount delta matches what
+     * StatsReplay later derives from the logged take count.
+     */
+    private fun onSpeakTakeRecorded() {
+        if (currentSkill != Skill.SPEAK) return
+        roundFacts.recordSpeakRecording()
+        val reRecordIndex = roundFacts.speakRecordings - 1
+        if (reRecordIndex in 1..RoundScoring.SPEAK_MAX_PENALIZED_RERECORDS) {
+            currentVocab?.let { it.stats(currentSkill).recordFailure(RoundScoring.SPEAK_RERECORD_PENALTY) }
+        }
     }
 
     /** Hold on the waveform widget: start capturing (requesting the mic first if needed). */

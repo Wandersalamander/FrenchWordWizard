@@ -22,6 +22,7 @@ class RoundScoringTest {
         reveals: Int = 0,
         wordMask: Int = 0,
         sentenceMask: Int = 0,
+        recordings: Int = 0,
         spot: SpotCheckResult = SpotCheckResult.NONE,
         compromised: Boolean = false,
     ) = ReviewLogEntry(
@@ -32,6 +33,7 @@ class RoundScoringTest {
         progressiveReveals = reveals,
         wordMaskTaps = wordMask, sentenceMaskTaps = sentenceMask,
         wordReplays = 0,
+        speakRecordings = recordings,
         spotCheckResult = spot,
         sentenceSource = SentenceSource.EASY,
         listeningEnabled = true,
@@ -62,6 +64,36 @@ class RoundScoringTest {
     @Test fun sentenceTipAddsItsPenalty() {
         val amount = RoundScoring.failAmount(entry(tip = TipUsed.SENTENCE), foreignLetterCount = 5)
         assertEquals(RoundScoring.SENTENCE_TIP_PENALTY, amount, 1e-6f)
+    }
+
+    @Test fun speakRevealAddsItsPenalty() {
+        // Opt-in "hear it before attempting" is a tip flavor with its own penalty.
+        val amount = RoundScoring.failAmount(entry(tip = TipUsed.SPEAK_REVEAL), foreignLetterCount = 5)
+        assertEquals(RoundScoring.SPEAK_REVEAL_PENALTY, amount, 1e-6f)
+    }
+
+    @Test fun firstSpeakTakeIsFree() {
+        // A single take is the task itself — no penalty.
+        assertEquals(0f, RoundScoring.failAmount(entry(recordings = 1), foreignLetterCount = 5), 1e-6f)
+    }
+
+    @Test fun reRecordsAddPenaltyPerExtraTake() {
+        // 3 takes = 2 re-records → 2 × the per-re-record penalty.
+        assertEquals(
+            2 * RoundScoring.SPEAK_RERECORD_PENALTY,
+            RoundScoring.failAmount(entry(recordings = 3), foreignLetterCount = 5),
+            1e-6f,
+        )
+    }
+
+    @Test fun reRecordPenaltyIsCapped() {
+        // Beyond the cap, extra takes stop accruing penalty.
+        val cap = RoundScoring.SPEAK_MAX_PENALIZED_RERECORDS * RoundScoring.SPEAK_RERECORD_PENALTY
+        assertEquals(
+            cap,
+            RoundScoring.failAmount(entry(recordings = 99), foreignLetterCount = 5),
+            1e-6f,
+        )
     }
 
     @Test fun maskTapsScaleLinearlyWithCount() {
