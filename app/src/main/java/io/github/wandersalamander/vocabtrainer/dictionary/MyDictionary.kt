@@ -29,6 +29,7 @@ data class ActiveSetCounts(
     val read: Int,
     val listen: Int,
     val invert: Int,
+    val speak: Int,
 )
 
 /**
@@ -116,6 +117,7 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
         var read = 0
         var listen = 0
         var invert = 0
+        var speak = 0
         for (vocab in csvData) {
             if (vocab.ignore || !vocab.hasBeenIntroduced()) continue
             for (skill in Skill.ladder) {
@@ -124,10 +126,11 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
                     Skill.READ -> read++
                     Skill.LISTEN -> listen++
                     Skill.INVERT -> invert++
+                    Skill.SPEAK -> speak++
                 }
             }
         }
-        return ActiveSetCounts(read, listen, invert)
+        return ActiveSetCounts(read, listen, invert, speak)
     }
 
     /**

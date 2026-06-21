@@ -79,6 +79,7 @@ internal class QuizPicker(
     private val dictionary: MyDictionary,
     private val autoIntroduceThresholdProvider: () -> Int = { AUTO_INTRODUCE_THRESHOLD },
     private val frontierProvider: () -> Int? = { null },
+    private val speakingExcludedProvider: () -> Boolean = { false },
 ) {
     private val recentWords = ArrayDeque<String>()
 
@@ -120,10 +121,16 @@ internal class QuizPicker(
             masteredRefreshInterval(it.mastered, it.active)
         }
 
-        // When listening is off the LISTEN skill is excluded from the pool —
-        // getInactiveVocab always returns READ so it doesn't need the filter.
-        val skillFilter: (Skill) -> Boolean =
-            if (listeningEnabled) ({ true }) else ({ it != Skill.LISTEN })
+        // Skill-exclusion filter: LISTEN is dropped while listening is off, SPEAK
+        // while the Speaking tier is paused (per-language, re-read each round).
+        // getInactiveVocab always returns READ (never filtered), so excluding a
+        // skill can only narrow the pool — it can never deadlock the picker.
+        // SPEAK is excluded when the tier is off (Settings) or paused ("Can't speak").
+        val speakingExcluded = speakingExcludedProvider()
+        val skillFilter: (Skill) -> Boolean = { skill ->
+            (listeningEnabled || skill != Skill.LISTEN) &&
+                (!speakingExcluded || skill != Skill.SPEAK)
+        }
         val ctx = PickContext(
             dictionary = dictionary,
             newCandidates = newCandidates,

@@ -1,6 +1,8 @@
 package io.github.wandersalamander.vocabtrainer.quiz
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
 import android.text.SpannableString
@@ -95,9 +97,11 @@ data class QuizViews(
     val textActiveDeltaRead: TextView,
     val textActiveDeltaListen: TextView,
     val textActiveDeltaInvert: TextView,
+    val textActiveDeltaSpeak: TextView,
     val segActiveRead: View,
     val segActiveListen: View,
     val segActiveInvert: View,
+    val segActiveSpeak: View,
     val thinkingSparkle: ImageView,
 )
 
@@ -139,6 +143,12 @@ private const val HINT_DWELL_MS = 10_000L
 // the same handful of words cycle for a while — then suggest rotating more.
 private const val POOL_NUDGE_ROUNDS_AFTER_FULL = 20
 
+// Speaking-tier "Can't speak" pause dialog bounds, and the auto-pause applied
+// when the user denies the mic permission (so SPEAK leaves rotation cleanly).
+private const val MAX_PAUSE_HOURS = 12
+private const val PAUSE_MINUTE_STEP = 5
+private const val MIC_DENIED_PAUSE_HOURS = 24L
+
 /**
  * Drives the quiz flow: which vocab is showing, the tip/reveal/spot-check
  * state machine, and the per-word save-and-advance logic. Lifted out of
@@ -162,6 +172,10 @@ class QuizController(
     // single coach mark. No-op default so tests/headless construction supply
     // nothing and behaviour is unchanged. See [CoachEvents].
     private val coachEvents: CoachEvents = object : CoachEvents {},
+    // Invoked when a SPEAK round needs the RECORD_AUDIO permission and it isn't
+    // granted yet. MainActivity wires this to its permission launcher; no-op by
+    // default so tests/headless construction need not supply it.
+    private val requestMicPermission: () -> Unit = {},
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressCardInfo = ProgressCardInfoView(activity, views, language.code, vocabDictionary)
@@ -175,6 +189,10 @@ class QuizController(
             AppPrefs.autoAddThreshold(activity, language.code)
         },
         frontierProvider = { AppPrefs.calibrationFrontier(activity, language.code) },
+        speakingExcludedProvider = {
+            !AppPrefs.isSpeakingEnabled(activity) ||
+                AppPrefs.isSpeakingPaused(activity, language.code)
+        },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -190,6 +208,12 @@ class QuizController(
         sounds = sounds,
         tts = tts,
         revealForeignWord = ::revealCurrentForeignWord,
+    )
+    private val speaking = SpeakingController(
+        activity = activity,
+        tts = tts,
+        language = language,
+        onState = ::onSpeakState,
     )
 
     var currentVocab: Vocab? = null
@@ -270,6 +294,8 @@ class QuizController(
         if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = true)
         } else {
+            // For SPEAK this commits a pronunciation fail: the word is already on
+            // screen, so there's nothing to "reveal" and no recall component.
             revealAllVocabData(showNextVocab = true)
         }
     }
@@ -280,17 +306,20 @@ class QuizController(
         cancelPendingHintCoach()
         if (spotCheck.isActive) {
             exitSpotCheck(wasWrong = false)
-        } else if (currentVocab != null && wouldMasterOnCommit()) {
-            // Mastery is gated: no (word, skill) pair retires from active
-            // without a spot check, regardless of which button or which path
-            // (threshold crossing, fast-track) would have caused it.
-            startSpotCheck()
-        } else if (currentVocab != null && currentRoundFromRefreshPool) {
-            // Refresh-pool word: a clean commit doubles refreshIntervalDays,
-            // so the doubling has to be earned by verified recall — fast
-            // Next-presses must not buy a longer interval without evidence.
-            startSpotCheck()
-        } else if (currentVocab != null && Random.nextDouble() < SPOT_CHECK_PROBABILITY) {
+            return
+        }
+        // SPEAK: Next is meaningless until a take has been recorded (it's disabled
+        // pre-record); ignore a stray press.
+        if (currentSkill == Skill.SPEAK && !speaking.hasRecorded) return
+        // Mastery is gated by a spot check on every route (threshold crossing,
+        // fast-track, refresh-pool doubling, or the random sample) — EXCEPT for
+        // skills that opt out (SPEAK: the record-and-compare loop is its own
+        // verification, so a clean "Good" commits directly).
+        val vocab = currentVocab
+        if (vocab != null && currentSkill.flow.usesSpotCheck &&
+            (wouldMasterOnCommit() || currentRoundFromRefreshPool ||
+                Random.nextDouble() < SPOT_CHECK_PROBABILITY)
+        ) {
             startSpotCheck()
         } else {
             updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
@@ -391,6 +420,9 @@ class QuizController(
         // During calibration the Tip button is repurposed as the "skip — I'm a
         // beginner" action (see enterCalibrationUi), so route it there instead.
         if (inCalibration) { skipCalibration(); return }
+        // In a SPEAK round there's no hint — the Hint button is the "Can't speak"
+        // pause control instead.
+        if (currentSkill == Skill.SPEAK) { showSpeakingPauseDialog(); return }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         // The user found Hint on their own — cancel the dwell timer and ensure
         // its coach mark never appears.
@@ -524,6 +556,9 @@ class QuizController(
         // deferred round-start speech, and cut the SoundPool chimes.
         cancelPendingRoundStartTts()
         cancelPendingHintCoach()
+        // Abort any in-flight SPEAK recording/playback so the mic is released and
+        // the take doesn't keep playing over the hidden quiz.
+        speaking.releaseForPause()
         tts.stop()
         sounds.stopAll()
     }
@@ -939,6 +974,9 @@ class QuizController(
      */
     private fun armHintDwellCoach() {
         cancelPendingHintCoach()
+        // Skills without a hint (e.g. SPEAK, which repurposes the Hint button as
+        // the "Can't speak" pause) get no hint coach.
+        if (!currentSkill.flow.tipAllowed) return
         if (!views.buttonTip.isEnabled) return
         val armedVocab = currentVocab ?: return
         pendingHintCoachJob = activity.lifecycleScope.launch {
@@ -976,6 +1014,7 @@ class QuizController(
         sentenceManager.seed(vocab)
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
         setupLearnedButton()
+        configureSpeakRoundUi(vocab)
         applyCardAccent(views.cardVocab, currentSkill, currentRoundFromRefreshPool)
         applyVocabEyebrow(currentRoundFromRefreshPool)
         views.cardVocab.pop(peakScale = 1.04f)
@@ -1059,6 +1098,7 @@ class QuizController(
         progressiveRevealCount = 0
         roundFacts.reset(System.currentTimeMillis())
         spotCheck.reset()
+        speaking.reset()
         views.textVocabEyebrow.text = "WORD"
         views.buttonFail.text = "✗ Reveal"
         views.buttonNext.text = "✓ Know it"
@@ -1407,6 +1447,16 @@ class QuizController(
 
     private fun setQuizButtonsEnabled(enabled: Boolean) {
         views.buttonFail.setInteractive(enabled)
+        if (currentSkill == Skill.SPEAK) {
+            // SPEAK gates its own controls, so an async re-enable from the
+            // previous round (e.g. the trailing enable in revealAllVocabData)
+            // can't clobber them: "✓ Good" stays dead until a take is recorded,
+            // and the Hint button is the always-live "Can't speak" pause.
+            views.buttonNext.setInteractive(enabled && speaking.hasRecorded)
+            views.buttonTip.setInteractive(enabled)
+            views.cardVocab.pullEnabled = false
+            return
+        }
         views.buttonNext.setInteractive(enabled)
         // Tip's applicability is skill-dependent — e.g. INVERT disables it
         // because the example sentence would contain the answer word.
@@ -1464,5 +1514,174 @@ class QuizController(
         views.textForeign.text = vocab.foreign
         views.textForeign.setOnClickListener(null)
         views.textForeign.isClickable = false
+    }
+
+    // ───────────────────────────── Speaking tier ─────────────────────────────
+
+    /**
+     * Per-round SPEAK setup: turn the card into a hold-to-record surface, bind
+     * the take's foreign pronunciation, and relabel the Hint button as the
+     * "Can't speak" pause. For every other skill it restores record mode off and
+     * the "Hint" label. Called from [renderNewRound].
+     */
+    private fun configureSpeakRoundUi(vocab: Vocab) {
+        val isSpeak = currentSkill == Skill.SPEAK
+        views.cardVocab.recordModeEnabled = isSpeak
+        if (isSpeak) {
+            speaking.bind(vocab)
+            views.buttonTip.text = "🎤 Can't speak"
+            onSpeakState(SpeakPhase.IDLE)
+        } else {
+            views.buttonTip.text = "💡 Hint"
+        }
+    }
+
+    /**
+     * Map a [SpeakingController] phase to the on-screen prompt and the two
+     * judging buttons — the single place the SPEAK UI is derived from state.
+     * Driven by [configureSpeakRoundUi] (initial IDLE) and the controller's live
+     * transitions. The "Can't speak" pause button stays live throughout.
+     */
+    private fun onSpeakState(phase: SpeakPhase) {
+        when (phase) {
+            SpeakPhase.IDLE -> {
+                views.textScore.text = "🎤 Hold the card & say it"
+                views.textScore.contentDescription =
+                    "Speaking. The word and its meaning are shown — hold the card to say it, then release to compare."
+                views.buttonFail.text = "✗ Can't say it"
+                views.buttonNext.text = "✓ Good"
+                views.buttonFail.setInteractive(true)
+                views.buttonNext.setInteractive(false)
+            }
+            SpeakPhase.RECORDING -> {
+                views.textScore.text = "● Recording…"
+                views.buttonFail.setInteractive(false)
+                views.buttonNext.setInteractive(false)
+            }
+            SpeakPhase.PLAYING -> {
+                views.textScore.text = "▶ Listen & compare…"
+                views.buttonFail.setInteractive(false)
+                views.buttonNext.setInteractive(false)
+            }
+            SpeakPhase.REVIEWED -> {
+                views.textScore.text = "How did it sound?"
+                views.buttonFail.text = "✗ Say it wrong"
+                views.buttonNext.text = "✓ Good"
+                views.buttonFail.setInteractive(true)
+                views.buttonNext.setInteractive(true)
+            }
+        }
+        // setQuizButtonsEnabled leaves the Hint button disabled for SPEAK
+        // (tipAllowed = false); the "Can't speak" pause must stay available.
+        views.buttonTip.setInteractive(true)
+    }
+
+    /** Card press in a SPEAK round: start capturing (requesting the mic first if needed). */
+    fun onSpeakHoldStart() {
+        if (currentSkill != Skill.SPEAK || spotCheck.isActive) return
+        roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
+        if (!hasRecordAudioPermission()) {
+            requestMicPermission()
+            return
+        }
+        speaking.startRecording()
+    }
+
+    /** Card release in a SPEAK round: stop, then play the model TTS and the take. */
+    fun onSpeakHoldEnd() {
+        if (currentSkill != Skill.SPEAK) return
+        speaking.stopAndPlayback()
+    }
+
+    /** Card gesture cancelled in a SPEAK round: discard the in-flight take. */
+    fun onSpeakHoldCancel() {
+        if (currentSkill != Skill.SPEAK) return
+        speaking.cancelRecording()
+    }
+
+    /** Result of the mic permission request, forwarded by MainActivity's launcher. */
+    fun onRecordPermissionResult(granted: Boolean) {
+        if (granted) {
+            Toast.makeText(activity, "Microphone on — hold the card to speak", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+        // Denied: pause Speaking so it leaves rotation; re-enabling the mic in
+        // system settings (or waiting out the pause) brings it back.
+        AppPrefs.setSpeakingPausedUntil(
+            activity,
+            language.code,
+            System.currentTimeMillis() + MIC_DENIED_PAUSE_HOURS * 60L * 60_000L,
+        )
+        Toast.makeText(
+            activity,
+            "Speaking needs the microphone. Paused for now — turn it on in Settings to resume.",
+            Toast.LENGTH_LONG,
+        ).show()
+        if (currentSkill == Skill.SPEAK) dismissCurrentVocab(newCandidates = false)
+    }
+
+    private fun hasRecordAudioPermission(): Boolean =
+        ContextCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) ==
+            PackageManager.PERMISSION_GRANTED
+
+    /**
+     * "Can't speak" pause dialog (the SPEAK tier's repurposed Hint button): pick
+     * hours + minutes to hold off Speaking practice. On confirm, persist the
+     * deadline and advance off the current SPEAK word — the picker then excludes
+     * SPEAK until the deadline passes.
+     */
+    private fun showSpeakingPauseDialog() {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_speaking_pause, null)
+        val hoursValue = view.findViewById<TextView>(R.id.pauseHoursValue)
+        val hoursDec = view.findViewById<TextView>(R.id.pauseHoursDecrease)
+        val hoursInc = view.findViewById<TextView>(R.id.pauseHoursIncrease)
+        val minutesValue = view.findViewById<TextView>(R.id.pauseMinutesValue)
+        val minutesDec = view.findViewById<TextView>(R.id.pauseMinutesDecrease)
+        val minutesInc = view.findViewById<TextView>(R.id.pauseMinutesIncrease)
+        val button = view.findViewById<TextView>(R.id.pauseSpeakingButton)
+
+        var hours = 1
+        var minutes = 0
+
+        fun render() {
+            hoursValue.text = hours.toString()
+            hoursValue.contentDescription = "$hours hours"
+            minutesValue.text = minutes.toString()
+            minutesValue.contentDescription = "$minutes minutes"
+            hoursDec.isEnabled = hours > 0
+            hoursDec.alpha = if (hoursDec.isEnabled) 1f else 0.35f
+            hoursInc.isEnabled = hours < MAX_PAUSE_HOURS
+            hoursInc.alpha = if (hoursInc.isEnabled) 1f else 0.35f
+            minutesDec.isEnabled = minutes > 0
+            minutesDec.alpha = if (minutesDec.isEnabled) 1f else 0.35f
+            minutesInc.isEnabled = minutes <= 60 - 2 * PAUSE_MINUTE_STEP
+            minutesInc.alpha = if (minutesInc.isEnabled) 1f else 0.35f
+        }
+
+        hoursDec.setOnClickListener { if (hours > 0) { hours--; render() } }
+        hoursInc.setOnClickListener { if (hours < MAX_PAUSE_HOURS) { hours++; render() } }
+        minutesDec.setOnClickListener {
+            if (minutes > 0) { minutes -= PAUSE_MINUTE_STEP; render() }
+        }
+        minutesInc.setOnClickListener {
+            if (minutes <= 60 - 2 * PAUSE_MINUTE_STEP) { minutes += PAUSE_MINUTE_STEP; render() }
+        }
+        render()
+
+        val dialog = AlertDialog.Builder(activity).setView(view).create()
+        button.setOnClickListener {
+            val totalMinutes = hours * 60 + minutes
+            dialog.dismiss()
+            if (totalMinutes > 0) {
+                AppPrefs.setSpeakingPausedUntil(
+                    activity,
+                    language.code,
+                    System.currentTimeMillis() + totalMinutes * 60_000L,
+                )
+                dismissCurrentVocab(newCandidates = false)
+            }
+        }
+        dialog.show()
     }
 }

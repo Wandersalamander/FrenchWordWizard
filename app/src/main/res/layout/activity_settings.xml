@@ -138,6 +138,49 @@
             android:text="WORDS AT ONCE · 1–40" />
     </LinearLayout>
 
+    <!-- ============================ SPEAKING ===============================
+         Master on/off for the Speaking exercise (hold the card to record &
+         compare). Plain card — the five Monokai accents are already taken by the
+         other sections. Separate from the in-quiz "Can't speak" timed pause: this
+         is the persistent switch the picker checks before ever serving SPEAK. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_plain"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityHeading="true"
+            android:text="Speaking practice"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/speakingExerciseSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Speaking exercises"
+            android:textSize="16sp"
+            android:paddingVertical="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="The hardest tier: you see the English word, hold the card to say it aloud, then hear the correct pronunciation and your own recording to compare. Turn off to skip speaking rounds entirely."
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:lineSpacingExtra="2sp" />
+    </LinearLayout>
+
     <!-- ========================= EXAMPLE SENTENCES =========================
          Placed just above On-device AI so the "AI-generated" option reads
          next to the model download it depends on. -->

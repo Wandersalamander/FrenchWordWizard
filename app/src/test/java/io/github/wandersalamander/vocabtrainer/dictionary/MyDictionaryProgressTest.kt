@@ -81,14 +81,14 @@ class MyDictionaryProgressTest {
     }
 
     @Test fun activeSet_emptyDictionaryIsZero() {
-        assertEquals(ActiveSetCounts(0, 0, 0), dictionaryOf(emptyList()).computeActiveSetCounts())
+        assertEquals(ActiveSetCounts(0, 0, 0, 0), dictionaryOf(emptyList()).computeActiveSetCounts())
     }
 
     @Test fun activeSet_untouchedWordContributesNothing() {
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
-        assertEquals(ActiveSetCounts(0, 0, 0), dict.computeActiveSetCounts())
+        assertEquals(ActiveSetCounts(0, 0, 0, 0), dict.computeActiveSetCounts())
     }
 
     @Test fun activeSet_perSkillPairsCountIndependently() {
@@ -104,7 +104,7 @@ class MyDictionaryProgressTest {
         dict.csvData[2].stats(Skill.READ).markMastered()
         dict.csvData[2].stats(Skill.LISTEN).markMastered()
         dict.csvData[2].stats(Skill.INVERT).markStruggling()
-        assertEquals(ActiveSetCounts(read = 1, listen = 1, invert = 1), dict.computeActiveSetCounts())
+        assertEquals(ActiveSetCounts(read = 1, listen = 1, invert = 1, speak = 0), dict.computeActiveSetCounts())
     }
 
     @Test fun activeSet_ignoredWordContributesNothing() {
@@ -114,7 +114,7 @@ class MyDictionaryProgressTest {
         val vocab = dict.csvData[0]
         vocab.stats(Skill.READ).markStruggling()
         vocab.ignore = true
-        assertEquals(ActiveSetCounts(0, 0, 0), dict.computeActiveSetCounts())
+        assertEquals(ActiveSetCounts(0, 0, 0, 0), dict.computeActiveSetCounts())
     }
 
     // ---------- computeDueMasteredCount: snooze-aware "N due" badge ----------
@@ -241,7 +241,7 @@ class MyDictionaryProgressTest {
         dict.csvData[2].stats(Skill.INVERT).markStruggling()
         val active = dict.computeActiveSetCounts()
         val studied = dict.computeStudiedPairCounts()
-        assertEquals(active.read + active.listen + active.invert, studied.active)
+        assertEquals(active.read + active.listen + active.invert + active.speak, studied.active)
     }
 
     @Test fun introducedForeignWords_startsEmpty() {

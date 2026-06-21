@@ -58,6 +58,7 @@ internal class ProgressBarAnimator(
             read = SkillFinishedTracker.todayCount(ctx, Skill.READ),
             listen = SkillFinishedTracker.todayCount(ctx, Skill.LISTEN),
             invert = SkillFinishedTracker.todayCount(ctx, Skill.INVERT),
+            speak = SkillFinishedTracker.todayCount(ctx, Skill.SPEAK),
         )
         refreshActiveBar(ctx, views, newCounts, todayFinished)
         val newScore = refreshLifetimeScoreBadge(ctx, views, dictionary)
@@ -101,7 +102,8 @@ internal class ProgressBarAnimator(
         val dropRead = prev.read - newCounts.read
         val dropListen = prev.listen - newCounts.listen
         val dropInvert = prev.invert - newCounts.invert
-        if (dropRead <= 0 && dropListen <= 0 && dropInvert <= 0) return
+        val dropSpeak = prev.speak - newCounts.speak
+        if (dropRead <= 0 && dropListen <= 0 && dropInvert <= 0 && dropSpeak <= 0) return
         views.textActiveLabel.pop()
         // The label needs a layout pass after setText before
         // layout.getPrimaryHorizontal is meaningful; defer to the next frame.
@@ -114,6 +116,9 @@ internal class ProgressBarAnimator(
             }
             if (dropInvert > 0) {
                 animateActiveDelta(views.textActiveDeltaInvert, dropInvert, ActiveGroup.INVERT, newCounts, todayFinished)
+            }
+            if (dropSpeak > 0) {
+                animateActiveDelta(views.textActiveDeltaSpeak, dropSpeak, ActiveGroup.SPEAK, newCounts, todayFinished)
             }
         }
     }
@@ -189,13 +194,15 @@ internal class ProgressBarAnimator(
         val readSeg = perSkillRunLength(counts.read, todayFinished.read)
         val listenSeg = perSkillRunLength(counts.listen, todayFinished.listen)
         val invertSeg = perSkillRunLength(counts.invert, todayFinished.invert)
+        val speakSeg = perSkillRunLength(counts.speak, todayFinished.speak)
         val sepLen = ACTIVE_LABEL_SEPARATOR.length
-        val expectedEnd = readSeg + sepLen + listenSeg + sepLen + invertSeg
+        val expectedEnd = readSeg + sepLen + listenSeg + sepLen + invertSeg + sepLen + speakSeg
         if (layout.text.length < expectedEnd) return null
         val end = when (group) {
             ActiveGroup.READ -> readSeg
             ActiveGroup.LISTEN -> readSeg + sepLen + listenSeg
-            ActiveGroup.INVERT -> expectedEnd
+            ActiveGroup.INVERT -> readSeg + sepLen + listenSeg + sepLen + invertSeg
+            ActiveGroup.SPEAK -> expectedEnd
         }
         return layout.getPrimaryHorizontal(end)
     }
@@ -255,5 +262,5 @@ internal class ProgressBarAnimator(
             finishedToday.toString().length
     }
 
-    private enum class ActiveGroup { READ, LISTEN, INVERT }
+    private enum class ActiveGroup { READ, LISTEN, INVERT, SPEAK }
 }

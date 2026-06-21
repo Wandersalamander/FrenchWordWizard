@@ -434,6 +434,20 @@
                 app:layout_constraintStart_toStartOf="@+id/textActiveLabel"
                 app:layout_constraintTop_toTopOf="@+id/textActiveLabel"
                 tools:text="-1" />
+
+            <TextView
+                android:id="@+id/textActiveDeltaSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:importantForAccessibility="no"
+                android:textColor="@color/today_count_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/textActiveLabel"
+                app:layout_constraintTop_toTopOf="@+id/textActiveLabel"
+                tools:text="-1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -463,6 +477,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0"
                 android:background="@color/seg_invert" />
+
+            <View
+                android:id="@+id/segActiveSpeak"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@color/seg_speak" />
         </LinearLayout>
     </LinearLayout>
 

@@ -80,6 +80,8 @@
     <color name="seg_read">#B45309</color>
     <color name="seg_listen">#0E7490</color>
     <color name="seg_invert">#6D28D9</color>
+    <!-- Speaking (tier 4): deepened magenta (monokai_pink_dark), distinct from the green lifetime bar. -->
+    <color name="seg_speak">#C71B5C</color>
 
     <!-- Mode-aware variants of the lifetime/today label highlights. Reused
          by the active-pool "-N today" suffix and its floater so both

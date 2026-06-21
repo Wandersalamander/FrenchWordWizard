@@ -103,6 +103,7 @@ internal class ProgressCardInfoView(
         root.findViewById<TextView>(R.id.activeInfoRead).text = counts.read.toString()
         root.findViewById<TextView>(R.id.activeInfoListen).text = counts.listen.toString()
         root.findViewById<TextView>(R.id.activeInfoInvert).text = counts.invert.toString()
+        root.findViewById<TextView>(R.id.activeInfoSpeak).text = counts.speak.toString()
         root.findViewById<TextView>(R.id.activeInfoTodayActive).text = counts.read.toString()
         root.findViewById<TextView>(R.id.activeInfoTodayGold).text = " ${today.read}"
 

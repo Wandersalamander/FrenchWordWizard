@@ -44,6 +44,16 @@ class SwipeableVocabCard @JvmOverloads constructor(
     var pullEnabled: Boolean = false
     var onPullCommitted: (() -> Unit)? = null
 
+    // Press-and-hold-to-record mode (Speaking tier). In a SPEAK round the pull
+    // gesture is off and this is on, turning the whole card into a hold-to-record
+    // surface: press dips the card with a haptic tick, release/cancel springs it
+    // back. Child controls (⚑ / ✓) still receive their own taps; only empty card
+    // space and the masked (non-clickable) word fall through to the record gesture.
+    var recordModeEnabled: Boolean = false
+    var onRecordStart: (() -> Unit)? = null
+    var onRecordStop: (() -> Unit)? = null
+    var onRecordCancel: (() -> Unit)? = null
+
     private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
     private val density = resources.displayMetrics.density
     private val triggerPx = TRIGGER_DP * density
@@ -102,6 +112,7 @@ class SwipeableVocabCard @JvmOverloads constructor(
     }
 
     override fun onTouchEvent(ev: MotionEvent): Boolean {
+        if (recordModeEnabled) return onRecordTouch(ev)
         if (!pullEnabled) return super.onTouchEvent(ev)
         when (ev.actionMasked) {
             MotionEvent.ACTION_DOWN -> {
@@ -144,6 +155,44 @@ class SwipeableVocabCard @JvmOverloads constructor(
             }
         }
         return super.onTouchEvent(ev)
+    }
+
+    /**
+     * Hold-to-record gesture for the Speaking tier. Press dips the card (with a
+     * haptic tick) and starts recording; release/cancel springs it back and
+     * fires the matching callback so [SpeakingController] can stop + play back.
+     * The whole card is the record button — the masked word is non-clickable so
+     * presses on it fall through here, while child buttons keep their own taps.
+     */
+    private fun onRecordTouch(ev: MotionEvent): Boolean {
+        when (ev.actionMasked) {
+            MotionEvent.ACTION_DOWN -> {
+                animateRecordDip(dipped = true)
+                performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
+                onRecordStart?.invoke()
+                return true
+            }
+            MotionEvent.ACTION_UP -> {
+                animateRecordDip(dipped = false)
+                onRecordStop?.invoke()
+                return true
+            }
+            MotionEvent.ACTION_CANCEL -> {
+                animateRecordDip(dipped = false)
+                onRecordCancel?.invoke()
+                return true
+            }
+        }
+        return super.onTouchEvent(ev)
+    }
+
+    private fun animateRecordDip(dipped: Boolean) {
+        animate().cancel()
+        val scale = if (dipped) RECORD_DIP_SCALE else 1f
+        animate()
+            .scaleX(scale).scaleY(scale)
+            .setDuration(if (dipped) 90L else 150L)
+            .start()
     }
 
     private fun beginGesture(ev: MotionEvent) {
@@ -195,6 +244,9 @@ class SwipeableVocabCard @JvmOverloads constructor(
     companion object {
         private const val TRIGGER_DP = 48f
         private const val MAX_PULL_DP = 80f
+        // Scale the card dips to while held in record mode — subtle, just enough
+        // to feel pressed without looking like a button collapse.
+        private const val RECORD_DIP_SCALE = 0.97f
         private const val BOUNCY_DAMPING_RATIO = 0.55f
         private const val BOUNCY_STIFFNESS = 350f
         // Cap the velocity carried into the bouncy spring so a violent

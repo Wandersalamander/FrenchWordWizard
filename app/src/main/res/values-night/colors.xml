@@ -30,6 +30,7 @@
     <color name="seg_read">#FD971F</color>
     <color name="seg_listen">#66D9EF</color>
     <color name="seg_invert">#AE81FF</color>
+    <color name="seg_speak">#F92672</color>
     <color name="lifetime_count_color">#A6E22E</color>
     <color name="today_count_color">#E6DB74</color>
     <color name="due_count_color">#F92672</color>

@@ -185,6 +185,7 @@ class SettingsActivity : AppCompatActivity() {
         setupAutoAddSection()
         setupStreakSection()
         setupVocabServiceSection()
+        setupSpeakingSection()
         setupBackupSection()
         setupResetProgressSection()
     }
@@ -310,6 +311,14 @@ class SettingsActivity : AppCompatActivity() {
             } else {
                 stopService(intent)
             }
+        }
+    }
+
+    private fun setupSpeakingSection() {
+        val switchView = findViewById<SwitchCompat>(R.id.speakingExerciseSwitch)
+        switchView.isChecked = AppPrefs.isSpeakingEnabled(this)
+        switchView.setOnCheckedChangeListener { _, isChecked ->
+            AppPrefs.setSpeakingEnabled(this, isChecked)
         }
     }
 
@@ -513,6 +522,9 @@ class SettingsActivity : AppCompatActivity() {
         // a first install.
         AppPrefs.clearCalibration(this@SettingsActivity, language.code)
         AppPrefs.clearAutoAddThreshold(this@SettingsActivity, language.code)
+        // The Speaking-tier pause is tied to the now-deleted progress too — clear
+        // it so a wiped language starts un-paused.
+        AppPrefs.clearSpeakingPause(this@SettingsActivity, language.code)
 
         LanguageWipeRepository.recordWipe(language.code)
         removed.coerceAtLeast(hashes.size)

@@ -138,6 +138,33 @@
                 android:textSize="13sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/activeInfoSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textColor="@color/seg_speak"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Speaking"
+                android:textColor="@color/seg_speak"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
@@ -146,7 +173,7 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:lineSpacingExtra="2sp"
-        android:text="Words you're drilling right now. Each skill unlocks the next: master Reading, then Listening, then Recall."
+        android:text="Words you're drilling right now. Each skill unlocks the next: master Reading, then Listening, then Recall, then Speaking."
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp" />
 

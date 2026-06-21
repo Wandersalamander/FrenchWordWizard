@@ -27,6 +27,7 @@ internal data class ActiveSkillFinishedToday(
     val read: Int,
     val listen: Int,
     val invert: Int,
+    val speak: Int,
 )
 
 // Separator literal used between the three per-skill segments in
@@ -54,6 +55,7 @@ internal fun Skill.accentColorRes(): Int = when (this) {
     Skill.READ -> R.color.monokai_orange
     Skill.LISTEN -> R.color.monokai_cyan
     Skill.INVERT -> R.color.monokai_purple
+    Skill.SPEAK -> R.color.monokai_pink
 }
 
 /**
@@ -127,6 +129,7 @@ internal fun readSkillFinishedToday(context: Context) = ActiveSkillFinishedToday
     read = SkillFinishedTracker.todayCount(context, Skill.READ),
     listen = SkillFinishedTracker.todayCount(context, Skill.LISTEN),
     invert = SkillFinishedTracker.todayCount(context, Skill.INVERT),
+    speak = SkillFinishedTracker.todayCount(context, Skill.SPEAK),
 )
 
 /**
@@ -143,6 +146,7 @@ internal fun refreshActiveBar(
     setSegmentWeight(views.segActiveRead, counts.read)
     setSegmentWeight(views.segActiveListen, counts.listen)
     setSegmentWeight(views.segActiveInvert, counts.invert)
+    setSegmentWeight(views.segActiveSpeak, counts.speak)
     views.textActiveLabel.text = buildActiveLabel(context, counts, todayFinished)
     views.cardActive.contentDescription = buildString {
         append("Active words: ")
@@ -152,6 +156,8 @@ internal fun refreshActiveBar(
         if (todayFinished.listen > 0) append(" (${todayFinished.listen} finished today)")
         append(", ${counts.invert} invert")
         if (todayFinished.invert > 0) append(" (${todayFinished.invert} finished today)")
+        append(", ${counts.speak} speak")
+        if (todayFinished.speak > 0) append(" (${todayFinished.speak} finished today)")
         append(", tap for details")
     }
 }
@@ -220,6 +226,8 @@ private fun buildActiveLabel(
     appendActiveSkillRun(context, sb, counts.listen, todayFinished.listen, R.color.seg_listen)
     appendColored(context, sb, ACTIVE_LABEL_SEPARATOR, R.color.card_text_muted)
     appendActiveSkillRun(context, sb, counts.invert, todayFinished.invert, R.color.seg_invert)
+    appendColored(context, sb, ACTIVE_LABEL_SEPARATOR, R.color.card_text_muted)
+    appendActiveSkillRun(context, sb, counts.speak, todayFinished.speak, R.color.seg_speak)
     return sb
 }
 

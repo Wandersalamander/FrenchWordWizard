@@ -24,6 +24,7 @@ enum class Skill(
     READ("Reading", 0.0f),
     LISTEN("Listening", 0.4f),  // unlocks at 3 stars on READ
     INVERT("Recall", 0.2f),  // unlocks at 4 stars on LISTEN
+    SPEAK("Speaking", 0.2f),  // unlocks once Recall is ~mastered; produce the word aloud
     ;
 
     companion object {
@@ -33,6 +34,7 @@ enum class Skill(
             READ,
             LISTEN,
             INVERT,
+            SPEAK,
         )
     }
 }

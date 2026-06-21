@@ -123,6 +123,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
     }
 
+    // Launched on the first hold in a SPEAK round (QuizController.onSpeakHoldStart)
+    // when RECORD_AUDIO isn't granted yet. The result is forwarded back so the
+    // controller records on the next hold, or pauses Speaking on denial.
+    private val requestRecordAudioPermission = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        quizController.onRecordPermissionResult(granted)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -185,6 +194,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             // Just-in-time onboarding: each control introduces itself the first
             // time it's relevant, instead of one up-front tour over everything.
             coachEvents = CoachMarks(this, views),
+            // SPEAK rounds need the microphone; QuizController calls this when a
+            // hold finds the permission ungranted.
+            requestMicPermission = {
+                requestRecordAudioPermission.launch(Manifest.permission.RECORD_AUDIO)
+            },
         )
         wireQuizControllerListeners()
         quizController.refreshStreakBadge()
@@ -261,9 +275,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             textActiveDeltaRead = findViewById(R.id.textActiveDeltaRead),
             textActiveDeltaListen = findViewById(R.id.textActiveDeltaListen),
             textActiveDeltaInvert = findViewById(R.id.textActiveDeltaInvert),
+            textActiveDeltaSpeak = findViewById(R.id.textActiveDeltaSpeak),
             segActiveRead = findViewById(R.id.segActiveRead),
             segActiveListen = findViewById(R.id.segActiveListen),
             segActiveInvert = findViewById(R.id.segActiveInvert),
+            segActiveSpeak = findViewById(R.id.segActiveSpeak),
             thinkingSparkle = findViewById(R.id.thinking_sparkle),
         )
         // Tag the foreign/English word TextViews with the right locale so
@@ -307,6 +323,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         quizController.setupStreakBadgeRoles()
         quizController.setupProgressCardInfo()
         quizController.setupVocabCardPull()
+        // SPEAK tier: the card doubles as a hold-to-record surface.
+        views.cardVocab.onRecordStart = { quizController.onSpeakHoldStart() }
+        views.cardVocab.onRecordStop = { quizController.onSpeakHoldEnd() }
+        views.cardVocab.onRecordCancel = { quizController.onSpeakHoldCancel() }
     }
 
     /**

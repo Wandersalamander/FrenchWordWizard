@@ -67,6 +67,14 @@ internal sealed interface SkillFlow {
     /** Speak the answer side when the user gives up. */
     fun ttsOnReveal(vocab: Vocab, tts: TtsHelper)
 
+    /**
+     * Whether a clean Next on this skill routes through the mastery / refresh /
+     * random spot check. Default true; [SpeakFlow] overrides to false because
+     * the record-and-compare loop already verifies recall, so a follow-up
+     * "are you sure?" adds nothing (and the user can't fast-press past it).
+     */
+    val usesSpotCheck: Boolean get() = true
+
     /** Reveal whichever side the spot-check should show. */
     fun setupSpotCheck(views: QuizViews, revealForeign: () -> Unit)
 
@@ -214,9 +222,56 @@ internal object InvertFlow : SkillFlow {
     }
 }
 
+internal object SpeakFlow : SkillFlow {
+    override val tipBehavior = TipBehavior.None
+
+    // Both the foreign word and its English meaning are shown from the start
+    // (englishIsPrompt drives the textEn render path; setupForeignText shows the
+    // word in full). Speaking is therefore pure pronunciation — recall plays no
+    // part, so there's no hiding and no cross-tier penalty.
+    override val englishIsPrompt = true
+
+    // The record → hear-model → hear-self → judge loop is its own verification,
+    // so SPEAK never routes a clean Next through the spot check.
+    override val usesSpotCheck = false
+
+    override fun setupForeignText(
+        vocab: Vocab,
+        views: QuizViews,
+        listeningEnabled: Boolean,
+        onMaskedWordTapped: () -> Unit,
+        onWordReplayed: () -> Unit,
+    ) {
+        // Show the foreign word in full, but keep it non-clickable so a press
+        // anywhere on the card drives the hold-to-record gesture rather than a
+        // tap-to-replay (which would swallow the press).
+        views.textForeign.text = vocab.foreign
+        views.textForeign.setOnClickListener(null)
+        views.textForeign.isClickable = false
+    }
+
+    // Speak the foreign word at round start so the user hears the target to say.
+    // (No longer an answer to hide — it's on screen — so there's nothing to leak.)
+    override fun ttsAtRoundStart(vocab: Vocab, tts: TtsHelper) =
+        tts.speakForeignWord(vocab, flush = true)
+
+    override fun ttsOnReveal(vocab: Vocab, tts: TtsHelper) =
+        tts.speakForeignWord(vocab, flush = true)
+
+    // Required by the interface but never invoked, since usesSpotCheck = false.
+    override fun setupSpotCheck(views: QuizViews, revealForeign: () -> Unit) {
+        revealForeign()
+    }
+
+    override fun shouldMaskSentenceOnTip(listeningEnabled: Boolean): Boolean = false
+    override fun reuseSentenceOnReveal(listeningEnabled: Boolean): Boolean = false
+    override fun isCompromisedByListening(listeningEnabled: Boolean): Boolean = false
+}
+
 internal val Skill.flow: SkillFlow
     get() = when (this) {
         Skill.READ -> ReadFlow
         Skill.LISTEN -> ListenFlow
         Skill.INVERT -> InvertFlow
+        Skill.SPEAK -> SpeakFlow
     }
