@@ -40,6 +40,7 @@ import io.github.wandersalamander.vocabtrainer.quiz.picker.PickerId
 import io.github.wandersalamander.vocabtrainer.quiz.picker.QuizPicker
 import io.github.wandersalamander.vocabtrainer.quiz.ui.ProgressBarAnimator
 import io.github.wandersalamander.vocabtrainer.quiz.ui.ProgressCardInfoView
+import io.github.wandersalamander.vocabtrainer.quiz.ui.RecordingWaveformView
 import io.github.wandersalamander.vocabtrainer.quiz.ui.StreakBadgeView
 import io.github.wandersalamander.vocabtrainer.quiz.ui.SwipeableVocabCard
 import io.github.wandersalamander.vocabtrainer.quiz.ui.TipBehavior
@@ -65,6 +66,10 @@ data class QuizViews(
     val buttonHard: Button,
     val buttonLearned: Button,
     val cardVocab: SwipeableVocabCard,
+    // Voice-message bar widget at the bottom of the card (SPEAK tier): the
+    // record control (hold to record, tap to replay the take) + the take's
+    // waveform. GONE for every other skill.
+    val recordingWaveform: RecordingWaveformView,
     // Roots of the two bottom progress cards, captured so refreshLifetimeBar /
     // refreshActiveBar can attach a contentDescription that summarises the
     // bar for screen readers (raw segment Views have no semantics on their
@@ -189,10 +194,7 @@ class QuizController(
             AppPrefs.autoAddThreshold(activity, language.code)
         },
         frontierProvider = { AppPrefs.calibrationFrontier(activity, language.code) },
-        speakingExcludedProvider = {
-            !AppPrefs.isSpeakingEnabled(activity) ||
-                AppPrefs.isSpeakingPaused(activity, language.code)
-        },
+        speakingExcludedProvider = { AppPrefs.isSpeakingPaused(activity) },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -213,6 +215,7 @@ class QuizController(
         activity = activity,
         tts = tts,
         language = language,
+        waveform = views.recordingWaveform,
         onState = ::onSpeakState,
     )
 
@@ -1490,6 +1493,12 @@ class QuizController(
      */
     private fun onWordReplayed() {
         val vocab = currentVocab ?: return
+        if (currentSkill == Skill.SPEAK) {
+            // Tapping the shown foreign word replays the model pronunciation; stop
+            // any in-flight take replay first, and ignore while recording/playing.
+            if (speaking.isBusy) return
+            speaking.stopReplay()
+        }
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
         roundFacts.recordWordReplay()
         tts.speakForeignWord(vocab, flush = true)
@@ -1519,19 +1528,25 @@ class QuizController(
     // ───────────────────────────── Speaking tier ─────────────────────────────
 
     /**
-     * Per-round SPEAK setup: turn the card into a hold-to-record surface, bind
-     * the take's foreign pronunciation, and relabel the Hint button as the
-     * "Can't speak" pause. For every other skill it restores record mode off and
-     * the "Hint" label. Called from [renderNewRound].
+     * Per-round SPEAK setup: show the recording waveform widget at the bottom of
+     * the card, bind the take's foreign pronunciation, make the English meaning
+     * tappable-to-hear, and relabel the Hint button as the "Can't speak" pause.
+     * For every other skill it hides the widget and restores the "Hint" label.
+     * Called from [renderNewRound].
      */
     private fun configureSpeakRoundUi(vocab: Vocab) {
         val isSpeak = currentSkill == Skill.SPEAK
-        views.cardVocab.recordModeEnabled = isSpeak
+        views.recordingWaveform.visibility = if (isSpeak) View.VISIBLE else View.GONE
         if (isSpeak) {
             speaking.bind(vocab)
+            // Tap the English meaning to hear it (the foreign word is wired via
+            // SkillFlow.setupForeignText; the take via the waveform widget).
+            views.textEn.setOnClickListener { onSpeakEnglishTap() }
             views.buttonTip.text = "🎤 Can't speak"
             onSpeakState(SpeakPhase.IDLE)
         } else {
+            views.textEn.setOnClickListener(null)
+            views.textEn.isClickable = false
             views.buttonTip.text = "💡 Hint"
         }
     }
@@ -1545,9 +1560,10 @@ class QuizController(
     private fun onSpeakState(phase: SpeakPhase) {
         when (phase) {
             SpeakPhase.IDLE -> {
-                views.textScore.text = "🎤 Hold the card & say it"
+                views.recordingWaveform.idleText = "🎤 Hold to speak"
+                views.textScore.text = "Hold the bar below & say it"
                 views.textScore.contentDescription =
-                    "Speaking. The word and its meaning are shown — hold the card to say it, then release to compare."
+                    "Speaking. The word and meaning are shown — tap either to hear it. Hold the bar to record yourself, then replay to compare."
                 views.buttonFail.text = "✗ Can't say it"
                 views.buttonNext.text = "✓ Good"
                 views.buttonFail.setInteractive(true)
@@ -1564,7 +1580,7 @@ class QuizController(
                 views.buttonNext.setInteractive(false)
             }
             SpeakPhase.REVIEWED -> {
-                views.textScore.text = "How did it sound?"
+                views.textScore.text = "Tap to replay · then judge"
                 views.buttonFail.text = "✗ Say it wrong"
                 views.buttonNext.text = "✓ Good"
                 views.buttonFail.setInteractive(true)
@@ -1576,7 +1592,7 @@ class QuizController(
         views.buttonTip.setInteractive(true)
     }
 
-    /** Card press in a SPEAK round: start capturing (requesting the mic first if needed). */
+    /** Hold on the waveform widget: start capturing (requesting the mic first if needed). */
     fun onSpeakHoldStart() {
         if (currentSkill != Skill.SPEAK || spotCheck.isActive) return
         roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
@@ -1587,22 +1603,38 @@ class QuizController(
         speaking.startRecording()
     }
 
-    /** Card release in a SPEAK round: stop, then play the model TTS and the take. */
+    /** Widget hold released: stop, then auto-play the model TTS and the take. */
     fun onSpeakHoldEnd() {
         if (currentSkill != Skill.SPEAK) return
         speaking.stopAndPlayback()
     }
 
-    /** Card gesture cancelled in a SPEAK round: discard the in-flight take. */
+    /** Widget hold cancelled: discard the in-flight take. */
     fun onSpeakHoldCancel() {
         if (currentSkill != Skill.SPEAK) return
         speaking.cancelRecording()
     }
 
+    /** Tap on the waveform widget: replay the take (no-op before one exists). */
+    fun onSpeakWidgetTap() {
+        if (currentSkill != Skill.SPEAK || !speaking.hasRecorded || speaking.isBusy) return
+        tts.stop()
+        speaking.replayRecording()
+    }
+
+    /** Tap on the English meaning in a SPEAK round: hear it (no recall component). */
+    private fun onSpeakEnglishTap() {
+        val vocab = currentVocab ?: return
+        if (speaking.isBusy) return
+        speaking.stopReplay()
+        tts.stop()
+        tts.speakEnglishWord(vocab)
+    }
+
     /** Result of the mic permission request, forwarded by MainActivity's launcher. */
     fun onRecordPermissionResult(granted: Boolean) {
         if (granted) {
-            Toast.makeText(activity, "Microphone on — hold the card to speak", Toast.LENGTH_SHORT)
+            Toast.makeText(activity, "Microphone on — hold the bar to speak", Toast.LENGTH_SHORT)
                 .show()
             return
         }
@@ -1610,7 +1642,6 @@ class QuizController(
         // system settings (or waiting out the pause) brings it back.
         AppPrefs.setSpeakingPausedUntil(
             activity,
-            language.code,
             System.currentTimeMillis() + MIC_DENIED_PAUSE_HOURS * 60L * 60_000L,
         )
         Toast.makeText(
@@ -1676,7 +1707,6 @@ class QuizController(
             if (totalMinutes > 0) {
                 AppPrefs.setSpeakingPausedUntil(
                     activity,
-                    language.code,
                     System.currentTimeMillis() + totalMinutes * 60_000L,
                 )
                 dismissCurrentVocab(newCandidates = false)

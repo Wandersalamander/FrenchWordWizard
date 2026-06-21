@@ -257,6 +257,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             buttonHard = findViewById(R.id.button_hard),
             buttonLearned = findViewById(R.id.button_learned),
             cardVocab = findViewById(R.id.cardVocab),
+            recordingWaveform = findViewById(R.id.recordingWaveform),
             cardLifetime = findViewById(R.id.cardLifetime),
             cardActive = findViewById(R.id.cardActive),
             textVocabEyebrow = findViewById(R.id.textVocabEyebrow),
@@ -323,10 +324,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         quizController.setupStreakBadgeRoles()
         quizController.setupProgressCardInfo()
         quizController.setupVocabCardPull()
-        // SPEAK tier: the card doubles as a hold-to-record surface.
-        views.cardVocab.onRecordStart = { quizController.onSpeakHoldStart() }
-        views.cardVocab.onRecordStop = { quizController.onSpeakHoldEnd() }
-        views.cardVocab.onRecordCancel = { quizController.onSpeakHoldCancel() }
+        // SPEAK tier: the waveform widget at the card bottom is the record control
+        // (hold to record, tap to replay the take).
+        views.recordingWaveform.onHoldRecordStart = { quizController.onSpeakHoldStart() }
+        views.recordingWaveform.onHoldRecordStop = { quizController.onSpeakHoldEnd() }
+        views.recordingWaveform.onHoldRecordCancel = { quizController.onSpeakHoldCancel() }
+        views.recordingWaveform.onTapPlay = { quizController.onSpeakWidgetTap() }
     }
 
     /**
@@ -563,6 +566,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             isEnabled = !muted
             isChecked = quizController.isListeningModeEnabled()
         }
+        // Speaking on/off is one global flag (also driven by the in-quiz "Can't
+        // speak" pause), so the checkmark reflects whether it's on right now.
+        menu.findItem(R.id.menu_speaking_mode)?.isChecked = AppPrefs.isSpeakingOn(this)
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -571,6 +577,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             R.id.menu_listening_mode -> {
                 val newState = !item.isChecked
                 quizController.setListeningModeEnabled(newState)
+                item.isChecked = newState
+                true
+            }
+            R.id.menu_speaking_mode -> {
+                val newState = !item.isChecked
+                AppPrefs.setSpeakingOn(this, newState)
                 item.isChecked = newState
                 true
             }

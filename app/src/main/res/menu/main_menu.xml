@@ -16,6 +16,11 @@
         android:checkable="true"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_speaking_mode"
+        android:title="Speaking exercises"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_tutorial"
         android:title="Show tutorial"
         app:showAsAction="never" />

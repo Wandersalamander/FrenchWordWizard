@@ -54,10 +54,6 @@ object AppPrefs {
     // Whether the passive "word in the notification shade" foreground service is
     // on. Opt-in: default false, toggled from Settings → Word notification.
     const val KEY_VOCAB_SERVICE_ENABLED = "vocab_service_enabled"
-    // Global on/off for the Speaking exercise tier (Settings). Default true; when
-    // off, the picker never serves SPEAK rounds. Separate from the per-language
-    // timed "Can't speak" pause (KEY_SPEAKING_PAUSED_UNTIL_PREFIX).
-    const val KEY_SPEAKING_ENABLED = "speaking_enabled"
     const val KEY_WORDLIST_SORT_INDEX = "wordlist_sort_index"
     const val KEY_WORDLIST_SELECTED_SKILL = "wordlist_selected_skill"
     const val KEY_SENTENCE_SOURCE = "sentence_source"
@@ -81,11 +77,15 @@ object AppPrefs {
     const val KEY_CALIBRATION_DONE_PREFIX = "calibration_done_"
     const val KEY_CALIBRATION_FRONTIER_PREFIX = "calibration_frontier_"
 
-    // Per-language "Speaking tier paused until" wall-clock deadline (ms). The
-    // SPEAK tier's "Can't speak" button writes now + chosen-duration here; the
-    // picker excludes SPEAK while now is before it. Per-language because the
-    // pause is a per-language drilling choice, mirroring the keys above.
-    const val KEY_SPEAKING_PAUSED_UNTIL_PREFIX = "speaking_paused_until_"
+    // Global "Speaking tier paused until" wall-clock deadline (ms) — the single
+    // flag for whether Speaking is on. The ⋮ menu toggle and the in-quiz "Can't
+    // speak" control both write it: a finite future = a timed pause, the
+    // [SPEAKING_OFF_UNTIL] sentinel = toggled off, 0 / in the past = on.
+    const val KEY_SPEAKING_PAUSED_UNTIL = "speaking_paused_until"
+
+    // "Toggled off indefinitely" sentinel for [setSpeakingOn]: far enough out
+    // that isSpeakingPaused stays true until the user turns Speaking back on.
+    private const val SPEAKING_OFF_UNTIL = Long.MAX_VALUE
 
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
@@ -273,36 +273,32 @@ object AppPrefs {
             .apply()
     }
 
-    fun speakingPausedUntilKey(languageCode: String): String =
-        "$KEY_SPEAKING_PAUSED_UNTIL_PREFIX$languageCode"
+    /**
+     * Wall-clock deadline (ms) until which Speaking is paused, or 0 if never set.
+     * Global. A timed "Can't speak" pause expires on its own; the toggle-off case
+     * stores [SPEAKING_OFF_UNTIL].
+     */
+    fun speakingPausedUntilMs(context: Context): Long =
+        get(context).getLong(KEY_SPEAKING_PAUSED_UNTIL, 0L)
+
+    /** True while Speaking is paused (a timed "Can't speak" pause or toggled off). */
+    fun isSpeakingPaused(context: Context): Boolean =
+        speakingPausedUntilMs(context) > System.currentTimeMillis()
+
+    /** Convenience inverse of [isSpeakingPaused] for the on/off menu toggle. */
+    fun isSpeakingOn(context: Context): Boolean = !isSpeakingPaused(context)
+
+    /** Pause Speaking until [untilMs] (wall clock). Used by the "Can't speak" dialog. */
+    fun setSpeakingPausedUntil(context: Context, untilMs: Long) {
+        get(context).edit().putLong(KEY_SPEAKING_PAUSED_UNTIL, untilMs).apply()
+    }
 
     /**
-     * Wall-clock deadline (ms) until which the Speaking tier is paused for
-     * [languageCode], or 0 if never set. Compared against now on every pick, so
-     * the pause simply expires — there's no timer to clear.
+     * Flip Speaking on/off from the ⋮ menu toggle — the same global flag the
+     * timed "Can't speak" pause writes. On clears any pause; off parks it far in
+     * the future until the user turns it back on.
      */
-    fun speakingPausedUntilMs(context: Context, languageCode: String): Long =
-        get(context).getLong(speakingPausedUntilKey(languageCode), 0L)
-
-    /** True while the Speaking tier is paused for [languageCode]. */
-    fun isSpeakingPaused(context: Context, languageCode: String): Boolean =
-        speakingPausedUntilMs(context, languageCode) > System.currentTimeMillis()
-
-    /** Pause the Speaking tier for [languageCode] until [untilMs] (wall clock). */
-    fun setSpeakingPausedUntil(context: Context, languageCode: String, untilMs: Long) {
-        get(context).edit().putLong(speakingPausedUntilKey(languageCode), untilMs).apply()
-    }
-
-    /** Clear any Speaking-tier pause for [languageCode] (used by the language wipe). */
-    fun clearSpeakingPause(context: Context, languageCode: String) {
-        get(context).edit().remove(speakingPausedUntilKey(languageCode)).apply()
-    }
-
-    /** Global on/off for the Speaking exercise tier (Settings toggle). Default on. */
-    fun isSpeakingEnabled(context: Context): Boolean =
-        get(context).getBoolean(KEY_SPEAKING_ENABLED, true)
-
-    fun setSpeakingEnabled(context: Context, enabled: Boolean) {
-        get(context).edit().putBoolean(KEY_SPEAKING_ENABLED, enabled).apply()
+    fun setSpeakingOn(context: Context, on: Boolean) {
+        setSpeakingPausedUntil(context, if (on) 0L else SPEAKING_OFF_UNTIL)
     }
 }

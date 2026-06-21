@@ -11,43 +11,46 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
+import io.github.wandersalamander.vocabtrainer.quiz.ui.RecordingWaveformView
 import java.io.File
-import kotlin.coroutines.resume
+import kotlin.math.sqrt
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.suspendCancellableCoroutine
 
 /** Where a SPEAK round is in the record → compare → judge loop. */
 internal enum class SpeakPhase {
-    /** Waiting for the user to hold the card and speak. */
+    /** Waiting for the user to hold the widget and speak. */
     IDLE,
 
     /** Mic is live, capturing the user's attempt. */
     RECORDING,
 
-    /** Playing the model foreign-word TTS, then the user's own take. */
+    /** Auto-playing the model foreign-word TTS, then the user's take. */
     PLAYING,
 
-    /** Take has played; the user can now self-assess (Fail / Next). */
+    /** Take has played; the user can self-assess and replay freely. */
     REVIEWED,
 }
 
 /**
  * Owns the Speaking-tier recording loop: capture the user's pronunciation while
- * they hold the card, then on release play the model foreign-word TTS followed
- * by their own recording for self-comparison. A delegated component of
- * [QuizController] (mirrors SpotCheckController), driven by the card's
- * press-and-hold callbacks.
+ * they hold the waveform widget, then on release auto-play the model foreign-word
+ * TTS followed by their own take for self-comparison — after which they can
+ * replay either side as many times as they like before judging. A delegated
+ * component of [QuizController] (mirrors SpotCheckController).
  *
- * It owns no views; every phase transition is reported through [onState] so the
- * controller can relabel buttons / status text in one place. The single take is
- * written to a reused temp file in cacheDir and overwritten on each attempt.
+ * Drives [waveform] directly: live amplitude bars while recording and the
+ * playhead fill during playback. Phase transitions are reported through [onState]
+ * so the controller updates buttons/status in one place. The single take is
+ * written to a reused temp file in cacheDir, overwritten on each attempt.
  */
 internal class SpeakingController(
     private val activity: AppCompatActivity,
     private val tts: TtsHelper,
     private val language: Language,
+    private val waveform: RecordingWaveformView,
     private val onState: (SpeakPhase) -> Unit,
 ) {
     private val outputFile: File by lazy { File(activity.cacheDir, "speak_take.m4a") }
@@ -55,15 +58,17 @@ internal class SpeakingController(
     private var phase: SpeakPhase = SpeakPhase.IDLE
     private var recorder: MediaRecorder? = null
     private var player: MediaPlayer? = null
-    private var playbackJob: Job? = null
+    private var playbackJob: Job? = null   // the auto-play (model + take) after a record
+    private var replayJob: Job? = null     // a manual tap-to-replay of the take
+    private var ampJob: Job? = null        // amplitude polling while recording
     private var recordStartMs: Long = 0L
     private var foreignToSpeak: CharSequence = ""
 
-    /** True once at least one take has played this round (gates the Next button). */
+    /** True once a take has been recorded and reviewed this round (gates Next). */
     var hasRecorded: Boolean = false
         private set
 
-    /** Recording or playing — the judging buttons should stay disabled while true. */
+    /** Recording or auto-playing — the judging buttons stay disabled while true. */
     val isBusy: Boolean
         get() = phase == SpeakPhase.RECORDING || phase == SpeakPhase.PLAYING
 
@@ -77,28 +82,29 @@ internal class SpeakingController(
         abortPlayback()
         abortRecorder()
         hasRecorded = false
+        waveform.reset()
         phase = SpeakPhase.IDLE
     }
 
     /**
      * Release the mic/player when the app backgrounds (called from markPaused).
-     * Re-emits a safe phase so the on-screen controls match on resume: a take
-     * already reviewed stays judgeable, anything mid-flight drops to IDLE.
+     * Drops to a safe phase silently so a non-SPEAK round's buttons aren't
+     * stomped (markPaused runs for every skill); the next SPEAK render restores UI.
      */
     fun releaseForPause() {
         abortPlayback()
         abortRecorder()
-        // Silent (no onState): markPaused runs for every skill, so emitting a
-        // phase here would stomp a non-SPEAK round's buttons. The next SPEAK
-        // render (configureSpeakRoundUi) restores the UI from IDLE.
         phase = if (hasRecorded) SpeakPhase.REVIEWED else SpeakPhase.IDLE
     }
 
-    /** ACTION_DOWN on the card: start (or re-start) capturing the user's attempt. */
+    /** Hold engaged on the widget: start (or re-start) capturing the user's take. */
     fun startRecording() {
-        // Re-record: tear down any in-flight playback / recorder first.
         abortPlayback()
         abortRecorder()
+        // A fresh take invalidates any prior one (the file is overwritten), so
+        // clear the waveform and the recorded flag until this take completes.
+        hasRecorded = false
+        waveform.reset()
         val rec = try {
             buildRecorder().apply {
                 prepare()
@@ -108,24 +114,27 @@ internal class SpeakingController(
             Log.w(TAG, "Recorder init failed", e)
             releaseRecorderQuietly()
             Toast.makeText(activity, "Couldn't access the microphone", Toast.LENGTH_SHORT).show()
+            setPhase(SpeakPhase.IDLE)
             return
         }
         recorder = rec
         recordStartMs = SystemClock.elapsedRealtime()
+        startAmpPolling()
         setPhase(SpeakPhase.RECORDING)
     }
 
     /**
-     * ACTION_UP on the card: stop recording and, if the hold was long enough,
-     * play the foreign-word TTS and then the user's take. Too-short holds (taps)
-     * are discarded and revert to the pre-record phase.
+     * Hold released: stop recording and, if it was long enough, auto-play the
+     * foreign-word TTS then the take. Too-short holds are discarded back to IDLE.
      */
     fun stopAndPlayback() {
         if (phase != SpeakPhase.RECORDING) return
+        cancelAmpPolling()
         val heldMs = SystemClock.elapsedRealtime() - recordStartMs
         val stopped = stopRecorderQuietly()
-        if (!stopped || heldMs < MIN_HOLD_MS || !outputFile.exists()) {
-            setPhase(if (hasRecorded) SpeakPhase.REVIEWED else SpeakPhase.IDLE)
+        if (!stopped || heldMs < MIN_RECORD_MS || !outputFile.exists()) {
+            waveform.reset()
+            setPhase(SpeakPhase.IDLE)
             return
         }
         setPhase(SpeakPhase.PLAYING)
@@ -141,20 +150,52 @@ internal class SpeakingController(
                 releasePlayerQuietly()
                 throw e
             } catch (e: Exception) {
-                Log.w(TAG, "Playback failed", e)
+                Log.w(TAG, "Auto-play failed", e)
                 releasePlayerQuietly()
-                // A take exists even if comparison playback failed — let them judge.
                 hasRecorded = true
                 setPhase(SpeakPhase.REVIEWED)
             }
         }
     }
 
-    /** ACTION_CANCEL on the card: discard the in-flight take. */
+    /** Hold cancelled (pointer left / interrupted): discard the in-flight take. */
     fun cancelRecording() {
         if (phase != SpeakPhase.RECORDING) return
+        cancelAmpPolling()
         stopRecorderQuietly()
-        setPhase(if (hasRecorded) SpeakPhase.REVIEWED else SpeakPhase.IDLE)
+        waveform.reset()
+        setPhase(SpeakPhase.IDLE)
+    }
+
+    /**
+     * Replay just the take (tap on the widget), animating the playhead. Runs in
+     * the REVIEWED phase without flipping to PLAYING, so the judging buttons stay
+     * live — the user can replay as many times as they want before deciding.
+     */
+    fun replayRecording() {
+        if (!hasRecorded || isBusy || !outputFile.exists()) return
+        replayJob?.cancel()
+        replayJob = activity.lifecycleScope.launch {
+            try {
+                playRecordingAndAwait()
+            } catch (e: CancellationException) {
+                releasePlayerQuietly()
+                throw e
+            } catch (e: Exception) {
+                Log.w(TAG, "Replay failed", e)
+                releasePlayerQuietly()
+            } finally {
+                waveform.setPlayedFraction(0f)
+            }
+        }
+    }
+
+    /** Stop a manual replay (e.g. the user tapped the foreign word instead). */
+    fun stopReplay() {
+        replayJob?.cancel()
+        replayJob = null
+        releasePlayerQuietly()
+        waveform.setPlayedFraction(0f)
     }
 
     // ─────────────────────────── internals ───────────────────────────
@@ -162,6 +203,27 @@ internal class SpeakingController(
     private fun setPhase(p: SpeakPhase) {
         phase = p
         onState(p)
+    }
+
+    private fun startAmpPolling() {
+        ampJob = activity.lifecycleScope.launch {
+            while (true) {
+                delay(AMP_POLL_MS)
+                val rec = recorder ?: break
+                val amp = try {
+                    rec.maxAmplitude
+                } catch (e: Exception) {
+                    0
+                }
+                // Perceptual (sqrt) scaling so quiet speech still moves the bars.
+                waveform.addSample(sqrt(amp.coerceAtLeast(0).toFloat() / MAX_AMPLITUDE))
+            }
+        }
+    }
+
+    private fun cancelAmpPolling() {
+        ampJob?.cancel()
+        ampJob = null
     }
 
     private fun buildRecorder(): MediaRecorder {
@@ -181,8 +243,7 @@ internal class SpeakingController(
 
     /**
      * Stop + release the recorder. [MediaRecorder.stop] throws when no data was
-     * captured (an over-short take); returns true only on a clean stop with a
-     * usable file.
+     * captured (an over-short take); returns true only on a clean stop.
      */
     private fun stopRecorderQuietly(): Boolean {
         val rec = recorder ?: return false
@@ -198,6 +259,7 @@ internal class SpeakingController(
     }
 
     private fun abortRecorder() {
+        cancelAmpPolling()
         val rec = recorder ?: return
         recorder = null
         try {
@@ -208,6 +270,7 @@ internal class SpeakingController(
     }
 
     private fun releaseRecorderQuietly() {
+        cancelAmpPolling()
         try {
             recorder?.release()
         } catch (_: Exception) {
@@ -215,10 +278,10 @@ internal class SpeakingController(
         recorder = null
     }
 
-    private suspend fun playRecordingAndAwait() = suspendCancellableCoroutine<Unit> { cont ->
+    /** Play the take to completion, driving the waveform playhead. */
+    private suspend fun playRecordingAndAwait() {
         val mp = MediaPlayer()
         player = mp
-        cont.invokeOnCancellation { releasePlayerQuietly() }
         try {
             mp.setAudioAttributes(
                 AudioAttributes.Builder()
@@ -227,25 +290,34 @@ internal class SpeakingController(
                     .build(),
             )
             mp.setDataSource(outputFile.absolutePath)
-            mp.setOnCompletionListener { if (cont.isActive) cont.resume(Unit) }
-            mp.setOnErrorListener { _, _, _ ->
-                if (cont.isActive) cont.resume(Unit)
-                true
-            }
             mp.prepare()
             mp.start()
+            val duration = mp.duration.coerceAtLeast(1)
+            // isPlaying flips false at completion; delay() throws on cancellation.
+            while (mp.isPlaying) {
+                waveform.setPlayedFraction(mp.currentPosition.toFloat() / duration)
+                delay(PLAYHEAD_TICK_MS)
+            }
+        } catch (e: CancellationException) {
+            throw e
         } catch (e: Exception) {
             Log.w(TAG, "Recording playback failed", e)
+        } finally {
             releasePlayerQuietly()
-            if (cont.isActive) cont.resume(Unit)
+            // Reset the playhead so the resting waveform looks the same after an
+            // auto-play and a manual replay.
+            waveform.setPlayedFraction(0f)
         }
     }
 
     private fun abortPlayback() {
         playbackJob?.cancel()
         playbackJob = null
+        replayJob?.cancel()
+        replayJob = null
         tts.stop()
         releasePlayerQuietly()
+        waveform.setPlayedFraction(0f)
     }
 
     private fun releasePlayerQuietly() {
@@ -259,8 +331,17 @@ internal class SpeakingController(
     companion object {
         private const val TAG = "SpeakingController"
 
-        // Holds shorter than this are treated as accidental taps: discarded, no
-        // playback. Also guards MediaRecorder.stop()'s "no data" exception.
-        private const val MIN_HOLD_MS = 350L
+        // Recordings shorter than this are discarded (mostly silence / a slip).
+        private const val MIN_RECORD_MS = 250L
+
+        // Amplitude poll cadence while recording → one waveform bar each.
+        private const val AMP_POLL_MS = 60L
+
+        // Playhead refresh cadence during playback.
+        private const val PLAYHEAD_TICK_MS = 40L
+
+        // MediaRecorder.getMaxAmplitude() is 16-bit full scale; speech rarely
+        // nears it, so the sqrt scaling lifts the typical range into view.
+        private const val MAX_AMPLITUDE = 32767f
     }
 }

@@ -242,12 +242,12 @@ internal object SpeakFlow : SkillFlow {
         onMaskedWordTapped: () -> Unit,
         onWordReplayed: () -> Unit,
     ) {
-        // Show the foreign word in full, but keep it non-clickable so a press
-        // anywhere on the card drives the hold-to-record gesture rather than a
-        // tap-to-replay (which would swallow the press).
+        // Show the foreign word and let the user tap it to hear the model
+        // pronunciation again (no penalty). The record control is the waveform
+        // widget below, so a tappable word no longer conflicts with recording.
         views.textForeign.text = vocab.foreign
-        views.textForeign.setOnClickListener(null)
-        views.textForeign.isClickable = false
+        views.textForeign.setDebouncedOnClickListener { onWordReplayed() }
+        views.textForeign.isClickable = true
     }
 
     // Speak the foreign word at round start so the user hears the target to say.

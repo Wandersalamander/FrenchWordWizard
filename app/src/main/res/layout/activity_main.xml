@@ -266,6 +266,21 @@
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/textGuessLong"
             app:layout_constraintTop_toTopOf="@+id/textGuessLong" />
+
+        <!-- Speaking tier: voice-message bar row. Hold to record, tap to replay
+             the take. GONE for every other skill so the card wraps without it. -->
+        <io.github.wandersalamander.vocabtrainer.quiz.ui.RecordingWaveformView
+            android:id="@+id/recordingWaveform"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Your recording. Hold to record yourself, tap to replay."
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textGuess"
+            app:layout_constraintTop_toBottomOf="@+id/textGuessLong"
+            tools:visibility="visible" />
     </io.github.wandersalamander.vocabtrainer.quiz.ui.SwipeableVocabCard>
 
     <!-- Flex spacer: absorbs any leftover vertical room between the vocab
