@@ -264,13 +264,14 @@ internal class SpeakingController(
     }
 
     /**
-     * Apply [playbackGain] to [mp]: attenuation rides MediaPlayer's own volume,
-     * but a boost needs a LoudnessEnhancer (player volume can't exceed 1.0; the
-     * enhancer also has an internal limiter, so the lift won't clip harshly).
+     * Apply [playbackGain] to [mp]. Gain is boost-only (floor 1.0), so the take
+     * always plays at full MediaPlayer volume; a quiet take is lifted further by
+     * a LoudnessEnhancer (player volume can't exceed 1.0; the enhancer also has
+     * an internal limiter, so the lift won't clip harshly).
      */
     private fun applyGain(mp: MediaPlayer) {
         if (playbackGain <= 1f) {
-            mp.setVolume(playbackGain, playbackGain)
+            mp.setVolume(1f, 1f)
             return
         }
         enhancer = try {
@@ -454,8 +455,10 @@ internal class SpeakingController(
         // Below this the take is treated as silence (don't amplify room noise).
         private const val SILENCE_FLOOR = 800f
 
-        // Gain clamp: never cut a loud take below half, never boost past +18 dB.
-        private const val MIN_GAIN = 0.5f
+        // Gain clamp: boost-only. A take is never attenuated (floor 1.0 = full
+        // volume) — cutting a loud take is what made replays "sometimes extremely
+        // silent". A quiet take is lifted toward the model, capped at +18 dB.
+        private const val MIN_GAIN = 1f
         private const val MAX_GAIN = 8f
     }
 }

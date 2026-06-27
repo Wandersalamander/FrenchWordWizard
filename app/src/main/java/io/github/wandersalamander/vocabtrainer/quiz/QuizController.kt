@@ -3,6 +3,7 @@ package io.github.wandersalamander.vocabtrainer.quiz
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.media.AudioManager
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
 import android.text.SpannableString
@@ -186,6 +187,7 @@ class QuizController(
     private val streakBadge = StreakBadgeView(activity, views)
     private val progressCardInfo = ProgressCardInfoView(activity, views, language.code, vocabDictionary)
     private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
+    private val audioManager = activity.getSystemService(Context.AUDIO_SERVICE) as AudioManager
     // Picker re-reads the user's auto-add threshold and the calibrated frontier
     // each pick so changing the threshold in Settings — or finishing calibration
     // — takes effect on the very next round, no QuizController rebuild required.
@@ -195,7 +197,11 @@ class QuizController(
             AppPrefs.autoAddThreshold(activity, language.code)
         },
         frontierProvider = { AppPrefs.calibrationFrontier(activity, language.code) },
-        speakingExcludedProvider = { AppPrefs.isSpeakingPaused(activity) },
+        // SPEAK needs audible TTS (the model pronunciation + the take playback for
+        // self-comparison), so it's excluded while the tier is paused OR the device
+        // is muted — the silent-mode mirror of how LISTEN is dropped. Re-read each
+        // pick, so it self-clears on unmute without persisting an off-state.
+        speakingExcludedProvider = { AppPrefs.isSpeakingPaused(activity) || isMediaMuted() },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -468,6 +474,27 @@ class QuizController(
 
     private fun isPullDownSkill(skill: Skill): Boolean =
         skill == Skill.READ || skill == Skill.LISTEN
+
+    /** True when the media stream — where TTS plays — is at zero volume. */
+    private fun isMediaMuted(): Boolean =
+        audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0
+
+    /**
+     * Device went silent: SPEAK is now excluded from the picker (the picker's
+     * speakingExcludedProvider re-reads the mute state), so if the user is
+     * mid-SPEAK-round advance off it — the take comparison is pointless with no
+     * audio and the next pick can't
+     * be SPEAK while muted. Skips an in-flight recording/playback so we never yank
+     * the mic mid-capture. Returns true if a SPEAK round was dismissed, so the
+     * host can phrase its "sound off" hint accordingly. Mirrors the LISTEN
+     * mid-round discard in [setListeningModeEnabled].
+     */
+    fun dismissSpeakRoundIfMuted(): Boolean {
+        if (!isMediaMuted()) return false
+        if (currentSkill != Skill.SPEAK || currentVocab == null || speaking.isBusy) return false
+        dismissCurrentVocab(newCandidates = false)
+        return true
+    }
 
     /** True when listening practice is active (masking happens for LISTEN words). */
     fun isListeningModeEnabled(): Boolean = listeningEnabled

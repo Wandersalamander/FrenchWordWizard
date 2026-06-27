@@ -565,9 +565,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             isEnabled = !muted
             isChecked = quizController.isListeningModeEnabled()
         }
-        // Speaking on/off is one global flag (also driven by the in-quiz "Can't
-        // speak" pause), so the checkmark reflects whether it's on right now.
-        menu.findItem(R.id.menu_speaking_mode)?.isChecked = AppPrefs.isSpeakingOn(this)
+        // Speaking needs audio too (model pronunciation + take playback), so the
+        // toggle is greyed out while muted just like listening. Its checkmark is
+        // the global flag (also driven by the in-quiz "Can't speak" pause) AND not
+        // muted, so it reads as off in silent mode even when the tier is on.
+        menu.findItem(R.id.menu_speaking_mode)?.apply {
+            isEnabled = !muted
+            isChecked = AppPrefs.isSpeakingOn(this@MainActivity) && !muted
+        }
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -739,21 +744,29 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0
 
     /**
-     * Listening exercises need audible TTS, so when the device media volume is
-     * muted we auto-disable listening mode (with a hint) and refresh the
-     * overflow menu so its toggle reflects the change. We deliberately do NOT
-     * auto-re-enable on unmute: the user opts back in from the menu so we never
-     * surprise them with sudden speech.
+     * Listening and Speaking both need audible TTS, so when the device media
+     * volume is muted we auto-pause them (with a hint) and refresh the overflow
+     * menu so its toggles reflect the change. Listening is a session flag we
+     * flip off here; Speaking is excluded at the picker level by the mute check
+     * (see QuizController.speakingExcludedProvider), so here we only nudge off a
+     * mid-SPEAK round. We deliberately do NOT auto-re-enable listening on unmute:
+     * the user opts back in from the menu so we never surprise them with sudden
+     * speech. (Speaking, being user-initiated, simply follows its own flag again
+     * once sound returns.)
      */
     private fun syncListeningModeWithVolume() {
         if (!::quizController.isInitialized) return
-        if (isMediaMuted() && quizController.isListeningModeEnabled()) {
-            quizController.setListeningModeEnabled(false)
-            Toast.makeText(
-                this,
-                "Sound off — listening paused",
-                Toast.LENGTH_LONG,
-            ).show()
+        if (isMediaMuted()) {
+            val listeningWasOn = quizController.isListeningModeEnabled()
+            if (listeningWasOn) quizController.setListeningModeEnabled(false)
+            val speakingDismissed = quizController.dismissSpeakRoundIfMuted()
+            if (listeningWasOn || speakingDismissed) {
+                Toast.makeText(
+                    this,
+                    "Sound off — audio practice paused",
+                    Toast.LENGTH_LONG,
+                ).show()
+            }
         }
         invalidateOptionsMenu()
     }
