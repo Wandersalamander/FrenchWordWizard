@@ -172,7 +172,4 @@ internal class QuizPicker(
             recentWords.removeFirst()
         }
     }
-
-    /** Snapshot of the recent-words deque, for the LLM's "don't repeat" list. */
-    fun recent(): List<String> = recentWords.toList()
 }

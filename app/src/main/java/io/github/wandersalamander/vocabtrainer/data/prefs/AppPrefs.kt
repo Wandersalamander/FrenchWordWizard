@@ -77,15 +77,12 @@ object AppPrefs {
     const val KEY_CALIBRATION_DONE_PREFIX = "calibration_done_"
     const val KEY_CALIBRATION_FRONTIER_PREFIX = "calibration_frontier_"
 
-    // Global "Speaking tier paused until" wall-clock deadline (ms) — the single
-    // flag for whether Speaking is on. The ⋮ menu toggle and the in-quiz "Can't
-    // speak" control both write it: a finite future = a timed pause, the
-    // [SPEAKING_OFF_UNTIL] sentinel = toggled off, 0 / in the past = on.
+    // Global "Speaking tier paused until" wall-clock deadline (ms) for the timed
+    // pauses only — the in-quiz "Can't speak" dialog and the mic-denied pause.
+    // A finite future = paused, 0 / in the past = not paused. The ⋮ menu on/off
+    // toggle is session-scoped (QuizController.speakingEnabled) and does not
+    // write here, mirroring the listening toggle.
     const val KEY_SPEAKING_PAUSED_UNTIL = "speaking_paused_until"
-
-    // "Toggled off indefinitely" sentinel for [setSpeakingOn]: far enough out
-    // that isSpeakingPaused stays true until the user turns Speaking back on.
-    private const val SPEAKING_OFF_UNTIL = Long.MAX_VALUE
 
     fun get(context: Context): SharedPreferences =
         context.getSharedPreferences(NAME, Context.MODE_PRIVATE)
@@ -275,30 +272,19 @@ object AppPrefs {
 
     /**
      * Wall-clock deadline (ms) until which Speaking is paused, or 0 if never set.
-     * Global. A timed "Can't speak" pause expires on its own; the toggle-off case
-     * stores [SPEAKING_OFF_UNTIL].
+     * Global. A timed "Can't speak" / mic-denied pause expires on its own. The
+     * menu on/off toggle is session-scoped (QuizController.speakingEnabled) and
+     * does NOT write here, so a manual off no longer outlives the session.
      */
     fun speakingPausedUntilMs(context: Context): Long =
         get(context).getLong(KEY_SPEAKING_PAUSED_UNTIL, 0L)
 
-    /** True while Speaking is paused (a timed "Can't speak" pause or toggled off). */
+    /** True while a timed "Can't speak" / mic-denied pause is still in effect. */
     fun isSpeakingPaused(context: Context): Boolean =
         speakingPausedUntilMs(context) > System.currentTimeMillis()
-
-    /** Convenience inverse of [isSpeakingPaused] for the on/off menu toggle. */
-    fun isSpeakingOn(context: Context): Boolean = !isSpeakingPaused(context)
 
     /** Pause Speaking until [untilMs] (wall clock). Used by the "Can't speak" dialog. */
     fun setSpeakingPausedUntil(context: Context, untilMs: Long) {
         get(context).edit().putLong(KEY_SPEAKING_PAUSED_UNTIL, untilMs).apply()
-    }
-
-    /**
-     * Flip Speaking on/off from the ⋮ menu toggle — the same global flag the
-     * timed "Can't speak" pause writes. On clears any pause; off parks it far in
-     * the future until the user turns it back on.
-     */
-    fun setSpeakingOn(context: Context, on: Boolean) {
-        setSpeakingPausedUntil(context, if (on) 0L else SPEAKING_OFF_UNTIL)
     }
 }

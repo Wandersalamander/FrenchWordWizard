@@ -201,7 +201,9 @@ class QuizController(
         // self-comparison), so it's excluded while the tier is paused OR the device
         // is muted — the silent-mode mirror of how LISTEN is dropped. Re-read each
         // pick, so it self-clears on unmute without persisting an off-state.
-        speakingExcludedProvider = { AppPrefs.isSpeakingPaused(activity) || isMediaMuted() },
+        speakingExcludedProvider = {
+            !speakingEnabled || AppPrefs.isSpeakingPaused(activity) || isMediaMuted()
+        },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -209,7 +211,6 @@ class QuizController(
         dictionary = vocabDictionary,
         language = language,
         onMaskTapped = { onMaskedSentenceTapped() },
-        recentWords = { picker.recent() },
     )
     private val spotCheck = SpotCheckController(
         activity = activity,
@@ -262,6 +263,13 @@ class QuizController(
     // shown unmasked (e.g. the user is on a train without headphones).
     // Toggled via the menu; the next word picks up the new state.
     private var listeningEnabled: Boolean = true
+
+    // Session-scoped twin of [listeningEnabled] for the SPEAK tier: when false,
+    // the menu has toggled Speaking off ("can't talk right now"). Like listening
+    // it resets to on at every launch — a deliberate off shouldn't outlive the
+    // session. The persisted timed pauses ("Can't speak for 2h", mic-denied) are
+    // a separate, longer-lived concern; see [AppPrefs.isSpeakingPaused].
+    private var speakingEnabled: Boolean = true
 
     // Snapshot of the active skill's stats at round start. Used to roll back
     // any mid-round mutations if the round is later flagged as compromised
@@ -523,6 +531,27 @@ class QuizController(
         displayForeignWord(vocab)
         if (views.textGuessLong.visibility == View.VISIBLE) {
             sentenceManager.reRender(currentSkill, listeningEnabled)
+        }
+    }
+
+    /** True when Speaking practice is active (SPEAK words can be picked). */
+    fun isSpeakingModeEnabled(): Boolean = speakingEnabled
+
+    /**
+     * Toggle session-scoped Speaking mode. Symmetric to [setListeningModeEnabled]:
+     * turning it off mid-SPEAK-round discards the current word so the user isn't
+     * stranded on a tier they just disabled, but only when no recording/playback
+     * is in flight (mirrors [dismissSpeakRoundIfMuted]). The next pick honours the
+     * new state via [speakingExcludedProvider].
+     */
+    fun setSpeakingModeEnabled(enabled: Boolean) {
+        speakingEnabled = enabled
+        if (enabled) {
+            // Re-enabling from the menu also clears any active timed pause, so the
+            // user never has to wait one out after explicitly turning Speaking on.
+            AppPrefs.setSpeakingPausedUntil(activity, 0L)
+        } else if (currentSkill == Skill.SPEAK && currentVocab != null && !speaking.isBusy) {
+            dismissCurrentVocab(newCandidates = false)
         }
     }
 

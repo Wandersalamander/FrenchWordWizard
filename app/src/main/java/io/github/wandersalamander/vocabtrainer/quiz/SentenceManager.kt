@@ -31,7 +31,6 @@ internal class SentenceManager(
     private val dictionary: MyDictionary,
     private val language: Language,
     private val onMaskTapped: () -> Unit,
-    private val recentWords: () -> List<String>,
 ) {
     /**
      * Last unmasked sentence shown to the user. Stays around even when
@@ -111,8 +110,6 @@ internal class SentenceManager(
             LlmService.generate(
                 word = vocab.foreign,
                 translation = vocab.english,
-                recent = recentWords(),
-                everSeen = dictionary.getIntroducedForeignWords(),
                 language = language,
                 maxImportance = dictionary.getMaxIntroducedImportance(),
             )

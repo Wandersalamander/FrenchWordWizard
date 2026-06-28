@@ -87,21 +87,14 @@ object LlmService {
 
     val isReady: Boolean get() = _status.value is Status.Ready
 
-    // How many recent / ever-seen words to offer the model per call. The split
-    // mixes freshness (recent) with breadth (long-tail) so sentences don't
-    // recycle the same 20 words; the cap stops the model from packing several
-    // candidates into one sentence, which would collapse common words into a
-    // self-reinforcing loop.
-    private const val SAMPLED_RECENT_COUNT = 5
-    private const val SAMPLED_EVER_SEEN_COUNT = 5
-    private const val SAMPLED_RECENT_POOL = 20
-
-    // Sampler config for sentence generation. Higher temperature + wider topK/topP
-    // than the model's defaults to keep outputs creative; tune temperature down
-    // to ~0.7 if generations drift off-topic.
+    // Sampler config for sentence generation. Temperature is kept moderate on
+    // purpose: "natural / the way people actually say it" is the high-probability
+    // path, so pushing temperature high trades naturalness for novelty and
+    // produces grammatical-but-stilted sentences. topK/topP stay fairly wide so
+    // there's still variety across calls.
     private const val SAMPLER_TOP_K = 80
     private const val SAMPLER_TOP_P = 0.98
-    private const val SAMPLER_TEMPERATURE = 1.15
+    private const val SAMPLER_TEMPERATURE = 0.8
 
     fun modelFile(context: Context): File {
         // External app-specific storage so the model can be sideloaded via
@@ -265,8 +258,6 @@ object LlmService {
     suspend fun generate(
         word: String,
         translation: String,
-        recent: List<String>,
-        everSeen: List<String>,
         language: Language,
         maxImportance: Int,
         timeoutMs: Long = 5000L
@@ -274,7 +265,7 @@ object LlmService {
         val e = engine ?: return null
         if (!isReady) return null
 
-        val prompt = buildPrompt(word, translation, recent, everSeen, language, maxImportance)
+        val prompt = buildPrompt(word, translation, language, maxImportance)
         val result = runInference(e, prompt, timeoutMs, word)
         return result
     }
@@ -283,44 +274,19 @@ object LlmService {
      * Compose the model prompt. Mixes:
      *  - the target word + translation,
      *  - a single [SentenceStyle] flavour chosen per call (cultural framing
-     *    or a difficulty-gated grammar construct — see [SentenceStyles.pick]),
-     *  - a small random pool of previously-studied words (optional ingredients
-     *    the model may weave in for variety).
+     *    or a difficulty-gated grammar construct — see [SentenceStyles.pick]).
      */
     private fun buildPrompt(
         word: String,
         translation: String,
-        recent: List<String>,
-        everSeen: List<String>,
         language: Language,
         maxImportance: Int,
     ): String {
-        val sampledWords = sampleStudiedWords(word, recent, everSeen)
-        val recentClause = if (sampledWords.isEmpty()) "" else
-            " You may also naturally include some previously studied words if it fits: ${sampledWords.joinToString(", ")}."
         val styleClause = SentenceStyles.pick(maxImportance).promptFragment(language)
         return "Write one short example sentence in ${language.englishName} " +
                 " using the word \"$word\" (English meaning: \"$translation\")." +
                 styleClause +
-                recentClause +
                 " Output ONLY the sentence, no quotes, no translation, no explanation."
-    }
-
-    private fun sampleStudiedWords(
-        targetWord: String,
-        recent: List<String>,
-        everSeen: List<String>,
-    ): List<String> {
-        val sampledRecent = recent
-            .takeLast(SAMPLED_RECENT_POOL)
-            .shuffled()
-            .take(SAMPLED_RECENT_COUNT)
-        val recentSet = sampledRecent.toSet()
-        val sampledEverSeen = everSeen
-            .filter { it != targetWord && it !in recentSet }
-            .shuffled()
-            .take(SAMPLED_EVER_SEEN_COUNT)
-        return sampledRecent + sampledEverSeen
     }
 
     /**

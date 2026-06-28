@@ -566,12 +566,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             isChecked = quizController.isListeningModeEnabled()
         }
         // Speaking needs audio too (model pronunciation + take playback), so the
-        // toggle is greyed out while muted just like listening. Its checkmark is
-        // the global flag (also driven by the in-quiz "Can't speak" pause) AND not
-        // muted, so it reads as off in silent mode even when the tier is on.
+        // toggle is greyed out while muted just like listening. Checked only when
+        // the session toggle is on AND no timed "Can't speak"/mic-denied pause is
+        // active AND not muted, so it reads as off in any of those cases.
         menu.findItem(R.id.menu_speaking_mode)?.apply {
             isEnabled = !muted
-            isChecked = AppPrefs.isSpeakingOn(this@MainActivity) && !muted
+            isChecked = quizController.isSpeakingModeEnabled() &&
+                !AppPrefs.isSpeakingPaused(this@MainActivity) && !muted
         }
         return super.onPrepareOptionsMenu(menu)
     }
@@ -586,7 +587,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             }
             R.id.menu_speaking_mode -> {
                 val newState = !item.isChecked
-                AppPrefs.setSpeakingOn(this, newState)
+                quizController.setSpeakingModeEnabled(newState)
                 item.isChecked = newState
                 true
             }
