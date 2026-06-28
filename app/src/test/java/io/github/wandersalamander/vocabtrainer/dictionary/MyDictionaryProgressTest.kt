@@ -166,9 +166,12 @@ class MyDictionaryProgressTest {
         assertEquals(1, dict.computeDueMasteredCount(now))
     }
 
-    @Test fun dueMastered_excludesPartiallyMasteredWord() {
-        // READ mastered and due, but INVERT is still being drilled — the word
-        // isn't fully mastered, so it never enters the lifetime "N due" count.
+    @Test fun dueMastered_countsPartiallyMasteredWordWithDuePair() {
+        // READ + LISTEN mastered and due, but INVERT is still being drilled. The
+        // word isn't fully mastered, yet its READ/LISTEN pairs are genuinely due
+        // and the refresh picker WILL surface it — refresh schedules are per
+        // (word, skill) pair — so the badge counts it too (matches what a
+        // retention round can serve).
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
@@ -177,7 +180,7 @@ class MyDictionaryProgressTest {
         v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         v.stats(Skill.INVERT).markStruggling()
-        assertEquals(0, dict.computeDueMasteredCount(now))
+        assertEquals(1, dict.computeDueMasteredCount(now))
     }
 
     // ---------- computeStudiedPairCounts: per-skill mastered/active split ----------

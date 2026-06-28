@@ -84,29 +84,23 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
         csvData.count { it.ignore || it.isFullyLearned() }
 
     /**
-     * Count of fully-mastered words the refresh pool would actually surface
-     * right now — i.e. how many already-learned words are ready to resurface for
-     * repetition. Each word counts once regardless of how many of its skill
-     * pairs are due, so this is a clean subset of [computeLifetimeMasteredCount]
-     * (no dividing by the number of skills).
+     * Count of words the refresh pool would actually surface right now — i.e. how
+     * many words are ready to resurface for retention repetition. Each word counts
+     * once regardless of how many of its skill pairs are due.
      *
-     * Two gates: (1) this function's "fully mastered" check (all ladder skills
-     * retired below threshold), and (2) [Vocab.surfaceableRefreshSkill] — the
-     * SAME tier-0 decision the picker uses, so a word whose only due skills are
-     * snoozed behind a recently-refreshed harder sibling is NOT counted. Without
-     * gate (2) the badge would over-count by exactly the words refreshed within
-     * the last day (their easier skills read as "due" but won't be surfaced).
+     * Gated solely on [Vocab.surfaceableRefreshSkill] — the SAME tier-0 decision
+     * the picker uses — so the badge matches exactly what a retention round can
+     * serve. This INCLUDES partially-mastered words: a word whose Reading is
+     * mastered and due resurfaces even while its Recall is still being drilled,
+     * because refresh schedules are per (word, skill) pair, not per whole word.
+     * Hence this is NOT a subset of [computeLifetimeMasteredCount] — a word is
+     * counted as soon as one of its pairs is due, before the whole word is
+     * mastered. (A word whose only due skill is snoozed behind a recently-
+     * refreshed harder sibling still returns null here, so the badge never claims
+     * a word the picker would skip.)
      */
-    fun computeDueMasteredCount(now: Long = System.currentTimeMillis()): Int {
-        var due = 0
-        for (vocab in csvData) {
-            if (vocab.ignore || !vocab.isFullyLearned()) continue
-            if (vocab.surfaceableRefreshSkill(now = now) != null) {
-                due++
-            }
-        }
-        return due
-    }
+    fun computeDueMasteredCount(now: Long = System.currentTimeMillis()): Int =
+        csvData.count { it.surfaceableRefreshSkill(now = now) != null }
 
     /**
      * Per-skill count of (word, skill) pairs in the active drilling pool —
