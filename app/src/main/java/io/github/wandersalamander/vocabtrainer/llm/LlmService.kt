@@ -87,14 +87,16 @@ object LlmService {
 
     val isReady: Boolean get() = _status.value is Status.Ready
 
-    // Sampler config for sentence generation. Temperature is kept moderate on
-    // purpose: "natural / the way people actually say it" is the high-probability
-    // path, so pushing temperature high trades naturalness for novelty and
-    // produces grammatical-but-stilted sentences. topK/topP stay fairly wide so
-    // there's still variety across calls.
-    private const val SAMPLER_TOP_K = 80
-    private const val SAMPLER_TOP_P = 0.98
-    private const val SAMPLER_TEMPERATURE = 0.8
+    // Sampler config for sentence generation. Kept deliberately cool:
+    // "natural / the way people actually say it" IS the high-probability path
+    // for a small model, so heat trades naturalness for novelty and produces
+    // grammatical-but-stilted sentences. Variety across calls comes from the
+    // prompt instead — SentenceStyles rotates theme × phrasing × grammar
+    // construct, and the seed is randomized per call — so the sampler doesn't
+    // have to carry it.
+    private const val SAMPLER_TOP_K = 40
+    private const val SAMPLER_TOP_P = 0.95
+    private const val SAMPLER_TEMPERATURE = 0.6
 
     fun modelFile(context: Context): File {
         // External app-specific storage so the model can be sideloaded via
@@ -272,9 +274,20 @@ object LlmService {
 
     /**
      * Compose the model prompt. Mixes:
-     *  - the target word + translation,
+     *  - the target word + its English gloss,
      *  - a single [SentenceStyle] flavour chosen per call (cultural framing
      *    or a difficulty-gated grammar construct — see [SentenceStyles.pick]).
+     *
+     * Tuned for a small on-device instruct model (Gemma E2B):
+     *  - one constraint per sentence, task first, output format last — the
+     *    positions an instruct model weights most;
+     *  - the style clause sits second-to-last, in the recency slot: it's the
+     *    constraint most at risk of being dropped, and the one whose loss
+     *    hurts most (all variety collapses back to one sentence shape);
+     *  - explicit permission to conjugate/inflect the word, otherwise small
+     *    models force the citation form in awkwardly ("Io essere felice");
+     *  - a shortness cue, which both reads more natural and keeps decode
+     *    time inside the caller's timeout budget.
      */
     private fun buildPrompt(
         word: String,
@@ -283,10 +296,12 @@ object LlmService {
         maxImportance: Int,
     ): String {
         val styleClause = SentenceStyles.pick(maxImportance).promptFragment(language)
-        return "Write one short example sentence in ${language.englishName} " +
-                " using the word \"$word\" (English meaning: \"$translation\")." +
+        return "Write one short example sentence in ${language.englishName} for a vocabulary learner." +
+                " The sentence must use the word \"$word\" (English meaning: \"$translation\")." +
+                " You may conjugate or inflect the word so it fits the sentence naturally." +
+                " Use everyday ${language.englishName}, the way a native speaker would actually say it." +
                 styleClause +
-                " Output ONLY the sentence, no quotes, no translation, no explanation."
+                " Reply with ONLY the ${language.englishName} sentence — no introduction, no quotes, no translation, no explanation."
     }
 
     /**
@@ -348,14 +363,25 @@ object LlmService {
 
     private fun cleanup(raw: String?): String? {
         if (raw.isNullOrBlank()) return null
-        val firstLine = raw.lineSequence().firstOrNull { it.isNotBlank() }?.trim() ?: return null
-        val quoteChars = charArrayOf(
+        // Despite "no introduction" in the prompt, a small instruct model
+        // occasionally emits a preamble line ("Here is a sentence:") before
+        // the sentence. Preambles end with a colon — skip past them instead
+        // of returning one as the "sentence".
+        val line = raw.lineSequence()
+            .map { it.trim() }
+            .filter { it.isNotBlank() }
+            .firstOrNull { !it.endsWith(":") && !it.endsWith("：") }
+            ?: return null
+        val edgeNoise = charArrayOf(
             '"', '\'', '`',
             '«', '»',           // « »
             '“', '”',           // “ ”
-            '‘', '’'            // ‘ ’
+            '‘', '’',           // ‘ ’
+            '*', '_',           // markdown bold/italics wrapping
+            '-',                // list bullet / dialogue dash
+            ' ',                // space freed up by trimming the above
         )
-        val s = firstLine.trim(*quoteChars)
+        val s = line.trim(*edgeNoise)
         return s.ifBlank { null }
     }
 

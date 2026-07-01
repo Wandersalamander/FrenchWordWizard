@@ -254,7 +254,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             buttonNext = findViewById(R.id.button_next),
             buttonTip = findViewById(R.id.button_tip),
             buttonHard = findViewById(R.id.button_hard),
-            buttonLearned = findViewById(R.id.button_learned),
             cardVocab = findViewById(R.id.cardVocab),
             recordingWaveform = findViewById(R.id.recordingWaveform),
             cardLifetime = findViewById(R.id.cardLifetime),
@@ -319,7 +318,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         views.buttonNext.setDebouncedOnClickListener { quizController.onNextClick() }
         views.buttonTip.setOnClickListener { quizController.onTipClick() }
         views.buttonHard.setDebouncedOnClickListener { quizController.onHardClick() }
-        quizController.setupLearnedButton()
         quizController.setupStreakBadgeRoles()
         quizController.setupProgressCardInfo()
         quizController.setupVocabCardPull()
@@ -462,7 +460,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
             target(views.buttonFail, "Reveal", "Tap when the word stumped you. Reveals the translation and an example sentence, then loads the next word."),
             target(views.buttonTip, "Hint", "Reveals an example sentence using the word and reads it aloud. Costs a small score penalty — one hint per word."),
             target(views.buttonHard, "Flag as hard", "Marks the word as tough so it shows up more often. Tap again to unflag."),
-            target(views.buttonLearned, "Mark as learned", "First tap reveals the answer so you can check yourself. Tap again to retire the word — you won't see it again."),
             target(views.textStreak, "Daily streak", "Counts consecutive days you've practiced. Even one round keeps the streak alive. Tap any time for a refresher."),
             target(views.textStreakShield, "Streak shield", "Earn a shield every ${io.github.wandersalamander.vocabtrainer.streak.StreakTracker.FREEZE_AWARD_INTERVAL_DAYS} days of practice (up to ${io.github.wandersalamander.vocabtrainer.streak.StreakTracker.MAX_FREEZES} stockpiled — enough for a holiday or a sick week). Miss a day and a shield is spent automatically, so your streak survives. Tap any time to see how many you have."),
         )

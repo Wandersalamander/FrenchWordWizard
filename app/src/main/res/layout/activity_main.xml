@@ -4,7 +4,7 @@
        1. cardStreak    (orange) — daily streak fire + stockpiled shields.
        2. cardVocab     (pink)   — score header, foreign word, translation,
                                    example sentence, plus the per-word
-                                   flag (⚑) and learned (✓) buttons.
+                                   flag (⚑) button.
        3. cardLifetime  (green)  — lifetime mastery bar + "{mastered} / {total}"
                                    label with the +N-today highlight.
        4. cardActive    (cyan)   — current active-pool composition bar,
@@ -179,10 +179,9 @@
             app:layout_constraintTop_toBottomOf="@+id/textVocabEyebrow"
             tools:text="0.85" />
 
-        <!-- accessibilityTraversalAfter pushes the ⚑/✓ actions behind the
-             vocab content for screen readers, so users hear the word and
-             translation before landing on the buttons that operate on
-             them. -->
+        <!-- accessibilityTraversalAfter pushes the ⚑ action behind the vocab
+             content for screen readers, so users hear the word and
+             translation before landing on the button that operates on it. -->
         <Button
             android:id="@+id/button_hard"
             style="?android:attr/buttonBarButtonStyle"
@@ -191,18 +190,6 @@
             android:accessibilityTraversalAfter="@id/textGuessLong"
             android:contentDescription="Flag as hard"
             android:text="⚑"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/button_learned"
-            app:layout_constraintTop_toBottomOf="@+id/textVocabEyebrow" />
-
-        <Button
-            android:id="@+id/button_learned"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:accessibilityTraversalAfter="@id/button_hard"
-            android:contentDescription="Mark as learned"
-            android:text="✓"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textVocabEyebrow" />
@@ -224,7 +211,7 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_learned"
+            app:layout_constraintTop_toBottomOf="@+id/button_hard"
             tools:text="Un mot étrange" />
 
         <TextView

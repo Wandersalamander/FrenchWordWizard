@@ -86,10 +86,23 @@ class SentenceStyleTest {
                 fragments.isNotEmpty(),
             )
             assertTrue(
-                "all $language themes should be wrapped in the reference clause",
-                fragments.all { it.contains("naturally reference") },
+                "all $language fragments must keep the concatenation contract (leading space, trailing period)",
+                fragments.all { it.startsWith(" ") && it.endsWith(".") },
             )
         }
+    }
+
+    @Test fun foreignCulture_variesBothThemeAndFrame() {
+        val fragments = sampleFragments(ForeignCultureStyle, language = Language.ITALIAN, n = 400)
+        // With ~28 themes × several frames the sampled pool should be large;
+        // a collapse back to one phrasing would show up as a tiny set.
+        assertTrue("expected wide variety, got ${fragments.size} distinct fragments", fragments.size > 30)
+        // More than one sentence frame must be in rotation; the frames differ
+        // within their first characters, before any theme text starts.
+        assertTrue(
+            "only a single phrasing frame was ever used",
+            fragments.map { it.take(20) }.toSet().size > 1,
+        )
     }
 
     @Test fun foreignCulture_italianThemesAreItalian() {

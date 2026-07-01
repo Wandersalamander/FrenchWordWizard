@@ -60,13 +60,12 @@ data class QuizViews(
     // The three primary action buttons are flat TextView "editor chrome"
     // controls (bg_btn_primary / bg_btn_ghost in activity_main.xml), not
     // MaterialButtons — typed as TextView so the selector background and the
-    // setInteractive alpha-dim apply. buttonHard / buttonLearned stay the small
-    // borderless ⚑ / ✓ MaterialButtons inside the vocab card.
+    // setInteractive alpha-dim apply. buttonHard stays the small borderless ⚑
+    // MaterialButton inside the vocab card.
     val buttonFail: TextView,
     val buttonNext: TextView,
     val buttonTip: TextView,
     val buttonHard: Button,
-    val buttonLearned: Button,
     val cardVocab: SwipeableVocabCard,
     // Voice-message bar widget at the bottom of the card (SPEAK tier): the
     // record control (hold to record, tap to replay the take) + the take's
@@ -664,27 +663,6 @@ class QuizController(
 
     fun setupProgressCardInfo() = progressCardInfo.setup()
 
-    fun setupLearnedButton() {
-        views.buttonLearned.text = "✓"
-        views.buttonLearned.setDebouncedOnClickListener {
-            val vocab = currentVocab ?: return@setDebouncedOnClickListener
-            roundFacts.recordFirstActionIfNeeded(System.currentTimeMillis())
-            // First tap reveals everything so the user can verify they
-            // actually know the word before committing on the second tap.
-            revealCurrentForeignWord()
-            views.textEn.visibility = View.VISIBLE
-            sentenceManager.renderUnmasked()
-            views.textGuessLong.visibility = View.VISIBLE
-            views.buttonLearned.text = "✓?"
-            views.buttonLearned.setDebouncedOnClickListener {
-                vocab.ignore = true
-                vocab.savePreferences()
-                setupLearnedButton()
-                updateVocab(0, newCandidates = false, commitButton = CommitButton.LEARNED)
-            }
-        }
-    }
-
     // ─── Calibration ────────────────────────────────────────────────────
     // Once-per-language first-launch probe. Reuses the Next/Fail buttons as a
     // binary "I know it" / "I don't" and produces a single integer (the
@@ -734,8 +712,7 @@ class QuizController(
     /** Reconfigure the quiz surface for binary known/unknown answers. */
     private fun enterCalibrationUi() {
         // INVISIBLE, not GONE, so the layout doesn't reflow; restored on exit.
-        listOf(views.buttonHard, views.buttonLearned)
-            .forEach { it.visibility = View.INVISIBLE }
+        views.buttonHard.visibility = View.INVISIBLE
         views.buttonNext.text = "✓ I know it"
         views.buttonFail.text = "✗ I don't"
         views.buttonNext.setInteractive(true)
@@ -866,14 +843,13 @@ class QuizController(
     }
 
     /**
-     * Restore the buttons touched by [enterCalibrationUi]. The eyebrow and the
-     * learned button are reset by the normal round render that
-     * [beginDrillingAfterAssessment] triggers; the Tip button's Hint label is
-     * restored here because it was repurposed as the skip action and the round
-     * render doesn't rewrite it.
+     * Restore the buttons touched by [enterCalibrationUi]. The eyebrow is reset
+     * by the normal round render that [beginDrillingAfterAssessment] triggers;
+     * the Tip button's Hint label is restored here because it was repurposed as
+     * the skip action and the round render doesn't rewrite it.
      */
     private fun exitCalibrationUi() {
-        listOf(views.buttonTip, views.buttonHard, views.buttonLearned)
+        listOf(views.buttonTip, views.buttonHard)
             .forEach { it.visibility = View.VISIBLE }
         views.buttonTip.text = "💡 Hint"
     }
@@ -1075,7 +1051,6 @@ class QuizController(
         views.textGuessLong.visibility = View.INVISIBLE
         sentenceManager.seed(vocab)
         views.buttonHard.text = if (vocab.flaggedHard) "⚑!" else "⚑"
-        setupLearnedButton()
         configureSpeakRoundUi(vocab)
         applyCardAccent(views.cardVocab, currentSkill, currentRoundFromRefreshPool)
         applyVocabEyebrow(currentRoundFromRefreshPool)
