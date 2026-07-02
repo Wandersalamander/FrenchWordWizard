@@ -203,7 +203,7 @@ internal object TakeNormalizer {
             }
             val encoding =
                 if (outFormat.containsKey(MediaFormat.KEY_PCM_ENCODING)) {
-                    outFormat.getInt(MediaFormat.KEY_PCM_ENCODING)
+                    outFormat.getInteger(MediaFormat.KEY_PCM_ENCODING)
                 } else {
                     AudioFormat.ENCODING_PCM_16BIT
                 }
@@ -213,8 +213,8 @@ internal object TakeNormalizer {
             ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).asShortBuffer().get(samples)
             return Pcm(
                 samples,
-                outFormat.getInt(MediaFormat.KEY_SAMPLE_RATE),
-                outFormat.getInt(MediaFormat.KEY_CHANNEL_COUNT),
+                outFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE),
+                outFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT),
             )
         } finally {
             try {
