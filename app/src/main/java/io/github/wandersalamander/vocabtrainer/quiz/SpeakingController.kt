@@ -3,7 +3,6 @@ package io.github.wandersalamander.vocabtrainer.quiz
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.MediaRecorder
-import android.media.audiofx.LoudnessEnhancer
 import android.os.Build
 import android.os.SystemClock
 import android.util.Log
@@ -14,12 +13,13 @@ import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.quiz.ui.RecordingWaveformView
 import java.io.File
-import kotlin.math.log10
 import kotlin.math.sqrt
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /** Where a SPEAK round is in the record → compare → judge loop. */
 internal enum class SpeakPhase {
@@ -59,11 +59,11 @@ internal class SpeakingController(
     private val onTakeRecorded: () -> Unit = {},
 ) {
     private val outputFile: File by lazy { File(activity.cacheDir, "speak_take.m4a") }
+    private val normalizedFile: File by lazy { File(activity.cacheDir, "speak_take.wav") }
 
     private var phase: SpeakPhase = SpeakPhase.IDLE
     private var recorder: MediaRecorder? = null
     private var player: MediaPlayer? = null
-    private var enhancer: LoudnessEnhancer? = null  // boosts a quiet take on playback
     private var playbackJob: Job? = null   // the auto-play (model + take) after a record
     private var replayJob: Job? = null     // a manual tap-to-replay of the take
     private var ampJob: Job? = null        // amplitude polling while recording
@@ -71,10 +71,9 @@ internal class SpeakingController(
     private var recordStartMs: Long = 0L
     private var foreignToSpeak: CharSequence = ""
 
-    // Per-poll mic peaks (linear, 0..32767) for the current take; used to pick a
-    // playback gain that matches the take's loudness to the model TTS.
-    private val recLevels = ArrayList<Float>()
-    private var playbackGain = 1f
+    // What playback uses: the loudness-normalized WAV when TakeNormalizer
+    // succeeds, otherwise the raw recording.
+    private var takeToPlay: File = File("")
 
     /** True once a take has been recorded and reviewed this round (gates Next). */
     var hasRecorded: Boolean = false
@@ -94,8 +93,6 @@ internal class SpeakingController(
         abortPlayback()
         abortRecorder()
         hasRecorded = false
-        recLevels.clear()
-        playbackGain = 1f
         waveform.reset()
         phase = SpeakPhase.IDLE
     }
@@ -123,7 +120,6 @@ internal class SpeakingController(
         // A fresh take invalidates any prior one (the file is overwritten), so
         // clear the waveform and the recorded flag until this take completes.
         hasRecorded = false
-        recLevels.clear()
         waveform.reset()
         setPhase(SpeakPhase.RECORDING)   // immediate visual hint; capture starts below
         pendingStartJob = activity.lifecycleScope.launch {
@@ -175,7 +171,16 @@ internal class SpeakingController(
                 setPhase(SpeakPhase.IDLE)
                 return@launch
             }
-            playbackGain = computeNormalizationGain()
+            // Lift the take to the model TTS's loudness by rewriting its actual
+            // samples (deterministic, unlike per-device playback effects). Falls
+            // back to the raw recording if the decode/normalize step fails.
+            takeToPlay = withContext(Dispatchers.IO) {
+                if (TakeNormalizer.normalize(outputFile, normalizedFile)) {
+                    normalizedFile
+                } else {
+                    outputFile
+                }
+            }
             onTakeRecorded()
             setPhase(SpeakPhase.PLAYING)
             try {
@@ -214,7 +219,7 @@ internal class SpeakingController(
      * live — the user can replay as many times as they want before deciding.
      */
     fun replayRecording() {
-        if (!hasRecorded || isBusy || !outputFile.exists()) return
+        if (!hasRecorded || isBusy || !takeToPlay.exists()) return
         replayJob?.cancel()
         replayJob = activity.lifecycleScope.launch {
             try {
@@ -246,45 +251,6 @@ internal class SpeakingController(
         onState(p)
     }
 
-    /**
-     * Pick a playback gain that lifts this take toward the model TTS's loudness.
-     * The take (MediaPlayer, USAGE_MEDIA) and the TTS both play on STREAM_MUSIC
-     * at the same media volume, so matching their *digital* levels matches what
-     * the ear hears. We estimate the take's speech level from a high percentile
-     * of the per-poll mic peaks — ignoring silent gaps and the odd transient —
-     * and scale it toward [TARGET_LEVEL]. Clamped so a near-silent take can't
-     * amplify room noise to full volume.
-     */
-    private fun computeNormalizationGain(): Float {
-        if (recLevels.isEmpty()) return 1f
-        val sorted = recLevels.sorted()
-        val level = sorted[(sorted.size * 9 / 10).coerceAtMost(sorted.size - 1)]
-        if (level < SILENCE_FLOOR) return 1f
-        return (TARGET_LEVEL / level).coerceIn(MIN_GAIN, MAX_GAIN)
-    }
-
-    /**
-     * Apply [playbackGain] to [mp]. Gain is boost-only (floor 1.0), so the take
-     * always plays at full MediaPlayer volume; a quiet take is lifted further by
-     * a LoudnessEnhancer (player volume can't exceed 1.0; the enhancer also has
-     * an internal limiter, so the lift won't clip harshly).
-     */
-    private fun applyGain(mp: MediaPlayer) {
-        if (playbackGain <= 1f) {
-            mp.setVolume(1f, 1f)
-            return
-        }
-        enhancer = try {
-            LoudnessEnhancer(mp.audioSessionId).apply {
-                setTargetGain((2000.0 * log10(playbackGain.toDouble())).toInt())
-                enabled = true
-            }
-        } catch (e: Exception) {
-            Log.w(TAG, "LoudnessEnhancer unavailable", e)
-            null
-        }
-    }
-
     private fun startAmpPolling() {
         ampJob = activity.lifecycleScope.launch {
             while (true) {
@@ -296,7 +262,6 @@ internal class SpeakingController(
                     0
                 }
                 val linear = amp.coerceAtLeast(0).toFloat()
-                recLevels.add(linear)
                 // Perceptual (sqrt) scaling so quiet speech still moves the bars.
                 waveform.addSample(sqrt(linear / MAX_AMPLITUDE))
             }
@@ -378,9 +343,9 @@ internal class SpeakingController(
                     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                     .build(),
             )
-            mp.setDataSource(outputFile.absolutePath)
+            mp.setDataSource(takeToPlay.absolutePath)
             mp.prepare()
-            applyGain(mp)
+            mp.setVolume(1f, 1f)
             mp.start()
             val duration = mp.duration.coerceAtLeast(1)
             // isPlaying flips false at completion; delay() throws on cancellation.
@@ -412,11 +377,6 @@ internal class SpeakingController(
 
     private fun releasePlayerQuietly() {
         try {
-            enhancer?.release()
-        } catch (_: Exception) {
-        }
-        enhancer = null
-        try {
             player?.release()
         } catch (_: Exception) {
         }
@@ -446,19 +406,5 @@ internal class SpeakingController(
         // MediaRecorder.getMaxAmplitude() is 16-bit full scale; speech rarely
         // nears it, so the sqrt scaling lifts the typical range into view.
         private const val MAX_AMPLITUDE = 32767f
-
-        // Loudness-match target for a take's 90th-percentile peak, in 16-bit
-        // full-scale units (~-6 dBFS). Most TTS voices master around here; nudge
-        // up/down if the model still sounds louder/quieter than the take.
-        private const val TARGET_LEVEL = 16_000f
-
-        // Below this the take is treated as silence (don't amplify room noise).
-        private const val SILENCE_FLOOR = 800f
-
-        // Gain clamp: boost-only. A take is never attenuated (floor 1.0 = full
-        // volume) — cutting a loud take is what made replays "sometimes extremely
-        // silent". A quiet take is lifted toward the model, capped at +18 dB.
-        private const val MIN_GAIN = 1f
-        private const val MAX_GAIN = 8f
     }
 }
