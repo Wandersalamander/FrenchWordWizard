@@ -106,10 +106,29 @@ fun MyDictionary.getActiveVocabWeighted(
     // learning to read?". A word whose READ has retired (now drilling only
     // LISTEN/INVERT) has already made room for a new one and must not keep the
     // gate shut; counting any-active-skill would let a LISTEN/INVERT backlog
-    // freeze all new-word intake. Each (word, READ) pair is unique in
-    // activePairs, so this count is already the distinct READ-word count.
-    val activeReadWords = activePairs.count { it.second == Skill.READ }
+    // freeze all new-word intake.
+    //
+    // Counted WITHOUT [skillFilter], deliberately: the filter says which tiers
+    // may be SERVED right now, not how full the reading pool is. Deriving this
+    // from the filtered pairs made toggling the READ tier off read as "reading
+    // pool empty" — and every round pulled in a fresh word, blowing past the
+    // user's pool limit.
+    val activeReadWords = csvData.count {
+        !it.ignore && it.hasBeenIntroduced() && it.state(Skill.READ).isActiveDraw
+    }
     if (activeReadWords < autoIntroduceThreshold) {
+        return pickFallback(skillFilter, frontier)
+    }
+    if (activePairs.isEmpty()) {
+        // Every servable pair is filtered out (e.g. READ toggled off with no
+        // other tier active). Serve READ despite the filter rather than fall
+        // through to introduction — the toggle is a preference; intake past
+        // the pool limit is not. Matches the documented never-deadlock rule
+        // ("the first skill is still the no-candidate fallback even if
+        // filtered out"). Non-empty here: the gate above guaranteed at least
+        // [autoIntroduceThreshold] ≥ 1 active READ pairs.
+        val readPairs = collectActivePairs { it == Skill.READ }
+        if (readPairs.isNotEmpty()) return pickWeighted(readPairs)
         return pickFallback(skillFilter, frontier)
     }
     return pickWeighted(activePairs)

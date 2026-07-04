@@ -226,6 +226,52 @@ class MyDictionaryProgressTest {
         )
     }
 
+    // ---------- getActiveVocabWeighted: auto-add gate vs. skill filter ----------
+
+    @Test fun autoAddGate_ignoresSkillFilter() {
+        // Pool full: 2 words active in READ, threshold 2. Toggling the READ
+        // tier off (skillFilter) must NOT make the gate read the pool as empty
+        // and introduce word #3 every round — the "auto-adds past my word
+        // limit" bug. With LISTEN active, the filtered pool serves LISTEN.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",
+            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",  // never introduced
+        ))
+        dict.csvData[0].stats(Skill.READ).markStruggling()
+        dict.csvData[1].stats(Skill.READ).markStruggling()
+        dict.csvData[0].stats(Skill.LISTEN).markStruggling()
+        repeat(20) {
+            val (vocab, skill) = dict.getActiveVocabWeighted(
+                skillFilter = { it != Skill.READ },
+                autoIntroduceThreshold = 2,
+            )
+            assertTrue("must not introduce a fresh word", vocab.hasBeenIntroduced())
+            assertEquals(Skill.LISTEN, skill)
+        }
+    }
+
+    @Test fun autoAddGate_emptyFilteredPoolServesReadInsteadOfIntroducing() {
+        // Same full pool, READ toggled off, but nothing else unlocked: the
+        // filtered pool is empty. Serve READ despite the toggle (documented
+        // never-deadlock fallback) — never fall through to introduction.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+            "Auto\tcar\t1\thash2\tDas Auto fährt.\tAuto.",
+            "Buch\tbook\t1\thash3\tDas Buch ist neu.\tBuch.",  // never introduced
+        ))
+        dict.csvData[0].stats(Skill.READ).markStruggling()
+        dict.csvData[1].stats(Skill.READ).markStruggling()
+        repeat(20) {
+            val (vocab, skill) = dict.getActiveVocabWeighted(
+                skillFilter = { it != Skill.READ },
+                autoIntroduceThreshold = 2,
+            )
+            assertTrue("must not introduce a fresh word", vocab.hasBeenIntroduced())
+            assertEquals(Skill.READ, skill)
+        }
+    }
+
     // ---------- computeStudiedPairCounts: per-skill mastered/active split ----------
 
     @Test fun studiedPairs_emptyDictionaryIsZero() {

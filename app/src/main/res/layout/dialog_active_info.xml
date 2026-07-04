@@ -58,10 +58,16 @@
         android:baselineAligned="false"
         android:orientation="horizontal">
 
+        <!-- Each column is a tap-to-toggle for its exercise type (wired in
+             ProgressCardInfoView.bindTierToggles): tap = switch that tier
+             on/off; a disabled tier dims to the same 0.35 alpha the live bar
+             segment uses. -->
         <LinearLayout
+            android:id="@+id/activeInfoReadCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -85,14 +91,12 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Listen/Speak columns carry ids so ProgressCardInfoView can dim the
-             whole column (number + label) while that exercise type is off or
-             paused — same 0.35 alpha as the disabled stepper buttons. -->
         <LinearLayout
             android:id="@+id/activeInfoListenCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -117,9 +121,11 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/activeInfoInvertCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -148,6 +154,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -181,6 +188,15 @@
         android:text="Words you're drilling right now. Each skill unlocks the next: master Reading, then Listening, then Recall, then Speaking."
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Tap a number to switch that exercise on or off."
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="13sp" />
 
     <!-- The optional per-skill "finished today" count: a skill renders a second
          number after its active count (e.g. "8 2"), the today-count in gold
@@ -222,56 +238,6 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="14sp" />
     </LinearLayout>
-
-    <!-- ===================== LISTENING & SPEAKING =====================
-         The same session toggles as the ⋮ overflow menu, surfaced next to the
-         counts they affect. ProgressCardInfoView wires them to the
-         QuizController setters and grays the tier columns above to match;
-         both are disabled while the device media volume is muted (audio
-         exercises can't run silent, mirroring the menu's grey-out). -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="22dp"
-        android:background="?android:attr/listDivider" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:accessibilityHeading="true"
-        android:text="Listening &amp; Speaking"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:lineSpacingExtra="2sp"
-        android:text="Off = skipped and not counted as due."
-        android:textColor="?android:attr/textColorSecondary"
-        android:textSize="14sp" />
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/activeToggleListening"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:paddingVertical="4dp"
-        android:text="Listening exercises"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="16sp" />
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/activeToggleSpeaking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="4dp"
-        android:text="Speaking exercises"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="16sp" />
 
     <!-- ===================== AUTO-ADD THRESHOLD =====================
          The per-language "active pool" floor, surfaced on the very card that

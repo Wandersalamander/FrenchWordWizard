@@ -195,20 +195,15 @@ class QuizController(
         views = views,
         languageCode = language.code,
         dictionary = vocabDictionary,
-        dueSkillFilterProvider = { dueSkillFilter() },
-        isListeningEnabled = { listeningEnabled },
-        setListeningEnabled = ::setListeningModeEnabled,
-        isSpeakingEnabled = { isSpeakingEffectivelyEnabled() },
-        setSpeakingEnabled = ::setSpeakingModeEnabled,
+        disabledSkillsProvider = { excludedSkills() },
+        setSkillEnabled = ::setSkillEnabled,
         isAudioMuted = ::isMediaMuted,
     )
     private val progressBars = ProgressBarAnimator(
         activity = activity,
         views = views,
         dictionary = vocabDictionary,
-        dueSkillFilterProvider = { dueSkillFilter() },
-        listeningEnabledProvider = { listeningEnabled },
-        speakingEnabledProvider = { isSpeakingEffectivelyEnabled() },
+        disabledSkillsProvider = { excludedSkills() },
     )
     private val audioManager = activity.getSystemService(Context.AUDIO_SERVICE) as AudioManager
     // Picker re-reads the user's auto-add threshold and the calibrated frontier
@@ -220,11 +215,9 @@ class QuizController(
             AppPrefs.autoAddThreshold(activity, language.code)
         },
         frontierProvider = { AppPrefs.calibrationFrontier(activity, language.code) },
-        // SPEAK needs audible TTS (the model pronunciation + the take playback for
-        // self-comparison), so it's excluded while the tier is paused OR the device
-        // is muted — the silent-mode mirror of how LISTEN is dropped. Re-read each
-        // pick, so it self-clears on unmute without persisting an off-state.
-        speakingExcludedProvider = { !isSpeakingEffectivelyEnabled() },
+        // Re-read each pick, so mute/pause states self-clear without persisting
+        // an off-state. See [excludedSkills] for what lands in the set.
+        excludedSkillsProvider = { excludedSkills() },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -299,6 +292,12 @@ class QuizController(
     // session. The persisted timed pauses ("Can't speak for 2h", mic-denied) are
     // a separate, longer-lived concern; see [AppPrefs.isSpeakingPaused].
     private var speakingEnabled: Boolean = true
+
+    // Session-scoped toggles for the two non-audio tiers, flipped by tapping
+    // their number on the ACTIVE WORDS dialog (see [setSkillEnabled]). Same
+    // reset-to-on-at-launch semantics as listening/speaking.
+    private var readEnabled: Boolean = true
+    private var invertEnabled: Boolean = true
 
     // Snapshot of the active skill's stats at round start. Used to roll back
     // any mid-round mutations if the round is later flagged as compromised
@@ -518,7 +517,7 @@ class QuizController(
 
     /**
      * Device went silent: SPEAK is now excluded from the picker (the picker's
-     * speakingExcludedProvider re-reads the mute state), so if the user is
+     * exclusion set re-reads the mute state, see [excludedSkills]), so if the user is
      * mid-SPEAK-round advance off it — the take comparison is pointless with no
      * audio and the next pick can't
      * be SPEAK while muted. Skips an in-flight recording/playback so we never yank
@@ -578,13 +577,59 @@ class QuizController(
         speakingEnabled && !AppPrefs.isSpeakingPaused(activity) && !isMediaMuted()
 
     /**
-     * The picker's current skill-exclusion filter, shared with the "N due"
-     * badge so the badge never counts a pair the refresh picker would skip —
-     * or hides one it would serve (the "0 due but retention rounds" bug; see
+     * The skills currently excluded from every servable pool — the single set
+     * behind the picker filter, the "N due" badge, the ACTIVE WORDS tier
+     * gray-out, and its tap-to-toggle columns, so they can never disagree
+     * (the "0 due but retention rounds" bug; see
      * [io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary.computeDueMasteredCount]).
      */
-    private fun dueSkillFilter(): (Skill) -> Boolean =
-        picker.currentSkillFilter(listeningEnabled)
+    private fun excludedSkills(): Set<Skill> {
+        val excluded = mutableSetOf<Skill>()
+        if (!readEnabled) excluded += Skill.READ
+        if (!listeningEnabled) excluded += Skill.LISTEN
+        if (!invertEnabled) excluded += Skill.INVERT
+        if (!isSpeakingEffectivelyEnabled()) excluded += Skill.SPEAK
+        return excluded
+    }
+
+    /**
+     * Toggle one tier on/off from the ACTIVE WORDS dialog's tap-to-toggle
+     * columns. LISTEN and SPEAK route through their dedicated setters (which
+     * carry the compromise/pause semantics); READ and INVERT are plain session
+     * flags. Turning off the tier of the currently-displayed round discards
+     * that word without a trace, like the audio setters do. Refuses to switch
+     * off the last servable tier — the picker's fallback would keep serving
+     * READ regardless, which would just look broken next to four grey tiers.
+     */
+    fun setSkillEnabled(skill: Skill, enabled: Boolean) {
+        if (!enabled && (excludedSkills() + skill).size == Skill.ladder.size) {
+            Toast.makeText(activity, "Keep at least one exercise type on", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+        when (skill) {
+            Skill.LISTEN -> setListeningModeEnabled(enabled)
+            Skill.SPEAK -> setSpeakingModeEnabled(enabled)
+            Skill.READ -> {
+                readEnabled = enabled
+                onDrillSkillToggled(skill, enabled)
+            }
+            Skill.INVERT -> {
+                invertEnabled = enabled
+                onDrillSkillToggled(skill, enabled)
+            }
+        }
+    }
+
+    /** Post-toggle handling for READ/INVERT: drop a now-disabled round, repaint. */
+    private fun onDrillSkillToggled(skill: Skill, enabled: Boolean) {
+        if (!enabled && currentSkill == skill && currentVocab != null) {
+            // dismiss advances to a fresh word; its round render repaints the bars.
+            dismissCurrentVocab(newCandidates = false)
+        } else {
+            progressBars.refreshAll()
+        }
+    }
 
     /** True when Speaking practice is active (SPEAK words can be picked). */
     fun isSpeakingModeEnabled(): Boolean = speakingEnabled
@@ -594,7 +639,7 @@ class QuizController(
      * turning it off mid-SPEAK-round discards the current word so the user isn't
      * stranded on a tier they just disabled, but only when no recording/playback
      * is in flight (mirrors [dismissSpeakRoundIfMuted]). The next pick honours the
-     * new state via [speakingExcludedProvider].
+     * new state via the picker's exclusion set (see [excludedSkills]).
      */
     fun setSpeakingModeEnabled(enabled: Boolean) {
         speakingEnabled = enabled
@@ -844,6 +889,21 @@ class QuizController(
         updateVocab(0, newCandidates = false, commitButton = CommitButton.NEXT)
         // First real word is now on the card — introduce the core ✓/✗ loop.
         coachEvents.onFirstRealWord()
+    }
+
+    /**
+     * Load the opening word for an already-calibrated language. MainActivity
+     * calls this once TTS is ready (or its short wait times out), so launch
+     * lands on a real word instead of the old "Click 'Know it' to begin!"
+     * idle screen — an instruction that confused users when there was nothing
+     * on the card to know yet. No-op if a word is already showing (the user
+     * beat us to it via ✓) or while calibration owns the screen.
+     */
+    fun loadFirstWord() {
+        if (currentVocab != null || inCalibration) return
+        // commitButton is irrelevant here: with no current vocab, saveCurrentVocab
+        // returns before writing anything.
+        updateVocab(0, newCandidates = false, commitButton = CommitButton.OTHER)
     }
 
     /**
@@ -1174,7 +1234,6 @@ class QuizController(
     private fun advanceToNextDistinctVocab(newCandidates: Boolean): Vocab {
         val result = picker.pickNext(
             newCandidates = newCandidates,
-            listeningEnabled = listeningEnabled,
             avoidCurrentForeign = currentVocab?.foreign,
         )
         currentVocab = result.vocab
@@ -1551,6 +1610,14 @@ class QuizController(
      * SPEAK tier immediately instead of waiting for the next round commit.
      */
     fun refreshProgressBars() = progressBars.refreshAll()
+
+    /**
+     * Live-update the ACTIVE WORDS dialog's exercise switches if it's open.
+     * Public for MainActivity's volume sync: the dialog binds its state at
+     * open time, so a mute/unmute while it's showing must re-mirror the
+     * switches (disabled + unchecked while muted) in place.
+     */
+    fun refreshOpenActiveDialog() = progressCardInfo.refreshOpenDialog()
 
     fun stopThinkingAnimation() = sentenceManager.stopThinkingAnimation()
 

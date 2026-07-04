@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">WordWizard</string>
-    <string name="START_INFO_TEXT">Click \'Know it\' to begin!</string>
+    <string name="START_INFO_TEXT">Getting your first word…</string>
 </resources>

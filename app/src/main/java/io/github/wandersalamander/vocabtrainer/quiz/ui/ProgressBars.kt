@@ -132,15 +132,13 @@ internal fun refreshActiveBar(
     context: Context,
     views: QuizViews,
     dictionary: MyDictionary,
-    listeningEnabled: Boolean = true,
-    speakingEnabled: Boolean = true,
+    disabledSkills: Set<Skill> = emptySet(),
 ) = refreshActiveBar(
     context,
     views,
     dictionary.computeActiveSetCounts(),
     readSkillFinishedToday(context),
-    listeningEnabled,
-    speakingEnabled,
+    disabledSkills,
 )
 
 /**
@@ -176,39 +174,43 @@ internal fun readSkillFinishedToday(context: Context) = ActiveSkillFinishedToday
  * [ActiveSetCounts] to diff against the previous render for the "-N" floater,
  * so we hand them in here instead of asking the dictionary twice.
  *
- * [listeningEnabled] / [speakingEnabled] gray that skill's segment and count
- * (segment alpha + muted count colour) while its exercise type is off or
- * paused, so the card shows at a glance why no such rounds are coming. The
- * runs keep their exact character lengths either way, so the "-N" floater
- * offset math in ProgressBarAnimator is unaffected.
+ * [disabledSkills] grays that skill's segment and count (segment alpha +
+ * muted count colour) while its exercise type is off or paused, so the card
+ * shows at a glance why no such rounds are coming. The runs keep their exact
+ * character lengths either way, so the "-N" floater offset math in
+ * ProgressBarAnimator is unaffected.
  */
 internal fun refreshActiveBar(
     context: Context,
     views: QuizViews,
     counts: ActiveSetCounts,
     todayFinished: ActiveSkillFinishedToday,
-    listeningEnabled: Boolean = true,
-    speakingEnabled: Boolean = true,
+    disabledSkills: Set<Skill> = emptySet(),
 ) {
     setSegmentWeight(views.segActiveRead, counts.read)
     setSegmentWeight(views.segActiveListen, counts.listen)
     setSegmentWeight(views.segActiveInvert, counts.invert)
     setSegmentWeight(views.segActiveSpeak, counts.speak)
-    views.segActiveListen.alpha = if (listeningEnabled) 1f else DISABLED_SEGMENT_ALPHA
-    views.segActiveSpeak.alpha = if (speakingEnabled) 1f else DISABLED_SEGMENT_ALPHA
+    fun alphaFor(skill: Skill) = if (skill in disabledSkills) DISABLED_SEGMENT_ALPHA else 1f
+    views.segActiveRead.alpha = alphaFor(Skill.READ)
+    views.segActiveListen.alpha = alphaFor(Skill.LISTEN)
+    views.segActiveInvert.alpha = alphaFor(Skill.INVERT)
+    views.segActiveSpeak.alpha = alphaFor(Skill.SPEAK)
     views.textActiveLabel.text =
-        buildActiveLabel(context, counts, todayFinished, listeningEnabled, speakingEnabled)
+        buildActiveLabel(context, counts, todayFinished, disabledSkills)
     views.cardActive.contentDescription = buildString {
         append("Active words: ")
         append("${counts.read} read")
+        if (Skill.READ in disabledSkills) append(" (off)")
         if (todayFinished.read > 0) append(" (${todayFinished.read} finished today)")
         append(", ${counts.listen} listen")
-        if (!listeningEnabled) append(" (paused)")
+        if (Skill.LISTEN in disabledSkills) append(" (off)")
         if (todayFinished.listen > 0) append(" (${todayFinished.listen} finished today)")
         append(", ${counts.invert} invert")
+        if (Skill.INVERT in disabledSkills) append(" (off)")
         if (todayFinished.invert > 0) append(" (${todayFinished.invert} finished today)")
         append(", ${counts.speak} speak")
-        if (!speakingEnabled) append(" (paused)")
+        if (Skill.SPEAK in disabledSkills) append(" (off)")
         if (todayFinished.speak > 0) append(" (${todayFinished.speak} finished today)")
         append(", tap for details")
     }
@@ -271,22 +273,25 @@ private fun buildActiveLabel(
     context: Context,
     counts: ActiveSetCounts,
     todayFinished: ActiveSkillFinishedToday,
-    listeningEnabled: Boolean,
-    speakingEnabled: Boolean,
+    disabledSkills: Set<Skill>,
 ): CharSequence {
     val sb = SpannableStringBuilder()
     val separator = activeLabelSeparator(counts, todayFinished)
     // A disabled exercise type drops its skill colour for the muted grey — the
     // count stays legible, but the tier no longer claims to be in rotation.
-    val listenColor = if (listeningEnabled) R.color.seg_listen else R.color.card_text_muted
-    val speakColor = if (speakingEnabled) R.color.seg_speak else R.color.card_text_muted
-    appendActiveSkillRun(context, sb, counts.read, todayFinished.read, R.color.seg_read)
+    fun colorFor(skill: Skill, colorRes: Int) =
+        if (skill in disabledSkills) R.color.card_text_muted else colorRes
+    appendActiveSkillRun(
+        context, sb, counts.read, todayFinished.read, colorFor(Skill.READ, R.color.seg_read))
     appendColored(context, sb, separator, R.color.card_text_muted)
-    appendActiveSkillRun(context, sb, counts.listen, todayFinished.listen, listenColor)
+    appendActiveSkillRun(
+        context, sb, counts.listen, todayFinished.listen, colorFor(Skill.LISTEN, R.color.seg_listen))
     appendColored(context, sb, separator, R.color.card_text_muted)
-    appendActiveSkillRun(context, sb, counts.invert, todayFinished.invert, R.color.seg_invert)
+    appendActiveSkillRun(
+        context, sb, counts.invert, todayFinished.invert, colorFor(Skill.INVERT, R.color.seg_invert))
     appendColored(context, sb, separator, R.color.card_text_muted)
-    appendActiveSkillRun(context, sb, counts.speak, todayFinished.speak, speakColor)
+    appendActiveSkillRun(
+        context, sb, counts.speak, todayFinished.speak, colorFor(Skill.SPEAK, R.color.seg_speak))
     return sb
 }
 

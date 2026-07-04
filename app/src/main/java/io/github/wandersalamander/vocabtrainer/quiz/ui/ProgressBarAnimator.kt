@@ -31,14 +31,12 @@ internal class ProgressBarAnimator(
     private val activity: AppCompatActivity,
     private val views: QuizViews,
     private val dictionary: MyDictionary,
-    // Live session state, re-read on every refresh: the picker's current
-    // skill-exclusion filter (drives the "N due" accent) and whether the
-    // listening/speaking exercise types are currently servable (drives the
-    // gray-out of their segment + count). Defaults keep tests/headless
-    // construction unchanged.
-    private val dueSkillFilterProvider: () -> (Skill) -> Boolean = { { true } },
-    private val listeningEnabledProvider: () -> Boolean = { true },
-    private val speakingEnabledProvider: () -> Boolean = { true },
+    // Live session state, re-read on every refresh: the skills currently
+    // excluded from serving (off/paused/muted). Drives the gray-out of their
+    // segment + count AND the "N due" accent's filter, which must match the
+    // picker's — the host passes the same set to both. Default keeps
+    // tests/headless construction unchanged.
+    private val disabledSkillsProvider: () -> Set<Skill> = { emptySet() },
 ) {
     // Last today-counter value reflected on screen; lets refreshAll detect an
     // increment and pop the label without firing the animation on every round.
@@ -60,7 +58,8 @@ internal class ProgressBarAnimator(
     fun refreshAll() {
         if (dictionary.csvData.isEmpty()) return
         val ctx = activity.applicationContext
-        refreshLifetimeBar(ctx, views, dictionary, dueSkillFilterProvider())
+        val disabled = disabledSkillsProvider()
+        refreshLifetimeBar(ctx, views, dictionary) { it !in disabled }
         val newCounts = dictionary.computeActiveSetCounts()
         val todayFinished = ActiveSkillFinishedToday(
             read = SkillFinishedTracker.todayCount(ctx, Skill.READ),
@@ -68,10 +67,7 @@ internal class ProgressBarAnimator(
             invert = SkillFinishedTracker.todayCount(ctx, Skill.INVERT),
             speak = SkillFinishedTracker.todayCount(ctx, Skill.SPEAK),
         )
-        refreshActiveBar(
-            ctx, views, newCounts, todayFinished,
-            listeningEnabledProvider(), speakingEnabledProvider(),
-        )
+        refreshActiveBar(ctx, views, newCounts, todayFinished, disabled)
         val newScore = refreshLifetimeScoreBadge(ctx, views, dictionary)
         val todayNow = MasteryTracker.todayCount(ctx)
         if (todayNow > renderedTodayCount) views.textLifetimeLabel.pop()
@@ -92,11 +88,9 @@ internal class ProgressBarAnimator(
     fun rebaseline() {
         if (dictionary.csvData.isEmpty()) return
         val ctx = activity.applicationContext
-        refreshLifetimeBar(ctx, views, dictionary, dueSkillFilterProvider())
-        refreshActiveBar(
-            ctx, views, dictionary,
-            listeningEnabledProvider(), speakingEnabledProvider(),
-        )
+        val disabled = disabledSkillsProvider()
+        refreshLifetimeBar(ctx, views, dictionary) { it !in disabled }
+        refreshActiveBar(ctx, views, dictionary, disabled)
         renderedLifetimeScore = refreshLifetimeScoreBadge(ctx, views, dictionary)
         renderedTodayCount = MasteryTracker.todayCount(ctx)
         renderedActiveCounts = dictionary.computeActiveSetCounts()

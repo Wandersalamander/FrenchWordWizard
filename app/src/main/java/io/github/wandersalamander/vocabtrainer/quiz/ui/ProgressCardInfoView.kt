@@ -5,7 +5,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
@@ -40,21 +39,33 @@ internal class ProgressCardInfoView(
     private val views: QuizViews,
     private val languageCode: String,
     private val dictionary: MyDictionary,
-    // Live session state from QuizController, re-read at dialog-open time. The
-    // due filter keeps the TOTAL PROGRESS dialog's "N due" identical to the
-    // card label / refresh picker; the listening/speaking accessors drive the
-    // ACTIVE WORDS dialog's tier gray-out and its on-off switches. Defaults
+    // Live session state from QuizController, re-read at dialog-open time.
+    // disabledSkillsProvider is the picker's exclusion set — it drives the
+    // TOTAL PROGRESS dialog's "N due" filter AND the ACTIVE WORDS dialog's
+    // tier dim; setSkillEnabled backs the tap-to-toggle columns. Defaults
     // keep tests/headless construction unchanged.
-    private val dueSkillFilterProvider: () -> (Skill) -> Boolean = { { true } },
-    private val isListeningEnabled: () -> Boolean = { true },
-    private val setListeningEnabled: (Boolean) -> Unit = {},
-    private val isSpeakingEnabled: () -> Boolean = { true },
-    private val setSpeakingEnabled: (Boolean) -> Unit = {},
+    private val disabledSkillsProvider: () -> Set<Skill> = { emptySet() },
+    private val setSkillEnabled: (Skill, Boolean) -> Unit = { _, _ -> },
     private val isAudioMuted: () -> Boolean = { false },
 ) {
+    // Re-mirrors the tier columns of the currently-open ACTIVE WORDS dialog,
+    // or null when none is showing. Set by bindTierToggles, cleared on dialog
+    // dismiss; invoked via [refreshOpenDialog] when the audio state changes
+    // underneath an open dialog (e.g. volume keyed to zero).
+    private var refreshOpenDialogState: (() -> Unit)? = null
+
     fun setup() {
         wire(views.cardLifetime, R.layout.dialog_lifetime_info, ::bindLifetimeDialog)
         wire(views.cardActive, R.layout.dialog_active_info, ::bindActiveDialog)
+    }
+
+    /**
+     * Live-update an open ACTIVE WORDS dialog after a mute/unmute or an
+     * external toggle change: tier columns re-dim and re-describe. No-op when
+     * no dialog is showing — the states are read fresh at open time anyway.
+     */
+    fun refreshOpenDialog() {
+        refreshOpenDialogState?.invoke()
     }
 
     private fun wire(card: View, layoutRes: Int, bind: ((View) -> Unit)? = null) {
@@ -75,6 +86,9 @@ internal class ProgressCardInfoView(
             AlertDialog.Builder(activity)
                 .setView(view)
                 .setPositiveButton("Got it", null)
+                // Whatever dialog closes, drop the live-refresh hook — only the
+                // ACTIVE WORDS bind sets one, and the two dialogs never coexist.
+                .setOnDismissListener { refreshOpenDialogState = null }
                 .show()
         }
     }
@@ -91,7 +105,8 @@ internal class ProgressCardInfoView(
         val total = dictionary.csvData.size
         val mastered = dictionary.computeLifetimeMasteredCount()
         val today = MasteryTracker.todayCount(activity)
-        val due = dictionary.computeDueMasteredCount(dueSkillFilterProvider())
+        val disabled = disabledSkillsProvider()
+        val due = dictionary.computeDueMasteredCount({ it !in disabled })
         root.findViewById<TextView>(R.id.lifetimeInfoMastered).text = mastered.toString()
         root.findViewById<TextView>(R.id.lifetimeInfoTotal).text = " / $total"
         root.findViewById<TextView>(R.id.lifetimeInfoToday).text = "+$today"
@@ -120,43 +135,57 @@ internal class ProgressCardInfoView(
         root.findViewById<TextView>(R.id.activeInfoTodayActive).text = counts.read.toString()
         root.findViewById<TextView>(R.id.activeInfoTodayGold).text = " ${today.read}"
 
-        bindExerciseToggles(root)
+        bindTierToggles(root)
         bindThresholdStepper(root)
     }
 
     /**
-     * Wire the Listening/Speaking on-off switches in the ACTIVE WORDS dialog —
-     * the same session toggles as the ⋮ menu, surfaced next to the counts they
-     * affect. While the device media volume is muted both are disabled (audio
-     * exercises can't run silent), mirroring the menu's grey-out. Flipping a
-     * switch re-grays the dialog's own tier column immediately; the host
-     * setters repaint the live card underneath.
+     * Make each tier column (the coloured number + its label) a tap-to-toggle
+     * for that exercise type: tap to switch it off (column dims to the same
+     * 0.35 alpha as the live bar segment), tap again to switch it back on.
+     * LISTEN/SPEAK stay locked while the device media volume is muted — audio
+     * exercises can't run silent, mirroring the ⋮ menu's grey-out. The host
+     * setter repaints the live card underneath; [refreshOpenDialog] re-runs
+     * the mirror when mute flips under an open dialog.
      */
-    private fun bindExerciseToggles(root: View) {
-        val listenSwitch = root.findViewById<SwitchCompat>(R.id.activeToggleListening)
-        val speakSwitch = root.findViewById<SwitchCompat>(R.id.activeToggleSpeaking)
-        val listenCol = root.findViewById<View>(R.id.activeInfoListenCol)
-        val speakCol = root.findViewById<View>(R.id.activeInfoSpeakCol)
+    private fun bindTierToggles(root: View) {
+        val columns = mapOf(
+            Skill.READ to root.findViewById<View>(R.id.activeInfoReadCol),
+            Skill.LISTEN to root.findViewById(R.id.activeInfoListenCol),
+            Skill.INVERT to root.findViewById(R.id.activeInfoInvertCol),
+            Skill.SPEAK to root.findViewById(R.id.activeInfoSpeakCol),
+        )
+        val audioSkills = setOf(Skill.LISTEN, Skill.SPEAK)
 
-        fun renderTierDim() {
-            listenCol.alpha = if (isListeningEnabled()) 1f else DISABLED_SEGMENT_ALPHA
-            speakCol.alpha = if (isSpeakingEnabled()) 1f else DISABLED_SEGMENT_ALPHA
+        fun render() {
+            val disabled = disabledSkillsProvider()
+            val muted = isAudioMuted()
+            for ((skill, column) in columns) {
+                val off = skill in disabled
+                val locked = muted && skill in audioSkills
+                column.alpha = if (off) DISABLED_SEGMENT_ALPHA else 1f
+                column.contentDescription = buildString {
+                    append("${skill.displayName} exercises ${if (off) "off" else "on"}")
+                    append(
+                        if (locked) ", unavailable while sound is off"
+                        else ", tap to turn ${if (off) "on" else "off"}"
+                    )
+                }
+            }
         }
 
-        val muted = isAudioMuted()
-        listenSwitch.isEnabled = !muted
-        speakSwitch.isEnabled = !muted
-        listenSwitch.isChecked = isListeningEnabled()
-        speakSwitch.isChecked = isSpeakingEnabled()
-        listenSwitch.setOnCheckedChangeListener { _, checked ->
-            setListeningEnabled(checked)
-            renderTierDim()
+        for ((skill, column) in columns) {
+            column.setOnClickListener {
+                // Audio tiers can't be toggled while muted (turning them on
+                // would be a no-op the picker ignores; the mute already forced
+                // them off).
+                if (isAudioMuted() && skill in audioSkills) return@setOnClickListener
+                setSkillEnabled(skill, skill in disabledSkillsProvider())
+                render()
+            }
         }
-        speakSwitch.setOnCheckedChangeListener { _, checked ->
-            setSpeakingEnabled(checked)
-            renderTierDim()
-        }
-        renderTierDim()
+        render()
+        refreshOpenDialogState = ::render
     }
 
     /**

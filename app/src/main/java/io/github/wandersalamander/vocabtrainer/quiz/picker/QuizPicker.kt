@@ -79,7 +79,11 @@ internal class QuizPicker(
     private val dictionary: MyDictionary,
     private val autoIntroduceThresholdProvider: () -> Int = { AUTO_INTRODUCE_THRESHOLD },
     private val frontierProvider: () -> Int? = { null },
-    private val speakingExcludedProvider: () -> Boolean = { false },
+    // Skills currently excluded from the pool (re-read each round): LISTEN
+    // while listening is off, SPEAK while the tier is off/paused/muted, and any
+    // tier the user toggled off on the ACTIVE WORDS card. The host composes
+    // the set; the picker just honours it.
+    private val excludedSkillsProvider: () -> Set<Skill> = { emptySet() },
 ) {
     private val recentWords = ArrayDeque<String>()
 
@@ -106,13 +110,11 @@ internal class QuizPicker(
      * Pick the next (vocab, skill) pair, retrying briefly to avoid repeating
      * the same foreign word back-to-back. Returns the picked pair non-null.
      *
-     * [listeningEnabled] excludes LISTEN from the pool when false.
      * [avoidCurrentForeign] is added to the avoidance set for the first
      * pick — defensive against an empty deque on the very first round.
      */
     fun pickNext(
         newCandidates: Boolean,
-        listeningEnabled: Boolean,
         avoidCurrentForeign: String?,
     ): PickerResult {
         // Recompute the adaptive refresh cadence for this round before the
@@ -121,7 +123,7 @@ internal class QuizPicker(
             masteredRefreshInterval(it.mastered, it.active)
         }
 
-        val skillFilter = currentSkillFilter(listeningEnabled)
+        val skillFilter = currentSkillFilter()
         val ctx = PickContext(
             dictionary = dictionary,
             newCandidates = newCandidates,
@@ -152,23 +154,19 @@ internal class QuizPicker(
     }
 
     /**
-     * Skill-exclusion filter for the current moment: LISTEN is dropped while
-     * listening is off, SPEAK while the Speaking tier is off/paused/muted
-     * (re-read each call via [speakingExcludedProvider]). getInactiveVocab
-     * always returns READ (never filtered), so excluding a skill can only
-     * narrow the pool — it can never deadlock the picker.
+     * Skill-exclusion filter for the current moment (re-read each call via
+     * [excludedSkillsProvider]). getInactiveVocab always returns READ (never
+     * filtered), so excluding skills can only narrow the pool — it can never
+     * deadlock the picker (a fully-excluded set falls back to READ).
      *
      * Shared between [pickNext] and the "N due" badge
      * ([io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary.computeDueMasteredCount])
      * so the two can never disagree about which pairs are servable — see the
      * badge's kdoc for the disagreement this closed.
      */
-    fun currentSkillFilter(listeningEnabled: Boolean): (Skill) -> Boolean {
-        val speakingExcluded = speakingExcludedProvider()
-        return { skill ->
-            (listeningEnabled || skill != Skill.LISTEN) &&
-                (!speakingExcluded || skill != Skill.SPEAK)
-        }
+    fun currentSkillFilter(): (Skill) -> Boolean {
+        val excluded = excludedSkillsProvider()
+        return { it !in excluded }
     }
 
     /**

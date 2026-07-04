@@ -29,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
 import io.github.wandersalamander.vocabtrainer.R
 import io.github.wandersalamander.vocabtrainer.applySystemBarInsetsAsPadding
 import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
@@ -73,6 +74,13 @@ private const val MENU_GROUP_LANGUAGE = 1
 // converts far better. Foreground time only — see onResume/onPause.
 private const val REMINDER_USAGE_THRESHOLD_MS = 10 * 60 * 1000L
 
+// How long the auto-loaded first word waits for TTS init before loading
+// anyway. The wait exists because the first pick can be LISTEN (masked word,
+// audio is the whole exercise) — but a slow or broken engine must not hold
+// the quiz hostage, so after this the word loads and speech simply starts on
+// whichever round comes after init.
+private const val FIRST_WORD_TTS_TIMEOUT_MS = 2_000L
+
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper {
     private lateinit var textToSpeech: TextToSpeech
     private lateinit var language: Language
@@ -109,6 +117,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     // stamped in onResume and drained into the cumulative usage total in onPause.
     // 0 means "no live session" so onPause doesn't double-count across recreate.
     private var sessionStartRealtimeMs: Long = 0L
+
+    // First-word auto-load state (already-calibrated languages only): armed by
+    // startFirstRunFlow, consumed by loadFirstWordIfPending on the earliest of
+    // TTS init / the timeout / the next resume. ttsReady covers the race where
+    // init completes before startFirstRunFlow runs.
+    private var ttsReady = false
+    private var pendingFirstWordLoad = false
+
+    // Mute state at the last volume sync, so the sync can tell an actual
+    // mute/unmute apart from the many unrelated Settings.System changes the
+    // observer also fires for. Null = no sync yet.
+    private var lastSyncedMuted: Boolean? = null
 
     private val requestNotificationPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -310,17 +330,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     private fun renderInitialProgressBars() {
         if (vocabDictionary.csvData.isEmpty()) return
         // Pre-QuizController render: mirror the session state the controller
-        // boots with (listening/speaking on unless muted; speaking also off
-        // under an active timed pause) so the "N due" badge and the tier
-        // gray-out don't flash a different state until the first round commits.
+        // boots with (all tiers on unless muted; speaking also off under an
+        // active timed pause) so the "N due" badge and the tier gray-out
+        // don't flash a different state until the first round commits.
         val muted = isMediaMuted()
-        val listeningOn = !muted
-        val speakingOn = !muted && !AppPrefs.isSpeakingPaused(this)
-        val dueFilter: (Skill) -> Boolean = { skill ->
-            (listeningOn || skill != Skill.LISTEN) && (speakingOn || skill != Skill.SPEAK)
-        }
-        refreshLifetimeBar(applicationContext, views, vocabDictionary, dueFilter)
-        refreshActiveBar(applicationContext, views, vocabDictionary, listeningOn, speakingOn)
+        val disabled = mutableSetOf<Skill>()
+        if (muted) disabled += Skill.LISTEN
+        if (muted || AppPrefs.isSpeakingPaused(this)) disabled += Skill.SPEAK
+        refreshLifetimeBar(applicationContext, views, vocabDictionary) { it !in disabled }
+        refreshActiveBar(applicationContext, views, vocabDictionary, disabled)
         refreshLifetimeScoreBadge(applicationContext, views, vocabDictionary)
     }
 
@@ -344,16 +362,40 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
      * First-launch sequencing. Language selection already happened in
      * OnboardingActivity, so what's left for a fresh language is the level check;
      * everything after it (the active-pool size for later languages, and the
-     * first drill word) is driven from [onAssessmentComplete]. Onboarding itself
-     * is now just-in-time: each control coaches itself from the round flow (see
-     * [CoachMarks]) rather than an up-front tour, so there's nothing to show
-     * proactively for an already-calibrated language — the else case is
-     * intentionally absent.
+     * first drill word) is driven from [onAssessmentComplete].
+     *
+     * An already-calibrated language opens on a real word instead: the old idle
+     * screen ("Click 'Know it' to begin!") read as a nonsense instruction with
+     * nothing on the card to know, and confused users. The load waits for TTS
+     * (first pick can be LISTEN) but never longer than
+     * [FIRST_WORD_TTS_TIMEOUT_MS].
      */
     private fun startFirstRunFlow() {
         if (willCalibrate()) {
             findViewById<View>(android.R.id.content).post { quizController.startCalibration() }
+            return
         }
+        pendingFirstWordLoad = true
+        val content = findViewById<View>(android.R.id.content)
+        if (ttsReady) {
+            content.post { loadFirstWordIfPending() }
+        } else {
+            content.postDelayed({ loadFirstWordIfPending() }, FIRST_WORD_TTS_TIMEOUT_MS)
+        }
+    }
+
+    /**
+     * Run the armed first-word load, once. Skipped while backgrounded — the
+     * round-start TTS on the immediate path doesn't re-check the lifecycle, so
+     * loading from a late onInit callback would speak over a hidden quiz;
+     * onResume retries instead. The [QuizController.loadFirstWord] no-op guard
+     * additionally covers the user starting a round themselves in the meantime.
+     */
+    private fun loadFirstWordIfPending() {
+        if (!pendingFirstWordLoad || !::quizController.isInitialized) return
+        if (!lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) return
+        pendingFirstWordLoad = false
+        quizController.loadFirstWord()
     }
 
     /**
@@ -617,6 +659,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
     override fun onInit(status: Int) {
         if (status != TextToSpeech.SUCCESS) {
             Log.w(TAG, "TextToSpeech initialization failed.")
+            // No speech is coming at all — don't keep the first word waiting
+            // out the full timeout for it. (onInit isn't guaranteed on the
+            // main thread, hence the hop.)
+            runOnUiThread { loadFirstWordIfPending() }
             return
         }
         val result = textToSpeech.setLanguage(language.locale)
@@ -633,6 +679,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                 .build()
         )
+        // After setAudioAttributes, so the auto-loaded first word's speech
+        // already routes like every later utterance. (onInit isn't guaranteed
+        // on the main thread, hence the hop.)
+        ttsReady = true
+        runOnUiThread { loadFirstWordIfPending() }
     }
 
     /**
@@ -724,6 +775,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         }
         quizController.onAppResumed()
         quizController.refreshStreakBadge()
+        // A first-word load that fired while we were backgrounded was skipped
+        // (its TTS would have spoken over a hidden quiz) — run it now.
+        loadFirstWordIfPending()
         // Catch a volume change that happened while we were backgrounded, then
         // keep watching for live changes (e.g. the user thumbing volume to zero
         // mid-session).
@@ -756,7 +810,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
      * volume is muted we auto-pause them (with a hint) and refresh the overflow
      * menu so its toggles reflect the change. Listening is a session flag we
      * flip off here; Speaking is excluded at the picker level by the mute check
-     * (see QuizController.speakingExcludedProvider), so here we only nudge off a
+     * (see QuizController.excludedSkills), so here we only nudge off a
      * mid-SPEAK round. We deliberately do NOT auto-re-enable listening on unmute:
      * the user opts back in from the menu so we never surprise them with sudden
      * speech. (Speaking, being user-initiated, simply follows its own flag again
@@ -764,6 +818,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
      */
     private fun syncListeningModeWithVolume() {
         if (!::quizController.isInitialized) return
+        val mutedChanged = lastSyncedMuted != isMediaMuted()
+        lastSyncedMuted = isMediaMuted()
         if (isMediaMuted()) {
             val listeningWasOn = quizController.isListeningModeEnabled()
             if (listeningWasOn) quizController.setListeningModeEnabled(false)
@@ -781,6 +837,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // unmute must un-gray the SPEAK tier (and restore its "due" pairs)
         // right away — there's no setter call on that path to do it.
         quizController.refreshProgressBars()
+        // Surfaces that bind their state at open time need a push when the
+        // mute flips underneath them: re-mirror an open ACTIVE WORDS dialog's
+        // switches in place, and close a stale open ⋮ panel (an options menu
+        // can't be re-rendered while showing — reopening shows fresh state
+        // via onPrepareOptionsMenu).
+        quizController.refreshOpenActiveDialog()
+        if (mutedChanged) closeOptionsMenu()
         invalidateOptionsMenu()
     }
 
