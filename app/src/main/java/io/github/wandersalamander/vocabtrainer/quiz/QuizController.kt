@@ -184,8 +184,32 @@ class QuizController(
     private val requestMicPermission: () -> Unit = {},
 ) {
     private val streakBadge = StreakBadgeView(activity, views)
-    private val progressCardInfo = ProgressCardInfoView(activity, views, language.code, vocabDictionary)
-    private val progressBars = ProgressBarAnimator(activity, views, vocabDictionary)
+    // Both progress components re-read the session's exercise availability on
+    // every render: the due filter keeps the "N due" badge in lockstep with the
+    // refresh picker, and the listening/speaking accessors drive the tier
+    // gray-out plus the ACTIVE WORDS dialog's on-off switches. The lambdas
+    // reference [picker] (declared below) lazily — they only run after
+    // construction completes.
+    private val progressCardInfo = ProgressCardInfoView(
+        activity = activity,
+        views = views,
+        languageCode = language.code,
+        dictionary = vocabDictionary,
+        dueSkillFilterProvider = { dueSkillFilter() },
+        isListeningEnabled = { listeningEnabled },
+        setListeningEnabled = ::setListeningModeEnabled,
+        isSpeakingEnabled = { isSpeakingEffectivelyEnabled() },
+        setSpeakingEnabled = ::setSpeakingModeEnabled,
+        isAudioMuted = ::isMediaMuted,
+    )
+    private val progressBars = ProgressBarAnimator(
+        activity = activity,
+        views = views,
+        dictionary = vocabDictionary,
+        dueSkillFilterProvider = { dueSkillFilter() },
+        listeningEnabledProvider = { listeningEnabled },
+        speakingEnabledProvider = { isSpeakingEffectivelyEnabled() },
+    )
     private val audioManager = activity.getSystemService(Context.AUDIO_SERVICE) as AudioManager
     // Picker re-reads the user's auto-add threshold and the calibrated frontier
     // each pick so changing the threshold in Settings — or finishing calibration
@@ -200,9 +224,7 @@ class QuizController(
         // self-comparison), so it's excluded while the tier is paused OR the device
         // is muted — the silent-mode mirror of how LISTEN is dropped. Re-read each
         // pick, so it self-clears on unmute without persisting an off-state.
-        speakingExcludedProvider = {
-            !speakingEnabled || AppPrefs.isSpeakingPaused(activity) || isMediaMuted()
-        },
+        speakingExcludedProvider = { !isSpeakingEffectivelyEnabled() },
     )
     private val sentenceManager = SentenceManager(
         activity = activity,
@@ -243,6 +265,14 @@ class QuizController(
     // Skill being practiced for the currently-displayed word. Set in updateVocab
     // when a new word is picked and used for all stat writes during the round.
     private var currentSkill: Skill = Skill.READ
+
+    // SPEAK only: the round's foreground view time, frozen the moment the FIRST
+    // take starts recording. Committing to speak IS the recall signal — the
+    // record/model-playback/take-playback/judge loop after it is mechanics, not
+    // thinking time, and letting it accrue inflated the view-time EMA (skewing
+    // the picker's time factor and the slow gates) on every long speaking round.
+    // Null until that first hold; non-SPEAK rounds never set it.
+    private var speakFrozenViewTimeMs: Long? = null
 
     // True iff the current round's (vocab, skill) was served by the refresh
     // pool (RefreshPicker). Drives the RETENTION eyebrow + gold accent on the
@@ -521,17 +551,40 @@ class QuizController(
         }
         // Listening turned off mid-LISTEN-round: discard the current word and
         // pick a new (non-LISTEN) one. updateVocab honours roundCompromised so
-        // the LISTEN stats are rolled back before advancing.
+        // the LISTEN stats are rolled back before advancing (its round render
+        // also repaints the bars, so no explicit refresh on this path).
         if (!enabled && currentSkill == Skill.LISTEN && currentVocab != null) {
             updateVocab(0, newCandidates = false, commitButton = CommitButton.OTHER)
             return
         }
+        // Repaint the progress cards right away: the LISTEN tier gray-out and
+        // the "N due" badge both depend on the new state.
+        progressBars.refreshAll()
         val vocab = currentVocab ?: return
         displayForeignWord(vocab)
         if (views.textGuessLong.visibility == View.VISIBLE) {
             sentenceManager.reRender(currentSkill, listeningEnabled)
         }
     }
+
+    /**
+     * True when a SPEAK round could actually be served right now: the session
+     * toggle is on, no timed pause ("Can't speak" / mic denied) is active, and
+     * the device isn't muted. The single definition behind the picker's SPEAK
+     * exclusion, the ⋮ menu checkbox, the tier gray-out on the ACTIVE WORDS
+     * card, and its dialog switch — so they can never drift apart.
+     */
+    fun isSpeakingEffectivelyEnabled(): Boolean =
+        speakingEnabled && !AppPrefs.isSpeakingPaused(activity) && !isMediaMuted()
+
+    /**
+     * The picker's current skill-exclusion filter, shared with the "N due"
+     * badge so the badge never counts a pair the refresh picker would skip —
+     * or hides one it would serve (the "0 due but retention rounds" bug; see
+     * [io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary.computeDueMasteredCount]).
+     */
+    private fun dueSkillFilter(): (Skill) -> Boolean =
+        picker.currentSkillFilter(listeningEnabled)
 
     /** True when Speaking practice is active (SPEAK words can be picked). */
     fun isSpeakingModeEnabled(): Boolean = speakingEnabled
@@ -552,6 +605,10 @@ class QuizController(
         } else if (currentSkill == Skill.SPEAK && currentVocab != null && !speaking.isBusy) {
             dismissCurrentVocab(newCandidates = false)
         }
+        // Repaint the progress cards so the SPEAK tier gray-out and the "N due"
+        // badge track the new state (redundant but harmless after the dismiss
+        // path, which repaints via its round render).
+        progressBars.refreshAll()
     }
 
     fun onHardClick() {
@@ -1133,6 +1190,7 @@ class QuizController(
         roundStartSnapshot = vocab.stats(currentSkill).copy()
         roundCompromised = currentSkill.flow.isCompromisedByListening(listeningEnabled)
         progressiveRevealCount = 0
+        speakFrozenViewTimeMs = null
         roundFacts.reset(System.currentTimeMillis())
         spotCheck.reset()
         speaking.reset()
@@ -1206,8 +1264,13 @@ class QuizController(
 
         // Captured once so the log entry's timestamp_ms, the stats'
         // lastDisplayed, and any view-time math all agree on a single "now".
+        // The frozen values (spot check entry; first SPEAK record start) cut
+        // post-answer mechanics out of the view time; the log's viewTimeMs
+        // carries the same frozen value so StatsReplay stays byte-identical
+        // (the excess lands in the entry's derived pausedMs).
         val nowMs = System.currentTimeMillis()
         val activeViewTime = spotCheck.frozenViewTimeMs
+            ?: speakFrozenViewTimeMs
             ?: (elapsedBeforePause + (nowMs - startTime))
 
         val snapshot = roundStartSnapshot
@@ -1481,6 +1544,14 @@ class QuizController(
      */
     fun refreshStreakBadge() = streakBadge.refresh()
 
+    /**
+     * Repaint the progress cards from current state. Public for
+     * MainActivity's volume sync: SPEAK's availability follows the mute state
+     * live (the picker re-reads it each pick), so an unmute must un-gray the
+     * SPEAK tier immediately instead of waiting for the next round commit.
+     */
+    fun refreshProgressBars() = progressBars.refreshAll()
+
     fun stopThinkingAnimation() = sentenceManager.stopThinkingAnimation()
 
     private fun setQuizButtonsEnabled(enabled: Boolean) {
@@ -1671,6 +1742,14 @@ class QuizController(
         if (!hasRecordAudioPermission()) {
             requestMicPermission()
             return
+        }
+        // First take of the round: freeze the view time here — everything from
+        // now on (recording, compare playback, replays, judging) must not count
+        // as thinking time. Re-records keep the first freeze; they're already
+        // penalized via SPEAK_RERECORD_PENALTY.
+        if (speakFrozenViewTimeMs == null) {
+            speakFrozenViewTimeMs =
+                elapsedBeforePause + (System.currentTimeMillis() - startTime)
         }
         speaking.startRecording()
     }

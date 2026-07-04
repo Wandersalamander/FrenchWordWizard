@@ -121,16 +121,7 @@ internal class QuizPicker(
             masteredRefreshInterval(it.mastered, it.active)
         }
 
-        // Skill-exclusion filter: LISTEN is dropped while listening is off, SPEAK
-        // while the Speaking tier is paused (per-language, re-read each round).
-        // getInactiveVocab always returns READ (never filtered), so excluding a
-        // skill can only narrow the pool — it can never deadlock the picker.
-        // SPEAK is excluded when the tier is off (Settings) or paused ("Can't speak").
-        val speakingExcluded = speakingExcludedProvider()
-        val skillFilter: (Skill) -> Boolean = { skill ->
-            (listeningEnabled || skill != Skill.LISTEN) &&
-                (!speakingExcluded || skill != Skill.SPEAK)
-        }
+        val skillFilter = currentSkillFilter(listeningEnabled)
         val ctx = PickContext(
             dictionary = dictionary,
             newCandidates = newCandidates,
@@ -158,6 +149,26 @@ internal class QuizPicker(
             attempts++
         }
         return pick
+    }
+
+    /**
+     * Skill-exclusion filter for the current moment: LISTEN is dropped while
+     * listening is off, SPEAK while the Speaking tier is off/paused/muted
+     * (re-read each call via [speakingExcludedProvider]). getInactiveVocab
+     * always returns READ (never filtered), so excluding a skill can only
+     * narrow the pool — it can never deadlock the picker.
+     *
+     * Shared between [pickNext] and the "N due" badge
+     * ([io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary.computeDueMasteredCount])
+     * so the two can never disagree about which pairs are servable — see the
+     * badge's kdoc for the disagreement this closed.
+     */
+    fun currentSkillFilter(listeningEnabled: Boolean): (Skill) -> Boolean {
+        val speakingExcluded = speakingExcludedProvider()
+        return { skill ->
+            (listeningEnabled || skill != Skill.LISTEN) &&
+                (!speakingExcluded || skill != Skill.SPEAK)
+        }
     }
 
     /**

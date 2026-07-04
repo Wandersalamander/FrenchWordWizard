@@ -98,9 +98,21 @@ class MyDictionary(inputStream: InputStream, val persistence: VocabPersistence? 
      * mastered. (A word whose only due skill is snoozed behind a recently-
      * refreshed harder sibling still returns null here, so the badge never claims
      * a word the picker would skip.)
+     *
+     * [skillFilter] must be the SAME exclusion filter the picker passes to
+     * [pickMasteredVocabToRefresh] (LISTEN dropped while listening is off, SPEAK
+     * while the tier is off/paused/muted). Counting unfiltered while the picker
+     * filters made the two disagree in both directions: a due-but-paused SPEAK
+     * pair inflated the badge with a word the picker couldn't serve, and a
+     * recently-shown SPEAK sibling snoozed the badge's candidate while the
+     * filtered picker (blind to SPEAK) still served the easier skill — the
+     * "0 due, but retention rounds keep coming" bug.
      */
-    fun computeDueMasteredCount(now: Long = System.currentTimeMillis()): Int =
-        csvData.count { it.surfaceableRefreshSkill(now = now) != null }
+    fun computeDueMasteredCount(
+        skillFilter: (Skill) -> Boolean = { true },
+        now: Long = System.currentTimeMillis(),
+    ): Int =
+        csvData.count { it.surfaceableRefreshSkill(skillFilter, now) != null }
 
     /**
      * Per-skill count of (word, skill) pairs in the active drilling pool —

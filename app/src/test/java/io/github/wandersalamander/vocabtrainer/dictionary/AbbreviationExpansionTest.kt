@@ -18,12 +18,12 @@ class AbbreviationExpansionTest {
     @Test fun pluralTagIsSpokenInFull() {
         // The reported bug: "(pl)" was voiced as "place".
         assertEquals("you make plural", en("you make (pl)"))
-        assertEquals("you were doing plural / used to do", en("you were doing (pl) / used to do"))
+        assertEquals("you were doing plural, used to do", en("you were doing (pl) / used to do"))
     }
 
     @Test fun subjunctiveAndPluralTagsExpandTogether() {
         assertEquals("that you be subjunctive plural", en("(that) you be (subj. pl)"))
-        assertEquals("that he/she come subjunctive", en("(that) he/she come (subj.)"))
+        assertEquals("that he, she come subjunctive", en("(that) he/she come (subj.)"))
     }
 
     @Test fun pluralAfterAnotherAnnotationStillExpands() {
@@ -31,9 +31,9 @@ class AbbreviationExpansionTest {
     }
 
     @Test fun partOfSpeechTagsExpand() {
-        assertEquals("excuse me / sorry / excuse noun", en("excuse me / sorry / excuse (n.)"))
+        assertEquals("excuse me, sorry, excuse noun", en("excuse me / sorry / excuse (n.)"))
         assertEquals(
-            "verb to think about / consider; adjective superior",
+            "verb to think about, consider; adjective superior",
             en("(verb) to think about / consider; (adj.) superior"),
         )
     }
@@ -41,7 +41,7 @@ class AbbreviationExpansionTest {
     @Test fun genderTagsExpand() {
         assertEquals("lake masculine; die See: sea feminine", en("lake (m.); die See: sea (f.)"))
         assertEquals("player masculine or feminine", en("player (m/f)"))
-        assertEquals("axis masculine / board, plank feminine", en("axis (m.) / board, plank (f.)"))
+        assertEquals("axis masculine, board, plank feminine", en("axis (m.) / board, plank (f.)"))
     }
 
     @Test fun realWordsContainingTagLettersAreUntouched() {
@@ -83,5 +83,15 @@ class AbbreviationExpansionTest {
 
     @Test fun italianPlainWordIsUnchanged() {
         assertEquals("voi fate", Language.ITALIAN.expandAbbreviations("voi fate"))
+    }
+
+    @Test fun slashesAreSpokenAsPauses() {
+        // Some engines (seen on Samsung TTS) voice "/" as the word "slash";
+        // a comma reads as a natural pause everywhere. Display keeps the slash —
+        // only the pronounceable form is rewritten.
+        assertEquals("he, she", en("he/she"))
+        assertEquals("der, die Lehrer", Language.GERMAN.expandAbbreviations("der/die Lehrer"))
+        assertEquals("aller, venir", Language.FRENCH.expandAbbreviations("aller / venir"))
+        assertEquals("行く、来る", Language.JAPANESE.expandAbbreviations("行く/来る"))
     }
 }

@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
@@ -13,6 +14,7 @@ import io.github.wandersalamander.vocabtrainer.data.prefs.AppPrefs
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MAX
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
+import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.progress.MasteryTracker
 import io.github.wandersalamander.vocabtrainer.quiz.QuizViews
 
@@ -38,6 +40,17 @@ internal class ProgressCardInfoView(
     private val views: QuizViews,
     private val languageCode: String,
     private val dictionary: MyDictionary,
+    // Live session state from QuizController, re-read at dialog-open time. The
+    // due filter keeps the TOTAL PROGRESS dialog's "N due" identical to the
+    // card label / refresh picker; the listening/speaking accessors drive the
+    // ACTIVE WORDS dialog's tier gray-out and its on-off switches. Defaults
+    // keep tests/headless construction unchanged.
+    private val dueSkillFilterProvider: () -> (Skill) -> Boolean = { { true } },
+    private val isListeningEnabled: () -> Boolean = { true },
+    private val setListeningEnabled: (Boolean) -> Unit = {},
+    private val isSpeakingEnabled: () -> Boolean = { true },
+    private val setSpeakingEnabled: (Boolean) -> Unit = {},
+    private val isAudioMuted: () -> Boolean = { false },
 ) {
     fun setup() {
         wire(views.cardLifetime, R.layout.dialog_lifetime_info, ::bindLifetimeDialog)
@@ -78,7 +91,7 @@ internal class ProgressCardInfoView(
         val total = dictionary.csvData.size
         val mastered = dictionary.computeLifetimeMasteredCount()
         val today = MasteryTracker.todayCount(activity)
-        val due = dictionary.computeDueMasteredCount()
+        val due = dictionary.computeDueMasteredCount(dueSkillFilterProvider())
         root.findViewById<TextView>(R.id.lifetimeInfoMastered).text = mastered.toString()
         root.findViewById<TextView>(R.id.lifetimeInfoTotal).text = " / $total"
         root.findViewById<TextView>(R.id.lifetimeInfoToday).text = "+$today"
@@ -107,7 +120,43 @@ internal class ProgressCardInfoView(
         root.findViewById<TextView>(R.id.activeInfoTodayActive).text = counts.read.toString()
         root.findViewById<TextView>(R.id.activeInfoTodayGold).text = " ${today.read}"
 
+        bindExerciseToggles(root)
         bindThresholdStepper(root)
+    }
+
+    /**
+     * Wire the Listening/Speaking on-off switches in the ACTIVE WORDS dialog —
+     * the same session toggles as the ⋮ menu, surfaced next to the counts they
+     * affect. While the device media volume is muted both are disabled (audio
+     * exercises can't run silent), mirroring the menu's grey-out. Flipping a
+     * switch re-grays the dialog's own tier column immediately; the host
+     * setters repaint the live card underneath.
+     */
+    private fun bindExerciseToggles(root: View) {
+        val listenSwitch = root.findViewById<SwitchCompat>(R.id.activeToggleListening)
+        val speakSwitch = root.findViewById<SwitchCompat>(R.id.activeToggleSpeaking)
+        val listenCol = root.findViewById<View>(R.id.activeInfoListenCol)
+        val speakCol = root.findViewById<View>(R.id.activeInfoSpeakCol)
+
+        fun renderTierDim() {
+            listenCol.alpha = if (isListeningEnabled()) 1f else DISABLED_SEGMENT_ALPHA
+            speakCol.alpha = if (isSpeakingEnabled()) 1f else DISABLED_SEGMENT_ALPHA
+        }
+
+        val muted = isAudioMuted()
+        listenSwitch.isEnabled = !muted
+        speakSwitch.isEnabled = !muted
+        listenSwitch.isChecked = isListeningEnabled()
+        speakSwitch.isChecked = isSpeakingEnabled()
+        listenSwitch.setOnCheckedChangeListener { _, checked ->
+            setListeningEnabled(checked)
+            renderTierDim()
+        }
+        speakSwitch.setOnCheckedChangeListener { _, checked ->
+            setSpeakingEnabled(checked)
+            renderTierDim()
+        }
+        renderTierDim()
     }
 
     /**

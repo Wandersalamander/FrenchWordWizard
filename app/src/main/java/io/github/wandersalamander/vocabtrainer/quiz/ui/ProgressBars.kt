@@ -68,6 +68,11 @@ internal fun activeLabelSeparator(
 internal const val ACTIVE_LABEL_TODAY_JOIN = " "
 internal const val ACTIVE_LABEL_TODAY_PREFIX = ""
 
+// Alpha applied to a bar segment whose exercise type is currently off/paused
+// (listening toggled off, speaking paused/muted). Matches the 0.35 disabled
+// alpha the steppers use, so "unavailable" reads the same everywhere.
+internal const val DISABLED_SEGMENT_ALPHA = 0.35f
+
 /**
  * Per-skill accent colour. Single source of truth for "which colour means
  * which skill" — used both for the vocab card's top stripe (recoloured per
@@ -91,11 +96,16 @@ internal fun Skill.accentColorRes(): Int = when (this) {
  * Label reads "{mastered} +{today} / {total}" with the today increment in
  * monokai_yellow + bold. The "+N today" portion is omitted when zero so the
  * label doesn't draw attention to days where nothing has been mastered yet.
+ *
+ * [dueSkillFilter] is the picker's current skill-exclusion filter (see
+ * [MyDictionary.computeDueMasteredCount]) so the "N due" accent counts exactly
+ * what a retention round could serve right now.
  */
 internal fun refreshLifetimeBar(
     context: Context,
     views: QuizViews,
     dictionary: MyDictionary,
+    dueSkillFilter: (Skill) -> Boolean = { true },
 ) {
     val total = dictionary.csvData.size
     val mastered = dictionary.computeLifetimeMasteredCount()
@@ -103,7 +113,7 @@ internal fun refreshLifetimeBar(
     setSegmentWeight(views.segLifetimeMastered, mastered)
     setSegmentWeight(views.segLifetimeRemaining, remaining)
     val today = MasteryTracker.todayCount(context)
-    val due = dictionary.computeDueMasteredCount()
+    val due = dictionary.computeDueMasteredCount(dueSkillFilter)
     views.textLifetimeLabel.text = buildLifetimeLabel(context, mastered, today, due, total)
     // The card is the only accessibility-focusable element in the lifetime
     // block (the bar/label rows are flagged importantForAccessibility="no" in
@@ -122,11 +132,15 @@ internal fun refreshActiveBar(
     context: Context,
     views: QuizViews,
     dictionary: MyDictionary,
+    listeningEnabled: Boolean = true,
+    speakingEnabled: Boolean = true,
 ) = refreshActiveBar(
     context,
     views,
     dictionary.computeActiveSetCounts(),
     readSkillFinishedToday(context),
+    listeningEnabled,
+    speakingEnabled,
 )
 
 /**
@@ -161,27 +175,40 @@ internal fun readSkillFinishedToday(context: Context) = ActiveSkillFinishedToday
  * Counts-accepting overload — QuizController already pre-computes
  * [ActiveSetCounts] to diff against the previous render for the "-N" floater,
  * so we hand them in here instead of asking the dictionary twice.
+ *
+ * [listeningEnabled] / [speakingEnabled] gray that skill's segment and count
+ * (segment alpha + muted count colour) while its exercise type is off or
+ * paused, so the card shows at a glance why no such rounds are coming. The
+ * runs keep their exact character lengths either way, so the "-N" floater
+ * offset math in ProgressBarAnimator is unaffected.
  */
 internal fun refreshActiveBar(
     context: Context,
     views: QuizViews,
     counts: ActiveSetCounts,
     todayFinished: ActiveSkillFinishedToday,
+    listeningEnabled: Boolean = true,
+    speakingEnabled: Boolean = true,
 ) {
     setSegmentWeight(views.segActiveRead, counts.read)
     setSegmentWeight(views.segActiveListen, counts.listen)
     setSegmentWeight(views.segActiveInvert, counts.invert)
     setSegmentWeight(views.segActiveSpeak, counts.speak)
-    views.textActiveLabel.text = buildActiveLabel(context, counts, todayFinished)
+    views.segActiveListen.alpha = if (listeningEnabled) 1f else DISABLED_SEGMENT_ALPHA
+    views.segActiveSpeak.alpha = if (speakingEnabled) 1f else DISABLED_SEGMENT_ALPHA
+    views.textActiveLabel.text =
+        buildActiveLabel(context, counts, todayFinished, listeningEnabled, speakingEnabled)
     views.cardActive.contentDescription = buildString {
         append("Active words: ")
         append("${counts.read} read")
         if (todayFinished.read > 0) append(" (${todayFinished.read} finished today)")
         append(", ${counts.listen} listen")
+        if (!listeningEnabled) append(" (paused)")
         if (todayFinished.listen > 0) append(" (${todayFinished.listen} finished today)")
         append(", ${counts.invert} invert")
         if (todayFinished.invert > 0) append(" (${todayFinished.invert} finished today)")
         append(", ${counts.speak} speak")
+        if (!speakingEnabled) append(" (paused)")
         if (todayFinished.speak > 0) append(" (${todayFinished.speak} finished today)")
         append(", tap for details")
     }
@@ -244,16 +271,22 @@ private fun buildActiveLabel(
     context: Context,
     counts: ActiveSetCounts,
     todayFinished: ActiveSkillFinishedToday,
+    listeningEnabled: Boolean,
+    speakingEnabled: Boolean,
 ): CharSequence {
     val sb = SpannableStringBuilder()
     val separator = activeLabelSeparator(counts, todayFinished)
+    // A disabled exercise type drops its skill colour for the muted grey — the
+    // count stays legible, but the tier no longer claims to be in rotation.
+    val listenColor = if (listeningEnabled) R.color.seg_listen else R.color.card_text_muted
+    val speakColor = if (speakingEnabled) R.color.seg_speak else R.color.card_text_muted
     appendActiveSkillRun(context, sb, counts.read, todayFinished.read, R.color.seg_read)
     appendColored(context, sb, separator, R.color.card_text_muted)
-    appendActiveSkillRun(context, sb, counts.listen, todayFinished.listen, R.color.seg_listen)
+    appendActiveSkillRun(context, sb, counts.listen, todayFinished.listen, listenColor)
     appendColored(context, sb, separator, R.color.card_text_muted)
     appendActiveSkillRun(context, sb, counts.invert, todayFinished.invert, R.color.seg_invert)
     appendColored(context, sb, separator, R.color.card_text_muted)
-    appendActiveSkillRun(context, sb, counts.speak, todayFinished.speak, R.color.seg_speak)
+    appendActiveSkillRun(context, sb, counts.speak, todayFinished.speak, speakColor)
     return sb
 }
 

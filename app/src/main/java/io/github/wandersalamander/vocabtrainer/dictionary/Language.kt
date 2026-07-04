@@ -6,6 +6,12 @@ import java.util.Locale
 
 private val pinyinParenRegex = Regex("""\s*\([^)]*\)""")
 
+// "der/die", "he/she", "aller / venir" alternative markers: some TTS engines
+// (seen on a Samsung device; Pixel reads it silently) voice the "/" as the
+// word "slash". A comma is a natural pause on every engine, so slashes become
+// commas in the spoken form only — the on-screen text keeps the slash.
+private val slashRegex = Regex("""\s*/\s*""")
+
 enum class Language(
     val code: String,
     val locale: Locale,
@@ -163,7 +169,7 @@ enum class Language(
         abbreviations = emptyMap(),
     ) {
         override fun expandAbbreviations(input: String): String =
-            input.replace(pinyinParenRegex, "").trim()
+            input.replace(pinyinParenRegex, "").replace(slashRegex, "、").trim()
     },
     JAPANESE(
         code = "ja",
@@ -178,7 +184,7 @@ enum class Language(
         // same way Chinese strips pinyin so TTS speaks the kanji/kana while the
         // on-screen headword keeps its reading.
         override fun expandAbbreviations(input: String): String =
-            input.replace(pinyinParenRegex, "").trim()
+            input.replace(pinyinParenRegex, "").replace(slashRegex, "、").trim()
     };
 
     private val abbreviationRegex: Regex by lazy {
@@ -189,6 +195,7 @@ enum class Language(
         abbreviationRegex.replace(input) { abbreviations[it.value] ?: it.value }
             .replace("(", "")
             .replace(")", "")
+            .replace(slashRegex, ", ")
 
     companion object {
         val DEFAULT = FRENCH
@@ -262,10 +269,13 @@ object EnglishAbbreviations {
         parenTags.keys.joinToString("|") { Regex.escape(it) }
             .let { """(?<=\()(?:$it)""".toRegex() }
 
+    // The slash swap must run AFTER the paren-tag pass: "(m/f)" has to reach
+    // parenTagRegex intact to expand to "masculine or feminine".
     fun expand(input: String): String =
         regex.replace(input) { map[it.value] ?: it.value }
             .let { s -> wordTagRegex.replace(s) { wordTags[it.value.trimEnd('.')] ?: it.value } }
             .let { s -> parenTagRegex.replace(s) { parenTags[it.value] ?: it.value } }
             .replace("(", "")
             .replace(")", "")
+            .replace(slashRegex, ", ")
 }

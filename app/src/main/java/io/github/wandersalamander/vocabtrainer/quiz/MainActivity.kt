@@ -42,6 +42,7 @@ import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHO
 import io.github.wandersalamander.vocabtrainer.dictionary.AUTO_INTRODUCE_THRESHOLD_MIN
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.MyDictionary
+import io.github.wandersalamander.vocabtrainer.dictionary.Skill
 import io.github.wandersalamander.vocabtrainer.dictionary.Vocab
 import io.github.wandersalamander.vocabtrainer.dictionary.openDictionaryStream
 import io.github.wandersalamander.vocabtrainer.llm.LlmService
@@ -308,8 +309,18 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
 
     private fun renderInitialProgressBars() {
         if (vocabDictionary.csvData.isEmpty()) return
-        refreshLifetimeBar(applicationContext, views, vocabDictionary)
-        refreshActiveBar(applicationContext, views, vocabDictionary)
+        // Pre-QuizController render: mirror the session state the controller
+        // boots with (listening/speaking on unless muted; speaking also off
+        // under an active timed pause) so the "N due" badge and the tier
+        // gray-out don't flash a different state until the first round commits.
+        val muted = isMediaMuted()
+        val listeningOn = !muted
+        val speakingOn = !muted && !AppPrefs.isSpeakingPaused(this)
+        val dueFilter: (Skill) -> Boolean = { skill ->
+            (listeningOn || skill != Skill.LISTEN) && (speakingOn || skill != Skill.SPEAK)
+        }
+        refreshLifetimeBar(applicationContext, views, vocabDictionary, dueFilter)
+        refreshActiveBar(applicationContext, views, vocabDictionary, listeningOn, speakingOn)
         refreshLifetimeScoreBadge(applicationContext, views, vocabDictionary)
     }
 
@@ -565,11 +576,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
         // Speaking needs audio too (model pronunciation + take playback), so the
         // toggle is greyed out while muted just like listening. Checked only when
         // the session toggle is on AND no timed "Can't speak"/mic-denied pause is
-        // active AND not muted, so it reads as off in any of those cases.
+        // active AND not muted — the shared effective-enabled predicate.
         menu.findItem(R.id.menu_speaking_mode)?.apply {
             isEnabled = !muted
-            isChecked = quizController.isSpeakingModeEnabled() &&
-                !AppPrefs.isSpeakingPaused(this@MainActivity) && !muted
+            isChecked = quizController.isSpeakingEffectivelyEnabled()
         }
         return super.onPrepareOptionsMenu(menu)
     }
@@ -766,6 +776,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener, TtsHelper
                 ).show()
             }
         }
+        // Repaint the progress cards on every volume change, not just the
+        // toggle paths above: Speaking follows the mute state live, so an
+        // unmute must un-gray the SPEAK tier (and restore its "due" pairs)
+        // right away — there's no setter call on that path to do it.
+        quizController.refreshProgressBars()
         invalidateOptionsMenu()
     }
 

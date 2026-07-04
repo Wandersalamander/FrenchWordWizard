@@ -134,7 +134,7 @@ class MyDictionaryProgressTest {
         for (skill in Skill.ladder) {
             v.stats(skill).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         }
-        assertEquals(1, dict.computeDueMasteredCount(now))
+        assertEquals(1, dict.computeDueMasteredCount(now = now))
     }
 
     @Test fun dueMastered_excludesWordWhoseOnlyDueSkillIsSnoozedBehindHarder() {
@@ -149,7 +149,7 @@ class MyDictionaryProgressTest {
         v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now)
         v.stats(Skill.INVERT).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now)
-        assertEquals(0, dict.computeDueMasteredCount(now))
+        assertEquals(0, dict.computeDueMasteredCount(now = now))
     }
 
     @Test fun dueMastered_countsWordAgainOnceSnoozeExpires() {
@@ -163,7 +163,7 @@ class MyDictionaryProgressTest {
         v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
         v.stats(Skill.INVERT).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
-        assertEquals(1, dict.computeDueMasteredCount(now))
+        assertEquals(1, dict.computeDueMasteredCount(now = now))
     }
 
     @Test fun dueMastered_countsPartiallyMasteredWordWithDuePair() {
@@ -180,7 +180,50 @@ class MyDictionaryProgressTest {
         v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
         v.stats(Skill.INVERT).markStruggling()
-        assertEquals(1, dict.computeDueMasteredCount(now))
+        assertEquals(1, dict.computeDueMasteredCount(now = now))
+    }
+
+    @Test fun dueMastered_filteredSkillDoesNotInflateTheBadge() {
+        // SPEAK is the word's only due pair, but the Speaking tier is paused —
+        // the picker's filter excludes SPEAK, so it could never serve this word.
+        // The badge must apply the same filter or it claims a due word forever.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        v.stats(Skill.INVERT).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        v.stats(Skill.SPEAK).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        assertEquals(1, dict.computeDueMasteredCount(now = now))
+        assertEquals(0, dict.computeDueMasteredCount({ it != Skill.SPEAK }, now))
+    }
+
+    @Test fun dueMastered_filterMatchesWhatTheFilteredPickerServes() {
+        // The reported "0 due, but retention rounds keep coming" shape: INVERT
+        // is due, and the harder SPEAK sibling was refreshed moments ago. The
+        // unfiltered view snoozes INVERT behind SPEAK (0 due) — but with the
+        // Speaking tier paused the picker is blind to SPEAK, sees no snooze, and
+        // serves INVERT anyway. Counting with the picker's own filter keeps the
+        // badge and the served rounds in agreement.
+        val dict = dictionaryOf(listOf(
+            "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
+        ))
+        val now = 1_700_000_000_000L
+        val v = dict.csvData[0]
+        v.stats(Skill.READ).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        v.stats(Skill.LISTEN).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now - 2 * dayMs)
+        v.stats(Skill.INVERT).markMasteredWithSchedule(intervalDays = 1f, lastDisplayedMs = now - 5 * dayMs)
+        v.stats(Skill.SPEAK).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now)
+        val speakExcluded: (Skill) -> Boolean = { it != Skill.SPEAK }
+        assertEquals(0, dict.computeDueMasteredCount(now = now))
+        assertEquals(1, dict.computeDueMasteredCount(speakExcluded, now))
+        // And the filtered picker really does serve what the filtered count claims.
+        assertEquals(
+            Skill.INVERT to true,
+            dict.pickMasteredVocabToRefresh(speakExcluded, now)?.let { it.second to (it.first === v) },
+        )
     }
 
     // ---------- computeStudiedPairCounts: per-skill mastered/active split ----------
