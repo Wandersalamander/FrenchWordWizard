@@ -1,6 +1,7 @@
 package io.github.wandersalamander.vocabtrainer.dictionary
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.ByteArrayInputStream
@@ -201,12 +202,12 @@ class MyDictionaryProgressTest {
     }
 
     @Test fun dueMastered_filterMatchesWhatTheFilteredPickerServes() {
-        // The reported "0 due, but retention rounds keep coming" shape: INVERT
-        // is due, and the harder SPEAK sibling was refreshed moments ago. The
-        // unfiltered view snoozes INVERT behind SPEAK (0 due) — but with the
-        // Speaking tier paused the picker is blind to SPEAK, sees no snooze, and
-        // serves INVERT anyway. Counting with the picker's own filter keeps the
-        // badge and the served rounds in agreement.
+        // INVERT is due, and the harder SPEAK sibling was refreshed moments ago,
+        // so INVERT is snoozed behind it. The snooze reflects a real recent
+        // display of this word, so pausing the Speaking tier must NOT un-snooze
+        // INVERT and raise the count — disabling a tier should never grow "due".
+        // Both the badge and the picker stay in agreement (0 due, nothing served)
+        // until the snooze naturally lapses.
         val dict = dictionaryOf(listOf(
             "Haus\thouse\t1\thash1\tDas Haus ist groß.\tHaus.",
         ))
@@ -218,12 +219,9 @@ class MyDictionaryProgressTest {
         v.stats(Skill.SPEAK).markMasteredWithSchedule(intervalDays = 8f, lastDisplayedMs = now)
         val speakExcluded: (Skill) -> Boolean = { it != Skill.SPEAK }
         assertEquals(0, dict.computeDueMasteredCount(now = now))
-        assertEquals(1, dict.computeDueMasteredCount(speakExcluded, now))
-        // And the filtered picker really does serve what the filtered count claims.
-        assertEquals(
-            Skill.INVERT to true,
-            dict.pickMasteredVocabToRefresh(speakExcluded, now)?.let { it.second to (it.first === v) },
-        )
+        assertEquals(0, dict.computeDueMasteredCount(speakExcluded, now))
+        // And the filtered picker agrees with the filtered count: nothing served.
+        assertNull(dict.pickMasteredVocabToRefresh(speakExcluded, now))
     }
 
     // ---------- getActiveVocabWeighted: auto-add gate vs. skill filter ----------
