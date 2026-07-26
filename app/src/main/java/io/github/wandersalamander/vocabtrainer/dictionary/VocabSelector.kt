@@ -293,9 +293,13 @@ fun Vocab.surfaceableRefreshSkill(
     val repIdx = Skill.ladder.indexOf(rep)
     // A harder sibling that's mastered (Mastered or DueForRefresh → isLearned)
     // and was shown inside the snooze window keeps the easier skill dormant.
+    // Deliberately NOT gated on skillFilter: the snooze reflects a real recent
+    // display of this word, which stands whether or not that harder tier is
+    // currently enabled. Gating it on the filter meant disabling a tier
+    // un-snoozed its easier siblings and *raised* the "N due" count — a toggle
+    // that makes no sense to a user.
     val snoozedByHarder = Skill.ladder.drop(repIdx + 1).any { harder ->
-        skillFilter(harder) &&
-            state(harder, now).isLearned &&
+        state(harder, now).isLearned &&
             now - stats(harder).lastDisplayed < MASTERED_REFRESH_SIBLING_SNOOZE_MS
     }
     return if (snoozedByHarder) null else rep
