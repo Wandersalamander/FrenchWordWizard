@@ -5,6 +5,7 @@ import android.util.Log
 import io.github.wandersalamander.vocabtrainer.dictionary.Language
 import io.github.wandersalamander.vocabtrainer.dictionary.SentenceSource
 import com.google.ai.edge.litertlm.Backend
+import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.ConversationConfig
 import com.google.ai.edge.litertlm.Engine
 import com.google.ai.edge.litertlm.EngineConfig
@@ -257,18 +258,28 @@ object LlmService {
         warmup(context)
     }
 
+    /**
+     * [recentWords] (optional): foreign words the user was just shown in the
+     * quiz, oldest first. They ride along as a system instruction nudging the
+     * model to weave one or two into the sentence when they fit — incidental
+     * re-exposure for better memorization. Opportunistic by design: if the
+     * model ignores the list the sentence is simply what it would have been
+     * anyway, so there's no forced-word awkwardness failure mode.
+     */
     suspend fun generate(
         word: String,
         translation: String,
         language: Language,
         maxImportance: Int,
+        recentWords: List<String> = emptyList(),
         timeoutMs: Long = 5000L
     ): String? {
         val e = engine ?: return null
         if (!isReady) return null
 
         val prompt = buildPrompt(word, translation, language, maxImportance)
-        val result = runInference(e, prompt, timeoutMs, word)
+        val systemInstruction = buildKnownWordsInstruction(recentWords, language)
+        val result = runInference(e, prompt, timeoutMs, word, systemInstruction)
         return result
     }
 
@@ -305,6 +316,34 @@ object LlmService {
     }
 
     /**
+     * System instruction carrying the recently-seen words, or null when there
+     * are none (the ConversationConfig is then built without one — identical
+     * to the pre-feature behavior).
+     *
+     * Lives in the system slot rather than [buildPrompt] on purpose: the user
+     * prompt is tuned to one-constraint-per-sentence and a 20-word list is the
+     * heaviest constraint we have — inlining it would push the style clause
+     * out of its recency slot. As a system instruction it biases generation
+     * without competing with the per-call constraints. Phrased as optional
+     * ("if…fit naturally") because for re-exposure partial compliance is pure
+     * upside; a MUST-use phrasing is what produces word-salad sentences on a
+     * 2B model.
+     *
+     * Cost: ~60-100 prefill tokens per call, tens of ms on GPU — well inside
+     * the caller's timeout and below perceptible lag.
+     */
+    private fun buildKnownWordsInstruction(
+        recentWords: List<String>,
+        language: Language,
+    ): String? {
+        if (recentWords.isEmpty()) return null
+        return "The learner already knows these ${language.englishName} words: " +
+                recentWords.joinToString(", ") + "." +
+                " If one or two of them fit naturally into your sentence, use them." +
+                " Never force them in."
+    }
+
+    /**
      * Drive the LLM through one prompt under the engine mutex (one call in
      * flight at a time) on the default dispatcher, capped by [timeoutMs].
      *
@@ -322,13 +361,24 @@ object LlmService {
         prompt: String,
         timeoutMs: Long,
         word: String,
+        systemInstruction: String? = null,
     ): String? = mutex.withLock {
         withContext(Dispatchers.Default) {
             val started = System.currentTimeMillis()
             val result = withTimeoutOrNull(timeoutMs) {
                 try {
-                    Log.i(TAG, "generating with LLM (prompt=$prompt)")
-                    val convConfig = ConversationConfig(samplerConfig = newSamplerConfig())
+                    Log.i(TAG, "generating with LLM (prompt=$prompt, system=$systemInstruction)")
+                    // Branch instead of passing systemInstruction = null so we
+                    // don't depend on the SDK parameter's (unannotated)
+                    // nullability — absent must mean "no system slot at all".
+                    val convConfig = if (systemInstruction != null) {
+                        ConversationConfig(
+                            systemInstruction = Contents.of(systemInstruction),
+                            samplerConfig = newSamplerConfig(),
+                        )
+                    } else {
+                        ConversationConfig(samplerConfig = newSamplerConfig())
+                    }
                     val responseText: String = engine.createConversation(convConfig).use { conv ->
                         // Message.toString() returns the concatenated Contents
                         // text — the SDK's own getting-started guide prints the

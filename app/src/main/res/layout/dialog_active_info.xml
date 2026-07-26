@@ -61,15 +61,20 @@
         <!-- Each column is a tap-to-toggle for its exercise type (wired in
              ProgressCardInfoView.bindTierToggles): tap = switch that tier
              on/off; a disabled tier dims to the same 0.35 alpha the live bar
-             segment uses. -->
+             segment uses. Styled as border-only buttons (bg_tier_toggle_*,
+             the stepper-keycap silhouette in each skill's colour) so they
+             read as tappable; the ripple rides on the foreground. -->
         <LinearLayout
             android:id="@+id/activeInfoReadCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
+            android:background="@drawable/bg_tier_toggle_read"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,10 +100,13 @@
             android:id="@+id/activeInfoListenCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
+            android:background="@drawable/bg_tier_toggle_listen"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,10 +132,13 @@
             android:id="@+id/activeInfoInvertCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
+            android:background="@drawable/bg_tier_toggle_invert"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -153,10 +164,13 @@
             android:id="@+id/activeInfoSpeakCol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
             android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
+            android:background="@drawable/bg_tier_toggle_speak"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <TextView
                 android:id="@+id/activeInfoSpeak"

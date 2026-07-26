@@ -170,6 +170,15 @@ internal class QuizPicker(
     }
 
     /**
+     * Snapshot of the recently-shown deque (oldest first, capacity
+     * [RECENT_WORDS_CAPACITY]). Feeds the LLM's "already knows" nudge —
+     * [io.github.wandersalamander.vocabtrainer.llm.LlmService.generate] primes
+     * sentence generation with these so freshly-seen words get incidental
+     * re-exposure in other words' example sentences.
+     */
+    fun recentlySeen(): List<String> = recentWords.toList()
+
+    /**
      * Remember [foreign] as recently-shown so subsequent picks avoid it
      * back-to-back. Always called from saveCurrentVocab — the user has seen
      * the word regardless of whether the round committed.

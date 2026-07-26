@@ -225,6 +225,7 @@ class QuizController(
         dictionary = vocabDictionary,
         language = language,
         onMaskTapped = { onMaskedSentenceTapped() },
+        recentWordsProvider = { picker.recentlySeen() },
     )
     private val spotCheck = SpotCheckController(
         activity = activity,

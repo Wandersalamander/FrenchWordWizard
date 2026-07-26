@@ -31,6 +31,10 @@ internal class SentenceManager(
     private val dictionary: MyDictionary,
     private val language: Language,
     private val onMaskTapped: () -> Unit,
+    // Foreign words the user was just shown (QuizPicker's recent-words deque,
+    // re-read per generation). LlmService primes sentence generation with
+    // them so recently-seen vocabulary resurfaces in other words' sentences.
+    private val recentWordsProvider: () -> List<String> = { emptyList() },
 ) {
     /**
      * Last unmasked sentence shown to the user. Stays around even when
@@ -112,6 +116,9 @@ internal class SentenceManager(
                 translation = vocab.english,
                 language = language,
                 maxImportance = dictionary.getMaxIntroducedImportance(),
+                // The current word is in the deque too (rememberWord runs on
+                // display) — drop it, the prompt already features it.
+                recentWords = recentWordsProvider().filter { it != vocab.foreign },
             )
         } finally {
             stopThinkingAnimation()
