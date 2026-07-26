@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Outlined toggle chip for the READ column in the ACTIVE WORDS dialog —
+     same keycap silhouette as bg_stepper_button_read (rounded, 1.5dp outline,
+     transparent fill) so the tap-to-toggle columns read as the app's
+     border-only button family. Press feedback comes from the column's
+     selectableItemBackground foreground, so no pressed state here; the
+     off-state dim is the column's 0.35 alpha, which grays the border too. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="14dp" />
+    <solid android:color="@android:color/transparent" />
+    <stroke android:width="1.5dp" android:color="@color/seg_read" />
+</shape>
