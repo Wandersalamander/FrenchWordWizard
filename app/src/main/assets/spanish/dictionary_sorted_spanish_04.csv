@@ -1,0 +1,245 @@
+el tenedor	fork	4	64c517ca9770576645bed25a554c8bb0	Como la ensalada con el tenedor pequeño y dejo el grande para el segundo plato.	Un tenedor limpio.
+el cuchillo	knife	4	04b0a76f5e2087ef119835b6a8b40865	Tengo que afilar el cuchillo antes de cortar la carne dura del asado del domingo.	Un cuchillo afilado.
+la cuchara	spoon	4	5e1a04c862132a38c103958df0454f89	Remuevo el azúcar del café con la cuchara que me regaló mi abuela hace años.	Una cuchara de plata.
+la cucharilla	teaspoon	4	a2fb282bb0e50cb6b91d25c5203a3ef1	Solo le pongo una cucharilla de azúcar al té para que no quede demasiado dulce.	Una cucharilla de postre.
+la olla	pot	4	1707977de9c1f1c11168a57d26828a8a	El agua de la olla ya hierve, así que puedo echar la pasta ahora mismo.	Una olla grande.
+la sartén	frying pan	4	b84d14958b4047d42f5c3dbd2d3d696e	Frío los huevos en una sartén antiadherente con un buen chorrito de aceite de oliva.	La sartén está caliente.
+el horno	oven	4	8993fe12b417c32b9307483c5f1c1ced	Meto el bizcocho en el horno a ciento ochenta grados durante cuarenta minutos exactos.	Pollo al horno.
+la nevera	fridge	4	2d20ba9dde9cf7b331c96359df7aadb2	La nevera está llena porque ayer fui a hacer la compra al supermercado del barrio.	Abre la nevera.
+el fregadero	kitchen sink	4	977d1d678170b1dcc9eaf90ea4301148	El fregadero está lleno de platos sucios y tengo que fregarlos antes de cenar.	Un fregadero limpio.
+la tapa	lid / bar snack	4	43da8bc484ad9936c13c70b672c030be	Pon la tapa en la olla para que la sopa se haga mucho más rápido.	Una tapa pesada.
+el cucharón	ladle	4	0e7103085bbbaeead54e274c0f27477a	Sirve el caldo con el cucharón grande en el plato hondo que he sacado.	Un cucharón de madera.
+la tabla de cortar	cutting board	4	150075b9e93ff1c731e205dfb7b4fffc	Uso la tabla de cortar de madera para picar las verduras de la cena.	Una tabla de cortar.
+el cuenco	bowl	4	a8cc3a73a1793b14323d06011a459548	Desayuno cereales en un cuenco grande con un poco de leche fría cada mañana.	Un cuenco de barro.
+la bandeja	tray	4	5f65882b610aa086b47107d3733fc8c8	Llevo el café a los invitados en una bandeja de plata que era de mi bisabuela.	Una bandeja llena.
+la servilleta	napkin	4	63dc9dfb27cb1befd9e1bce907659f4d	Siempre pongo una servilleta de tela al lado del plato cuando vienen invitados a casa.	Una servilleta de papel.
+el mantel	tablecloth	4	e3d1a4432defc962190599ccdf6a254b	Extiende el mantel blanco sobre la mesa antes de poner los cubiertos para la comida.	Un mantel bordado.
+la cafetera	coffee maker	4	6997a69ccaa6757f5d1e0b0c946aebe4	Preparo el café cada mañana con la cafetera italiana que me regaló mi madre.	Una cafetera nueva.
+el fogón	stove burner	4	7f753f9648d54214f3550244a5b1d676	Enciendo el fogón de gas para poner a hervir el agua de la pasta.	Un fogón de gas.
+el lavavajillas	dishwasher	4	c5e2f86a525692aabf4262a6b0b3e364	Pongo el lavavajillas todas las noches después de cenar con los platos de todo el día.	Abre el lavavajillas.
+el cajón	drawer	4	6a2eda9153ec017397df218fda61b9e7	Los cubiertos están en el cajón de arriba, justo al lado del fregadero de la cocina.	Abre el cajón.
+la ducha	shower	4	d31f4bc752dd7f97da60d740a4d4a3eb	Me doy una ducha cada mañana antes de ir al trabajo para despejarme del todo.	Una ducha caliente.
+la bañera	bathtub	4	0737c9deaa580692bc23cfdeadc3f276	Me relajo en la bañera con sales perfumadas después de un día de trabajo agotador.	Una bañera llena.
+el jabón	soap	4	4cdf1789eb3ed98406ffceb565a251e5	Me lavo las manos con jabón antes de sentarme a comer con toda la familia.	Un jabón suave.
+la toalla	towel	4	8434ea3e1fc24190446db1f15a6da1d4	Me seco el pelo con una toalla suave después de salir de la ducha caliente.	Una toalla limpia.
+el cepillo de dientes	toothbrush	4	4a8403bbda2b6fb5e341b7524e2a0b27	Me lavo los dientes con el cepillo de dientes eléctrico dos veces al día.	Un cepillo de dientes.
+la pasta de dientes	toothpaste	4	daccd8d58772552e80a6df510a46fa69	Siempre compro la pasta de dientes de menta porque deja la boca fresca mucho rato.	Pasta de dientes nueva.
+el peine	comb	4	0ba5ef462aee446029ae39f95edb8ab9	Uso el peine para arreglarme el pelo antes de salir de casa por la mañana.	Un peine fino.
+el espejo	mirror	4	43b3f325fdcc9a8a3eae1281dbb53d09	Me miro en el espejo del baño mientras me peino antes de salir a la calle.	Un espejo redondo.
+el champú	shampoo	4	5a3c29c33c0428334bbc81b37a52600a	Compro siempre un champú suave porque tengo el pelo sensible y se estropea enseguida.	Un champú nuevo.
+la maquinilla de afeitar	razor	4	eafa92f6263f4072f6e4925aec999132	Me afeito con la maquinilla de afeitar eléctrica cada mañana antes de ir al trabajo.	Una maquinilla de afeitar.
+el cepillo	brush (for hair)	4	1a6f8139283f2a41a64c6004ad2e60e6	Me cepillo el pelo con el cepillo de madera antes de hacerme una coleta alta.	Un cepillo suave.
+la crema	cream / lotion	4	b96267a375276250cb8333d3272a2688	Me pongo crema hidratante en la cara todas las noches antes de irme a dormir.	Una crema perfumada.
+el perfume	perfume	4	0aaff1524e882c5383097d21e505648c	Me pongo un poco de perfume antes de salir de casa para ir a la fiesta.	Un perfume intenso.
+el maquillaje	makeup	4	2cac84a8c4805ac04187ed9e7220b8ee	Mi hermana se pone maquillaje cada mañana antes de salir corriendo hacia la oficina.	Maquillaje ligero.
+el pintalabios	lipstick	4	701f0343c615434a6739f8ef51d14b8b	El pintalabios rojo queda perfecto para las ocasiones elegantes como la boda de mañana.	Un pintalabios rojo.
+el armario	wardrobe	4	e2bb014329fbafc621e82feb6546b23c	Guardo toda mi ropa en el armario grande del dormitorio de la primera planta.	Un armario lleno.
+la mesilla de noche	bedside table	4	243626c016cc0909f5e13c9fada6b44b	En la mesilla de noche tengo una lámpara y el libro que leo antes de dormir.	Una mesilla de noche.
+la almohada	pillow	4	1c838fcf78590ec95419c1db6dc1f0d0	Duermo siempre con dos almohadas blandas debajo de la cabeza para estar más cómodo.	Una almohada blanda.
+la manta	blanket	4	502912892b92381fdc8580a4978ce407	En invierno pongo una manta gruesa sobre la cama porque en mi cuarto hace mucho frío.	Una manta de lana.
+la sábana	sheet	4	f700f47879de8fbcea515ecccdd60868	Cambio las sábanas de la cama cada semana para que el dormitorio huela siempre limpio.	Una sábana blanca.
+el colchón	mattress	4	2a43f5bbfe88fa50c0ad9341212fd027	Mi colchón nuevo es muy cómodo y por fin consigo dormir bien todas las noches.	Un colchón cómodo.
+el sofá	sofa	4	87ed8b097e13b0ce54ca8af94f3d99d8	Veo la tele en el sofá del salón mientras los niños juegan en el suelo.	Un sofá cómodo.
+el sillón	armchair	4	16e918cde17a0c382d9ec1593171cdad	Me siento en el sillón que está junto a la chimenea a leer por la noche.	Un sillón elegante.
+el escritorio	desk	4	9422799eef3ad7c2e0c2165380bc4dc3	Trabajo con el ordenador en el escritorio de mi cuarto hasta muy tarde todas las noches.	Un escritorio ordenado.
+el mueble	piece of furniture	4	ef1447a3b24a3e86cb515b94110df8cf	He comprado un mueble nuevo para el salón donde poner los libros y las fotos.	Un mueble antiguo.
+la alfombra	rug / carpet	4	17722b30542ca813c728780e1a492696	La alfombra del salón es preciosa, pero hay que limpiarla con mucho cuidado cada mes.	Una alfombra de colores.
+la cortina	curtain	4	2bb514074e6922979c3e6ff23e755424	Abro la cortina de la ventana cada mañana para que entre el sol en la habitación.	Una cortina pesada.
+el cuadro	picture / painting	4	61ec89df2efa05e3a20f5f293f23c045	He colgado un cuadro antiguo en el salón para darle un toque elegante a la casa.	Un cuadro famoso.
+el jarrón	vase	4	c3980ef1256a313a52b439947a093cc2	Pongo las flores frescas en el jarrón de cristal que hay sobre la mesa del comedor.	Un jarrón de flores.
+la lámpara	lamp	4	5c8fbf540b84cafa65951d210f7d5284	Enciendo la lámpara de la mesilla para leer un rato antes de quedarme dormido.	Una lámpara encendida.
+el tejado	roof	4	65dc2d4fae06fa4b06e9e9b87cd52204	El tejado de la casa está cubierto de tejas rojas típicas de los pueblos del sur.	Bajo el tejado.
+el techo	ceiling	4	94563a40a3ef2081046c686cd29b42a2	El techo del salón es muy alto y está decorado con vigas de madera antigua.	Un techo bajo.
+la escalera	stairs / ladder	4	aeae533fc3217fb9b1a089bbc0fd3265	Subo la escalera hasta el segundo piso porque el ascensor lleva dos días estropeado.	Una escalera empinada.
+el pasillo	hallway / corridor	4	bd63e10e35dc7b04dd14f70ab737f797	El pasillo largo de la casa lleva al dormitorio principal y al baño de invitados.	Un pasillo oscuro.
+la entrada	entrance / admission ticket	4	b7fcbbce66ff943349ca900d1263a0be	Dejamos los zapatos en la entrada antes de pasar a las habitaciones de la casa.	La entrada principal.
+el sótano	basement / cellar	4	62c8adf3987907f1ac88b094a6b96719	Guardo las botellas de vino en el sótano porque allí hace fresco incluso en verano.	Vino en el sótano.
+el desván	attic	4	c61953915c7116fa3de020f4a85e297c	En el desván guardo fotos antiguas de la familia y muchos recuerdos de la infancia.	Un desván polvoriento.
+el balcón	balcony	4	4cb544936d5d2a73ecf58ce874c9a5f5	Me tomo el café en el balcón cada mañana mirando los tejados de la ciudad.	Un balcón florido.
+la terraza	terrace / outdoor seating	4	c8090510e71ed2cf6026743e0734bfda	En la terraza tenemos un pequeño huerto con tomates y muchas macetas de flores.	Una terraza grande.
+la verja	gate (iron)	4	613b0ba3297ac2eba8f0d554443f3d78	Abro la verja del jardín para que entren los invitados que vienen a cenar.	Una verja cerrada.
+el timbre	doorbell	4	9b80a6791ad887c856ab08127818d531	Suena el timbre y voy a abrir la puerta a los invitados que acaban de llegar.	Toca el timbre.
+el ascensor	lift / elevator	4	a38bd24e4c8819445771069991d0f58a	Cojo el ascensor para subir al séptimo piso, donde vive mi mejor amiga.	Un ascensor moderno.
+el garaje	garage	4	e04d26fdfef4cd1aa9064a32a0e57aff	Aparco el coche en el garaje de casa para protegerlo de la lluvia y del granizo.	Un garaje doble.
+el patio	courtyard / playground	4	5bde645e2380681b7f0c5a543232a616	Los niños juegan en el patio del colegio durante el recreo de media mañana.	Un patio interior.
+la planta	floor (of a building) / plant	4	71d4f5ad3461bbc2599ae99d022e185f	Vivo en la tercera planta de un edificio antiguo del casco histórico de la ciudad.	En la primera planta.
+la bombilla	lightbulb	4	0a52544007545a5fa3ff545dfd3600c9	Se ha fundido la bombilla del baño y tengo que cambiarla antes de que anochezca.	Una bombilla nueva.
+el interruptor	switch	4	e6bdc8168db0c12e4601668e68de1b2c	Pulsa el interruptor que hay junto a la puerta para encender la luz del salón.	Un interruptor roto.
+la toma de corriente	socket / power outlet	4	e3fb584add545c05235319df51e0abac	Conecto el ordenador a la toma de corriente que hay debajo del escritorio para cargarlo.	Busca una toma de corriente.
+el enchufe	plug	4	77de4e43f9b2098d69165fa074e8ec56	El enchufe de la plancha está roto y tengo que cambiarlo antes de volver a usarla.	Un enchufe roto.
+la vela	candle	4	c502b0381c4a50e1019bed0d0401cb3b	Enciendo una vela perfumada en el salón para crear un ambiente agradable durante la cena.	Una vela encendida.
+la linterna	torch / flashlight	4	d4cae651b8fe474ef68a249ce9c255f7	Siempre tengo una linterna en la cocina por si se va la luz durante la noche.	Una linterna potente.
+el cable	cable	4	13954266eb9192c9f39876f0b572c69b	El cable del cargador del móvil está roto y tengo que comprar otro mañana.	Un cable largo.
+la estufa	heater	4	bdb8947914a0c29db467d95f44adc217	La estufa de leña calienta todo el salón durante las frías noches de invierno.	Una estufa caliente.
+el ventilador	fan	4	78ce51ef0081bfcaeba729780836f39b	Enciendo el ventilador en verano cuando hace demasiado calor para dormir por la noche.	Un ventilador encendido.
+el reloj	clock / watch	4	d61ab30ea0a84e72f589b3df1536367a	El reloj del salón da la hora cada sesenta minutos y me recuerda que debo cenar.	¿Qué hora marca el reloj?
+el despertador	alarm clock	4	649ddb56a91dbb57f6a33f4e9151823a	Pongo el despertador a las siete de la mañana para llegar puntual al trabajo.	Suena el despertador.
+la radio	radio	4	7ac16469fe14c30f8d5f0262a4e7f135	Escucho la radio en el coche mientras voy al trabajo para enterarme de las noticias.	Enciende la radio.
+la televisión	television	4	cb3f7e1fbb23eb7bfad42c3f22f25d7d	Veo la televisión por la noche después de cenar para relajarme un rato en el sofá.	La televisión está encendida.
+el ordenador	computer	4	ef58b81f31bcc7306e734f18a07617c9	Trabajo con el ordenador ocho horas al día y luego me duelen los ojos y la cabeza.	Un ordenador nuevo.
+el secador	hair dryer	4	288c6f784cf9bf869755bc853802c806	Uso el secador cada mañana después de la ducha para secarme el pelo deprisa.	Un secador potente.
+la escoba	broom	4	80f7d5c3a63738d5ed5354377782a4c7	Barro el suelo de la cocina con la escoba nueva que compré la semana pasada.	Una escoba vieja.
+la bayeta	cleaning cloth / rag	4	1b4f8f07dd9281d60f729f6b7ccd2901	Limpio la mesa con una bayeta húmeda después de cada comida para dejarla reluciente.	Una bayeta mojada.
+el detergente	detergent	4	aea582ac32cb4afb05c5db2ed0888032	Compro el detergente para la ropa en el supermercado del barrio todas las semanas.	Un detergente fuerte.
+la esponja	sponge	4	fe94fba1a6125e583a59f70719e8e048	Friego los platos con una esponja blanda y un poco de jabón después de comer.	Una esponja amarilla.
+el cubo	bucket	4	a0a76b47397e5396df45cf233f365c92	Lleno el cubo de agua caliente con detergente para fregar el suelo del pasillo.	Un cubo rojo.
+la aspiradora	vacuum cleaner	4	dde40c237c8e21d992b506ef08ba7c12	Paso la aspiradora por todas las alfombras del salón cada sábado por la mañana.	La aspiradora está rota.
+la plancha	iron (appliance)	4	804b9a24b01bd7bc028b074ff4e46f75	Plancho las camisas con la plancha caliente para que queden perfectas para el trabajo.	Una plancha caliente.
+la papelera	wastebasket	4	ddfc73fb8ae7a3adeae5b4108488b7d3	Tiro los papeles a la papelera que tengo debajo del escritorio de mi despacho.	Una papelera llena.
+la basura	rubbish / garbage	4	3aa1bf2c815f1e9cdd5f9814827d8705	Saco la basura cada noche antes de acostarme, aunque esté muerto de cansancio.	Bolsa de basura.
+la lavadora	washing machine	4	423200cbff33ee8eaa9f05fa9eb7e07b	Pongo la lavadora dos veces por semana con la ropa sucia de toda la familia.	La lavadora está rota.
+despertar	to wake (someone) up	4	bf980ee56ae937e1b08ca4e0dd69c95d	Tengo que despertar a los niños a las siete para llevarlos al colegio a tiempo.	Despiértame pronto.
+dormirse	to fall asleep	4	c0cb7ff16cbebbacd6104dc10654474b	Me cuesta dormirme cuando tomo demasiados cafés durante la tarde en la oficina.	Me duermo enseguida.
+lavarse	to wash oneself	4	5a026861d179feb368ad0bc401b356eb	Tengo que lavarme las manos antes de sentarme a la mesa a cenar con todos.	Lávate las manos.
+vestirse	to get dressed	4	b30e41b471f431b66bc754612f57db3e	Me visto deprisa cada mañana para no llegar tarde al trabajo nuevo del centro.	Vístete ya.
+desnudarse	to undress	4	a5f3d223e7fbca87335176500bc152f9	Me desnudo en el baño antes de meterme en la ducha caliente por la noche.	Desnúdate despacio.
+peinarse	to comb one's hair	4	c03a344375a435cabf1b07fa307c3b89	Me peino cada mañana delante del espejo del baño con mucho cuidado y calma.	Péinate bien.
+maquillarse	to put on makeup	4	bad97b105b448afaf140271dcdcf2ead	Me maquillo un poco antes de salir a la fiesta de cumpleaños de María.	Me maquillo poco.
+afeitarse	to shave	4	7f46c591c701a0ead2424577d06406e9	Tengo que afeitarme todos los días porque la barba me crece muy deprisa.	Me afeito cada día.
+secar	to dry	4	5cc31ad8adb93e27adfe90c0ff74cf27	Seco los platos con un paño limpio después de haberlos fregado en el fregadero.	Seca el pelo.
+tender	to hang out (laundry)	4	cbd758fa48197ae9ee009ea2c14d1c92	Tiendo la ropa en el balcón al sol para que se seque en pocas horas.	Tiendo la ropa.
+planchar	to iron	4	e3e26641aed379efc69b02d4709e7e22	Plancho las camisas del trabajo todos los domingos por la tarde antes de empezar la semana.	Plancho la camisa.
+barrer	to sweep	4	f60f6991c43984f1ef2b64b5a61e8a58	Barro el suelo de la cocina después de cenar para quitar todas las migas.	Barro enseguida.
+doblar	to fold / to turn	4	c6e55d2ef00132fb7a124308ee33b50a	Doblo la ropa limpia y la guardo en los cajones del armario del dormitorio.	Dobla la ropa.
+descansar	to rest	4	cdb4af114583b2b1d39039cca0151947	Necesito descansar un rato en el sofá después de trabajar todo el día en la oficina.	Descansa bien.
+relajarse	to relax	4	c990cb01f90934f6adfe97ca771f3c03	Me gusta relajarme en la bañera caliente después de una jornada de trabajo muy intensa.	Relájate un poco.
+entrenar	to train / work out	4	efb37b3849d6769ab4354de0585808bd	Entreno en el gimnasio tres veces por semana para mantenerme en buena forma física.	Entreno duro.
+divertirse	to have fun	4	bca04c4b2a279aa8aa08ce446c616d32	Los niños se divierten mucho en el parque con sus amigos todos los sábados por la tarde.	¡Diviértete mucho!
+aburrirse	to be bored	4	cc0e483fe7c9ebf33416f3efa3c7ccf7	Me aburro cuando llueve todo el día y no puedo salir de casa con mis amigos.	Me aburro mucho.
+enfadarse	to get angry	4	b2475f7f11ed6b2f309467863b45fd50	Me enfado enseguida cuando el ordenador no funciona y tengo prisa por terminar el trabajo.	No te enfades.
+acostumbrarse	to get used to	4	5433bc0753ab0652b2228346de9b7188	Tienes que acostumbrarte al trabajo nuevo y a la gente antes de sentirte cómodo del todo.	Me acostumbro rápido.
+mantener	to maintain / to keep	4	5e39b42b010ba1a50492d7c7aee387ba	Tengo que mantener la casa limpia y ordenada antes de que lleguen mis suegros esta noche.	Mantén la calma.
+obtener	to obtain / to get	4	8a02049a22e9c8a74acb92cd24819b20	Espero obtener ese puesto tan bueno al que mandé el currículum la semana pasada.	He obtenido todo.
+alcanzar	to reach / to achieve	4	a6e2c642bba5e06affacbdc26bbb0f15	Quiero alcanzar mis objetivos antes de que termine el año para contentar a mi jefe.	He alcanzado la meta.
+participar	to participate	4	da91e663d8cff842af14979f81c51161	Quiero participar en la maratón del domingo con mi grupo de amigos del gimnasio.	Participo encantado.
+organizar	to organize	4	97f6a1548f70117a4b85880f5d545ca9	Tengo que organizar la fiesta de cumpleaños de mi hijo para el sábado que viene.	Organizo la cena.
+evitar	to avoid	4	e95ae78e169dca94c777b910cb3f39c6	Intento evitar el tráfico de la mañana cogiendo carreteras secundarias para llegar al trabajo.	Evita los problemas.
+permitir	to allow	4	f841f93fef4735b557f709b302f539bb	No puedo permitirme un coche nuevo ahora mismo porque tengo demasiados gastos imprevistos.	Permíteme hablar.
+impedir	to prevent	4	9177a29dea9ae4d0b8029621b850affb	Quiero impedir que los niños coman demasiados dulces antes de la cena de esta noche.	Impide el daño.
+proteger	to protect	4	c7d2e25e0cf1b8d25dd4d0b316838dfc	Tengo que proteger a mis hijos de todos los peligros del mundo con mucha atención.	Protégete bien.
+salvar	to save / to rescue	4	0277612e148cf880d65256a621089169	Los bomberos consiguieron salvar a todos los vecinos del edificio antes de que llegara el fuego.	Salva el archivo.
+perdonar	to forgive	4	1ea685457d35afde23de7dec4d64652c	Tengo que perdonar a mi hermano por lo que dijo durante la cena de ayer.	Perdóname, por favor.
+depender	to depend	4	a622ebfcc430bee61e9e3dc054ff7227	Todo depende del tiempo que tengamos para terminar este proyecto tan complicado del trabajo.	Depende de ti.
+aparecer	to appear	4	cd68fb2586388e282d27524da46a533c	El sol apareció detrás de las nubes después de un día entero de lluvia constante.	Aparece de vez en cuando.
+desaparecer	to disappear	4	ff35707c4f889426ba8ce8cf49da50c5	Mis llaves han desaparecido y no consigo encontrarlas por ninguna parte de toda la casa.	Ha desaparecido todo.
+esconder	to hide	4	5adaed4ccbdb3f599427e132342275eb	Tengo que esconder los regalos de Navidad en el desván antes de que los niños los encuentren.	Me escondo aquí.
+la llave	key	4	f2535ab86717612db82522337d2e59b2	He perdido la llave de casa esta mañana y tengo que llamar a un cerrajero.	Una llave dorada.
+la cerradura	lock	4	eceab1a8c82a1bdc5b7809d3dae3a280	La cerradura de la puerta principal está rota y hay que cambiarla antes de las vacaciones.	Una cerradura nueva.
+el fuego	fire	4	702c8fddd8b40df7a20248ec477a2b72	El fuego de la chimenea calienta todo el salón durante las noches frías de invierno.	Enciende el fuego.
+la madera	wood	4	fbd2a2a4f4eb37169dc8af152ce0e165	La mesa de madera maciza de la cocina la hizo a mano mi abuelo carpintero.	Una silla de madera.
+el metal	metal	4	1f4c2c932aaf51ec6db8da692272b978	La puerta del garaje es de metal pesado y hay que empujarla con mucha fuerza.	Un metal precioso.
+el plástico	plastic	4	9f436db3a07eab82877778203a211820	Intento evitar el plástico porque contamina muchísimo el medio ambiente y los océanos del planeta.	Una botella de plástico.
+el cristal	glass (material) / window pane	4	2140f522d7acf89e0304d0d068184c1c	La ventana es de cristal grueso para aislar la casa del frío del invierno.	Un cristal roto.
+la tela	fabric / cloth	4	73ac71fe1c01ea176b43008d51c0dd90	Esta tela es suave y perfecta para hacer una camisa elegante de verano.	Una tela suave.
+el olor	smell / odour	4	303e6efe2fd4bebb441826e9ce1ffd09	Huele muy bien: es el olor del guiso que está preparando mi abuela en la cocina.	Un olor raro.
+el sabor	taste / flavour	4	568cfad6594bbcc9d2343338658c8548	Este postre tiene un sabor único que no había probado nunca antes en mi vida.	Un sabor dulce.
+el ruido	noise	4	d7a9733ad930b9ea36874b6ee733cbfd	Oigo un ruido raro en la cocina y voy a ver qué está pasando allí.	Un ruido fuerte.
+el silencio	silence	4	61f299006299eccceea9ce1fdfe4bad2	El silencio de la noche solo se rompe con el canto de los pájaros al amanecer.	¡Guarda silencio!
+la paz	peace	4	d292c595cb46f9b79b40c0358cfafd0c	Quiero vivir en paz con todos mis vecinos y con los parientes más cercanos.	Déjame en paz.
+la guerra	war	4	d9005f542613f11d07bb6ecc4e608d2d	La guerra cambió la vida de millones de personas de una manera dramática y dolorosa.	Una guerra larga.
+el peligro	danger	4	672d1408b0118aa2e29a226222416211	Hay peligro de tormenta esta tarde, así que deberíamos llevarnos el paraguas por si acaso.	Cuidado, hay peligro.
+el riesgo	risk	4	e612001dc3646a8df82b4f8c930906d0	Corremos el riesgo de perder el tren si no salimos de casa ahora mismo.	Un riesgo grande.
+la seguridad	safety / security	4	193ad6ac439f9b1c0811a61bc3909994	La seguridad de los niños es la prioridad más importante para cualquier padre responsable.	Por seguridad.
+el cuidado	care / caution	4	d5aed540a35ec2c2fe8c5fd2ff74bea4	El cuidado del jardín exige tiempo y paciencia todos los días durante la primavera.	Con cuidado.
+el control	control	4	1b884c47170bf87f69cb3eab938a7674	El control del coche es fundamental para conducir con seguridad por estas carreteras estrechas.	Bajo control.
+el orden	order / tidiness	4	1a59df8b08691a0c5e3a614f94f30687	Tengo que poner orden en mi habitación antes de que lleguen mis amigos esta tarde.	En orden alfabético.
+cómodo	comfortable	4	05c79f93f76436f22b301c331068b8d2	El sofá del salón es muy cómodo y perfecto para descansar después de un día largo.	Una cama cómoda.
+incómodo	uncomfortable	4	69208bceb88b821ad34155cfc5d22e45	Esta silla es muy incómoda y me duele la espalda después de una hora sentado.	Un viaje incómodo.
+blando	soft	4	813d8f6d70445869624141a630acedff	La cama del cuarto de invitados tiene un colchón blando que huele a lavanda.	Un cojín blando.
+duro	hard	4	880046144764330f93d7faa0caa3fc6b	El pan de ayer se ha puesto duro y tengo que mojarlo en leche para comerlo.	Un trabajo duro.
+liso	smooth / straight (hair)	4	86fccba18c3a3985fff18640261590b1	El suelo del baño es liso y hay que tener cuidado de no resbalar cuando está mojado.	Pelo liso.
+áspero	rough	4	2940bd5a5906d354f862918cd63c2657	La piel de mis manos está áspera después de trabajar en el jardín toda la tarde.	Una superficie áspera.
+ligero	light (not heavy) / mild	4	d9e270096293c341dfddb6edaea4144a	Esta mochila es ligera y perfecta para las excursiones largas por la montaña en verano.	Una cena ligera.
+pesado	heavy / tiresome	4	fc53ff26c4903de594af65495aa66a80	La maleta es demasiado pesada para subirla por las escaleras hasta la cuarta planta.	Un libro pesado.
+redondo	round	4	dc762aed107dcfe98e93435838a1ba58	La mesa de la cocina es redonda y caben seis personas sentadas cómodamente alrededor.	Un plato redondo.
+cuadrado	square	4	59a4a699c207d9fd6195dca769e92fbf	La mesita del salón es cuadrada y perfecta para los juegos de mesa de las noches.	Una caja cuadrada.
+rara vez	rarely / seldom	4	cc5f287d95f50d99c641a61ceef116e8	Voy rara vez al cine porque prefiero ver las películas en casa tumbado en el sofá.	Rara vez bebo vino.
+semanal	weekly	4	3673253c9e39bce1292b4b4c15249800	Hay una reunión semanal todos los lunes por la mañana a las nueve en punto.	Compra semanal.
+mensual	monthly	4	65bad5d1c1caa632cee30f2485b4e3ea	Pago la factura mensual de la luz el quince de cada mes sin ningún retraso.	Sueldo mensual.
+anual	yearly / annual	4	946694aa9da0416905dd3c78f4eb1865	Me hago una revisión médica anual para asegurarme de que todo va bien de salud.	Fiesta anual.
+diario	daily	4	74ac0245054fa46f50050cefb0b1a225	Leo el periódico diario cada mañana mientras me tomo el café en la cocina.	Vida diaria.
+periódico	periodic / regular	4	da4b37cfa45365dc11067a22edebe906	Hago una revisión periódica del coche en el taller cada seis meses exactos.	Examen periódico.
+recientemente	recently	4	b3fc89bc6fe051da9607e193f4d2a44f	Recientemente he empezado a estudiar español y me gusta mucho esta nueva aventura.	Recientemente casados.
+últimamente	lately	4	89ea4806fe194f6393da270001c05062	Últimamente he tenido mucho trabajo y no he podido ver a mis amigos casi nada.	Últimamente estoy bien.
+actualmente	currently	4	3fe18cebd95fee4ccc04933c44e35a54	Actualmente trabajo en una empresa de Madrid, pero me gustaría mudarme al extranjero el año que viene.	Actualmente en paro.
+revelar	to reveal	4	3b679f8d0e46f21a8060bbe0f5ef9527	Quiero revelar mi secreto solo a las personas que están de verdad cerca de mí.	Revela la verdad.
+demostrar	to demonstrate / to prove	4	d8d2099369bdd924fcf9858908970105	Tengo que demostrarle al jefe que soy capaz de llevar este proyecto yo solo.	Demuestra lo que sabes.
+admitir	to admit	4	b3d97f800021eb4e33de2be9d7ef8919	Tengo que admitir que me equivoqué y pedirle perdón a quien herí sin querer.	Admito el error.
+negar	to deny	4	a89967ec34189d019de6e9fc001e3a55	No puedo negar que esta decisión ha sido difícil de tomar para toda la familia.	Negar la evidencia.
+treinta	thirty	4	6202cdf968282deaef2676b8810523bd	Cumplí treinta años la semana pasada con una fiesta enorme en casa de unos amigos.	Hace treinta días.
+cuarenta	forty	4	146c0e30836ead12ccf772f821a1d8e6	Mi padre tiene cuarenta años de experiencia en su trabajo y se jubila el mes que viene.	Cuarenta minutos.
+sesenta	sixty	4	e8516435d4b65a2b80714710bbea2c1f	Mi abuelo tiene sesenta años y sigue yendo al gimnasio tres veces por semana.	Sesenta euros.
+setenta	seventy	4	22695ad05934d84e597aa5744da4d6c0	Mi tía tiene setenta años y todavía viaja por el mundo con muchísima ilusión.	Setenta años.
+ochenta	eighty	4	b7df76d19e8e3ac626e314acf9d931a2	Mi bisabuelo tiene ochenta años y sigue estando en muy buena forma física y mental.	Ochenta grados.
+noventa	ninety	4	e16e520573010a7be0504464fe896b36	Mi bisabuela tiene noventa años y siempre cuenta historias maravillosas de los tiempos pasados.	Noventa minutos.
+el millón	million	4	f973f2e0fa7570cbc3bd8abbc2e4d216	Sueño con ganar un millón de euros en la lotería para cumplir todos mis sueños.	Un millón de estrellas.
+mil millones	billion (thousand million)	4	3e6d5cafca53733fcea50229187d6d40	En el cielo hay mil millones de estrellas que brillan sobre nuestras cabezas cada noche.	Mil millones de euros.
+tercero	third	4	431cde9058efcceebbffd9f6c91efec9	Soy el tercero de la familia y tengo dos hermanos mayores que ya están casados.	Llegué el tercero.
+cuarto	fourth / room	4	6cbc5d73dca220d55be75f13fdf150c9	Vivo en la cuarta planta de un edificio histórico del casco antiguo de la ciudad.	Un cuarto de hora.
+el saludo	greeting	4	976efb43b56068f3bde11b1c8783d135	Mando un saludo muy cariñoso a toda mi familia que vive lejos, en Argentina.	Un saludo cordial.
+el abrazo	hug	4	582f7cf2db10d7c3a640f1d5d96a2b2d	Te mando un abrazo muy fuerte y espero verte pronto en España durante las vacaciones.	Un abrazo fuerte.
+el beso	kiss	4	3fb211574a3525c4658c851946c4d802	Le di un beso en la mejilla antes de salir hacia el aeropuerto por la mañana.	Un beso dulce.
+por eso	that's why / therefore	4	175c43930b1d1adaebdafa9dc55cf11a	Llovía muchísimo esta mañana, por eso cogí el paraguas antes de salir de casa.	Por eso estoy aquí.
+así que	so / therefore	4	28ef247e846af62aa597b30c1ff2d8dc	Tenía mucha hambre, así que me comí dos platos de paella en casa de mi tía.	Así que vámonos.
+de hecho	in fact / actually	4	fd287cb81db51c3275a423b3d0ed0d59	Decía que lo sabía todo y, de hecho, contestó bien a todas las preguntas del examen.	De hecho, tienes razón.
+sin embargo	however / nevertheless	4	0bc9fd27a25e97e01bd3c5ed573cc92f	Estaba agotado; sin embargo, siguió trabajando hasta tarde para terminar el proyecto más importante.	Sin embargo, sigue.
+a pesar de	despite / in spite of	4	511779fcdc8c887b3f5c370d808f71d7	A pesar de la lluvia, salimos a dar un paseo muy largo por el parque.	A pesar de todo.
+mientras	while	4	980f299dbdb3f060ecc29b4ffc3654a4	Mientras preparaba la cena, escuchaba la radio para enterarme de las noticias del día.	Mientras como.
+hasta que	until	4	25f47a0e9c67a6c5a81a939dfa3e76db	Te esperaré delante de la puerta hasta que vuelvas del trabajo esta noche.	Hasta que vuelvas.
+en cuanto	as soon as	4	5ca4ccfd45a4285e9e98cbefc90cf6ce	Te llamaré en cuanto llegue a casa esta noche después del trabajo.	En cuanto pueda.
+finalmente	finally / at last	4	a377b632f8431b5a7282b3f3803aee4f	Cenamos en casa, vimos una película y finalmente nos fuimos a dormir agotados.	Finalmente me marché.
+por desgracia	unfortunately	4	f2df4e1d13a2a2f7cd6312133e06ec46	Por desgracia no puedo ir a la fiesta esta noche porque tengo muchísimo trabajo.	Por desgracia, es así.
+yo puedo	I can / I am able	4	2c8a811a776d848f62e8a293a381eb1a	Yo puedo ayudarte con los deberes si quieres, solo tienes que pedírmelo con tiempo.	¿Puedo ayudarte?
+tú puedes	you can (informal)	4	ff30f67ddc2f199e4ce1c7a4d3ba02b2	Tú puedes elegir el restaurante que más te guste para la cena del sábado.	¿Puedes venir?
+él puede	he can / she can / you can (formal)	4	2133f126b64441256053d20e2c6a2892	Él puede venir con nosotros si encuentra un billete barato para el tren de la tarde.	Puede venir.
+nosotros podemos	we can / we are able	4	05fd20448dbb31cd7f00f43205c72749	Nosotros podemos organizar una fiesta estupenda en nuestra casa para tu cumpleaños.	Podemos intentarlo.
+vosotros podéis	you can (plural, Spain)	4	7b861b78c7ac36d389e991d97d330085	Vosotros podéis usar mi coche este fin de semana si de verdad lo necesitáis.	Podéis entrar.
+ellos pueden	they can / they are able	4	eeafdafb5b222403e5dfcb4444a1a8b0	Ellos pueden quedarse en nuestra casa cuando vengan a la ciudad durante las vacaciones.	Pueden dormir aquí.
+yo quiero	I want	4	d9a6b35b76912aa00b85d2fc532a5599	Yo quiero aprender a tocar el piano desde niño, pero nunca he encontrado tiempo.	Quiero dormir.
+tú quieres	you want (informal)	4	461584dc642d10bff0c4fe058e68211f	Tú quieres siempre lo más difícil de conseguir y luego te desanimas enseguida.	¿Qué quieres?
+él quiere	he wants / she wants	4	f5579b625a8a767c5569736d1cb1346b	Él quiere ser piloto y su hermana quiere estudiar medicina en la mejor universidad.	Quiere marcharse.
+nosotros queremos	we want	4	6bc21eea632153a7fe1d524ecbd3bd87	Nosotros queremos comprar una casa en la costa en cuanto ahorremos suficiente dinero.	Queremos probar.
+vosotros queréis	you want (plural, Spain)	4	63719db67a30436d2e55c22d94ea594b	¿Vosotros queréis quedaros unos días más o preferís volver ya mañana por la mañana?	¿Qué queréis?
+ellos quieren	they want	4	ab78c3b132449571a83b2a83ac2368e6	Ellos quieren montar su propia empresa de tecnología dentro de un par de años.	Quieren saberlo.
+yo debo	I must / I have to	4	40649a67332040d9fc96dd5e11b26418	Yo debo terminar este trabajo antes del viernes o mi jefe se enfadará muchísimo.	Debo irme.
+tú debes	you must (informal)	4	c10cdc08b086ab5c193f5d06cce0e260	Tú debes probar ese restaurante nuevo que han abierto en el centro la semana pasada.	Debes creerme.
+él debe	he must / she must	4	2ce694529065d90eed5e173e39d9a8aa	Él debe estudiar más para los exámenes y ella debe descansar porque está agotada.	Debe marcharse.
+nosotros debemos	we must / we have to	4	5955c624b8bd3be1a220133196ecd0c0	Nosotros debemos tomar una decisión importante antes de que termine este mes tan complicado.	Debemos intentarlo.
+vosotros debéis	you must (plural, Spain)	4	0b71b2f1011ab8f276f852dd16109b62	Vosotros debéis llamar a vuestros padres más a menudo porque os echan mucho de menos.	Debéis entenderlo.
+ellos deben	they must / they have to	4	fa6deb488ffa3b1b71083d6911bfc871	Ellos deben mudarse a otra ciudad por el trabajo nuevo que acaban de empezar.	Deben llegar ya.
+yo sé	I know	4	e8e43bd8f55074eb77b8c28ca3204b1d	Yo sé hablar cuatro idiomas distintos y ahora estoy aprendiendo portugués como quinta lengua.	Ya lo sé.
+tú sabes	you know (informal)	4	3ef424e4a6fcd0b25c4a426a428b3f89	Tú sabes siempre cómo hacerme reír incluso en los momentos más tristes de la vida.	¿Sabes nadar?
+él sabe	he knows / she knows	4	763c1cfe42f647b6c9036bebb0800e00	Él sabe cocinar de maravilla y ella sabe hablar japonés casi como una nativa.	Lo sabe todo.
+nosotros sabemos	we know	4	a75ee7c68db9ef83b350250433cd3830	Nosotros sabemos que el viaje será largo, pero merecerá la pena cuando por fin lleguemos.	Sabemos dónde está.
+vosotros sabéis	you know (plural, Spain)	4	e54c8447d02ff800c6b49d361ee259f3	¿Vosotros sabéis si la tienda del barrio abre los domingos por la mañana temprano?	¿Sabéis quién es?
+ellos saben	they know	4	1926318507263bf1de2bc19d9c532a44	Ellos saben hablar español muy bien porque vivieron cinco años en Sevilla de pequeños.	Saben la verdad.
+yo doy	I give	4	23776a936b2f7440582d6b0c902d69c4	Yo doy siempre una buena propina al camarero cuando el servicio ha sido excelente.	Doy una vuelta.
+tú das	you give (informal)	4	85683db889dd67c7196d909e21d68347	Tú das siempre buenos consejos cuando te pido ayuda con algo importante de mi vida.	Me das miedo.
+él da	he gives / she gives	4	5f8feabcce7290cc53341af8ffdd1f51	Él da clases particulares de matemáticas y ella da clases de inglés a los niños del barrio.	Da igual.
+nosotros damos	we give	4	e2fba1ae8408e7cf00057e73d152363e	Nosotros damos siempre algo a una organización benéfica al final de cada año.	Damos un paseo.
+vosotros dais	you give (plural, Spain)	4	366edacdc53614ce4976740ac4052329	Vosotros dais unas fiestas estupendas en vuestra casa durante las Navidades todos los años.	¿Qué nos dais?
+ellos dan	they give	4	f34621a35105ec2e6ace2178bcf9bd1d	Ellos dan trabajo a más de cien personas en su empresa de construcción.	Dan las noticias.
+yo estoy	I am (state / location)	4	6b4833c16cf0ea3ec917637f89759014	Yo estoy bien, gracias, ¿y tú cómo estás después de todo lo que pasó?	Estoy en casa.
+tú estás	you are (state, informal)	4	a70040cb84f11c17d1f30682582e5c99	Tú estás siempre muy atento a todos los detalles de tu trabajo de precisión.	¿Cómo estás?
+él está	he is / she is (state)	4	506e3923121c4bbb742144c219b7d318	Él está en casa esta noche y ella está en la oficina hasta muy tarde.	Está enfermo.
+nosotros estamos	we are (state)	4	b1639f0d4c7374449f5face1dc657b59	Nosotros estamos estupendamente en la casa nueva y los niños están contentísimos con el jardín.	Estamos bien.
+vosotros estáis	you are (plural, Spain)	4	b621117df0920b4c304c2f77e826723e	¿Vosotros estáis todavía en casa o ya habéis salido hacia el cine con los amigos?	¿Cómo estáis?
+ellos están	they are (state)	4	10b57497cfd499f37d6e6180e6544e92	Ellos están buscando una casa más grande porque esperan un segundo hijo dentro de poco.	Están aquí.
+yo temo	I fear	4	f780b7aff74973a3ad78700e46d32f6c	Yo temo que mañana llueva todo el día y tengamos que anular la barbacoa.	Me temo que sí.
+tú temes	you fear	4	950d9c09a53da112cab4192dc4c8aa05	Tú temes siempre lo peor en cualquier situación, aunque no haya ningún motivo serio.	¿Qué temes?
+él teme	he fears / she fears	4	b84060a3d7ecdf010394f858d326b4b6	Él teme no aprobar el examen y ella teme perder el tren de la mañana.	Teme el futuro.
+nosotros tememos	we fear	4	11c6048467f128851f1aaa777850fe29	Nosotros tememos que el proyecto no esté terminado a tiempo para la presentación.	Tememos un error.
+vosotros teméis	you fear (plural, Spain)	4	9319af6d6f2fe99271e828491f301231	¿Vosotros teméis de verdad que la situación empeore en los próximos meses sin remedio?	¿Qué teméis tanto?
+ellos temen	they fear	4	08deb3d24a355aaf2a55563718702e64	Ellos temen perder el trabajo por culpa de las nuevas tecnologías del sector.	Temen lo peor.
+yo salgo	I leave / I go out	4	e68ee5c6eb967a8dc3b8867a25b80d57	Yo salgo mañana temprano hacia Alemania para un viaje de trabajo de una semana.	Salgo ahora mismo.
+tú sales	you leave / you go out (informal)	4	7e6b4d288dfa7f466b0655a86a66ce1f	Tú sales siempre con maletas demasiado pesadas que luego te cuesta arrastrar por la estación.	¿Cuándo sales?
+él sale	he leaves / she leaves	4	fd96815f744ad0f10ca406c9fad97e79	Él sale el lunes y ella sale el miércoles porque tienen horarios de trabajo distintos.	Sale a las ocho.
+nosotros salimos	we leave / we go out	4	d03352a3fde7b04678b0cb1e040da594	Nosotros salimos de vacaciones el uno de agosto y volvemos el treinta del mismo mes.	Salimos pronto.
+vosotros salís	you leave (plural, Spain)	4	f2739ba81ee117087d1a1d58ba3f898f	¿Vosotros salís esta tarde o habéis cambiado el viaje para otro día de la semana?	¿Cuándo salís?
+ellos salen	they leave / they go out	4	24d32e6aedc217c736281d565610e708	Ellos salen para Portugal en agosto y vuelven en septiembre, cuando empieza el colegio.	Salen juntos.
+yo termino	I finish	4	79cb85d415c7894224e078c822c940b5	Yo termino de trabajar a las seis de la tarde y luego voy directamente a la compra.	Termino enseguida.
+tú terminas	you finish	4	bdc4472f19ba8030f97f3c985b5716d3	Tú terminas siempre tus proyectos antes de la fecha que te da el cliente.	¿Cuándo terminas?
+él termina	he finishes / she finishes	4	1edb99c57a8001939a87278a1a765d3d	Él termina de estudiar a las diez de la noche y ella termina casi a las once.	Termina pronto.
+nosotros terminamos	we finish	4	029a4efa52d9c3a671f80353eaf21a9a	Nosotros terminamos el proyecto el viernes y después podremos coger por fin una semana de vacaciones.	Terminamos después.
+vosotros termináis	you finish (plural, Spain)	4	5730d2771b64359af5dea2c8a4b821eb	¿Vosotros termináis los ejercicios del libro esta noche o necesitáis todavía un par de días?	¿Termináis pronto?
+ellos terminan	they finish	4	2083c599cea03b3d992ceebbe4cb9f2a	Ellos terminan el colegio en junio y luego se van todos de vacaciones a la playa.	Terminan ahora.

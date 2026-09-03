@@ -1,0 +1,245 @@
+la ciencia	science	10	a7a92cb5b927c9f7dfbd92e3de6fdb00	La ciencia moderna ha avanzado muchísimo en los últimos cien años en casi todos los campos del saber.	Una ciencia exacta.
+la biología	biology	10	bc4019c0b1937d750783e15ea497a1d4	La biología molecular estudia los mecanismos de la vida a nivel celular y tiene aplicaciones médicas importantísimas.	Biología marina.
+la química	chemistry	10	414cc3aa465c6095c55e6763b48336c3	La química orgánica estudia los compuestos del carbono, que son la base de todos los seres vivos del planeta.	Química avanzada.
+la física	physics	10	e54510ccc1fd060d3085e5ccab7a7646	La física cuántica cambió por completo nuestra manera de entender la materia durante el siglo veinte.	Física nuclear.
+las matemáticas	mathematics	10	1d50de014cef3c2ad5dbf92c307f635b	Las matemáticas son la reina de las ciencias y nos dan herramientas para describir el mundo con precisión.	Matemáticas aplicadas.
+la geometría	geometry	10	3e3e04017e39d957d7002a8ec1d07250	La geometría euclidiana estudia las propiedades de las figuras planas y sólidas según los postulados del matemático griego.	Geometría analítica.
+el álgebra	algebra	10	764ed4cdf97e8160eca3aa94d4212ee0	El álgebra elemental estudia las ecuaciones con incógnitas y las propiedades de las operaciones entre números reales.	Álgebra lineal.
+la estadística	statistics	10	9e141bb513cae10719fcad290716ae24	La estadística recoge y analiza datos para descubrir tendencias y predecir el comportamiento de fenómenos muy complejos.	Estadística descriptiva.
+la astronomía	astronomy	10	fe6dc7f7a7d010e498d49a49c02d4bbd	La astronomía estudia los cuerpos celestes y el universo entero con telescopios situados en la Tierra y en el espacio.	Astronomía antigua.
+la geología	geology	10	be07d24aef55242970e61458ca85bd69	La geología estudia la estructura interna de la Tierra y los procesos que han moldeado el planeta durante milenios.	Geología aplicada.
+la botánica	botany	10	f79f92fb2a66cbe4b14fc9afa2684ad9	La botánica estudia las plantas en todas sus formas y funciones dentro del gran ecosistema de nuestro planeta.	Botánica medicinal.
+la zoología	zoology	10	be5c797b4ad102e7fd03caf7a2e7bc37	La zoología es la ciencia que estudia los animales y su evolución a lo largo de millones de años.	Zoología moderna.
+la ecología	ecology	10	20050bdb6c831568413ff1a7ccd9b244	La ecología estudia las relaciones entre los seres vivos y su entorno para entender mejor el equilibrio del planeta.	Ecología urbana.
+la anatomía	anatomy	10	24d0e3f557cfe738f525e53024e91c38	La anatomía humana es una asignatura fundamental para los estudiantes de medicina, que deben conocer el cuerpo al detalle.	Anatomía comparada.
+la fisiología	physiology	10	5ea5e6aa7a223a5f426e6d538bc678f6	La fisiología estudia el funcionamiento de los órganos del cuerpo humano en condiciones normales y durante la enfermedad.	Fisiología animal.
+la célula	cell	10	d3085e1783e6ebf8bc6008c8d7842da4	La célula es la unidad fundamental de la vida y todos los seres vivos estamos hechos de células.	Una célula viva.
+el órgano	organ	10	6196d7aab0d9b44fbe3ade3704f9c7c0	El corazón es el órgano más importante del cuerpo humano porque bombea la sangre sin descanso día y noche.	Un órgano vital.
+el músculo	muscle	10	c47dbaae7e952daae8761f416975d945	Me duele mucho el músculo del brazo derecho después del entrenamiento tan intenso de ayer en el gimnasio.	Un músculo fuerte.
+el hueso	bone	10	56d141c8cba736f91b9d7432d0ec1890	Me rompí un hueso del brazo al caerme de la bicicleta y llevé escayola durante casi dos meses.	Un hueso roto.
+la sangre	blood	10	567c8d65ad90d5cd62d6a3efbe983669	La sangre circula por todo el cuerpo gracias al corazón, que la bombea con una regularidad asombrosa.	Donación de sangre.
+el nervio	nerve	10	0c7d6ddcb864f6c30f212af3568a0c30	El nervio ciático duele muchísimo cuando se inflama e impide caminar con normalidad durante varios días seguidos.	Un nervio pinzado.
+la vena	vein	10	17199e1a045111ab6d31e0efc2363cac	Tengo la vena del brazo hinchada porque esta mañana me han hecho un análisis de sangre en el hospital.	Una vena marcada.
+la arteria	artery	10	6ddca53f1b55473ab447c4a043139bdb	La arteria principal del corazón se llama aorta y lleva la sangre oxigenada a todos los órganos del cuerpo.	Una arteria obstruida.
+el pulmón	lung	10	f4f350c35411390966a0e1657d8d6ec9	El pulmón derecho es algo más grande que el izquierdo para dejar sitio al corazón dentro del tórax.	Cáncer de pulmón.
+el hígado	liver	10	6f2b092f2c96c544edeb603022d3babc	El hígado filtra las toxinas de la sangre, así que conviene cuidarlo con una dieta equilibrada y poco alcohol.	Un hígado sano.
+el riñón	kidney	10	ed35c9d5ad13bed12612b7e74b5167e2	El riñón filtra la sangre y produce la orina, que el cuerpo elimina después por las vías urinarias.	Un trasplante de riñón.
+el estómago	stomach	10	53abec4400b06ecad2dfee43de0c8fc1	El estómago digiere la comida con los ácidos gástricos antes de pasarla al intestino delgado.	Dolor de estómago.
+el intestino	intestine	10	1076881ace1b0dd5ba0fe330d84838b9	El intestino mide varios metros y absorbe los nutrientes de la comida digerida para alimentar todo el cuerpo.	Intestino delgado.
+el cerebro	brain	10	123c792606d143eaaabc81d3eff835f1	El cerebro humano es uno de los órganos más complejos que conocemos, con miles de millones de neuronas conectadas.	Un cerebro privilegiado.
+el esqueleto	skeleton	10	2fe61d1d5b4c1c99a23f1f12d3464049	El esqueleto humano tiene unos doscientos huesos que sostienen el cuerpo y protegen los órganos vitales.	Un esqueleto completo.
+el átomo	atom	10	2bbf0d156415c06f24afeee4e232d10e	El átomo es el ladrillo fundamental de la materia y está formado por electrones, protones y neutrones.	Un átomo diminuto.
+la molécula	molecule	10	e235550f9a4d9f9a175bc4557141345a	La molécula de agua está formada por dos átomos de hidrógeno y uno de oxígeno unidos químicamente.	Una molécula compleja.
+el electrón	electron	10	955604a16aac390a469ac29b8e7deaa0	El electrón gira alrededor del núcleo del átomo a una velocidad increíble y tiene carga eléctrica negativa.	Un electrón libre.
+el hidrógeno	hydrogen	10	af44f7283a2ce7ec518c31f55014eff1	El hidrógeno es el elemento químico más sencillo y también el más abundante de todo el universo conocido.	Átomo de hidrógeno.
+el oxígeno	oxygen	10	1c3f5f7d49dd8fa2dc8938e88af13dc6	El oxígeno es imprescindible para la vida de las personas y de los animales que respiran el aire.	Sin oxígeno.
+el carbono	carbon	10	7d6865e4bae72ab6d1476c56f77da74f	El carbono está en la base de la química orgánica y de todas las moléculas de la vida.	Dióxido de carbono.
+el oro	gold	10	d2fefa6836542f67ba624749d54563cf	El oro es un metal precioso que nunca se oxida y mantiene su valor a lo largo del tiempo.	Un anillo de oro.
+la plata	silver	10	80c31e900dceb23f3c39cc780398b2e1	La plata es un metal precioso con el que se hacen joyas y cubiertos que pasan de generación en generación.	Cubiertos de plata.
+el cobre	copper	10	0577e9c9cc9337c2aea08dab71acbd9c	El cobre es un metal rojizo que se usa para los cables eléctricos por su excelente conductividad.	Una tubería de cobre.
+el gas	gas	10	5dbe32baf3e8d0f25cd9bc5e2844bf6b	El gas natural es la principal fuente de energía para calentar las casas en muchos países europeos.	Un gas tóxico.
+la cifra	digit / figure	10	02a46b7b0c71e9f4729012d24e9c300a	La última cifra de la suma es un cuatro, así que el resultado no puede estar equivocado.	Una cifra redonda.
+la suma	sum / addition	10	1c090825e6f2dd18106d4d71ea4e5401	La suma de todos los números del uno al diez da cincuenta y cinco, según mis cálculos.	Una suma exacta.
+el producto	product	10	4cbb7f2d26540e1c5bb8de855dbeb186	El producto de seis por siete es cuarenta y dos, como enseñan las tablas de multiplicar en el colegio.	Un buen producto.
+el cociente	quotient	10	4299b2db2020cac8d9278cc16649051c	El cociente de dividir veinte entre cinco es cuatro y la división no deja ningún resto.	Un cociente entero.
+la ecuación	equation	10	1f6574e8c3a45d2f49965884f0842148	La ecuación de segundo grado tiene siempre dos soluciones que se obtienen con la fórmula del instituto.	Una ecuación difícil.
+la fórmula	formula	10	98a6aac8fbdf58edc6296a345ecbc979	La fórmula para calcular el área del círculo es pi multiplicado por el radio al cuadrado.	Una fórmula secreta.
+el gráfico	graph / chart	10	f0f2ddfe78335457e7a04678f14ae12c	El gráfico muestra la evolución de las ventas de los últimos cinco años con un crecimiento constante.	Un gráfico claro.
+el eje	axis	10	30b8e6e5d18b322c38870ebeefa76931	El eje horizontal representa el tiempo y el vertical, la temperatura medida cada hora del día.	El eje terrestre.
+el porcentaje	percentage	10	504c95177c2e5a9805b9c0f094acd0b1	El porcentaje de alumnos que ha aprobado el examen es del setenta y cinco por ciento.	Un porcentaje alto.
+la fracción	fraction	10	e4051bf32812dd690fdd99f6eaae0d19	La fracción un medio significa una parte de dos y es la manera más sencilla de escribir un número partido.	Una fracción pequeña.
+el arte	art	10	409abcd57310764e583eb6921e6d37b8	El arte español del Siglo de Oro es famoso en el mundo entero por maestros como Velázquez y El Greco.	Una obra de arte.
+la pintura	painting	10	abe77b88077e2a8acdb166de1aea8bf1	La pintura al óleo exige mucha paciencia porque los colores tardan días en secarse sobre el lienzo.	Una pintura bonita.
+la escultura	sculpture	10	ae75006d9eb14534c78e61a3323f7c28	La escultura de la fachada de la catedral se talló en piedra hace más de quinientos años.	Una escultura moderna.
+el dibujo	drawing	10	79b557917fc475dc2b2e10eb1b3f46ab	El dibujo preparatorio del cuadro se hizo a lápiz antes de pasar a los óleos definitivos.	Un dibujo bonito.
+el boceto	sketch	10	7c1dbcf6f3153e2efa85718ca14d31cb	El boceto rápido del artista capta perfectamente el ambiente de aquella mañana de sol en la playa.	Un boceto a lápiz.
+el retrato	portrait	10	8c52831d6811c5d55034050ff57d8db3	El retrato de la familia real que pintó Velázquez es uno de los cuadros más comentados del Prado.	Un buen retrato.
+la obra	work / play	10	19a15e2ac73225781af9f99e6ae71dd1	La obra completa de este artista se ha reunido en un museo pequeño de su ciudad natal.	Una obra temprana.
+la exposición	exhibition	10	d577871e1978bc81f3ecb86c841b9fea	La exposición de pintura impresionista está abierta al público hasta finales de mes en el palacio del centro.	Una exposición interesante.
+la muestra	show / sample	10	e1cf245b3f9782dcf47c0929a281494e	La muestra de arte contemporáneo reúne a treinta artistas jóvenes de distintas ciudades españolas.	Una muestra gratuita.
+la obra maestra	masterpiece	10	6bc665eaeca8626d3ede7bdc60ffcde6	Este libro está considerado una obra maestra de la literatura española del siglo veinte.	Una auténtica obra maestra.
+la crítica	criticism / review	10	9cd01066ab5cfc6e01085e065fd9501c	La crítica literaria ha acogido muy bien la nueva novela del autor, que acaba de ganar un premio.	Una crítica positiva.
+la restauración	restoration	10	0bbcc6dca33f6d7ce329e23ab4b3f840	La restauración de los frescos ha devuelto a las pinturas sus colores originales después de siglos de suciedad.	Una restauración larga.
+el estilo	style	10	170ed99dad9ecc86a8117020cb5e1ae3	El estilo barroco se caracteriza por la abundancia de decoración y por las formas curvas de sus edificios.	Un estilo único.
+la técnica	technique	10	6658c89a2b2ed053a5ebbaa24ac8861e	La técnica del claroscuro la perfeccionaron los pintores del barroco y dio lugar a obras muy dramáticas.	Una técnica depurada.
+la inspiración	inspiration	10	aeac5d3e10cf91a2c036115cfce7a0ac	La inspiración para esta novela me vino durante un viaje por Andalucía contemplando los pueblos blancos.	Una gran inspiración.
+el piano	piano	10	9a3efc085ba329f802e21afb56d21278	El piano es uno de los instrumentos más completos y permite tocar casi toda la música clásica escrita.	Un piano de cola.
+la guitarra española	Spanish guitar	10	c4b5ad3f12c1278c34502e2275dd15aa	La guitarra española tiene cuerdas de nailon y es el instrumento del flamenco por excelencia.	Toca la guitarra española.
+el violín	violin	10	ebb9add55e43651371452c0d13a1a219	El violín es difícil de aprender, pero su sonido melodioso compensa todos los años de esfuerzo.	Un violín antiguo.
+la flauta	flute	10	e4642eeac0b51651a9f944458ec534b6	La flauta travesera es un instrumento antiquísimo presente en casi todas las culturas del mundo.	Una flauta dulce.
+la trompeta	trumpet	10	f2badc39b14d7c77da1c87412fca9749	La trompeta es el instrumento más brillante de la orquesta y se oye por encima de todos los demás.	Una trompeta dorada.
+el arpa	harp	10	9a09036b2b9e220b33ac1e67a0454394	El arpa es un instrumento elegante que acompaña a menudo a los violines en la música clásica.	Un arpa enorme.
+el acordeón	accordion	10	5316b789314a25efc338280d09f54936	El acordeón se escucha mucho en la música popular del norte de España durante las fiestas del pueblo.	Un acordeón viejo.
+el contrabajo	double bass	10	3d22e17bfbcfef310dd3b917e4cea956	El contrabajo es el instrumento de cuerda más grande de la orquesta y da las notas más graves.	Un contrabajo enorme.
+el violonchelo	cello	10	b82615e2640876aba8500828ca79f02b	El violonchelo tiene un sonido cálido y profundo que recuerda muchísimo a la voz humana.	Un violonchelo dulce.
+el clarinete	clarinet	10	4e0ae3fcc598a35db0e4b3ad1e6d1102	El clarinete es un instrumento de viento madera que se usa tanto en la música clásica como en el jazz.	Un clarinete negro.
+el tambor	drum	10	6f24fcc01c9ae798710f07447af94982	El tambor es un instrumento de percusión antiquísimo y en Semana Santa suena por las calles de muchos pueblos.	Un tambor grande.
+el oboe	oboe	10	938bc56e7930e3f8a5690634fcd48954	El oboe es un instrumento de viento de doble lengüeta con un sonido que se distingue enseguida.	Un oboe afinado.
+el saxofón	saxophone	10	d2cbcbaf83d5fd6c3ee0480a851ea821	El saxofón es el instrumento símbolo del jazz y destaca por su sonido cálido y envolvente.	Un saxofón tenor.
+las castañuelas	castanets	10	d8bf91b4d895fef2e7aa4ab06f914928	Las castañuelas acompañan el baile flamenco y marcan el ritmo con un sonido seco muy característico.	Tocar las castañuelas.
+el deporte	sport	10	4ea8a4fae6262c5982de3b925adf4fdd	El deporte es importante para mantener el cuerpo en forma y la cabeza despejada a cualquier edad.	Hacer deporte.
+el fútbol	football / soccer	10	32b82349f821d45abd7aea204b09eb1a	El fútbol es el deporte más popular de España y cada fin de semana los estadios se llenan de gente.	Ver el fútbol.
+el baloncesto	basketball	10	d4b3e4ae800aba8923f196627ab91a78	El baloncesto español ha ganado varios campeonatos de Europa y tiene jugadores en la liga estadounidense.	Una canasta de baloncesto.
+el tenis	tennis	10	4831422df711c6c0f651b7e2bc4e0d3d	El tenis es un deporte individual que exige muchísima concentración y una preparación física excelente.	Una raqueta de tenis.
+el pádel	padel	10	9362bbfd89e390f33135217a8b6c7868	El pádel se ha puesto tan de moda en España que hay pistas en casi todos los barrios.	Jugar al pádel.
+el golf	golf	10	4493949e9cbbfbb211aa1b8e379ab568	El golf se practica en campos enormes de césped con hoyos repartidos según unas reglas muy precisas.	Un campo de golf.
+la esgrima	fencing	10	ed5e9ffe85c8e3eb0e2dc52de5a59fb1	La esgrima es un deporte olímpico muy elegante en el que se combate con espada, florete o sable.	Clases de esgrima.
+el boxeo	boxing	10	e5a6c85829e1a97555e665a812402bd7	El boxeo es un deporte durísimo que exige una preparación física enorme y mucha capacidad de aguante.	Un combate de boxeo.
+el ciclismo	cycling	10	4b6c58e6503e48f5629bb077cff08a32	El ciclismo español tiene una gran tradición y ha dado campeones que han ganado el Tour y la Vuelta.	Practicar ciclismo.
+el atletismo	athletics / track and field	10	8e98f6af0e8a7f66dd7f92637629358b	El atletismo reúne disciplinas muy distintas, como las carreras, el salto de altura y el lanzamiento de jabalina.	Atletismo en pista.
+la gimnasia	gymnastics	10	19e845d752817c77830230205a953eb6	La gimnasia rítmica es uno de los deportes más seguidos durante los Juegos Olímpicos de verano.	Clases de gimnasia.
+el judo	judo	10	dbfec07878d1e409bef750a462222acd	El judo es un arte marcial japonés basado en las presas y en las proyecciones del adversario sobre el tatami.	Cinturón negro de judo.
+el kárate	karate	10	9aaea3bc693ac1ee9d83fa0e83fcc39e	El kárate es un arte marcial antiguo que enseña disciplina, respeto y autocontrol desde los primeros cinturones.	El kárate japonés.
+el voleibol	volleyball	10	87538cbfbfa7584bf8f72a4dad581535	El voleibol de playa se juega en verano en casi todas las playas del Mediterráneo español.	Una red de voleibol.
+la tauromaquia	bullfighting	10	e0df42c74820bc4627c06caec90e3553	La tauromaquia despierta pasiones encontradas en España y genera polémica cada vez que empieza la temporada.	Historia de la tauromaquia.
+el torneo	tournament	10	aedd8d8f8e9a9a4dc620f8c0324b715c	El torneo de tenis de Wimbledon es el más antiguo y prestigioso del mundo y se juega cada verano.	Un gran torneo.
+la liga	league	10	ff4e668ecda64eb9c3943cdca4c85424	La liga española de fútbol es una de las más seguidas del mundo y dura de agosto a mayo.	Ganar la liga.
+el entrenamiento	training / workout	10	052ae71c316be9133ea8eff6ee920536	El entrenamiento diario es fundamental para mantener la forma física y mejorar las marcas durante la temporada.	Un entrenamiento duro.
+el equipo	team / equipment	10	77191a2ba0e7d925526f98a2b2df2732	Nuestro equipo ganó la copa del rey después de diez años de espera y de muchísima ilusión.	Un equipo fuerte.
+el jugador	player	10	781a433c38e1e2eb41312d585243674c	El jugador brasileño marcó el gol decisivo en el minuto ochenta y nueve y le dio la victoria al equipo.	Un gran jugador.
+el entrenador	coach / manager	10	9abb2342fd95d520819e2c2fadd60774	Al entrenador lo despidieron después de una racha de derrotas que dejó al equipo en puestos de descenso.	Un buen entrenador.
+el árbitro	referee	10	734d7b831f4dfdf088375de6b2ac82b9	El árbitro pitó un penalti en el último minuto y desató las protestas del equipo visitante.	Un árbitro severo.
+el aficionado	fan / supporter	10	9b18943fe9e7b65075c010e12fe41c81	El aficionado de este equipo llena el estadio en cada partido y anima incluso cuando van perdiendo.	Un aficionado fiel.
+el cirujano	surgeon	10	cf7d22d5e514b3a0dd9ba3bdf014741f	El cirujano operó del corazón a mi abuela y le salvó la vida tras muchas horas de quirófano.	Un cirujano excelente.
+el neurólogo	neurologist	10	1f9a745079ee5302fcceea68245d40b9	El neurólogo ha visitado a mi padre para averiguar la causa de sus problemas de memoria.	Un buen neurólogo.
+el cardiólogo	cardiologist	10	6c467cbd18fa3a3e79033d2e6e06df5e	El cardiólogo me ha recomendado hacer más deporte para cuidar el corazón y mejorar la circulación.	Un cardiólogo experto.
+el psicólogo	psychologist	10	2bcc915b137c417b7b74b97e11dca941	Mi primo ha ido al psicólogo para superar el momento tan difícil que está viviendo tras el divorcio.	Un psicólogo infantil.
+el psiquiatra	psychiatrist	10	df5e93fec446e766da5a2f282fe138e6	El psiquiatra le ha recetado un tratamiento a su paciente, que sufre una depresión crónica desde hace años.	Un psiquiatra famoso.
+el investigador	researcher	10	e80a8bbe38cf356e73c2017b74a1506c	El investigador de la universidad ha publicado un artículo importante en una revista científica internacional.	Un joven investigador.
+el biólogo	biologist	10	e5509458357f31494e0a0abda748dc4e	El biólogo estudia el comportamiento de las ballenas en el Mediterráneo para proteger mejor la especie.	Un biólogo marino.
+el químico	chemist (scientist)	10	fa074507f4c0844d2f5e8ff78abcaabb	El químico ha sintetizado una sustancia nueva que podría servir para tratar algunas enfermedades raras.	Un químico brillante.
+el físico	physicist / physique	10	da3b53403176dd357952b762ee867fd3	El físico nuclear ganó el premio Nobel por sus descubrimientos sobre la estructura interna del átomo.	Un físico teórico.
+el matemático	mathematician	10	554295e412aecd22ffb8db0b9391e977	El matemático demostró un teorema famoso que llevaba trescientos años sin resolverse desde su primera formulación.	Un gran matemático.
+el arqueólogo	archaeologist	10	f48d73725729ee4322adf7debd4e9958	El arqueólogo descubrió una necrópolis romana durante unas excavaciones en el sur de la península.	Un arqueólogo experto.
+el paleontólogo	paleontologist	10	8ac52f87025e99b50f19c9d824ed1bc1	El paleontólogo encontró los restos fósiles de un dinosaurio desconocido en un yacimiento del desierto del Sáhara.	Un paleontólogo veterano.
+el antropólogo	anthropologist	10	db3eb57aa37eb9efc8ab04e109db3100	El antropólogo estudió durante años a los pueblos indígenas del Amazonas para documentar sus tradiciones.	Un antropólogo ilustre.
+el sociólogo	sociologist	10	0800c6a5d432cdf05358c7c817f9ae13	El sociólogo ha hecho una investigación a fondo sobre el comportamiento de los jóvenes durante la pandemia.	Un sociólogo atento.
+el filósofo	philosopher	10	051fdffe2977bb5dac38a18938caf34f	El filósofo griego Platón escribió obras fundamentales que se siguen estudiando dos mil años después.	Un gran filósofo.
+el escultor	sculptor	10	a84e5cfd7dc920f4929b6b1b6fc0576c	El escultor trabaja la piedra con muchísima paciencia hasta sacar una figura humana del bloque de mármol.	Un escultor famoso.
+el dibujante	draftsman / cartoonist	10	9ffa2c484e59e038314ca332eec92005	El dibujante de cómics español es conocido en todo el mundo por sus personajes inolvidables.	Un dibujante preciso.
+el ilustrador	illustrator	10	dd7c6a90213d3ed56efbb4241d9b8e91	El ilustrador de libros infantiles ha ganado un premio internacional por sus imágenes llenas de color.	Un ilustrador creativo.
+el restaurador	restorer	10	a4c5149edf1be1ac3a6119b73f6d51c9	El restaurador trabajó cinco años en la recuperación de los frescos de aquella ermita del siglo doce.	Un restaurador paciente.
+el ceramista	ceramist / potter	10	fdc6b679c146f896163a884bff7a976b	El ceramista del pueblo hace vasijas decoradas a mano según técnicas que se transmiten desde hace generaciones.	Un ceramista hábil.
+el herrero	blacksmith	10	a49b0753afb7a4c6c40ddcb6ed63c53a	El herrero del pueblo hace rejas de hierro forjado para las casas antiguas del casco histórico.	Un herrero fuerte.
+el orfebre	goldsmith	10	8b3de6becd3dd3596d38795b92347f32	El orfebre crea joyas únicas por encargo para clientes que quieren algo exclusivo y distinto.	Un orfebre habilidoso.
+el bailarín	dancer	10	abf39b2e3b898d0799bb57b0cf50dbc2	El bailarín estudió muchos años en una escuela de danza antes de entrar en la compañía nacional.	Un bailarín flamenco.
+el compositor	composer	10	bf9514b6993a326708cf86c44a928809	El compositor escribió una banda sonora preciosa para una película que después ganó varios premios.	Un gran compositor.
+el director	director / conductor	10	8a02a9417af8cc5033d932a77dbc7e07	El director de orquesta dirige a los músicos con muchísima pasión y consigue que suenen como un solo instrumento.	Un director famoso.
+el universo	universe	10	9e572b689bd51214aff06432bbad2968	El universo contiene miles de millones de galaxias y cada una está formada por miles de millones de estrellas.	Un universo infinito.
+la estrella	star	10	6875c33ad00731e30115495a139288ec	La estrella polar sirve para orientarse de noche porque señala siempre el norte sin cambiar de sitio.	Una estrella fugaz.
+la galaxia	galaxy	10	cea5ab775fe04e2862513e3f8efc8726	Nuestra galaxia se llama Vía Láctea y tiene forma de espiral con unos cien mil millones de estrellas.	Una galaxia lejana.
+la constelación	constellation	10	5239acafe14687c8036b5340d0aaef4b	La constelación de Orión se reconoce fácilmente en el cielo de invierno por las tres estrellas del cinturón.	Una constelación brillante.
+el satélite	satellite	10	095006c122057cb977a202f1f6aa1e5e	El satélite que da vueltas alrededor de la Tierra envía las imágenes para la previsión del tiempo.	Un satélite artificial.
+el cometa	comet	10	777f6eea247d120cf09f0d07a13b9360	El cometa Halley se acerca a la Tierra cada setenta y seis años y la última vez fue en los ochenta.	Un cometa luminoso.
+el asteroide	asteroid	10	3e57c0a714408f097b9f7acb6f9822e8	El asteroide gigante que chocó contra la Tierra hace sesenta y cinco millones de años acabó con los dinosaurios.	Un asteroide enorme.
+el eclipse	eclipse	10	35c13396b84dd7e7ad6e6f064ed7ede5	El eclipse total de sol es un espectáculo que solo puede verse unas pocas veces por siglo en cada zona.	Un eclipse lunar.
+la órbita	orbit	10	ab3d50caec27edd65117c84ee8ac37a4	La órbita de la Tierra alrededor del Sol dura exactamente un año y es ligeramente elíptica.	Una órbita estable.
+la gravedad	gravity / seriousness	10	006eb95380f4fe0e5c5e81801a7fa462	La gravedad terrestre mantiene todos los objetos pegados a la superficie del planeta e impide que salgan volando.	La fuerza de la gravedad.
+calcular	to calculate	10	ee7ee025929b70d89d6f18f54a9e4536	Tengo que calcular el coste total del viaje antes de decidir si puedo permitirme ir de vacaciones.	Calcula la suma.
+medir	to measure	10	3bd3fa3d66204b7bb32f0936793d4e4f	Hay que medir bien la habitación antes de comprar los muebles nuevos para la casa recién reformada.	Mide la pared.
+sumar	to add up	10	522b24b52c41668250bf77b99d2ccff9	Debo sumar todos los números de la lista para saber cuánto he gastado durante el mes de septiembre.	Sumar las cuentas.
+restar	to subtract	10	cf25307fabd6ea0955dc98493d305a4e	Hay que restar los impuestos del sueldo bruto para saber cuánto dinero llega de verdad a la cuenta.	Resta diez.
+multiplicar	to multiply	10	209f9371ae0bd64c88d2ea5d6a7d25f5	Para calcular el área del rectángulo hay que multiplicar la base por la altura, como enseñan en el colegio.	Multiplicar por cinco.
+analizar	to analyze	10	39e218444294ffb4cd234fcc71008265	El científico tiene que analizar los datos recogidos durante el experimento para sacar conclusiones válidas.	Analizar los resultados.
+sintetizar	to summarize / synthesize	10	a20a9a12cca155a3902bdcd5afe82bae	Hay que sintetizar la información más importante del libro en pocas páginas para preparar el resumen.	Sintetizar el discurso.
+clasificar	to classify	10	6bc795e9abde73425bf9a01e91a30320	Los biólogos deben clasificar cada especie nueva según un sistema compartido por toda la comunidad científica.	Clasificar los animales.
+observar	to observe / to watch	10	8218676b313a1a8841b6eb5a1fa8ceed	Hay que observar con atención el comportamiento de los animales en su hábitat para entender sus costumbres.	Observar el cielo.
+examinar	to examine	10	feeacaefcad80a5d0235e7bb680d4098	El médico debe examinar al paciente con calma para dar un diagnóstico correcto y recetar el tratamiento.	Examinar la situación.
+científico	scientific	10	bce30a788a1077136c2caafb7e805d90	El método científico exige observar, formular una hipótesis y comprobarla con experimentos antes de darla por válida.	Un artículo científico.
+tecnológico	technological	10	7babfb7a8c9b63bd7dc14e7e553f0da3	El avance tecnológico de los últimos veinte años ha cambiado por completo la vida diaria de mucha gente.	Una empresa tecnológica.
+académico	academic	10	0dd144dcaaafec7404175c89e44cfb7b	El mundo académico español tiene prestigio internacional gracias a universidades históricas como Salamanca y Alcalá.	Un título académico.
+teórico	theoretical	10	f0b608d1c2505c13da0556c4c7c354d0	El físico teórico trabaja con fórmulas matemáticas para explicar los fenómenos naturales del universo.	Un planteamiento teórico.
+experimental	experimental	10	c497d627268c25505a28e1c9fc6911e8	La física experimental necesita aparatos caros y sofisticados para comprobar las teorías de los físicos teóricos.	Un método experimental.
+empírico	empirical	10	3c685a7bbd3f8cebc339b33901c2e3ba	El enfoque empírico se basa en la observación directa de los fenómenos y en datos recogidos muchas veces.	Un dato empírico.
+lógico	logical	10	83bb2417926f492f316620926289676e	El razonamiento lógico es fundamental para resolver problemas matemáticos complicados y llegar a la conclusión correcta.	Un pensamiento lógico.
+ilógico	illogical	10	9d6c580cf6dccb4d2ec9478674d67163	Su decisión de dejar el trabajo sin tener otro me parece completamente ilógica y poco razonable.	Un comportamiento ilógico.
+racional	rational	10	d4d9bfdbfef2daaf41d93ba8c392d904	Hay que tomar decisiones de manera racional, valorando los pros y los contras de cada opción posible.	Un análisis racional.
+irracional	irrational	10	c4b9ae9e0f13952b56ba5d8b6c8f09ca	El miedo a la oscuridad es completamente irracional, pero mucha gente adulta lo sigue sintiendo en casa.	Un miedo irracional.
+genial	brilliant / great	10	0e224b33f8d8662d91e782ba45f0d6fe	Einstein fue un científico genial que revolucionó la física moderna con su teoría de la relatividad.	Una idea genial.
+brillante	brilliant / shiny	10	cba222559cb1c5ea5d7368164bad9c02	Mi sobrino es un estudiante brillante y saca las mejores notas en todas las asignaturas del instituto.	Una mente brillante.
+tonto	silly / stupid	10	375ada712163786c20f8546ad9694fb9	No hay que tomar decisiones tontas para impresionar a los amigos porque después las consecuencias son serias.	Un error tonto.
+ignorante	ignorant	10	dcbcc6019eb601df7c67351389d64af8	Esa persona es bastante ignorante porque no conoce ni las cosas más elementales de la cultura general.	Un comentario ignorante.
+culto	cultured / educated	10	e083e2d7b61d73ba6ba989d6eaf15549	Mi abuelo era un hombre muy culto que hablaba cinco idiomas y sabía muchísimo de historia.	Una persona culta.
+la tradición	tradition	10	5694a94119bd8e8807ac2fe8d2db4bf7	La tradición de comer doce uvas en Nochevieja se mantiene en prácticamente todas las casas españolas.	Una vieja tradición.
+el traje	suit / costume / outfit	10	fd4c2d1450375b07dd7fbcfda54cc211	El traje de flamenca de mi prima es rojo con lunares blancos y lo estrena cada Feria de Abril.	Un traje elegante.
+la ceremonia	ceremony	10	86ce0dc57d7fbce6c39164025b7ff439	La ceremonia de graduación de mi hermana se celebró en el paraninfo de la universidad con toda la familia.	Una ceremonia sencilla.
+el ritual	ritual	10	ee9d40f7029582d7de39cbc0bdc158ae	El ritual del café con leche por la mañana es sagrado para muchos españoles antes de ir al trabajo.	Un ritual antiguo.
+el festival	festival	10	615d45387f15803aea95453d3e7ed1a0	El festival de cine de San Sebastián es uno de los más importantes de Europa y llena la ciudad.	Un festival de música.
+la romería	pilgrimage festival	10	44aed185a35fe1ca189e74bc3f4d6bbe	La romería del Rocío reúne cada primavera a cientos de miles de personas en las marismas de Huelva.	Una romería popular.
+la feria	fair	10	b89e7e5cae417ec2c20caddeece27194	La Feria de Abril de Sevilla dura una semana y las casetas se llenan de gente hasta el amanecer.	Una feria del libro.
+la procesión	procession	10	dc6fd9d2f4329ed6266fc5048765d97c	La procesión de Semana Santa recorre el casco antiguo con los pasos a hombros de los costaleros.	Una procesión solemne.
+el desfile	parade	10	21a34c553b1252ef458f2af9ac79295e	El desfile del doce de octubre celebra la fiesta nacional con las tropas recorriendo el paseo de la Castellana.	Un gran desfile.
+la pasarela	catwalk / fashion show	10	7682e8e858b6dc9b95b56442bed06a64	La pasarela de Madrid es uno de los acontecimientos de moda más esperados del año en toda España.	Una pasarela elegante.
+el concurso	contest / competition / quiz show	10	146a5e570ce30e87ab2e81678c185729	El concurso de poesía está abierto a todos los jóvenes menores de veinticinco años y premia las mejores obras.	Un concurso literario.
+la competición	competition (sporting)	10	9836abee2263200dacc3ea97862b736e	La competición entre los atletas estuvo reñida hasta el último metro de la final de los cien metros lisos.	Una competición dura.
+el reconocimiento	recognition / award	10	0ce346670824e4246320d320056b6157	El escritor recibió un reconocimiento internacional por una obra de gran valor literario y humano.	Un merecido reconocimiento.
+la medalla	medal	10	d854402a1a93b86ad95ae738e1293d1e	La atleta ganó la medalla de oro en los Juegos Olímpicos tras años de entrenamiento y sacrificio.	Una medalla de oro.
+el trofeo	trophy	10	bedd74a29f64a7ba9b86377a4702d66d	El trofeo del campeonato está expuesto en la vitrina principal del club desde la temporada pasada.	Un trofeo enorme.
+el teorema	theorem	10	97f0de2ad36dd478d532099e7c25db4c	El teorema de Pitágoras es de los más famosos de las matemáticas y se estudia en toda Europa.	Un teorema demostrado.
+el experimento	experiment	10	6afd7304ce029b7b029d910af89ac0d6	El experimento confirmó la teoría que había propuesto el equipo de investigación en su último artículo.	Un experimento sencillo.
+la hipótesis	hypothesis	10	f8f1dadb9a7801fd6e48e6a228218bde	La hipótesis inicial del científico quedó confirmada por los datos recogidos durante meses de trabajo minucioso.	Una hipótesis atrevida.
+la teoría	theory	10	a28b95008dce035e8c8f0fd585d7076e	La teoría de la relatividad de Einstein es una de las más importantes de la física moderna.	Una teoría nueva.
+el descubrimiento	discovery	10	1ebbfd01c28bb0c0976f6f1f0d59a5c7	El descubrimiento del código genético fue uno de los avances más importantes de todo el siglo veinte.	Un gran descubrimiento.
+inferir	to infer	10	d1042080c2284e94c413148177bf0c90	Podemos inferir las conclusiones a partir de los datos recogidos durante el experimento en el laboratorio.	Inferir del contexto.
+deducir	to deduce	10	4d07fc832c168dc3423ec258bc9c2776	Deduzco por tu silencio que no estás de acuerdo con lo que dije en la reunión de esta mañana.	Deducir la verdad.
+concluir	to conclude	10	6a72226ab014a05d7b01b45e62eaf3b1	Hay que concluir la reunión antes de las dos porque después todo el mundo se va a comer.	Concluir el trabajo.
+generalizar	to generalize	10	0b5f47e93b1d1290601621506b1c74ca	No conviene generalizar a partir de unos pocos casos particulares porque se sacan conclusiones equivocadas.	Generalizar demasiado.
+formular	to formulate	10	0bb5a1ab4d535850bb28a5b8123aa95c	Tienes que formular tu hipótesis con claridad antes de empezar el experimento en el laboratorio.	Formular una pregunta.
+refutar	to refute	10	c7ff54d00d56366bf6353e8fef4b2d53	El científico consiguió refutar la teoría anterior con datos experimentales nuevos recogidos durante años.	Refutar el argumento.
+validar	to validate	10	a39367813adf43cb2d0acfdc672609aa	Hay que validar el resultado repitiendo el experimento muchas veces en condiciones perfectamente controladas.	Validar los datos.
+verificar	to verify	10	6acbed1b2a85dcd6a12cfd7c4a96d83a	Debo verificar estos datos antes de publicarlos en el periódico de mañana por la mañana.	Verifica el dato.
+definir	to define	10	8eeba03d66e4d16047ffedf8d6709e8d	Conviene definir bien los términos antes de empezar una discusión filosófica sobre asuntos tan complicados.	Definir las reglas.
+prever	to foresee / to predict	10	056c01b30e7a2c014471e0cc97603eab	Es imposible prever cómo va a reaccionar la gente ante una subida de precios tan grande.	Prever el futuro.
+universal	universal	10	06c0032cb91bd3a2794a2720854a7fca	Los derechos humanos son valores universales que deberían garantizarse a todos los habitantes del planeta.	Una verdad universal.
+particular	particular / private	10	78d2e99358ea73d6340aedc2a0003beb	Esta es una situación particular que necesita una solución distinta de las que usamos en casos parecidos.	Un caso particular.
+general	general	10	088450a929764ce19e65bc91a59b6dc0	La regla general dice que todos los empleados deben fichar al entrar y al salir del trabajo.	Una idea general.
+específico	specific	10	2471315d6af036e9924ce6144c62b1d5	El problema específico afecta solo a una parte pequeña del sistema informático de la empresa.	Un objetivo específico.
+abstracto	abstract	10	f76a05ae387a226bd8c4921923c8ffb3	El concepto abstracto de libertad es difícil de definir porque significa cosas distintas para cada persona.	Arte abstracto.
+fui	I was / I went (preterite)	10	9c8b61133de9527bbf4dcaf48b52d897	Fui muy feliz durante aquel verano que pasé con mis primos en el pueblo de mis abuelos.	Fui yo.
+fuiste	you were / you went (preterite)	10	fecaf895f0b56364eb2408a3c2015692	Fuiste el primero en creer en mí cuando todos los demás dudaban de aquel proyecto.	Fuiste valiente.
+fue	he/she/it was / went (preterite)	10	77ee0fb10a2b5ec1db5f64eddbed4456	Fue un día inolvidable el de nuestra boda en aquella pequeña iglesia del pueblo de mi madre.	Fue un éxito.
+fuimos	we were / we went (preterite)	10	088cc1100baddb1013bf4c5a3fc6c40c	Fuimos los últimos en salir del teatro aquella noche después de un espectáculo maravilloso.	Fuimos amigos.
+fuisteis	you were / you went (preterite, plural)	10	556f8f8722135d0bff9c04abdec2ef61	Fuisteis muy amables al venir al funeral de mi abuelo la semana pasada.	Fuisteis vosotros.
+fueron	they were / they went (preterite)	10	ef10722cd2a986b8f73b672291c67fcb	Fueron años difíciles, pero también llenos de experiencias importantes para toda nuestra familia.	Fueron ellos.
+tuve	I had (preterite)	10	9ce78cd056ffdec3614d19b539f4e6e2	Tuve la suerte de conocer a un escritor famoso durante un viaje de estudios por Francia.	Tuve miedo.
+tuviste	you had (preterite)	10	844f1d84f64fa125dd67aab178b49521	Tuviste el valor de dejarlo todo y empezar de cero en otro país muy lejano.	Tuviste razón.
+tuvo	he/she had (preterite)	10	1f4337ef537a71164ed98ce33c6c8526	Mi abuelo tuvo una vida muy dura durante los años de la guerra y de la posguerra.	Tuvo suerte.
+tuvimos	we had (preterite)	10	1cb88d015aee0d22ab79009be727d461	Tuvimos el placer de conocer a gente maravillosa durante nuestro largo viaje por Asia.	Tuvimos suerte.
+tuvisteis	you had (preterite, plural)	10	6f1228018a4c47a616b78f887ac24cc1	¿Tuvisteis algún problema con el coche durante el viaje de vuelta desde Galicia?	¿Tuvisteis tiempo?
+tuvieron	they had (preterite)	10	742bde3f0215faf80575beccef9e5069	Mis abuelos tuvieron cinco hijos que hoy viven repartidos por distintas partes del mundo.	Tuvieron éxito.
+hice	I did / I made (preterite)	10	bce08a1f309d8b789256e0dd644d668c	Hice un viaje larguísimo por toda Europa yo solo justo después de terminar la carrera.	Lo hice yo.
+hiciste	you did / you made (preterite)	10	d1c29d28f5004f936cb9e87d35325e0c	Hiciste la elección correcta cuando decidiste mudarte a aquella ciudad tan grande y tan cara.	¿Qué hiciste?
+hizo	he/she did / made (preterite)	10	94c9bd72bdaf3c8e0620615b27291350	Mi padre hizo muchos sacrificios para que mi hermano y yo pudiéramos estudiar en la universidad.	Hizo bien.
+hicimos	we did / we made (preterite)	10	271ab9b0d144adb06db474dfe4830901	Hicimos una promesa muy importante aquel día y la hemos cumplido durante todos estos años.	Lo hicimos juntos.
+hicisteis	you did / made (preterite, plural)	10	39f2b154cb6fe1c95a71e6a910b43d4a	Hicisteis un trabajo excelente durante aquella época tan difícil de crisis económica.	¿Qué hicisteis?
+hicieron	they did / made (preterite)	10	63045c32221cae3b66f203dc7566bcd3	Los fundadores de la empresa hicieron apuestas muy valientes que cambiaron el mercado español.	Lo hicieron ellos.
+dije	I said / I told (preterite)	10	3e5bfa653bfe3c719bd8787c76d85d88	Dije la verdad aunque sabía que las consecuencias iban a ser difíciles de asumir.	Ya lo dije.
+dijiste	you said / you told (preterite)	10	32106ec9c4306a7d74f2b17be6cce08f	Dijiste unas palabras muy sabias aquel día que se me han quedado grabadas para siempre.	¿Qué dijiste?
+dijo	he/she said / told (preterite)	10	463244d383102b2b060c9d5e25e2d7b8	Mi abuelo dijo que la vida está hecha de pequeños momentos de felicidad que hay que aprovechar.	No dijo nada.
+dijimos	we said / we told (preterite)	10	fc78fd1c2540c42bc11ce109b9086df3	Nos dijimos adiós con la promesa de volver a vernos después de unos meses de separación.	Se lo dijimos.
+dijisteis	you said / told (preterite, plural)	10	63f0e766b4712a941659e6cd331bd6db	Dijisteis cosas muy interesantes durante aquella larga discusión del fin de semana pasado.	¿Qué dijisteis?
+dijeron	they said / they told (preterite)	10	4dfd5db29c0771059cfd33a613c2bab1	Mis padres siempre dijeron que los estudios serían la mejor herencia que podían dejarnos.	Lo dijeron todos.
+vi	I saw (preterite)	10	e549d79420461485aae32c7a3e1b6470	Vi el mar por primera vez cuando tenía solo seis años, durante una excursión del colegio.	Lo vi todo.
+viste	you saw (preterite)	10	2d5f33cd347aec9767f52e1489eeb8a4	Viste enseguida que algo iba mal en cuanto entraste en aquella habitación tan oscura.	¿Qué viste?
+vio	he/she saw (preterite)	10	904f1a9725afb07010a712f769818685	Mi padre vio a mi madre por primera vez en las fiestas de un pueblo hace muchos años.	No vio nada.
+vimos	we saw (preterite)	10	bcd0c62d58e1e1d344fc7bfd22d5070e	Vimos salir el sol desde la cima de la montaña después de caminar durante toda la noche.	Lo vimos ayer.
+visteis	you saw (preterite, plural)	10	7aff0508bf89b33e93d1581a2e598593	¿Visteis la lluvia de estrellas de agosto desde la terraza de la casa del pueblo?	¿Qué visteis?
+vieron	they saw (preterite)	10	4e970bdb9c476ec00f8f2ca15ab6f0bf	Los primeros exploradores vieron tierras maravillosas que ningún europeo había pisado hasta entonces.	Lo vieron todos.
+vine	I came (preterite)	10	f0c7ac034f5da75694bb86e8d92adacf	Vine a Madrid por primera vez con veinte años y desde entonces es mi ciudad favorita.	Vine andando.
+viniste	you came (preterite)	10	8aafcc72f558d1c8946a70645c926669	Viniste a verme cuando estaba en el hospital y te lo agradeceré durante toda la vida.	Viniste pronto.
+vino	he/she came (preterite) / wine	10	f1a51e84aace84c74596455cfa313203	Mi abuelo vino a Cataluña desde Andalucía en los años sesenta buscando un futuro mejor.	Vino solo.
+vinimos	we came (preterite)	10	c05eedc489ca9e0189c34a802ce98036	Vinimos a esta ciudad hace diez años y aquí hemos encontrado nuestro verdadero hogar.	Vinimos juntos.
+vinisteis	you came (preterite, plural)	10	48d376cff397934ed2eb7c9fa1ff9aed	Vinisteis a la boda de mi hermana a pesar del larguísimo viaje en coche.	¿Cuándo vinisteis?
+vinieron	they came (preterite)	10	e5baceef97e81d80560d3420f32b0c8c	Mis antepasados vinieron de muy lejos para instalarse en este pequeño valle del Pirineo.	Vinieron ayer.
+puse	I put (preterite)	10	0c76b48e534320ed1de89b7a1f6b7500	Puse el despertador a las seis para no perder el primer tren de la mañana.	Lo puse aquí.
+pusiste	you put (preterite)	10	b32a226c63c1490c39ecf5a9babf70f4	¿Dónde pusiste las llaves del coche cuando llegamos anoche a casa después de cenar?	¿Dónde pusiste eso?
+puso	he/she put (preterite)	10	b5b496da708e37198426c5842db5555b	Mi hermano se puso al frente de la situación y resolvió el problema en pocas horas.	Se puso serio.
+pusimos	we put (preterite)	10	c8b63d5f65d8aec3d6b37570d80682df	Pusimos todos los muebles nuevos en el salón antes de que llegaran los invitados.	Lo pusimos ahí.
+pusisteis	you put (preterite, plural)	10	a78ecceff5aab9b19f9e1dffbb666ada	¿Pusisteis vosotros la mesa mientras yo terminaba de preparar la cena en la cocina?	¿Qué pusisteis?
+pusieron	they put (preterite)	10	21427ad3964322f9bc03963c857a412a	Le pusieron el nombre de su abuela a la niña que nació la primavera pasada.	Lo pusieron ahí.
+escribí	I wrote (preterite)	10	ec79c193cd42c351408b5366fc3aef6f	Escribí mi primera novela durante un invierno larguísimo en una casa pequeña de la montaña.	Lo escribí yo.
+escribiste	you wrote (preterite)	10	7103a82e8e569ced008f9b9216935045	Escribiste unos poemas preciosos durante los años de la universidad que no he olvidado nunca.	¿Qué escribiste?
+escribió	he/she wrote (preterite)	10	f5a84362cd0d214475c17731baca3242	Cervantes escribió el Quijote hace más de cuatrocientos años y todavía se lee en el mundo entero.	Escribió mucho.
+escribimos	we wrote (preterite)	10	88e77587ccb0b1e3cbc4564f6d985269	Escribimos una carta larguísima a nuestro amigo que se había mudado al extranjero.	La escribimos juntos.
+escribisteis	you wrote (preterite, plural)	10	012a742facf39ba905b8bad9272c7905	Escribisteis un artículo muy bueno en el periódico local de vuestra ciudad.	¿Qué escribisteis?
+escribieron	they wrote (preterite)	10	c82749ec92872af073e388dfc179848e	Los antiguos escribieron en pergaminos y tablillas de arcilla que se han conservado hasta hoy.	Escribieron mucho.

@@ -1,6 +1,6 @@
 # Vocabulary Trainer
 
-An Android app for learning vocabulary in French, German, Italian, and Chinese. Tracks per-word mastery, schedules practice adaptively, and generates fresh example sentences on-device using a local language model — no network calls during a session.
+An Android app for learning vocabulary in French, German, Italian, Spanish, Portuguese, Finnish, Chinese, and Japanese. Tracks per-word mastery, schedules practice adaptively, and generates fresh example sentences on-device using a local language model — no network calls during a session.
 
 ## Highlights
 

@@ -108,6 +108,38 @@ enum class Language(
             "P.S." to "Post Scriptum",
         ),
     ),
+    SPANISH(
+        code = "es",
+        // European Spanish (es-ES): the bundled dictionary uses peninsular
+        // vocabulary (e.g. coche, ordenador, móvil, zumo, patata, vosotros) and
+        // this locale drives TTS toward a Spain voice rather than es-MX/es-US.
+        locale = Locale("es", "ES"),
+        assetFolder = "spanish",
+        greeting = "¡Aprende español!",
+        englishName = "Spanish",
+        flag = "🇪🇸",
+        abbreviations = mapOf(
+            "Srta." to "Señorita",
+            "Sra." to "Señora",
+            "Sr." to "Señor",
+            "Dra." to "Doctora",
+            "Dr." to "Doctor",
+            "Prof." to "Profesor",
+            "Uds." to "ustedes",
+            "Ud." to "usted",
+            "etc." to "etcétera",
+            "p. ej." to "por ejemplo",
+            "ej." to "ejemplo",
+            "núm." to "número",
+            "pág." to "página",
+            "tel." to "teléfono",
+            "a. C." to "antes de Cristo",
+            "d. C." to "después de Cristo",
+            "EE. UU." to "Estados Unidos",
+            "Sto." to "Santo",
+            "Sta." to "Santa",
+        ),
+    ),
     PORTUGUESE(
         code = "pt",
         // European Portuguese (pt-PT): the bundled dictionary uses pt-PT

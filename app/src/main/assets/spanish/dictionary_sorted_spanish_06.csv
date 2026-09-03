@@ -1,0 +1,240 @@
+la empresa	company / enterprise	6	ba078b988ac0b00de4976d0c86bdff85	Nuestra empresa familiar lleva más de tres generaciones elaborando vinos de calidad en La Rioja.	Una empresa pequeña.
+la compañía	company / firm	6	5f42228aac626f5b3dbca45d6ff7cd63	La compañía donde trabajo tiene su sede en Madrid y emplea a más de mil personas.	Una gran compañía.
+la firma	firm / business house	6	c3b588ab964664de936171e76e76d681	Mi padre fundó una pequeña firma de transportes en los años ochenta cerca de Valencia.	Nuestra firma.
+la sociedad	company (legal) / society	6	3c3969f961ff763686fe638bc31c9499	La sociedad anónima cotiza en bolsa y sus títulos son muy demandados por los inversores.	Una sociedad moderna.
+la fábrica	factory	6	e73d89c1358713bb8266fe47c75bfd8a	La fábrica de coches emplea a miles de obreros especializados en el montaje de motores.	Una fábrica grande.
+el taller	workshop / garage	6	80d61d39af3e2425a63450f6bae16a99	Llevo el coche al taller cada seis meses para la revisión y el cambio de aceite.	Un taller mecánico.
+el jefe	boss / chief	6	530082fd45fc793a567ae11dbfa9bde9	Mi jefe es una persona muy exigente pero justa con todos los empleados de la oficina.	Llega el jefe.
+el directivo	executive	6	7f55d729528b191dada9b31ea2cf6d26	Un directivo de la empresa anunció nuevas inversiones para el próximo trimestre durante la reunión.	Un directivo capaz.
+el gerente	manager	6	aab80cd435de4e88212a43e0a14472e3	El gerente del proyecto coordina a todo el equipo que desarrolla el nuevo programa informático.	Un buen gerente.
+el administrativo	office worker (white-collar)	6	b0ed7e8c52f1bbf7a0e6d8de844cfd92	Trabajo como administrativo en una oficina del centro de Sevilla desde hace más de diez años.	Un administrativo fiel.
+el obrero	worker (blue-collar)	6	42f9510ec6ba875c270b3693ee124dbe	Mi abuelo trabajó como obrero metalúrgico en una gran fábrica de Bilbao hasta que se jubiló.	Un obrero especializado.
+el artesano	craftsman / artisan	6	463ace2b9c8f0a3a610bc016098bf176	Ese artesano hace cerámica tradicional andaluza siguiendo técnicas antiguas que aprendió de su padre.	Un buen artesano.
+el empleado	employee	6	d7630c05c67c3872fb440f408bed838c	Soy empleado público desde hace veinte años y aún me quedan otros veinticinco para jubilarme.	Un empleado honrado.
+el compañero de trabajo	colleague / co-worker	6	331cb4b68e32b8d739e8bd907eb93b23	Mi compañero de trabajo también es un buen amigo y salimos juntos casi todos los viernes.	Mi compañero de trabajo.
+el contrato	contract	6	3b21b81a910af4699ee85ff5daf0ab40	Firmé el contrato de trabajo para mi nuevo puesto en una empresa informática de Barcelona.	Un contrato indefinido.
+la reunión	meeting	6	5852c118c2b919eeaeb4338b4e08f505	La reunión de los lunes por la mañana es obligatoria para todo el departamento de ventas.	Una reunión larga.
+la pausa	break / pause	6	e3c08c1cb7b048960171824e24641b9e	Hago una pausa para el café de diez minutos cada dos horas y así despejo la cabeza.	Una pausa corta.
+el turno	shift	6	baab6652219a60b20ba8f94bd15df1b4	Trabajo a turnos y esta semana me toca el turno de noche en la fábrica.	Cambio de turno.
+las horas extra	overtime	6	2f9788842182223c738ada2ec393d14f	Este mes estoy haciendo muchas horas extra para terminar el proyecto antes del plazo previsto.	Pagan las horas extra.
+la profesión	profession	6	8b7b1bf8583d4d6d9282798a82e691a9	Eligió la profesión de médico para ayudar a la gente y seguir la vocación de su madre.	Mi profesión.
+el oficio	trade / craft	6	8077087016e41401f39e1439957ee785	El oficio de carpintero exige mucha paciencia, experiencia y una gran habilidad con las manos.	Un oficio antiguo.
+la carrera	career / degree course	6	2ae7acba92570788be4504b46fe78879	He hecho una buena carrera en esta empresa y ahora soy jefe de departamento.	Una carrera brillante.
+el sector	sector	6	b09c41747a616b5c199cac302be23de2	El sector tecnológico crece con fuerza y ofrece muchas oportunidades a los jóvenes recién licenciados.	Un sector importante.
+el proyecto	project	6	957015bca58125879190ce82f253aff2	El nuevo proyecto de la empresa es ambicioso y exigirá el esfuerzo de todo el equipo.	Un gran proyecto.
+el plazo	deadline / term	6	f4b070a78e18c4a4b8e7c14376fe6663	El plazo del proyecto termina a finales de mes y tenemos que darnos mucha prisa.	Respeta el plazo.
+el objetivo	goal / objective	6	05a61f9d84f625818e1ec14fcbad7c85	Nuestro objetivo principal es alcanzar la facturación prevista antes de que acabe el año fiscal.	Un objetivo ambicioso.
+el resultado	result	6	14bad3abd8e37fe565e3197111f575c6	El resultado de nuestro trabajo ha sido excelente y el jefe nos ha felicitado a todos.	Un buen resultado.
+el éxito	success	6	6e031b9f7794b00d7ae2ff777f4ed948	El éxito profesional exige sacrificio, constancia y mucha pasión por lo que uno hace cada día.	Un gran éxito.
+el fracaso	failure	6	a6fd8853de45b6d5560e154b1e8fe27f	El fracaso de aquel proyecto fue una lección importante para todo nuestro equipo de trabajo.	Un fracaso total.
+la crisis	crisis	6	d603264a4df55820e9c35ec93d067951	La empresa está en crisis por la caída de las ventas y buscamos soluciones nuevas.	Una crisis económica.
+el beneficio	profit / benefit	6	5161eea0156962a805459e10c3383184	El beneficio de la empresa ha subido un veinte por ciento respecto al año pasado.	Un beneficio enorme.
+la inversión	investment	6	241ffbf01250dd1d0121868ac85f6366	Hice una inversión importante en deuda pública para asegurarme una vejez tranquila y sin sobresaltos.	Una buena inversión.
+la fundación	foundation	6	880c6f5b3d10233cd5cd8473969fa49a	La fundación benéfica recauda dinero para ayudar a los niños ingresados en los hospitales infantiles.	Una fundación grande.
+la organización	organization	6	7146493889c3c066a1f520c15b94b079	La organización del congreso exige la colaboración de todos los miembros del comité científico.	Una buena organización.
+el banco	bank	6	2cd025bd249c78463a9184e2e912da0a	Voy al banco a ingresar la nómina el primer día laborable de cada mes.	En el banco.
+la paga	pay / wage / pocket money	6	26950270febb8d3651f5658b8fb6f32e	Recibo la paga el primer día laborable del mes directamente en mi cuenta corriente.	Una buena paga.
+la indemnización	compensation / severance pay	6	5db611a2456f8307eda22151929a6774	Recibí una indemnización por despido después de trabajar catorce años en la misma empresa.	Una indemnización justa.
+el premio	prize / award	6	7af123cde1b132aeedb0254a140bcc55	Me dieron un premio en el trabajo por superar los objetivos del trimestre con mucha antelación.	Un premio merecido.
+la bonificación	bonus	6	b6aac203f09ed26d639b562b2c467fc4	La bonificación de fin de año me permitirá irme de vacaciones con la familia al Caribe.	Una bonificación generosa.
+el aumento	raise / increase	6	ee03cf7328bd37df090ac401b8860ea4	Le pedí un aumento de sueldo a mi jefe después de cinco años en la misma empresa.	Un aumento grande.
+el currículum	résumé / CV	6	379921fad3ca0dcdf4c0bc4fd21c2323	Tengo que actualizar el currículum antes de mandarlo a esa empresa que busca programadores.	Un currículum completo.
+la entrevista	interview	6	4f47e3279bc015454a7942ca7f180ed5	Mañana tengo una entrevista de trabajo muy importante a las diez en la sede central.	Una entrevista difícil.
+el efectivo	cash	6	9fe8a4048d4d6208a112b9371d462842	Pago en efectivo porque ahora mismo no tengo ninguna tarjeta de crédito activa.	Solo efectivo.
+la moneda	coin / currency	6	d839fa2f944689fa6ded9eecbabe4e7f	La moneda oficial de España es el euro desde dos mil dos, cuando desapareció la peseta.	Una moneda antigua.
+el billete de banco	banknote	6	99d4aa0cb3037886fd484eb6673a37ef	Perdí un billete de banco de cincuenta euros en el aparcamiento y no lo encontré nunca.	Un billete de banco.
+el cheque	cheque	6	03b65479ba2e78ed3c261344fc5011b5	Pagué el alquiler con un cheque bancario porque el propietario no acepta transferencias por internet.	Un cheque nominativo.
+el ahorro	savings	6	66239be9eb85523b3a1cfd8aad13effe	Mi ahorro mensual ronda los quinientos euros y los guardo en una cuenta aparte.	Cuenta de ahorro.
+el crédito	credit	6	e92707aa304d78fa157122b7cc16a702	El banco me concedió un crédito para comprar la casa nueva de las afueras con jardín.	Tarjeta de crédito.
+la deuda	debt	6	64362d0f4e3de685b7b3eaba9db84719	Tengo una deuda con el banco por la hipoteca que tardaré veinte años en devolver.	Una deuda enorme.
+el préstamo	loan	6	407c67a3efce7220fc4759d095afc812	Pedí un préstamo personal al banco para comprar el coche nuevo de la familia.	Un préstamo pequeño.
+los impuestos	taxes	6	b48929a664705c78a6055c028905763a	Hay que pagar los impuestos antes del treinta de junio para evitar las sanciones de Hacienda.	Pago los impuestos.
+la tasa	fee / levy / rate	6	b6352baf5eb080c02deaaa53f39afe79	La tasa de basuras del ayuntamiento ha subido este año casi un diez por ciento.	Una tasa municipal.
+el pago	payment	6	c894d0606f2f5590bd204f6dd0511d69	El pago de la factura de la luz debe hacerse antes del quince de cada mes.	Un pago rápido.
+la factura	invoice / bill	6	bbd883835f7f977b714ba644dbdc27f9	El fontanero me mandó la factura por los arreglos que hizo la semana pasada en el baño.	Una factura alta.
+el recibo	receipt	6	86d146dc75dc404fd1a2b80c31275742	Guardo siempre el recibo del supermercado por si hay algún problema con lo que he comprado.	Pide el recibo.
+el descuento	discount	6	2307ef76916a2ddd40e46c793895d5a5	Me hicieron un descuento del veinte por ciento porque soy cliente habitual de esa tienda.	Un descuento grande.
+la oferta	offer / special deal	6	5bdd9e766265228f0e2cd15584b7b524	La oferta del supermercado termina mañana por la tarde y tengo que ir corriendo a comprar.	Una oferta irresistible.
+la venta	sale / selling	6	b2ae808f0d5ee0adf69fdb48464e1d95	La venta de este producto ha sido un éxito y hemos superado todas las previsiones.	Una venta rápida.
+la compra	purchase / shopping	6	19adbc6ee41b8e59d929592a40f7638e	La compra de la casa fue la decisión más importante de mi vida económica.	Una compra importante.
+la capital	capital (city)	6	b80bf4b94e61deb0bb4966c69198b4ec	La capital de España es Madrid y cada año recibe a millones de turistas extranjeros.	Una capital enorme.
+la hipoteca	mortgage	6	dcc84fb9605e99aa1416860be7e9baf8	Llevo quince años pagando la hipoteca del piso y todavía me quedan otros quince.	Una hipoteca larga.
+la economía	economy	6	d8278ddf5fe6964fb0bc77b895ca0847	La economía española crece despacio después de la larga crisis de los últimos años.	Una economía fuerte.
+el sueldo	salary / pay	6	475ad5d3f0f91eac8c803693d2294427	Mi sueldo mensual me permite vivir bien y ahorrar un poco cada mes para viajar.	Un buen sueldo.
+el salario	wage	6	8c7a85cb7fecb9b783bcb7f717ede938	El salario mínimo debería subir para garantizar una vida digna a todos los trabajadores.	Un salario bajo.
+la jubilación	retirement / pension	6	27abae10e82419153230d06e89a4b303	Mi abuelo cobra una jubilación muy baja que no le llega para terminar el mes.	Una jubilación anticipada.
+la propina	tip	6	fe849b30197d3c4cc998ffd6ef84aa02	Le dejé una buena propina al camarero porque nos atendió con muchísima amabilidad.	Una buena propina.
+la universidad	university	6	a0a29b44817c1c1fa7c9497da6eb21cf	La Universidad de Salamanca es la más antigua de España y sigue siendo famosa en el mundo.	Voy a la universidad.
+la facultad	faculty / school (university)	6	11a0dbb19c7a738a656f1f262db93a82	La facultad de medicina es la más dura y exige seis años de estudio muy intenso.	Una buena facultad.
+el departamento	department	6	8e6a355d93ff407b6e1c1c8d3992fe51	El departamento de idiomas ofrece muchos cursos de español para extranjeros durante todo el año.	Un departamento grande.
+el curso	course / school year	6	06cef78d4950ac4995282b5afc918ffa	Hice un curso de español avanzado en la universidad para mejorar mi gramática escrita.	Un curso útil.
+la lección	lesson	6	261c90c36a5a6213ab253dd65954ca61	La lección de hoy trata sobre los verbos irregulares y sus formas más complicadas.	Una lección larga.
+la asignatura	subject (school)	6	b4b8bf2357796655e8b03bc47a4de51b	Mi asignatura favorita en el colegio era la historia porque me fascinan las civilizaciones antiguas.	Una asignatura difícil.
+el examen	exam	6	0a8153ca3bfd88b294f0b949ecb122cc	Aprobé el examen de acceso con la nota más alta de toda mi promoción.	Un examen difícil.
+la nota	grade / mark / note	6	5b513e8408e06e8ffa158f21c435ae28	Saqué muy buena nota en el examen de matemáticas gracias a las horas que estudié.	Una nota alta.
+el diploma	diploma / certificate	6	bf2b09a983c247d0b34867c1ab450948	Colgué el diploma del curso de cocina en la pared del salón de casa.	Un diploma enmarcado.
+la licenciatura	university degree	6	b0c745892429dbe20c8ab16eb525dea6	Terminé la licenciatura de ingeniería con matrícula de honor tras cinco años de mucho esfuerzo.	Una licenciatura larga.
+el doctorado	doctorate / PhD	6	066bf55064f184918ca61c5f33045d76	Estoy haciendo el doctorado en física en la Universidad de Granada desde hace tres años.	Un doctorado exigente.
+el profesor	professor / teacher	6	39871534fd46409e36c6caaf11e14aac	El profesor de literatura es muy severo, pero transmite una pasión enorme por la poesía medieval.	Un buen profesor.
+el maestro	schoolteacher (primary)	6	93ec376cd58743fd2f1f5d86a07fc100	El maestro de mi hijo es paciente y cariñoso con todos los niños de cuarto curso.	Un maestro excelente.
+el alumno	pupil	6	cc4a62e261110f890baa69aa781fb89f	Cada alumno debe traer su libro de texto y un cuaderno para cada asignatura.	Un alumno aplicado.
+el estudiante	student	6	6bde99424e0da9676680b1c52508e3c8	Soy estudiante universitario de tercero de economía en una facultad muy conocida de Barcelona.	Un estudiante serio.
+el aprendiz	apprentice / trainee	6	db5a6c798f1ce6adc5501043601f2740	Entró de aprendiz en la carpintería del pueblo y ahora dirige él mismo el taller.	Un aprendiz espabilado.
+la clase	class / classroom	6	56dbdd522750aab8a4502b4d9a563570	La clase de mi hijo tiene veinticinco niños muy movidos, pero también muy educados.	Una clase unida.
+el pupitre	school desk	6	62779a1cc46b4d4a3c864daa631af14f	El niño se sienta en el pupitre que está junto a la ventana del patio.	Debajo del pupitre.
+la pizarra	blackboard / whiteboard	6	3c00db11aacb558f65885b9f23ed8851	El profesor escribe las fórmulas en la pizarra y los alumnos las copian con atención.	Borra la pizarra.
+el cuaderno	notebook	6	73eaafd92c389987f4aeee2a66f64810	Tengo un cuaderno para cada asignatura y he escrito mi nombre en todas las portadas.	Un cuaderno nuevo.
+el bolígrafo	pen (ballpoint)	6	863a1ed42b2351858f6fd9a66de90918	Necesito un bolígrafo negro para firmar el contrato que me acaban de entregar.	Un bolígrafo azul.
+el lápiz	pencil	6	f5dde26db7d23d8e0a902c3e887e746d	Dibujo primero con lápiz y luego coloreo con rotuladores en la clase de plástica.	Un lápiz amarillo.
+la goma de borrar	eraser	6	9aa48ddc84109b29ef464129d67715ed	Uso la goma de borrar para corregir los fallos que cometo al hacer los ejercicios.	Préstame la goma de borrar.
+los deberes	homework	6	ec05fbd7450bf6b60ceeed7ad2902277	Los niños tienen que hacer los deberes todos los días al volver del colegio.	Hago los deberes.
+la lectura	reading	6	1513b6ab9097d24ea831952c2218878b	La lectura es mi pasatiempo favorito y leo por lo menos un libro cada mes.	Una lectura amena.
+el aula	classroom	6	2403631b1b3cfbfa68be231d67213e6d	El aula de mi hija es amplia y luminosa, con ventanales que dan al patio.	Un aula grande.
+la investigación	research	6	9dc980def9822e1e300d85efa2e88a5f	La investigación científica exige muchos años de estudio antes de obtener resultados concretos.	Una investigación seria.
+el estudio	study (act / room)	6	66e758fae2beea97a8c73f2a6690ff8c	El estudio del español exige constancia y mucha práctica con hablantes nativos para avanzar rápido.	El estudio diario.
+el abogado	lawyer	6	dc97da005a7d3a6a22bb6fb1b398bd2d	El abogado de mi padre es famoso en toda la ciudad por sus brillantes defensas.	Un buen abogado.
+el ingeniero	engineer	6	3b74a6ff746644a66ec811d3536aefc7	Mi primo es ingeniero informático y trabaja en una multinacional americana con oficina en Madrid.	Un ingeniero capaz.
+el arquitecto	architect	6	c829d4d6d7eeda0fc74690d3d778523a	El arquitecto diseñó nuestra casa nueva en estilo moderno, con grandes ventanales al jardín.	Un arquitecto famoso.
+el enfermero	nurse	6	8a2e9671b7457863f98d28050199e474	El enfermero me puso la inyección sin que yo me diera ni cuenta.	Un enfermero amable.
+el dentista	dentist	6	acb6b852eed6d72ced1b728a06117f06	El dentista me sacó la muela del juicio la semana pasada en una intervención rápida.	Un dentista bueno.
+el farmacéutico	pharmacist	6	77de9e95be5ed6c2d1a19908c04ff309	El farmacéutico me recomendó un jarabe muy eficaz para el catarro que llevo arrastrando.	Un farmacéutico experto.
+el policía	police officer	6	b876c9e6d0ed05dba661691bf226623e	Un policía me paró en un control rutinario a la salida de la autopista.	Un policía honrado.
+el bombero	firefighter	6	f6fda49a0e713d4811fbd0a2385bbcd5	Los bomberos llegaron enseguida para apagar el incendio del edificio del casco antiguo.	Un bombero valiente.
+el soldado	soldier	6	01baf6c98ce086e4dc22b4213bd0ac24	El soldado está en una misión de paz en África durante los próximos seis meses.	Un soldado fiel.
+el piloto	pilot	6	47a4d1c373efbe037716089b09de2136	El piloto anunció que aterrizaríamos antes de lo previsto por el mal tiempo en destino.	Un piloto experto.
+el conductor	driver	6	8a881bd304e004dc1fd655c9c0480a46	El conductor del autobús saluda siempre a los pasajeros cuando suben por la puerta delantera.	Un buen conductor.
+el cartero	postman	6	0668386ad81682b2f0de5feac0d8e860	El cartero pasa cada mañana a las nueve con las cartas y los paquetes del día.	Ha venido el cartero.
+el fontanero	plumber	6	8bb1ebdb614313940f51a796587656f3	Llamé al fontanero para que arreglara la fuga del fregadero de la cocina, que goteaba.	Un fontanero bueno.
+el electricista	electrician	6	fccd12e3530388fd6c83ad9149e6a4d8	El electricista vino a reparar la instalación de la luz, que llevaba dos días fallando.	Un electricista experto.
+el carpintero	carpenter	6	d162d1cf1fad4032014701706038e17a	El carpintero me hizo una librería a medida para el salón de la casa nueva.	Un carpintero hábil.
+el mecánico	mechanic	6	13512d911325e62427022d6a35ed7e6a	El mecánico me dijo que el coche necesita una reparación cara en el motor.	Un mecánico honrado.
+el sastre	tailor	6	18bc6b5cbde23d92d5213443bcdbe059	El sastre del barrio todavía hace trajes a medida como se hacían antiguamente en España.	Un sastre hábil.
+el peluquero	hairdresser	6	f1224f1f362dea73440aa157a1d55c34	Voy al peluquero una vez al mes para cortarme el pelo antes de las fiestas.	Un peluquero famoso.
+el agricultor	farmer	6	bb343678abf40af525ded3c2b4c1d610	El agricultor trabaja la tierra de sol a sol para cultivar las verduras que vende.	Un agricultor humilde.
+el pescador	fisherman	6	9a4190f72ba3d37625a01722707d8443	El pescador sale a la mar de madrugada para llevar pescado fresco a la lonja.	Un pescador experto.
+el escritor	writer	6	1a1980a243eb6f31c989ca6d9fb8518b	El escritor ha publicado su nueva novela después de cinco años de trabajo constante.	Un escritor conocido.
+el pintor	painter	6	a52f9fa857a834626dbdbbf1eda23b17	El pintor expuso sus cuadros en una galería muy conocida del centro de Madrid.	Un pintor moderno.
+el músico	musician	6	3f99d16edc0bf30b2057b7cf418b32ac	El músico toca el violín en una orquesta sinfónica y da conciertos por todo el mundo.	Un músico talentoso.
+el actor	actor	6	2cd25dfe4ce5acef499834a4e48f758b	El actor ganó el premio Goya al mejor protagonista por una película dramática española.	Un gran actor.
+el cantante	singer	6	a0e2ab76f94b03bca51d16bc2df28470	El cantante dio un concierto memorable en el estadio ante cincuenta mil personas entusiasmadas.	Una cantante buena.
+el director de cine	film director	6	15d2af75f5a0e4cf6aae19af3f2b19f9	El director de cine español ganó un premio en el festival de San Sebastián.	Un director de cine.
+el fotógrafo	photographer	6	42cc614c1513e3a07809d50100a47f28	El fotógrafo hizo unas fotos preciosas en la boda de mi prima el sábado pasado.	Un fotógrafo profesional.
+el periodista	journalist	6	f37fbba7733b7f4fcf409e535913dab1	La periodista escribió un artículo muy interesante sobre la situación política actual del país.	Una periodista valiente.
+el panadero	baker	6	4924b20e2e9a56ee793aa07e00603988	El panadero enciende el horno a las cuatro de la mañana para tener pan recién hecho.	Un buen panadero.
+el cajero	cashier	6	a710950d46c27285bd4b646bcbe5b711	La cajera del supermercado es amable y muy rápida cobrando la compra de los clientes.	La cajera es simpática.
+el dependiente	shop assistant	6	4054c31b6a7a0378182d25b3d2165b0f	El dependiente de la tienda me ayudó a elegir el regalo perfecto para mi mujer.	Un dependiente paciente.
+el librero	bookseller	6	6bf01fb1d848cbf326e2b33b7a7da08b	El librero del barrio siempre me recomienda los libros que mejor encajan con mis gustos.	Un librero apasionado.
+el tabernero	innkeeper / tavern keeper	6	437abdf18692a06a8c16e6c188148736	El tabernero del pueblo sirve platos típicos de la zona a los turistas curiosos.	Un tabernero simpático.
+el alcalde	mayor	6	a3c4d345701920f69b9db420fbaa843a	El alcalde inauguró ayer por la tarde el nuevo parque del barrio con una gran fiesta.	Un alcalde capaz.
+el presidente	president	6	6c62116a0a2d2a9de4fc471424be520e	El presidente del Gobierno pronunció un discurso importante con motivo de la fiesta nacional.	Habla el presidente.
+el ministro	minister	6	04db8ff4223b8b2f35e34aecd9549253	El ministro de Economía anunció nuevas medidas fiscales para favorecer el crecimiento del país.	Un ministro importante.
+el secretario	secretary	6	05db61f84fe27fce651cea736c49af3a	El secretario del partido convocó un congreso para elegir al nuevo líder nacional.	Un buen secretario.
+contratar	to hire	6	20f43f0fdef9093e9f91702622e96f9c	La empresa ha decidido contratar a diez ingenieros nuevos para desarrollar el programa informático.	Quieren contratarme.
+despedir	to fire / to see off	6	c729d9e2a4ab1bcba3f2154330649ad6	El jefe tuvo que despedir a varios empleados por culpa de la crisis del sector.	Me han despedido.
+dimitir	to resign	6	09e5fbfc31a65e881c70d41894af71cd	He decidido dimitir de mi puesto para buscar otro mejor en otra ciudad.	Ha dimitido hoy.
+dirigir	to direct / to lead	6	91f4331a2a22fa5361f7187f17ccf7db	Hay que dirigir al personal con autoridad y amabilidad para conseguir los mejores resultados.	Dirige bien.
+gestionar	to manage / to handle	6	7c126023d1ac621d1d865de0c7d3e8b3	Tengo que gestionar un equipo de diez personas y organizar su trabajo cada día.	Lo gestiona todo.
+administrar	to administer / to manage	6	4d883bfb54f8505d77a46181b234cb28	El director administra las finanzas de la empresa con mucha prudencia y responsabilidad.	Administra la empresa.
+mandar	to command / to send	6	33c2ccae1fcd0e378252152ab56e84c9	El capitán manda el barco durante la travesía con experiencia y mucha firmeza.	Aquí manda él.
+obedecer	to obey	6	602f21a5df2afc3183958057def9c55a	El soldado debe obedecer las órdenes de su superior sin hacer preguntas en una emergencia.	Tienes que obedecer.
+enseñar	to teach / to show	6	64d3129f5adc5e2122d1ce395eda14d3	La maestra enseña a los niños a leer y escribir durante el primer curso de primaria.	Enséñame español.
+ejercer	to practise (a profession)	6	7b01158c6bcb991c4b16976abf0ab225	Quiero ejercer la medicina con pasión y dedicación hacia todos los pacientes que atienda.	Ejerzo de abogado.
+formar	to form / to train	6	7fc1446bafed2d155bcc0d3123e3c8ed	La empresa forma a los empleados nuevos durante un mes antes de asignarles sus tareas.	Formar un equipo.
+aplicar	to apply	6	f987288fda016f21b843fdc9feb09b88	Tenemos que aplicar las normas nuevas de la empresa a partir del mes que viene.	Aplico la ley.
+evaluar	to evaluate / to assess	6	afc8f9a9262a6f847a925e6f2b4aa362	El profesor evalúa a los alumnos según las notas de los trabajos y los exámenes orales.	Evalúo la situación.
+programar	to program / to schedule	6	a8ba31c4e32cf5beac5090215a83d9a6	Tengo que programar mi trabajo de la semana que viene para no saltarme ningún plazo.	Programo las vacaciones.
+planificar	to plan	6	1cdb8d969ab1f7f5a7a0664fd93d0d74	Hay que planificar bien las vacaciones de verano para encontrar las mejores ofertas.	Planifícalo todo.
+recoger	to gather / to pick up	6	ed55ae17df6b9c7d0bb86bd71d1d1b03	Tengo que recoger las hojas del jardín antes de que llegue la lluvia anunciada.	Recoge los juguetes.
+repartir	to distribute / to hand out	6	70ca04a79fa3cbb1a9d34bc2e3db6252	El jefe debe repartir el trabajo de forma equitativa entre todos los miembros del equipo.	Reparte las cartas.
+dividir	to divide	6	a8cd02e239d685d9e61602cc4d551e4c	Dividimos los gastos del viaje entre todos los participantes para que sea justo.	Divide en dos.
+unir	to unite / to join	6	7ac7d61e6089136fb070159bf909c8d2	Debemos unir fuerzas para alcanzar juntos el objetivo que nos hemos marcado este año.	Une los puntos.
+separar	to separate	6	2921cc3b0fbc5839da1b4513e2f95eee	Tengo que separar la ropa blanca de la de color antes de meterla en la lavadora.	Separa el papel.
+sustituir	to replace / to substitute	6	4d809db192466474ca9231aff291d4dc	Tengo que sustituir la bombilla del salón porque se fundió anoche durante la cena.	Sustituye el filtro.
+intercambiar	to exchange / to swap	6	17bf701585403a2ddbd314f7e9f45d3d	Nos gustaría intercambiar la casa con una familia francesa durante las vacaciones de agosto.	Intercambiamos los sitios.
+prestar	to lend	6	ee1e0304c2c078c0a8a49342e7e27f4e	Te puedo prestar el libro que terminé de leer anoche si te interesa la historia.	Préstame dinero.
+devolver	to return / to give back	6	933cdcd16faa57aecb250974944bca62	Tengo que devolver el libro a la biblioteca antes del viernes para no pagar multa.	Devuélveme la llave.
+convertir	to convert / to turn into	6	b5a060c0b8094f8ecc43e8dfe3d1fb6e	Quieren convertir la vieja fábrica del puerto en un centro cultural para todo el barrio.	Se convirtió en piedra.
+donar	to donate	6	3dc221017fd6ed46a66e976fde04af78	Quiero donar algo de dinero a la fundación que ayuda a los niños enfermos.	Dona sangre.
+regalar	to give as a present	6	ea22444b7bcc9c79de312d912da262b5	Quiero regalarle un buen libro a mi amiga por su cumpleaños la semana que viene.	Le regalo flores.
+descubrir	to discover	6	dbc4aee48c5ec5519a463ca126a665e9	Quiero descubrir sitios nuevos durante este viaje por el norte de España con mis amigos.	He descubierto la verdad.
+inventar	to invent / to make up	6	a6f18ddbec3ac088a7eef2266397b1d4	Mi abuelo consiguió inventar una herramienta para trabajar la tierra mucho más deprisa.	Inventa una historia.
+describir	to describe	6	1d5c328236ff48a31b8979f9995c15cf	¿Puedes describir a la persona que viste anoche en el parque antes del accidente?	Describe la escena.
+asegurar	to assure / to insure	6	5e1968688ebefca301d7780c6e61bab1	Te puedo asegurar que haré todo lo posible por ayudarte en esta situación tan delicada.	Aseguro el coche.
+encargar	to entrust / to order	6	0d4e31ed3798f27d0087272a9e209e8d	Me han encargado organizar la cena de Navidad para todos los empleados de la sede.	Yo me encargo.
+ocupar	to occupy / to take up	6	f6c7d05925338e39925dbc99017c232f	Ese asiento ya está ocupado por una señora que ha ido un momento al baño.	Ocupa mucho sitio.
+contactar	to contact	6	cf80287c335cbf5b6992147ed3117e38	Tienes que contactar con atención al cliente para resolver el error de la factura pasada.	Contacta conmigo.
+comunicar	to communicate	6	edd7ed948253120121fd913a0d2173c4	Es importante comunicarse bien con los compañeros para evitar malentendidos durante el trabajo en equipo.	Comunico la noticia.
+informar	to inform	6	76c95ff06c903f2963432064754c2ef5	Debo informar a mi jefe de que mañana faltaré por una revisión médica.	Te informo enseguida.
+avisar	to warn / to let know	6	115a554582bc93e4540875e981455461	Avísame cuando llegues a casa esta noche para que me quede tranquilo y pueda dormir.	Avisa a los vecinos.
+señalar	to point out / to indicate	6	852e5c0e91681b2f01c136df360646f8	Tengo que señalar el problema al responsable de la oficina para que busque una solución.	Señala la avería.
+profesional	professional	6	6b9e15363ba7640a2cb3ed07b8fedd04	Hay que mantener siempre una actitud profesional en el trabajo, incluso cuando todo se complica.	Una vida profesional.
+cualificado	qualified	6	2ffa7e0632eefece84fdd4629633001e	Soy un técnico cualificado y especializado en instalaciones eléctricas industriales para grandes fábricas.	Personal cualificado.
+experto	expert / experienced	6	dac4159dcba05eb38ef94986ce748637	Mi padre es un experto en vinos españoles y colabora con varias revistas del sector.	Un experto reconocido.
+principiante	beginner	6	f739daf73b4b50a39e60f492b0c1d97a	Soy principiante en la cocina y todavía tengo que aprender muchas recetas tradicionales.	Nivel de principiante.
+hábil	skilful / handy	6	d5e8a86a31be831c83b06610089ba2d0	Es muy hábil con las manos y arregla cualquier cosa que se rompa en casa.	Un artesano hábil.
+capaz	capable / able	6	31a66218c7ff303c8f993703b091983e	¿Eres capaz de conducir de noche por la autopista solo o prefieres que te acompañe?	Una persona capaz.
+eficiente	efficient	6	6118cc2779294568ee5fbf9bb6f49311	El sistema informático nuevo es mucho más eficiente que el antiguo y ahorra mucho tiempo.	Un método eficiente.
+productivo	productive	6	9db3a54a07601e4aa1ea45d03fc6fc71	He tenido un día muy productivo y he terminado todas las tareas que tenía previstas.	Un trabajo productivo.
+rentable	profitable	6	9c55b7e4af21ef4eaa05f3f706faaa2c	Aquella inversión resultó muy rentable y me está dando buenas ganancias desde hace seis meses.	Un negocio rentable.
+económico	economic / cheap	6	1181b67039baa998a750a76e9c2a2221	Encontré un vuelo muy económico a París para el fin de semana que viene.	Una solución económica.
+gratuito	free of charge	6	87a8fadcd05ed5a81176bd514b1760e3	La entrada al museo es gratuita el primer domingo de cada mes para todos los visitantes.	Un servicio gratuito.
+asequible	affordable / good value	6	ebd625b6057d49079fa9e686c4d7098b	Comprar en el mercado del barrio resulta más asequible que ir a la tienda del centro.	Un precio asequible.
+exigente	demanding	6	fb6033deb8676161675bfb3db442d96b	Mi jefe es muy exigente, pero siempre justo con todos los empleados del departamento.	Un cliente exigente.
+disponible	available	6	5755178eb23db092327a30313d066923	Estoy siempre disponible para ayudar a mis compañeros cuando lo necesitan durante la jornada.	Estoy disponible.
+el horario	schedule / opening hours	6	6416840b2e958703b658270959c16b83	El horario de la tienda es de nueve a siete de lunes a sábado, festivos aparte.	Horario de tarde.
+la agenda	diary / planner	6	08a28d9a30164041544d1badf4005817	Apunto todas las citas en la agenda del móvil para no olvidarme de nada.	Una agenda apretada.
+la cita	appointment / date	6	dddfda043555ffad6a73f6e2438af147	Tengo cita con el médico mañana por la mañana a las nueve para la revisión anual.	Pido cita.
+la fecha	date (calendar)	6	f5043041b04b77fbe4ff4316328e9919	¿Cuál es la fecha de nuestra próxima reunión? Tengo que apuntarla en la agenda.	La fecha de nacimiento.
+el periodo	period	6	3947fb8e39d5e9e5cdd0ef3b82f5d0d8	Este es un periodo difícil de mi vida, pero seguro que pronto todo irá mejor.	Un periodo largo.
+la duración	duration / length	6	95914ec5acf261cbe685ae24b9842e9c	La duración del curso es de seis meses, con tres clases semanales de dos horas.	Una duración corta.
+el descanso	break / rest / intermission	6	a43e4fc697079f6599d855d7aaff7fc2	Durante el descanso entre clases los niños juegan en el patio del colegio.	Un descanso breve.
+la frecuencia	frequency	6	c8759427aed14e3fdf4ae0fb056444a4	La frecuencia de las reuniones es semanal y se celebran los lunes a primera hora.	Alta frecuencia.
+el ritmo	rhythm / pace	6	7a93183ea6028b78e71168f3671d1e91	El ritmo de vida de la ciudad es mucho más frenético que el del pueblo.	Un buen ritmo.
+el programa	programme / schedule	6	703416e0f963729519d44515d8bb2264	El programa del congreso incluye tres jornadas de conferencias sobre la economía mundial.	Un programa apretado.
+la convocatoria	exam sitting / call	6	ea632d5525ea661d3acc0f1d78d0a6b4	Me presento a la convocatoria de junio porque en febrero no me dio tiempo a estudiar.	La convocatoria de septiembre.
+la conferencia	lecture / conference	6	922dc7f488e10d361ad1028966510b4f	Asistí a una conferencia muy interesante sobre el cambio climático impartida por un científico.	Una conferencia larga.
+la presentación	presentation	6	270e1ea45ea1853cfc7db648c40cf1e8	Tengo que preparar la presentación del proyecto para la reunión de mañana con los clientes.	Una buena presentación.
+el aniversario	anniversary	6	e3c7d78af0c0bc7687e5c1e6ca0782eb	Celebramos nuestro aniversario de boda cenando en el restaurante donde nos conocimos hace años.	¡Feliz aniversario!
+el calendario	calendar	6	f7ea0d0af989f8681ff60fcad511f182	Apunto las citas importantes en el calendario de la cocina para que las vea toda la familia.	Calendario escolar.
+yo era	I was	6	7a220de51b9017935d506d690adbe723	Yo era muy tímido de pequeño y me costaba hablar con los niños del colegio.	Yo era feliz.
+tú eras	you were	6	241186503f9fec4227a0e7ed18cd5f08	Tú eras demasiado joven para acordarte de aquella época tan difícil del país.	Tú eras alto.
+él era	he was / she was	6	77593f83ba195f22b8506a1286600393	Él era mi mejor amigo del colegio y todavía nos vemos de vez en cuando.	Él era joven.
+nosotros éramos	we were	6	fc6eb1e59ae2226628556f789caf293a	Nosotros éramos vecinos de toda la vida antes de que ellos se mudaran a Cádiz.	Nosotros éramos amigos.
+vosotros erais	you were (plural, Spain)	6	691b45014e68b2521ddffef732a0af45	Vosotros erais unos críos cuando vuestros padres se mudaron a esta ciudad tan grande.	Vosotros erais pocos.
+ellos eran	they were	6	6bcb813e4e20235cd117d9f0360e2a86	Ellos eran muy felices con el trabajo nuevo que acababan de encontrar en el centro.	Ellos eran hermanos.
+yo hacía	I was doing / used to do	6	77b7a88feaee48d9c6bc12fc2e38dbcf	Cuando era pequeño yo hacía los deberes nada más volver del colegio por la tarde.	Yo hacía deporte.
+tú hacías	you were doing / used to do	6	a98b8c8171895c8118875b1b68b614b6	Tú hacías unas fotos estupendas durante aquellos viajes que hacíamos por Europa de jóvenes.	Tú hacías trampas.
+él hacía	he was doing / she used to do	6	357909b2d3b3aada4d52e51c8739558a	Él hacía de cocinero en un restaurante con estrella del centro de San Sebastián.	Él hacía pan.
+nosotros hacíamos	we were doing / used to do	6	b905745b96634c42e28863c0eff57b41	Nosotros hacíamos largas caminatas por la montaña todos los domingos con los abuelos.	Nosotros hacíamos ruido.
+vosotros hacíais	you were doing (plural) / used to do	6	e7d80a24c571d0d6a47a6c0c491f0831	Vosotros hacíais mucho ruido cuando jugabais juntos en el patio del colegio.	Vosotros hacíais teatro.
+ellos hacían	they were doing / used to do	6	728dd3a0e65fc566a7462937c22d1874	Mis abuelos eran labradores y ellos hacían las faenas del campo durante todo el día.	Ellos hacían fiesta.
+yo decía	I was saying / used to say	6	68236151646e987d7b37d83b344b4e45	Yo decía siempre la verdad, aunque a veces hiciera daño a las personas que quería.	Yo decía eso.
+tú decías	you were saying / used to say	6	4db44191ecc4a02de0d029c0d8a626aa	Tú decías cosas muy interesantes en aquellas discusiones de filosofía en la universidad.	Tú decías tonterías.
+él decía	he was saying / she used to say	6	90f0fecad44e09cbc284429be241f16b	Él decía que el tiempo cura todas las heridas, incluso las más dolorosas de todas.	Él lo decía siempre.
+nosotros decíamos	we were saying / used to say	6	2ddb84942f1552c37c2603c2a7dc0d24	Nosotros decíamos que viajaríamos por todo el mundo en cuanto termináramos la carrera.	Nosotros decíamos verdades.
+vosotros decíais	you were saying (plural) / used to say	6	b4f76353e18a68dbb43accb45e883dea	Vosotros decíais cosas muy contradictorias durante aquella reunión de trabajo tan larga y confusa.	Vosotros decíais lo mismo.
+ellos decían	they were saying / used to say	6	fe6e32978331a981945716d462f4080d	Ellos decían que estudiar es la llave de un futuro mejor para cualquier persona.	Ellos decían mentiras.
+yo bebía	I was drinking / used to drink	6	554522f3f4c51ff816a3606402d53149	De joven yo bebía solo agua mineral, incluso en las fiestas con los amigos.	Yo bebía poco.
+tú bebías	you were drinking / used to drink	6	378c79e3dad6487354b8a24cc1b2ded7	Tú bebías el café siempre sin azúcar, aunque estuviera demasiado amargo para tu gusto.	Tú bebías vino.
+él bebía	he was drinking / she used to drink	6	ef178e1a86b616884c0439f805f4e862	Él bebía una copa de vino tinto en todas las comidas del domingo en familia.	Él bebía cerveza.
+nosotros bebíamos	we were drinking / used to drink	6	1b8c98a1e7854005b0d080cc2d8a31e9	Nosotros bebíamos siempre el mismo vino de Rioja en las cenas con nuestros amigos.	Nosotros bebíamos juntos.
+vosotros bebíais	you were drinking (plural) / used to drink	6	ca5334f071c9f8e6f1be4e6b62d9ff15	Vosotros bebíais demasiado en aquellas fiestas de juventud que montabais los fines de semana.	Vosotros bebíais sidra.
+ellos bebían	they were drinking / used to drink	6	ca3a0bd6cf795f656c0217185ace20f9	Ellos bebían cava para celebrar el éxito del producto nuevo en el mercado europeo.	Ellos bebían mucho.
+yo hablaba	I was speaking / used to speak	6	f476ae8b8297d802517c6fa02d03f902	De pequeño yo hablaba solo español y aprendí inglés bastante tarde, ya en el instituto.	Yo hablaba bajito.
+tú hablabas	you were speaking / used to speak	6	0606facc8e880ac7679789eedec7282c	Tú hablabas con mucha pasión de todos los temas que de verdad te importaban.	Tú hablabas demasiado.
+él hablaba	he was speaking / she used to speak	6	2ac90e526a11f0d562e093e8478197a9	Él hablaba siempre del pueblo donde nació y que dejó siendo todavía muy joven.	Él hablaba despacio.
+nosotros hablábamos	we were speaking / used to speak	6	a7b8336377fa375eaa90c548810cb56c	Nosotros hablábamos horas por teléfono cuando vivíamos en ciudades muy alejadas la una de la otra.	Nosotros hablábamos mucho.
+vosotros hablabais	you were speaking (plural) / used to speak	6	74dbab5c53dcf4021a20937282e2d396	Vosotros hablabais siempre de vuestra infancia en el campo durante aquellas cenas tan largas.	Vosotros hablabais alto.
+ellos hablaban	they were speaking / used to speak	6	bb95bb40fda4cdcc778c836f0d50eed7	Ellos hablaban una lengua antigua que hoy en día ya casi nadie recuerda en el valle.	Ellos hablaban catalán.
+yo temía	I feared / used to fear	6	648d457f55121759a3d99280366500da	De pequeño yo temía las tormentas y corría a esconderme debajo de la cama.	Yo lo temía.
+tú temías	you feared / used to fear	6	b6f98f0acc645f002774908833195a37	Tú temías el juicio de los demás durante aquellos años difíciles de la adolescencia.	Tú temías mucho.
+él temía	he feared / she used to fear	6	63a518df5ef9e8c1bc73d203a3d201c5	Él temía no aprobar el examen de conducir, pero al final le salió todo perfecto.	Él temía lo peor.
+nosotros temíamos	we feared / used to fear	6	3d0f6c2a85f6ece0afdec9c24521aa65	Nosotros temíamos que se cancelara el viaje por el mal tiempo previsto para esos días.	Nosotros lo temíamos.
+vosotros temíais	you feared (plural) / used to fear	6	2edcf13e97f8bfb47660b3ebcd34f389	¿De verdad vosotros temíais que la situación pudiera empeorar en aquel momento tan complicado?	Vosotros temíais algo.
+ellos temían	they feared / used to fear	6	85ccaedfcf04a4cfe2eda5cfe04a1ff7	Ellos temían que me pasara algo durante aquel viaje tan largo que hice solo.	Ellos temían mucho.
+yo salía	I was leaving / used to go out	6	a77c54805ff1ff5c5bd2a85b75a350a1	De estudiante yo salía cada viernes por la tarde para ir a ver a mi familia.	Yo salía pronto.
+tú salías	you were leaving / used to go out	6	e06857db28ad59b5e6d3930331c74705	Tú salías siempre con mucha antelación para evitar el tráfico de las horas punta.	Tú salías mucho.
+él salía	he was leaving / she used to go out	6	5f2475b2ee2eb4d4bb47c66ea1e23a22	Él salía de casa a las siete en punto para llegar puntual al trabajo.	Él salía tarde.
+nosotros salíamos	we were leaving / used to go out	6	67a2f79d0dffd5aeca1fe54e8fe6c003	Nosotros salíamos siempre el uno de agosto hacia la costa para pasar allí las vacaciones.	Nosotros salíamos juntos.
+vosotros salíais	you were leaving (plural) / used to go out	6	c62f95d2b301c094eff29b95e4546b54	Vosotros salíais antes del amanecer para llegar a la montaña a la hora de comer.	Vosotros salíais temprano.
+ellos salían	they were leaving / used to go out	6	73bd28bd28dd6bb21b559001ce75a937	Ellos salían del puerto de Cádiz en un barco enorme rumbo a América del Sur.	Ellos salían corriendo.

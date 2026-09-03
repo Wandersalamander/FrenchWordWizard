@@ -1,0 +1,213 @@
+el tren	train	5	8e0ed1670fbf9296e3fd93e05050ea3f	El tren para Sevilla sale del andén siete dentro de diez minutos, date prisa.	Cojo el tren.
+el avión	airplane	5	0ce7eb67e604c4301621d16618472231	El avión con destino a Berlín despega a las siete de la mañana desde Barajas.	Un avión rápido.
+el autobús	bus	5	a738674d32cc9d343d515fe7fc32f6cb	El autobús número veintitrés pasa cada quince minutos por delante de mi portal.	Subo al autobús.
+el metro	metro / subway	5	c523021b25df1b03b7e95f75ea84c1cf	El metro de Madrid es muy eficiente y conecta todos los barrios importantes de la ciudad.	Coge el metro.
+el taxi	taxi	5	c7f54131a5e506b19cc7e1356027ad05	He llamado a un taxi para ir al aeropuerto porque llevo demasiadas maletas pesadas.	Pido un taxi.
+el barco	ship	5	4b84e8c462af43368610702f516018e8	El barco de crucero zarpa esta noche del puerto de Barcelona rumbo a las islas griegas.	Un barco enorme.
+la barca	small boat / rowing boat	5	223c38c2c671f2731b5e92cf0f178444	Alquilamos una barca en el parque del Retiro y remamos toda la tarde del domingo.	Una barca pequeña.
+la bicicleta	bicycle	5	a3a34e90252373c84c7b16cf5b8fb66e	Voy al trabajo en bicicleta todas las mañanas porque así hago algo de deporte.	Una bicicleta nueva.
+la moto	motorbike	5	dfd66678c6985bad3ab36ee93d4f29ed	Mi hermano tiene una moto deportiva y los domingos da una vuelta por la sierra.	Una moto rápida.
+el camión	lorry / truck	5	336260d42a1ec9b78180bf8d9f4f7ee2	El camión de reparto ha llegado tarde por culpa del tráfico en la circunvalación.	Un camión enorme.
+la furgoneta	van	5	65099dff47b18319b2d20f671851defe	Hemos alquilado una furgoneta para la mudanza porque tenemos demasiados muebles que llevar.	Una furgoneta blanca.
+el ferry	ferry	5	e401666ac059ed70cc8c5dfa136696c0	Cogemos el ferry en Algeciras para cruzar a Tánger durante las vacaciones de agosto.	El ferry va lleno.
+la estación	station	5	dcc334759f5e005f18d3db662af2c6a4	La estación de Atocha es una de las más bonitas y transitadas de toda España.	Voy a la estación.
+el aeropuerto	airport	5	6602ed78df948e260dad517ba12689b7	El aeropuerto está lleno de turistas que salen de vacaciones cada mañana de julio.	Un aeropuerto grande.
+el puerto	port / harbour	5	4b2e505630ad3c6949da862b5e6a83af	El puerto de Valencia es uno de los más importantes del Mediterráneo para el comercio.	Un puerto deportivo.
+la parada	stop (bus/tram)	5	d601e9f453946f20329a58ab430f435e	La parada del autobús está justo delante de mi casa y me viene muy bien.	La próxima parada.
+el andén	platform	5	4d78d0e9064e26e5fa32d5075ebaa2b7	El tren sale del andén once dentro de cinco minutos y todavía estamos en la cola.	Cambio de andén.
+la pista	runway / track / court	5	b59b5c738b0a8751425ae5a8d4bfef64	El avión aterrizó en la pista mojada después de un vuelo larguísimo desde Buenos Aires.	Una pista de esquí.
+la autopista	motorway	5	fa92bc02fe11554898966165325c6c40	La autopista está cortada por un accidente grave que ha ocurrido esta mañana temprano.	Por la autopista.
+el puente	bridge	5	bec81168a0fe1ab1ca64ff6b3aaf66cd	El puente romano de Córdoba cruza el Guadalquivir y sale en todas las fotos.	Un puente bonito.
+el túnel	tunnel	5	1962d1a58c3e337982a8fcd8b3b02bd6	El túnel bajo la montaña acorta el viaje casi cuarenta minutos de curvas cerradas.	Un túnel oscuro.
+la galería	gallery / arcade	5	76ca6ee32098f300beb08df56cd7dfc5	La galería de arte moderno acoge una exposición preciosa de pintores españoles contemporáneos.	Una galería de arte.
+la gasolinera	petrol station	5	5326075335f4b92fe80c0101b108e04b	Paro en la gasolinera a repostar antes de empezar el viaje largo hasta Galicia.	En la gasolinera.
+el aparcamiento	car park	5	7b980b2006670e70570acf4f040f79a8	El aparcamiento del centro comercial está siempre lleno los sábados por la tarde.	Busco aparcamiento.
+el semáforo	traffic light	5	ec28fde91fecc3dbb3987184a5a7b15d	El semáforo se puso en rojo y tuve que frenar de golpe para no chocar.	En el semáforo.
+la acera	pavement / sidewalk	5	315988fa77dbadce89865bbfa58152af	Camino por la acera por seguridad y para no molestar a los coches que pasan.	Sube a la acera.
+el cruce	crossroads / junction	5	3d59470bc8da464aae72e637c949ac2b	En el cruce tienes que girar a la derecha para llegar a casa de mi tía.	Un cruce peligroso.
+la oficina	office	5	0da0f8bca4a078b47454fd3ae8f720c4	Mi oficina está en la quinta planta de un edificio de cristal a las afueras.	Salgo de la oficina.
+la farmacia	pharmacy	5	b0b374e802b12d3e05c6bd1b03f2393c	Voy a la farmacia a comprar algo para el dolor de cabeza que llevo tres días.	Una farmacia de guardia.
+la librería	bookshop	5	7477760cf4018b72e8f5d4dbc669ead6	La librería del centro vende libros nuevos y de segunda mano a precios muy razonables.	Una librería enorme.
+el quiosco	newsstand	5	97de902b9f4f0db02702962ee51f3a7e	Compro el periódico en el quiosco de la esquina cada mañana antes de entrar a trabajar.	Un quiosco cerrado.
+el bar	bar / café	5	d2573bfd71f5d13284d4898ca2aa2748	Desayuno en el bar todos los días un café con leche y una tostada con tomate.	Vamos al bar.
+el hotel	hotel	5	a925d076bd2cf7f77493d8728112b392	Hemos reservado un hotel de cuatro estrellas para pasar las vacaciones de verano en Cádiz.	Un hotel de lujo.
+el hostal	guesthouse	5	04859cdc6a4d0e892a47a90427b824af	El hostal del casco antiguo es muy acogedor y el dueño te trata como en casa.	Un hostal barato.
+el albergue	hostel	5	3886912df9d5ae4fb0132945cf115524	Dormí en un albergue de peregrinos mientras hacía el Camino de Santiago el verano pasado.	Un albergue juvenil.
+el estadio	stadium	5	1a9dc1a19c4b9b69ddcd1cfcf8f5c4c0	El estadio de fútbol de mi ciudad puede acoger hasta setenta mil aficionados los domingos.	Vamos al estadio.
+el gimnasio	gym	5	bb52c2865eb50abdf77c4ff2b6d395bd	Voy al gimnasio tres veces por semana para mantenerme en forma y despejar la cabeza.	Un gimnasio moderno.
+la oficina de correos	post office	5	665d3c512535150b8a1c7d7bcef625c3	Tengo que pasar por la oficina de correos a mandar este paquete a mi hermana.	La oficina de correos.
+la biblioteca	library	5	03cbf0ad0224622f1572fac9d580b525	Estudio en la biblioteca todas las tardes antes del examen de final de curso.	En la biblioteca.
+la panadería	bakery	5	59636c0812409f4a9f00ea9627ef8b34	Compro el pan recién hecho en la panadería de abajo cada mañana antes de desayunar.	Una panadería buenísima.
+el museo	museum	5	ecb535b3353023aae241e96d7240a2fa	El museo del Prado guarda algunas de las pinturas más importantes de la historia europea.	Visito el museo.
+el monumento	monument	5	8f4e1d55035d84ace180d54a92fbdf86	El monumento a los caídos está en el centro de la plaza principal del pueblo.	Un monumento antiguo.
+la iglesia	church	5	4c2fe2f7b40c4b98ea0b6cfed22dea2c	La iglesia del pueblo es del siglo doce y conserva unos frescos medievales preciosos.	Voy a la iglesia.
+el castillo	castle	5	60de165a1fb36239cdce39b7fa349ce1	El castillo de la colina es medieval y abre a los visitantes durante todo el verano.	Un castillo viejo.
+el parque	park	5	4b4adafed27d78148c8a26dc32e34c0a	Voy al parque a correr los domingos por la mañana con mi grupo de amigos.	Un parque enorme.
+la plaza	square	5	29424b5253c7211823801dc3423f54b1	La plaza mayor es el corazón del pueblo y por la noche nos juntamos todos allí.	En la plaza.
+el edificio	building	5	6cd061b8bb6a1ab29d285135f5845465	El edificio histórico del centro se ha restaurado hace poco con muchísimo cuidado.	Un edificio alto.
+la fuente	fountain / spring	5	442933310439cc8306e9a13ad0228028	La fuente de Cibeles es uno de los símbolos de Madrid y siempre está rodeada de gente.	Una fuente bonita.
+la torre	tower	5	cb310f7a03311237c16e7234b8b39921	La torre de la catedral se puede subir y desde arriba se ve toda la ciudad.	Una torre altísima.
+el teatro	theatre	5	b128ab833940548f5df8e76a3697e11c	Vamos al teatro esta noche a ver una obra clásica con actores españoles muy conocidos.	Al teatro.
+el cine	cinema	5	1bb252bf14be5260795a57759edff4b0	Vamos al cine esta noche a ver la película de acción que estrenaron el viernes.	Al cine.
+la catedral	cathedral	5	eca1fb178b0ed0a4194e3dea383bfdca	La catedral de Burgos es gótica y está declarada patrimonio de la humanidad desde hace décadas.	Una catedral gótica.
+el chiringuito	beach bar	5	d272cb2fe8844537b3f9c347a5202a3c	Comemos unas sardinas en el chiringuito de la playa todas las tardes de agosto.	Un chiringuito lleno.
+la heladería	ice cream shop	5	8c0fcca9968b7862128720ad6dad0a29	La heladería del centro hace el mejor turrón de toda la ciudad, según mis amigos.	Una heladería buena.
+la pastelería	pastry shop	5	e978cedf8334b78aac1a2015ec593e2e	Compro los dulces en la pastelería de mi primo los domingos por la mañana temprano.	Una pastelería famosa.
+la tapería	tapas bar	5	5c3041e351d5dbf349bd707b2131e2b5	Vamos a la tapería del barrio esta noche a picar algo y tomar unas cañas.	Una tapería animada.
+la carnicería	butcher's	5	6c3555679050a858ef49016e7c0ef32c	Voy a la carnicería a comprar carne fresca para la comida del domingo en familia.	Una carnicería de confianza.
+la pescadería	fishmonger's	5	ab29c52f8f5b17a40a3df69c55e13e44	La pescadería del mercado vende el pescado recién traído de la lonja por la mañana.	Una pescadería fresca.
+el supermercado	supermarket	5	c6bb3b7a100a4284592a11bbda88ef4d	Bajo al supermercado de la esquina cuando se me olvida algo para la cena.	En el supermercado.
+el estanco	tobacconist	5	4e623a68d83810573b5d3e9e0adf60c9	Compro los sellos y el abono de transporte en el estanco de la calle principal.	Voy al estanco.
+la papelería	stationery shop	5	f9bdcf73d20cf605ea1578a6ff602a7a	Los niños compran el material escolar en la papelería que está al lado del colegio.	Una papelería pequeña.
+la floristería	florist	5	17fd7af4a6d6fce6f03414ed7a52b2a9	He comprado un ramo de rosas rojas en la floristería para el cumpleaños de mi mujer.	En la floristería.
+reservar	to book / reserve	5	f82a36af080a7009de972b78f0643071	Tengo que reservar el vuelo a París antes de que suban mucho los precios en junio.	He reservado hotel.
+aterrizar	to land	5	d222d8f297ca60013a7b7b14b4952280	El avión aterrizó puntualmente en el aeropuerto de Barajas pese a la tormenta.	Aterrizamos pronto.
+despegar	to take off	5	0ddf6965ef368aa5b14fee9baaa340cc	El avión despega dentro de veinte minutos y todavía tenemos que pasar el control.	Despegamos ya.
+facturar	to check in (luggage)	5	553e3d51e1ad58e06aa8991fe9b0c026	Hay que facturar las maletas dos horas antes de la salida del vuelo internacional.	Facturamos el equipaje.
+desembarcar	to disembark	5	161e08ad3f066ec9d10f7abb09eda6c3	Los pasajeros del crucero desembarcan en Málaga para visitar la ciudad durante el día.	Desembarcamos ahora.
+cruzar	to cross	5	7295a5b3f89b1798d944188bad483b9e	Hay que cruzar la calle con mucho cuidado, sobre todo cerca de los colegios.	Cruza la calle.
+pararse	to stop (oneself)	5	a8e8b51ec9a99c440e8c68e9da300b9a	Tengo que pararme en la gasolinera antes de seguir el viaje hasta Asturias.	Párate un momento.
+alquilar	to rent / hire	5	3236284c3c5ad94a7d5fbdec113c178e	Quiero alquilar un coche para recorrer Andalucía con más libertad y sin depender del tren.	Alquilo una bici.
+pernoctar	to stay overnight	5	437cedad317e2bc7a7acf556ce5f6f8e	Decidimos pernoctar en una casa rural del pueblo medieval antes de subir al puerto.	Pernoctamos aquí.
+girar	to turn	5	958393b05817b230b3d9f870d4137a87	Tienes que girar a la izquierda después del semáforo y verás la plaza enseguida.	Gira a la derecha.
+registrarse	to check in / register	5	3c6c07a186b362e92f9f959a009af51d	Hay que registrarse en la recepción del hotel enseñando el pasaporte o el carné.	Me registro ahora.
+perderse	to get lost	5	c0b7f8295b13f627fad421da2f37154f	Es facilísimo perderse en las calles estrechas del casco antiguo de Toledo.	Me he perdido.
+recorrer	to travel along / go around	5	e8da79ea9780a04209a6dcc370e78e0d	Quiero recorrer toda la costa gallega en coche para ver las rías desde arriba.	Recorro el camino.
+explorar	to explore	5	5565bb7d5766b5cd566eadde1c546eee	Me gusta explorar las ciudades nuevas a pie para descubrir rincones escondidos y bares curiosos.	Exploramos juntos.
+acompañar	to accompany	5	d116c22455ef95f1332700aa1e9050d4	Tengo que acompañar a mi madre al médico mañana por la mañana a las nueve.	Te acompaño yo.
+el equipaje	luggage	5	33128240c0fd3a68768bf19ec4d37083	La compañía aérea perdió mi equipaje durante el último vuelo y tardó tres días.	Un equipaje ligero.
+la mochila	backpack	5	4a69da36c830d113d0e71b4d171c1168	Llevo siempre una mochila cómoda en mis excursiones por la montaña en verano.	Una mochila pesada.
+el mapa	map	5	ad712089f24977d99a37d0d70c218a14	Miro el mapa de la ciudad antes de salir para no perderme entre las callejuelas.	Un mapa antiguo.
+el pasaporte	passport	5	b5cec4adea9d868e540fac9edaaf4ba4	Tengo que renovar el pasaporte antes de irme de viaje a Japón el mes que viene.	Enseña el pasaporte.
+el documento	document / ID	5	b86239b479e542d42b29d20ec9899cf1	Hay que llevar siempre un documento de identidad encima cuando se viaja en avión.	Un documento válido.
+el paraguas	umbrella	5	f0519e6c1b08ff0ff5e83cd6a673f676	Llevo siempre el paraguas en el bolso porque en el norte nunca se sabe.	Un paraguas rojo.
+las gafas	glasses	5	09bccb91a99bb8bbdcb395ad33fb37eb	Me he dejado las gafas de sol en casa y ahora el sol me deslumbra muchísimo.	Gafas de sol.
+la foto	photo	5	56f802f9e849925f5cb5c2af95518dfb	Hice muchísimas fotos durante el viaje por Andalucía para recordar cada rincón visitado.	Una foto preciosa.
+la rueda	wheel	5	99fceb928d3e900760c39aecd826b804	Se me pinchó una rueda en la autopista y tuve que llamar a la grúa.	Una rueda nueva.
+el motor	engine	5	90527d331f7cc6dbdfd890b1a3ee0e78	El motor del coche hace un ruido raro y mañana lo llevo al taller.	Un motor potente.
+la gasolina	petrol	5	084629581648b726cdbbda538b460b1a	La gasolina está cada vez más cara y por eso uso menos el coche.	Echo gasolina.
+el freno	brake	5	393b6a602261de0f0a042f0b7a5bd857	El freno de la bicicleta no funciona bien y hay que arreglarlo antes del domingo.	Aprieta el freno.
+el mar	sea	5	652a5930e19632d0daf307ef867279c5	El mar de Menorca está cristalino y es perfecto para nadar en pleno julio.	Voy al mar.
+la montaña	mountain	5	3a1b1cc75e20c5fa9be501d915c0cac1	La montaña en invierno se cubre de nieve y se llena de gente con esquís.	En la montaña.
+el río	river	5	9ac2c5b42d510005ba801f067ee5fcd0	El río Ebro atraviesa Zaragoza y desemboca en el Mediterráneo formando un delta enorme.	Un río ancho.
+el lago	lake	5	51ddcab3618f723a503b0ceb5d78b566	El lago de Sanabria es el mayor de origen glaciar de toda la península ibérica.	Un lago tranquilo.
+la isla	island	5	349c3e1b3d222777480a4fcae92991f7	La isla de Mallorca recibe millones de turistas cada verano por sus calas escondidas.	Una isla pequeña.
+la playa	beach	5	2b6bddacb964938bbba78cca5a9c7be1	Vamos a la playa cada día en verano para bañarnos y tomar el sol tranquilamente.	Una playa desierta.
+la selva	jungle / rainforest	5	f9cfcef8254316964a0ca966cd64d09b	La selva amazónica produce buena parte del oxígeno del planeta y está muy amenazada.	Una selva espesa.
+el desierto	desert	5	7d5c52f0425e823d7e35607fdaf1593a	El desierto de Tabernas está en Almería y allí se rodaron muchas películas del oeste.	Un desierto inmenso.
+el valle	valley	5	7592198668697e73a564355a6acdd1d1	El valle del Baztán es verde todo el año y está rodeado de montañas navarras.	Un valle profundo.
+la colina	hill	5	d84128126833e626f2cf75a32dae6208	Las colinas de la Alpujarra están llenas de pueblos blancos colgados de la ladera.	Sobre una colina.
+el bosque	forest / woods	5	16897e41439b7ffd8309b39d76fe80bf	Me gusta pasear por el bosque en otoño para coger setas y castañas frescas.	Un bosque espeso.
+el prado	meadow	5	b9230a9f508234803761fd439c9d4bce	El prado se llena de flores en primavera y las vacas pastan tranquilas todo el día.	Un prado verde.
+el campo	countryside / field	5	151d7b0817a01129b3ccba91b54f39a8	Vivir en el campo es maravilloso porque se respira aire limpio y hay mucho silencio.	En el campo.
+la costa	coast	5	7acbfa729bc75911d2c0c751e254a908	La costa de Cantabria tiene acantilados impresionantes y playas de arena muy fina.	Una costa rocosa.
+el océano	ocean	5	1362992a5970a2ffe8d0b32d2cea4ad1	El océano Atlántico separa Europa de América y lo cruzan miles de barcos cada año.	El océano profundo.
+el continente	continent	5	d62d934671d59a43bcbc478229982c01	España está en el continente europeo pero tiene ciudades en el norte de África.	Un continente entero.
+la región	region	5	01052254cce7874092facb37157dd716	Esta región es famosa por sus vinos y por la calidad de sus quesos curados.	Mi región.
+la nación	nation	5	66ef416a125d55a489bad5b4092cf186	España es una nación con muchísima historia, arte y tradiciones gastronómicas muy variadas.	Una gran nación.
+el mundo	world	5	1bcfb3a32999cc202a122c04512e209e	El mundo está lleno de lugares maravillosos que me gustaría visitar antes de hacerme viejo.	Todo el mundo.
+la tierra	earth / land	5	29b7625491167a45f408b1eb520379cd	La tierra de mi pueblo es fértil y muy buena para el trigo y la vid.	Sobre la tierra.
+el planeta	planet	5	4eaf7a0c256575e7baf0dd5fb02b95f0	Tenemos que proteger el planeta de las consecuencias del cambio climático que ya notamos.	El planeta azul.
+el medio ambiente	environment	5	fe90e8c7a5ed9ff844cd3906ec2e46a9	El medio ambiente de estas montañas está protegido por el parque nacional desde hace décadas.	Cuidar el medio ambiente.
+el clima	climate	5	027d0e02cd386666d40d2a3151d15530	El clima mediterráneo es suave todo el año, con veranos calurosos e inviernos lluviosos.	Un clima cálido.
+el paisaje	landscape	5	fbae0385c46a48d6aa3805462d7ff142	El paisaje castellano es famoso por sus llanuras infinitas y sus campos de cereal dorados.	Un paisaje precioso.
+la cumbre	summit / peak	5	3bc57f737236be672d618c6a4ed9b67c	Llegamos a la cumbre del Teide después de cinco horas de camino bastante duro.	La cumbre nevada.
+el norte	north	5	b61a0b4905c86acca40e7bf469d1e4cd	Vivo en el norte de España, muy cerca de la frontera con Francia.	Voy al norte.
+el sur	south	5	034070ee08bce4b457c4a0547940e835	El sur de España es famoso por el sol, el flamenco y el pescaíto frito.	Hacia el sur.
+el este	east	5	ceec0cd572d404eeaed82b0c9e074ad3	El sol sale por el este e ilumina mi habitación cada mañana muy temprano.	Al este de Madrid.
+el oeste	west	5	72837c8d91101ec0be47fc11fe47ae0d	El sol se pone por el oeste y crea unos colores rojizos preciosos en el cielo.	Hacia el oeste.
+la derecha	right	5	3ac3f7e83be74d5e09fc089128b2e2ef	Gira a la derecha en el próximo cruce y llegarás al casco antiguo enseguida.	Por la derecha.
+la izquierda	left	5	d24519e1ed92d2f5070568d915594742	La farmacia queda a la izquierda después del semáforo, justo al lado de la panadería.	Por la izquierda.
+recto	straight	5	ed35ebf007a37e7524404f3fa857c485	Sigue todo recto dos kilómetros y verás el museo a tu derecha después del puente.	Todo recto.
+atrás	back / backwards	5	74f3d969858372f56ce2370701ea533b	Tengo que volver atrás porque me he dejado las llaves encima de la mesa.	Un paso atrás.
+delante	in front	5	48cc45e49c681e5aa36351c572cdac09	El coche de delante va demasiado despacio y no puedo adelantar por el tráfico.	Delante de la puerta.
+detrás	behind	5	be2ac33c88f36b674883c254b6b26290	La biblioteca está detrás de la iglesia principal del casco antiguo de la ciudad.	Detrás de la esquina.
+encima	above / on top	5	494ddf2b9b56fdd86e9a286a3641c8ef	Mi piso está encima del supermercado y por las mañanas huele a pan recién hecho.	Encima de la mesa.
+debajo	below / underneath	5	68ebdbc23dca17dc3a09dfc7fc4336af	Hay una bodega debajo de la casa donde guardamos el vino durante todo el invierno.	Debajo de la cama.
+el centro	centre / downtown	5	b7eafb7a6405f1700c9625d079151871	Trabajo en el centro de la ciudad y voy andando cada día para hacer ejercicio.	En el centro.
+la hoja	leaf / sheet	5	29c8acf4dd8f873728cb9ef151505a11	La hoja amarilla cayó del árbol del jardín con el primer viento frío del otoño.	Una hoja seca.
+la hierba	grass	5	8efbf42a81e6add31f14de5ac351e13d	Hay que cortar la hierba del jardín por lo menos una vez a la semana en verano.	Hierba alta.
+la rama	branch	5	b13824acde533f5a52c0955f10660364	La rama del árbol se rompió durante la tormenta tan fuerte de anoche.	Una rama rota.
+la raíz	root	5	4972ed1a2259bca8f8909dd96104b078	Las raíces de este árbol son tan profundas que llegan hasta el agua subterránea.	Una raíz fuerte.
+el fruto	fruit (single) / result	5	e487d17aed71ab910d1a1e61d6c97fad	Este fruto exótico viene directamente de Brasil y tiene un sabor bastante raro al principio.	Un fruto raro.
+la semilla	seed	5	cfc4d3045c84708dd960aa1374c4fe2d	La semilla de girasol está buenísima como aperitivo mientras ves el partido del domingo.	Una semilla pequeña.
+la roca	rock	5	dfae5a5c5487292bff8b3c3078da8d3e	Los niños saltan desde la roca al agua cristalina de la cala toda la tarde.	Una roca enorme.
+la piedra	stone	5	2e09670096599087b9bed80ce21438a5	La casa antigua del pueblo está construida entera de piedra gris de la zona.	Una piedra preciosa.
+la arena	sand	5	6c40934ca85320f35fe585e379fd0341	La arena blanca de esta playa caribeña es famosa en el mundo entero por su finura.	Arena fina.
+el barro	mud	5	4e248bc289f1d9a83ae892cadf75e05d	Después de la lluvia el sendero de la montaña se llenó de barro resbaladizo.	Lleno de barro.
+el polvo	dust	5	8584bd6224507f33d16c6231f44a9379	Hay demasiado polvo en los muebles del salón y este fin de semana toca limpieza.	Polvo por todas partes.
+el tronco	trunk	5	52e3c29f3872bee3eebbb328ce04a304	El tronco del viejo roble está hueco por dentro y sirve de nido a los pájaros.	Un tronco grueso.
+la corteza	bark / crust	5	f07e846012a78242e49695d107b1a031	La corteza de esta encina centenaria es rugosa y está agrietada por el paso del tiempo.	Corteza seca.
+el arbusto	bush	5	d67ea3b5b9e65650a3da2544383e6d0c	El arbusto de romero de la entrada está en flor y perfuma todo el jardín.	Un arbusto florido.
+la mosca	fly	5	84cf5149940817c62aee26164f94707e	Hay una mosca pesadísima en la habitación que da vueltas alrededor de la lámpara.	Una mosca pequeña.
+el mosquito	mosquito	5	f7db7de51f198bbeb8c04c057a83372d	Los mosquitos no nos dejan cenar en la terraza y pican sin parar toda la noche.	Un mosquito molesto.
+la hormiga	ant	5	3f1cd68d52c4ffeb7c49f0e01076d2c8	Una fila de hormigas trabajadoras lleva migas de pan hacia su hormiguero del jardín.	Una hormiga negra.
+la araña	spider	5	a10da52e79aad7a9cfaae37621f44dda	Me dan miedo las arañas aunque sé que casi todas son completamente inofensivas.	Una araña grande.
+la serpiente	snake	5	aa743e973986d2d33625091f4f80be3f	Vimos una serpiente en el monte durante la excursión del domingo y nos asustamos mucho.	Una serpiente venenosa.
+la tortuga	turtle / tortoise	5	6ccb4af15c5d2175eb80bafd49b04977	La tortuga marina nada despacio en las aguas cristalinas del océano tropical.	Una tortuga marina.
+el delfín	dolphin	5	74fdd10debec5b1bcfc5d9a2a78ee505	Vimos un grupo de delfines saltando junto a nuestro barco durante la travesía a Ibiza.	Un delfín juguetón.
+la ballena	whale	5	03ee826d876e1e57116443a48b9f87a5	La ballena azul es el mayor mamífero del mundo y vive en los océanos fríos.	Una ballena enorme.
+el tiburón	shark	5	9d3a4043b451aa6ace8ca5a382d02111	El tiburón blanco asusta a los bañistas de las playas australianas y sudafricanas.	Un tiburón enorme.
+el águila	eagle	5	943ecacc756f0e6a093e6c128ea52031	El águila real vuela majestuosa sobre las montañas de los Pirineos buscando presas pequeñas.	Un águila enorme.
+el pingüino	penguin	5	9d5b450dc710480dff1a45259c81ae68	El pingüino emperador vive en la Antártida y aguanta las temperaturas más duras del planeta.	Un pingüino pequeño.
+el búho	owl	5	d621a27f9948caf2c0e0f572713d7ed9	El búho caza de noche en el bosque y tiene unos ojos enormes que ven perfectamente.	Un búho sabio.
+la aventura	adventure	5	e4bc4e973b6102bd1eb7eccefff7d6eb	Cada viaje es una aventura nueva llena de sorpresas y de encuentros con gente distinta.	Una gran aventura.
+el destino	destination / fate	5	57f8549ef7ef88ba5e7a45e97fd8669c	Nuestro destino final es una isla griega pequeña, lejos de las rutas turísticas masificadas.	Un destino exótico.
+la meta	goal / finish line	5	3aa791498aec4c6d0ead52b001f1377b	La meta de este viaje es aprender español y conocer a fondo la cultura del país.	Llegar a la meta.
+las vacaciones	holidays / vacation	5	9ac1c7b36237483da6929a5b3d58854b	Me voy de vacaciones dos semanas en julio a una isla griega con toda la familia.	Felices vacaciones.
+la temporada alta	high season	5	9fb1933b40b440c54fafc8b38e0546e8	En temporada alta los hoteles de la costa cuestan el doble y están completos.	Es temporada alta.
+el alojamiento	accommodation	5	53c39a626040c7dad0bf50eebcf4d72d	Hemos reservado el alojamiento para una semana en una casa rural con piscina climatizada.	Un buen alojamiento.
+la excursión	day trip / excursion	5	13a10ac494a0c3cfecd41ef369cdce80	Hemos organizado una excursión al museo con el colegio para la semana que viene.	Una excursión corta.
+el crucero	cruise	5	78941f19c40708a1ab5a13fdfcf5b4ce	Nos vamos de crucero por el Mediterráneo en septiembre en un barco de diez mil pasajeros.	Un crucero de lujo.
+el senderismo	hiking	5	435d65c256ae1ed7a21d1dba059404ef	El senderismo es mi plan favorito de fin de semana cuando hace buen tiempo.	Hacemos senderismo.
+el recuerdo	memory / souvenir	5	2018e7f846904d40f86af114705e9f99	Guardo un recuerdo precioso de mi primer viaje a Galicia con mis abuelos.	Un dulce recuerdo.
+la llegada	arrival	5	383f1ee4e7cb91dccf15abd65e4e9e21	La llegada del tren está prevista para las tres de la tarde en la estación central.	Hora de llegada.
+la salida	departure / exit	5	f5bb1d72f4a656eb6e6510348d055964	La salida del avión es a las diez y hay que estar dos horas antes.	Buena salida.
+el regreso	return	5	e6f8da10b48f3c735db1a49ed0ffa15d	El regreso de las vacaciones siempre se hace duro porque hay que retomar la rutina.	El viaje de regreso.
+el huésped	guest	5	e73cba3f43720b8b3599e4b217e5d777	Mi primo será nuestro huésped una semana entera durante las fiestas de Navidad.	Un huésped agradable.
+la recepción	reception / front desk	5	8c5209676b4d47773d3733facbdf8349	La recepción del hotel está abierta las veinticuatro horas y el personal habla inglés.	En la recepción.
+el paseo	walk / stroll	5	30574d56b5540584d34ed397651cf509	Damos un paseo por el paseo marítimo cada domingo por la mañana con el perro.	Un paseo tranquilo.
+el picnic	picnic	5	1761748827568af596fe401bc4179515	Hicimos un picnic en el prado con mucha comida, vino tinto y una manta enorme.	Un picnic campestre.
+el camping	campsite / camping	5	01ec31cbe6af5f45d7a79043a2e1c7e3	En verano vamos de camping a la montaña con la tienda y los sacos de dormir.	Un camping barato.
+el esquí	ski / skiing	5	f3813b745c222a68153cca6e65c8c06f	Practico el esquí cada invierno en Sierra Nevada con un grupo de amigos deportistas.	Esquí alpino.
+el surf	surfing	5	c3a8284538c1f36a9ba1c1589b9f5b5f	A mi sobrino le encanta el surf y cada verano se va a Zarautz a coger olas.	Tabla de surf.
+la equitación	horse riding	5	42df0842e646bc311d0ccadd8f76190e	La equitación es mi deporte favorito y monto todas las semanas en un picadero cercano.	Clase de equitación.
+el alpinismo	mountaineering	5	a30b78d87f593883d5f7f87cfec04785	El alpinismo exige una preparación física enorme y un material adecuado para la alta montaña.	Alpinismo extremo.
+la pesca	fishing	5	84155b0756bd2d367b184db4ada42397	La pesca es una actividad relajante que practico los domingos por la mañana en el pantano.	Vamos de pesca.
+la caza	hunting	5	923a8690743596a4de584931f9e6df0d	La caza está regulada por leyes muy estrictas para proteger a los animales salvajes.	Temporada de caza.
+la natación	swimming	5	380c5350d429a7d4e10e34ad2e029e53	La natación es uno de los deportes más completos porque trabaja todos los músculos del cuerpo.	Clases de natación.
+local	local	5	07b925bfed135a827d07610b37236eec	Comí en un restaurante local donde solo sirven productos típicos de la comarca.	Cocina local.
+extranjero	foreign / foreigner	5	fa3dd6bbd5b3e9c749fadf738b9b8bd0	Mi primo se casó con una extranjera que viene de Canadá y en casa hablan inglés.	Un turista extranjero.
+el visado	visa	5	f8975f611e0b74d3c5bf4ea53ad428df	Hace falta un visado para entrar en ese país y tarda tres semanas en llegar.	Solicito el visado.
+turístico	touristy / tourist (adj.)	5	aecb5e3b602f02b22d38f21a3f4933a1	La zona turística del casco antiguo está siempre llena de visitantes durante el verano.	Un menú turístico.
+nacional	national	5	8669254857109ebb4b5ccc3bd8a8d207	El parque nacional de Doñana es uno de los espacios protegidos más ricos de Europa.	Carretera nacional.
+internacional	international	5	a356697c2c4ae83a66cefdcbccf0887b	El aeropuerto internacional de Barcelona tiene vuelos a medio mundo con muchísimas compañías.	Vuelo internacional.
+urbano	urban	5	2be62503007428d5e0c7ef290136279f	El transporte urbano de Madrid es eficiente y conecta todos los barrios de la ciudad.	Centro urbano.
+rural	rural	5	a7b9d41213208c05f6478e3c06f664dd	La vida rural en el pueblo es muy distinta del estrés de las grandes ciudades.	Una casa rural.
+exótico	exotic	5	e6c409c264ebd0382594e514629cb2e6	Me gustaría visitar un país exótico como Tailandia o Vietnam para vivir algo diferente.	Un fruto exótico.
+el mirador	viewpoint	5	55b9c5f2fcaa2dc468982aae6048f250	Desde el mirador se ve toda la bahía y en los días claros hasta las montañas.	Un mirador precioso.
+la vista	view / sight	5	644659f6b90f483e68b3d20b70628b47	El apartamento tiene una vista maravillosa al mar y a los acantilados del norte.	Una vista increíble.
+el horizonte	horizon	5	cc478e60d58df1dde3614605799a9fe0	En el horizonte se ve un barco enorme que se acerca despacio al puerto.	Hacia el horizonte.
+la cima	top / peak	5	1092894e7dc8cc36137068d752adca46	Llegamos a la cima del monte después de muchas horas de camino bastante duro.	En la cima.
+los alrededores	surroundings / outskirts	5	52057ce71351b007828be850de37ed9f	En los alrededores de la ciudad hay muchos pueblos medievales para visitar el fin de semana.	Por los alrededores.
+la frontera	border	5	8529ca6c22871e75e2d429c7a545cfbc	La frontera entre España y Portugal se cruza sin controles desde hace muchos años.	Una frontera abierta.
+el peaje	toll	5	99590a1d7ee97a218354ab462e51a91a	Esta autopista tiene peaje y conviene llevar suelto o la tarjeta a mano.	Pago el peaje.
+la aduana	customs	5	414279a4c470560df17d67d04b0e1bf6	En la aduana revisaron todo el equipaje antes de dejarnos entrar en el país.	Pasar la aduana.
+la bandera	flag	5	27c4dccc060da9cdb7a2cef84a6c17a0	La bandera española es roja y amarilla y ondea en el ayuntamiento de cada pueblo.	Una bandera al viento.
+el itinerario	itinerary / route	5	8caf8c9ac1951e60da859aaf3ced3500	Hemos planeado un itinerario de diez días para recorrer las ciudades principales de Andalucía.	Un itinerario detallado.
+estado	been / stayed (past participle)	5	6b5494a29fbd5b28fba3a6cf63ae4d45	He estado en Italia tres veces y siempre descubro algo nuevo que me fascina.	He estado aquí.
+hecho	done / made (past participle)	5	b79a00ed69ceaf79c1e7fee9cc3cbb33	He hecho los deberes y ahora puedo salir con mis amigos al parque de abajo.	Está hecho.
+dicho	said / told (past participle)	5	8d6133e89d7222f624822e03ddd74ec4	Me ha dicho la verdad y se lo agradezco muchísimo porque no era nada fácil.	Ha dicho que sí.
+visto	seen (past participle)	5	7218bb4b32e36caca7b63742b32a388c	He visto una película preciosa en el cine del centro con mi mujer y unos amigos.	¿Has visto a Marcos?
+puesto	put / placed (past participle)	5	738485d259bf9ed4b9d863203edef701	He puesto las llaves encima de la mesa de la cocina y ahora no las encuentro.	Lo he puesto ahí.
+cogido	taken / caught (past participle)	5	4a41d60f50e38ace5359e47faa5764ae	He cogido el tren de las siete para llegar puntual a la reunión de trabajo.	Lo he cogido.
+escrito	written (past participle)	5	b12d41c8159a631eedb57bb175d5c512	He escrito una carta larguísima a mi abuela, que vive en un pueblo de montaña.	Lo he escrito todo.
+leído	read (past participle)	5	ce9295e285646da122c3900ba8339ae3	Me he leído el libro entero en una sola noche porque era apasionante.	Ya lo he leído.
+roto	broken (past participle)	5	9c40650419a4670de5d840739ad1682f	He roto un vaso mientras fregaba los platos después de cenar anoche.	Lo he roto.
+perdido	lost (past participle)	5	7506bcf8c9c6f0fcac7bb38b95bc2fb5	He perdido la cartera en el metro esta mañana y no hay manera de encontrarla.	La he perdido.
+elegido	chosen (past participle)	5	b2ea3ee187a7f30336cbacc1e3083afe	He elegido el vestido azul para la fiesta del sábado porque me queda muy bien.	Lo he elegido yo.
+quedado	stayed / remained (past participle)	5	0e5ea1287c5c24e1ef0c4be619c1ed62	Me he quedado en casa todo el fin de semana para descansar de la semana laboral.	Me he quedado aquí.
+bebido	drunk (past participle)	5	c3762cf37c80832ba9678756def539a2	He bebido demasiado café esta mañana y ahora no consigo concentrarme en el trabajo.	He bebido poco.
+nacido	born (past participle)	5	739266ebd4067de4b243d21ad62ed49e	He nacido en Bilbao en el mes de septiembre de un año especialmente lluvioso.	Ha nacido hoy.
+muerto	died / dead (past participle)	5	28e76cba5a812af24b0beb779c7090be	El gato viejo del vecino ha muerto esta semana por una enfermedad repentina.	Ha muerto hoy.
+vivido	lived (past participle)	5	b64dc95be653df285eb72aa2600ed1ae	He vivido en Francia cinco años antes de volver definitivamente a España.	He vivido allí.
