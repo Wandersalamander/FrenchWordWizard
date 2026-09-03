@@ -125,7 +125,6 @@ une place	a space / a place	1	2f91270bc489185e6987c5214d294933	Reserve-moi une p
 seulement	only	1	5ecfffd02beb5e5088882bcfc7e0684e	Il me reste seulement deux euros dans mon portefeuille ce matin.	Je peux rester seulement une heure.
 moi	me	1	49346224c24dbe829a7987def5dbb0f9	Mes parents et moi partons en Espagne la semaine prochaine.	Moi, je préfère le thé au café.
 la vie	the life	1	b4eb38bb971447cb2488d3b61724bd95	La vie a la campagne est plus calme qu'a Paris.	Elle aime la vie en ville.
-la politique	politics	1	494ba54892a943f1bc786323c1646169	On evite toujours de parler de politique pendant les repas familiaux.	Il s'intéresse beaucoup à la politique.
 jusque/jusqu'	to / until	1	47f540cf5ad447a75e19da837f5b5489	On peut marcher jusqu'à la plage en passant par cette ruelle.	Nous irons jusque/jusqu'au bout de la rue.
 croire	to believe	1	d30f7781945f5fa180ded7796c4414f3	J'ai du mal a croire son histoire de voyage en Inde.	Je crois en toi, tu peux le faire !
 un homme	a man	1	f8e27ce47fdd32472bbd3425753a5dc1	Cet homme aux cheveux blancs vit seul depuis la mort de sa femme.	C'est un homme d'affaires très occupé.
@@ -152,7 +151,6 @@ remettre	to put back	1	ab24fab24be876feabbde191a95951f1	N'oublie pas de remettre
 jeune	young	1	d71a063972770b7049a72d9f6b3b175a	Cette jeune fille joue admirablement bien du piano pour son age.	Ils sont jeunes et pleins d'énergie.
 permettre	to allow	1	e658994d52f579d68cbf05605da0c913	Mon employeur me permet de teletravailler deux jours par semaine.	Sa mère lui permet de sortir ce soir.
 occupé / occupée	occupied / busy	1	52889acd82f39e76d833b39b7bd6fd4e	Mon père est très occupe avec ses dossiers en ce moment.	Il est occupé avec ses études en ce moment.
-le gouvernement	the government	1	5648fd9482497505a6b3ebbde2b4915c	Le gouvernement va voter une nouvelle loi sur l'éducation.	Le gouvernement a annoncé de nouvelles mesures.
 eux / elles	them	1	794141c42e9ec0a2d0ddb6d1276da8fc	Mes amies arrivent demain ; je vais préparer un bon repas pour elles.	Elle aime beaucoup ses enfants et ferait tout pour eux.
 appeler	to call	1	2df9f846bbe813023c4a73eca9541390	Je vais appeler le médecin pour prendre un rendez-vous urgent.	Je vais l'appeler ce soir pour lui parler.
 devenir	to become	1	4facd144f155d4c02b5ddaccf6ad6d72	Mon fils va devenir grand-père dans quelques mois seulement.	Elle veut devenir médecin depuis qu'elle est petite.
@@ -194,7 +192,6 @@ recevoir	to receive	1	8582d4116ce8a019306474ec1851be9d	Mon fils va recevoir son 
 répondre	to answer	1	42fb827eb03feef071fad7bd4d17469c	Mon fils oublie souvent de répondre aux messages de sa grand-mère.	Merci de répondre à mes questions rapidement.
 long / longue	long	1	d13061790667718f2d2c6a3593403cda	Cette rivière est trop longue pour la traverser a la nage.	C'est un chemin long mais agréable à parcourir.
 un service	a service / a favor	1	9c94405aa63afff57bdf74b0ff8a74d1	Mon père offre toujours un service exceptionnel a ses clients fidèles.	Il a rendu un grand service à son ami.
-un / une ministre	a minister	1	a7093b400b381398c84861085e833b2a	Le ministre des Transports parle a la télévision ce soir a vingt heures.	Le ministre de l'Éducation a fait une annonce importante.
 vivre	to live	1	5d5a6061e0a63b6662aea3da27a62443	Mes parents souhaitent vivre près de la mer après leur retraite.	Ils vivent dans une petite maison à la campagne.
 chez	at / to (someone's)	1	f0fc7635d42a4166e29e18f493e3b2de	Nous mangeons souvent chez nos voisins pendant les soirees d'hiver.	Je vais chez mes grands-parents ce week-end.
 te	you / yourself	1	ccc17677701abee182feadcc5890371d	Tu te rappelles encore de ce voyage que nous avons fait ?	Tu te prépares pour la soirée ?
@@ -203,3 +200,6 @@ en face de	across from / opposite	1	849bc814017ff0f348e53ed284cd372b	La banque s
 accepter	to accept	1	c887a99962f45dcc1a4d16e1dba6fcf0	Mon collègue refuse d'accepter les critiques de notre nouveau chef.	Elle a finalement accepté l'invitation à dîner.
 agir	to act	1	981901b42f8835a61a1e1a6ef64dfe7a	Il faut agir maintenant si on veut sauver cet animal blessé.	Il faut agir rapidement pour résoudre ce problème.
 simple	simple	1	2f43b9569b28d3391e57e0b9132c3a6d	Cette robe est simple mais très élégante pour une soirée.	La recette est simple à suivre.
+présenter	to present	1	592eba54a3261ec31a39d343e5306eca	Permettez-moi de vous présenter mon frère cadet, Antoine.	Il va présenter son projet lors de la réunion.
+votre	your (formal)	1	e047bf3778a371d8e8d4801f112e26b7	Pourriez-vous m'envoyer votre adresse postale pour le courrier officiel ?	Quel est votre nom de famille ?
+important / importante	important	1	101ce020cf23eda1464ec4a1a64c3229	Cette décision est très importante pour l'avenir de notre famille.	C'est un jour important pour eux.

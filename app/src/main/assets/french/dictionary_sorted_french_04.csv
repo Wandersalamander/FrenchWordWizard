@@ -1,3 +1,80 @@
+bleu / bleue	blue	4	107520d52a2af457645b72f2030025d3	Le ciel est d'un bleu intense ce matin sans aucun nuage.	Elle portait une robe bleue qui mettait en valeur ses yeux.
+remercier	to thank	4	d178bc5e24d3cfaea9a082c9c89e1e7f	Je voudrais remercier mon professeur pour ses précieux conseils tout au long.	Je tiens à vous remercier pour votre aide précieuse.
+dimanche	Sunday	4	6a595067f415f5145bff5ca921812db8	Mes parents organisent un grand déjeuner familial chaque dimanche midi.	Nous irons au marché dimanche matin.
+intéressant / intéressante	interesting	4	9f749da8247100f225d883237a642d4e	Cette émission documentaire sur les baleines était vraiment très intéressante hier soir.	Le livre que j'ai lu hier soir était très intéressant.
+un bras	an arm	4	2b0ce2ef49bae0204bac5614da239378	Mon fils s'est casse le bras en tombant de l'arbre du jardin.	Il a levé le bras pour répondre à la question.
+vingt	twenty	4	04fc994e2d9e53893c580c93502042dd	Mon grand-père vient de fêter ses vingt-cinq ans de retraite paisible.	Il y avait vingt personnes présentes à la réunion.
+un bateau	a boat	4	2fcd728ff0f3d34c56fa7345bf186aea	Mon oncle vient d'acheter un petit bateau de peche pour les week-ends.	Ils ont navigué sur un bateau à voile le long de la côte.
+un visage	a face	4	18701463d8092e0b636dc6f9fdbd94ad	Le visage de mon grand-père s'illumine quand il voit ses arrieres-petits-enfants.	Son visage exprimait la joie quand elle a vu son cadeau.
+le printemps	spring	4	bc608991acfd532a72a6fbc744c34678	Le printemps amene les hirondelles dans le ciel de notre village.	Les fleurs commencent à éclore avec l'arrivée du printemps.
+un village	a village	4	0c380eaf8d1410d91a82b36c4992cf61	Mon village natal compte seulement deux cents habitants en hiver.	Ils ont visité un petit village pittoresque en Provence.
+un hôpital	a hospital	4	9fc07794d2563edb11caeccf64652794	Mon grand-père passe sa convalescence a l'hôpital depuis trois semaines déjà.	Il a été admis à l'hôpital après l'accident de voiture.
+le froid	the cold	4	7cb87e931fcf88c3963bb83d20c6b5fb	Le froid de cette nuit d'hiver m'a empeche de bien dormir.	Ils ont dû faire face à un froid intense pendant leur expédition.
+un / une après-midi	an afternoon	4	a9d2e14ba64c4e4285a47a4e45aada54	Cet après-midi pluvieux est parfait pour lire un bon roman policier.	Ils ont passé une agréable après-midi à la plage.
+juillet	July	4	bd906a667022f19340e4e4a004f30466	Le mois de juillet est toujours très chaud dans le sud de la France.	Ils partent en vacances en juillet chaque année.
+un mur	a wall	4	0c90cf25d72e40896e0abe4a66b78f6d	On va peindre le mur du salon en jaune pale ce week-end.	Ils ont peint le mur en blanc pour plus de luminosité.
+s'asseoir	to sit	4	8ae45723b1ec4a09df94ae0bc31be108	Le maître demande a mes enfants de s'asseoir en cercle pour l'histoire.	Il s'est assis sur le banc pour se reposer un moment.
+samedi	Saturday	4	91bbbaa5680eb70466d10c7b36262e72	Mon mari fait toujours un grand barbecue le samedi soir en été.	Ils se retrouvent souvent pour déjeuner ensemble le samedi.
+visiter	to visit	4	e53aa1663002a7c519927b328b95861a	Ma cousine va visiter le musée du Louvre pendant son séjour parisien.	Ils ont l'intention de visiter Paris cet été.
+un avion	a plane	4	6ad640f83a3ffc10bdbc9e2df3c08d71	Mon fils prend l'avion pour la première fois la semaine prochaine.	L'avion décolle à l'heure pour son vol transatlantique.
+une photo	a photo	4	cd1b63e6f746922b2c96253849d968da	Cette photo de famille date des années soixante chez ma grand-mère.	Cette photo capture un moment précieux de leur vie.
+août	August	4	95ec2dd77761c66a5176528fa438a428	Le mois d'août est très calme dans notre village abandonne par les touristes.	Ils partent en vacances au mois d'août chaque année.
+quinze	fifteen	4	242e50470ddca75984afce72bc9ba8d6	Mon fils a invite quinze de ses copains pour son anniversaire dimanche.	Il est parti il y a quinze minutes pour la réunion.
+sourire	to smile	4	1524fa116f2e4acfb42b56ea52ae10d5	Mon fils sait toujours faire sourire sa grand-mère malade dans son lit.	Elle lui a souri chaleureusement en le saluant.
+une fête	a party	4	33925c0c0e6fcaef788c9334c3670378	On organise une grande fete pour les soixante ans de papa samedi.	Ils ont organisé une grande fête pour célébrer leur anniversaire de mariage.
+un automne	autumn	4	563178b6fe0451066e8952a5b2ad7c40	Cet automne a été particulièrement doux et long dans toute la région.	L'automne est ma saison préférée à cause des belles couleurs des feuilles.
+le ciel	the sky	4	676d0783db504e6165559b2dbb157bdd	Le ciel étoile au-dessus de la campagne offre un spectacle magnifique.	Le ciel était d'un bleu profond ce matin.
+une sœur	a sister	4	27965d3b986a9c47b6a020ebb1fd0659	Ma soeur ainee organise une grande fete pour ses cinquante ans samedi.	Ma sœur est venue nous rendre visite ce week-end.
+un mari	a husband	4	9c0b224c73061ebca116269b527fbbee	Mon mari prepare un excellent ratatouille tous les samedis soirs en été.	Son mari l'a surpris avec un bouquet de fleurs.
+un hiver	a winter	4	cb6a189237175724267ed094370d6e58	L'hiver dans les Alpes francaises peut être vraiment très rude.	L'hiver dernier a été particulièrement rigoureux.
+un poisson	a fish	4	cf4530f4cad6950e8573a7847a7633c2	Mon grand-père prepare le poisson grille avec des herbes du jardin.	Ils ont pêché un gros poisson ce matin.
+trente	thirty	4	b6ceed8079ae9782d49e58ffb6fdcff9	Mon mari a fete ses trente ans avec ses meilleurs amis d'enfance.	Il a fêté ses trente ans hier.
+douze	twelve	4	ac9010ee614a01b6bae16637b81a8874	Mon fils a trace douze cercles parfaits sur sa feuille blanche.	Il y avait douze invités à la fête d'anniversaire.
+une saison	a season	4	cc4dc6ff3c292e161ffadc54debaae00	La saison des cerises arrive juste après les premières journees vraiment chaudes.	L'automne est ma saison préférée.
+un dos	a back	4	f583500776a7dd56cb55a62ab83eadfa	Mon mari a mal au dos depuis qu'il a porte cette grosse caisse.	Il a mal au dos depuis plusieurs jours.
+descendre	to go down / to come down	4	a203c5013bb7bdc00bb7cfb1112e55be	Tu peux descendre prendre le pain qui est sur la table de la cuisine ?	Il est descendu de l'arbre après avoir cueilli des fruits.
+le soleil	the sun	4	38ddab8d3dd2e0ba23c3579db1d9a0c6	Le soleil se couche plus tôt maintenant qu'on entre dans l'automne.	Le soleil brille chaque jour dans le ciel.
+un magasin	a shop / a store	4	0714b26b4ac486e2af35b019b6a8469f	Mon magasin prefere de produits regionaux ferme tous les lundis matins.	Elle a trouvé une jolie robe dans ce magasin.
+un hôtel	a hotel	4	b1f37825358ac8895053c747160fc34e	Mon frère a reserve un hôtel familial au bord de la mer Mediterranee.	Ils ont réservé une chambre d'hôtel pour le week-end.
+chanter	to sing	4	750b35a8d8a389e88b61b29a43e28197	Mon fils aime chanter dans la chorale de l'église tous les dimanches matins.	Elle chante dans une chorale tous les dimanches.
+la neige	the snow	4	9a8a305907904628003d785446dc675e	La neige recouvre tous les sapins du jardin depuis hier soir très tard.	La neige recouvre tout le paysage en hiver.
+un lit	a bed	4	fcbb7752f1d8151b9a43df6a10c43b27	Mon nouveau lit en chêne massif est vraiment confortable pour mon mal de dos.	Il a posé les bagages sur le lit avant de se reposer.
+content / contente	glad	4	feef50c6024a6f18b51e33c59ffb99f1	Mon fils est tellement content depuis qu'il a reçu son nouveau chien.	Elle était contente de recevoir une nouvelle offre d'emploi.
+triste	sad	4	bb246255187baf2a4fb1e68cf16c046f	Mon fils est triste depuis le départ de son meilleur ami a Lyon.	Elle s'est sentie triste en lisant la nouvelle.
+chaud / chaude	warm / hot	4	25403a1e4ab0470628d2792993638b25	Cette tarte aux pommes sortie du four reste vraiment trop chaude pour la couper.	Il fait très chaud aujourd'hui, pense à boire beaucoup d'eau.
+un café	a coffee / a café	4	755663791a42bf8dbf29b765274ebeba	Mon mari prend toujours son café noir sans sucre au petit déjeuner.	Ils se sont retrouvés dans un café sympathique en centre-ville.
+une oreille	an ear	4	3509b05247187bfb045d1908596f4ffc	Mon chat a une oreille blanche et l'autre noire, ce qui est très mignon.	Elle a écouté attentivement avec une main sur l'oreille.
+un doigt	a finger	4	c94fb41a7f17c32479137344b66db35b	Mon fils s'est coupe le doigt en pelant une pomme pour le dessert.	Elle a montré la blessure à son doigt après s'être coupée en cuisinant.
+fois	time (occurrence)	4	13ad1c181492891ce8cd7958863d9d44	C'est la troisième fois cette semaine que je perds mes clés de voiture.	Il était une fois un roi très sage.
+une fleur	a flower	4	f3bb0762bbc9fdd07438b54d6963052f	Mon mari m'a apporte une jolie fleur cueillie dans les champs voisins.	Elle a cueilli une fleur dans le jardin.
+la cuisine	the kitchen / cooking	4	c97f5125cc9fe061b52dc62eba15b21f	Ma cuisine sent toujours bon le pain frais le dimanche matin chez nous.	Il prépare le dîner dans la cuisine.
+dîner	to have dinner / dinner	4	1717b3d724f5da72c87be9d80692ee31	Nous allons dîner chez mes parents tous les vendredis depuis vingt ans.	Nous dînons à sept heures ce soir.
+le vin	wine	4	55fde7a4a823c6e3b7786afae295a898	Mon oncle produit du vin biologique dans sa petite vigne en Alsace.	Il boit un verre de vin rouge.
+un verre	a glass	4	ba68282586fe4ccd62a893e150a901d3	Mon fils a renverse son verre de jus sur le tapis du salon.	Il boit un verre d'eau.
+un jardin	a garden	4	cc15d89ce5100b55ec310986711d2b09	Mon jardin abrite une grande variété de fleurs et de légumes biologiques.	Les enfants jouent dans le jardin.
+danser	to dance	4	3ce44a88e4e122ee45e9e7011de70aed	Mon fils apprend a danser le rock avec sa grand-mère chaque dimanche.	Ils aiment danser le samedi soir.
+la peau	the skin	4	e7d5eaa30e85846cfc65c406d0b09a53	La peau de mon bébé reste vraiment douce malgré le froid de l'hiver.	Elle a la peau douce.
+le ventre	the stomach / belly	4	de081d2e704a1425cee2f5ad68cb15e7	Mon fils a mal au ventre depuis qu'il a mange ces fraises sauvages.	Le bébé dort sur le ventre.
+un oiseau	a bird	4	b6fdc30f4627a0ab9a82f6bdb2c94f1a	Un oiseau bleu vient nicher chaque printemps dans le pommier du jardin.	Un oiseau chante dans l'arbre.
+la pluie	the rain	4	2eeddacfc302e042013ebd7ab0583d37	La pluie a empeche notre pique-nique au bord du lac samedi dernier.	La pluie tombe depuis ce matin.
+la viande	meat	4	df4a28302597f46e8f3fa9141523b100	Mon mari evite de manger trop de viande rouge pour sa santé cardiaque.	Il ne mange pas de viande.
+un repas	a meal	4	399c1a2f3d00eceaee3e730d05e54355	Mon mari prepare un repas spécial chaque dimanche pour toute la famille reunie.	Le repas est prêt.
+un sac	a bag	4	02fefd1a8d36484becac2d87e9f256fd	Mon fils a perdu son sac d'ecole dans le bus ce matin.	Mets tes affaires dans ton sac.
+une robe	a dress	4	5344d10a0733ed67c57e611e6f59ad6c	Ma fille porte une jolie robe a fleurs pour la fete de l'école.	Elle porte une robe bleue.
+un vêtement	a piece of clothing	4	7c6d867b1ad64b66aa9ec2a36271da66	Mon fils a achete un nouveau vêtement de sport pour son club de tennis.	Ce vêtement est trop grand pour moi.
+une chanson	a song	4	2bd704d66e35770bcf82a645e50c8a76	Cette chanson italienne me rappelle nos dernières vacances ensemble en Toscane.	Il chante une chanson joyeuse.
+un oncle	an uncle	4	3d08c04cdb19c2a6290b793d9a833f22	Mon oncle preferait passer ses vacances chez nous chaque été depuis vingt ans.	Mon oncle habite à Lyon.
+une tante	an aunt	4	fc8ca12e4f618204af4d7d35f6c3ba81	Ma tante prepare le meilleur gâteau au chocolat de toute la famille.	Ma tante vient dîner ce soir.
+papa	dad	4	a9944bb20fac0f37abebf2c3fae8b884	Papa rentre tard du travail tous les jours sauf le mercredi soir.	Papa joue avec nous dans le jardin.
+un copain / une copine	a friend / a boyfriend / a girlfriend	4	bcbf63d512edfc6ea7c4a9bc416e0772	Ma copine et moi allons faire les soldes au centre commercial samedi.	Elle sort avec ses copines ce soir.
+un docteur	a doctor	4	56df517c2c96e5e159778193806dfd77	Mon docteur de famille reste en exercice malgré ses soixante-dix ans bien sonnes.	Le docteur examine le patient.
+une gare	a train station	4	bce5eee361e599ee8ad589c38ba016d6	Notre vieille gare ferroviaire date du dix-neuvieme siècle, c'est très impressionnant.	Le train arrive à la gare à midi.
+gris / grise	grey	4	2b91d677355639fcfdb146c70433086c	Mon mari porte toujours son vieux pull gris pour bricoler dans le garage.	Le chat est gris et blanc.
+jaune	yellow	4	dad14997a2a87604da02622bef626126	Mon mari a peint la facade de la maison en jaune pale ce printemps.	Le soleil est jaune.
+joli / jolie	pretty	4	96e80c9c8808ae8008ebda5bf0babd40	Cette jolie petite fleur sauvage pousse dans les jardins de notre village natal.	C'est une jolie maison.
+laver	to wash	4	e88e438d76dc8ad1937063c50ddf62cd	Mon mari va laver la voiture demain matin avec mon fils aine.	Elle lave les assiettes après le dîner.
+lent / lente	slow	4	3e35068cfd2ff806fe9dca43a2c29e3c	Mon vieux chien est devenu très lent depuis son opération de la hanche.	La tortue est lente.
+la lune	the moon	4	23c81a949647443137d35a00b4dbb039	Mon fils observe la lune avec son nouveau telescope tous les soirs d'été.	La lune brille dans le ciel ce soir.
 une création	a creation	4	8900c0fbb67781a02260c12e1965f5fc	Cette tarte aux fraises est ma dernière création gastronomique de la semaine.	Cette sculpture est une création originale de l'artiste.
 prouver	to prove	4	2c59b75bd19e97c77490e006c986530a	Tu dois prouver ton innocence devant le tribunal demain matin.	Ils ont réussi à prouver leur théorie grâce à des expériences rigoureuses.
 acheter	to buy	4	2d0d0cf4f726b70c7be0611c02cb24c6	Je dois acheter du pain et du fromage avant de rentrer chez moi.	Elle va acheter des billets pour le concert ce soir.
@@ -15,7 +92,6 @@ un risque	a risk	4	ded3aea0acc67739c76d5b4c697dd056	Prendre l'avion comporte un 
 souffrir	to suffer	4	f187265f7604a808821995e9e76846a9	Mon grand-père souffre de douleurs chroniques au dos depuis l'accident.	Les populations locales ont beaucoup souffert des inondations.
 estimer	to estimate	4	c81d9d8a3ca2de7c4ac5d9e9d6422f70	Le geometre va estimer la valeur de notre terrain demain matin.	Les experts estiment que la pollution est à l'origine du changement climatique.
 un endroit	a place / a spot	4	c0424d9d7ae8e81bce4b36ead5c23543	Je connais un endroit secret pour observer les chevreuils en forêt.	C'est un bel endroit pour se promener le soir.
-un comité	a committee	4	c8c65ebcbc333dae3c9a292e17d4fc45	Ma soeur fait partie du comité d'organisation de la fete du village.	Il fait partie du comité chargé d'organiser l'événement.
 impossible	impossible	4	f370344535aee45e64938f7d9eec6854	Il est impossible de finir ce devoir avant ce soir, vraiment.	Rien n'est impossible si on travaille dur pour y arriver.
 une arme	a weapon	4	e541d075f8ad12796fd7dffc37e4a637	Les chevaliers utilisaient l'epee comme arme principale au moyen age.	Ils ont saisi plusieurs armes illégales lors de l'opération.
 véritable	real	4	02b1c55d34e860eb0f8e33e95acd2d0a	Cette baguette a un véritable goût de pain artisanal traditionnel.	C'est un véritable plaisir de vous rencontrer en personne.
@@ -48,29 +124,19 @@ admettre	to admit	4	9466783ed63ee7e55d8780c1e38a452c	Mon fils refuse d'admettre 
 découvrir	to discover	4	7e8b2eb050620a6c2ef2b0183e8bd090	Les enfants adorent découvrir de nouveaux endroits pendant leurs vacances familiales.	Ils ont découvert une nouvelle espèce de papillon dans la forêt.
 subir	to be subjected to	4	e915cd1eb5752ec3d4fcaddc5c998d45	Mon grand-père a du subir une longue convalescence après son accident.	Il a dû subir une opération chirurgicale pour guérir.
 assister	to attend	4	cb67ea6fd624297f31b3e6d261c905e7	Mon mari ne peut pas assister a la conférence de demain matin.	Ils vont assister à la réunion de l'équipe demain matin.
-sénateur / sénatrice	senator	4	b3c7b055bda70cb26222ae39171c4d21	Le sénateur de notre région tient une conférence de presse demain midi.	Elle est devenue sénatrice après avoir remporté les élections.
 dépasser	to go beyond	4	5e5e9ac38ade5e6eefeca5492e9cb1b0	Le gâteau a depasse mes attentes en matière de goût et de présentation.	Les ventes ont dépassé les prévisions pour ce trimestre.
 affirmer	to affirm	4	5d3992dff5ee00da5202bdd74053348d	Le directeur a tenu a affirmer son soutien a tout son personnel.	Il a affirmé son engagement envers la protection de l'environnement.
 couvrir	to cover	4	a563613b7ed6e283447af477783139e8	Maman va couvrir le canapé avec une couverture pour protéger le tissu.	Le journal va couvrir l'événement en direct ce soir.
-financer	to finance	4	3322ff2eab720f4522344d108f4e75d0	La mairie a accepte de financer la renovation de la vieille fontaine.	Ils vont financer un nouveau projet de recherche médicale.
-un processus	a process	4	4f37d34553c94d5e5b1a5758df3b09de	Le processus de fabrication du fromage est long et fascinant a observer.	L'inscription à l'université est un processus long et complexe.
-militaire	military	4	ff72d88a48a42f258c98c13c14304c5f	Mon oncle a passe quinze ans dans le service militaire avant sa retraite.	Il a suivi une formation militaire très rigoureuse.
 frais / fraîche	fresh	4	47e6a3cd67e656d275563147824af95c	Ces fraises sont très fraiches, elles viennent du jardin de mon oncle.	L'eau fraîche est très rafraîchissante par une journée chaude d'été.
-soumettre	to submit	4	3123b0352c99a5f790d633906812a69b	Tu dois soumettre ton dossier de candidature avant la fin du mois.	Il va soumettre son rapport final à son superviseur cette semaine.
-une industrie	an industry	4	4f6021a4fd8ea32e05beb46dc868bb57	L'industrie textile de cette région a beaucoup decline depuis trente ans.	L'industrie automobile joue un rôle clé dans l'économie nationale.
 apparaître	to appear	4	8a44122ccfa8cfd691f0da24b2861020	Une chevreuille vient d'apparaitre soudainement au milieu de la route.	Une étoile brillante a commencé à apparaître dans le ciel du soir.
 une responsabilité	a responsibility	4	c8d0facca249a15e9ac2f3084942a130	Être parent est une grande responsabilité que j'assume fierement chaque jour.	C'est sa responsabilité de s'assurer que tout soit prêt à temps.
 réserver	to reserve	4	4f764d33aa6ff3d48562a73ed05db30c	Je vais réserver des billets pour le spectacle de magie de samedi.	Ils vont réserver une table pour quatre personnes au restaurant ce soir.
 une porte	a door	4	a070308df9db52fe13163c6ce4cedca7	La porte du jardin grince chaque fois qu'on l'ouvre depuis l'hiver.	Fermez la porte à clé lorsque vous sortez, s'il vous plaît.
 une victime	a victim	4	c9c08f373f2d2dda06970f3fb2e4afc4	Cette association vient en aide aux victimes de violences familiales.	Les secouristes ont pris en charge les victimes de l'accident de voiture.
-un territoire	a territory	4	0f89f5237a77781288b6257942b58411	Ce vaste territoire abrite de nombreuses especes animales protegees par la loi.	Ce territoire est revendiqué par plusieurs communautés depuis des siècles.
 pauvre	poor	4	5bb5f5fab27d22d678ff757295a91362	Cette pauvre dame a perdu sa maison dans l'incendie de la semaine dernière.	Le pauvre enfant était affamé et avait besoin d'aide.
-un taux	a rate	4	00b592a3b1eae5b2d6dd1e93db760498	Le taux d'humidite de cette pièce est trop eleve pour les meubles.	Le taux de chômage a diminué de manière significative cette année.
 posséder	to possess / to own	4	2f1e8b90f1a8cee7761b053e7c360586	Mon grand-père possède une vieille ferme dans le sud de la France.	Ils possèdent plusieurs propriétés dans différents pays.
 le matériel	the equipment	4	919d59eca9a42943d2606bfd753ec0b0	Le peintre transporte tout son matériel dans une grande boîte en bois.	Ils ont acheté tout le matériel nécessaire pour le projet de construction.
 cent	hundred	4	d3826d1e0a5d8cb68bf7616d2a5faa7b	Mon arrière-grand-mère a fêté ses cent ans la semaine dernière.	Il a économisé cent euros pour acheter ce vélo.
-constater	to notice	4	3fc822949472b93b8d4541cbbaa5874b	On peut constater que les jours rallongent depuis le mois de janvier.	Nous avons pu constater que le projet était un succès.
-prononcer	to pronounce	4	7bf9b77440447aa68c947ddc67177dab	Mon fils apprend a prononcer correctement les mots français difficiles.	Elle a bien prononcé son discours devant l'assemblée.
 organiser	to organize	4	9ec67a194c63711cb34169331bcf1b74	Ma soeur va organiser une fete surprise pour les cinquante ans de papa.	Ils ont organisé une fête surprise pour son anniversaire.
 blanc / blanche	white	4	b1f2b4b3ee08eb3e7168878aed1a27e0	Mon nouveau chat blanc est très calin avec tout le monde.	La robe de mariée était blanche comme neige.
 une origine	an origin	4	8b3ec0e45f0a15e2b17536271807fd97	L'origine de cette tradition remonte au moyen age, c'est très intéressant.	L'origine de cette tradition remonte à plusieurs siècles.
@@ -110,17 +176,12 @@ battre	to beat	4	2eb1480bf655ce8655ea3341afd0a053	Mon frère a appris a battre l
 pire	worse	4	709880ac9c78a545e6d10278a7fd4760	La situation est pire que ce qu'on pensait après la tempête.	Les choses pourraient toujours être pires, donc soyons reconnaissants.
 adresser	to address	4	de4f6110b64338738e3a83679c7d9655	Le directeur va adresser ses voeux a tout le personnel demain matin.	Elle a décidé de s'adresser directement au responsable pour résoudre le problème.
 préciser	to specify	4	748b034b1ed6592dc05fad8873b39b0f	Pouvez-vous préciser l'heure exacte de votre arrivee a l'aéroport ?	Pourriez-vous préciser vos attentes concernant ce projet ?
-une intervention	an intervention	4	76f3ed9c3c1d1fecab9d439fa607bdea	L'intervention chirurgicale de ma grand-mère s'est très bien passee hier.	L'intervention des pompiers a sauvé la maison de l'incendie.
 un avis	an opinion	4	05ae2724908bd1b46a2067f7e9a73326	J'aimerais avoir ton avis sincere sur ma dernière création artistique.	J'aimerais avoir votre avis sur cette question importante.
-demeurer	to remain / to live	4	bba45f48a662d41d480867bdab850c4c	Mes parents preferent demeurer dans leur maison de campagne pendant l'été.	Ils ont décidé de demeurer amis malgré leurs différences.
 un chiffre	a number	4	1f92c00bde41cdbaf5826a05f62ca86a	Le chiffre des ventes a beaucoup augmente après la nouvelle campagne publicitaire.	Le chiffre d'affaires de l'entreprise a augmenté de 20 % cette année.
-consacrer	to devote	4	b8b512356eab8c32ecb0d2ba1c18b482	Mon mari veut consacrer plus de temps a la peinture cette année.	Elle consacre tout son temps libre à la lecture de romans classiques.
 attirer	to attract	4	0fbe04b577a2ef7c9ed34e2f87f40bdb	Cette belle vitrine attire les regards de tous les passants curieux.	Cette publicité a attiré beaucoup de nouveaux clients.
-divers / diverse	diverse / various	4	8d71f4a526540da016c1f7c826599d1a	Mon frère collectionne divers objets anciens trouves dans les brocantes.	Le programme offre une gamme diversifiée d'activités pour les enfants.
 appliquer	to apply	4	01ad6990e9585f148889e8f4e5de1906	Tu dois appliquer cette creme deux fois par jour sur ta blessure.	Il faut appliquer cette règle de manière cohérente pour tous les employés.
 frapper	to hit	4	64ac341597fee4f8a12c04c203b6e1ac	Le boxeur a frappe son adversaire au visage durant le quatrième round.	Le bruit des vagues qui frappent le rivage était apaisant.
 une peur	a fear	4	589aa2afc39ca2420733a0d02e511408	Mon fils a une peur bleue des araignées depuis qu'il est tout petit.	Sa plus grande peur est de parler en public.
-un parlement	a parliament	4	a5f05b8509f8924234e215ebf8b895cf	Le parlement débat actuellement d'une nouvelle loi sur l'environnement.	Le parlement a voté pour une nouvelle loi sur l'éducation.
 remplir	to fill	4	dfb8db3cfc829259125faeb3046b3676	Je dois remplir le réservoir d'essence avant de partir en voyage.	Elle doit remplir ce formulaire avant la fin de la journée.
 forcer	to force	4	7654a5fc1ed6c4d5c4389ee7ecfc18e5	Mon employeur ne peut pas me forcer a travailler le dimanche matin.	Ils ont dû forcer la porte pour entrer dans la maison.
 une lutte	a struggle	4	c9c83543a7dadf4eba949cc991e82b1b	La lutte contre le cancer du sein progresse grâce a la recherche.	La lutte contre la pauvreté est une priorité pour de nombreuses organisations.
@@ -134,7 +195,6 @@ un numéro	a number	4	df4ef79ac027ce1f6d3599011d34d6c8	J'ai oublie le numéro de
 résoudre	to solve	4	c1926bf0b6b13e60815ba8a5e51ab87d	Le plombier vient de résoudre la fuite dans notre salle de bain.	Nous devons trouver une solution pour résoudre ce problème urgent.
 publier	to publish	4	b9237b250a2e4fcf95723fa7fb418c36	Mon professeur veut publier ses recherches dans une revue scientifique reconnue.	Son premier roman va être publié l'année prochaine.
 une opération	an operation	4	82ee0f59dc179f6d86fc49d17223ae02	Ma cousine a subi une opération au genou la semaine dernière.	L'opération chirurgicale s'est bien déroulée, et le patient récupère maintenant.
-toutefois	however	4	7e674847c7b51b7562cbaba68c86d109	Je trouve cette idée intéressante ; toutefois, je prefere attendre avant de décider.	Il a accepté l'invitation ; toutefois, il ne pourra pas rester longtemps.
 pousser	to push	4	78d5a825c16ba7837e8d0067fc3ecd7a	Mon frère a du pousser la voiture pour la sortir du fosse.	Elle a dû pousser fort pour ouvrir la porte coincée.
 quelqu'un	someone / somebody	4	f4c0839aeef62628b0a0704a3b730b46	Je cherche quelqu'un pour m'aider a porter ces cartons jusqu'au grenier.	Quelqu'un a sonné à la porte ; je vais aller voir qui c'est.
 un discours	a speech	4	0e74a1e662180f38cde22bec66e973c0	Le maire a prononce un discours émouvant lors de l'inauguration du monument.	Le président a prononcé un discours inspirant lors de la cérémonie d'ouverture.
@@ -147,64 +207,4 @@ particulièrement	particularly	4	a15feb67784518fdc372aa88cf2a06b6	Cette vieille 
 commun / commune	common	4	46d64326dfa6d0f7450d9e8a6ff334cc	Le rhume est très commun a cette période de l'année.	Ils ont un intérêt commun pour les voyages et la photographie.
 une compagnie	a company	4	e21fc77fd3fa9e480702d97ca277eb9f	Mon oncle dirige une compagnie de transport routier depuis vingt ans.	Elle travaille pour une grande compagnie de technologie à Paris.
 une intention	an intention	4	67de79f778035e8cc5a041567e693627	Mon fils a l'intention de partir en Australie pendant un an.	Il a exprimé son intention de déménager à l'étranger.
-une autorité	an authority	4	a5d1aa3a7d8720f8229a95702d55f040	L'autorite de mon grand-père a toujours impressionne tous ses petits-enfants.	Les autorités locales ont décidé de construire un nouveau parc.
 anglais / anglaise	English	4	97ae83ceef59f94064d379e842c93858	Mon professeur d'anglais est ne en Ecosse mais habite ici depuis longtemps.	Elle parle couramment anglais et français.
-un échange	an exchange / a trade	4	8849e7617767f715edef73acf063e41e	Cette école organise un échange linguistique avec une école espagnole chaque été.	L'échange culturel entre les deux pays enrichit les deux sociétés.
-un feu	a fire	4	a7347c1c68ad341fcc3bb127850fe0dd	Le feu de cheminée crepite agreablement pendant toute la soirée d'hiver.	Il y a eu un feu dans la cuisine, mais heureusement personne n'a été blessé.
-satisfaire	to satisfy	4	20548ef1f8e3fac90a22d39ea96dd20a	Cette nouvelle voiture électrique va satisfaire les amateurs de technologie moderne.	Nous espérons que le service offert pourra satisfaire vos besoins.
-observer	to observe / to watch	4	501b43d7ebe9ba2179bb2c950eca71bd	On peut observer les etoiles depuis le balcon par cette belle nuit.	Il aime observer les oiseaux dans le parc tous les matins.
-une capacité	a capacity	4	d4be5f5cec08ab012913850956ed5617	Cette salle a une capacité d'accueil de cent cinquante personnes maximum.	Elle a une grande capacité à résoudre les problèmes complexes.
-désigner	to designate	4	a5d96046009156711d69b9ca87928f40	Mon equipe doit désigner un porte-parole avant la conférence de presse.	Ils ont dû désigner un nouveau responsable pour le projet.
-dépendre	to depend	4	135ce3ef8648a00b14a9ea57ee882575	Le succès de ce projet va dépendre de la motivation de chacun.	L'issue de ce projet dépendra de la collaboration de toutes les équipes.
-neuf	nine	4	22770021079fcccea847ee28fdde7b81	Mon fils aine vient de fêter ses neuf ans avec ses amis.	Il a neuf frères et sœurs dans sa famille.
-construire	to build	4	ddb0b269ee9ab355a9bcf631d863923b	Mes parents font construire une veranda dans leur jardin cette année.	Ils vont construire une nouvelle école dans le quartier.
-une scène	a scene	4	fe295c3c731609692257becb9c77fe05	Cette scène tournee en extérieur a demande deux jours de prises.	La scène du crime était minutieusement examinée par les enquêteurs.
-durant	during	4	e770d2f7fe0d6489cd7aa61c4ac48b87	Durant tout l'hiver, je porte un manteau bien chaud chaque matin.	Durant l'été, ils aiment aller à la plage tous les week-ends.
-un secret	a secret	4	352e1dab9f025f3c57eddad0ffb99031	Mon fils m'a confie un secret qu'il a entendu a l'école.	Elle lui a confié un secret qu'elle n'avait jamais révélé à personne.
-un plaisir	a pleasure	4	29741de0435d52046a96ca40f1e345e8	Cuisiner pour mes amis est toujours un grand plaisir pour moi.	C'était un plaisir de vous rencontrer lors de la conférence.
-un message	a message	4	28948cc94a5326d5f9980672874383a7	J'ai reçu un message etrange d'un ancien collègue ce matin.	J'attends toujours sa réponse à mon dernier message.
-une proposition	a proposal	4	9e9104c33d355f095aeb94a105ad4662	Mon frère a refuse la proposition de poste a l'étranger.	Sa proposition de projet a été bien accueillie par l'équipe.
-combien	how much / how many	4	d7ff2e60168dc7b5a0ef729e464c07b3	Combien de temps faut-il pour aller jusqu'au village voisin a pied ?	Combien de personnes seront présentes à la réunion demain ?
-un dossier	a record	4	a48d56740e4eab1ba2ef45e87ddc1437	Je vais ouvrir un nouveau dossier pour ranger ces documents importants.	Son dossier scolaire est excellent avec de bonnes notes dans toutes les matières.
-une absence	an absence	4	3301b6a0762387ad2177b6200c42c185	Son absence en classe inquiète beaucoup ses professeurs cette semaine.	Il a été absent de l'école la semaine dernière à cause d'une grippe.
-cher / chère	expensive / dear	4	31bca501da3ab29da4f812d3c2b06dea	Cette montre suisse est très chère mais elle dure plusieurs générations.	Les produits de cette boutique sont souvent très chers.
-plaire	to please	4	6309f5ec0967dd053bf047bc4b8c024b	Ce nouveau parfum semble plaire enormement a tous nos clients.	Ce cadeau lui a beaucoup plu.
-derrière	behind	4	a422a506f3367099ce47694b14922ae5	Mon chien se cache souvent derrière le canapé quand il a peur.	Il se tenait derrière moi pendant toute la réunion.
-une connaissance	knowledge	4	5f029662e70989e70737647a1c98d024	Mon professeur a une vaste connaissance du moyen age en France.	Elle a une vaste connaissance en histoire de l'art.
-nul / nulle	nil / null	4	98094f4abc0dbc5e0060f04a8789b523	Mes chances de gagner a la loterie restent vraiment nulles malheureusement.	Son intérêt pour le sujet était nul.
-une entrée	an entrance	4	8fe6571a2cf0f1c567b59de2601fe755	L'entrée du musée est gratuite le premier dimanche de chaque mois.	Nous sommes entrés par l'entrée principale du bâtiment.
-signer	to sign	4	2cc8c3412c9d6539fc3232e1cbe98f9d	Tu dois signer le formulaire avant de le rendre au secretariat.	Elle a signé le contrat sans hésitation.
-révéler	to reveal	4	6910809fe6225de6e2327824fea692c9	L'enquête vient de révéler des informations choquantes sur cette entreprise.	Les résultats de l'enquête ont révélé de nouvelles informations.
-couper	to cut	4	29020ac8f4ed3323c5e479026db68b02	Le coiffeur va couper mes cheveux beaucoup plus court ce matin.	Il a dû couper une partie de l'arbre pour l'empêcher de tomber.
-une salle	a room	4	6d59dad841b2d1d88b50a45ecc2200d1	On a loue une grande salle pour le mariage de mon frère.	La salle de réunion était pleine de participants.
-immédiatement	immediately	4	c7f8129a84ff60a41e4f8d0524195cb7	Le médecin nous demande de venir immédiatement aux urgences ce soir.	Il est venu immédiatement à notre secours.
-une équipe	a team	4	43052d6e1de2cec5e51d6ce03687bf1e	Notre equipe de basket vient de remporter le championnat régional cette année.	L'équipe de football a remporté le match hier.
-situer	to situate	4	b25638f82cb021f0a3688a5fbf5e4e95	Notre maison est situee au sommet d'une petite colline boisee.	Cette ville est située sur la côte ouest du pays.
-souligner	to underline	4	89a27b909c6c2dda08cfeed69afddb46	Le directeur a tenu a souligner le travail de mon collègue.	Il a souligné l'importance de respecter les délais.
-une source	a source	4	425cf88d417c52bcbca0e29620695933	L'eau de cette source coule depuis des centaines d'annees sans interruption.	La police n'a pas révélé la source de cette information.
-une pièce	a piece / a room	4	e9cb1e2f8b862771e5adb800d423bb44	Le mecanicien a remplace une pièce defectueuse dans le moteur ce matin.	Ils ont aménagé une nouvelle pièce dans leur maison.
-un crime	a crime	4	c997f855802056ed5c6175da18731894	Ce crime restera dans les annales du quartier pendant très longtemps.	Le crime a été commis la nuit dernière dans le quartier.
-précédent / précédente	previous	4	272ce497659cc734d7141a4b6dd7c0cb	L'episode précédent finissait sur un suspense très bien construit.	Le mois précédent a été très chargé pour elle.
-installer	to install	4	9cfd6764aacd1085bf12c53191e0d408	Le technicien va installer la nouvelle imprimante dans mon bureau demain.	Ils vont installer une nouvelle climatisation dans l'appartement.
-facile	easy	4	43bc77c30d89516fbc3f2e4a5565d97c	Apprendre a faire du vélo n'est pas vraiment facile pour tous.	Ce problème est facile à résoudre.
-augmenter	to increase	4	298447f1c54c9d382b258ee33c7aacc8	Le propriétaire vient encore d'augmenter notre loyer mensuel sans prévenir.	Les prix ont augmenté considérablement cette année.
-le respect	the respect	4	6b3f49d01d955d9ba488d6b82bd9e001	Le respect mutuel est essentiel dans une relation amoureuse durable.	Il est important d'avoir du respect pour les autres.
-une impression	an impression	4	5ceff93dcc3fdd0e45db6cebb59b4082	J'ai eu l'impression que mon frère me cachait quelque chose hier soir.	Son discours m'a laissé une bonne impression.
-octobre	October	4	fdda46864726edffbe38935db7310e78	Les feuilles changent de couleur a partir du mois d'octobre habituellement.	Mon anniversaire est en octobre.
-un / une médecin	a doctor	4	ed29cd4cb905211a7b6c5c51c6a71bfe	Mon frère veut devenir médecin generaliste après ses études a Bordeaux.	Le médecin a recommandé du repos complet.
-fédéral / fédérale	federal	4	418a20137ac727b0c5fbbf7677945b7c	Le gouvernement fédéral va annoncer de nouvelles mesures économiques cet automne.	C'est une loi fédérale qui régit cette question.
-la police	the police	4	b26d52412ef00c7cbc37153d0e73d9e6	La police enquête sur la disparition mystérieuse du chat des voisins.	La police est intervenue pour régler le conflit.
-un coût	a cost	4	31e76b9ffb3f4ae0b9f92f61ca7d7540	Le coût des matériaux de construction a beaucoup augmente cette année.	Le coût de la vie a augmenté dans cette ville.
-réunir	to reunite	4	61f8d9e38de91c4a69af84a363a9f20b	Ma famille va se réunir a Paques pour la première fois depuis longtemps.	Nous devons réunir toutes les informations avant de prendre une décision.
-un contrat	a contract	4	c77a23400d6e162a71528bd355a85bd9	Le contrat de location de cet appartement expire a la fin du mois.	Ils ont signé un contrat de trois ans avec la société.
-normal / normale	normal	4	5f22aced5b36a5a2e10a1816b7239077	Il fait un temps tout a fait normal pour cette période de l'année.	Ce comportement n'est pas normal pour un enfant de son âge.
-une attitude	an attitude	4	492daccdb2e440e17b4eb70f2c67d5a2	Mon professeur de gymnastique adore les élèves avec une attitude positive.	Elle a une attitude positive envers la vie.
-une série	a series	4	5fbef39007862977a189756758482df3	Je vais commencer à regarder cette nouvelle série policière norvegienne ce soir.	Ils ont regardé la dernière série à la télévision.
-une formation	a formation	4	11e37007077744da62f816999ab3ae97	Mon frère a suivi une formation professionnelle en menuiserie pendant deux ans.	Il a suivi une formation intensive en informatique.
-lever	to raise	4	b807710bfa67955684107c9c024ae80f	Le veterinaire va devoir lever ce chien pour le mettre sur la table.	Il a levé la main pour poser une question.
-proche	close	4	590a2062ce8856ef35c6f803397f32ce	Mon frère habite tout proche de la mer depuis trois ans.	Il habite assez près d'ici.
-direct / directe	direct	4	1e13bd1068299b26204ad9bd1c840a5d	On peut prendre un train direct entre Lyon et Marseille très facilement.	Nous avons eu un vol direct vers Paris.
-une faute	a mistake	4	096bd0630cd75c7b8cb0368ec99cb98d	L'arbitre a sanctionne une faute grave commise par notre attaquant.	Faire une faute dans ce test peut affecter votre note.
-figurer	to appear	4	8342496d9faa60c5e58d593a176c504b	Mon nom figure parmi les laureats du concours régional de poésie.	Son nom figure en haut de la liste des participants.
-une pratique	a practice	4	a62b4a387f1f8d900c80dcdbc8488f65	La pratique d'un instrument demande beaucoup de patience et de discipline.	Cette pratique est courante dans de nombreuses cultures.
-finalement	finally	4	323fe02e0db29421748387235d1de0eb	Après trois heures de discussion, ils ont finalement trouve un accord.	Finalement, il a accepté l'offre d'emploi.
