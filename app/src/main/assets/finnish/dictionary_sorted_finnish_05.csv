@@ -1,196 +1,196 @@
-farkut	jeans	5	1d150c10e5cf24d8a1e753237b9291f2	Ostin uudet siniset farkut, koska vanhat olivat kuluneet polvista jo aivan rikki.	Pidän sinisistä farkuista.
-hame	skirt	5	d24cbd88d31dfcfdc244ed5fc0688a95	Hän pukeutui kesäjuhliin kukalliseen hameeseen, joka liehui kauniisti lämpimässä tuulessa.	Tämä hame on punainen.
-mekko	dress	5	b7bb34747503d2cddf16ce1ac2b77ae2	Tyttö halusi ostaa juhliin uuden mekon, mutta kaupasta ei löytynyt sopivaa kokoa.	Pidän kauniista mekosta.
-puku	suit / costume	5	6909e8ee6de7e9272511afe191c9917b	Isä puki ylleen tumman puvun, koska hänellä oli tärkeä työhaastattelu aamulla.	Hänellä on uusi puku.
-sukat	socks	5	3231e5888dab3a1355eed1577aee34ef	Talvella jalkani palelevat, joten pidän aina paksuja villasukkia kotona sisälläkin.	Missä puhtaat sukat ovat?
-hattu	hat	5	44f0cb4e4a75386acee002070d39ce27	Aurinko paistoi niin kirkkaasti, että otin leveälierisen hatun mukaan rannalle.	Pää lämpenee hatun alla.
-reppu	backpack	5	6a11247430771d8e8ecb315f12f2cdf6	Pakkasin reppuun eväät, juomapullon ja sadetakin ennen pitkää vaellusretkeä metsään.	Reppu on liian raskas.
-lompakko	wallet	5	6473a6033836a629dffe1bca21747969	Huomasin kassalla, että lompakko oli unohtunut kotiin, enkä voinut maksaa ostoksia.	Lompakko on taskussa.
-oranssi	orange	5	ac40223daf8fbc1e087d94887425441d	Syksyllä puiden lehdet muuttuvat kauniin oransseiksi ja keltaisiksi ennen kuin ne putoavat.	Pidän oranssista väristä.
-ruskea	brown	5	6d9051a4db09be365d25070f9f66d39f	Ostin ruskeat nahkakengät, koska ne sopivat hyvin sekä farkkujen että pukuhousujen kanssa.	Kissa on ruskea.
-harmaa	gray	5	9aa2d954b83bfe7807eaf94ad2da6d66	Taivas oli koko päivän harmaa ja sateinen, joten jäimme mieluummin sisälle lukemaan.	Sää on harmaa tänään.
-vaalea	light / pale (color)	5	cfc8e059e764e99e27f9d22a17da3d14	Hänellä on vaaleat hiukset ja siniset silmät, aivan kuten hänen äidillään.	Seinä on vaalea.
-tumma	dark	5	e458bad85e9428963f3db92e71a69c8b	Pidän enemmän tummasta suklaasta kuin maitosuklaasta, koska se ei ole liian makeaa.	Huone on tumma.
-kassa	checkout / cash register	5	58cebdd803d2ff343a138d824d6ebf2e	Kaupan kassalla oli pitkä jono, joten jouduin odottamaan vuoroani lähes kymmenen minuuttia.	Maksa tavarat kassalla.
-myyjä	salesperson / clerk	5	a0a857f0a20ab9dc367859fe2378fbe7	Ystävällinen myyjä auttoi minua löytämään oikean koon ja suositteli sopivaa väriä.	Myyjä on kiltti.
-asiakas	customer	5	05a8e65048ab01dc80804d2a276a2486	Hyvä myyjä kohtelee jokaista asiakasta kohteliaasti, vaikka kauppaa ei lopulta syntyisikään.	Asiakas odottaa kassalla.
-myydä	to sell	5	f6dcc319b88d4ca3268cd694402b2481	Tämä kauppa myy sekä tuoreita vihanneksia että paikallisten viljelijöiden hunajaa ja munia.	He myyvät kirjoja.
-ostokset	shopping / groceries	5	7a8e058c4511f0b91c1fcb43beef3626	Kävin lauantaina kaupassa ja kannoin raskaat ostokset itse neljänteen kerrokseen ilman hissiä.	Ostokset ovat pöydällä.
-valita	to choose	5	5be2d86530736ad15b06239fa1cae893	Oli vaikea valita kahden takin väliltä, koska molemmat sopivat minulle erittäin hyvin.	Sinä saat valita.
-koko	size	5	37f525e2b6fc3cb4abd882f708ab80eb	Nämä kengät ovat väärää kokoa, joten minun täytyy vaihtaa ne suurempaan pariin.	Mikä koko sinulla on?
-sopia	to fit / to suit	5	cbc42a6db7384f0b11c51abfd024e517	Tämä takki sopii sinulle täydellisesti, ja sen väri korostaa kauniisti silmiäsi.	Tuo paita sopii sinulle.
-tuote	product	5	fc337c523e26f94b56555252d3486816	Tämä tuote on valmistettu kotimaisista raaka-aineista, eikä se sisällä lainkaan keinotekoisia lisäaineita.	Tuote on hyllyssä.
-tavara	goods / stuff	5	c71d3ae087b4c1cc6d8cf52af7f8e9c9	Muuton aikana huomasin, kuinka paljon turhaa tavaraa olin vuosien varrella kotiini kerännyt.	Tämä tavara on kallista.
-käteinen	cash	5	8420182ab03c36c7d469218ce6fb2866	Monessa kahvilassa ei enää oteta vastaan käteistä, vaan kaikki maksetaan kortilla tai puhelimella.	Maksan käteisellä.
-sentti	cent	5	f081384a528eecbad73fae72f56a649b	Kaupassa annetaan vaihtorahat usein viiden sentin tarkkuudella, koska pieniä kolikoita ei juuri käytetä.	Se maksaa viisikymmentä senttiä.
-maksu	payment	5	6d68045c224456bde46cf60a557899d0	Vuokran maksu erääntyy aina kuukauden ensimmäisenä päivänä, joten maksan sen yleensä etukäteen.	Maksu meni läpi.
-halpa	cheap	5	5d702df5d89d096e72eabb112aa11289	Tämä ravintola on yllättävän halpa, ja silti annokset ovat suuria ja todella maukkaita.	Tämä paita on halpa.
-kallis	expensive	5	ea4f419b4c40cac4b53a810ef686da1d	En ostanut sitä takkia, koska se oli aivan liian kallis opiskelijan budjettiini nähden.	Auto on kallis.
-ilmainen	free (of charge)	5	763bf6afd06e55fbe97fad77c53c0e9e	Museoon on sunnuntaisin ilmainen sisäänpääsy, joten kannattaa käydä silloin koko perheen voimin.	Sisäänpääsy on ilmainen.
-alennus	discount	5	479b44815b265968ac0e0fd442fbc2f2	Sain kassalla kymmenen prosentin alennuksen, koska minulla oli kaupan oma kanta-asiakaskortti.	Tuotteessa on alennus.
-tarjous	offer / deal	5	814cae852b9360c22acc2ebc1473a12f	Kaupassa oli hyvä tarjous kahvista, joten ostin heti kolme pakettia varastoon.	Tämä on hyvä tarjous.
-kuitti	receipt	5	5c6966f06fcd93da01d253a991e38050	Säilytä kuitti huolellisesti, sillä ilman sitä et voi palauttaa tai vaihtaa tuotetta.	Saanko kuitin?
-lasku	bill / invoice	5	1fde52646f8280affe21295bb2f174c3	Sähkölasku oli tänä talvena tavallista suurempi, koska pakkaset olivat pitkään hyvin kovia.	Lasku tuli postissa.
-vaihtaa	to exchange / to change	5	f5104781423525d42f9a77e55e585121	Haluaisin vaihtaa tämän paidan suurempaan kokoon, sillä se on minulle hieman liian pieni.	Voinko vaihtaa tämän?
-pankki	bank	5	a9eacaba2ebd4bf54f362b109ddfb4ed	Kävin pankissa nostamassa käteistä ja sopimassa lainasta uutta asuntoa varten.	Pankki on kiinni.
-yhteensä	in total / altogether	5	d02f4c8e650fecb4bdf6f1fa235afad3	Ostokset maksoivat yhteensä neljäkymmentä euroa, mikä oli hieman enemmän kuin olin suunnitellut.	Se on yhteensä kymmenen euroa.
-käydä töissä	to go to work / to be employed	5	58e0539f8a4195641fa59de38dbf177f	Äitini käy töissä sairaalassa ja tekee usein pitkiä vuoroja myös viikonloppuisin.	Hän käy töissä.
-ammatti	profession / occupation	5	d2c4bfa14488473ffef6b86c47b751ff	Opettajan ammatti on vaativa mutta hyvin palkitseva, koska saa seurata lasten oppimista läheltä.	Mikä on sinun ammattisi?
-työntekijä	employee / worker	5	47a8bc05c41f61ec524ab4fc2602cdce	Yrityksessä on yli sata työntekijää, ja moni heistä on työskennellyt siellä jo vuosikymmeniä.	Hän on hyvä työntekijä.
-pomo	boss	5	df66801ad38f0fd2994608d9b3be80c9	Pomoni antoi minulle vastuullisen uuden tehtävän, koska hän luotti taitoihini ja kokemukseeni.	Pomo on toimistossa.
-johtaja	director / leader / manager	5	85e6e4874f5ee0f8f7f6ca94bb234c15	Yrityksen uusi johtaja esitteli kokouksessa kunnianhimoiset suunnitelmat ensi vuoden kasvua varten.	Johtaja pitää puheen.
-palkka	salary / wage / pay	5	871a907a0daf0ebe3a12b992296a9aca	Palkka maksetaan tilille aina kuun viimeisenä päivänä, joten laskut kannattaa maksaa vasta sitten.	Palkka tuli tilille.
-tehtävä	task / assignment	5	136310f2edeb75c0b6755e3cea9bb11f	Pomo antoi minulle vaikean tehtävän, jonka piti olla valmis jo seuraavan viikon perjantaina.	Tämä tehtävä on helppo.
-kokemus	experience	5	ced517931fc69bcc3168e2f523b4c2c3	Hänellä on monen vuoden kokemus opettamisesta, joten hän osaa selittää vaikeatkin asiat selkeästi.	Minulla on vähän kokemusta.
-taito	skill	5	79726acf3e43312650100aa5817af048	Kielten oppiminen vaatii kärsivällisyyttä, mutta jokainen uusi taito avaa ovia uusiin mahdollisuuksiin.	Hänellä on hyvä taito.
-oppilas	pupil / student	5	2664274e7f6f56c565470797478cb406	Luokan ahkerin oppilas teki kaikki tehtävät huolellisesti ja auttoi mielellään myös muita.	Oppilas lukee kirjaa.
-opettaa	to teach	5	5804ff3ceccffde0914f755cbcdde969	Isoäitini opetti minulle, kuinka leivotaan perinteinen ruisleipä alusta loppuun saakka itse.	Hän opettaa matematiikkaa.
-yliopisto	university	5	02ab1bb0da64009560f91b47bba81cb0	Muutin syksyllä toiseen kaupunkiin, kun pääsin viimein opiskelemaan lääketiedettä arvostettuun yliopistoon.	Hän opiskelee yliopistossa.
-luokka	class / grade / classroom	5	879d746f25092109a5966ac96d63b523	Koko luokka lähti yhdessä leirikoululle, ja matkasta tuli kaikille unohtumaton kokemus.	Luokka on tyhjä.
-koe	test / exam	5	1e06ceffa8540915d9d193832870adea	Minulla on huomenna tärkeä koe historiasta, joten luen tänä iltana myöhään asti.	Koe oli vaikea.
-kokeilla	to try / to test	5	2c4950305f7e5fef74821bb6d7e70c3a	Halusin kokeilla takkia ennen ostamista, joten kysyin myyjältä, missä sovituskopit sijaitsevat.	Saanko kokeilla tätä?
-kurssi	course	5	50a44048b81dc7b6ff1940fa07995dae	Ilmoittauduin syksyllä espanjan kurssille, koska haluaisin oppia kielen ennen ensi kesän matkaa.	Kurssi alkaa maanantaina.
-aine	subject / essay / substance	5	c36047b7cc1a468e193493259445552c	Lempiaineeni koulussa oli aina historia, koska opettaja kertoi tapahtumista todella mukaansatempaavasti.	Mikä aine on lempiaineesi?
-historia	history	5	7967791d08c33bfa3caa5e521b7957bb	Suomen historia on täynnä mielenkiintoisia käänteitä, ja niihin tutustuminen auttaa ymmärtämään nykypäivää paremmin.	Pidän historiasta.
-kynä	pen	5	071c31f7f0a7a2a1f157b24aed184de5	Lainaatko kynäsi, sillä omani jäi kotiin enkä voi nyt tehdä muistiinpanoja luennolla.	Missä minun kynäni on?
-laskea	to count / to calculate	5	bf3bae1c9961a4869b1d27cbec4d686e	Pieni lapsi opetteli laskemaan sormillaan yhdestä kymmeneen ja oli ylpeä jokaisesta onnistumisesta.	Osaatko laskea kymmeneen?
-unohtaa	to forget	5	e97aae9ed36a1cbb22546b147939474e	Älä unohda ottaa sateenvarjoa mukaan, koska sääennusteen mukaan iltapäivällä alkaa sataa kovasti.	Älä unohda avaimia!
-vastaus	answer	5	82e534b056c07318bde847ab84172244	Lähetin sähköpostin viime viikolla, mutta en ole vieläkään saanut siihen mitään vastausta.	Tämä vastaus on oikein.
-selittää	to explain	5	23a8701d5800463438ff2f578c82d22d	Opettaja selitti vaikean asian niin selkeästi, että jopa minä ymmärsin sen heti.	Voitko selittää tämän?
-esimerkki	example	5	3531e8741364819e51c47a8a772a26a8	Opettaja antoi konkreettisen esimerkin arkielämästä, jotta abstrakti käsite olisi helpompi ymmärtää.	Anna minulle esimerkki.
-toimisto	office	5	ff51e5608bac3b34ea1114feff3e3426	Uusi toimisto sijaitsee aivan keskustassa, joten työmatkani lyheni merkittävästi muuton jälkeen.	Toimisto on kolmannessa kerroksessa.
-kone	machine	5	4134ba620c5a8930a7e7e15dd34dceb2	Tehtaan vanha kone hajosi keskellä työpäivää, joten tuotanto jouduttiin keskeyttämään useaksi tunniksi.	Kone on rikki.
-sähköposti	email	5	d4bf40da7ea4bffb68f8569fcd796dcb	Lähetän sinulle kokouksen muistiinpanot sähköpostilla heti, kun olen ehtinyt kirjoittaa ne puhtaaksi.	Sain sinulta sähköpostin.
-kokous	meeting	5	8c2533fa7d60d8d7b13aedae2bb63dab	Aamun kokous venyi yli tunnin, koska uudesta projektista oli paljon keskusteltavaa ja päätettävää.	Kokous alkaa kohta.
-projekti	project	5	05bd6454e92b8304106240c0ffeee9e5	Uusi projekti vaatii koko tiimiltä paljon työtä, mutta lopputulos tulee varmasti olemaan vaivan arvoinen.	Projekti on valmis.
-suunnitella	to plan / to design	5	bd57a0f966cd66ae312048e61f93e3b2	Aloimme jo hyvissä ajoin suunnitella ensi kesän lomamatkaa, jotta saisimme halvemmat lennot ja majoituksen.	Suunnittelen uutta taloa.
-suunnitelma	plan	5	a1a7446acffae599fd2d2bd90515f7ea	Meillä oli hyvä suunnitelma matkaa varten, mutta sade muutti kaikki suunnitelmamme viime hetkellä.	Tämä on hyvä suunnitelma.
-yritys	company / business / attempt	5	c461f1eb473b9b2a71a366707a42a39f	Hän perusti oman yrityksen viime vuonna ja palkkasi jo kymmenen työntekijää.	Isäni omistaa pienen yrityksen.
-palvelu	service	5	ede869ce5d18d9c6073e2b0724db923b	Tämän hotellin palvelu oli erinomaista, ja henkilökunta auttoi meitä kaikessa ystävällisesti.	Palvelu oli todella hyvää.
-johtaa	to lead / to manage	5	efc435f53022a389153d78c90c1e1936	Hän johtaa suurta yritystä, jossa työskentelee satoja ihmisiä eri puolilla maata.	Hän johtaa tiimiä.
-kiire	hurry / rush	5	30dd0f8be2e3f88447d79585ae3a1252	Minulla on tänään kova kiire, koska minun pitää ehtiä junaan ennen kolmea.	Minulla on kiire.
-loma	holiday / vacation	5	74244982fc6bdd86bbe0b5d69e5616b7	Ensi kesänä lähdemme pitkälle lomalle Espanjaan ja vietämme siellä kokonaisen kuukauden.	Olen nyt lomalla.
-tauko	break / pause	5	6b9789f6909730c499bc4f853d5bcb31	Pidetään lyhyt tauko, juodaan kahvit ja jatketaan kokousta sen jälkeen.	Pidän pienen tauon.
-poliisi	police / police officer	5	6e11370cb4350ea390f8145b84075659	Poliisi pysäytti auton risteyksessä ja pyysi kuljettajaa näyttämään ajokorttinsa.	Poliisi tuli paikalle.
-saapua	to arrive	5	2d6aa99e50a293e02a492e0629d32ef3	Juna saapuu asemalle kymmenen minuutin kuluttua, joten meidän kannattaa kiirehtiä laiturille.	Vieraat saapuvat pian.
-lentää	to fly	5	b54ba99bdb72977118719df305d6fe47	Lennämme huomenna Helsingistä Pariisiin, ja matka kestää lentokoneella noin kolme tuntia.	Lintu lentää korkealla.
-lento	flight	5	c83d09682fec57e255a1b127bfc3523a	Aamun lento Lontooseen myöhästyi kaksi tuntia huonon sään takia.	Lento oli pitkä.
-lentokenttä	airport	5	42238a09e59c46c0edce560700b14efa	Meidän pitää olla lentokentällä kaksi tuntia ennen lähtöä, jotta ehdimme turvatarkastukseen.	Menemme lentokentälle.
-lentokone	airplane	5	651b1ed96adad3bbbbd18a7bb7820eba	Lentokone nousi ilmaan ajallaan, vaikka ulkona satoi kaatamalla ja tuuli oli navakka.	Lentokone laskeutui.
-passi	passport	5	b9a58c1892016f48e330ce62010609c4	Muista ottaa passi mukaan, koska ilman sitä et pääse maasta toiseen.	Missä passini on?
-asema	station	5	b74f2d25e3c760e6a2eb1c490f808317	Tapaan sinut rautatieaseman edessä kello viisi, ja sieltä jatkamme yhdessä keskustaan.	Olen asemalla.
-taksi	taxi	5	b0b6fc9fc68b8bfbe757b402b0d0b4d1	Otimme taksin lentokentältä hotelliin, koska matkalaukkumme olivat liian raskaat kantaa.	Tilaan taksin.
-polkupyörä	bicycle	5	58023c932c8897d5d01cec68e61d4eb7	Ostin uuden polkupyörän keväällä ja ajan nyt sillä joka aamu töihin.	Minulla on polkupyörä.
-pyörä	bike / wheel	5	9e0a13048ef6f94f79e01453dc41b217	Pyörän takarengas puhkesi matkalla, joten jouduin kävelemään loppumatkan kotiin.	Pyörä on rikki.
-laiva	ship / boat	5	a0ada551aca0592e1b1b8ffd06b6ab42	Matkustimme laivalla Tukholmaan, ja yöllä nukuimme pienessä hytissä kannen alla.	Laiva lähtee satamasta.
-vene	boat	5	97c6fb38cd7727c1360029f57b1e4c5e	Soudimme veneellä saareen ja vietimme siellä koko päivän uiden ja kalastaen.	Vene keinuu aalloilla.
-varata	to reserve / to book	5	d668439491c4709eb27db5c80a82e5bc	Varasin pöydän ravintolasta kahdelle, koska halusin yllättää puolisoni hääpäivänämme.	Varaan lippuja.
-suunta	direction	5	7d9ad07584a2d2ed85531f06fcb7de40	Eksyimme metsässä emmekä enää tienneet, mihin suuntaan meidän pitäisi kävellä.	Menemme samaan suuntaan.
-kartta	map	5	af991f557170bca56bac07942519d74c	Katsoin kartasta lähimmän reitin keskustaan, koska puhelimeni akku oli loppumassa.	Katson karttaa.
-kulma	corner	5	3147cab240178903d39fe5b55dacc47b	Kaupan kulmassa on pieni kioski, josta voit ostaa lehtiä ja makeisia.	Odota tuolla kulmassa.
-silta	bridge	5	076e2da54ed7d4ea843f5afab2e3f29e	Joen yli kulkee vanha kivisilta, jota pitkin pääsee kävellen toiselle puolelle.	Ylitämme sillan.
-puisto	park	5	16ea838130ae6009e3dd62f637558b94	Kävelimme puistossa auringonpaisteessa ja istuimme järven rannalla penkille syömään eväitä.	Lapset leikkivät puistossa.
-keskusta	city center / downtown	5	dd4c500c5ab360e3f3f4789684f774f8	Kaupungin keskustassa on paljon kauppoja, ravintoloita ja kahviloita aivan torin ympärillä.	Menen keskustaan.
-kylä	village	5	795925967f1b7f68483a4b77ce811ed3	Mummoni asuu pienessä kylässä, jossa on vain muutama talo ja yksi kauppa.	Kylä on rauhallinen.
-kirkko	church	5	1675b2887a820606abc974ef9f8b101f	Vanha kirkko seisoo kukkulalla, ja sen tornista näkee kauas yli koko kaupungin.	Kirkko on suuri.
-kerros	floor / story	5	a45c436bda44f5535cbaa247764ab41e	Asuntomme on talon kolmannessa kerroksessa, joten näemme ikkunasta kauniin näkymän puistoon.	Asun viidennessä kerroksessa.
-vapaa	free / vacant	5	22e1947f0daafdab0acd947ad026f9ac	Onko tämä paikka vapaa, vai odottaako tähän pöytään vielä joku muu?	Tuoli on vapaa.
-kaukana	far away	5	e88541c8e95a58df91aa03124371cdc5	Mökkimme on kaukana kaupungista, joten sinne ajaa autolla melkein kolme tuntia.	Koti on kaukana.
-vieressä	next to / beside	5	a8de8d743eb9f2c211283b0acba45db0	Istuin junassa ikkunan vieressä ja katselin maisemia, jotka vilisivät ohi nopeasti.	Hän istuu vieressäni.
-takana	behind	5	b54fb14cc30054167471f3abbc0282ec	Auto pysäköi talon takana olevalle parkkipaikalle, jotta se ei häiritsisi naapureita.	Koira on takana.
-edessä	in front of	5	9893eee19a40a2c24f5c944016f4eebe	Tapaamme kaupan edessä kello kuusi ja menemme sieltä yhdessä elokuviin keskustaan.	Seison oven edessä.
-pohjoinen	north	5	0b8a50e04410a8d973b72c5dfeb3c08d	Pohjoisessa talvi on pitkä ja pimeä, mutta kesällä aurinko ei laske ollenkaan.	Lähdemme pohjoiseen.
-etelä	south	5	9e64f475f2261e9b841f5b4dd9787bdd	Linnut muuttavat syksyllä etelään, koska siellä on lämpimämpää ja ruokaa riittää talvella.	Tuuli puhaltaa etelästä.
-itä	east	5	b5dddac8a539a207484d6613f0bf2105	Aurinko nousee idästä joka aamu ja laskee länteen illalla horisontin taakse.	Katson itään.
-länsi	west	5	862833333b8d6e8795f158f1d81bb033	Lännessä taivas värjäytyi punaiseksi, kun aurinko laski hitaasti meren taakse.	Tuuli kääntyi länteen.
-pysähtyä	to stop (oneself)	5	8f942408afcef6538f03cf9f94cc4ccd	Bussi pysähtyi pysäkille, ja monta matkustajaa nousi kyytiin sateenvarjot kädessä.	Auto pysähtyi.
-liikenne	traffic	5	2c7141af17354907d3652ab24ff29b1c	Aamuruuhkassa liikenne oli niin tukossa, että myöhästyin kokouksesta puoli tuntia.	Liikenne on vilkasta.
-WC	toilet / restroom	5	26748b021bdc8922f93d9bf054cbec5d	Anteeksi, missä WC sijaitsee, koska en löydä sitä mistään tästä ravintolasta?	Missä on WC?
-aurinkoinen	sunny	5	e85b90653ccfcccae3f1062ca7fbd37e	Tänään on kaunis ja aurinkoinen päivä, joten lähdetään piknikille puistoon järven rannalle.	Sää on aurinkoinen.
-pakkanen	freezing cold / sub-zero frost	5	b2280524ad129af5fc40cc4764c4175a	Ulkona on kova pakkanen, joten pukeudu lämpimästi, ettet palele bussipysäkillä odottaessasi.	Ulkona on pakkanen.
-lämpötila	temperature	5	8099c097d3cf092b4a2a1abe02da82ec	Lämpötila laski yöllä alle nollan, ja aamulla maa oli kokonaan kuuran peitossa.	Lämpötila nousee.
-aste	degree	5	ed3f37f9305c50fa628fff11a41b23a8	Ulkona on tänään kaksikymmentä astetta lämmintä, joten voi pukeutua kevyesti ja jättää takin kotiin.	Nyt on kymmenen astetta.
-myrsky	storm	5	03a90a0b5828eb23d32092cda0dca554	Yöllä raivosi voimakas myrsky, joka kaatoi puita ja katkaisi sähköt koko kylästä.	Myrsky lähestyy.
-pilvinen	cloudy	5	1197255ca65af30a7c4fe0fe273a5fbf	Taivas oli koko päivän pilvinen ja harmaa, mutta sadetta ei lopulta tullut ollenkaan.	Sää on pilvinen.
-kuiva	dry	5	bd73af4a45acc2e5c66064aaa4df56a1	Kesä oli niin kuiva, että nurmikko kellastui ja monet kasvit kuihtuivat puutarhassa.	Maa on kuiva.
-märkä	wet	5	627df58ed11237dcd0726d8cb38278b9	Vaatteeni kastuivat sateessa läpimäriksi, joten ripustin ne kuivumaan kotona patterin päälle.	Hiukseni ovat märät.
-kuu	moon / month	5	82d2934b974f475760420ddc79d47eb2	Täysikuu paistoi kirkkaana taivaalla, ja sen valossa pystyi kävelemään metsäpolulla ilman taskulamppua.	Kuu loistaa taivaalla.
-tähti	star	5	354a33d04173f9c32d1d8a301f9ccba9	Selkeänä yönä taivaalla näkyy tuhansia tähtiä, jotka tuikkivat kaukana avaruuden syvyyksissä.	Tähti tuikkii taivaalla.
-ympäristö	environment / surroundings	5	2104ec4d5453bc538bb6b5ab4734b66b	Meidän on suojeltava ympäristöä, jotta tulevillakin sukupolvilla olisi puhdas luonto ja raikas ilma.	Ympäristö on kaunis.
-hiekka	sand	5	1dbebc0c7ccaa823d2f18081653e9b28	Lapset rakensivat rannalla hiekasta suuren linnan, joka kuitenkin sortui ensimmäisen aallon mukana.	Hiekka on lämmintä.
-vuori	mountain	5	1154216b509918ad6f6c80252fd1dd4e	Kiipesimme korkealle vuorelle, ja huipulta avautui upea näkymä yli koko laakson.	Vuori on korkea.
-mäki	hill	5	6339bcead0100c8f46c2a499605791cb	Lapset laskivat talvella pulkalla jyrkkää mäkeä alas ja kiipesivät sitten taas ylös.	Juoksen mäkeä ylös.
-lehti	leaf / sheet	5	f2bbc148bf7d1ec43e79c957a68e9d25	Syksyllä puiden lehdet muuttuvat keltaisiksi ja punaisiksi ennen kuin ne putoavat maahan.	Lehti putosi puusta.
-kasvi	plant	5	a7e807271ad9218b43f52ab39f0a4a6a	Ostin ikkunalaudalle uuden kasvin, jota pitää kastella kerran viikossa ja pitää valossa.	Kasvi tarvitsee vettä.
-ruoho	grass	5	ed30cc61aba57b9894a4c5b924586db8	Kesällä makasimme puiston pehmeällä ruoholla ja katselimme pilvien liikkumista taivaalla.	Ruoho on vihreää.
-lehmä	cow	5	edbbd8e7093a697bb66895dd0d100838	Maatilan lehmät laidunsivat rauhallisesti niityllä ja söivät tuoretta ruohoa koko kesäisen päivän.	Lehmä syö ruohoa.
-karhu	bear	5	df7f3018fb42f5e355f8a49c83410143	Metsässä liikkuessasi sinun kannattaa olla varovainen, sillä alueella on nähty karhuja viime aikoina.	Karhu nukkuu talvella.
-hiiri	mouse	5	33c6139430172e2f1d583ff3a87c0c0c	Pieni hiiri juoksi keittiön lattian yli ja katosi nopeasti jääkaapin taakse piiloon.	Hiiri on pieni.
-saari	island	5	297829cf5b8ef1750eb986a54da49506	Vietimme kesäloman pienellä saarella, jonne pääsi vain veneellä mantereen pienestä satamasta.	Saari on kaukana.
-pelto	field (cultivated)	5	875ea9708939e25d3a5e14cb40e502a4	Viljelijä kynti peltonsa keväällä ja kylvi sinne ohraa, joka kasvoi kesän aikana korkeaksi.	Pelto on suuri.
-kolmetoista	thirteen	5	adfac890cb91a5819f5af517fca77a4a	Tyttäreni täyttää ensi viikolla kolmetoista vuotta, joten järjestämme hänelle pienet syntymäpäiväjuhlat kotona.	Kello on kolmetoista.
-neljätoista	fourteen	5	013e53c42819bc0fde1424d860e29fb8	Luokassa on yhteensä neljätoista oppilasta, mutta tänään kaksi heistä on sairaana kotona.	Minulla on neljätoista euroa.
-viisitoista	fifteen	5	9b5c83fec6c97150f958798f8233908d	Bussi lähtee tasan viisitoista minuuttia yli kahdeksan, joten meidän kannattaa lähteä jo nyt.	Meitä on viisitoista.
-kuusitoista	sixteen	5	77b36a518133731cb24970f2ae097bc3	Tyttäreni täyttää ensi viikolla kuusitoista vuotta ja haluaa pitää ison juhlan ystävilleen.	Hän on kuusitoista vuotta vanha.
-kolmekymmentä	thirty	5	8afb4c28a4468967defe8650ec41e7ad	Junaan jäi vielä kolmekymmentä vapaata paikkaa, joten löysimme helposti istumapaikat vierekkäin.	Maksoin kolmekymmentä euroa.
-neljäkymmentä	forty	5	036e7d168555b78b4b886addc206907f	Työpaikalla on nykyään lähes neljäkymmentä työntekijää, vaikka aluksi meitä oli vain kourallinen.	Hän on neljäkymmentä vuotta vanha.
-viisikymmentä	fifty	5	84bf1f70bb027eea71729a03b0f99ed1	Isoäitini ja isoisäni viettivät juuri viisikymmentä vuotta yhdessä ja juhlivat kultahäitään koko suvun kesken.	Tähän mahtuu viisikymmentä ihmistä.
-kuusikymmentä	sixty	5	08b76b36a6f9781f5312b0719bbc86ad	Auto kulki vain kuusikymmentä kilometriä tunnissa, koska tiellä oli paljon lunta ja jäätä.	Nopeusrajoitus on kuusikymmentä.
-kolmas	third	5	88ab782e5aed920c06f36ed231984da9	Tämä on jo kolmas kerta tällä viikolla, kun unohdan avaimeni kotiin ja jään ulos.	Hän oli kolmas.
-sekunti	second (of time)	5	cec8549f3172dd264b86ecc2615c4ef8	Juoksija paransi ennätystään vain yhden sekunnin, mutta se riitti voittoon erittäin tiukassa kisassa.	Odota yksi sekunti.
-aamupäivä	morning / forenoon	5	4b322f7693d3160710365eb4f289ae7d	Vietin koko aamupäivän siivoten asuntoa, ja vasta lounaan jälkeen ehdin istua hetkeksi alas.	Tapaamme huomenna aamupäivällä.
-tammikuu	January	5	da8a949fd73186f3f08c53cf64d651a7	Tammikuu on usein vuoden pimein ja kylmin kuukausi, joten monet kaipaavat jo kevään valoa.	Tammikuu on kylmä.
-helmikuu	February	5	a0afd904d50d111ac78a4b9e07d40b20	Helmikuu on lyhyt kuukausi, mutta täällä pohjoisessa lunta voi tulla silloin enemmän kuin koskaan.	Helmikuussa on talvi.
-maaliskuu	March	5	30165ba84fe273617a6f7b8dfcb2b417	Maaliskuussa päivät pitenevät nopeasti, ja aurinko alkaa vihdoin lämmittää selkää ulkona kävellessä.	Maaliskuu on jo kevättä.
-huhtikuu	April	5	a4f0445b57f1bbbf6c5d8383000fa3dd	Huhtikuussa lumi sulaa kaduilta, mutta illat ovat vielä niin viileitä, että takki on tarpeen.	Huhtikuu tuli nopeasti.
-toukokuu	May	5	b219f0053794449f6afa12329986c18e	Toukokuu on ihana kuukausi, kun puut puhkeavat lehteen ja koko luonto herää eloon kevään myötä.	Toukokuussa on lämmintä.
-kesäkuu	June	5	1ff02c2c0b54bb73b86848ac4a76c547	Kesäkuussa aurinko ei juuri laske täällä pohjoisessa, joten yöt ovat yhtä valoisia kuin päivät.	Kesäkuu on kaunis.
-heinäkuu	July	5	30be1753158722f5156a8c34c342c119	Heinäkuu on Suomessa tärkein lomakuukausi, jolloin moni kaupunki tyhjenee ihmisten lähtiessä mökeille.	Heinäkuussa on loma.
-elokuu	August	5	51fdd46d49cb8ccf0b81a3d564cbea23	Elokuun loppupuolella illat alkavat jo viilentyä, ja ensimmäiset merkit syksystä näkyvät puiden lehdissä.	Elokuu on lämmin.
-syyskuu	September	5	b8bb63b8a74163d227eddf98c74ca791	Syyskuussa koulut alkavat taas, ja kaupungin kadut täyttyvät kiireisistä opiskelijoista ja työmatkalaisista.	Syyskuu on syksyä.
-lokakuu	October	5	f521826bfc7da4d26189552bf1484031	Lokakuussa puiden lehdet muuttuvat punaisiksi ja keltaisiksi, ja niitä putoaa maahan tuulen mukana.	Lokakuu on pimeä.
-marraskuu	November	5	3f39c9eb8024a78d7578c27495ecfa5b	Marraskuu tuntuu monesta pisimmältä kuukaudelta, koska säät ovat harmaita eikä lunta ole vielä satanut.	Marraskuu on harmaa.
-joulukuu	December	5	fa3ff0f2024225a1645f2ed37ec772cf	Joulukuussa kaupungit täyttyvät valoista ja ihmisistä, jotka kiertävät kauppoja etsimässä sopivia lahjoja läheisilleen.	Joulukuu on kiireinen.
-joulu	Christmas	5	338db474a431610978a3c6fe27a98e74	Vietämme joulun aina mummolassa, jossa koko suku kokoontuu yhteisen ruokapöydän ääreen iltaa viettämään.	Hyvää joulua!
-yöllä	at night	5	8d5a7144efc250c7fdde506e14b67154	Heräsin yöllä kovaan ääneen ja menin tarkistamaan, oliko ulko-ovi varmasti kunnolla lukossa.	Nukun hyvin yöllä.
-päivällä	during the day	5	fb908f5e0897fe2daa958664ff0ee254	Teen raskaimmat työt mieluiten päivällä, koska illalla olen jo liian väsynyt keskittymään mihinkään.	Päivällä on valoisaa.
-myöhässä	late / behind schedule	5	2f3d28cae690784a2c602839591ddf0d	Olin pahasti myöhässä kokouksesta, koska bussi jäi ruuhkaan eikä seuraava lähtenyt pitkään aikaan.	Juna on myöhässä.
-ajoissa	in time / on time	5	28d36d190b3ebbba9f839f268c5619a9	Jos lähdemme nyt heti, ehdimme varmasti asemalle ajoissa ennen junan lähtöä.	Tulin ajoissa.
-harvoin	rarely / seldom	5	74ec077e62dc74610d85796ba466fc81	Käyn nykyään hyvin harvoin elokuvissa, koska katson mieluummin sarjoja kotona omalta sohvalta.	Tapaamme harvoin.
-uudestaan	again / once more	5	4ba36dc7d5933eb40e61ca405b1c823f	Yhteys katkesi kesken puhelun, joten jouduin soittamaan hänelle uudestaan ja kertomaan kaiken alusta.	Yritä uudestaan.
-aikana	during	5	5e902388d403098d5061528ed41048d2	Kokouksen aikana puhelimeni soi useaan kertaan, mikä häiritsi pahasti sekä minua että muita osallistujia.	Sairastuin loman aikana.
-asti	until / up to	5	7a1b9d44d07b43b5b46b7db8611abe27	Kauppa on auki yhdeksään asti, joten ehdimme vielä hyvin käydä ostamassa illan ruoat.	Odotin iltaan asti.
-välillä	between / in between	5	eccb6e99450e56cd38baf2d5ea1269ae	Junayhteys Helsingin ja Tampereen välillä on niin nopea, että matka sujuu hetkessä.	Käyn välillä uimassa.
-nykyään	nowadays / these days	5	e99310bc97434138d0b954bfde60b35d	Nykyään lähes kaikki hoitavat pankkiasiansa netissä, eikä konttoreissa juuri enää käydä paikan päällä.	Nykyään kaikki kiirehtivät.
-edellinen	previous / preceding	5	84340b8444a3008963ff2e90a8e34405	Edellinen vuokralainen jätti asunnon todella huonoon kuntoon, joten jouduimme siivoamaan sitä useita päiviä.	Edellinen bussi meni.
-useita	several	5	7568fa0fa9ecb4444a43fbd80dcfd090	Olen yrittänyt tavoittaa häntä useita kertoja tämän viikon aikana, mutta hän ei vastaa puhelimeensa.	Sain useita viestejä.
-puolet	half (of something)	5	d1ccb5cd2bb83033fa7b6db52222ab2b	Söin vain puolet annoksesta, koska se oli niin iso, etten millään jaksanut syödä loppuun.	Anna minulle puolet.
-määrä	amount / quantity	5	c5e1af4d6e207871b6dc3fbf7c000c81	Reseptissä on tärkeää noudattaa sokerin määrää tarkasti, muuten leivonnaisesta tulee aivan liian makea.	Määrä on suuri.
-prosentti	percent	5	c036c503d89714596e3e4acaca3217b3	Vain noin kymmenen prosenttia hakijoista pääsi sisään, joten kilpailu opiskelupaikoista oli erittäin kova.	Hinta nousi prosentin.
-kappale	piece / item (unit for counting)	5	1a81d6a738f94686c8d179521ad69b69	Ostin torilta kymmenen kappaletta omenoita, koska aion leipoa niistä suuren piirakan koko perheelle.	Otan kaksi kappaletta.
-ainoa	the only one	5	c1f39e313042897b0dee16aacf77117d	Olen perheeni ainoa lapsi, joten minulla ei ole sisaruksia, joiden kanssa olisin kasvanut.	Tämä on ainoa.
-poistua	to exit / to leave	5	f9136731128531e23e1fd1f4826bb492	Kun palohälytys soi, kaikkien tuli poistua rakennuksesta välittömästi ja kokoontua pihalle turvalliseen paikkaan.	Sain poistua aikaisin.
-siirtää	to move (something) / to transfer	5	77362f0f7438d18464b7e8968035bf3d	Jouduimme siirtämään kokouksen ensi viikolle, koska yksi tärkeimmistä osallistujista sairastui yllättäen.	Siirrä tuoli sivuun.
-siirtyä	to move (oneself) / to shift	5	59e328d90ded89701983a41bee6f727e	Lounaan jälkeen siirryimme toiseen huoneeseen, jossa jatkoimme keskustelua rauhallisemmassa ja hiljaisemmassa ympäristössä.	Siirry vähän sivummalle.
-työntää	to push	5	4dba246b925231d5d3901016b3c0fa59	Auto sammui keskelle risteystä, joten jouduimme työntämään sitä yhdessä tien reunaan turvaan.	Työnnä ovi auki.
-pysäyttää	to stop (something) / to halt	5	9935c8a5d44879ab26b892b3fd053992	Poliisi pysäytti autoni tienvarteen ja pyysi näyttämään ajokortin sekä auton rekisteriotteen.	Pysäytä auto tähän.
-kiirehtiä	to hurry	5	b0c3229a437b080a3196aca4361ae04f	Ei kannata kiirehtiä liikaa, sillä virheet syntyvät usein juuri silloin, kun yritämme tehdä kaiken liian nopeasti.	Älä kiirehdi niin.
-kaatua	to fall over / to topple	5	a5d8a38b67d961d121d3e8fb2dbbf610	Vanha puu kaatui myrskyssä keskelle tietä, ja sen raivaaminen kesti useita tunteja.	Lasi kaatui pöydällä.
-ehdottaa	to suggest / to propose	5	3da40aae74d8a29f08f6fa9c43cb3992	Ehdotan, että pidämme lyhyen tauon ja jatkamme kokousta vasta sen jälkeen, kun kaikki ovat virkistyneet.	Ehdotan toista paikkaa.
-toivottaa	to wish (someone something)	5	7dc811c197e4f2f34c9a382bdc375633	Haluan toivottaa teille kaikille oikein hyvää ja rentouttavaa kesälomaa yhteisen työvuoden jälkeen.	Toivotan hyvää matkaa.
-esitellä	to introduce / to present	5	ddc85aa61c1fb455d6acb6b7376b28e4	Haluaisin esitellä teille uuden kollegamme, joka aloitti meillä viime viikolla ja istuu nyt tuolla nurkassa.	Saanko esitellä ystäväni?
-mainita	to mention	5	8301a51be8dc5576ac9c6735a17e72d3	Unohdin mainita aiemmin, että kokous siirtyi tunnilla, joten meillä on nyt hieman enemmän aikaa.	Mainitsit siitä eilen.
-toistaa	to repeat	5	ba261002ce4674eb922ea189ae82d324	Opettaja joutui toistamaan ohjeet useaan kertaan, ennen kuin koko luokka vihdoin ymmärsi tehtävän.	Voitko toistaa sen?
-käskeä	to order / to command	5	18df6a7f3861a24d57c7f0a46a9675c1	Pomo käski meidän jäädä ylitöihin, vaikka kaikki olivat jo selvästi väsyneitä pitkän työpäivän jälkeen.	Älä käske minua.
-kieltää	to forbid / to deny	5	b294da06a77e76c7aa4346903c9b78e6	Uudet säännöt kieltävät tupakoinnin kokonaan koko piha-alueella, mikä on monen mielestä erittäin hyvä asia.	Lääkäri kielsi suolan.
-myöntää	to admit / to grant	5	253b68b45b689e46be16cd4b39bd8a8b	Hänen oli lopulta pakko myöntää tehneensä virheen, vaikka hän oli aluksi kiistänyt kaiken jyrkästi.	Myönnän, että erehdyin.
-väittää	to claim / to argue	5	058385dbc2cb8ece7dc6511e8013b69c	Hän väittää nähneensä karhun metsässä, mutta kukaan muu ei usko tarinaa todeksi.	Hän väittää olevansa oikeassa.
-keksiä	to invent / to come up with	5	191ff5ed0afa5375514ce148e8d4ad27	Meidän pitäisi keksiä jokin uusi ja hauska tapa viettää syntymäpäiväjuhlat, jotta vieraat eivät tylsisty.	Keksin hyvän idean.
-vihata	to hate	5	f753b32d4219b65cb854d3410214dea1	Vihaan sitä tunnetta, kun olen myöhässä enkä mitenkään pääse eteenpäin täydessä ruuhkassa.	Vihaan kylmää säätä.
-epäillä	to doubt / to suspect	5	313fe7cb523a51c21fda2eb9ec7fc823	Alan epäillä, ettei hän aiokaan tulla, koska hän ei ole vastannut yhteenkään viestiini.	Epäilen sen toimivuutta.
-tarkistaa	to check / to verify	5	ba7c6464db93a0779127d97fe9793691	Muista tarkistaa vielä kerran, että olet sammuttanut lieden ja lukinnut oven ennen kuin lähdet.	Tarkista vastaus uudestaan.
-arvata	to guess	5	3c016564715325568d632b26fc01c4d3	Yritä arvata, kenet tapasin tänään keskustassa aivan sattumalta vuosien jälkeen.	Arvaa mitä tapahtui!
-tulla toimeen	to get along / to manage	5	a82c5e4650c9eecf5e78dbd973e4d958	Uudet naapurit ovat todella mukavia, ja tulemme heidän kanssaan oikein hyvin toimeen.	Tulen toimeen kaikkien kanssa.
-rikkoa	to break	5	54034ace04a443044f356ae83478b5b8	Lapsi onnistui rikkomaan kalliin maljakon leikkiessään pallolla sisällä, vaikka olin kieltänyt sen monta kertaa.	Älä riko sitä.
-löytyä	to be found	5	7088bd35705df1f23883fb5a82969d87	Kadonnut kissa löytyi lopulta naapurin autotallista, jonne se oli jäänyt vahingossa lukkojen taakse.	Avaimet löytyivät vihdoin.
-laittaa päälle	to put on / to turn on	5	440acb8dde4e9b15bd9507bdd7177536	Laitoin television päälle heti kotiin tultuani, koska halusin katsoa illan tärkeän jalkapallo-ottelun.	Laita valot päälle.
+farkut	jeans	5	1d150c10e5cf24d8a1e753237b9291f2	Farkut kuivuvat mökin pihanarulla hitaammin kuin kukaan jaksaa odottaa.	Farkut ovat vielä märät.
+hame	skirt	5	d24cbd88d31dfcfdc244ed5fc0688a95	Juhannusjuhliin puettiin kukallinen hame, ja villatakki otettiin varmuuden vuoksi mukaan.	Hame on liian pitkä.
+mekko	dress	5	b7bb34747503d2cddf16ce1ac2b77ae2	Vappuna ylioppilaslakki sopii mihin tahansa mekkoon, myös sateenvarjon alle.	Mekko roikkuu kaapissa.
+puku	suit / costume	5	6909e8ee6de7e9272511afe191c9917b	Tumma puku otetaan esiin kahdesti vuodessa, ja housut tuntuvat joka kerta kireämmiltä.	Puku odottaa kaapissa.
+sukat	socks	5	3231e5888dab3a1355eed1577aee34ef	Villasukat kuivuvat kiukaan päällä, ja sama pari palvelee vuosikymmenen.	Missä puhtaat sukat ovat?
+hattu	hat	5	44f0cb4e4a75386acee002070d39ce27	Kesäkuun aurinko yllättää, ja hattu ostetaan vasta ensimmäisen palamisen jälkeen.	Hattu suojaa auringolta.
+reppu	backpack	5	6a11247430771d8e8ecb315f12f2cdf6	Reppu pakataan tunturiin kevyeksi, ja silti sinne päätyy kaksi kirjaa.	Reppu painaa liikaa.
+lompakko	wallet	5	6473a6033836a629dffe1bca21747969	Lompakko jää nykyään kotiin, sillä bussikin maksetaan puhelimella.	Lompakko on takin taskussa.
+oranssi	orange	5	ac40223daf8fbc1e087d94887425441d	Lapin ruska värjää tunturin oranssiksi vain pariksi viikoksi.	Aurinko laski oranssina.
+ruskea	brown	5	6d9051a4db09be365d25070f9f66d39f	Kelirikon aikaan koko soratie muuttuu ruskeaksi puuroksi.	Karhu on ruskea.
+harmaa	gray	5	9aa2d954b83bfe7807eaf94ad2da6d66	Marraskuu on harmaa, ja siitä puhutaan kassajonossa joka vuosi uudelleen.	Taivas näyttää harmaalta.
+vaalea	light / pale (color)	5	cfc8e059e764e99e27f9d22a17da3d14	Kesän jälkeen hiukset vaalenevat, ja sen huomaa työpaikalla ensimmäisenä.	Seinä maalattiin vaaleaksi.
+tumma	dark	5	e458bad85e9428963f3db92e71a69c8b	Tumma ruisleipä syrjäyttää vaalean lähes joka aamiaispöydässä.	Tumma suklaa maistuu paremmalta.
+kassa	checkout / cash register	5	58cebdd803d2ff343a138d824d6ebf2e	Kaupan kassalla ei jutella, ellei jonossa satu olemaan tuttu.	Maksa tavarat kassalla.
+myyjä	salesperson / clerk	5	a0a857f0a20ab9dc367859fe2378fbe7	Torin myyjä punnitsi mustikat ja antoi kourallisen kaupan päälle.	Myyjä neuvoi minua ystävällisesti.
+asiakas	customer	5	05a8e65048ab01dc80804d2a276a2486	Viimeinen asiakas päästetään sisään minuuttia ennen sulkemista, ei sekuntiakaan myöhemmin.	Asiakas odottaa kassalla.
+myydä	to sell	5	f6dcc319b88d4ca3268cd694402b2481	Tienvarressa myydään uusia perunoita, ja kassana toimii vanha peltipurkki.	Täällä myydään tuoretta kalaa.
+ostokset	shopping / groceries	5	7a8e058c4511f0b91c1fcb43beef3626	Ostokset kannetaan neljänteen kerrokseen, sillä hissi seisoo taas remontissa.	Ostokset ovat eteisessä.
+valita	to choose	5	5be2d86530736ad15b06239fa1cae893	Kaupassa saa valita kolmesta ruisleivästä, ja valinta kestää silti kauan.	Sinä saat valita.
+koko	size	5	37f525e2b6fc3cb4abd882f708ab80eb	Kysyin myyjältä isompaa kokoa, ja hän toi hyllyn takaa viimeisen.	Mikä koko sinulla on?
+sopia	to fit / to suit	5	cbc42a6db7384f0b11c51abfd024e517	Tämän takin täytyy sopia myös pakkaseen, ei ainoastaan syyskuun keleille.	Tuo väri voi sopia sinulle.
+tuote	product	5	fc337c523e26f94b56555252d3486816	Kotimainen tuote merkitään pienellä lipulla, ja moni valitsee sen mukaan.	Tuote loppui hyllystä.
+tavara	goods / stuff	5	c71d3ae087b4c1cc6d8cf52af7f8e9c9	Muuton yhteydessä huomaa, kuinka paljon tavaraa mökille on vuosien varrella kertynyt.	Tämä tavara on kallista.
+käteinen	cash	5	8420182ab03c36c7d469218ce6fb2866	Kesätorilla käteinen kelpaa yhä, vaikka kaupungissa siitä on jo luovuttu.	Maksan mieluummin käteisellä.
+sentti	cent	5	f081384a528eecbad73fae72f56a649b	Vaihtorahat pyöristetään viiden sentin tarkkuudella, ja siihen on totuttu.	Puuttuu vielä kymmenen senttiä.
+maksu	payment	5	6d68045c224456bde46cf60a557899d0	Vuokran maksu erääntyy kuun ensimmäisenä, ja siitä muistuttaa tekstiviesti.	Maksu meni läpi.
+halpa	cheap	5	5d702df5d89d096e72eabb112aa11289	Lounas maksaa täällä vähemmän kuin kaupungissa, ja halpa se on juomineen.	Kalja ei ole halpa.
+kallis	expensive	5	ea4f419b4c40cac4b53a810ef686da1d	Sähkö kävi tammikuussa niin kalliiksi, että saunavuoroja harvennettiin.	Tämä takki on kallis.
+ilmainen	free (of charge)	5	763bf6afd06e55fbe97fad77c53c0e9e	Museoon pääsee tiettyinä iltoina ilmaiseksi, ja jono ulottuu ovelta kadulle.	Sisäänpääsy on ilmainen.
+alennus	discount	5	479b44815b265968ac0e0fd442fbc2f2	Alennus koski vain isoa pakkausta, minkä huomasin vasta kassalla.	Saitko alennuksen?
+tarjous	offer / deal	5	814cae852b9360c22acc2ebc1473a12f	Kahvi tuli tarjoukseen, ja koko kylä osti kolme pakettia kerralla.	Tämä on hyvä tarjous.
+kuitti	receipt	5	5c6966f06fcd93da01d253a991e38050	Kuitti kannattaa säilyttää, sillä ilman sitä saappaita ei vaihdeta.	Saanko kuitin?
+lasku	bill / invoice	5	1fde52646f8280affe21295bb2f174c3	Sähkölasku yllätti helmikuussa, ja kiuasta lämmitettiin loppukuu harvemmin.	Lasku tuli postissa.
+vaihtaa	to exchange / to change	5	f5104781423525d42f9a77e55e585121	Renkaat pitää vaihtaa ennen määräpäivää, tai poliisi kysyy niistä.	Voinko vaihtaa tämän?
+pankki	bank	5	a9eacaba2ebd4bf54f362b109ddfb4ed	Pankin konttori suljettiin kylästä, ja lähin toimipiste sijaitsee viidenkymmenen kilometrin päässä.	Pankki on lauantaina kiinni.
+yhteensä	in total / altogether	5	d02f4c8e650fecb4bdf6f1fa235afad3	Marjoja kertyi yhteensä kaksitoista litraa, ja pakastin täyttyi kokonaan.	Se maksaa yhteensä kymmenen euroa.
+käydä töissä	to go to work / to be employed	5	58e0539f8a4195641fa59de38dbf177f	Hän käy töissä Oulussa ja ajaa kotiin vain viikonlopuiksi.	Missä sinä käyt töissä?
+ammatti	profession / occupation	5	d2c4bfa14488473ffef6b86c47b751ff	Veneenrakentajan ammatti opitaan saaristossa yhä työn ääressä.	Mikä on sinun ammattisi?
+työntekijä	employee / worker	5	47a8bc05c41f61ec524ab4fc2602cdce	Sahalla työskentelee neljäkymmentä työntekijää, ja moni heistä asuu naapurikylässä.	Uusi työntekijä aloitti maanantaina.
+pomo	boss	5	df66801ad38f0fd2994608d9b3be80c9	Pomo istuu samassa avokonttorissa kuin muutkin, eikä sitä pidetä erikoisena.	Pomo tuli kokoukseen.
+johtaja	director / leader / manager	5	85e6e4874f5ee0f8f7f6ca94bb234c15	Museon johtaja kertoi ryijyistä puoli tuntia, eikä kukaan halunnut keskeyttää.	Johtaja pitää puheen.
+palkka	salary / wage / pay	5	871a907a0daf0ebe3a12b992296a9aca	Palkka maksetaan kuun viimeisenä, ja laskut ajoitetaan sen mukaan.	Palkka tuli tilille.
+tehtävä	task / assignment	5	136310f2edeb75c0b6755e3cea9bb11f	Talkoissa jokaiselle löytyy tehtävä, ja kahvinkeitto katsotaan tärkeimmäksi.	Tämä tehtävä on helppo.
+kokemus	experience	5	ced517931fc69bcc3168e2f523b4c2c3	Ensimmäinen avantouinti jää kokemuksena mieleen pidempään kuin moni loma.	Minulla on vähän kokemusta.
+taito	skill	5	79726acf3e43312650100aa5817af048	Vihdan sitominen on taito, jota ei opi mistään kirjasta.	Se vaatii vähän taitoa.
+oppilas	pupil / student	5	2664274e7f6f56c565470797478cb406	Oppilas hiihtää kouluun, mikäli latu kulkee sopivasti pihan ohi.	Oppilas lukee kirjaa.
+opettaa	to teach	5	5804ff3ceccffde0914f755cbcdde969	Ukki opetti minut sitomaan verkon, ja sormet muistavat sen yhä.	Hän opettaa suomea aikuisille.
+yliopisto	university	5	02ab1bb0da64009560f91b47bba81cb0	Jyväskylän yliopiston rakennuksissa näkyy Alvar Aallon kädenjälki.	Opiskelen yliopistossa.
+luokka	class / grade / classroom	5	879d746f25092109a5966ac96d63b523	Koko luokka lähti leirikouluun Ahvenanmaalle, ja lautalla nukuttiin huonosti.	Luokka on tyhjä.
+koe	test / exam	5	1e06ceffa8540915d9d193832870adea	Koe siirtyi viikolla, ja uutinen otettiin luokassa hyvin vastaan.	Koe tuntui vaikealta.
+kokeilla	to try / to test	5	2c4950305f7e5fef74821bb6d7e70c3a	Saako tätä takkia kokeilla, kysyin, ja sovituskoppi löytyi perältä.	Haluan kokeilla avantoa.
+kurssi	course	5	50a44048b81dc7b6ff1940fa07995dae	Suomen kurssi alkaa syyskuussa, ja ryhmässä puhutaan viittä eri kieltä.	Kurssi alkaa maanantaina.
+aine	subject / essay / substance	5	c36047b7cc1a468e193493259445552c	Lempiaineeni koulussa taisi olla historia, ja opettaja kertoi Kalevalasta innoissaan.	Mikä aine on helpoin?
+historia	history	5	7967791d08c33bfa3caa5e521b7957bb	Rauman vanhan kaupungin historia näkyy kapeissa puutaloa reunustavissa kujissa.	Pidän historiasta.
+kynä	pen	5	071c31f7f0a7a2a1f157b24aed184de5	Kynä jäätyi taskuun retkellä, ja muistiinpanot jäivät kokonaan tekemättä.	Missä minun kynäni on?
+laskea	to count / to calculate	5	bf3bae1c9961a4869b1d27cbec4d686e	Lapset laskevat mäkeä pulkalla, kunnes lapaset kastuvat läpi.	Osaatko laskea kymmeneen?
+unohtaa	to forget	5	e97aae9ed36a1cbb22546b147939474e	Älä unohda heijastinta, muistuttaa naapuri joka lokakuu uudestaan.	Älä unohda avaimia!
+vastaus	answer	5	82e534b056c07318bde847ab84172244	Hiljaisuus kelpaa täällä vastaukseksi, mikä hämmentää vierasta aluksi.	Tämä vastaus on oikein.
+selittää	to explain	5	23a8701d5800463438ff2f578c82d22d	Sisua on vaikea selittää, ja siksi siitä puhutaan mieluummin vitsillä.	Voitko selittää tämän?
+esimerkki	example	5	3531e8741364819e51c47a8a772a26a8	Alvar Aalto mainitaan esimerkkinä aina, kun puhutaan suomalaisesta arkkitehtuurista.	Anna minulle yksi esimerkki.
+toimisto	office	5	ff51e5608bac3b34ea1114feff3e3426	Toimistossa kahvia keitetään vuorotellen, ja lista roikkuu jääkaapin ovessa.	Toimisto on kolmannessa kerroksessa.
+kone	machine	5	4134ba620c5a8930a7e7e15dd34dceb2	Sahan vanha kone pysähtyi kesken vuoron, ja korjaajaa odotettiin Kuopiosta.	Kone on rikki.
+sähköposti	email	5	d4bf40da7ea4bffb68f8569fcd796dcb	Sähköpostiin vastataan täällä lyhyesti, eikä sitä pidetä epäkohteliaana.	Lähetin sinulle sähköpostin.
+kokous	meeting	5	8c2533fa7d60d8d7b13aedae2bb63dab	Kokous alkaa täsmälleen yhdeksältä, ja myöhästyjä huomataan heti ovelta.	Kokous alkaa ihan kohta.
+projekti	project	5	05bd6454e92b8304106240c0ffeee9e5	Laiturin korjaus jatkuu projektina jo kolmatta kesää.	Projekti valmistuu keväällä.
+suunnitella	to plan / to design	5	bd57a0f966cd66ae312048e61f93e3b2	Mökkireissua aletaan suunnitella helmikuussa, kun valo vihdoin palaa.	Haluan suunnitella matkan.
+suunnitelma	plan	5	a1a7446acffae599fd2d2bd90515f7ea	Suunnitelma kaatui sateeseen, ja grilli siirtyi autotalliin.	Meillä on hyvä suunnitelma.
+yritys	company / business / attempt	5	c461f1eb473b9b2a71a366707a42a39f	Pieni yritys valmistaa yhä lasia käsin, ja työ vaatii vuosien harjoittelun.	Isäni perusti yrityksen.
+palvelu	service	5	ede869ce5d18d9c6073e2b0724db923b	Kylän ainoa palvelu on kauppa-auto, joka käy kahdesti viikossa.	Palvelu toimi hyvin.
+johtaa	to lead / to manage	5	efc435f53022a389153d78c90c1e1936	Soratie johtaa kolme kilometriä metsään ja loppuu järven rantaan.	Tie johtaa satamaan.
+kiire	hurry / rush	5	30dd0f8be2e3f88447d79585ae3a1252	Kiire kuuluu kaupunkiin, ja mökillä kelloa katsotaan vain saunan takia.	Minulla on kova kiire.
+loma	holiday / vacation	5	74244982fc6bdd86bbe0b5d69e5616b7	Heinäkuun loma tyhjentää kaupungin, ja parkkipaikkoja riittää yhtäkkiä kaikille.	Olen ensi viikolla lomalla.
+tauko	break / pause	5	6b9789f6909730c499bc4f853d5bcb31	Kahvitauko kestää vartin, ja siitä pidetään täällä tiukasti kiinni.	Pidetään pieni tauko.
+poliisi	police / police officer	5	6e11370cb4350ea390f8145b84075659	Poliisi muistuttaa marraskuussa heijastimesta ja talvirenkaista.	Poliisi tuli paikalle.
+saapua	to arrive	5	2d6aa99e50a293e02a492e0629d32ef3	Yöjuna saapuu Rovaniemelle aamulla, ja asemalla odottaa parinkymmenen asteen pakkanen.	Vieraat saapuvat pian.
+lentää	to fly	5	b54ba99bdb72977118719df305d6fe47	Kurjet lentävät syyskuussa etelään, ja niiden ääni kuuluu pellon yli.	Lintu lentää korkealla.
+lento	flight	5	c83d09682fec57e255a1b127bfc3523a	Lento Ivaloon peruttiin lumipyryn takia, ja matkustajat siirrettiin bussiin.	Lento kestää tunnin.
+lentokenttä	airport	5	42238a09e59c46c0edce560700b14efa	Lentokentältä ajetaan keskustaan puolessa tunnissa, mikäli keli sallii.	Menemme lentokentälle.
+lentokone	airplane	5	651b1ed96adad3bbbbd18a7bb7820eba	Lentokone odotti jäänpoistoa neljäkymmentä minuuttia, mikä ei tammikuussa yllätä.	Lentokone laskeutui hitaasti.
+passi	passport	5	b9a58c1892016f48e330ce62010609c4	Passi tarkastetaan harvoin Pohjoismaiden välillä, mutta se otetaan silti mukaan.	Missä passini on?
+asema	station	5	b74f2d25e3c760e6a2eb1c490f808317	Tampereen rautatieasema tunnetaan korkeasta kellotornistaan.	Odotan asemalla.
+taksi	taxi	5	b0b6fc9fc68b8bfbe757b402b0d0b4d1	Taksi tilataan kylässä etukäteen, sillä autoja liikkuu vain yksi.	Tilaan taksin illaksi.
+polkupyörä	bicycle	5	58023c932c8897d5d01cec68e61d4eb7	Oulussa polkupyörällä ajetaan myös talvella, ja väylät aurataan ensimmäisenä.	Polkupyörä on pihalla.
+pyörä	bike / wheel	5	9e0a13048ef6f94f79e01453dc41b217	Pyörän rengas puhkesi soratiellä, ja loppumatka taitettiin taluttaen.	Pyörä on rikki.
+laiva	ship / boat	5	a0ada551aca0592e1b1b8ffd06b6ab42	Laiva Tukholmaan lähtee illalla, ja aamulla herätään satamaan.	Laiva lähtee satamasta.
+vene	boat	5	97c6fb38cd7727c1360029f57b1e4c5e	Puuvene tervataan joka kevät, ja haju jää käsiin viikoksi.	Vene keinuu laiturissa.
+varata	to reserve / to book	5	d668439491c4709eb27db5c80a82e5bc	Pesutupa varataan vihkosta, ja vuorot menevät hämmentävän nopeasti.	Haluan varata pöydän.
+suunta	direction	5	7d9ad07584a2d2ed85531f06fcb7de40	Suunta tarkistetaan kompassista, sillä tunturissa maisema toistaa itseään.	Mihin suuntaan menemme?
+kartta	map	5	af991f557170bca56bac07942519d74c	Kartta kannattaa ottaa mukaan, vaikka puhelin toimisi vielä lähdössä.	Katson karttaa hetken.
+kulma	corner	5	3147cab240178903d39fe5b55dacc47b	Kaupan kulmassa seisoo kioski, jossa myydään lehtiä ja jäätelöä.	Odota tuolla kulmassa.
+silta	bridge	5	076e2da54ed7d4ea843f5afab2e3f29e	Aurajoen yli vie vanha silta, ja kesäisin sen alla soitetaan.	Silta on kapea.
+puisto	park	5	16ea838130ae6009e3dd62f637558b94	Puistossa istutaan ensimmäisenä lämpimänä päivänä, vaikka penkki olisi märkä.	Lapset leikkivät puistossa.
+keskusta	city center / downtown	5	dd4c500c5ab360e3f3f4789684f774f8	Turun keskusta rakentuu joen molemmin puolin, ja pieni lautta kulkee ilmaiseksi.	Menen keskustaan bussilla.
+kylä	village	5	795925967f1b7f68483a4b77ce811ed3	Kylässä asuu kolmisenkymmentä ihmistä, ja kauppa-auto käy tiistaisin.	Kylä on rauhallinen.
+kirkko	church	5	1675b2887a820606abc974ef9f8b101f	Petäjäveden vanha kirkko rakennettiin hirrestä käsityönä.	Kirkko näkyy järvelle asti.
+kerros	floor / story	5	a45c436bda44f5535cbaa247764ab41e	Neljännessä kerroksessa asuminen opettaa arvostamaan toimivaa hissiä.	Asun viidennessä kerroksessa.
+vapaa	free / vacant	5	22e1947f0daafdab0acd947ad026f9ac	Onko tämä paikka vapaa, kysytään junassa vasta viimeisenä keinona.	Tuoli on vapaa.
+kaukana	far away	5	e88541c8e95a58df91aa03124371cdc5	Lähin naapuri asuu kaukana, ja sitä pidetään täällä etuna.	Koulu on kaukana.
+vieressä	next to / beside	5	a8de8d743eb9f2c211283b0acba45db0	Bussissa istutaan tuntemattoman viereen vasta, kun muuta vaihtoehtoa ei ole.	Hän istuu vieressäni.
+takana	behind	5	b54fb14cc30054167471f3abbc0282ec	Saunan takana kasvaa vanha koivu, josta vihdat tehdään.	Koira nukkuu sohvan takana.
+edessä	in front of	5	9893eee19a40a2c24f5c944016f4eebe	Tavataan kirjaston edessä kuudelta ja mennään sieltä yhdessä.	Seison oven edessä.
+pohjoinen	north	5	0b8a50e04410a8d973b72c5dfeb3c08d	Pohjoisessa kesäyö ei pimene lainkaan, ja uni jää lyhyeksi.	Lähdemme pohjoiseen.
+etelä	south	5	9e64f475f2261e9b841f5b4dd9787bdd	Etelään muuttavat linnut lähtevät jo elokuun lopulla.	Tuuli kääntyi etelään.
+itä	east	5	b5dddac8a539a207484d6613f0bf2105	Itään mentäessä murre muuttuu, ja vihdasta tulee vasta.	Katso itään päin.
+länsi	west	5	862833333b8d6e8795f158f1d81bb033	Länsirannikolla tuulee lähes aina, ja se näkyy puiden kasvusuunnassa.	Länsi on tuolla suunnassa.
+pysähtyä	to stop (oneself)	5	8f942408afcef6538f03cf9f94cc4ccd	Juna pysähtyy pienellä seisakkeella vain erikseen pyydettäessä.	Auto pysähtyi risteykseen.
+liikenne	traffic	5	2c7141af17354907d3652ab24ff29b1c	Liikenne hidastuu ensilumella, vaikka sitä on odotettu marraskuusta asti.	Liikenne on vilkasta.
+WC	toilet / restroom	5	26748b021bdc8922f93d9bf054cbec5d	Huoltoaseman WC vaatii kolikon, mikä muistetaan vasta ovella.	Missä WC on?
+aurinkoinen	sunny	5	e85b90653ccfcccae3f1062ca7fbd37e	Maaliskuun aurinkoinen päivä hangella sokaisee ilman kunnon laseja.	Sää on aurinkoinen.
+pakkanen	freezing cold / sub-zero frost	5	b2280524ad129af5fc40cc4764c4175a	Pakkanen kiristyy selkeällä säällä, ja lumi narisee askelten alla.	Ulkona on kova pakkanen.
+lämpötila	temperature	5	8099c097d3cf092b4a2a1abe02da82ec	Lämpötila putosi yössä viisitoista astetta, eikä auto käynnistynyt aamulla.	Lämpötila nousee huomenna.
+aste	degree	5	ed3f37f9305c50fa628fff11a41b23a8	Kolmekymmentä astetta pakkasta pysäyttää junat, muttei koululaisia.	Nyt on kymmenen astetta.
+myrsky	storm	5	03a90a0b5828eb23d32092cda0dca554	Syysmyrsky katkoi sähköt saaristossa, ja kynttilät haettiin laatikosta.	Myrsky lähestyy rannikkoa.
+pilvinen	cloudy	5	1197255ca65af30a7c4fe0fe273a5fbf	Pilvinen taivas pitää pakkasen loitolla, mikä marraskuussa luetaan eduksi.	Sää on pilvinen.
+kuiva	dry	5	bd73af4a45acc2e5c66064aaa4df56a1	Kesä jäi kuivaksi, ja marjat jäivät koko Savossa pieniksi.	Maa on kuiva.
+märkä	wet	5	627df58ed11237dcd0726d8cb38278b9	Märkä lumi tarttuu suksiin, ja retki päättyy tavallista aiemmin.	Takki on aivan märkä.
+kuu	moon / month	5	82d2934b974f475760420ddc79d47eb2	Täysikuu valaisee hangen niin kirkkaasti, ettei otsalamppua tarvita.	Kuu paistaa järvelle.
+tähti	star	5	354a33d04173f9c32d1d8a301f9ccba9	Pakkasyönä tähtiä näkyy tuhansittain, kunhan kylän valot jäävät taakse.	Tähtiä näkyy paljon.
+ympäristö	environment / surroundings	5	2104ec4d5453bc538bb6b5ab4734b66b	Ympäristöstä puhutaan täällä käytännössä: roskat kannetaan metsästä pois.	Ympäristö on kaunis.
+hiekka	sand	5	1dbebc0c7ccaa823d2f18081653e9b28	Kevään hiekat lakaistaan kaduilta huhtikuussa, ja pöly kulkeutuu joka paikkaan.	Hiekka on lämmintä.
+vuori	mountain	5	1154216b509918ad6f6c80252fd1dd4e	Suomessa puhutaan tuntureista, sillä oikeita vuoria täältä ei löydy.	Vuori näkyy kauas.
+mäki	hill	5	6339bcead0100c8f46c2a499605791cb	Mäki jäätyi yön aikana, ja pulkkajono kasvoi aamupäivällä pitkäksi.	Mäki on jyrkkä.
+lehti	leaf / sheet	5	f2bbc148bf7d1ec43e79c957a68e9d25	Koivun lehti puhkeaa toukokuussa, ja siitä lasketaan kesän alkaneen.	Lehti putosi maahan.
+kasvi	plant	5	a7e807271ad9218b43f52ab39f0a4a6a	Ikkunalaudan kasvi selviää kaamoksesta huonommin kuin sen omistaja.	Kasvi tarvitsee vettä.
+ruoho	grass	5	ed30cc61aba57b9894a4c5b924586db8	Ruoho kellastuu heinäkuun kuivuudessa, ja kastelu kielletään usein kokonaan.	Ruoho on vihreää.
+lehmä	cow	5	edbbd8e7093a697bb66895dd0d100838	Lehmät päästetään laitumelle keväällä, ja tapahtuma kerää katsojia.	Lehmä seisoo aidan takana.
+karhu	bear	5	df7f3018fb42f5e355f8a49c83410143	Karhu nukkuu talven pesässään, eikä sitä yleensä nähdä lainkaan.	Karhu asuu metsässä.
+hiiri	mouse	5	33c6139430172e2f1d583ff3a87c0c0c	Mökin hiiri löytää jauhopussin ennen kuin isäntä ehtii paikalle.	Hiiri juoksi lattian yli.
+saari	island	5	297829cf5b8ef1750eb986a54da49506	Saari sijaitsee kilometrin päässä, ja talvella sinne kävellään jäätä pitkin.	Saari näkyy tänne asti.
+pelto	field (cultivated)	5	875ea9708939e25d3a5e14cb40e502a4	Pohjanmaan pelto jatkuu horisonttiin, eikä välissä näy yhtään mäkeä.	Pelto on lumen alla.
+kolmetoista	thirteen	5	adfac890cb91a5819f5af517fca77a4a	Kolmetoista astetta heinäkuussa riittää uimiseen, jos kukaan ei valita.	Kello on kolmetoista.
+neljätoista	fourteen	5	013e53c42819bc0fde1424d860e29fb8	Luokassa opiskelee neljätoista lasta, ja koulu säilyy vielä ensi vuoden.	Minulla on neljätoista euroa.
+viisitoista	fifteen	5	9b5c83fec6c97150f958798f8233908d	Bussi lähtee viisitoista yli, ja pysäkillä ei ole katosta.	Meitä on viisitoista.
+kuusitoista	sixteen	5	77b36a518133731cb24970f2ae097bc3	Kuusitoista tuntia pimeää joulukuussa selittää kynttilöiden menekin.	Hän täyttää kuusitoista.
+kolmekymmentä	thirty	5	8afb4c28a4468967defe8650ec41e7ad	Kolmekymmentä astetta pakkasta tuntuu kuivalta ja jopa siedettävältä.	Maksoin kolmekymmentä euroa.
+neljäkymmentä	forty	5	036e7d168555b78b4b886addc206907f	Sahalla työskentelee neljäkymmentä ihmistä, mikä tekee siitä kylän suurimman työnantajan.	Matkaa on neljäkymmentä kilometriä.
+viisikymmentä	fifty	5	84bf1f70bb027eea71729a03b0f99ed1	Viisikymmentä vuotta yhdessä juhlittiin kahvilla ja täytekakulla, muuta ei tarvittu.	Tähän mahtuu viisikymmentä ihmistä.
+kuusikymmentä	sixty	5	08b76b36a6f9781f5312b0719bbc86ad	Nopeusrajoitus on talvella kuusikymmentä, ja siitä muistuttaa uusi kyltti.	Nopeusrajoitus on kuusikymmentä.
+kolmas	third	5	88ab782e5aed920c06f36ed231984da9	Kolmas kerta tällä viikolla, kun avaimet jäävät oven sisäpuolelle.	Hän tuli maalissa kolmanneksi.
+sekunti	second (of time)	5	cec8549f3172dd264b86ecc2615c4ef8	Avannossa sekunnit venyvät, ja kolmekymmentä tuntuu kokonaiselta minuutilta.	Odota yksi sekunti.
+aamupäivä	morning / forenoon	5	4b322f7693d3160710365eb4f289ae7d	Aamupäivä kuluu lumitöissä, ja kahvi maistuu vasta yhdeltätoista.	Tapaamme aamupäivällä.
+tammikuu	January	5	da8a949fd73186f3f08c53cf64d651a7	Tammikuussa pakkanen paukkuu hirsissä, ja päivä pitenee huomaamatta.	Tammikuu on kylmä kuukausi.
+helmikuu	February	5	a0afd904d50d111ac78a4b9e07d40b20	Helmikuussa hiihtolomat täyttävät Lapin, eikä majoitusta enää löydy.	Helmikuussa hiihdetään paljon.
+maaliskuu	March	5	30165ba84fe273617a6f7b8dfcb2b417	Maaliskuun hanki kantaa aamulla ja pettää iltapäivällä polveen asti.	Maaliskuu tuo valoa.
+huhtikuu	April	5	a4f0445b57f1bbbf6c5d8383000fa3dd	Huhtikuussa lumi sulaa etelässä ja sataa uudelleen pohjoisessa.	Huhtikuu yllättää usein.
+toukokuu	May	5	b219f0053794449f6afa12329986c18e	Toukokuussa koivut ovat hiirenkorvalla, ja siitepöly ajaa monet apteekkiin.	Toukokuussa vietetään vappua.
+kesäkuu	June	5	1ff02c2c0b54bb73b86848ac4a76c547	Kesäkuun yö ei pimene lainkaan, ja verhot vedetään turhaan kiinni.	Kesäkuussa on juhannus.
+heinäkuu	July	5	30be1753158722f5156a8c34c342c119	Heinäkuussa kaupunki tyhjenee, ja lounaspaikat sulkevat ovensa kuukaudeksi.	Heinäkuu on lomakuukausi.
+elokuu	August	5	51fdd46d49cb8ccf0b81a3d564cbea23	Elokuun lopulla tulee ensimmäinen yöpakkanen, ja perunanvarret mustuvat.	Elokuussa alkaa koulu.
+syyskuu	September	5	b8bb63b8a74163d227eddf98c74ca791	Syyskuussa ruska alkaa pohjoisesta ja etenee hitaasti kohti etelää.	Syyskuu tuo ruskan.
+lokakuu	October	5	f521826bfc7da4d26189552bf1484031	Lokakuussa kello siirretään talviaikaan, ja pimeä tulee yhtäkkiä tuntia aiemmin.	Lokakuussa sataa paljon.
+marraskuu	November	5	3f39c9eb8024a78d7578c27495ecfa5b	Marraskuu jakaa mielipiteitä vähemmän kuin mikään muu kuukausi.	Marraskuu on harmaa.
+joulukuu	December	5	fa3ff0f2024225a1645f2ed37ec772cf	Joulukuussa etelässäkin lamput palavat aamusta iltaan, ja pohjoisessa jatkuu kaamos.	Joulukuussa on pimeää.
+joulu	Christmas	5	338db474a431610978a3c6fe27a98e74	Jouluna käydään saunassa iltapäivällä ja viedään kynttilä hautausmaalle.	Hyvää joulua sinulle!
+yöllä	at night	5	8d5a7144efc250c7fdde506e14b67154	Yöllä järveltä kuuluu jään jyminä, eikä siihen koskaan täysin totu.	Nukun huonosti yöllä.
+päivällä	during the day	5	fb908f5e0897fe2daa958664ff0ee254	Päivällä ehtii tehdä lumityöt, mutta joulukuussa valoa riittää vain hetkeksi.	Päivällä on valoisaa.
+myöhässä	late / behind schedule	5	2f3d28cae690784a2c602839591ddf0d	Bussi tulee myöhässä, ja pysäkillä seisotaan hiljaa vierekkäin.	Juna on taas myöhässä.
+ajoissa	in time / on time	5	28d36d190b3ebbba9f839f268c5619a9	Ajoissa tuleminen tarkoittaa täällä viittä minuuttia etuajassa.	Tulin ajoissa.
+harvoin	rarely / seldom	5	74ec077e62dc74610d85796ba466fc81	Naapuria tavataan harvoin, mutta lumityöt tehdään aina yhtä aikaa.	Käyn siellä harvoin.
+uudestaan	again / once more	5	4ba36dc7d5933eb40e61ca405b1c823f	Vene maalataan uudestaan joka toinen kesä, ja työ aloitetaan liian myöhään.	Yritä uudestaan huomenna.
+aikana	during	5	5e902388d403098d5061528ed41048d2	Kaamoksen aikana lamppu palaa sekä aamiaisella että päivällisellä.	Sairastuin loman aikana.
+asti	until / up to	5	7a1b9d44d07b43b5b46b7db8611abe27	Kauppa on auki yhdeksään asti, ja kahdeksalta siellä käy kiire.	Odotin iltaan asti.
+välillä	between / in between	5	eccb6e99450e56cd38baf2d5ea1269ae	Junayhteys Helsingin ja Tampereen välillä sujuu nopeammin kuin autolla.	Käyn välillä uimassa.
+nykyään	nowadays / these days	5	e99310bc97434138d0b954bfde60b35d	Nykyään maksetaan puhelimella, ja kolikot löytyvät vain uimahallin kaapista.	Nykyään kaikki kiirehtivät.
+edellinen	previous / preceding	5	84340b8444a3008963ff2e90a8e34405	Edellinen vuokralainen jätti eteiseen kolme paria kumisaappaita.	Edellinen bussi meni jo.
+useita	several	5	7568fa0fa9ecb4444a43fbd80dcfd090	Useita kertoja on luvattu tien päällystämistä, ja sora pysyy silti.	Sain useita viestejä.
+puolet	half (of something)	5	d1ccb5cd2bb83033fa7b6db52222ab2b	Puolet marjoista päätyy pakastimeen ja puolet suoraan piirakkaan.	Anna minulle puolet.
+määrä	amount / quantity	5	c5e1af4d6e207871b6dc3fbf7c000c81	Sokerin määrää ei kannata lisätä, sillä mustikka on jo makeaa.	Määrä riittää hyvin.
+prosentti	percent	5	c036c503d89714596e3e4acaca3217b3	Vain pieni prosentti hakijoista pääsi sisään, ja siitä puhuttiin koko kevään.	Hinta nousi kaksi prosenttia.
+kappale	piece / item (unit for counting)	5	1a81d6a738f94686c8d179521ad69b69	Ostin torilta kymmenen kappaletta munkkeja, ja puolet katosi jo matkalla.	Otan kaksi kappaletta.
+ainoa	the only one	5	c1f39e313042897b0dee16aacf77117d	Kylän ainoa kauppa sulkeutuu kuudelta, ja sen jälkeen matkaa kertyy kolmekymmentä kilometriä.	Tämä on ainoa reitti.
+poistua	to exit / to leave	5	f9136731128531e23e1fd1f4826bb492	Saunasta poistutaan hiljaa, eikä ovea jätetä raolleen.	Sain poistua aikaisin.
+siirtää	to move (something) / to transfer	5	77362f0f7438d18464b7e8968035bf3d	Kokousta siirrettiin viikolla, ja siitä ilmoitettiin yhdellä rivillä.	Siirrä tuoli sivuun.
+siirtyä	to move (oneself) / to shift	5	59e328d90ded89701983a41bee6f727e	Löylyn jälkeen siirrytään portaille, ja keskustelu jatkuu siitä mihin jäi.	Siirry vähän sivummalle.
+työntää	to push	5	4dba246b925231d5d3901016b3c0fa59	Auto sammui risteykseen, ja sitä työnnettiin kolmestaan tien reunaan.	Työnnä ovi auki.
+pysäyttää	to stop (something) / to halt	5	9935c8a5d44879ab26b892b3fd053992	Poliisi pysäytti auton ja kysyi talvirenkaista hyvin ystävällisesti.	Pysäytä auto tähän.
+kiirehtiä	to hurry	5	b0c3229a437b080a3196aca4361ae04f	Ei kannata kiirehtiä jäälle marraskuussa, vaikka naapuri jo kävelisi.	Älä kiirehdi noin.
+kaatua	to fall over / to topple	5	a5d8a38b67d961d121d3e8fb2dbbf610	Vanha kuusi kaatui myrskyssä tielle, ja moottorisaha käynnistyi aamuvarhain.	Lasi kaatui pöydällä.
+ehdottaa	to suggest / to propose	5	3da40aae74d8a29f08f6fa9c43cb3992	Ehdotan, että mennään ensin saunaan ja syödään vasta sen jälkeen.	Ehdotan toista paikkaa.
+toivottaa	to wish (someone something)	5	7dc811c197e4f2f34c9a382bdc375633	Naapurille toivotetaan hyvää joulua kerran vuodessa, ja se riittää molemmille.	Toivotan hyvää matkaa.
+esitellä	to introduce / to present	5	ddc85aa61c1fb455d6acb6b7376b28e4	Haluaisin esitellä teille uuden kollegan, joka muutti tänne Vaasasta.	Saanko esitellä ystäväni?
+mainita	to mention	5	8301a51be8dc5576ac9c6735a17e72d3	Unohdin mainita, että lautta lähtee tänään tuntia aiemmin.	Mainitse asia hänelle.
+toistaa	to repeat	5	ba261002ce4674eb922ea189ae82d324	Opas joutui toistamaan ohjeen, sillä tuuli vei sanat tunturissa.	Voitko toistaa sen?
+käskeä	to order / to command	5	18df6a7f3861a24d57c7f0a46a9675c1	Kukaan ei käske heittämään lisää löylyä, mutta jokainen tietää milloin riittää.	Älä käske minua.
+kieltää	to forbid / to deny	5	b294da06a77e76c7aa4346903c9b78e6	Kuivana kesänä kunta voi kieltää avotulen teon kokonaan.	Lääkäri kielsi suolan.
+myöntää	to admit / to grant	5	253b68b45b689e46be16cd4b39bd8a8b	Kukaan ei halua myöntää lämmittäneensä saunaa liian kuumaksi.	Myönnän, että erehdyin.
+väittää	to claim / to argue	5	058385dbc2cb8ece7dc6511e8013b69c	Naapuri väittää nähneensä ilveksen pihalla, eikä kukaan kiistä sitä ääneen.	Hän väittää olevansa oikeassa.
+keksiä	to invent / to come up with	5	191ff5ed0afa5375514ce148e8d4ad27	Pitäisi keksiä uusi tapa viettää pikkujoulut ilman samaa ohjelmaa.	Keksin hyvän idean.
+vihata	to hate	5	f753b32d4219b65cb854d3410214dea1	Moni sanoo vihaavansa marraskuuta mutta jää silti tänne asumaan.	Vihaan räntäsadetta.
+epäillä	to doubt / to suspect	5	313fe7cb523a51c21fda2eb9ec7fc823	Alan epäillä, ettei jää vielä kanna, vaikka naapuri toisin sanoo.	Epäilen tuon toimivuutta.
+tarkistaa	to check / to verify	5	ba7c6464db93a0779127d97fe9793691	Tarkista jään paksuus itse, äläkä luota kenenkään arvioon.	Tarkista vastaus uudestaan.
+arvata	to guess	5	3c016564715325568d632b26fc01c4d3	Arvaa kenet tapasin lautalla, kysyi naapuri jo ovella.	Arvaa mitä tapahtui!
+tulla toimeen	to get along / to manage	5	a82c5e4650c9eecf5e78dbd973e4d958	Naapureiden kanssa tullaan toimeen, kunhan lumityöt hoidetaan ajallaan.	Tulen toimeen kaikkien kanssa.
+rikkoa	to break	5	54034ace04a443044f356ae83478b5b8	Lapsi onnistui rikkomaan kahvikupin, jota oli säästetty kolme sukupolvea.	Kuka rikkoi ikkunan?
+löytyä	to be found	5	7088bd35705df1f23883fb5a82969d87	Kadonnut kissa löytyi naapurin puuvajasta kolmen päivän jälkeen.	Avaimet löytyivät vihdoin.
+laittaa päälle	to put on / to turn on	5	440acb8dde4e9b15bd9507bdd7177536	Laitan saunan päälle jo kuudelta, jotta löyly ehtii kunnolla tasaantua.	Laita valot päälle.

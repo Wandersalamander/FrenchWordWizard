@@ -1,219 +1,219 @@
-人 (hito)	person	1	7b3882acb4fd76326a3dde4aa27b10c2	あの人はとても親切です。	人がたくさんいる。
-男 (otoko)	man, male	1	6822b9807ce05e8bcb19ed742fef86e4	あそこにいる男は私の兄です。	男の子が二人いる。
-女 (onna)	woman, female	1	f71e111eb8dcca98c1febfbdf06f96a1	白いシャツを着た女が来た。	女の人が歩く。
-子供 (kodomo)	child	1	ade50681bb5e0e1bb731eae2e796f332	公園で子供たちが遊んでいます。	子供が三人いる。
-友達 (tomodachi)	friend	1	5699237ecc900b54ae9c339a02acbebf	友達と一緒に映画を見ました。	友達に会う。
-先生 (sensei)	teacher	1	43b90c38722b7e618d2feae55781f5b1	日本語の先生はとても優しいです。	先生に聞く。
-学生 (gakusei)	student	1	19800d4131a1ae116fbe63f29e96a482	私は大学の学生です。	学生がたくさんいる。
-名前 (namae)	name	1	2399f42cc295d312b83d1838c915d485	ここに名前を書いてください。	名前は何ですか。
-家族 (kazoku)	family	1	f166502e55bef01b209fac49dc9d1f66	私の家族は五人います。	家族と話す。
-父 (chichi)	father (own)	1	e462cba483534c49a1d8fddee1336c8d	父は毎日会社で働いています。	父は元気です。
-母 (haha)	mother (own)	1	241ebf1de14457ac626e08dd416f222a	母は料理がとても上手です。	母を手伝う。
-お父さん (otōsan)	father (polite)	1	675907828c6475206d00fd1f0c437137	あなたのお父さんはどこにいますか。	お父さんは大きい。
-お母さん (okāsan)	mother (polite)	1	e6f5a5955fae0e525d5a4360780c7d57	友達のお母さんに会いました。	お母さんは優しい。
-兄 (ani)	older brother (own)	1	adf1f95868e1b6976bd2bfc3e208e44d	兄は私より三つ年上です。	兄は背が高い。
-姉 (ane)	older sister (own)	1	950900e3becd95b7ed0c003acfde8347	姉は東京に住んでいます。	姉は二十歳です。
-弟 (otōto)	younger brother (own)	1	4b8deaddae8c37980233083276177d7e	弟はまだ小学生です。	弟と遊ぶ。
-妹 (imōto)	younger sister (own)	1	0193f654d90b5c6c3f3f6c01d3359c54	妹は犬がとても好きです。	妹は小さい。
-体 (karada)	body	1	f9dda47015d26da6dc16d9c4108db489	毎日運動して体を動かします。	体が大きい。
-頭 (atama)	head	1	0dfe3721493f69390f07b5a04012d901	朝から頭が少し痛いです。	頭を洗う。
-目 (me)	eye	1	ea92a1cf3a7847f7345e2d7db5755b56	彼女は目がとても大きいです。	目を閉じる。
-耳 (mimi)	ear	1	c6f4042618c1775b8239f63796d0b4e0	うさぎは耳がとても長いです。	耳が痛い。
-口 (kuchi)	mouth	1	914765a542ea96fcb0b6692e1a8e20ec	口を大きく開けてください。	口を閉じる。
-手 (te)	hand	1	b02e86642b9d041f458a923e242cf2a4	食事の前に手を洗いましょう。	手が冷たい。
-足 (ashi)	foot, leg	1	38135d680e066d817cbfd59ad96b1ea7	たくさん歩いて足が疲れました。	足が長い。
-顔 (kao)	face	1	c646133bbf0590b79ecf9310caf0e629	毎朝起きてから顔を洗います。	顔が赤い。
-元気 (genki)	healthy, lively	1	37a109e76f7872066c6b0a02fa9c4ffc	祖母はとても元気で安心しました。	今日も元気です。
-病気 (byōki)	illness, sickness	1	5c888867b609096b3b92e8dae7a2fceb	病気のときは早く寝てください。	病気になる。
-医者 (isha)	doctor	1	ab0722d4147b9345c77d53ed69e651e9	具合が悪いので医者に行きます。	医者に診てもらう。
-病院 (byōin)	hospital	1	293e7c0f5c158bb0001b6543ce884c97	友達のお見舞いに病院へ行きました。	病院は遠い。
-薬 (kusuri)	medicine	1	c1cceaeb201b8187325fb1299059e8d9	食事の後にこの薬を飲んでください。	薬を飲む。
-食べる (taberu)	to eat	1	90dafd576896ef0abc1c7c8b501caa1f	毎朝パンを食べます。	りんごを食べる。
-飲む (nomu)	to drink	1	d7150536ac402948aeae1a136f800eb4	夜はお茶を飲みます。	水を飲む。
-ご飯 (gohan)	rice; meal	1	79193783a9a816151cc9690f49781630	今からご飯を作ります。	ご飯を食べる。
-パン (pan)	bread	1	94bc4bf6e4881c16eb84607c2a152ecc	朝はいつもパンを食べます。	パンが好きだ。
-肉 (niku)	meat	1	956265d39cd642d5e44e313d20a5ddef	私は肉より魚が好きです。	肉を買う。
-魚 (sakana)	fish (food)	1	d2aff615d018c4143234b787f306657e	夕食に魚を焼きました。	魚を食べる。
-野菜 (yasai)	vegetables	1	97d9618dcf893e0608e63d95ffc893dd	毎日野菜をたくさん食べます。	野菜が安い。
-果物 (kudamono)	fruit	1	3dc981728fcb04e6d1afc81dde3caf54	夏は果物がおいしいです。	果物を買う。
-卵 (tamago)	egg	1	6d06002997d87ba7a6a1fabffcdbd0fb	朝ご飯に卵を二つ食べました。	卵を買う。
-お茶 (ocha)	tea (green)	1	9105e6105565d772db59c5824a28e657	おばあさんとお茶を飲みました。	お茶が熱い。
-牛乳 (gyūnyū)	milk	1	37e7be236516cdb182d7907b90b8f8ed	毎朝牛乳を一杯飲みます。	牛乳を飲む。
-お酒 (osake)	alcohol; sake	1	58fe4df75e31775a01db767ab5fa84e2	父は夜にお酒を飲みます。	お酒が好きだ。
-おいしい (oishii)	delicious	1	bc09389ace5c2900eea056ec06dab12d	このケーキはとてもおいしいです。	ご飯がおいしい。
-料理 (ryōri)	cooking; dish	1	113283e616c2b47658c03e4f93d5a1e7	母の料理は本当においしいです。	料理を作る。
-作る (tsukuru)	to make	1	58077ada5fc4dcdd834b7be2739a2aea	今晩は私が晩ご飯を作ります。	ケーキを作る。
-買う (kau)	to buy	1	2ef52a91bef7f14b04ee999badfc2a40	店でパンと牛乳を買いました。	野菜を買う。
-店 (mise)	shop; store	1	7cf9cf3a924640ad3afb492455a7bdd4	駅の前に新しい店ができました。	店は近い。
-家 (ie)	house; home	1	e861923b971c15523df6ed122d6a56d1	私の家は学校から遠いです。	家へ帰る。
-部屋 (heya)	room	1	ba58f3b4226874f497d74f73cc5f3c81	私の部屋はとてもきれいです。	部屋が広い。
-窓 (mado)	window	1	2c1606b8e36cc8a30074eddfe8a013c3	暑いので窓を開けてください。	窓を開ける。
-ドア (doa)	door	1	1c4e14bc87062829ab63e3c4400cd0a0	出る時はドアを閉めてください。	ドアを閉める。
-机 (tsukue)	desk	1	9a423bcc55e8427036b995fc36057591	机の上に本がたくさんあります。	机の上の本。
-椅子 (isu)	chair	1	16ff3f604e2ade7141b280ccfa53ef74	その椅子に座ってください。	椅子に座る。
-テレビ (terebi)	television	1	7a76de2d25119f903d611c4c4be44b27	毎晩テレビでニュースを見ます。	テレビを見る。
-電話 (denwa)	telephone	1	fa3e68941c25189516be01da7b1b3065	母に電話をかけました。	電話をかける。
-寝る (neru)	to sleep	1	5b4a061398a8fca4364f6be2e8498ff0	昨日は十一時に寝ました。	早く寝る。
-起きる (okiru)	to wake up	1	69c6bd979ef02a04728e42adacbac1ae	毎朝六時に起きます。	早く起きる。
-風呂 (furo)	bath	1	a9987c04da9ba3882f8edf9a77e6b2d0	晩ご飯の前に風呂に入ります。	風呂に入る。
-洗う (arau)	to wash	1	02a6c29b2d5fbda4a6da4cc8ada7f780	食事の前に手を洗います。	手を洗う。
-掃除 (sōji)	cleaning	1	38b234fe15bbb23553c86256d8710317	日曜日に部屋の掃除をします。	部屋を掃除する。
-天気 (tenki)	weather	1	c68dd5a77ba43157df002d8c3a8d8d7f	今日はとてもいい天気です。	いい天気だね。
-雨 (ame)	rain	1	40053316f8aa2a9ed89e6025bc858622	朝から雨が降っています。	雨が降る。
-雪 (yuki)	snow	1	af8a0b86d04642b53a5bd9ce332066e2	北海道では冬によく雪が降ります。	雪が好きです。
-風 (kaze)	wind	1	7203d1583dcfb0ed5cd8d018e56f0a77	今日は風が強くて寒いです。	風が強い。
-空 (sora)	sky	1	c89bf823794e657241316c0d2f6e5360	空が青くてとてもきれいです。	空を見る。
-雲 (kumo)	cloud	1	0210305a8583800f54ff47861daddf61	白い雲がゆっくり動いています。	雲が多いね。
-山 (yama)	mountain	1	489ed88fcbd0fdba4bd339325fadc8c7	夏休みに友だちと山に登ります。	高い山だ。
-川 (kawa)	river	1	5e148a7e41e0e2969d26d8522b774463	子どもたちが川で泳いでいます。	川が見える。
-海 (umi)	sea	1	a6961d0d0207afeaa37940e7a6de385d	夏になったら海へ行きたいです。	海で遊ぶ。
-火 (hi)	fire	1	6fa9a3c7d08ecbc097c54de9167b4094	料理をするときに火を使います。	火が見える。
-月 (tsuki)	moon	1	01cb08a0e67f0f1a53a9c7099e14100f	今夜は月がとてもきれいですね。	月が出た。
-星 (hoshi)	star	1	3389781b3ab1cd86f42a17cf7f7a9545	空にたくさんの星が見えます。	星がきれい。
-太陽 (taiyō)	sun	1	19faac438188fad3c73dbddb88665dc9	朝になると太陽がのぼります。	太陽が明るい。
-木 (ki)	tree	1	47bf9d9e782bbb352909faa68d75c330	公園に大きな木がたくさんあります。	木が高い。
-花 (hana)	flower	1	79b2df68776fd0ae11c97ab28fc04f2f	春になると庭に花がさきます。	花がきれい。
-草 (kusa)	grass	1	950f69e4e9ed5a6ae50009c5799f8273	庭の草がたくさん生えてきました。	草が緑だ。
-動物 (dōbutsu)	animal	1	59b795a97ed041c3ec7a182eb65254c5	日曜日に動物園へ行きました。	動物が好き。
-犬 (inu)	dog	1	bca86a18053cb5bbd728013f065928c3	毎朝、公園で犬と散歩します。	犬がかわいい。
-猫 (neko)	cat	1	a18706d3c58db63749751b9ecb7c94d6	私の家には白い猫がいます。	猫が好きです。
-鳥 (tori)	bird	1	5fcd7b4c8c74de2761f2da749dfacdfa	朝、鳥の声で目がさめました。	鳥が鳴く。
-馬 (uma)	horse	1	ed3640d72bf47d4afd89957ecc01b30f	あの白い馬はとても速いです。	馬が走る。
-牛 (ushi)	cow	1	6312795810b3137f834155af513f8eb7	牧場で牛がのんびりしています。	牛が大きい。
-虫 (mushi)	insect	1	980937b6863dcd5ecaea122ebb0f291b	夏になると虫がたくさん出ます。	虫がいる。
-空気 (kūki)	air	1	1dd969bcf90e6717a2b8bdf435b126c1	山の空気はとてもきれいです。	空気がいい。
-池 (ike)	pond	1	00b12daee353776b265acb2828c3452d	公園の池に魚がいます。	池が見える。
-森 (mori)	forest	1	346261f621d6360fdd1e21c81423abcc	森の中はとてもしずかでした。	森を歩く。
-石 (ishi)	stone	1	9df347860dfbdf23214cab540bd9eaeb	道に大きな石がありました。	石を見る。
-駅 (eki)	station	1	691683b12d1d8738fd380181908049aa	つぎの駅でおります。	駅はどこ？
-電車 (densha)	train	1	0b719cf00abc3ae654e589b46fad4088	毎朝電車で会社へ行きます。	電車に乗る。
-車 (kuruma)	car	1	3bc3647dd7079a1fdff1923d8b487997	父は新しい車を買いました。	車で行く。
-バス (basu)	bus	1	cebd9fdb981d05b71b973047fffd2a32	学校までバスで二十分です。	バスを待つ。
-飛行機 (hikōki)	airplane	1	506fcb904bb253b4814196e6db1d247e	飛行機で日本へ行きます。	飛行機は速い。
-自転車 (jitensha)	bicycle	1	58ed84bab0142761926527bd07cbc600	自転車で公園まで行きました。	自転車に乗る。
-地下鉄 (chikatetsu)	subway	1	9caf3daa4527af3887b0f927c9f3372b	東京では地下鉄が便利です。	地下鉄で行く。
-道 (michi)	road; way	1	90e112e3d9442f20941f274d002974ea	この道をまっすぐ行ってください。	道が広い。
-町 (machi)	town	1	800beba141941c59e8aa19f7280f7e73	この町は静かでいいです。	町を歩く。
-銀行 (ginkō)	bank (money)	1	ee85982251725e1fc56bb3e875a3b18c	銀行は九時に開きます。	銀行へ行く。
-学校 (gakkō)	school	1	8d4be79542e1601dfcf2f20635ef2101	毎日歩いて学校へ行きます。	学校は近い。
-図書館 (toshokan)	library	1	8086ab04f4246d17162b56b669359ffa	図書館で本を借りました。	図書館は静かだ。
-郵便局 (yūbinkyoku)	post office	1	c396c958e1afe7430cfce6d2908073f1	郵便局で切手を買います。	郵便局へ行く。
-公園 (kōen)	park	1	44d4682764a19425d243f4ebcdfcaf13	日曜日に公園で遊びました。	公園で遊ぶ。
-空港 (kūkō)	airport	1	0a754a5735fb85d76450ec0067462639	友だちを空港でむかえます。	空港は大きい。
-会社 (kaisha)	company; office	1	c5b9eb1a9cd11ca0617076ea21b3d99d	父は会社へ車で行きます。	会社は近い。
-切符 (kippu)	ticket	1	c1ed5cbe79d772b551fb995cfeb49e76	駅で電車の切符を買いました。	切符を買う。
-地図 (chizu)	map	1	acb7fcbbc75718a03c95f0bb8a25edc3	地図を見て道をさがします。	地図を見る。
-橋 (hashi)	bridge	1	91d6bea37811dbf845abb20eebbbfaaa	あの橋をわたると駅です。	橋をわたる。
-角 (kado)	corner	1	5b1395f7725bf4c6ccb925f27610d036	つぎの角を右にまがってください。	角をまがる。
-近く (chikaku)	nearby; vicinity	1	6aee5205a4dd1af0f2df04018a7499a1	駅の近くにいい店があります。	近くにある。
-近所 (kinjo)	neighborhood	1	410a1bd2219b740aee0ee01c2b8ac223	近所に新しい病院ができました。	近所を歩く。
-交差点 (kōsaten)	intersection	1	04693361f35d85bbc1e9d63bd786a0e7	交差点を渡って右へ行きます。	交差点は近い。
-信号 (shingō)	traffic light	1	504f9e1f1d95903ffa356a5655e61893	信号が青になったら渡ります。	信号を見る。
-乗る (noru)	to ride; to board	1	b04778cdc83407507d82fe9c398d0244	毎朝七時の電車に乗ります。	バスに乗る。
-降りる (oriru)	to get off	1	eeb8e84a7f4609eeb01cb0f3b4173405	つぎの駅で電車を降ります。	バスを降りる。
-渡る (wataru)	to cross	1	20ac56ef34774a49329ae7d02bec8d06	気をつけて道を渡ってください。	橋を渡る。
-曲がる (magaru)	to turn	1	8c46541f9b91062ddefc59e9e7c3831a	二つ目の角を左に曲がります。	右に曲がる。
-仕事 (shigoto)	work; job	1	b02cd5aa792801e96122b73de9aec2a8	今日は仕事がとても忙しいです。	仕事は大変だ。
-お金 (okane)	money	1	e1de1e32c9f0524433a8c9411362dd20	財布にお金が少ししかありません。	お金がない。
-円 (en)	yen (currency)	1	dd67d76a3414e64900b7717f0a78d01f	このりんごは百円です。	千円ください。
-売る (uru)	to sell	1	f9a3bb7754a886e1e1fbebaacf3b55e3	あの店は本を安く売っています。	花を売る。
-勉強 (benkyō)	study	1	6553522ac37a3c13841aa07fea02c855	毎晩日本語を勉強しています。	勉強が好きだ。
-宿題 (shukudai)	homework	1	676805d2f332af5127d6dca0bf48fd9a	今日の宿題はまだ終わっていません。	宿題をする。
-本 (hon)	book	1	26d95a4c20cff53254fac9fd9771d3da	図書館で面白い本を借りました。	本を読む。
-鉛筆 (enpitsu)	pencil	1	fb006216b4d72fa0d8740700accb6666	鉛筆で名前を書いてください。	鉛筆がない。
-教室 (kyōshitsu)	classroom	1	4abf60c8febaabdbd2dbf138f50d4945	教室で友だちと話しました。	教室は静かだ。
-大学 (daigaku)	university	1	be49be06c9923b191005ff14d859e0ab	姉は東京の大学に通っています。	大学へ行く。
-働く (hataraku)	to work	1	aefc2f8b8dfdc643919c760522210340	母は病院で働いています。	毎日働く。
-高い (takai)	expensive	1	55c5f0d506823206b087c72ee35ddb62	この時計はとても高いです。	高いね。
-安い (yasui)	cheap	1	426a3478d9fc0001f3f04b2fa538c405	この店の野菜は安いです。	安い店だ。
-値段 (nedan)	price	1	25b35441f8929060beac1265eb12de72	この服の値段を教えてください。	値段が高い。
-財布 (saifu)	wallet	1	0dca483bcedddfa669eb466bf5ca35d6	電車の中で財布をなくしました。	財布を買う。
-問題 (mondai)	problem; question	1	c04817ef641b2924c97dd6312501a74a	この問題は少し難しいです。	問題がある。
-質問 (shitsumon)	question	1	f9e80dc5db98f27a684fb988d306d9ca	先生に質問をしてもいいですか。	質問があります。
-読む (yomu)	to read	1	fb45e4163bc3382238f87ffb518f9f66	電車で新聞を読みます。	本を読む。
-書く (kaku)	to write	1	ff00202ff7bf7e4f1cb6f8ea5a90b790	ノートに漢字を書きます。	手紙を書く。
-覚える (oboeru)	to memorize; learn	1	990c17cb31eb5b499cc0e73efe9dc8f3	新しい単語をたくさん覚えました。	名前を覚える。
-払う (harau)	to pay	1	c5737206c51349546cdaef38b47e52bf	レジでお金を払いました。	お金を払う。
-好き (suki)	to like; fond of	1	82df6bf33583f992d1073cb800f20f36	私は音楽を聞くのが好きです。	猫が好きだ。
-嫌い (kirai)	to dislike; hate	1	a1146b1c6f222e4652c3830cc48288f4	弟は野菜が嫌いです。	虫が嫌いだ。
-楽しい (tanoshii)	fun; enjoyable	1	2576e0337d706b234af9bbc5132bddf2	友だちと話すのは楽しいです。	今日は楽しい。
-面白い (omoshiroi)	interesting; funny	1	abae83a29d57182ea552b7988d2e5144	この本はとても面白いです。	話が面白い。
-嬉しい (ureshii)	glad; happy	1	8dfcb9c1098fbfddcd0fecc746ceb138	手紙をもらってとても嬉しいです。	会えて嬉しい。
-悲しい (kanashii)	sad	1	8d540624ca5aaf1b92945c903920f05c	その話を聞いて悲しくなりました。	とても悲しい。
-寂しい (sabishii)	lonely	1	0a9d14e38b73770c4853188e381259c6	一人で家にいると寂しいです。	夜は寂しい。
-怖い (kowai)	scary; afraid	1	98ffaf1f8661cd6a194b768732e9cf11	あの犬は大きくて少し怖いです。	暗い所が怖い。
-心配 (shinpai)	worry; anxiety	1	d8841eb7a4bf511e5630de61d5b37d9a	母は私のことをいつも心配します。	心配しないで。
-思う (omou)	to think; feel	1	15a3793ae3acae6e0f92e6247e79ee36	明日は雨が降ると思います。	いいと思う。
-考える (kangaeru)	to think; consider	1	37d5b409dcd5ab46df6b2e543fcd3365	答えをよく考えてから言います。	よく考える。
-分かる (wakaru)	to understand	1	b81d13b464672874af69de870badac43	先生の話がよく分かりました。	意味が分かる。
-知る (shiru)	to know; learn of	1	1937f1fdd82bd95d50da5c023446c50e	私はその人の名前を知っています。	よく知っている。
-意味 (imi)	meaning	1	f02dfd21472c18311cec3064ff9cdc32	この言葉の意味を教えてください。	意味が分かる。
-話す (hanasu)	to speak; talk	1	4644ae10f37103caae6583b62569c5a9	友だちと電話で長く話しました。	日本語で話す。
-言う (iu)	to say	1	fac1c415ea734458831fcbb42e158164	先生にありがとうと言いました。	名前を言う。
-聞く (kiku)	to listen; ask	1	35a845c6dc1b34a4fb74e0bea321b6af	分からない時は先生に聞きます。	音楽を聞く。
-話 (hanashi)	talk; story	1	e2ed161ff17bca5eabbb423afd8d5bfa	おばあさんの話はとても面白いです。	話を聞く。
-手紙 (tegami)	letter (mail)	1	97415ac4d656cda7ba31896083c09fe0	友だちに長い手紙を書きました。	手紙を出す。
-答える (kotaeru)	to answer	1	7442a900aa94fe03ba4f98901985989b	先生の質問にすぐに答えました。	大きな声で答える。
-会う (au)	to meet	1	d25eb7fe60ed7d7bb337b408dbbdc516	駅で友だちと三時に会います。	先生に会う。
-教える (oshieru)	to teach; tell	1	91915fe221b776be2c2ab5aa2f8d99cb	姉が私に日本語を教えてくれます。	道を教える。
-返事 (henji)	reply; answer	1	52350abe428fd0c775907a9a92c0447c	メールの返事をまだ書いていません。	返事をする。
-国 (kuni)	country	1	b8ac38002bcf21d139fb43bc02faa006	あなたの国はどこですか。	国へ帰る。
-外国 (gaikoku)	foreign country	1	57d96825dbf8336ad6802fe1f55a5552	いつか外国に住んでみたいです。	外国へ行く。
-外国人 (gaikokujin)	foreigner	1	66a92a486658e9f4b72f6b0915a004ef	この町には外国人がたくさんいます。	外国人と話す。
-大切 (taisetsu)	important; precious	1	ca35bfaf54ede334bb0963148f053713	家族は私にとって大切な人です。	大切な物だ。
-大丈夫 (daijōbu)	all right; OK	1	46922bf00f7de602bcba3b2c3aee1da8	少し疲れましたが、もう大丈夫です。	私は大丈夫。
-言葉 (kotoba)	word; language	1	f7e4484e3b0c1dd9faae2cf8aee0bac1	この言葉の意味が分かりません。	優しい言葉。
-字 (ji)	letter; character	1	8f3331a6b0916b60724b896ec479cbaf	彼はとてもきれいな字を書きます。	字が大きい。
-行く (iku)	to go	1	7d653f1c8ab4f8e96e8153b947a3d841	来週、友達と京都へ行きます。	学校へ行く。
-来る (kuru)	to come	1	5ffe1f8a74aa947621483cc4a21a5c73	明日、友達が家に来ます。	バスが来る。
-帰る (kaeru)	to return home	1	2ead61b15f5c2e14c976e478edfcbb53	今日は早く家に帰ります。	うちへ帰る。
-歩く (aruku)	to walk	1	58da39cfd850f109c9b2462718d5bb10	毎朝、公園をゆっくり歩きます。	道を歩く。
-走る (hashiru)	to run	1	f5bb67a86d5b8c063b06c6ff8552bc6a	子供たちが公園で元気に走っています。	速く走る。
-入る (hairu)	to enter	1	b9b3b2c78f5f88afb3b8407bd1921f27	靴を脱いでから部屋に入ります。	店に入る。
-出る (deru)	to go out; leave	1	22649b670a2e1463d8702e0ffcde4050	七時に家を出て駅へ行きます。	外に出る。
-立つ (tatsu)	to stand	1	fcdb16b6baffd11f94355e9dcf6a9f2b	電車が混んでいて、ずっと立っていました。	ここに立つ。
-座る (suwaru)	to sit	1	36d250da0a50f6564492dddf02f2704b	どうぞこの椅子に座ってください。	椅子に座る。
-待つ (matsu)	to wait	1	3fea1f7da8e7e480325acd0e5aeb7a5c	駅の前で三十分も友達を待ちました。	バスを待つ。
-する (suru)	to do	1	6581f5b3cf8d5ed9ed785bef2a58229e	週末は家で宿題をします。	何をする？
-使う (tsukau)	to use	1	e076bbef78b47de661e28d2f8b8c6347	この部屋ではパソコンを使ってもいいです。	はしを使う。
-持つ (motsu)	to hold; carry	1	c32ef7e1eee607558ef19f888edef482	重い荷物を両手で持っています。	かばんを持つ。
-取る (toru)	to take; pick up	1	fe344957dc22e1589be860674bc35e76	そこの塩を取ってもらえますか。	本を取る。
-置く (oku)	to put; place	1	6b2caeca53eae605f3d5dc381f103e91	かばんを机の上に置いてください。	ここに置く。
-開ける (akeru)	to open (something)	1	3416c95cf28d8bb2a3955e5bb6de0a36	暑いので窓を開けてもいいですか。	ドアを開ける。
-閉める (shimeru)	to close (something)	1	277bbdd186a9a89e76741ff8b3573a94	出かける前に窓を全部閉めます。	ドアを閉める。
-始める (hajimeru)	to begin (something)	1	9b049ddf2eee241c370fbd6dad159b2e	九時から会議を始めましょう。	勉強を始める。
-終わる (owaru)	to end; finish	1	5d0ecefaab21159d6c2e358763e60540	授業は三時に終わります。	仕事が終わる。
-出す (dasu)	to take out; send	1	e911f1e2367c56ed61371ab8f2a40f3a	郵便局で母に手紙を出しました。	ごみを出す。
-入れる (ireru)	to put in; insert	1	65d28cf773dd1e8098b6ff5deb017461	かばんに本とノートを入れます。	水を入れる。
-押す (osu)	to push; press	1	25168a23ffa380006e9e4000b5bf710a	このボタンを押すとドアが開きます。	ボタンを押す。
-引く (hiku)	to pull	1	37f7ded48207f5016d7531245e0f9b7d	このドアは手前に引いて開けます。	ドアを引く。
-切る (kiru)	to cut	1	2044c0734edf4d9aef07b66c61910b6a	包丁で野菜を小さく切ります。	紙を切る。
-消す (kesu)	to turn off; erase	1	fba19b332bb09a359e0808b4c8e4e1c0	寝る前に部屋の電気を消します。	電気を消す。
-つける (tsukeru)	to turn on	1	3985d6319157fb82f093b9ffdb7be104	暗くなったので電気をつけました。	テレビをつける。
-泳ぐ (oyogu)	to swim	1	41beb1af723fa88b018bab90d6a8cb24	夏休みに海で友達と泳ぎました。	川で泳ぐ。
-飛ぶ (tobu)	to fly	1	884e66dc84fe2ea9ec639991d7f98b25	空を大きな鳥が飛んでいます。	鳥が飛ぶ。
-止まる (tomaru)	to stop (intransitive)	1	feca5a3f6d259f4bea3734ac9de73ece	バスは次のバス停で止まります。	車が止まる。
-急ぐ (isogu)	to hurry	1	39b7ee86b910f1e6d1e8faa4acc8e4d1	電車に遅れそうなので急ぎましょう。	急いでください。
-大きい (ōkii)	big	1	84222af1028039cd22d87b08e0bcae4b	この公園はとても大きいです。	大きい犬だね。
-小さい (chiisai)	small	1	ee642f34a79e8c8d7b1ffc131d3d74de	小さい箱に入れてください。	小さい猫がいる。
-新しい (atarashii)	new	1	72a7b9a089166f2048532394b14dd1b9	新しい靴を買いました。	新しい本だよ。
-古い (furui)	old (thing)	1	98379d6cee7cfda5d2a7c15461a8ee88	これはとても古いお寺です。	古い家だね。
-暑い (atsui)	hot (weather)	1	73d8b3c68b4c97fea885a2ce11428976	今日は本当に暑いですね。	夏は暑い。
-寒い (samui)	cold (weather)	1	cd3eaa7d3ab1f5bc52865e108e926e8e	冬の朝はとても寒いです。	今日は寒いね。
-忙しい (isogashii)	busy	1	5c75c518fcadbad909f719a9b0350e84	今週はとても忙しいです。	今、忙しい？
-難しい (muzukashii)	difficult	1	bf073778d8c6b78512162f9b6f578c20	この問題はとても難しいです。	漢字は難しい。
-易しい (yasashii)	easy (simple)	1	685ff60cefee4f8c1ebf47c2adf5ede7	今日のテストは易しかったです。	易しい問題だ。
-良い (yoi)	good	1	171a52acac237123ce9208eaa0c5b512	今日はとても良い天気です。	良い人だね。
-悪い (warui)	bad	1	0b69145f4898790a4e11a91b2e8e84df	頭が痛くて気分が悪いです。	天気が悪い。
-早い (hayai)	early; fast	1	7821988a7b1c18fa9671d053afbd2a58	毎朝とても早い時間に起きます。	朝が早い。
-遅い (osoi)	late; slow	1	326bfdcfeaba74361b454cb74ac73bdb	今日は帰りが遅くなりました。	バスが遅い。
-長い (nagai)	long	1	455282b137f4811fea6bf51df577a9ac	この川はとても長いです。	長い髪だね。
-短い (mijikai)	short (length)	1	f0b840d69f7721ef0abd956328dc9014	夏は夜が短いです。	短い鉛筆だ。
-静か (shizuka)	quiet	1	9592950210b7d3a53fc21c98df6ded64	この図書館はとても静かです。	静かな部屋だ。
-有名 (yūmei)	famous	1	88e6f290356617ccc7d93cd96a091968	この町は祭りで有名です。	有名な人だ。
-便利 (benri)	convenient	1	d1187c647de65cb00885c28c9ae4a370	この駅はとても便利です。	便利な店だ。
-時間 (jikan)	time; hour	1	1204345aa8c4621a65386b70cae3a969	今日は時間がたくさんあります。	時間がない。
-年 (toshi)	year	1	c3c2613edd2db1f6aad7449aa2fd57ef	今年は雨がとても多いです。	良い年だね。
-週 (shū)	week	1	9f0f8f088bfb1e1843a157933f1573ad	来週、友達に会います。	今週は忙しい。
-朝 (asa)	morning	1	afe48d06a7dc040f6343838cf7b6678e	毎朝コーヒーを飲みます。	朝が好きだ。
-夜 (yoru)	night	1	e70069e2ff58311d20d49414d1266cf0	夜は星がきれいに見えます。	夜は静かだ。
+人 (hito)	person	1	7b3882acb4fd76326a3dde4aa27b10c2	三連休の京都は、どこへ行っても人がいっぱいです。	店の前に人が並んでいます。
+男 (otoko)	man, male	1	6822b9807ce05e8bcb19ed742fef86e4	隣の席の男の人が、ずっと将棋の本を読んでいます。	あの男の人は駅員です。
+女 (onna)	woman, female	1	f71e111eb8dcca98c1febfbdf06f96a1	市場で魚をさばいている女の人は、とても手が早いです。	女の人が二人います。
+子供 (kodomo)	child	1	ade50681bb5e0e1bb731eae2e796f332	夏休みの朝、公園で子供たちがラジオ体操をします。	子供が三人います。
+友達 (tomodachi)	friend	1	5699237ecc900b54ae9c339a02acbebf	大阪の友達に、たこ焼きのおいしい店を教えてもらいました。	友達と映画を見ます。
+先生 (sensei)	teacher	1	43b90c38722b7e618d2feae55781f5b1	書道の先生は、筆の持ち方から丁寧に教えてくれます。	先生に質問しました。
+学生 (gakusei)	student	1	19800d4131a1ae116fbe63f29e96a482	春になると、京都の下宿は学生でにぎやかになります。	私は学生です。
+名前 (namae)	name	1	2399f42cc295d312b83d1838c915d485	沖縄の名字は珍しいので、名前をよく聞き返されます。	ここに名前を書いてください。
+家族 (kazoku)	family	1	f166502e55bef01b209fac49dc9d1f66	お盆には家族が集まって、お墓参りに行きます。	家族は四人です。
+父 (chichi)	father (own)	1	e462cba483534c49a1d8fddee1336c8d	父は毎朝五時に起きて、畑の様子を見に行きます。	父は寝ています。
+母 (haha)	mother (own)	1	241ebf1de14457ac626e08dd416f222a	母が作る味噌汁は、出汁が濃くておいしいです。	母は先生です。
+お父さん (otōsan)	father (polite)	1	675907828c6475206d00fd1f0c437137	隣のお父さんは、日曜の朝に必ず車を洗っています。	お父さんはどこですか。
+お母さん (okāsan)	mother (polite)	1	e6f5a5955fae0e525d5a4360780c7d57	友達のお母さんが、金沢のお菓子を送ってくれました。	お母さんは元気ですか。
+兄 (ani)	older brother (own)	1	adf1f95868e1b6976bd2bfc3e208e44d	兄は札幌で働いていて、正月しか帰ってきません。	兄が二人います。
+姉 (ane)	older sister (own)	1	950900e3becd95b7ed0c003acfde8347	姉は着物の着付けを習いに、週に一度通っています。	姉は東京にいます。
+弟 (otōto)	younger brother (own)	1	4b8deaddae8c37980233083276177d7e	弟は虫が好きで、夏になると近くの森へ出かけます。	弟はまだ小学生です。
+妹 (imōto)	younger sister (own)	1	0193f654d90b5c6c3f3f6c01d3359c54	妹に留守番を頼んで、私は買い物に出ました。	妹は歌が上手です。
+体 (karada)	body	1	f9dda47015d26da6dc16d9c4108db489	温泉に入ると、体の芯まで温まる気がします。	体が痛いです。
+頭 (atama)	head	1	0dfe3721493f69390f07b5a04012d901	低い門なので、頭をぶつけないように気をつけてください。	頭が痛いです。
+目 (me)	eye	1	ea92a1cf3a7847f7345e2d7db5755b56	雪の日は光が強くて、目がすぐ疲れてしまいます。	目を閉じてください。
+耳 (mimi)	ear	1	c6f4042618c1775b8239f63796d0b4e0	セミの声が大きすぎて、耳が痛いくらいです。	犬の耳は大きいです。
+口 (kuchi)	mouth	1	914765a542ea96fcb0b6692e1a8e20ec	熱い蕎麦を急に口に入れて、少しやけどしました。	口を開けてください。
+手 (te)	hand	1	b02e86642b9d041f458a923e242cf2a4	神社に入る前に、手を水で清める習慣があります。	手が冷たいです。
+足 (ashi)	foot, leg	1	38135d680e066d817cbfd59ad96b1ea7	四国の遍路道を歩いたので、足がとても疲れました。	足が痛いです。
+顔 (kao)	face	1	c646133bbf0590b79ecf9310caf0e629	朝の通勤電車では、みんな眠そうな顔をしています。	顔を洗います。
+元気 (genki)	healthy, lively	1	37a109e76f7872066c6b0a02fa9c4ffc	祖母は九十歳ですが、今も畑に出るほど元気です。	子供は元気ですね。
+病気 (byōki)	illness, sickness	1	5c888867b609096b3b92e8dae7a2fceb	病気のときは、まず近くの内科に行くといいですよ。	犬が病気になりました。
+医者 (isha)	doctor	1	ab0722d4147b9345c77d53ed69e651e9	島には医者が一人しかいないので、皆その先生を頼ります。	医者に相談します。
+病院 (byōin)	hospital	1	293e7c0f5c158bb0001b6543ce884c97	病院の受付では、保険証を出すように言われます。	病院はどこですか。
+薬 (kusuri)	medicine	1	c1cceaeb201b8187325fb1299059e8d9	薬は食事の後に飲んでくださいと言われました。	この薬は苦いです。
+食べる (taberu)	to eat	1	90dafd576896ef0abc1c7c8b501caa1f	広島ではお好み焼きに、そばを入れて食べるのが普通です。	朝ご飯を食べる。
+飲む (nomu)	to drink	1	d7150536ac402948aeae1a136f800eb4	冬の東北では、熱いお茶を何度も飲むことになります。	冷たい水を飲む。
+ご飯 (gohan)	rice; meal	1	79193783a9a816151cc9690f49781630	新潟のご飯は本当においしいと、みんなが言います。	ご飯を炊きます。
+パン (pan)	bread	1	94bc4bf6e4881c16eb84607c2a152ecc	駅前のパン屋は、朝七時に焼きたてが並びます。	パンを二つください。
+肉 (niku)	meat	1	956265d39cd642d5e44e313d20a5ddef	神戸の商店街では、肉屋のコロッケがよく売れています。	肉は好きですか。
+魚 (sakana)	fish (food)	1	d2aff615d018c4143234b787f306657e	港町なので、魚が安くて種類も多いです。	魚を焼きます。
+野菜 (yasai)	vegetables	1	97d9618dcf893e0608e63d95ffc893dd	道の駅では、朝採れの野菜が箱で売られています。	野菜が高いです。
+果物 (kudamono)	fruit	1	3dc981728fcb04e6d1afc81dde3caf54	山梨は果物の産地で、夏になると桃が並びます。	果物を買いました。
+卵 (tamago)	egg	1	6d06002997d87ba7a6a1fabffcdbd0fb	すき焼きは、生の卵につけて食べる人が多いです。	卵が一つ残っています。
+お茶 (ocha)	tea (green)	1	9105e6105565d772db59c5824a28e657	静岡の親戚から、今年の新しいお茶が届きました。	お茶をどうぞ。
+牛乳 (gyūnyū)	milk	1	37e7be236516cdb182d7907b90b8f8ed	北海道の牧場で、しぼりたての牛乳を飲みました。	牛乳がもうありません。
+お酒 (osake)	alcohol; sake	1	58fe4df75e31775a01db767ab5fa84e2	新潟の蔵では、雪解け水でお酒を造っています。	お酒は飲めません。
+おいしい (oishii)	delicious	1	bc09389ace5c2900eea056ec06dab12d	冷えたビールと枝豆は、夏の夜が一番おいしいです。	このお菓子はおいしい。
+料理 (ryōri)	cooking; dish	1	113283e616c2b47658c03e4f93d5a1e7	沖縄の料理には、豚肉と昆布がよく使われます。	料理は苦手です。
+作る (tsukuru)	to make	1	58077ada5fc4dcdd834b7be2739a2aea	正月には、家族でおせちを作る家もまだあります。	味噌汁を作る。
+買う (kau)	to buy	1	2ef52a91bef7f14b04ee999badfc2a40	帰りにコンビニで、傘を買うはめになりました。	切手を買う。
+店 (mise)	shop; store	1	7cf9cf3a924640ad3afb492455a7bdd4	この店は昼だけ営業していて、三時には閉まります。	店が混んでいます。
+家 (ie)	house; home	1	e861923b971c15523df6ed122d6a56d1	京都の古い家は、間口が狭くて奥に長いです。	家に帰ります。
+部屋 (heya)	room	1	ba58f3b4226874f497d74f73cc5f3c81	部屋が北向きなので、冬はなかなか暖まりません。	部屋は二つあります。
+窓 (mado)	window	1	2c1606b8e36cc8a30074eddfe8a013c3	台風が来る前に、窓の雨戸を閉めておきます。	窓を開けてください。
+ドア (doa)	door	1	1c4e14bc87062829ab63e3c4400cd0a0	電車のドアが閉まる前に、駆け込む人がいます。	ドアが重いです。
+机 (tsukue)	desk	1	9a423bcc55e8427036b995fc36057591	教室の机には、昔の落書きがそのまま残っています。	机の上に本があります。
+椅子 (isu)	chair	1	16ff3f604e2ade7141b280ccfa53ef74	待合室の椅子はどれも埋まっていて、立って待ちました。	椅子に座ってください。
+テレビ (terebi)	television	1	7a76de2d25119f903d611c4c4be44b27	夏の甲子園は、テレビでずっと放送されています。	テレビを消します。
+電話 (denwa)	telephone	1	fa3e68941c25189516be01da7b1b3065	山の上は電話がつながらないので、先に連絡しておきます。	電話が鳴っています。
+寝る (neru)	to sleep	1	5b4a061398a8fca4364f6be2e8498ff0	畳の上に布団を敷いて寝るのは、思ったより気持ちいいです。	十時に寝る。
+起きる (okiru)	to wake up	1	69c6bd979ef02a04728e42adacbac1ae	初日の出を見るために、四時に起きるつもりです。	毎朝六時に起きる。
+風呂 (furo)	bath	1	a9987c04da9ba3882f8edf9a77e6b2d0	田舎の家では、風呂の湯を家族で順番に使います。	風呂に入ります。
+洗う (arau)	to wash	1	02a6c29b2d5fbda4a6da4cc8ada7f780	家に上がる前に、玄関で足を洗う人もいます。	手を洗う。
+掃除 (sōji)	cleaning	1	38b234fe15bbb23553c86256d8710317	学校では、生徒が自分たちで教室の掃除をします。	部屋の掃除をしました。
+天気 (tenki)	weather	1	c68dd5a77ba43157df002d8c3a8d8d7f	山の天気は変わりやすいので、雨具を持って行きます。	今日はいい天気です。
+雨 (ame)	rain	1	40053316f8aa2a9ed89e6025bc858622	六月は梅雨で、一週間ずっと雨が続くこともあります。	雨が降っています。
+雪 (yuki)	snow	1	af8a0b86d04642b53a5bd9ce332066e2	青森では、屋根の雪を下ろすのが冬の大仕事です。	雪が積もりました。
+風 (kaze)	wind	1	7203d1583dcfb0ed5cd8d018e56f0a77	瀬戸内の海は、夕方になると風がぴたりと止まります。	風が強いですね。
+空 (sora)	sky	1	c89bf823794e657241316c0d2f6e5360	冬の日本海側は、空がずっと灰色のままです。	空が青いです。
+雲 (kumo)	cloud	1	0210305a8583800f54ff47861daddf61	台風が近づくと、雲の動きが急に速くなります。	雲が出てきました。
+山 (yama)	mountain	1	489ed88fcbd0fdba4bd339325fadc8c7	長野の山は、九月の終わりにはもう寒くなります。	山に登ります。
+川 (kawa)	river	1	5e148a7e41e0e2969d26d8522b774463	夏になると、川で鮎を釣る人が並びます。	川で泳ぎました。
+海 (umi)	sea	1	a6961d0d0207afeaa37940e7a6de385d	沖縄の海は、冬でも思ったより暖かいそうです。	海が見えます。
+火 (hi)	fire	1	6fa9a3c7d08ecbc097c54de9167b4094	祭りの夜、境内でたき火の火を囲みました。	火をつけます。
+月 (tsuki)	moon	1	01cb08a0e67f0f1a53a9c7099e14100f	十五夜には、団子を供えて月を見る習慣があります。	月がきれいです。
+星 (hoshi)	star	1	3389781b3ab1cd86f42a17cf7f7a9545	山小屋の外に出ると、星がびっくりするほど見えます。	星を見に行きます。
+太陽 (taiyō)	sun	1	19faac438188fad3c73dbddb88665dc9	八月の午後は、太陽が強すぎて外に出られません。	太陽が出ました。
+木 (ki)	tree	1	47bf9d9e782bbb352909faa68d75c330	神社の大きな木は、何百年もそこに立っています。	木の下で待ちます。
+花 (hana)	flower	1	79b2df68776fd0ae11c97ab28fc04f2f	四月になると、川沿いの桜の花が一気に開きます。	花を買いました。
+草 (kusa)	grass	1	950f69e4e9ed5a6ae50009c5799f8273	夏は草がすぐ伸びるので、月に二度は刈ります。	庭の草を取ります。
+動物 (dōbutsu)	animal	1	59b795a97ed041c3ec7a182eb65254c5	北海道では、夜道で動物に出会うことがあります。	動物が好きです。
+犬 (inu)	dog	1	bca86a18053cb5bbd728013f065928c3	秋田の犬は、寒さに強くて毛が厚いです。	犬が走っています。
+猫 (neko)	cat	1	a18706d3c58db63749751b9ecb7c94d6	島の港では、猫が船を待つように座っています。	猫が二匹います。
+鳥 (tori)	bird	1	5fcd7b4c8c74de2761f2da749dfacdfa	朝早く、川原で鳥の声を聞くのが好きです。	鳥が飛んでいます。
+馬 (uma)	horse	1	ed3640d72bf47d4afd89957ecc01b30f	北海道の牧場では、馬がゆっくり草を食べています。	馬に乗りました。
+牛 (ushi)	cow	1	6312795810b3137f834155af513f8eb7	山の斜面で、牛が放し飼いにされています。	牛は大きいです。
+虫 (mushi)	insect	1	980937b6863dcd5ecaea122ebb0f291b	網戸を閉めておかないと、虫がすぐ入ってきます。	虫が嫌いです。
+空気 (kūki)	air	1	1dd969bcf90e6717a2b8bdf435b126c1	高原の朝は、空気が澄んでいて気持ちがいいです。	空気が悪いです。
+池 (ike)	pond	1	00b12daee353776b265acb2828c3452d	庭園の池には、大きな鯉が何匹も泳いでいます。	池に石を投げました。
+森 (mori)	forest	1	346261f621d6360fdd1e21c81423abcc	屋久島の森は、いつも霧で湿っています。	森を歩きます。
+石 (ishi)	stone	1	9df347860dfbdf23214cab540bd9eaeb	枯山水の庭は、石と砂だけでできています。	石が重いです。
+駅 (eki)	station	1	691683b12d1d8738fd380181908049aa	地方の駅は無人で、切符は箱に入れます。	駅で会いましょう。
+電車 (densha)	train	1	0b719cf00abc3ae654e589b46fad4088	人身事故のせいで、電車が三十分も遅れました。	電車が来ました。
+車 (kuruma)	car	1	3bc3647dd7079a1fdff1923d8b487997	冬の山道は、車にタイヤチェーンが必要です。	車で行きます。
+バス (basu)	bus	1	cebd9fdb981d05b71b973047fffd2a32	一時間に一本しかバスがないので、時刻表を確かめます。	バスを待っています。
+飛行機 (hikōki)	airplane	1	506fcb904bb253b4814196e6db1d247e	台風のせいで、那覇行きの飛行機が欠航しました。	飛行機は速いです。
+自転車 (jitensha)	bicycle	1	58ed84bab0142761926527bd07cbc600	尾道の坂は急なので、自転車を押して上ります。	自転車で行きます。
+地下鉄 (chikatetsu)	subway	1	9caf3daa4527af3887b0f927c9f3372b	大阪の地下鉄は、駅の名前が覚えやすいです。	地下鉄が便利です。
+道 (michi)	road; way	1	90e112e3d9442f20941f274d002974ea	熊野の古い道は、石畳が苔で滑ります。	道を教えてください。
+町 (machi)	town	1	800beba141941c59e8aa19f7280f7e73	城下町なので、町の通りが碁盤の目になっています。	小さい町です。
+銀行 (ginkō)	bank (money)	1	ee85982251725e1fc56bb3e875a3b18c	銀行の手続きには、いまだにハンコが必要です。	銀行は三時に閉まります。
+学校 (gakkō)	school	1	8d4be79542e1601dfcf2f20635ef2101	学校では、上履きに履き替えてから中に入ります。	学校まで歩きます。
+図書館 (toshokan)	library	1	8086ab04f4246d17162b56b669359ffa	図書館は静かすぎて、椅子の音まで響きます。	図書館で本を借ります。
+郵便局 (yūbinkyoku)	post office	1	c396c958e1afe7430cfce6d2908073f1	郵便局で、お歳暮の荷物を出してきました。	郵便局はどこですか。
+公園 (kōen)	park	1	44d4682764a19425d243f4ebcdfcaf13	花見の季節は、公園の場所取りが朝から始まります。	公園で遊びます。
+空港 (kūkō)	airport	1	0a754a5735fb85d76450ec0067462639	空港のロビーで、いとこの到着を待っています。	空港まで行きます。
+会社 (kaisha)	company; office	1	c5b9eb1a9cd11ca0617076ea21b3d99d	会社の冷房が寒すぎて、上着が手放せません。	会社に行きます。
+切符 (kippu)	ticket	1	c1ed5cbe79d772b551fb995cfeb49e76	切符をなくしてしまい、駅員さんに相談しました。	切符を二枚ください。
+地図 (chizu)	map	1	acb7fcbbc75718a03c95f0bb8a25edc3	古い地図を見ながら、城跡の場所を探しました。	地図がありますか。
+橋 (hashi)	bridge	1	91d6bea37811dbf845abb20eebbbfaaa	岩国の錦帯橋は、木の橋が五つつながっています。	橋を渡ります。
+角 (kado)	corner	1	5b1395f7725bf4c6ccb925f27610d036	交番の角を曲がると、細い商店街に出ます。	次の角で止まってください。
+近く (chikaku)	nearby; vicinity	1	6aee5205a4dd1af0f2df04018a7499a1	家の近くに銭湯があるので、週末はよく行きます。	駅の近くに住んでいます。
+近所 (kinjo)	neighborhood	1	410a1bd2219b740aee0ee01c2b8ac223	近所の人が、朝から落ち葉を掃いています。	近所にコンビニがあります。
+交差点 (kōsaten)	intersection	1	04693361f35d85bbc1e9d63bd786a0e7	大きな交差点では、人が一斉に渡り始めます。	交差点で待ちます。
+信号 (shingō)	traffic light	1	504f9e1f1d95903ffa356a5655e61893	この信号はなかなか変わらないので、いつも急かされます。	信号が赤です。
+乗る (noru)	to ride; to board	1	b04778cdc83407507d82fe9c398d0244	最終のバスに乗るために、走って停留所へ向かいました。	電車に乗る。
+降りる (oriru)	to get off	1	eeb8e84a7f4609eeb01cb0f3b4173405	次の駅で降りるつもりが、寝過ごしてしまいました。	次の停留所でバスを降りる。
+渡る (wataru)	to cross	1	20ac56ef34774a49329ae7d02bec8d06	橋を渡ると、そこはもう隣の県です。	横断歩道を渡る。
+曲がる (magaru)	to turn	1	8c46541f9b91062ddefc59e9e7c3831a	郵便局を右に曲がると、古い蔵が並んでいます。	角を左に曲がる。
+仕事 (shigoto)	work; job	1	b02cd5aa792801e96122b73de9aec2a8	冬の間は、雪かきも大事な仕事になります。	仕事は何ですか。
+お金 (okane)	money	1	e1de1e32c9f0524433a8c9411362dd20	券売機は千円札しか使えないので、お金をくずします。	お金がありません。
+円 (en)	yen (currency)	1	dd67d76a3414e64900b7717f0a78d01f	この定食は、味噌汁までついて八百円です。	百円貸してください。
+売る (uru)	to sell	1	f9a3bb7754a886e1e1fbebaacf3b55e3	朝市では、その日に採れたものだけを売るそうです。	古い本を売る。
+勉強 (benkyō)	study	1	6553522ac37a3c13841aa07fea02c855	試験が近いので、図書館で勉強することにしました。	日本語を勉強します。
+宿題 (shukudai)	homework	1	676805d2f332af5127d6dca0bf48fd9a	夏休みの宿題は、最後の三日で片づけました。	宿題が終わりません。
+本 (hon)	book	1	26d95a4c20cff53254fac9fd9771d3da	漱石の本を、行き帰りの電車で少しずつ読んでいます。	本を借りました。
+鉛筆 (enpitsu)	pencil	1	fb006216b4d72fa0d8740700accb6666	試験では、鉛筆で答えを書くように言われます。	鉛筆を貸してください。
+教室 (kyōshitsu)	classroom	1	4abf60c8febaabdbd2dbf138f50d4945	冬の教室は、ストーブの周りだけが暖かいです。	教室に誰もいません。
+大学 (daigaku)	university	1	be49be06c9923b191005ff14d859e0ab	大学は山の上にあるので、坂を上るのが大変です。	大学で日本語を習います。
+働く (hataraku)	to work	1	aefc2f8b8dfdc643919c760522210340	祖父は八十を過ぎても、まだ畑で働くつもりです。	銀行で働く。
+高い (takai)	expensive	1	55c5f0d506823206b087c72ee35ddb62	都心の家賃は高いので、少し遠くに住んでいます。	この店は高いです。
+安い (yasui)	cheap	1	426a3478d9fc0001f3f04b2fa538c405	商店街の八百屋は、駅前の店より安いことが多いです。	これは安いですね。
+値段 (nedan)	price	1	25b35441f8929060beac1265eb12de72	観光地の店は、値段が書いていないことがあります。	値段を見ました。
+財布 (saifu)	wallet	1	0dca483bcedddfa669eb466bf5ca35d6	電車に財布を忘れましたが、駅の窓口に届いていました。	財布がありません。
+問題 (mondai)	problem; question	1	c04817ef641b2924c97dd6312501a74a	ごみの分別は、引っ越してきたばかりの人には問題です。	問題が難しいです。
+質問 (shitsumon)	question	1	f9e80dc5db98f27a684fb988d306d9ca	授業の最後に、先生が質問はありますかと聞きます。	質問があります。
+読む (yomu)	to read	1	fb45e4163bc3382238f87ffb518f9f66	待合室で、置いてある新聞を読むことにしました。	手紙を読む。
+書く (kaku)	to write	1	ff00202ff7bf7e4f1cb6f8ea5a90b790	年賀状は、まだ手で書く人も少なくありません。	はがきを書く。
+覚える (oboeru)	to memorize; learn	1	990c17cb31eb5b499cc0e73efe9dc8f3	駅の名前を覚えるのに、しばらくかかりました。	漢字を覚える。
+払う (harau)	to pay	1	c5737206c51349546cdaef38b47e52bf	この食堂は、食券を買って先に払う方式です。	現金で払う。
+好き (suki)	to like; fond of	1	82df6bf33583f992d1073cb800f20f36	私は夏より、涼しくなった秋の方が好きです。	犬が好きです。
+嫌い (kirai)	to dislike; hate	1	a1146b1c6f222e4652c3830cc48288f4	虫は嫌いですが、田舎の暮らしは気に入っています。	納豆が嫌いです。
+楽しい (tanoshii)	fun; enjoyable	1	2576e0337d706b234af9bbc5132bddf2	祭りの準備は大変ですが、それも含めて楽しいです。	旅行は楽しいですね。
+面白い (omoshiroi)	interesting; funny	1	abae83a29d57182ea552b7988d2e5144	落語は言葉遊びが多くて、聞くほど面白いです。	この本は面白い。
+嬉しい (ureshii)	glad; happy	1	8dfcb9c1098fbfddcd0fecc746ceb138	初雪の朝は、寒いのになぜか嬉しい気持ちになります。	手紙が来て嬉しいです。
+悲しい (kanashii)	sad	1	8d540624ca5aaf1b92945c903920f05c	見送りのホームで手を振るのは、少し悲しいものです。	悲しい話でした。
+寂しい (sabishii)	lonely	1	0a9d14e38b73770c4853188e381259c6	学生が帰省してしまう町は、夏の間だけ寂しいです。	一人は寂しいです。
+怖い (kowai)	scary; afraid	1	98ffaf1f8661cd6a194b768732e9cf11	夜の山道は街灯がなくて、正直かなり怖いです。	地震は怖いですか。
+心配 (shinpai)	worry; anxiety	1	d8841eb7a4bf511e5630de61d5b37d9a	台風の進路が心配で、朝から予報ばかり見ています。	心配しないでください。
+思う (omou)	to think; feel	1	15a3793ae3acae6e0f92e6247e79ee36	北陸の雪は想像以上だと、来てみて思うようになりました。	いいと思う。
+考える (kangaeru)	to think; consider	1	37d5b409dcd5ab46df6b2e543fcd3365	引っ越すかどうか、もう少し考えることにします。	もう一度考える。
+分かる (wakaru)	to understand	1	b81d13b464672874af69de870badac43	地図を見れば、道はすぐに分かるはずです。	意味が分かる。
+知る (shiru)	to know; learn of	1	1937f1fdd82bd95d50da5c023446c50e	その祭りの由来を知る人は、今では少ないそうです。	知る人ぞ知る店です。
+意味 (imi)	meaning	1	f02dfd21472c18311cec3064ff9cdc32	この漢字の意味を、辞書で調べてみました。	意味が分かりません。
+話す (hanasu)	to speak; talk	1	4644ae10f37103caae6583b62569c5a9	方言で話すと、店の人がすぐ打ち解けてくれます。	日本語で話す。
+言う (iu)	to say	1	fac1c415ea734458831fcbb42e158164	玄関で靴を脱いでくださいと言うのを、つい忘れます。	もう一度言う。
+聞く (kiku)	to listen; ask	1	35a845c6dc1b34a4fb74e0bea321b6af	道が分からないときは、交番で聞くのが早いです。	ラジオを聞く。
+話 (hanashi)	talk; story	1	e2ed161ff17bca5eabbb423afd8d5bfa	祖母の子供のころの話は、何度聞いても面白いです。	話が長いです。
+手紙 (tegami)	letter (mail)	1	97415ac4d656cda7ba31896083c09fe0	山の宿から、絵はがきのような手紙が届きました。	手紙を出します。
+答える (kotaeru)	to answer	1	7442a900aa94fe03ba4f98901985989b	面接では、はっきり答えるようにと言われました。	質問に答える。
+会う (au)	to meet	1	d25eb7fe60ed7d7bb337b408dbbdc516	お盆に帰って、久しぶりに親戚に会うつもりです。	駅で会う。
+教える (oshieru)	to teach; tell	1	91915fe221b776be2c2ab5aa2f8d99cb	漬物の作り方を教える教室が、公民館で開かれます。	日本語を教える。
+返事 (henji)	reply; answer	1	52350abe428fd0c775907a9a92c0447c	メールの返事が来ないので、電話をかけてみます。	返事をください。
+国 (kuni)	country	1	b8ac38002bcf21d139fb43bc02faa006	どの国から来たのかと、宿の主人に聞かれました。	国はどこですか。
+外国 (gaikoku)	foreign country	1	57d96825dbf8336ad6802fe1f55a5552	この町にも、外国から働きに来た人が増えました。	外国に行きたいです。
+外国人 (gaikokujin)	foreigner	1	66a92a486658e9f4b72f6b0915a004ef	区役所の窓口には、外国人向けの案内も置いてあります。	外国人の友達がいます。
+大切 (taisetsu)	important; precious	1	ca35bfaf54ede334bb0963148f053713	茶道では、道具を大切に扱うことを最初に習います。	大切な手紙です。
+大丈夫 (daijōbu)	all right; OK	1	46922bf00f7de602bcba3b2c3aee1da8	揺れは小さかったので、たぶん大丈夫だと思います。	もう大丈夫ですか。
+言葉 (kotoba)	word; language	1	f7e4484e3b0c1dd9faae2cf8aee0bac1	東北の言葉は、初めて聞くと外国語のように響きます。	難しい言葉ですね。
+字 (ji)	letter; character	1	8f3331a6b0916b60724b896ec479cbaf	祖父の字は癖が強くて、読むのに苦労します。	字が小さいです。
+行く (iku)	to go	1	7d653f1c8ab4f8e96e8153b947a3d841	お盆は道が混むので、朝早く行くことにします。	学校へ行く。
+来る (kuru)	to come	1	5ffe1f8a74aa947621483cc4a21a5c73	冬になると、あの湖に白鳥が来るそうです。	友達が来る。
+帰る (kaeru)	to return home	1	2ead61b15f5c2e14c976e478edfcbb53	終電で帰るより、一本前に出た方が楽です。	もう家に帰る。
+歩く (aruku)	to walk	1	58da39cfd850f109c9b2462718d5bb10	遍路道を一日中歩くと、足が棒のようになります。	駅まで歩く。
+走る (hashiru)	to run	1	f5bb67a86d5b8c063b06c6ff8552bc6a	改札まで走る人を見ると、こちらも急いでしまいます。	毎朝、川原を走る。
+入る (hairu)	to enter	1	b9b3b2c78f5f88afb3b8407bd1921f27	温泉に入る前には、必ず体を洗います。	部屋に入る。
+出る (deru)	to go out; leave	1	22649b670a2e1463d8702e0ffcde4050	家を出る時に、ごみを持って行くのを忘れました。	五時に家を出る。
+立つ (tatsu)	to stand	1	fcdb16b6baffd11f94355e9dcf6a9f2b	満員電車では、一時間立つこともあります。	席を譲って立つ。
+座る (suwaru)	to sit	1	36d250da0a50f6564492dddf02f2704b	座敷に上がって畳に座るのは、久しぶりでした。	椅子に座る。
+待つ (matsu)	to wait	1	3fea1f7da8e7e480325acd0e5aeb7a5c	一時間に一本のバスを待つのは、けっこう長いです。	ここで待つ。
+する (suru)	to do	1	6581f5b3cf8d5ed9ed785bef2a58229e	週末は、庭の草取りをするつもりです。	掃除をする。
+使う (tsukau)	to use	1	e076bbef78b47de661e28d2f8b8c6347	この温泉は、地元の人が毎日使う共同浴場です。	箸を使う。
+持つ (motsu)	to hold; carry	1	c32ef7e1eee607558ef19f888edef482	折りたたみ傘を持つようになってから、困らなくなりました。	荷物を持つ。
+取る (toru)	to take; pick up	1	fe344957dc22e1589be860674bc35e76	神社でおみくじを取ると、大吉が出ました。	夏に休みを取る。
+置く (oku)	to put; place	1	6b2caeca53eae605f3d5dc381f103e91	玄関に靴を置くときは、向きをそろえます。	机に置く。
+開ける (akeru)	to open (something)	1	3416c95cf28d8bb2a3955e5bb6de0a36	朝一番に雨戸を開けると、田んぼが光っています。	窓を開ける。
+閉める (shimeru)	to close (something)	1	277bbdd186a9a89e76741ff8b3573a94	蚊が入るので、網戸をきちんと閉めるようにします。	店を閉める。
+始める (hajimeru)	to begin (something)	1	9b049ddf2eee241c370fbd6dad159b2e	春から日本語の勉強を始めるつもりでいます。	会議を始める。
+終わる (owaru)	to end; finish	1	5d0ecefaab21159d6c2e358763e60540	花火大会が終わると、駅がとても混みます。	授業が終わる。
+出す (dasu)	to take out; send	1	e911f1e2367c56ed61371ab8f2a40f3a	燃えるごみは、朝八時までに出す決まりです。	手紙を出す。
+入れる (ireru)	to put in; insert	1	65d28cf773dd1e8098b6ff5deb017461	味噌は、火を止めてから入れると香りが残ります。	砂糖を入れる。
+押す (osu)	to push; press	1	25168a23ffa380006e9e4000b5bf710a	このボタンを押すと、バスが停留所に止まります。	ドアを押す。
+引く (hiku)	to pull	1	37f7ded48207f5016d7531245e0f9b7d	この戸は押すのではなく、手前に引くタイプです。	線を引く。
+切る (kiru)	to cut	1	2044c0734edf4d9aef07b66c61910b6a	大根は厚く切ると、煮るのに時間がかかります。	紙を切る。
+消す (kesu)	to turn off; erase	1	fba19b332bb09a359e0808b4c8e4e1c0	最後に出る人が、教室の電気を消す決まりです。	火を消す。
+つける (tsukeru)	to turn on	1	3985d6319157fb82f093b9ffdb7be104	寒いので、こたつのスイッチをつけることにしました。	電気をつける。
+泳ぐ (oyogu)	to swim	1	41beb1af723fa88b018bab90d6a8cb24	沖縄では、十月でもまだ泳ぐことができます。	海で泳ぐ。
+飛ぶ (tobu)	to fly	1	884e66dc84fe2ea9ec639991d7f98b25	秋の田んぼの上を、赤トンボが飛ぶのが見えます。	鳥が飛ぶ。
+止まる (tomaru)	to stop (intransitive)	1	feca5a3f6d259f4bea3734ac9de73ece	雪が強いと、在来線が止まることがあります。	車が止まる。
+急ぐ (isogu)	to hurry	1	39b7ee86b910f1e6d1e8faa4acc8e4d1	急ぐ用事もないので、各駅停車で行きます。	帰りは急ぐ。
+大きい (ōkii)	big	1	84222af1028039cd22d87b08e0bcae4b	この町の祭りは、思ったより大きいものでした。	大きい犬ですね。
+小さい (chiisai)	small	1	ee642f34a79e8c8d7b1ffc131d3d74de	小さい島ですが、店も宿もちゃんとそろっています。	字が小さいです。
+新しい (atarashii)	new	1	72a7b9a089166f2048532394b14dd1b9	新しい駅ビルができて、待ち合わせが楽になりました。	新しい本を買いました。
+古い (furui)	old (thing)	1	98379d6cee7cfda5d2a7c15461a8ee88	古い町並みが残っていて、歩くだけで楽しいです。	この家は古いです。
+暑い (atsui)	hot (weather)	1	73d8b3c68b4c97fea885a2ce11428976	京都の夏は盆地なので、夜になっても暑いです。	今日は暑いですね。
+寒い (samui)	cold (weather)	1	cd3eaa7d3ab1f5bc52865e108e926e8e	北陸の冬は、雪より風の方が寒いと言われます。	部屋が寒いです。
+忙しい (isogashii)	busy	1	5c75c518fcadbad909f719a9b0350e84	年末は大掃除もあって、どこの家も忙しいです。	今週は忙しいです。
+難しい (muzukashii)	difficult	1	bf073778d8c6b78512162f9b6f578c20	漢字の読み方は、慣れるまでは難しいと思います。	質問が難しいですね。
+易しい (yasashii)	easy (simple)	1	685ff60cefee4f8c1ebf47c2adf5ede7	最初の問題は易しいので、落ち着いて答えてください。	この本は易しいです。
+良い (yoi)	good	1	171a52acac237123ce9208eaa0c5b512	天気が良い日は、遠くの山まではっきり見えます。	良い一日を。
+悪い (warui)	bad	1	0b69145f4898790a4e11a91b2e8e84df	道が悪いので、車はゆっくり走ってください。	天気が悪いです。
+早い (hayai)	early; fast	1	7821988a7b1c18fa9671d053afbd2a58	朝の市場は早い時間ほど、いいものが残っています。	今日は早いですね。
+遅い (osoi)	late; slow	1	326bfdcfeaba74361b454cb74ac73bdb	終電が遅いので、まだあわてなくて大丈夫です。	バスが遅いです。
+長い (nagai)	long	1	455282b137f4811fea6bf51df577a9ac	トンネルが長いので、耳が少し痛くなります。	話が長いです。
+短い (mijikai)	short (length)	1	f0b840d69f7721ef0abd956328dc9014	東北の夏は短いから、みんな祭りに本気になります。	短い休みでした。
+静か (shizuka)	quiet	1	9592950210b7d3a53fc21c98df6ded64	早朝の境内は、驚くほど静かでした。	図書館は静かです。
+有名 (yūmei)	famous	1	88e6f290356617ccc7d93cd96a091968	この町は、和紙の産地として有名だそうです。	有名な店ですか。
+便利 (benri)	convenient	1	d1187c647de65cb00885c28c9ae4a370	駅のそばは少し高いけれど、やはり便利です。	地下鉄は便利です。
+時間 (jikan)	time; hour	1	1204345aa8c4621a65386b70cae3a969	待ち合わせの時間に、五分だけ遅れてしまいました。	時間がありません。
+年 (toshi)	year	1	c3c2613edd2db1f6aad7449aa2fd57ef	今年の桜は、去年より一週間早く咲きました。	来年また来ます。
+週 (shū)	week	1	9f0f8f088bfb1e1843a157933f1573ad	来週は出張で、金沢に三日いる予定です。	今週は雨ばかりです。
+朝 (asa)	morning	1	afe48d06a7dc040f6343838cf7b6678e	冬の朝は、車のガラスが凍っています。	朝ご飯を食べました。
+夜 (yoru)	night	1	e70069e2ff58311d20d49414d1266cf0	夏の夜は、遠くで祭りの太鼓が聞こえます。	夜は静かです。

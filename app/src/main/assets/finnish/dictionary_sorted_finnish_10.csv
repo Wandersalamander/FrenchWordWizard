@@ -1,187 +1,187 @@
-matkakortti	travel card	10	0c9b9f558f2c34b46bec178ecded0b87	Ostin uuden matkakortin kioskista ja latasin siihen kuukauden lipun heti aamulla.	Missä matkakorttini on?
-lähistöllä	nearby	10	23cdb468e18c9d6a14ab816f963b10f2	Onko tässä lähistöllä jotain hyvää kahvilaa, jossa voisimme tavata iltapäivällä?	Asun aivan lähistöllä.
-jäädä pois	to get off	10	96b8e0583c5ca78af2c2b925d43110ed	Muista jäädä pois bussista seuraavalla pysäkillä, koska keskustaan on sieltä lyhyt kävelymatka.	Jään pois tässä.
-eksyä	to get lost	10	cd9ab3b046acefdde3eab93b2291cb53	Eksyin täysin vieraassa kaupungissa, kun puhelimeni akku loppui kesken kävelyretken.	Pelkään eksyväni metsään.
-ruuhka	traffic jam / rush	10	b18c946c620214c4215ae3c803740c6e	Aamulla oli niin paha ruuhka, että myöhästyin tärkeästä kokouksesta lähes puoli tuntia.	Liikenteessä on ruuhka.
-huoltoasema	gas station / service station	10	bd8438398cd804f2c388004459fbd7d4	Pysähdyimme huoltoasemalle tankkaamaan autoa ja ostamaan kahvia ennen pitkää matkaa pohjoiseen.	Ajan huoltoasemalle.
-moottoritie	highway / motorway	10	bd1634367cedb1f9a643e6223caef2c8	Moottoritiellä saa ajaa satakaksikymmentä, mutta sateella kannattaa hidastaa vauhtia turvallisuuden vuoksi.	Ajamme moottoritietä pitkin.
-kioski	kiosk / newsstand	10	e608b4de1f41f181125b19402723c4ae	Ostin kioskista jäätelön ja lehden, kun odotin ystävääni aseman edessä auringonpaisteessa.	Kioski on auki.
-vesisade	rainfall	10	6d4dc6089ab823656d965b574599167b	Voimakas vesisade kasteli vaatteeni läpimäriksi, koska olin unohtanut sateenvarjon kotiin aamulla.	Ulkona on vesisade.
-jäinen	icy	10	c67dc225a98bd43b85ce7a5a0af828e0	Tie oli niin jäinen, että autot luistelivat hitaasti eteenpäin ja jalankulkijat kaatuilivat jatkuvasti.	Portaat ovat jäiset.
-kostea	damp / humid	10	af636937d9732ce6255bbda103d99fcd	Kellari oli kostea ja vähän ummehtunut, joten päätimme tuulettaa sitä useamman tunnin ajan.	Ilma on kostea.
-sateenkaari	rainbow	10	03ac4fcde6bfc1a0175a69ad8d5166b0	Sateen jälkeen taivaalle ilmestyi kirkas sateenkaari, ja kaikki pysähtyivät ihailemaan sen kauniita värejä.	Näin kauniin sateenkaaren.
-sääennuste	weather forecast	10	93c7f2f9f352e0bbaa0b5741a2de78d5	Sääennusteen mukaan huomenna sataa koko päivän, joten siirrämme retken ensi viikonloppuun.	Katson sääennustetta.
-tunturi	fell / treeless highland	10	44689b7587f34288e99f238fdfa17e95	Kiipesimme tunturin huipulle ja ihailimme avaraa maisemaa, joka ulottui kauas siniseen horisonttiin.	Tunturi on korkea.
-laakso	valley	10	3c510e8a5d8e9eefc644e4f898ee528d	Vuorten välissä avautui vihreä laakso, jonka läpi virtasi kirkas joki kohti merta.	Laakso on vihreä.
-runko	trunk / frame	10	f5c313c7b386d2ab78245f07b547fa6e	Vanhan tammen runko oli niin paksu, ettemme kolmestaan saaneet käsiämme sen ympärille.	Puun runko on paksu.
-nurmikko	lawn	10	e48b3c95450978dd332743a12217cb3f	Leikkasin nurmikon lauantaina ja kastelin sitä illalla, jotta se pysyisi vihreänä kuivan kesän aikana.	Nurmikko kasvaa nopeasti.
-heinä	hay / grass	10	ba96738007476f27915e0140d4d00a89	Maanviljelijä korjasi heinät talteen latoon kuivumaan ennen kuin syksyn sateet alkoivat.	Lehmät syövät heinää.
-pensas	bush / shrub	10	eb23d99606b008b9a6eddba9873863ad	Pihan reunassa kasvava pensas oli täynnä punaisia marjoja, joita linnut kävivät syömässä päivittäin.	Pensas on iso.
-kukkia	to bloom / to flower	10	5ce66894dc72db64ca5a6d9f99e8e92b	Omenapuut alkavat kukkia toukokuussa, ja koko puutarha täyttyy silloin vaaleanpunaisista kukista.	Ruusut kukkivat kesällä.
-peura	deer	10	058348972c0277e4f1c33811f7b59e61	Aamuhämärissä metsän reunaan ilmestyi peura, joka seisoi hetken paikallaan ennen kuin juoksi pakoon.	Näin metsässä peuran.
-rotta	rat	10	f626932b64d5d7801883c02086cfb54b	Kellarissa asusti rotta, joten kutsuimme tuholaistorjujan paikalle ennen kuin ongelma paheni entisestään.	Rotta juoksi pois.
-varis	crow	10	e7c45e37137d6b8dbd952e1581e3aa72	Pihan kuusessa istui musta varis, joka rääkyi äänekkäästi ja häiritsi naapureiden aamu-unta.	Varis lensi katolle.
-joutsen	swan	10	674e65343e44d87becb4e02a7212c9bd	Järven selällä ui valkoinen joutsen poikastensa kanssa, ja ihmiset pysähtyivät rannalle katsomaan niitä.	Joutsen ui järvessä.
-sorsa	duck / mallard	10	f972fcde916cb8f127c447be3b39a11a	Lapset heittivät leipää sorsille, jotka uivat innokkaasti rantaan odottamaan lisää herkkupaloja.	Sorsa ui lammessa.
-lokki	seagull	10	4b53f00146c0e713efe0df053dd19c9e	Lokki nappasi nopeasti makkaranpalan kädestäni, kun istuin satamassa syömässä lounasta auringossa.	Lokki huutaa rannalla.
-pöllö	owl	10	0f6b1c5d67c201eb1c3c37300b8be077	Yöllä metsästä kuului pöllön huhuilu, joka kantautui hiljaisuudessa kauas yli tyynen järven.	Pöllö huhuilee yöllä.
-ahven	perch	10	12b308fced90a8d8b6a83b5d6cea43be	Sain illalla onkimalla ison ahvenen, jonka paistoimme nuotiolla ja söimme uusien perunoiden kanssa.	Ahven on hyvää kalaa.
-hauki	pike	10	8a10f72d1243a5cca8569dbbf7288a6d	Hauki tarttui uistimeen heti ensimmäisellä heitolla, ja sen vetäminen veneeseen vaati melkoisesti voimaa.	Hauki on iso kala.
-sammakko	frog	10	38ea794f386497892ddc71bd59fbed8e	Lammen rannalla istui vihreä sammakko, joka hyppäsi veteen heti kun lähestyimme sitä varovasti.	Sammakko hyppää veteen.
-ampiainen	wasp	10	46b624fd07b502f23348a3ce46022260	Ampiainen lenteli hermostuneesti mehulasin ympärillä, joten siirsimme koko piknikin nopeasti varjoisaan paikkaan.	Ampiainen pisti minua.
-muurahainen	ant	10	373d327492cef043f7c28fa4191dc561	Pieni muurahainen kantoi selässään leivänmurua, joka oli monta kertaa sitä itseään suurempi.	Muurahainen kävelee maassa.
-koski	rapids	10	eda0df4567902969822fdc5bb04e3b54	Melonta kuohuvassa koskessa oli jännittävää, mutta opas neuvoi meitä pitämään pelastusliivit tiukasti kiinni.	Koski kuohuu kovasti.
-lampi	pond	10	82bc2fe91ee036d4367612b61a093045	Metsän keskellä oli pieni lampi, jonka tyynellä pinnalla heijastuivat ympäröivät puut ja taivas.	Lampi on tyyni.
-niemi	cape / peninsula	10	0d72aced1dd520fed959a900b3aaa85f	Mökkimme sijaitsee kapealla niemellä, josta avautuu kaunis näkymä järvelle molempiin suuntiin.	Niemi työntyy järveen.
-suo	swamp / bog	10	1525c1dd8775a25af387589d7a2c7fa2	Kävimme suolla poimimassa hilloja, mutta kosteat sammalmättäät tekivät kävelemisestä yllättävän raskasta ja hidasta.	Suo on märkä.
-ilmasto	climate	10	08961e5e0e104c35af1b7e0b881224c3	Suomen ilmasto on muuttunut viime vuosikymmeninä selvästi leudommaksi, ja talvet ovat aiempaa lyhyempiä.	Ilmasto lämpenee.
-metsästää	to hunt	10	bada7bc627cebe6a0c83e9f2968896e4	Isoisäni kävi nuorena metsästämässä hirviä syksyisin, ja koko suku kokoontui sen jälkeen syömään.	Hän metsästää hirviä.
-sarvi	horn / antler	10	4173b1cd30768a96e9ea470ab6a86076	Hirvellä oli valtavat sarvet, jotka se pudottaa joka talvi ja kasvattaa keväällä uudet.	Peuralla on sarvet.
-turkki	fur / coat	10	19184e4724de6e46c53c9e9c8a2b8a51	Ketun turkki muuttuu talveksi paksummaksi ja tuuheammaksi, jotta eläin pärjää kovassa pakkasessa paremmin.	Kissalla on pehmeä turkki.
-päivänpaiste	sunshine	10	74fdf57a865a6da96791f129a2500bf4	Pitkän sadejakson jälkeen päivänpaiste tuntui ihanalta, ja kaikki kiiruhtivat ulos nauttimaan lämpimästä säästä.	Ulkona on päivänpaiste.
-kuudes	sixth	10	5f02afdf71ad14552ffa9fa090e6b034	Tämä on jo kuudes kerta, kun yritän soittaa hänelle, mutta kukaan ei vastaa.	Asun kuudennessa kerroksessa.
-seitsemäs	seventh	10	76d1e026267387ef42dd1bacf93ba40a	Joukkueemme sijoittui sarjassa seitsemänneksi, mikä oli pettymys hyvin alkaneen kauden jälkeen.	Tämä on seitsemäs päivä.
-kahdeksas	eighth	10	26a20111cfccd23ae35aa7cb68be3dd5	Kahdeksas maaliskuuta on kansainvälinen naistenpäivä, jota juhlitaan monissa maissa eri tavoin ympäri maailmaa.	Hän tuli kahdeksanneksi.
-yhdeksäs	ninth	10	9ff42a444fabd2c7c898968f2545c4be	Lapseni aloittaa syksyllä yhdeksännen luokan, joten ensi keväänä hän valmistuu jo peruskoulusta.	Tämä on yhdeksäs yritys.
-kymmenes	tenth	10	492516675b7ac4a29e5c27db9deab8d6	Vietimme häidemme kymmenettä hääpäivää matkustamalla samaan hotelliin, jossa olimme viettäneet häämatkamme.	Olen jonossa kymmenes.
-neljännes	quarter / one fourth	10	6ef82fb6761fa37a5139f50451fae47b	Noin neljännes opiskelijoista jätti tentin väliin, koska kysymykset oli julkaistu liian myöhään.	Söin neljänneksen kakusta.
-vuosisata	century	10	7117f3ff7004e90a09f3b35e82df6dbf	Tämä linna rakennettiin yli viisi vuosisataa sitten, ja se on yhä erinomaisessa kunnossa.	Eletään uutta vuosisataa.
-juhlapäivä	holiday / feast day	10	fad01c1ca94696cc8362b53d715c5cc2	Juhannus on monille suomalaisille vuoden tärkein juhlapäivä, jota vietetään mökillä perheen ja ystävien kanssa.	Tänään on juhlapäivä.
-toissapäivänä	the day before yesterday	10	d41c0cfb2af6e9a8b270d0b1b223fdda	Tapasin hänet toissapäivänä torilla, ja juttelimme pitkään kaikesta, mitä viime vuosina oli tapahtunut.	Kävin siellä toissapäivänä.
-ylihuomenna	the day after tomorrow	10	1bc48252eb991b5a5306b82cf02b269e	Lähden ylihuomenna pitkälle työmatkalle, joten minun pitää pakata laukkuni jo huomisiltana valmiiksi.	Nähdään ylihuomenna.
-menneisyys	the past	10	04bce043751232d5e28cbd620338ead7	Hän puhuu harvoin menneisyydestään, sillä lapsuus oli vaikea eikä siitä ole helppoa kertoa.	Älä murehdi menneisyyttä.
-lukumäärä	number / count	10	ff9bf0ada8c9d40314bc026e3ded8f10	Osallistujien lukumäärä ylitti odotukset, joten jouduimme nopeasti järjestämään lisää tuoleja ja isomman salin.	Laske lukumäärä.
-keskimäärin	on average	10	bfe4b5d8c514f1813c1eb2d31524184b	Suomalainen juo keskimäärin useita kupillisia kahvia päivässä, mikä on maailman korkeimpia lukuja.	Nukun keskimäärin seitsemän tuntia.
-kelvoton	useless / worthless	10	7de68d93d14ea86d158ab23b185c1608	Vanha tulostin osoittautui täysin kelvottomaksi, koska se jumittui jatkuvasti emmekä saaneet siitä yhtään hyvää tulostetta.	Tämä työkalu on kelvoton.
-vanhanaikainen	old-fashioned	10	e7826bb21be15241e8341be047cfc4c3	Isovanhempani pitävät edelleen vanhanaikaisesta tavasta kirjoittaa kirjeitä käsin sähköpostien lähettämisen sijaan.	Puhelin on vanhanaikainen.
-kaivata	to miss / to long for	10	d655713ff6550323e777f3a47b33f126	Ulkomailla asuessani kaipasin eniten suomalaista saunaa ja rauhallisia kävelyretkiä metsässä syksyn väreissä.	Kaipaan sinua kovasti.
-toivo	hope	10	436c6da481a038163a078ef9eaa524d8	Vaikka tilanne näytti synkältä, lääkärin rohkaisevat sanat antoivat perheelle uutta toivoa paranemisesta.	Älä menetä toivoa.
-pettyä	to be disappointed	10	8ef713d8d026d793bea6925b784607ff	Petyin pahasti, kun pitkään odottamani konsertti peruttiin vain päivää ennen tapahtumaa ilman selitystä.	Petyin tulokseen.
-pettymys	disappointment	10	14e5d15c4766ef53f8d2de0351ea22a9	Ottelun lopputulos oli suuri pettymys kannattajille, jotka olivat matkustaneet kaukaa kannustamaan joukkuettaan paikan päälle.	Se oli iso pettymys.
-yllättyä	to be surprised	10	b580855dfe0c9e38d1f54fc5e6b76048	Yllätyin todella, kun ystäväni järjestivät minulle salaa syntymäpäiväjuhlat, joista en ollut aavistanutkaan mitään.	Yllätyin lahjasta.
-innostua	to get excited / enthusiastic	10	a705caaff29dd117c647946cc57d10f4	Lapset innostuivat valtavasti uudesta lautapelistä ja halusivat pelata sitä koko illan väsymyksestä huolimatta.	Innostuin heti ideasta.
-innostunut	excited / enthusiastic	10	de86b8338a33da1d96f4bc8478bcabd0	Opettaja oli niin innostunut aiheesta, että hänen intonsa tarttui koko luokkaan oppitunnin aikana.	Olen innostunut matkasta.
-rauhoittua	to calm down	10	1651d92ad498410b4f72fb6b5c4487be	Yritä rauhoittua ja hengittää syvään, niin mietitään sitten yhdessä rauhassa, miten ongelma ratkaistaan.	Rauhoitu hetkeksi.
-rentoutua	to relax	10	5d90f904fed3a1d8ce3351a8d24086ef	Pitkän työviikon jälkeen rentoudun parhaiten lukemalla kirjaa saunan jälkeen mukavasti sohvalla.	Haluan rentoutua kotona.
-kyllästyä	to get bored / fed up	10	f3015d87e3983c04aca877deeb7b49f5	Kyllästyin lopulta odottamaan bussia kylmässä, joten päätin kävellä koko matkan kotiin.	Kyllästyin tähän peliin.
-huolestua	to become worried	10	e7ab77b420d6d8e335f23fdd4b86bb01	Äiti alkoi huolestua, kun poika ei vastannut puhelimeen koko iltana eikä tullut kotiin sovittuun aikaan.	Älä huolestu turhaan.
-hävetä	to be ashamed	10	5dbe3b36dfb8484f07c90e0034cfeffe	Aloin hävetä omaa käytöstäni heti, kun tajusin loukanneeni ystävääni pahasti juhlissa.	Minua hävettää kovasti.
-nolo	embarrassing / awkward	10	836bbc5635294925fa9caf3c7bcefdb4	Oli todella nolo tilanne, kun kompastuin lavalla kaikkien katsoessa ja mikrofoni putosi lattialle.	Tämä on niin nolo.
-nauru	laughter	10	c88eee44a87ce3c5b08ccdedf5a0cdef	Naapurihuoneesta kuului raikuvaa naurua koko illan, joten arvelin heillä olevan hauskat juhlat.	Kuulin iloista naurua.
-kumppani	partner	10	ef0f015f770be345816043b63e8d38d6	Hän esitteli uuden kumppaninsa sukulaisille ensimmäistä kertaa joulun aikaan koko suvun ollessa koolla.	Hän on hyvä kumppani.
-suudella	to kiss	10	42736115f7090042ca3b67ef01d0deb2	Pariskunta päätti suudella toisiaan aseman laiturilla juuri ennen kuin juna lähti liikkeelle.	Hän halusi suudella minua.
-halata	to hug	10	5daeb091eec12ccd62934077b41cb8ec	Lapset juoksivat halaamaan isoäitiään heti, kun tämä astui sisään ovesta pitkän matkan jälkeen.	Tule halaamaan minua.
-halaus	hug	10	00cd4ba8181897fe7c26f1fe6052b503	Pitkän ja vaikean päivän jälkeen lämmin halaus ystävältä tuntui paremmalta kuin mitkään sanat.	Anna minulle halaus.
-naimisiin	to get married (into marriage)	10	a1c4cf6504645a0f3664dabdcaa0b2c5	He päättivät mennä naimisiin pienen ystäväpiirin kesken vanhalla huvilalla keskellä kesää.	He menivät naimisiin.
-ero	breakup / divorce / difference	10	7382eb2379a5eb17630d1c43dce03693	Pitkän suhteen jälkeinen ero oli molemmille raskas, mutta he pysyivät silti ystävinä lasten vuoksi.	Heille tuli ero.
-luottamus	trust	10	17e4f302dad8b7f3826ae68cbc06f282	Hyvän parisuhteen perusta on molemminpuolinen luottamus, jota rakennetaan vähitellen vuosien aikana.	Luottamus on tärkeää.
-riidellä	to quarrel / to argue	10	d13388f585317524971762a7888029ac	Sisarukset alkoivat riidellä television kaukosäätimestä heti, kun vanhemmat lähtivät ulos illaksi.	He alkoivat riidellä.
-riita	quarrel / fight	10	3c1e64d95f69b12e3db55eedcfa7a3cb	Pieni riita rahasta paisui illan mittaan suureksi, vaikka kumpikaan ei oikeastaan halunnut riidellä.	Heillä oli riita.
-bileet	party (colloquial)	10	46f451af8fcae515429d968eed6d7591	Kaverit järjestivät yllätysbileet syntymäpäiväsankarille vuokratussa saunatilassa rannan tuntumassa.	Meillä oli kivat bileet.
-vappu	May Day	10	ce52f1de909f008e938505e3547ab4b5	Vappu vietetään Suomessa ulkona piknikillä, ja kaikilla on värikkäät ilmapallot ja simaa mukana.	Hauskaa vappua!
-kutsu	invitation	10	88d3816a0c2992b16a3b2f5611e12ede	Sain postissa häihin kutsun kauniilla kortilla, jossa luki päivämäärä ja juhlapaikan osoite.	Sain juhliin kutsun.
-hassu	silly / funny	10	e7d0e04ca5fd20ea9567c1588b661b73	Lapsi keksi niin hassun tarinan lentävästä koirasta, että koko perhe nauroi pitkään ruokapöydässä.	Se oli hassu juttu.
-näppäin	key (on a keyboard) / button	10	2edc4b88345c5e9438f16524bc451780	Näppäimistön välilyöntinäppäin oli jumissa, joten jouduin painamaan sitä useita kertoja kovaa kirjoittaessani.	Paina tätä näppäintä.
-mikrofoni	microphone	10	6509dcc59d016827a98d8a7ea80ce2b1	Esityksen alussa mikrofoni ei toiminut lainkaan, joten yleisö ei kuullut puhujan ensimmäisiä sanoja.	Mikrofoni on rikki.
-rekisteröityä	to register / sign up	10	0d7b0d5b484e22be4180aa7afd72898f	Sinun täytyy rekisteröityä palveluun sähköpostiosoitteellasi, ennen kuin voit ladata sovelluksen puhelimeesi.	Muista rekisteröityä ensin.
-skrollata	to scroll	10	8f910f07b8700e195cb620fff0eb595d	Jäin iltaisin skrollaamaan puhelinta tuntikausia, vaikka tiedän, ettei se ole hyväksi unelleni.	Lakkaa skrollaamasta!
-seuraaja	follower	10	4214f3fcb38de5cedd1c59d0937da927	Hänen tilinsä sai muutamassa kuukaudessa tuhansia uusia seuraajia, kun yksi videoista levisi laajalle.	Hänellä on monta seuraajaa.
-kommentoida	to comment	10	ae6521c0c2ca78bc2dd1e222b3c866dd	Moni halusi kommentoida julkaisua heti, mutta kirjoittaja oli laittanut kommentit pois käytöstä.	Saanko kommentoida tätä?
-podcast	podcast	10	ac9cef765e0dbf0bda625b3d1d3b446d	Kuuntelen joka aamu työmatkalla historiapodcastia, koska se tekee bussimatkasta paljon mukavamman.	Kuuntelen podcastia.
-äänetön	silent / muted	10	738ccda8b3b8aed656b31a1707c96817	Laitoin puhelimen äänettömälle ennen kokousta, jotta soitot eivät häiritsisi muita osallistujia.	Puhelin on äänetön.
-käynnistää uudelleen	to restart	10	166fb64926cc405e2c08288a07737c64	Kun tietokone alkoi takkuilla, asentaja neuvoi käynnistämään sen uudelleen ennen muita toimenpiteitä.	Käynnistä laite uudelleen.
-kytkeä	to connect / to switch / to plug in	10	7a0912fcbe68f0ffb862dab8fc3f889c	Muista kytkeä laturi seinään ja tarkistaa, että johto on kunnolla kiinni molemmista päistä.	Kytke johto seinään.
-verkkopankki	online banking	10	f0a6c37edf36485b88f645cea55441c4	Maksan kaikki laskut verkkopankissa kotisohvalta, koska konttoriin meneminen veisi paljon enemmän aikaa.	Avaa verkkopankki.
-robotti	robot	10	4c6a1b032e82b42afff5eb3cd959997a	Tehtaalla robotti hoitaa raskaimmat nostot, jotta työntekijöiden ei tarvitse rasittaa selkäänsä turhaan.	Robotti siivoaa lattian.
-tekoäly	artificial intelligence / AI	10	16f3ae687f0d5d07ddb598019f851b61	Tekoäly osaa nykyään kirjoittaa tekstiä ja kääntää kieliä, mutta se tekee silti välillä outoja virheitä.	Tekoäly auttaa minua.
-sähköinen	electronic / electric	10	b689d6d44a40febc163a20ce6c6687ae	Lähetin allekirjoitetun sopimuksen sähköisessä muodossa, jotta sen käsittely olisi mahdollisimman nopeaa.	Tämä on sähköinen lippu.
-muistutus	reminder	10	cac0805dc645d29dcacdd50da716bd3b	Laitoin puhelimeen muistutuksen lääkäriajasta, koska muuten unohdan sen helposti kiireisen viikon keskellä.	Sain muistutuksen tapaamisesta.
-hälytys	alarm / alert	10	f608fd6dda22572f4d6e406fb69cab5b	Aamulla hälytys soi puoli kuudelta, mutta painoin torkkupainiketta vielä kahdesti ennen ylösnousua.	Hälytys soi aamulla.
-verkkokauppa	online store	10	c9bdc84b86657399c1e6de67b9b42001	Tilasin uudet talvikengät verkkokaupasta, ja paketti saapui postiin jo seuraavana arkipäivänä.	Ostin sen verkkokaupasta.
-huijaus	scam / fraud / hoax	10	1fed6f1913e1711d510c93e130d57321	Sähköpostiin tullut viesti palkinnosta osoittautui huijaukseksi, joten en koskaan klikannut sen linkkiä.	Se oli huijaus.
-nauhoittaa	to record (audio/video)	10	1f2f213a873a6420427e298f69876da0	Päätin nauhoittaa luennon puhelimellani, jotta voisin kuunnella vaikeimmat kohdat vielä uudelleen kotona.	Haluan nauhoittaa tämän.
-liittää	to paste / to attach / to join	10	ebc4e8e9d52b3b6d4940bb8bdb3829c8	Muista liittää ansioluettelo hakemukseen, ennen kuin lähetät viestin rekrytoijalle sähköpostitse.	Liitä kuva viestiin.
-liite	attachment / appendix	10	118b0728d967f845a8e1479a9e4a5f73	Sopimuksen lopussa oli useita liitteitä, joista yhdessä selitettiin maksuehdot tarkalleen ja selkeästi.	Avaa sähköpostin liite.
-signaali	signal	10	d146520a90ca1bd28805a84f79b961f2	Mökillä puhelimen signaali oli niin heikko, että jouduin kävelemään mäen päälle soittaakseni.	Täällä ei ole signaalia.
-kenties	perhaps / possibly	10	f8de58f3b3dd553bfdf19496011ad724	Lähdemme kenties mökille jo perjantaina, jos sää näyttää viikonlopuksi edes kohtuullisen poutaiselta.	Kenties huomenna.
-tarkalleen	exactly / precisely	10	b571eef3d1b7d265881265656ea4b9eb	Kerro minulle tarkalleen, mihin aikaan juna lähtee, jotta ehdimme varmasti asemalle ajoissa.	Mitä tarkalleen tarkoitat?
-mukaisesti	in accordance with	10	b275ff6c9514e862cb2139ff1d9c5c5a	Työ tehtiin tilauksen mukaisesti, joten asiakkaalla ei ollut mitään huomautettavaa lopputuloksesta.	Toimi ohjeiden mukaisesti.
-ali	under / below (motion)	10	86318e52f5ed4801abe1d13d509443de	Kissa ryömi nopeasti aidan ali naapurin pihalle heti, kun ovi avattiin sille hetkeksi.	Mene sillan ali.
-määräys	order / regulation / decree	10	d008b1bfd7abf9cdc16d3a127d3ef498	Uuden määräyksen mukaan kaikkien työntekijöiden on käytettävä suojakypärää työmaalla koko ajan.	Tämä on tärkeä määräys.
-korkeintaan	at most	10	f9bd0793bae78ff8c219782f26fb8b6c	Matka kestää autolla korkeintaan kaksi tuntia, jos liikenne on sujuvaa eikä tielle osu ruuhkaa.	Odotan korkeintaan tunnin.
-pikemminkin	rather / instead	10	472f3356542c4db736079031f8c395ce	En sanoisi olevani vihainen, vaan pikemminkin pettynyt siihen, ettei kukaan kertonut minulle asiasta.	Pikemminkin näin.
-kohtuullisen	reasonably / moderately	10	019cc0e9efe76cda867a62ae1cbd08d6	Ravintolan ruoka oli kohtuullisen hyvää, ja hinnatkin olivat keskustan tasoon nähden yllättävän maltillisia.	Se on kohtuullisen helppoa.
-ylipäätään	in general / at all	10	99e33cbd9b119fcbd70b19e1e32c6397	En ole varma, haluanko ylipäätään muuttaa toiseen kaupunkiin, vaikka työpaikka olisikin parempi.	Tuletko ylipäätään?
-kaiken kaikkiaan	all in all / overall	10	f5ab077ad2ef572b8f0f0546a4d3e94c	Kaiken kaikkiaan matka onnistui hyvin, vaikka muutama juna myöhästyi ja sää oli välillä sateinen.	Kaiken kaikkiaan hyvä päivä.
-kummipoika	godson	10	e384efb8c3550ac0a521d1e9fa52eb96	Lupasin kummipojalleni viedä hänet kalaan kesällä, kun hän täyttää seitsemän vuotta ja pääsee kesälomalle.	Hän on kummipoikani.
-kummitytär	goddaughter	10	8736a284bbbd17956f6236e1c5c97824	Ostin kummitytärtäni varten pienen lahjan ristiäisiin ja kirjoitin korttiin lämpimät onnentoivotukset.	Tapaan kummitytärtäni.
-siskopuoli	half-sister / stepsister	10	cb995897b5ef1a0d71801f1f879ea2f0	Sain tietää vasta aikuisena, että minulla on siskopuoli, joka asuu toisella puolella maata.	Hän on siskopuoleni.
-ottolapsi	adopted child	10	a5f0024dbddf8aed263e222d259b1132	Pariskunta odotti vuosia, ennen kuin he viimein saivat ottolapsen ja perheestä tuli kokonainen.	Hän on heidän ottolapsensa.
-kaima	namesake (person with the same name)	10	d95893ac873ec03a7f6e3a5546b36582	Törmäsin kurssilla kaimaani, ja meitä huvitti, että opettaja sekoitti meidät jatkuvasti toisiimme.	Hän on kaimani.
-perillinen	heir	10	9e13ea8948934c221c44a593ed0351fd	Suvun vanha tila siirtyi testamentin mukaisesti ainoalle perilliselle, joka oli asunut ulkomailla pitkään.	Hän on ainoa perillinen.
-lapseton	childless	10	a00e0f71f714a7d5a91a229d167b61b1	Pariskunta päätti jäädä lapsettomaksi ja matkustaa sen sijaan ympäri maailmaa yhdessä eläkkeellä.	He ovat lapsettomia.
-sylivauva	infant / babe in arms	10	8f0c2ff1d948b3cd311daf51df4b1833	Junassa istui äiti sylivauvansa kanssa, ja vauva nukkui rauhallisesti koko pitkän matkan ajan.	Hän on vielä sylivauva.
-ikätoveri	peer / person of the same age	10	6c9192690b84a7ee9e6ae130450b53fa	Lapsi viihtyi paremmin ikätovereidensa seurassa kuin aikuisten seurassa, koska heillä oli samat leikit ja jutut.	He ovat ikätovereita.
-sukulaisuus	kinship / relation	10	e9779b837b4e94fe0e64a8155d33050f	En tiennyt sukulaisuudestamme mitään, ennen kuin sukututkija selvitti yhteisen isoisoisämme arkistoista.	Mikä teidän sukulaisuutenne on?
-jälkeläinen	descendant / offspring	10	139daeb075f03e9926ae1fc83fc78e1f	Tutkijat seurasivat vanhan kuninkaan jälkeläisiä useiden sukupolvien ajan eri puolilla Eurooppaa.	He ovat hänen jälkeläisiään.
-kihlasormus	engagement ring	10	249d4c362e779c35a5abea13883058ef	Hän laittoi kihlasormuksen kumppaninsa sormeen rannalla auringonlaskun aikaan, ja molemmat itkivät onnesta.	Sain kauniin kihlasormuksen.
-vihkisormus	wedding ring	10	e98e141d36be390cfe45de3c8b2c7279	Vihkisormukseen oli kaiverrettu päivämäärä, jotta he muistaisivat aina hääpäivänsä.	Hän käyttää vihkisormusta.
-sisarenpoika	nephew (sister's son)	10	61685c63ed504ba2ccb6dc3a89418be7	Vein sisarenpoikani huvipuistoon hänen syntymäpäivänään, ja ajoimme vuoristoradalla peräti viisi kertaa.	Hän on sisarenpoikani.
-veljenpoika	nephew (brother's son)	10	c44a67d7c7ced498f500e6e181cffea3	Veljenpoikani aloittaa ensi syksynä koulun, ja koko suku jännittää hänen ensimmäistä koulupäiväänsä.	Tapaan veljenpoikani huomenna.
-sisarentytär	niece (sister's daughter)	10	9c66efd9a3ce61d54c2d9bb31a2c42f6	Sisarentyttäreni soitti minulle innoissaan kertoakseen päässeensä haluamaansa yliopistoon opiskelemaan lääketiedettä.	Hän on sisarentyttäreni.
-veljentytär	niece (brother's daughter)	10	a6a1115ede04656c0f4c958438d0ef3a	Lupasin opettaa veljentyttärelleni uimaan ensi kesänä mökkijärvellä, kun vesi on tarpeeksi lämmintä.	Veljentyttäreni täyttää viisi.
-vatsalaukku	stomach (organ)	10	5f51a9d90c0814ec42d7536815575779	Lääkäri selitti, että vatsalaukku tuottaa happoa, joka auttaa pilkkomaan syömämme ruoan pienemmiksi osiksi.	Vatsalaukku on kipeä.
-lihaskunto	muscle strength / fitness	10	82411528dc808ae724bccc89021e1c6c	Säännöllinen kuntosaliharjoittelu on parantanut lihaskuntoani huomattavasti, ja jaksan nyt nostaa raskaita kasseja vaivatta.	Lihaskunto on hyvä.
-painonpudotus	weight loss	10	053003df3a86507c4dc002f0240a91cb	Hänen painonpudotuksensa onnistui, koska hän muutti ruokavaliotaan ja alkoi liikkua säännöllisesti joka päivä.	Painonpudotus sujuu hyvin.
-jakku	(women's) jacket / blazer	10	37952c63dadba359acddfd9f775adaad	Puin ylleni tyylikkään mustan jakun, koska halusin näyttää asialliselta tärkeässä työpaikkahaastattelussa.	Ostin uuden jakun.
-liivi	vest / waistcoat	10	6736772943d123d24e4b396cca53f76f	Sulhanen pukeutui häihin tummaan pukuun, jonka alle hän valitsi vaaleanharmaan liivin.	Hänellä on liivi.
-asuste	accessory	10	e5aca059a9e9459fdd13436416d01f52	Kaunis kaulakoru ja sopiva laukku ovat asusteita, jotka viimeistelevät juhla-asun tyylikkäästi.	Tämä asuste on kaunis.
-rannekoru	bracelet	10	f4540ae83931d65c8be842440bb22cfa	Sain syntymäpäivälahjaksi hopeisen rannekorun, jota olin ihaillut korukaupan ikkunassa jo pitkään.	Käytän rannekorua.
-rannekello	wristwatch	10	116a3bc68e0fc53cadde6d137255e9c8	Vilkaisin rannekelloani ja huomasin, että minun oli kiirehdittävä, jotta ehtisin junaan ajoissa.	Rannekello näyttää kahta.
-kaulus	collar	10	5b60ec89cfcf31ac8fd20749e28277f9	Paidan kaulus oli rypistynyt, joten silitin sen huolellisesti ennen kuin lähdin tärkeään tapaamiseen.	Kauluksessa on tahra.
-sovituskoppi	fitting room	10	8d9a1c2f12c2e6318f6fd8fde13133e1	Vein farkut sovituskoppiin kokeillakseni, sopiiko niiden koko minulle ennen kuin maksan ne kassalla.	Menen sovituskoppiin.
-hyllystä	on / from the shelf	10	df424f6f6b2dfdb6c8ebe6a160e43423	Otin hyllystä viimeisen maitopurkin juuri ennen kuin toinen asiakas ehti tavoitella sitä.	Otan kirjan hyllystä.
-maksuton	free of charge	10	62f2c799aa43d16d55d4760c19c6e4c4	Museon sisäänpääsy on maksuton sunnuntaisin, joten kannattaa käydä silloin koko perheen kanssa.	Pääsy on maksuton.
-kassajono	checkout queue	10	a64d089d6cb9772f9b83c97321f55ec4	Kassajono oli niin pitkä, että jouduin odottamaan vuoroani lähes vartin ostosteni kanssa.	Kassajono on pitkä.
-työpaikkahaastattelu	job interview	10	2eb7f7e1b90309aff56db3613d58470d	Valmistauduin työpaikkahaastatteluun huolellisesti tutkimalla yritystä ja miettimällä vastauksia todennäköisiin kysymyksiin etukäteen.	Menen työpaikkahaastatteluun huomenna.
-ansioluettelo	resume / CV	10	46ccea49b25c37f065191212913bb243	Päivitin ansioluettelooni uusimman työkokemukseni ja liitin sen mukaan hakemukseen, jonka lähetin yritykselle.	Kirjoitan ansioluetteloa.
-opisto	institute / college	10	b9b339f3dfe04251f4ba00cfcdc06234	Hän opiskeli kansanopistossa vuoden verran, ennen kuin haki varsinaiseen yliopistoon lukemaan historiaa.	Opiskelen opistossa.
-konttori	office (branch)	10	46760ae27e248d9ad85e2a552db79e5f	Pankin paikallinen konttori sulkee ovensa jo kello neljä, joten ehdin sinne juuri ja juuri.	Työskentelen konttorissa.
-kirjanpitäjä	accountant	10	a67f936842dcdd6ac91747278da075a6	Yrityksen kirjanpitäjä laati tilinpäätöksen huolellisesti ja muistutti meitä lähestyvistä verojen maksupäivistä.	Hän on kirjanpitäjä.
-työväline	tool / instrument	10	0d76af8311a5a06d33094aa4f67fce32	Vasara ja ruuvimeisseli ovat tärkeitä työvälineitä, joita ilman remontti ei suju lainkaan.	Tämä on hyvä työväline.
-passintarkastus	passport control	10	a315efbbe4920a61764a69dfb79ead3c	Lennon jälkeen jonotimme pitkään passintarkastuksessa, ennen kuin pääsimme noutamaan matkalaukkumme hihnalta.	Menemme passintarkastukseen.
-viisumi	visa	10	4434e4fea5f4a7988a2a25838193a306	Minun täytyi hakea viisumia hyvissä ajoin, koska matka suuntautui maahan, joka vaatii sen.	Tarvitsen viisumin.
-käsimatkatavara	hand luggage / carry-on	10	5fbf1c6c60a438697355b6aad107f3fd	Pakkasin nestemäiset tuotteet erilliseen pussiin, koska käsimatkatavarat tarkastetaan turvatarkastuksessa tarkasti.	Otan käsimatkatavaran mukaan.
-nousukortti	boarding pass	10	f3584c00719452a3176a1c85446c9a3f	Näytin nousukorttini portilla, ja virkailija toivotti minulle hyvää ja turvallista lentoa.	Tässä on nousukortti.
-menopaluulippu	round-trip ticket	10	3f292cec1aa55cd56a4868c0ddd44f82	Ostin menopaluulipun Helsingistä Tukholmaan, koska se tuli halvemmaksi kuin kaksi erillistä yhdensuuntaista lippua.	Ostin menopaluulipun.
-kausilippu	season ticket / pass	10	a405ff2d5c824dadf8689fa0955b46f3	Hankin bussiin kausilipun, koska matkustan töihin päivittäin ja yksittäiset matkat kävisivät kalliiksi.	Minulla on kausilippu.
-lippuautomaatti	ticket machine	10	190feec583b3ed1e5e0748c6cc08c157	Ostin junalipun lippuautomaatista, koska lipunmyynti oli jo ehtinyt sulkeutua myöhäisen illan vuoksi.	Lippuautomaatti on rikki.
-lipunmyynti	ticket sales / ticket office	10	4f05b381d0d309acb7db695961c9d2ff	Konsertin lipunmyynti alkaa ensi viikolla, ja suosituimmat paikat myydään yleensä loppuun hyvin nopeasti.	Lipunmyynti on auki.
-saapumisaika	arrival time	10	5ba38d0369041953169a127a0f3abdfb	Tarkistin lennon saapumisajan netistä, jotta osaisin lähteä kentälle hakemaan ystävääni oikeaan aikaan.	Mikä on saapumisaika?
-kaupungintalo	city hall	10	694cdd764f58e9c0fb9ba97de1dc28c6	Pariskunta vihittiin kaupungintalolla pienessä seremoniassa, johon oli kutsuttu vain lähimmät sukulaiset ja ystävät.	Kaupungintalo on torilla.
-majatalo	inn / guesthouse	10	4321fa9431a8de4f5fff451f394f4799	Yövyimme matkalla viehättävässä pienessä majatalossa, jossa aamiainen tarjoiltiin kotoisassa ja lämpimässä tunnelmassa.	Yövymme majatalossa.
-leirintäalue	campsite	10	ea2c7a380295960501fe5c46f77cb727	Pystytimme teltan järven rannalla sijaitsevalle leirintäalueelle ja vietimme illan nuotion ääressä makkaraa paistaen.	Menemme leirintäalueelle.
-yhden hengen huone	single room	10	aa2a4a0e8fee3aa0bfe0e6ff6d878c80	Varasin hotellista yhden hengen huoneen, koska matkustin yksin enkä tarvinnut ylimääräistä tilaa.	Otan yhden hengen huoneen.
-kahden hengen huone	double room	10	414733abf7b7f3ba08dcc86905122a5e	Varasimme puolisoni kanssa kahden hengen huoneen, josta avautui kaunis näkymä merelle ja satamaan.	Varasimme kahden hengen huoneen.
-avainkortti	key card	10	7a4cd89ed9836355392e948224bfe310	Vetäisin avainkortin lukijan läpi, mutta ovi ei auennut, joten palasin vastaanottoon pyytämään apua.	Unohdin avainkortin huoneeseen.
-sisäänkirjautuminen	check-in	10	84f375dba3cc1231897c5232adfea9b8	Hotellin sisäänkirjautuminen alkaa vasta kello kaksi, joten jätimme matkatavarat säilytykseen ja lähdimme kävelylle.	Sisäänkirjautuminen on kahdelta.
-uloskirjautuminen	check-out	10	176d79956efa810c9887f645550af113	Uloskirjautuminen tapahtuu viimeistään kello kaksitoista, joten meidän on pakattava tavaramme hyvissä ajoin aamulla.	Uloskirjautuminen on kahdeltatoista.
-matkatoimisto	travel agency	10	83c3e07579423a37f53c88aac3ad2628	Kävimme matkatoimistossa varaamassa kesäloman, koska halusimme asiantuntevaa apua reitin ja hotellien valintaan.	Soitin matkatoimistoon.
-matkaopas	travel guide / guidebook	10	a1f8265eee56ed3d428b13b2901d5ba2	Selasin matkaopasta ennen reissua ja merkitsin siihen nähtävyydet, joissa ehdottomasti halusin käydä paikan päällä.	Luin matkaopasta.
-lomamatka	holiday trip	10	cabc5d6664b41b8b4d92e5ab2583a9d7	Suunnittelimme ensi kesän lomamatkaa Italiaan, jossa haluamme nähdä vanhoja kaupunkeja ja maistaa paikallista ruokaa.	Lomamatka oli ihana.
-nopeusrajoitus	speed limit	10	0ad71bc42a97c18cf1ee5ac5757ca581	Taajamassa nopeusrajoitus on usein neljäkymmentä kilometriä tunnissa, ja sitä kannattaa noudattaa lasten turvallisuuden vuoksi.	Nopeusrajoitus on kahdeksankymmentä.
-hätäuloskäynti	emergency exit	10	ac1e7a6e5a1e2ddd4de341d386463ee8	Lentoemäntä näytti matkustajille, missä hätäuloskäynnit sijaitsevat, ja kehotti tutustumaan turvaohjeisiin ennen lentoonlähtöä.	Missä on hätäuloskäynti?
-sadetakki	raincoat	10	e720461f397d2b52fcd4b6df571d0a0c	Otin sadetakin mukaan retkelle, koska sääennuste lupasi kaatosadetta jo iltapäivän aikana.	Puen sadetakin päälle.
-lumimyrsky	snowstorm / blizzard	10	f591026d519973568e6629f65498f527	Voimakas lumimyrsky kaatoi puita ja katkaisi sähköt monelta talolta keskellä kylmää talviyötä.	Ulkona on lumimyrsky.
-räntä	sleet	10	2d84a1d4327549393cefd2989bb9e014	Aamulla satoi ikävää räntää, joka teki tienpinnasta liukkaan ja kasteli vaatteet nopeasti läpimäriksi.	Ulkona sataa räntää.
-halla	ground frost	10	bf9b897e183ab41652674a4c4b1937a0	Yöllinen halla vioitti puutarhan herkät kukat, vaikka olin peittänyt ne huolellisesti edellisenä iltana.	Yöllä oli halla.
-sumuinen	foggy	10	37bd66d70fed00e97795cfcfc078f1bf	Aamu oli niin sumuinen, että tietä tuskin näki eteensä, ja ajoin tavallista varovaisemmin.	Sää on sumuinen.
-maaperä	soil / ground	10	c15d5e5d4b9930bd78544180b7e97e7a	Alueen maaperä on hyvin savista, joten kasvien istuttaminen vaatii maan parantamista runsaalla mullalla.	Maaperä on kostea.
-multa	soil / dirt	10	42a3c7d3bdaf693f103519f679cd6e4a	Kaivoin kuopan ja sekoitin multaan kompostia, jotta tomaatintaimet saisivat kasvuunsa tarpeeksi ravinteita.	Kädet ovat mullassa.
-tammi	oak	10	2d7a27c79ae7a4c4d60d04e6ddc8537d	Pihalla kasvava vanha tammi tarjoaa kesällä mukavaa varjoa ja pudottaa syksyllä maahan runsaasti tammenterhoja.	Tammi on iso puu.
-sammal	moss	10	6a98906ef4d86ad40b35f8a3effcdd23	Metsän kivet olivat pehmeän sammaleen peitossa, ja paikka tuntui rauhalliselta ja melkein satumaiselta.	Kivessä kasvaa sammalta.
-kukkula	hill / knoll	10	db3029e3df97bdbc73cf74189ffc6c72	Kiipesimme pienen kukkulan laelle ihailemaan auringonlaskua, joka värjäsi taivaan kauniin oranssiksi ja punaiseksi.	Kiipesimme kukkulalle.
-ilves	lynx	10	ddb89119cfcdca33939426bd7a777631	Metsässä liikkuva ilves on arka eläin, jota ihmiset näkevät luonnossa hyvin harvoin omin silmin.	Ilves on metsässä.
-siili	hedgehog	10	f905664d4160506f75a2e6461b6ff930	Pieni siili kompuroi illan hämärässä pihan poikki etsien matoja ja muita pieniä herkkuja ruoakseen.	Pihalla on siili.
-harakka	magpie	10	af36d0eec2fa43e067be39c6c4d8f009	Utelias harakka istui aidalla ja tarkkaili pihaa toivoen ehkä saavansa napattua jotain kiiltävää mukaansa.	Harakka istuu katolla.
-hanhi	goose	10	f451003c219e21284b007793a23fcb69	Suuri hanhiparvi lensi syksyllä etelään, ja lintujen äänekäs aantely kantautui kauas pilvisen taivaan alta.	Hanhi ui järvessä.
+matkakortti	travel card	10	0c9b9f558f2c34b46bec178ecded0b87	Latasin matkakorttiin kuukauden lipun kioskilla, sillä sovellus kieltäytyi toimimasta pakkasessa.	Missä matkakorttini on?
+lähistöllä	nearby	10	23cdb468e18c9d6a14ab816f963b10f2	Onko tässä lähistöllä kahvilaa, joka olisi auki vielä kuudelta?	Asun aivan lähistöllä.
+jäädä pois	to get off	10	96b8e0583c5ca78af2c2b925d43110ed	Muista jäädä pois seuraavalla pysäkillä, sillä sieltä on rantaan lyhyt matka.	Jään pois tässä.
+eksyä	to get lost	10	cd9ab3b046acefdde3eab93b2291cb53	Suolla on helppo eksyä, kun sumu laskeutuu pitkospuiden ylle.	Metsässä voi eksyä.
+ruuhka	traffic jam / rush	10	b18c946c620214c4215ae3c803740c6e	Aamun ruuhka kestää Tampereella vartin, mistä valitetaan silti ääneen.	Liikenteessä on ruuhka.
+huoltoasema	gas station / service station	10	bd8438398cd804f2c388004459fbd7d4	Pysähdyimme huoltoasemalle Nelostien varteen kahville, ja pulla oli edellispäivän.	Ajan huoltoasemalle.
+moottoritie	highway / motorway	10	bd1634367cedb1f9a643e6223caef2c8	Moottoritie loppuu pohjoiseen mentäessä, ja loppumatka on kaksikaistaista.	Ajamme moottoritietä pitkin.
+kioski	kiosk / newsstand	10	e608b4de1f41f181125b19402723c4ae	Kioskista saa lehden, jäätelön ja tiedon siitä, milloin lautta lähtee.	Kioski on auki.
+vesisade	rainfall	10	6d4dc6089ab823656d965b574599167b	Elokuun vesisade kasteli marjaämpärin ja sen kantajan yhtä perusteellisesti.	Ulkona on vesisade.
+jäinen	icy	10	c67dc225a98bd43b85ce7a5a0af828e0	Tie oli jäinen, ja auto luisti risteykseen hitaasti mutta varmasti.	Portaat ovat aamulla jäiset.
+kostea	damp / humid	10	af636937d9732ce6255bbda103d99fcd	Kellari on kostea, ja siksi perunat säilyvät siellä maaliskuulle asti.	Ilma on kostea.
+sateenkaari	rainbow	10	03ac4fcde6bfc1a0175a69ad8d5166b0	Sateen jälkeen järven ylle nousi sateenkaari, ja soutu keskeytettiin hetkeksi.	Näin kauniin sateenkaaren.
+sääennuste	weather forecast	10	93c7f2f9f352e0bbaa0b5741a2de78d5	Sääennuste lupasi poutaa, mihin ei kannata koskaan liikaa luottaa.	Katson sääennustetta.
+tunturi	fell / treeless highland	10	44689b7587f34288e99f238fdfa17e95	Tunturin laelta näkyy kolme järveä ja yksi tie.	Tunturi on korkea.
+laakso	valley	10	3c510e8a5d8e9eefc644e4f898ee528d	Laakso jäi sumun peittoon, ja vain vaaran laki näkyi.	Laakso on vihreä.
+runko	trunk / frame	10	f5c313c7b386d2ab78245f07b547fa6e	Vanhan männyn runko on niin paksu, ettemme yltäneet sen ympäri.	Puun runko on paksu.
+nurmikko	lawn	10	e48b3c95450978dd332743a12217cb3f	Nurmikko leikataan kahdesti kesässä, ja loput ajasta se saa kasvaa.	Nurmikko kasvaa nopeasti.
+heinä	hay / grass	10	ba96738007476f27915e0140d4d00a89	Heinä korjattiin latoon ennen elokuun sateita, kuten joka vuosi.	Lehmät syövät heinää.
+pensas	bush / shrub	10	eb23d99606b008b9a6eddba9873863ad	Pihan reunan pensas notkui herukoista, ja linnut ehtivät ensin.	Pensas on iso.
+kukkia	to bloom / to flower	10	5ce66894dc72db64ca5a6d9f99e8e92b	Omenapuut alkavat kukkia toukokuun lopulla, ja kylmä kausi voi vielä yllättää.	Ruusut kukkivat kesällä.
+peura	deer	10	058348972c0277e4f1c33811f7b59e61	Aamuhämärissä metsänreunaan ilmestyi peura, joka katosi kolmessa loikassa.	Näin metsässä peuran.
+rotta	rat	10	f626932b64d5d7801883c02086cfb54b	Kellarissa asusti rotta, ja loukku viritettiin jauhopussin viereen.	Rotta juoksi pois.
+varis	crow	10	e7c45e37137d6b8dbd952e1581e3aa72	Varis istui postilaatikolla ja seurasi lumitöitä ilman ainuttakaan kommenttia.	Varis lensi katolle.
+joutsen	swan	10	674e65343e44d87becb4e02a7212c9bd	Joutsen palaa samalle lahdelle joka kevät, kun jäät lähtevät.	Joutsen ui järvessä.
+sorsa	duck / mallard	10	f972fcde916cb8f127c447be3b39a11a	Sorsa ui rantaan leivänpalojen perässä, mutta lokit ehtivät ensin.	Sorsa ui lammessa.
+lokki	seagull	10	4b53f00146c0e713efe0df053dd19c9e	Lokki nappasi makkaran kädestä satamassa, ja kukaan ei ollut yllättynyt.	Lokki huutaa rannalla.
+pöllö	owl	10	0f6b1c5d67c201eb1c3c37300b8be077	Yöllä metsästä kuului pöllön huhuilu, ja se kantautui järven yli.	Pöllö huhuilee yöllä.
+ahven	perch	10	12b308fced90a8d8b6a83b5d6cea43be	Sain illalla ahvenen, ja se paistettiin nuotiolla uusien perunoiden kanssa.	Ahven on hyvää kalaa.
+hauki	pike	10	8a10f72d1243a5cca8569dbbf7288a6d	Hauki tarttui uistimeen ensimmäisellä heitolla, ja vene kallistui kunnolla.	Hauki on iso kala.
+sammakko	frog	10	38ea794f386497892ddc71bd59fbed8e	Lammen rannalla istui sammakko, joka katosi veteen ennen kameraa.	Sammakko hyppää veteen.
+ampiainen	wasp	10	46b624fd07b502f23348a3ce46022260	Ampiainen kiersi mehulasia, ja koko piknik siirtyi varjoon.	Ampiainen pisti minua.
+muurahainen	ant	10	373d327492cef043f7c28fa4191dc561	Muurahainen kantoi selässään pihlajanmarjan, joka painoi enemmän kuin se itse.	Muurahainen kävelee maassa.
+koski	rapids	10	eda0df4567902969822fdc5bb04e3b54	Oulankajoen koski vaatii melojalta opastuksen ja kunnon pelastusliivit.	Koski kuohuu kovasti.
+lampi	pond	10	82bc2fe91ee036d4367612b61a093045	Metsän keskellä on lampi, jonka pinnalta puut katsovat itseään.	Lampi on tyyni.
+niemi	cape / peninsula	10	0d72aced1dd520fed959a900b3aaa85f	Mökin niemi on kapea, ja tuuli tulee kahdelta suunnalta.	Niemi työntyy järveen.
+suo	swamp / bog	10	1525c1dd8775a25af387589d7a2c7fa2	Suolla kävellään pitkospuita pitkin, tai saappaat täyttyvät ensimmäisellä sadalla metrillä.	Suo on märkä.
+ilmasto	climate	10	08961e5e0e104c35af1b7e0b881224c3	Ilmasto on leudontunut, ja jäätiet aukeavat myöhemmin kuin ennen.	Ilmasto lämpenee.
+metsästää	to hunt	10	bada7bc627cebe6a0c83e9f2968896e4	Hirveä käydään metsästämässä syksyllä, ja saalis jaetaan seurueen kesken.	Hän metsästää hirviä.
+sarvi	horn / antler	10	4173b1cd30768a96e9ea470ab6a86076	Hirven sarvi putoaa talvella, ja keväällä kasvaa kokonaan uusi.	Sarvi löytyi metsästä.
+turkki	fur / coat	10	19184e4724de6e46c53c9e9c8a2b8a51	Ketun turkki paksunee talveksi, ja siksi se pärjää pakkasessa.	Kissalla on pehmeä turkki.
+päivänpaiste	sunshine	10	74fdf57a865a6da96791f129a2500bf4	Maaliskuun päivänpaiste hangella tuntuu lämpimämmältä kuin kesäkuun sade.	Ulkona on päivänpaiste.
+kuudes	sixth	10	5f02afdf71ad14552ffa9fa090e6b034	Tämä on jo kuudes kerta tällä viikolla, kun lumilinko herättää seitsemältä.	Asun kuudennessa kerroksessa.
+seitsemäs	seventh	10	76d1e026267387ef42dd1bacf93ba40a	Joukkue sijoittui sarjassa seitsemänneksi, ja kausi katsottiin siltikin onnistuneeksi.	Tämä on seitsemäs päivä.
+kahdeksas	eighth	10	26a20111cfccd23ae35aa7cb68be3dd5	Kahdeksas maaliskuuta on kansainvälinen naistenpäivä, ja sitä juhlitaan monin tavoin.	Hän tuli kahdeksanneksi.
+yhdeksäs	ninth	10	9ff42a444fabd2c7c898968f2545c4be	Lapseni aloittaa yhdeksännen luokan, ja peruskoulu päättyy jo keväällä.	Tämä on yhdeksäs yritys.
+kymmenes	tenth	10	492516675b7ac4a29e5c27db9deab8d6	Vietimme kymmenettä hääpäivää samassa mökissä, jossa aloitimme yhteisen kesän.	Olen jonossa kymmenes.
+neljännes	quarter / one fourth	10	6ef82fb6761fa37a5139f50451fae47b	Neljännes marjoista päätyy piirakkaan ja loput pakastimeen.	Söin neljänneksen kakusta.
+vuosisata	century	10	7117f3ff7004e90a09f3b35e82df6dbf	Petäjäveden kirkko rakennettiin yli kaksi vuosisataa sitten hirrestä.	Eletään uutta vuosisataa.
+juhlapäivä	holiday / feast day	10	fad01c1ca94696cc8362b53d715c5cc2	Juhannus on monille vuoden tärkein juhlapäivä, ja kaupunki tyhjenee sen ajaksi.	Tänään on juhlapäivä.
+toissapäivänä	the day before yesterday	10	d41c0cfb2af6e9a8b270d0b1b223fdda	Tapasin hänet toissapäivänä torilla, ja juttelimme säästä pidempään kuin tavallisesti.	Kävin siellä toissapäivänä.
+ylihuomenna	the day after tomorrow	10	1bc48252eb991b5a5306b82cf02b269e	Lähden ylihuomenna Kolarin junalla pohjoiseen, ja laukku odottaa pakkaamista.	Nähdään ylihuomenna.
+menneisyys	the past	10	04bce043751232d5e28cbd620338ead7	Menneisyys näkyy tässä kylässä hirsiladoissa, jotka seisovat vielä peltojen laidalla.	Älä murehdi menneisyyttä.
+lukumäärä	number / count	10	ff9bf0ada8c9d40314bc026e3ded8f10	Talkoisiin tulleiden lukumäärä ylitti odotukset, ja kahvia keitettiin kolme pannullista.	Laske lukumäärä.
+keskimäärin	on average	10	bfe4b5d8c514f1813c1eb2d31524184b	Suomessa juodaan keskimäärin enemmän kahvia kuin missään muualla maailmassa.	Nukun keskimäärin seitsemän tuntia.
+kelvoton	useless / worthless	10	7de68d93d14ea86d158ab23b185c1608	Vanha kola osoittautui kelvottomaksi heti ensimmäisen märän lumen jälkeen.	Tämä työkalu on kelvoton.
+vanhanaikainen	old-fashioned	10	e7826bb21be15241e8341be047cfc4c3	Isovanhemmat pitävät vanhanaikaisesta tavasta kirjoittaa joulukortti käsin.	Puhelin on vanhanaikainen.
+kaivata	to miss / to long for	10	d655713ff6550323e777f3a47b33f126	Ulkomailla alkaa kaivata saunaa ja ruisleipää, siinä järjestyksessä.	Alan kaivata kesää.
+toivo	hope	10	436c6da481a038163a078ef9eaa524d8	Helmikuussa toivo herää, kun päivä pitenee joka viikko puoli tuntia.	Älä menetä toivoa.
+pettyä	to be disappointed	10	8ef713d8d026d793bea6925b784607ff	Ehdin pettyä pahasti, kun latu suli kahdessa päivässä.	Ei kannata pettyä heti.
+pettymys	disappointment	10	14e5d15c4766ef53f8d2de0351ea22a9	Kokon peruminen sateen takia oli pettymys koko kylälle.	Se oli iso pettymys.
+yllättyä	to be surprised	10	b580855dfe0c9e38d1f54fc5e6b76048	Ehdin yllättyä, kun naapuri kutsui joulusaunaan kahdenkymmenen vuoden jälkeen.	Yllätyin lahjasta.
+innostua	to get excited / enthusiastic	10	a705caaff29dd117c647946cc57d10f4	Lapset innostuivat pilkkimisestä niin, että pakkanen unohtui täysin.	Innostuin heti ideasta.
+innostunut	excited / enthusiastic	10	de86b8338a33da1d96f4bc8478bcabd0	Opas oli niin innostunut Kalevalasta, että ryhmä myöhästyi lautalta.	Olen innostunut matkasta.
+rauhoittua	to calm down	10	1651d92ad498410b4f72fb6b5c4487be	Yritä rauhoittua, sillä jää kantaa vasta ensi viikolla.	Rauhoitu hetkeksi.
+rentoutua	to relax	10	5d90f904fed3a1d8ce3351a8d24086ef	Löylyn jälkeen on helppo rentoutua portailla, eikä puhua tarvitse.	Haluan rentoutua kotona.
+kyllästyä	to get bored / fed up	10	f3015d87e3983c04aca877deeb7b49f5	Ehdin kyllästyä odottamaan bussia pakkasessa ja kävelin lopulta kotiin.	Kyllästyin tähän peliin.
+huolestua	to become worried	10	e7ab77b420d6d8e335f23fdd4b86bb01	Äiti alkoi huolestua, kun jäälle lähtenyt ei palannut hämärään mennessä.	Älä huolestu turhaan.
+hävetä	to be ashamed	10	5dbe3b36dfb8484f07c90e0034cfeffe	Aloin hävetä, kun heitin lisää löylyä kysymättä muilta.	Minua hävettää kovasti.
+nolo	embarrassing / awkward	10	836bbc5635294925fa9caf3c7bcefdb4	Nolo hetki tuli, kun tervehdin vierasta ihmistä bussipysäkillä.	Tämä on niin nolo.
+nauru	laughter	10	c88eee44a87ce3c5b08ccdedf5a0cdef	Naapurista kuului naurua koko juhannusyön, ja kukaan ei valittanut.	Kuulin iloista naurua.
+kumppani	partner	10	ef0f015f770be345816043b63e8d38d6	Hän esitteli kumppaninsa suvulle vasta jouluna, mikä oli täysin odotettua.	Hän on hyvä kumppani.
+suudella	to kiss	10	42736115f7090042ca3b67ef01d0deb2	Pariskunta ehti suudella laiturilla ennen kuin lautta irtosi.	Hän halusi suudella minua.
+halata	to hug	10	5daeb091eec12ccd62934077b41cb8ec	Lapset juoksivat halaamaan mummoa heti eteisessä, kengät vielä jalassa.	Tule halaamaan minua.
+halaus	hug	10	00cd4ba8181897fe7c26f1fe6052b503	Pitkän hiihtopäivän jälkeen halaus ovella riitti hyvin sanojen sijaan.	Anna minulle halaus.
+naimisiin	to get married (into marriage)	10	a1c4cf6504645a0f3664dabdcaa0b2c5	He päättivät mennä naimisiin juhannuksena, ja vieraat tulivat veneillä.	He menivät naimisiin.
+ero	breakup / divorce / difference	10	7382eb2379a5eb17630d1c43dce03693	Pitkän suhteen jälkeinen ero oli raskas, mutta mökin vuorot sovittiin silti.	Heille tuli ero.
+luottamus	trust	10	17e4f302dad8b7f3826ae68cbc06f282	Kylässä luottamus mitataan siinä, jätetäänkö ovi lukitsematta.	Luottamus on tärkeää.
+riidellä	to quarrel / to argue	10	d13388f585317524971762a7888029ac	Sisarukset alkoivat riidellä siitä, kumpi heittää löylyt.	He alkoivat riidellä.
+riita	quarrel / fight	10	3c1e64d95f69b12e3db55eedcfa7a3cb	Pieni riita rajakivestä paisui illan mittaan, ja aita siirtyi lopulta metrin.	Heillä oli riita.
+bileet	party (colloquial)	10	46f451af8fcae515429d968eed6d7591	Kaverit järjestivät bileet vuokratussa saunatilassa rannan tuntumassa.	Meillä oli kivat bileet.
+vappu	May Day	10	ce52f1de909f008e938505e3547ab4b5	Vappu vietetään ulkona piknikillä, ja simaa juodaan räntäsateesta huolimatta.	Hauskaa vappua!
+kutsu	invitation	10	88d3816a0c2992b16a3b2f5611e12ede	Sain postissa kutsun häihin, ja kortissa luki saaren nimi.	Sain juhliin kutsun.
+hassu	silly / funny	10	e7d0e04ca5fd20ea9567c1588b661b73	Lapsi keksi hassun tarinan lentävästä porosta, ja koko pöytä nauroi.	Se oli hassu juttu.
+näppäin	key (on a keyboard) / button	10	2edc4b88345c5e9438f16524bc451780	Näppäimistön ä-näppäin jumittui, ja sanat muuttuivat huvittavan ruotsalaisiksi.	Paina tätä näppäintä.
+mikrofoni	microphone	10	6509dcc59d016827a98d8a7ea80ce2b1	Juhlapuheen alussa mikrofoni vaikeni, ja yleisö kuuli vain hiljaisuuden.	Mikrofoni on rikki.
+rekisteröityä	to register / sign up	10	0d7b0d5b484e22be4180aa7afd72898f	Sinun täytyy rekisteröityä palveluun, ennen kuin bussilipun voi ostaa sovelluksesta.	Muista rekisteröityä ensin.
+skrollata	to scroll	10	8f910f07b8700e195cb620fff0eb595d	Jäin kaamosiltana skrollaamaan puhelinta, vaikka lumityöt odottivat aamulla.	Lakkaa skrollaamasta!
+seuraaja	follower	10	4214f3fcb38de5cedd1c59d0937da927	Mökkitilin seuraajat lisääntyivät, kun yksi laiturikuva lähti kiertämään.	Hänellä on monta seuraajaa.
+kommentoida	to comment	10	ae6521c0c2ca78bc2dd1e222b3c866dd	Moni halusi kommentoida jäätien avaamista, ja mielipiteitä riitti.	Saanko kommentoida tätä?
+podcast	podcast	10	ac9cef765e0dbf0bda625b3d1d3b446d	Kuuntelen työmatkalla podcastia Kalevalasta, ja bussi tuntuu lyhyemmältä.	Kuuntelen podcastia.
+äänetön	silent / muted	10	738ccda8b3b8aed656b31a1707c96817	Laitoin puhelimen äänettömälle ennen konserttia, kuten muutkin salissa.	Puhelin on äänetön.
+käynnistää uudelleen	to restart	10	166fb64926cc405e2c08288a07737c64	Kun kone takkuili, huolto neuvoi käynnistämään sen uudelleen ja odottamaan.	Käynnistä laite uudelleen.
+kytkeä	to connect / to switch / to plug in	10	7a0912fcbe68f0ffb862dab8fc3f889c	Muista kytkeä laturi seinään, sillä mökillä on vain yksi pistorasia.	Kytke johto seinään.
+verkkopankki	online banking	10	f0a6c37edf36485b88f645cea55441c4	Verkkopankissa hoituvat laskut, sillä lähin konttori on viidenkymmenen kilometrin päässä.	Avaa verkkopankki.
+robotti	robot	10	4c6a1b032e82b42afff5eb3cd959997a	Sahalla robotti hoitaa raskaimmat nostot, ja selät kiittävät siitä.	Robotti siivoaa lattian.
+tekoäly	artificial intelligence / AI	10	16f3ae687f0d5d07ddb598019f851b61	Tekoäly kääntää suomea kohtalaisesti, mutta partitiivi kaataa sen yhä.	Tekoäly auttaa minua.
+sähköinen	electronic / electric	10	b689d6d44a40febc163a20ce6c6687ae	Lähetin sopimuksen sähköisessä muodossa, sillä posti kulkee tänne hitaasti.	Tämä on sähköinen lippu.
+muistutus	reminder	10	cac0805dc645d29dcacdd50da716bd3b	Laitoin puhelimeen muistutuksen renkaiden vaihdosta, ja se soi lokakuussa.	Sain muistutuksen tapaamisesta.
+hälytys	alarm / alert	10	f608fd6dda22572f4d6e406fb69cab5b	Hälytys soi puoli kuudelta, ja ikkunan takana oli täysi pimeys.	Hälytys soi aamulla.
+verkkokauppa	online store	10	c9bdc84b86657399c1e6de67b9b42001	Tilasin talvikengät verkkokaupasta, ja paketti odotti automaatissa jo torstaina.	Ostin sen verkkokaupasta.
+huijaus	scam / fraud / hoax	10	1fed6f1913e1711d510c93e130d57321	Viesti suuresta palkinnosta osoittautui huijaukseksi, ja linkki jäi klikkaamatta.	Se oli huijaus.
+nauhoittaa	to record (audio/video)	10	1f2f213a873a6420427e298f69876da0	Päätin nauhoittaa luennon, sillä murre vaati kotona toisen kuuntelukerran.	Haluan nauhoittaa tämän.
+liittää	to paste / to attach / to join	10	ebc4e8e9d52b3b6d4940bb8bdb3829c8	Muista liittää ansioluettelo hakemukseen, ennen kuin painat lähetysnappia.	Liitä kuva viestiin.
+liite	attachment / appendix	10	118b0728d967f845a8e1479a9e4a5f73	Sopimuksen liite selitti talvikauden vuorot yhtä epäselvästi kuin sopimuskin.	Avaa sähköpostin liite.
+signaali	signal	10	d146520a90ca1bd28805a84f79b961f2	Mökillä signaali löytyy vain mäen päältä, ja sinne kävellään soittamaan.	Täällä ei ole signaalia.
+kenties	perhaps / possibly	10	f8de58f3b3dd553bfdf19496011ad724	Lähdemme kenties mökille perjantaina, jos tie on aurattu.	Kenties huomenna.
+tarkalleen	exactly / precisely	10	b571eef3d1b7d265881265656ea4b9eb	Kerro tarkalleen, mihin aikaan lautta lähtee, sillä seuraava menee vasta huomenna.	Mitä tarkalleen tarkoitat?
+mukaisesti	in accordance with	10	b275ff6c9514e862cb2139ff1d9c5c5a	Latu ajettiin suunnitelman mukaisesti, vaikka lunta tuli vain vähän.	Toimi ohjeiden mukaisesti.
+ali	under / below (motion)	10	86318e52f5ed4801abe1d13d509443de	Kettu ryömi aidan ali pihalle ja katosi ladon taakse.	Mene sillan ali.
+määräys	order / regulation / decree	10	d008b1bfd7abf9cdc16d3a127d3ef498	Määräys kieltää avotulen teon kuivana kesänä koko maakunnassa.	Tämä on tärkeä määräys.
+korkeintaan	at most	10	f9bd0793bae78ff8c219782f26fb8b6c	Matka mökille kestää korkeintaan kolme tuntia, kelirikon aikaan enemmän.	Odotan korkeintaan tunnin.
+pikemminkin	rather / instead	10	472f3356542c4db736079031f8c395ce	En ole vihainen vaan pikemminkin hämmentynyt siitä, ettei kukaan kertonut.	Pikemminkin näin.
+kohtuullisen	reasonably / moderately	10	019cc0e9efe76cda867a62ae1cbd08d6	Lounas oli kohtuullisen hyvää, ja kahvi kuului hintaan.	Se on kohtuullisen helppoa.
+ylipäätään	in general / at all	10	99e33cbd9b119fcbd70b19e1e32c6397	En ole varma, haluanko ylipäätään muuttaa etelään töiden perässä.	Tuletko ylipäätään?
+kaiken kaikkiaan	all in all / overall	10	f5ab077ad2ef572b8f0f0546a4d3e94c	Kaiken kaikkiaan reissu onnistui, vaikka lautta myöhästyi ja räntä yllätti.	Kaiken kaikkiaan hyvä päivä.
+kummipoika	godson	10	e384efb8c3550ac0a521d1e9fa52eb96	Lupasin kummipojalleni onkiretken heti, kun jäät ovat lähteneet.	Hän on kummipoikani.
+kummitytär	goddaughter	10	8736a284bbbd17956f6236e1c5c97824	Ostin kummitytärtäni varten villasukat, ja mummo neuloi ne yhdessä illassa.	Tapaan kummitytärtäni.
+siskopuoli	half-sister / stepsister	10	cb995897b5ef1a0d71801f1f879ea2f0	Sain tietää vasta aikuisena, että minulla on siskopuoli Vaasassa.	Hän on siskopuoleni.
+ottolapsi	adopted child	10	a5f0024dbddf8aed263e222d259b1132	Perhe sai ottolapsen pitkän odotuksen jälkeen, ja kylä toi tervetuliaiskortin.	Hän on heidän ottolapsensa.
+kaima	namesake (person with the same name)	10	d95893ac873ec03a7f6e3a5546b36582	Törmäsin kurssilla kaimaani, ja opettaja sekoitti meidät joka kerta.	Hän on kaimani.
+perillinen	heir	10	9e13ea8948934c221c44a593ed0351fd	Suvun tila siirtyi ainoalle perilliselle, joka muutti takaisin ulkomailta.	Hän on ainoa perillinen.
+lapseton	childless	10	a00e0f71f714a7d5a91a229d167b61b1	Pariskunta jäi lapsettomaksi ja rakensi sen sijaan kaksi venettä.	He ovat lapsettomia.
+sylivauva	infant / babe in arms	10	8f0c2ff1d948b3cd311daf51df4b1833	Junassa istui äiti sylivauvansa kanssa, ja vauva nukkui Ouluun asti.	Hän on vielä sylivauva.
+ikätoveri	peer / person of the same age	10	6c9192690b84a7ee9e6ae130450b53fa	Lapsi viihtyi ikätovereidensa kanssa hangessa, eivätkä aikuiset olleet tarpeen.	He ovat ikätovereita.
+sukulaisuus	kinship / relation	10	e9779b837b4e94fe0e64a8155d33050f	En tiennyt sukulaisuudestamme mitään, ennen kuin sukuseuran kesäjuhla paljasti sen.	Mikä teidän sukulaisuutenne on?
+jälkeläinen	descendant / offspring	10	139daeb075f03e9926ae1fc83fc78e1f	Vanhan talon jälkeläiset kokoontuvat pihalle joka heinäkuu.	He ovat hänen jälkeläisiään.
+kihlasormus	engagement ring	10	249d4c362e779c35a5abea13883058ef	Kihlasormus ostettiin Turusta, ja kaiverrus tehtiin vasta viikkoa myöhemmin.	Sain kauniin kihlasormuksen.
+vihkisormus	wedding ring	10	e98e141d36be390cfe45de3c8b2c7279	Vihkisormukseen kaiverrettiin päivämäärä, jotta se pysyisi mielessä.	Hän käyttää vihkisormusta.
+sisarenpoika	nephew (sister's son)	10	61685c63ed504ba2ccb6dc3a89418be7	Vein sisarenpoikani jäähalliin, ja hän oppi jarruttamaan toisella tunnilla.	Hän on sisarenpoikani.
+veljenpoika	nephew (brother's son)	10	c44a67d7c7ced498f500e6e181cffea3	Veljenpoikani aloittaa koulun elokuussa ja kävelee sinne itse peltotietä.	Tapaan veljenpoikani huomenna.
+sisarentytär	niece (sister's daughter)	10	9c66efd9a3ce61d54c2d9bb31a2c42f6	Sisarentyttäreni soitti kertoakseen päässeensä opiskelemaan Jyväskylään.	Hän on sisarentyttäreni.
+veljentytär	niece (brother's daughter)	10	a6a1115ede04656c0f4c958438d0ef3a	Lupasin opettaa veljentyttärelleni uimaan heti, kun järvi lämpenee.	Veljentyttäreni täyttää viisi.
+vatsalaukku	stomach (organ)	10	5f51a9d90c0814ec42d7536815575779	Lääkäri selitti, että vatsalaukku sietää salmiakkia vain tiettyyn rajaan asti.	Vatsalaukku on kipeä.
+lihaskunto	muscle strength / fitness	10	82411528dc808ae724bccc89021e1c6c	Lumitöiden jälkeen lihaskunto tuntuu paremmalta kuin koko kuntosalikauden jälkeen.	Lihaskunto on hyvä.
+painonpudotus	weight loss	10	053003df3a86507c4dc002f0240a91cb	Painonpudotus onnistui hiihtämällä, ei suinkaan laskemalla kaloreita.	Painonpudotus sujuu hyvin.
+jakku	(women's) jacket / blazer	10	37952c63dadba359acddfd9f775adaad	Musta jakku otetaan kaapista ylioppilasjuhliin, villapaita jää naulakkoon.	Tämä jakku on liian pieni.
+liivi	vest / waistcoat	10	6736772943d123d24e4b396cca53f76f	Sulhanen valitsi puvun alle vaaleanharmaan liivin ja jätti solmion pois.	Hänellä on liivi.
+asuste	accessory	10	e5aca059a9e9459fdd13436416d01f52	Kaunis asuste viimeistelee juhla-asun, mutta villasukat päihittävät sen mökillä.	Tämä asuste on kaunis.
+rannekoru	bracelet	10	f4540ae83931d65c8be842440bb22cfa	Sain rannekorun, joka oli tehty Lapin hopeasta käsityönä.	Käytän rannekorua.
+rannekello	wristwatch	10	116a3bc68e0fc53cadde6d137255e9c8	Vilkaisin rannekelloa ja tajusin, että lautta lähtee kymmenen minuutin päästä.	Rannekello näyttää kahta.
+kaulus	collar	10	5b60ec89cfcf31ac8fd20749e28277f9	Paidan kaulus rypistyi laukussa, ja silitysrauta otettiin esiin vuoden jälkeen.	Kauluksessa on tahra.
+sovituskoppi	fitting room	10	8d9a1c2f12c2e6318f6fd8fde13133e1	Vein saappaat sovituskoppiin villasukat jalassa, kuten täällä kuuluu tehdä.	Menen sovituskoppiin.
+hyllystä	on / from the shelf	10	df424f6f6b2dfdb6c8ebe6a160e43423	Otin hyllystä viimeisen ruisleivän juuri ennen toista asiakasta.	Otan kirjan hyllystä.
+maksuton	free of charge	10	62f2c799aa43d16d55d4760c19c6e4c4	Museoon pääsee maksutta tiettyinä iltoina, ja jono ulottuu ovelta kadulle.	Pääsy on maksuton.
+kassajono	checkout queue	10	a64d089d6cb9772f9b83c97321f55ec4	Kassajono kasvoi jouluaattona pitkäksi, mutta kukaan ei yrittänyt kiilata.	Kassajono on pitkä.
+työpaikkahaastattelu	job interview	10	2eb7f7e1b90309aff56db3613d58470d	Valmistauduin työpaikkahaastatteluun lukemalla yrityksen historian ja harjoittelemalla vaikenemista.	Menen työpaikkahaastatteluun huomenna.
+ansioluettelo	resume / CV	10	46ccea49b25c37f065191212913bb243	Päivitin ansioluetteloon kesätyöt sahalta ja lisäsin hirsityön kurssin.	Kirjoitan ansioluetteloa.
+opisto	institute / college	10	b9b339f3dfe04251f4ba00cfcdc06234	Hän opiskeli kansanopistossa vuoden ja haki sen jälkeen yliopistoon.	Opiskelen opistossa.
+konttori	office (branch)	10	46760ae27e248d9ad85e2a552db79e5f	Pankin konttori sulkeutuu neljältä, ja ehdin sinne juuri ja juuri.	Työskentelen konttorissa.
+kirjanpitäjä	accountant	10	a67f936842dcdd6ac91747278da075a6	Yrityksen kirjanpitäjä muistutti maksupäivistä ystävällisesti kolmesti.	Hän on kirjanpitäjä.
+työväline	tool / instrument	10	0d76af8311a5a06d33094aa4f67fce32	Puukko on hirsimiehen tärkein työväline, ja jokainen teroittaa sen itse.	Tämä on hyvä työväline.
+passintarkastus	passport control	10	a315efbbe4920a61764a69dfb79ead3c	Passintarkastuksessa jono eteni hitaasti, ja laukut odottivat jo hihnalla.	Menemme passintarkastukseen.
+viisumi	visa	10	4434e4fea5f4a7988a2a25838193a306	Hain viisumia hyvissä ajoin, sillä posti kulkee tänne omaa tahtiaan.	Tarvitsen viisumin.
+käsimatkatavara	hand luggage / carry-on	10	5fbf1c6c60a438697355b6aad107f3fd	Pakkasin nesteet erikseen, sillä käsimatkatavarat tarkastetaan tarkasti.	Otan käsimatkatavaran mukaan.
+nousukortti	boarding pass	10	f3584c00719452a3176a1c85446c9a3f	Näytin nousukortin portilla, ja jäänpoisto siirsi lähtöä vielä tunnilla.	Tässä on nousukortti.
+menopaluulippu	round-trip ticket	10	3f292cec1aa55cd56a4868c0ddd44f82	Ostin menopaluulipun Tukholmaan, sillä se tuli halvemmaksi kuin kaksi erillistä.	Ostin menopaluulipun.
+kausilippu	season ticket / pass	10	a405ff2d5c824dadf8689fa0955b46f3	Hankin bussiin kausilipun, koska yksittäiset matkat maksavat talvessa enemmän.	Minulla on kausilippu.
+lippuautomaatti	ticket machine	10	190feec583b3ed1e5e0748c6cc08c157	Ostin junalipun lippuautomaatista, sillä lipunmyynti sulkeutui kuudelta.	Lippuautomaatti on rikki.
+lipunmyynti	ticket sales / ticket office	10	4f05b381d0d309acb7db695961c9d2ff	Konsertin lipunmyynti alkaa maanantaina, ja parhaat paikat menevät vartissa.	Lipunmyynti on auki.
+saapumisaika	arrival time	10	5ba38d0369041953169a127a0f3abdfb	Tarkistin lennon saapumisajan, jotta ehtisin kentälle ennen matkustajaa.	Mikä on saapumisaika?
+kaupungintalo	city hall	10	694cdd764f58e9c0fb9ba97de1dc28c6	Pariskunta vihittiin kaupungintalolla, ja kahvit juotiin torin laidalla.	Kaupungintalo on torilla.
+majatalo	inn / guesthouse	10	4321fa9431a8de4f5fff451f394f4799	Yövyimme matkalla majatalossa, jossa aamiaisella tarjottiin puuroa ja puolukkaa.	Yövymme majatalossa.
+leirintäalue	campsite	10	ea2c7a380295960501fe5c46f77cb727	Pystytimme teltan leirintäalueelle järven rantaan ja paistoimme makkaraa nuotiolla.	Menemme leirintäalueelle.
+yhden hengen huone	single room	10	aa2a4a0e8fee3aa0bfe0e6ff6d878c80	Varasin yhden hengen huoneen, sillä matkustin yksin enkä tarvinnut tilaa.	Otan yhden hengen huoneen.
+kahden hengen huone	double room	10	414733abf7b7f3ba08dcc86905122a5e	Varasimme kahden hengen huoneen, josta näkyi Perämeri ja liikkuvat jäät.	Varasimme kahden hengen huoneen.
+avainkortti	key card	10	7a4cd89ed9836355392e948224bfe310	Vetäisin avainkorttia lukijasta kolmesti, ja lopulta palasin vastaanottoon.	Unohdin avainkortin huoneeseen.
+sisäänkirjautuminen	check-in	10	84f375dba3cc1231897c5232adfea9b8	Hotellin sisäänkirjautuminen alkaa kahdelta, joten jätimme laukut säilytykseen ja kävelimme torille.	Sisäänkirjautuminen on kahdelta.
+uloskirjautuminen	check-out	10	176d79956efa810c9887f645550af113	Uloskirjautuminen tapahtuu kahteentoista mennessä, ja aamu meni pakkaamiseen.	Uloskirjautuminen on kahdeltatoista.
+matkatoimisto	travel agency	10	83c3e07579423a37f53c88aac3ad2628	Kävimme matkatoimistossa varaamassa lautan ja hotellin samalla kertaa.	Soitin matkatoimistoon.
+matkaopas	travel guide / guidebook	10	a1f8265eee56ed3d428b13b2901d5ba2	Selasin matkaopasta ennen reissua ja merkitsin siihen kaksi museota.	Luin matkaopasta.
+lomamatka	holiday trip	10	cabc5d6664b41b8b4d92e5ab2583a9d7	Suunnittelimme lomamatkaa Ahvenanmaalle, jonne mennään pyörän kanssa lautalla.	Lomamatka oli ihana.
+nopeusrajoitus	speed limit	10	0ad71bc42a97c18cf1ee5ac5757ca581	Taajamassa nopeusrajoitus on usein neljäkymmentä, ja siitä muistutetaan koulun kohdalla.	Nopeusrajoitus on kahdeksankymmentä.
+hätäuloskäynti	emergency exit	10	ac1e7a6e5a1e2ddd4de341d386463ee8	Lentoemäntä näytti, missä hätäuloskäynnit sijaitsevat, ja pyysi lukemaan turvaohjeet.	Missä on hätäuloskäynti?
+sadetakki	raincoat	10	e720461f397d2b52fcd4b6df571d0a0c	Otin sadetakin mukaan juhannukseksi, ja se osoittautui viisaaksi ratkaisuksi.	Puen sadetakin päälle.
+lumimyrsky	snowstorm / blizzard	10	f591026d519973568e6629f65498f527	Lumimyrsky katkaisi sähköt saaristossa, ja kynttilät haettiin laatikosta.	Ulkona on lumimyrsky.
+räntä	sleet	10	2d84a1d4327549393cefd2989bb9e014	Aamulla satoi räntää, joka teki tiestä liukkaan ja mielialasta harmaan.	Ulkona sataa räntää.
+halla	ground frost	10	bf9b897e183ab41652674a4c4b1937a0	Yöllinen halla vei perunanvarret elokuussa, vaikka ne oli peitetty.	Yöllä oli halla.
+sumuinen	foggy	10	37bd66d70fed00e97795cfcfc078f1bf	Aamu oli niin sumuinen, että lautta odotti satamassa kaksi tuntia.	Sää on sumuinen.
+maaperä	soil / ground	10	c15d5e5d4b9930bd78544180b7e97e7a	Alueen maaperä on savista, ja siksi mullan sekaan lisätään hiekkaa.	Maaperä on kostea.
+multa	soil / dirt	10	42a3c7d3bdaf693f103519f679cd6e4a	Kaivoin kuopan ja sekoitin multaan kompostia ennen taimien istuttamista.	Multa on vielä jäässä.
+tammi	oak	10	2d7a27c79ae7a4c4d60d04e6ddc8537d	Ahvenanmaalla kasvaa tammi, joka Suomessa jää muuten harvinaiseksi.	Tammi on iso puu.
+sammal	moss	10	6a98906ef4d86ad40b35f8a3effcdd23	Metsän kivet olivat sammalen peitossa, ja askel painui pehmeästi.	Kivessä kasvaa sammalta.
+kukkula	hill / knoll	10	db3029e3df97bdbc73cf74189ffc6c72	Kiipesimme kukkulalle katsomaan, kuinka ruska etenee laakson yli.	Kiipesimme kukkulalle.
+ilves	lynx	10	ddb89119cfcdca33939426bd7a777631	Ilves on arka eläin, ja sen näkee useimmiten vain jälkien perusteella.	Ilves on metsässä.
+siili	hedgehog	10	f905664d4160506f75a2e6461b6ff930	Pieni siili kompuroi pihan poikki elokuun hämärässä ja katosi pensaaseen.	Pihalla on siili.
+harakka	magpie	10	af36d0eec2fa43e067be39c6c4d8f009	Harakka istui aidalla ja seurasi lumitöitä toivoen jotain kiiltävää.	Harakka istuu katolla.
+hanhi	goose	10	f451003c219e21284b007793a23fcb69	Hanhiparvi lensi syyskuussa etelään, ja äänet kuuluivat pellon yli.	Hanhi ui järvessä.

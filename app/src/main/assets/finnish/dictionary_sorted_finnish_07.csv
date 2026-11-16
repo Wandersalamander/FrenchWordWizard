@@ -1,196 +1,196 @@
-alkuruoka	starter / appetizer	7	ff70602f66b696d378315064ddc22095	Tilasimme alkuruoaksi savustettua lohta, ja se oli niin maukasta, että olisin syönyt sitä koko illan.	Alkuruoka oli hyvää.
-varaus	reservation / booking	7	8cc46d3f0c57e12f3278d4b5d3e3c9ba	Tein ravintolaan varauksen neljälle hengelle, mutta jouduin perumaan sen flunssan takia viime hetkellä.	Meillä on varaus.
-liesi	stove / cooktop	7	055e2ec59bb206f6ea5eca2fcd8a9caa	Muista sammuttaa liesi keittämisen jälkeen, sillä kuuma levy voi aiheuttaa vaarallisen tulipalon.	Liesi on kuuma.
-pakastin	freezer	7	50297214556e76a83f0cf7a80ac088e2	Laitoin marjat pakastimeen syksyllä, jotta voimme tehdä niistä herkullista piirakkaa keskellä talvea.	Jäätelö on pakastimessa.
-paistinpannu	frying pan	7	689fa30f8f8b6d017ed2e31aafee122e	Kuumenna paistinpannu kunnolla ennen kuin lisäät öljyn, niin pihvistä tulee rapea ja mehukas.	Pese paistinpannu.
-grillata	to grill / to barbecue	7	2d256bfe2813dafd9841a4fd7dc8fa48	Kesällä grillaamme melkein joka viikonloppu makkaraa ja vihanneksia pihalla ystävien kanssa.	Grillataan makkaraa.
-ainesosa	ingredient	7	94a438623c5e098705aa629730c9d4d8	Tarkista reseptin ainesosat huolellisesti, jottet huomaa vasta kaupassa unohtaneesi tärkeimmän raaka-aineen.	Tämä ainesosa puuttuu.
-tori	market square / market	7	59f0891c050aa6139fb5189f47148ec4	Lauantaiaamuisin käymme torilla ostamassa tuoreita vihanneksia ja juomassa kahvit kojun vieressä.	Mennään torille.
-kasvis	vegetable / plant-based food	7	fea38f6d8e29623f9e087e91955932c8	Lautasella kannattaa olla paljon erilaisia kasviksia, koska ne sisältävät runsaasti vitamiineja ja kuitua.	Syön paljon kasviksia.
-kasvissyöjä	vegetarian	7	780e8a7639777603dd385857be875c84	Veljeni on ollut kasvissyöjä jo kymmenen vuotta, joten valmistan hänelle aina erillisen ruoan juhliin.	Hän on kasvissyöjä.
-nam!	yum!	7	ee9f1624da91845a5865eeec273bd105	Äiti paistoi tuoreita pullia, ja koko keittiö tuoksui niin ihanalle, että huusin innoissani: nam!	Suklaakakkua, nam!
-omakotitalo	detached house	7	41ac27d99f38a3df3520c77a589d2679	Muutimme kerrostalosta omakotitaloon, koska halusimme lapsille oman pihan ja enemmän tilaa leikkiä.	Asumme omakotitalossa.
-terassi	terrace / patio	7	0ea8026745d9d0f4ab1b4a06b724742c	Kesäiltaisin istumme terassilla juomassa kahvia ja katselemassa, kun aurinko laskee hitaasti metsän taakse.	Istutaan terassilla.
-autotalli	garage	7	4457d55e7b12f64e4528c5d2e9b11706	Talvella on mukavaa, kun auton saa parkkeerata lämpimään autotalliin eikä tuulilasia tarvitse raapia aamuisin.	Auto on autotallissa.
-varasto	storage room / storeroom	7	c9700d8ac2a666698888ae887ec7f692	Vein talvirenkaat ja joulukoristeet varastoon, koska asunnossa ei ole tarpeeksi tilaa kaikelle tavaralle.	Tavarat ovat varastossa.
-huonekalu	piece of furniture	7	89d66fa4a825c51e4894d35fff85c258	Uuteen asuntoon piti ostaa paljon huonekaluja, mutta budjetti riitti aluksi vain sänkyyn ja sohvaan.	Tämä huonekalu on vanha.
-nojatuoli	armchair	7	76b96726e9f6a4fa269c5430eb260655	Iltaisin isoisä istuu mielellään vanhassa nojatuolissaan lukemassa lehteä takkatulen ääressä.	Istu nojatuoliin.
-vuode	bed (more formal)	7	8695460b8fd399720c3a1e04ef7d9095	Sairaalassa potilas vietti useita viikkoja vuoteessa, ennen kuin pääsi vihdoin nousemaan ja kävelemään.	Vuode on pehmeä.
-kirjahylly	bookshelf	7	287aa2e6f080fb253d8c970639964527	Olohuoneen kirjahylly oli niin täynnä romaaneja, että jouduimme ostamaan toisen mahduttaaksemme kaikki kirjat.	Kirja on kirjahyllyssä.
-lakana	sheet (bed)	7	b83304ebb982573d195beadfe033745c	Vaihdan vuoteeseen puhtaat lakanat kerran viikossa, koska raikkaissa lakanoissa nukkuu paljon paremmin.	Lakana on valkoinen.
-valaisin	light fixture / lamp	7	9c93c5b36429e8a5c769e926f72bb8fc	Ostimme olohuoneeseen uuden valaisimen, joka luo lämpimän ja tunnelmallisen valon pimeisiin talvi-iltoihin.	Valaisin on rikki.
-pistorasia	electrical outlet / socket	7	0f85b6e4d210a97039925d3af74c6724	Kytke laturi seinän pistorasiaan, mutta varo, ettet jätä sitä lasten ulottuville turvallisuussyistä.	Missä on pistorasia?
-lämmitys	heating	7	8b4cc701fd3136a5ae0814380f1d05f4	Vanhassa talossa lämmitys maksaa talvella paljon, joten harkitsemme maalämpöpumpun asentamista ensi vuonna.	Lämmitys on päällä.
-patteri	radiator / battery	7	174ea62ce2c49dc1c31e77afe970425f	Olohuoneen patteri ei lämmennyt kunnolla, joten huoltomies kävi ilmaamassa sen ja säätämässä lämpötilan.	Patteri on lämmin.
-takka	fireplace	7	4c401e8fae3875861381b0b8a9ca603d	Talvi-iltoina sytytämme takkaan tulen ja istumme sen ääressä juomassa kuumaa kaakaota peiton alla.	Takassa palaa tuli.
-mikroaaltouuni	microwave oven	7	e41631af2d9d4c6d9d2bb85ed3646cdc	Lämmitin eilisen keiton nopeasti mikroaaltouunissa, koska minulla ei ollut aikaa keittää uutta ruokaa.	Lämmitä ruoka mikroaaltouunissa.
-silitysrauta	iron (clothes)	7	1fbc54711b9d14b0a84b37c5b118631e	Muista sammuttaa silitysrauta käytön jälkeen, ettei kuuma rauta sytytä laudalla olevaa paitaa tuleen.	Silitysrauta on kuuma.
-herätyskello	alarm clock	7	f4c7d8f8131129149a769bbb3183c871	Asetin herätyskellon soimaan kuudelta, mutta painoin torkkunappia niin monta kertaa, että myöhästyin töistä.	Herätyskello soi.
-kannu	jug / pitcher	7	fb54e3c9ad6c991f998bc38d0eed14fd	Keitin ison kannun kahvia vieraita varten, sillä tiesin, että iltapäivä venyisi pitkäksi rupatteluksi.	Kannu on täynnä.
-kulho	bowl	7	f101a7f9cc822a65aae10c0df532998f	Sekoitin taikinan ainekset isossa kulhossa ja annoin sen kohota lämpimässä paikassa noin tunnin ajan.	Kulho on pöydällä.
-sakset	scissors	7	3b4d506b0673f28fb449143a99b3634c	Etsin kaikkialta saksia leikatakseni lahjapaperin, mutta löysin ne lopulta keittiön laatikon pohjalta.	Anna sakset minulle.
-shampoo	shampoo	7	33871e4ee93b6d4f5c0b67d9a4243527	Shampoo loppui juuri suihkussa, joten jouduin pesemään hiukseni vain vedellä ennen tärkeää työpalaveria.	Shampoo loppui.
-hammasharja	toothbrush	7	4fcdfa2d293b4e2ee86bc949daf6e7e9	Hammaslääkäri suositteli vaihtamaan hammasharjan kolmen kuukauden välein, jotta harjakset puhdistavat hampaat tehokkaasti.	Hammasharja on sininen.
-hammastahna	toothpaste	7	1faddb4785770d085c88c7913d571366	Purista hammasharjaan vain herneen kokoinen määrä hammastahnaa, sillä liika tahna ei tee hampaista puhtaampia.	Hammastahna loppui.
-harja	brush	7	97b8375629f82bb4034c52c08eae503e	Otin harjan ja puhdistin sillä lumiset kengät huolellisesti ennen kuin astuin sisälle eteiseen.	Harja on lattialla.
-luuta	broom	7	dcc48ce46c55d9458f90338a120fe24f	Otin luudan kaapista ja lakaisin keittiön lattialta murut, jotka lapset olivat pudottaneet aamupalalla.	Luuta on nurkassa.
-rätti	rag / cloth	7	0c02b2fbab36c742de106a2dfddd9027	Pyyhin pölyt pöydältä kostealla rätillä ja huuhtelin sen sitten huolellisesti lämpimän veden alla.	Anna märkä rätti.
-ämpäri	bucket	7	efadb1399d24eaa2e192c8698a507aa1	Täytin ämpärin kuumalla vedellä ja pesuaineella ennen kuin aloin pestä eteisen likaista lattiaa.	Ämpäri on täynnä.
-pesuaine	detergent / cleaning agent	7	70b014801c759aa7daf186bdb6ea21f9	Lisää pyykkikoneeseen oikea määrä pesuainetta, sillä liika vaahto jää helposti vaatteisiin ja ärsyttää ihoa.	Pesuaine loppui.
-jäte	waste	7	4c43ca448f3db158b7962ce91ae65a3c	Lajittelemme kotona jätteet huolellisesti, koska kierrätys vähentää kaatopaikalle päätyvän roskan määrää merkittävästi.	Vie jätteet ulos.
-pesuallas	sink / washbasin	7	4496bf5d0675ab3fe816ef37e0c4846e	Kylpyhuoneen pesuallas tukkeutui hiuksista, joten jouduin avaamaan viemärin putkiavaimella ja puhdistamaan sen perusteellisesti.	Pesuallas on likainen.
-tiskiallas	kitchen sink	7	2eae68eee3c22901ae54c2dc80c54c1c	Likaiset astiat kasaantuivat tiskialtaaseen koko päivän, joten illalla tiskaaminen tuntui melkein loputtomalta urakalta.	Tiskiallas on täynnä.
-kylpyamme	bathtub	7	47ec2708c95dc5a22527a7a2822f93c1	Pitkän työpäivän jälkeen rentoudun mielelläni lämpimässä kylpyammeessa kynttilöiden valossa rauhallista musiikkia kuunnellen.	Kylpyamme on täynnä.
-lakaista	to sweep	7	87a9e8fcf8938168b5dd9b95f489620f	Lakaisin terassin lehdistä ja hiekasta, ennen kuin vieraat saapuivat illalliselle kesäisenä lauantai-iltana.	Lakaise lattia.
-silittää	to iron / to stroke	7	24e8d459b97a01a57d5ea37f9d109f5c	Silitän paidat aina sunnuntai-iltana, jotta seuraavan työviikon aamut sujuvat ilman turhaa kiirettä ja stressiä.	Silitän paidan.
-pyykätä	to do laundry	7	ccdc8de87c13a4d0d6705bcd49224b4d	Pyykkään yleensä kaksi koneellista viikonloppuisin, koska arkena ei tahdo löytyä aikaa kotitöille lainkaan.	Minun pitää pyykätä.
-appi	father-in-law	7	178ba12616bc0323b0d3f40ebf2b1ba1	Appeni on innokas kalastaja, joten hän vie minut joka kesä mökille onkimaan ahvenia järvelle.	Appi tuli kylään.
-tuttava	acquaintance	7	29748db71240106c6757b71baef2c018	Törmäsin kaupungilla vanhaan tuttavaan, jota en ollut nähnyt vuosiin, ja juttelimme pitkään kahvilan terassilla.	Hän on tuttava.
-nuoriso	youth / young people	7	afdb6129a867b350650d7dcf78c33c42	Nykyajan nuoriso viettää paljon aikaa puhelimella, mutta monet ovat silti yllättävän kiinnostuneita ympäristöasioista.	Nuoriso on äänekästä.
-kaksoset	twins	7	271e7432de80e528ecb2a7f5b741ef51	Naapurin kaksoset näyttävät niin samanlaisilta, että erotan heidät toisistaan vain vaatteiden värin perusteella.	Heillä on kaksoset.
-avioero	divorce	7	bdfc462fe5ef9be3f1b75ca820352fe8	Vanhempieni avioero oli lapsena vaikea kokemus, mutta jälkeenpäin ymmärsin sen olleen heille molemmille paras ratkaisu.	He hakivat avioeroa.
-naimaton	unmarried / single	7	75d3b5189b5124e2b49f8e2c91a92fe4	Serkkuni on edelleen naimaton ja sanoo nauttivansa vapaudestaan, vaikka suku kyselee jatkuvasti tulevia häitä.	Hän on naimaton.
-nuoruus	youth (time of life)	7	a5d4d77830c9a95d9be1a1c0a7b8c3bc	Isoäiti muistelee usein nuoruuttaan, jolloin hän tanssi lavoilla ja matkusti junalla ympäri Suomea ystäviensä kanssa.	Nuoruus on lyhyt.
-vanhuus	old age	7	c03342fb245d2547b55a84f3da8a9693	Vanhuus tuo mukanaan haasteita, mutta isoisäni mukaan se on myös aikaa nauttia rauhasta ja lastenlapsista.	Vanhuus tuli nopeasti.
-sukupolvi	generation	7	b74c8c3b8e544749cb654ad24f77f20d	Jokainen sukupolvi kohtaa omat haasteensa, mutta nuorten ja vanhempien välinen ymmärrys helpottaa yhteiseloa huomattavasti.	Uusi sukupolvi kasvaa.
-leski	widow / widower	7	75d8b3e45c8b471345a9b721c80b7ae2	Naapurin rouva jäi leskeksi jo nuorena ja kasvatti kolme lasta yksin pienellä maatilalla pohjoisessa.	Hän on leski.
-kummi	godparent	7	d1a8708242050eda10c41631d8497bab	Sisareni pyysi minua tyttärensä kummiksi, ja lupasin tukea lasta ja olla hänen tukenaan aina.	Olen hänen kumminsa.
-isäntä	host / master of the house	7	1c5e2ff90e1a7b3f00fe1c5d6f51afa1	Juhlien isäntä toivotti jokaisen vieraan lämpimästi tervetulleeksi ovella ja huolehti, että kaikilla oli juotavaa.	Isäntä avasi oven.
-emäntä	hostess / mistress of the house	7	39212344a04116beee257b3183cc0ff9	Talon emäntä kattoi pöydän kauniisti ja tarjoili vieraille itse leipomiaan korvapuusteja kahvin kanssa.	Emäntä keitti kahvia.
-seurustella	to date / to go out with	7	96e0b6d61a366b8bb3d48ce0745bd692	He ovat seurustelleet jo kaksi vuotta ja suunnittelevat nyt muuttavansa yhteiseen asuntoon ensi keväänä.	He seurustelevat.
-hautajaiset	funeral	7	1be5fb06b50c3710c7b76766789510a5	Isoisän hautajaisiin saapui yllättävän paljon väkeä, sillä häntä arvostettiin ja muistettiin lämmöllä koko kylässä.	Menemme hautajaisiin.
-keski-ikäinen	middle-aged	7	b6ad216e12cb917319c2c219c1e63396	Keski-ikäinen mies aloitti yllättäen maratonharrastuksen ja juoksi ensimmäisen kilpailunsa jo seuraavana syksynä.	Hän on keski-ikäinen.
-alaikäinen	minor / underage	7	48a52986920a059aa9614d5d6486788c	Alaikäiselle ei myydä alkoholia, joten kassalla pyydetään usein todistamaan ikä henkilökortilla tai passilla.	Hän on alaikäinen.
-avopuoliso	common-law partner / cohabiting partner	7	7acd7db0e552dfa35701fa361357205f	Avopuolisoni ja minä jaamme kaikki kotityöt tasan, mikä on tehnyt yhteiselostamme sujuvaa ja tasapuolista.	Avopuoliso tuli kotiin.
-avoliitto	cohabitation / common-law relationship	7	6d7e6919a7d688e360c784ba07bcd0d9	He elivät avoliitossa monta vuotta ennen kuin päättivät lopulta mennä naimisiin pienen perhejuhlan merkeissä.	He ovat avoliitossa.
-raskaus	pregnancy	7	48c6c2bab68b3533fa22a863f0146810	Raskaus sujui hyvin loppuun asti, ja sisareni synnytti terveen tyttövauvan eräänä kylmänä tammikuun aamuna.	Raskaus sujui hyvin.
-synnytys	childbirth / delivery	7	80d4547b2685a709fa602426bebeec10	Synnytys kesti monta tuntia, mutta lopulta vauva syntyi terveenä ja äiti sai levätä rauhassa.	Synnytys meni hyvin.
-yksilö	individual	7	b52af4e499563fe5166df8478e7a0aa7	Jokainen yksilö on erilainen, joten samat säännöt eivät aina sovi kaikille ihmisille yhtä hyvin.	Hän on vahva yksilö.
-isovanhempi	grandparent	7	6e2a04c82c4df6348af33bd8ce15fadf	Lapset viettävät kesälomansa usein isovanhempien luona maalla, missä he saavat leikkiä ja syödä herkkuja.	Isovanhempi rakastaa lapsenlapsiaan.
-otsa	forehead	7	68fc9e1c91fdcc5aa7f2f0b339548678	Hänellä oli kuumetta, joten äiti kosketti hänen otsaansa tarkistaakseen, kuinka korkea lämpö oikein oli.	Otsa on hikinen.
-niska	back of the neck / nape	7	8bcbe17caf01553085ee03cfc160e409	Pitkän työpäivän jälkeen niska oli niin jäykkä, että pään kääntäminen sivulle teki todella kipeää.	Niska on kipeä.
-poski	cheek	7	1d1d0e3cd4626277fe7e4f267b2484af	Pakkasella lapsen posket muuttuivat punaisiksi, ja äiti pyyhki hellästi lumen pois hänen kasvoiltaan.	Poski on punainen.
-leuka	chin / jaw	7	39600cafb51eab5cddb370cbd6623c98	Kaaduin pyörällä ja löin leukani asfalttiin, joten lääkäri joutui ompelemaan haavan kiinni.	Leuka sattuu.
-käsivarsi	arm	7	b77676211ed38d0abfc4476f123b0b46	Hän kantoi raskaita kauppakasseja niin pitkään, että molemmat käsivarret alkoivat väsyä ja särkeä.	Käsivarsi on kipeä.
-peukalo	thumb	7	ceae855469742abe3d6440215336fe67	Löin vahingossa vasaralla peukaloon, ja kynnen alle nousi heti iso sininen mustelma.	Peukalo on kipeä.
-kynsi	nail / claw	7	f3f981061fd855ac131f1439ccb464e3	Kissa raapaisi minua tassullaan, ja sen terävät kynnet jättivät käteeni pitkät punaiset jäljet.	Kynnet ovat pitkät.
-nilkka	ankle	7	23c8503276dd8f46963b39fee2a9ecc1	Nyrjäytin nilkkani lenkillä, kun astuin kuopan kohdalle, eikä jalalle voinut enää varata painoa.	Nilkka on turvoksissa.
-varvas	toe	7	c0ba690d2d2a74465e1d00cc0cc0ee85	Löin pikkuvarpaani pöydänjalkaan pimeässä, ja kipu oli niin kova, että huusin ääneen.	Varvas on kipeä.
-keuhko	lung	7	4a39c2608993bceb1ebd55390e581993	Tupakointi vahingoittaa keuhkoja vuosien aikana ja voi lopulta aiheuttaa vakavia hengitysvaikeuksia ja sairauksia.	Keuhkot tarvitsevat happea.
-maksa	liver	7	20c04573156def9bbf3e3befb4b94713	Liiallinen alkoholin käyttö rasittaa maksaa, joten lääkäri kehotti potilasta vähentämään juomista heti.	Maksa on tärkeä elin.
-särky	ache	7	91c58287c08ca341664f56fd188c33bc	Päänsärky voimistui illalla niin kovaksi, että otin kipulääkkeen ja menin aikaisin nukkumaan.	Minulla on särky.
-vatsakipu	stomachache	7	d62094f68a4361620aea5d245c0779b5	Söin liikaa makeisia, ja seuraavana aamuna minulla oli kova vatsakipu, joka ei meinannut hellittää.	Vatsakipu on paha.
-nuha	runny nose / head cold	7	d62df66c39c581a8c150a9cf2d6e950e	Syksyn ensimmäisten pakkasten myötä sain nuhan, ja nenä vuoti niin, että tarvitsin paljon nenäliinoja.	Minulla on nuha.
-sairastua	to fall ill	7	bf6d3d0967820b87002ced8559a44ed9	Hän sairastui flunssaan juuri ennen lomamatkaa, joten koko reissu jouduttiin valitettavasti perumaan.	Lapsi sairastui eilen.
-oksentaa	to vomit	7	607c2183ae215122015619c0b378b358	Vauva oli niin kipeä, että hän oksensi useita kertoja yön aikana ja itki paljon.	Lapsi joutui oksentamaan.
-pahoinvointi	nausea	7	033d170a3767674ab2352dcbfcfa286d	Pitkä bussimatka mutkaisella tiellä aiheutti pahoinvointia, ja jouduin pyytämään kuljettajaa pysähtymään hetkeksi.	Tunnen pahoinvointia.
-syöpä	cancer	7	46dd2e14ce09711b1f7511a7b3f038e0	Lääkärit havaitsivat syövän varhaisessa vaiheessa, joten hoidot aloitettiin nopeasti ja ennuste oli melko hyvä.	Syöpä on vakava sairaus.
-tartunta	infection / contagion	7	b6b76700e6d2086d0f77cb4609d883e3	Sairaalassa noudatetaan tiukkaa hygieniaa, jotta tartunta ei pääsisi leviämään potilaasta toiseen osastolla.	Tartunta leviää nopeasti.
-bakteeri	bacterium	7	82f5a161bfdc90f0a9e4407ef285e280	Käsien huolellinen peseminen saippualla poistaa bakteerit tehokkaasti ja vähentää sairastumisen riskiä huomattavasti.	Bakteeri aiheuttaa sairauksia.
-tulehdus	inflammation / infection	7	8609156ef5d1f2af64dc6448f796b0a0	Haava tulehtui pahasti, ja lääkäri määräsi antibioottikuurin, jotta tulehdus saataisiin nopeasti kuriin.	Korvassa on tulehdus.
-loukkaantua	to get injured	7	ae2cabf8de7e27cd58c5043233acfe48	Pelaaja loukkaantui vakavasti ottelun aikana, kun hän kaatui hankalasti ja löi polvensa kovaa kenttään.	Hän loukkaantui pelissä.
-vamma	injury	7	69424fd583a58c70b32814ae76e84650	Onnettomuudessa saatu vamma parani hitaasti, ja kuntoutus kesti useita kuukausia ennen täydellistä toipumista.	Vamma paranee hitaasti.
-verenpaine	blood pressure	7	f9dd097f3c5fb4fce1ee661eb2f68381	Lääkäri mittasi verenpaineen vastaanotolla ja totesi, että arvot olivat hieman koholla viime käyntiin verrattuna.	Verenpaine on korkea.
-allerginen	allergic	7	a0ef12606bc7d9243e892d1d9be82aae	Olen allerginen pähkinöille, joten luen aina tarkasti pakkausten ainesosaluettelot ennen kuin ostan mitään syötävää.	Olen allerginen kissoille.
-ambulanssi	ambulance	7	5c1b279a67fe81285211d2cf4ac2421f	Naapuri soitti heti hätänumeroon, ja ambulanssi saapui paikalle vain muutamassa minuutissa hakemaan potilasta.	Ambulanssi tuli nopeasti.
-ensiapu	first aid / emergency room	7	f1d7faf4801dfcc62aba6a121a35671a	Kaaduimme retkellä, ja onneksi mukana oli ensiapulaukku, jolla saimme haavan puhdistettua ja sidottua.	Tarvitsen ensiapua.
-tabletti	tablet / pill	7	3e309f2f86562ff576b061d9b92b4f7f	Lääkäri kehotti ottamaan yhden tabletin aamuisin ruokailun yhteydessä, jotta vatsa ei ärtyisi lääkkeestä.	Otan tabletin aamulla.
-pilleri	pill	7	359125264f924421ae1f12a83fd07491	Hänen oli vaikea niellä isoa pilleriä, joten hän joi heti perään ison lasillisen vettä.	Otin pillerin.
-rokote	vaccine	7	ff4a9e8b2a415a4df7a1b2d5925b9ab5	Uusi rokote suojaa tehokkaasti vakavalta taudilta, ja se on tarjolla ilmaiseksi kaikille riskiryhmään kuuluville.	Rokote suojaa taudilta.
-rokotus	vaccination	7	c0ffcd628d0b9297dbf8ece71c0f6d17	Lasten rokotukset annetaan neuvolassa tietyn aikataulun mukaan, jotta suoja yleisiä tauteja vastaan pysyy voimassa.	Rokotus on huomenna.
-laastari	plaster / bandage	7	f665964af089f9600d41326e8f1d8556	Lapsi sai pienen haavan polveensa, ja äiti laittoi siihen värikkään laastarin lohduttaakseen itkevää lasta.	Laita laastari haavaan.
-kipulääke	painkiller	7	c522c3b19d80d89d61457245a8b91b12	Otin kipulääkkeen kovaan päänsärkyyn, ja noin puolen tunnin kuluttua olo helpotti jo huomattavasti.	Tarvitsen kipulääkettä.
-parantua	to recover / to heal	7	0c1279bdf32f0c6bc3d5d26b65f2fdb8	Flunssa parantui muutamassa päivässä, kun pysyin kotona lepäämässä ja join paljon lämmintä teetä.	Haava parantui nopeasti.
-toipua	to recover	7	bb2d5fa89bf14a1dcc059fe9215050b3	Leikkauksesta toipuminen vei viikkoja, mutta vähitellen voimat palasivat ja hän pystyi taas liikkumaan normaalisti.	Hän toipuu hyvin.
-leikkaus	surgery / operation	7	1078c960fd91e1ac9c3105374ccc24a3	Polven leikkaus sujui hyvin, ja lääkäri sanoi, että kuntoutus voidaan aloittaa jo seuraavalla viikolla.	Leikkaus onnistui hyvin.
-oire	symptom	7	1208b206fcf177ac1f8c1a8c266201a1	Ensimmäinen oire taudista oli väsymys, mutta pian mukaan tulivat myös kuume ja kova yskä.	Mikä on ensimmäinen oire?
-sairausloma	sick leave	7	4f4459c690efd6673b48f2ad7e39cc30	Lääkäri kirjoitti minulle viikon sairausloman, jotta voin toipua flunssasta rauhassa kotona ennen töihin paluuta.	Olen sairauslomalla.
-terveydenhuolto	healthcare	7	9cdb286d987f8e29f58ccfef04c88278	Suomen terveydenhuolto tarjoaa kaikille asukkaille palveluja, mutta jonot lääkärille voivat välillä olla todella pitkät.	Terveydenhuolto on tärkeää.
-lepo	rest	7	3ee0d5ad4ce6a48b87a32a4aabbcb01f	Lääkäri korosti, että riittävä lepo ja uni ovat sairaudesta paranemisen kannalta aivan yhtä tärkeitä kuin lääkkeet.	Tarvitsen lepoa.
-väsymys	fatigue / tiredness	7	141819919f976bf8f3ad7dba4d430aa1	Jatkuva väsymys haittasi työntekoa, joten päätin lopulta mennä lääkäriin selvittämään, mistä uupumus oikein johtui.	Tunnen kovaa väsymystä.
-hengitys	breathing / breath	7	c81e9f81dbe1735798f4bcd489149973	Juoksulenkin jälkeen hengitys oli niin raskasta, että jouduin pysähtymään hetkeksi ja nojaamaan polviini.	Hengitys on raskasta.
-hiki	sweat	7	a5982d414fcf2ada8b10cbfc11d5b4fb	Kuumassa saunassa hiki valui pitkin kasvoja, ja kaikki istuivat hiljaa nauttien lämmöstä ja höyrystä.	Minulla on hiki.
-hygienia	hygiene	7	038aa14c226166d1ca7de782a561abb6	Hyvä käsihygienia on tehokkain tapa estää tautien leviämistä, joten kädet kannattaa pestä usein huolellisesti.	Hygienia on tärkeää.
-sampoo	shampoo	7	3c8374137b9676ec10115805b4fc4330	Ostin kaupasta uuden sampoon, joka lupasi tehdä hiuksista pehmeämmät ja kiiltävämmät jo ensimmäisellä pesukerralla.	Sampoo loppui.
-wc-paperi	toilet paper	7	807695db8b83a01214037761b7898e26	Muistutin puolisoani ostamaan kaupasta wc-paperia, koska huomasin, että viimeinen rulla oli juuri loppumassa.	Wc-paperi loppui.
-parta	beard	7	e9a4bbb85561c01d7a88b3ac2d3ade3f	Isällä on tuuhea parta, jota hän hoitaa joka aamu huolellisesti erityisellä öljyllä ja kammalla.	Isällä on parta.
-treenata	to work out / to train	7	b3678dbd3f1ada61c3a5de90adb92338	Käyn treenaamassa salilla kolme kertaa viikossa, koska liikunta auttaa minua jaksamaan paremmin koko työpäivän.	Käyn treenaamassa salilla.
-lenkki	jog / a run	7	6b8c4edfbd1c4ebcfb518488cd94becd	Aamulenkki metsässä on paras tapa aloittaa päivä, sillä raikas ilma piristää ja virkistää mieltä.	Menen lenkille.
-hyvinvointi	well-being	7	72167ac43c0bbcc2c0d1ed7c3a831c3b	Säännöllinen liikunta, terveellinen ruoka ja riittävä uni vaikuttavat merkittävästi sekä kehon että mielen hyvinvointiin.	Hyvinvointi on tärkeää.
-laihtua	to lose weight	7	7a5ac4f73f0d9c4ff47fb26f899bacd0	Hän laihtui useita kiloja muutamassa kuukaudessa muuttamalla ruokavaliotaan ja lisäämällä liikuntaa arkeensa pikkuhiljaa.	Hän laihtui paljon.
-vaate	garment / piece of clothing	7	3778c2e2cc5643477bf057638fcf9c90	Tämä vaate on minulle aivan liian pieni, joten vien sen takaisin kauppaan ja vaihdan suurempaan.	Tämä vaate on kaunis.
-pukea	to dress / to put on (someone)	7	df4e28d3f31d71411b5af3f281396106	Äiti puki lapselle paksun takin ja pipon, ennen kuin he lähtivät yhdessä ulos pakkaseen.	Puen lapsen lämpimästi.
-pukeutua	to get dressed / to dress oneself	7	d7f3d9fe88174a4209b51e662701bb0b	Pukeuduin nopeasti aamulla, koska olin myöhässä bussista enkä ehtinyt edes juoda kunnon kahveja.	Pukeudun lämpimästi.
-sovittaa	to try on	7	cf521636872f3fe96bfc3b2ff12cb87c	Halusin sovittaa housut ennen ostamista, joten menin sovituskoppiin kokeilemaan, olivatko ne oikean kokoiset.	Haluan sovittaa takkia.
-pusero	blouse / top	7	f18c55879edf2487c930e962eb2ab7e0	Pukeuduin juhliin siniseen puseroon ja tummiin housuihin, koska halusin näyttää tyylikkäältä mutta mukavalta.	Pusero on sininen.
-villapaita	wool sweater / jumper	7	a80064708c0121ee5fb968ddb350502e	Kylminä talvi-iltoina puen ylleni lämpimän villapaidan ja keitän kupin teetä takan ääressä.	Villapaita on lämmin.
-shortsit	shorts	7	0bc0fa8c8fbc84fb57eb9b216761f489	Kesän helteellä puin ylleni shortsit ja t-paidan ja lähdin pyöräilemään rannalle uimaan ystävien kanssa.	Shortsit ovat mukavat.
-alusvaatteet	underwear	7	ca17d19177160e74a0354b222860aae6	Pakkasin matkalaukkuun tarpeeksi puhtaita alusvaatteita, jotta minun ei tarvitsisi pestä pyykkiä matkan aikana lainkaan.	Alusvaatteet ovat puhtaat.
-saappaat	boots	7	b1d3b51fe7c536030186d7840bd922d6	Sateisena syyspäivänä puin jalkaani kumisaappaat, jotta jalat pysyisivät kuivina kuraisilla metsäpoluilla kävellessäni.	Saappaat ovat märät.
-lenkkarit	sneakers / trainers	7	e901369b91e7edd1102e9b4d397a87e6	Ostin uudet lenkkarit juoksua varten, koska vanhat olivat kuluneet puhki eivätkä enää tukeneet jalkaa kunnolla.	Lenkkarit ovat mukavat.
-lakki	cap	7	74cb1921834d4d68fc2a364aca5beb9b	Aurinkoisena kesäpäivänä laitoin lakin päähäni, jotta auringonpaiste ei häikäisisi silmiäni ulkona kävellessäni.	Lakki on päässä.
-pipo	beanie / woolly hat	7	a16656a039d8b23731b3e933914f8bd7	Pakkasella kannattaa pitää lämmintä pipoa päässä, koska suuri osa lämmöstä karkaa muuten paljaan pään kautta.	Pipo on lämmin.
-huivi	scarf	7	ee9d5a174606683e80a8a302fc6c21cf	Pakkasella kannattaa kietoa lämmin villahuivi kaulan ympärille, ettei vilustu bussia odotellessa.	Minulla on punainen huivi.
-käsineet	gloves	7	c79f486603c898d78cb8f5850ba9ff72	Unohdin käsineet kotiin, joten sormet kohmettuivat täysin pitkällä kävelylenkillä metsässä.	Käsineet ovat lämpimät.
-hanskat	gloves (colloquial)	7	7ff8b91567039ce884485c763ca20c3a	Ota hanskat mukaan, jos lähdet pyörälenkille, koska kädet palelevat tuulessa aika nopeasti.	Missä mun hanskat ovat?
-vyö	belt	7	5809cf3c433a7d290b58eb05f1d1111f	Housut roikkuivat alhaalla, joten kiristin vyötä yhden reiän verran tiukemmalle.	Vyö on liian löysä.
-solmio	tie / necktie	7	a656a12e58011df93116e63e6b5868bb	Hän solmi sinisen solmion huolellisesti ennen tärkeää työhaastattelua aamulla.	Isällä on uusi solmio.
-kassi	bag / carrier bag	7	4ddf69372c3d7379a4b625571eaaacaf	Muista ottaa oma kangaskassi mukaan kauppaan, niin ei tarvitse ostaa muovipussia.	Kassi on raskas.
-korut	jewellery	7	1a3555eebb527349f6ef58bba493426c	Hän pukeutui juhliin kauniiseen mekkoon ja kimaltaviin koruihin, jotka oli peritty isoäidiltä.	Pidän kauniista koruista.
-sormus	ring	7	f88a20d9d8d5c9f2941a9f316e80e8df	Hän pujotti kihlasormuksen morsiamen sormeen ja kaikki vieraat taputtivat liikuttuneina.	Sain uuden sormuksen.
-silmälasit	eyeglasses	7	28a67cdf3f86b731141e5d9c2e746c04	Ilman silmälaseja en pysty lukemaan pieniä kirjaimia sanomalehdestä enää ollenkaan.	Silmälasit ovat pöydällä.
-aurinkolasit	sunglasses	7	1c2a46bdd992e0af9f498d31bc348eca	Otin aurinkolasit mukaan rannalle, koska auringonpaiste oli niin kirkasta keskipäivällä.	Käytän aurinkolaseja kesällä.
-sateenvarjo	umbrella	7	26ea28a2ed53e435385a234a29246160	Sade yllätti meidät kesken kävelyn, mutta onneksi minulla oli sateenvarjo laukussa.	Otin sateenvarjon mukaan.
-nappi	button	7	f6d3928a6b93066fe49933e738dd2d39	Takin ylin nappi irtosi, joten minun täytyy ommella se takaisin paikalleen illalla.	Nappi putosi lattialle.
-tasku	pocket	7	4e41b6ee3dc181cf0f7a66e041d6e9a6	Laitoin avaimet takin sisätaskuun, etteivät ne putoaisi vahingossa kadulle matkalla.	Avaimet ovat taskussa.
-violetti	purple / violet	7	38f9dcb2bfe11615e4fab23d8b6bb2a5	Hän osti violetin mekon juhliin, koska se sopi täydellisesti hänen ihonsa sävyyn.	Pidän violetista väristä.
-vaaleanpunainen	pink	7	550f102d008e97b6fe47e6351f093086	Pikkutytön huone maalattiin vaaleanpunaiseksi, ja seinille ripustettiin söpöjä tarroja.	Mekko on vaaleanpunainen.
-kirkas	bright	7	f2e262e8d11554e9ab33d84ecba65774	Aamuaurinko paistoi niin kirkkaana ikkunasta, että jouduin sulkemaan verhot hetkeksi.	Taivas on kirkas.
-materiaali	material	7	7cb5d617b929160a71ee47b75ce8fcc8	Tämän takin materiaali on hengittävää ja vedenpitävää, joten se sopii hyvin retkeilyyn.	Materiaali on pehmeää.
-kangas	fabric / cloth	7	a96f93472e6b026a5c997fef46cfa24a	Ompelija valitsi paksun kankaan talvitakkiin, jotta se kestäisi kovaakin pakkasta.	Kangas on sininen.
-puuvilla	cotton	7	f8c0d18d758a854a7da923ebe9c763cd	Suosin kesällä puuvillasta valmistettuja vaatteita, koska ne tuntuvat iholla mukavilta ja viileiltä.	Paita on puuvillaa.
-villa	wool	7	ed3f29fee9e28e36f7cdc8115e0642e9	Talvella lämpimät villasukat pitävät jalat lämpiminä, vaikka ulkona olisi kova pakkanen.	Villa lämmittää hyvin.
-nahka	leather	7	9adb5ec132f14702eec024c312bed353	Hän osti laadukkaat nahkakengät, jotka kestävät käytössä monta vuotta, kunhan niitä hoitaa hyvin.	Lompakko on nahkaa.
-muovi	plastic	7	c11520897bf38cc8e4af3dceff8fb7e8	Kaupat ovat vähentäneet muovin käyttöä, ja moni suosii nykyään kestäviä kangaskasseja.	Pullo on muovia.
-metalli	metal	7	0507f771b5b82be5009a0f1adc46360d	Tuolin runko on tehty kestävästä metallista, joten se ei taivu painon alla helposti.	Lusikka on metallia.
-hopea	silver	7	e684a6f2d59d882d2e081fa5f28b7bf2	Sain syntymäpäivälahjaksi kauniin hopeasta tehdyn kaulakorun, jossa on pieni sininen kivi.	Sormus on hopeaa.
-kauppakeskus	shopping mall	7	3602edb4c94464a33894cfdbfe9dc9fc	Sateisena lauantaina monet perheet viettävät aikaa kauppakeskuksessa shoppaillen ja syöden lounasta.	Menemme kauppakeskukseen.
-ostos	purchase	7	8535acf86713aa92d9eb3eb3f632dbb2	Tarkistin kuitin ja huomasin, että yksi ostos oli vahingossa veloitettu kahteen kertaan.	Tein hyvän ostoksen.
-tehdä ostoksia	to go shopping	7	16b3ff1b6c8f74249dd2d87cc67f1f9d	Lähdimme viikonloppuna tekemään ostoksia keskustaan ja löysimme alennuksesta mukavia talvivaatteita.	Haluan tehdä ostoksia.
-sopiva	suitable / fitting	7	da7dc05ebbe742682ba42fb7772c50c2	Etsin pitkään sopivaa lahjaa ystävälleni, kunnes löysin täydellisen kirjan kirjakaupasta.	Tämä koko on sopiva.
-tiukka	tight	7	51399cee89669b921e50483bd6b10d15	Ostamani kengät osoittautuivat liian tiukoiksi, joten päätin vaihtaa ne isompaan kokoon kaupassa.	Housut ovat liian tiukat.
-seteli	banknote / bill	7	2d38b571d401917a70a6f5a583eb36bd	Annoin kassalla viidenkymmenen euron setelin ja sain takaisin vaihtorahaa muutaman kolikon verran.	Minulla on yksi seteli.
-kolikko	coin	7	c4c26b6cb107c8210016ff6edc9ce097	Kaivoin taskusta muutaman kolikon ja maksoin niillä kahvin lähikahvilan automaatista.	Löysin kolikon lattialta.
-edullinen	affordable / inexpensive	7	59fdb8afc98d7cb560bc73a1e42d207f	Löysin verkkokaupasta yllättävän edullisen talvitakin, joka oli silti todella laadukas ja lämmin.	Tämä tuote on edullinen.
-alennusmyynti	sale / clearance	7	9395dc9a0b594ae7fc2d4894f5346ce8	Kesän alennusmyynnissä monet vaatteet myytiin puoleen hintaan, joten kannatti ostaa varastoon.	Kaupassa on alennusmyynti.
-pankkikortti	debit card / bank card	7	f01c226ea89bb88230cea8fa7bab6e60	Unohdin pankkikortin kotiin, joten jouduin maksamaan ostokset puhelimeen ladatulla sovelluksella.	Maksoin pankkikortilla.
-luottokortti	credit card	7	8c71e207fb6a88cb0db9bbce1a0ff73c	Varasin lentoliput luottokortilla, koska sen avulla sai matkavakuutuksen automaattisesti kaupan päälle.	Käytän luottokorttia ulkomailla.
-maksaa kortilla	to pay by card	7	5781e756618f932bebec34ce99bb7aa0	Pienissäkin kahviloissa voi nykyään maksaa kortilla, joten käteistä ei tarvitse pitää mukana.	Haluan maksaa kortilla.
-maksaa käteisellä	to pay in cash	7	b12b5f819f39ec4f62d684e99bcb79cb	Toreilla on usein kätevää maksaa käteisellä, koska kaikilla myyjillä ei ole korttimaksupäätettä.	Voin maksaa käteisellä.
-palauttaa	to return (an item)	7	ced3ecde4652d288ae4f7075e556fa2f	Päätin palauttaa liian pienet kengät kauppaan ja pyytää tilalle isomman koon samaa mallia.	Haluan palauttaa tämän.
-tili	account	7	d230b87d70c03b05fba1e12f6de9a012	Palkka maksetaan joka kuukauden viidentenätoista päivänä suoraan pankkitilille ilman viiveitä.	Rahat ovat tilillä.
-vero	tax	7	27c71a28001d570c9a47971f8c7bbd97	Tuotteen hintaan lisätään aina arvonlisävero, joten lopullinen summa on hieman korkeampi kuin hyllyssä.	Maksan paljon veroa.
-summa	sum / amount	7	a1f80f0ff609147e9b254a5864500705	Laskun loppusumma yllätti minut, joten tarkistin kuitilta jokaisen rivin vielä kerran huolellisesti.	Summa on suuri.
-jono	queue / line	7	42867493d4d4874f331d288df0044baa	Kassalla oli pitkä jono, joten päätin odottaa hetken ja palata myöhemmin uudelleen.	Jono on pitkä.
-käytetty	used / second-hand	7	732d0838fefc44a83a17a32f6a5a2d4d	Ostin kirpputorilta käytetyn polkupyörän, joka oli edullinen mutta silti hyvässä kunnossa.	Auto on käytetty.
-laatu	quality	7	7a9b7753940bd4b4937f1e6bd24f6835	Vaikka tuote oli kallis, sen erinomainen laatu teki ostoksesta kannattavan pitkällä aikavälillä.	Laatu on hyvä.
-muoti	fashion	7	06a6259bb384ba7bf701a51742aa3c68	Tämän kevään muoti suosii kirkkaita värejä ja väljiä leikkauksia, kertoivat alan asiantuntijat.	Seuraan muotia mielelläni.
-työnantaja	employer	7	ff15b1b62ebc48e285933c7fea5e3a97	Hyvä työnantaja tarjoaa työntekijöilleen joustavat työajat ja mahdollisuuden kehittyä ammatissaan.	Työnantaja maksaa palkan.
-esimies	supervisor / manager	7	e5cad31ef8cbadbc4e3d3835e3784f0b	Keskustelin esimieheni kanssa lomatoiveistani, ja hän hyväksyi suunnitelmani heti ilman ongelmia.	Esimies on mukava.
-työtön	unemployed	7	24500913897e5b3303c406734d9c9d3b	Hän oli puoli vuotta työttömänä, mutta sai vihdoin kiinnostavan paikan rakennusalalta.	Hän on tällä hetkellä työtön.
-ansaita	to earn	7	c3200af806c8c58422a7feb470c38d89	Kesätöissä halusin ansaita tarpeeksi rahaa, jotta voisin matkustaa ystävieni kanssa syksyllä.	Haluan ansaita rahaa.
-työaika	working hours	7	f7b25d4592abdcd36753e57433af4ed3	Uudessa työpaikassa työaika on joustava, joten voin aloittaa aamulla itselleni sopivaan aikaan.	Työaika alkaa kahdeksalta.
-työpäivä	working day / workday	7	cf36c0098d25a07adae89050630695db	Pitkän työpäivän jälkeen halusin vain rentoutua sohvalla ja katsoa hyvän elokuvan rauhassa.	Työpäivä oli pitkä.
-hakea töitä	to look for work / to apply for a job	7	549a57b8fb4d561527f5d533edf97fe3	Valmistumisen jälkeen aloin hakea töitä omalta alaltani ja lähetin useita hakemuksia eri yrityksiin.	Aion hakea töitä.
-haastattelu	interview	7	5a180ad0d02d88aec7e4bda16823fe3e	Valmistauduin työhaastatteluun huolellisesti ja mietin etukäteen vastauksia tavallisimpiin kysymyksiin.	Minulla on haastattelu huomenna.
-sopimus	contract / agreement	7	b0bfb493f15850f14162adba5de15d56	Lue työsopimus aina huolellisesti läpi, ennen kuin allekirjoitat sen ja palautat työnantajalle.	Allekirjoitin sopimuksen.
-osaaminen	know-how / competence	7	153e95ca140d7e957c2b8fb765e7d91d	Hänen vahva kielitaitonsa ja tekninen osaamisensa tekivät hänestä ihanteellisen hakijan tehtävään.	Osaaminen on tärkeää.
-lukio	upper secondary school	7	00ec2cf21f4155f0240b5d6e6ca555c4	Peruskoulun jälkeen hän päätti hakea lukioon, koska halusi pitää kaikki jatko-opintovaihtoehdot avoinna.	Käyn lukiota.
-peruskoulu	comprehensive school	7	6de74d8ae407349a6c7aeb45cf1f1e15	Suomessa lapset käyvät peruskoulua yhdeksän vuotta, ja koulu on kaikille täysin maksutonta.	Aloitin peruskoulun seitsemänvuotiaana.
-päiväkoti	daycare / kindergarten	7	3f6ddc064fc68b60131c89e068bf29a3	Viemme pienen poikamme joka aamu päiväkotiin ennen kuin lähdemme itse töihin keskustaan.	Lapsi on päiväkodissa.
-oppitunti	lesson / class	7	6912d6cc519051cda0b942a9a8e10492	Matematiikan oppitunti venyi pitkäksi, koska opettaja selitti vaikeaa aihetta erityisen perusteellisesti.	Oppitunti alkaa pian.
-läksy	homework	7	82f7f77549aa72967fa00aabb65dac10	Tein läksyt heti koulun jälkeen, jotta ehtisin illalla harrastuksiin ja kavereiden seuraan.	Minulla on paljon läksyjä.
-tentti	exam (university)	7	268079459f79f92e3b175d4d96e829ba	Luin koko viikonlopun ahkerasti, koska maanantain tärkeä tentti kattoi laajan osan kurssin sisällöstä.	Tentti oli vaikea.
-arvosana	grade / mark	7	f3d363f9afa54a6c188f41c6efa36860	Sain esseestäni paremman arvosanan kuin odotin, mikä yllätti minut iloisesti aivan täysin.	Sain hyvän arvosanan.
-tutkinto	degree / qualification	7	aa9b199e2c32b802792430357c2e1a21	Hän suoritti korkeakoulututkinnon kolmessa vuodessa ja sai sen jälkeen heti töitä alan yrityksestä.	Suoritin tutkinnon yliopistossa.
-todistus	certificate / report card	7	63b0c0b17fa37a7e2060892785bd4ead	Sain lopulta päättötodistuksen ja olin todella ylpeä hyvistä arvosanoistani kaikissa aineissa.	Sain todistuksen koulusta.
+alkuruoka	starter / appetizer	7	ff70602f66b696d378315064ddc22095	Alkuruoaksi tuli graavilohta ja ruisleipää, mikä juhlissa riittää kenelle tahansa.	Alkuruoka maistui hyvältä.
+varaus	reservation / booking	7	8cc46d3f0c57e12f3278d4b5d3e3c9ba	Tein varauksen kahdelle, mutta lautta myöhästyi ja pöytä ehti mennä.	Meillä on varaus.
+liesi	stove / cooktop	7	055e2ec59bb206f6ea5eca2fcd8a9caa	Sammuta liesi ennen kuin lähdet saunaan, muistuttaa lappu ovenpielessä.	Liesi on kuuma.
+pakastin	freezer	7	50297214556e76a83f0cf7a80ac088e2	Mustikat menivät pakastimeen elokuussa, ja tammikuussa niistä leivotaan piirakka.	Jäätelö on pakastimessa.
+paistinpannu	frying pan	7	689fa30f8f8b6d017ed2e31aafee122e	Kuumenna paistinpannu kunnolla, sillä muikut tarttuvat muuten pohjaan.	Pese paistinpannu.
+grillata	to grill / to barbecue	7	2d256bfe2813dafd9841a4fd7dc8fa48	Juhannuksena grillataan makkaraa vaikka räntäsateessa, se kuuluu asiaan.	Grillataan makkaraa illalla.
+ainesosa	ingredient	7	94a438623c5e098705aa629730c9d4d8	Karjalanpiirakan ainesosat mahtuvat yhdelle riville: ruisjauho, vesi, suola ja riisi.	Tämä ainesosa puuttuu.
+tori	market square / market	7	59f0891c050aa6139fb5189f47148ec4	Kuopion torilla myydään kalakukkoa, ja jono kertoo kuka sen osaa tehdä.	Mennään torille aamulla.
+kasvis	vegetable / plant-based food	7	fea38f6d8e29623f9e087e91955932c8	Talvella kasviksia tulee laivalla kaukaa, ja se näkyy hinnassa.	Syön paljon kasviksia.
+kasvissyöjä	vegetarian	7	780e8a7639777603dd385857be875c84	Kasvissyöjä pärjää täällä nykyään hyvin, myös huoltoaseman lounaslinjastolla.	Hän on kasvissyöjä.
+nam!	yum!	7	ee9f1624da91845a5865eeec273bd105	Uunista tuli kanelin tuoksu, ja koko rappukäytävä totesi hiljaa: nam!	Suklaakakkua, nam!
+omakotitalo	detached house	7	41ac27d99f38a3df3520c77a589d2679	Omakotitalon omistaja kolaa lunta aamuisin ja opettelee vihaamaan räystäitä.	Asumme omakotitalossa.
+terassi	terrace / patio	7	0ea8026745d9d0f4ab1b4a06b724742c	Terassilla istutaan huhtikuussa villatakki päällä, kunhan aurinko vain paistaa.	Istutaan terassilla.
+autotalli	garage	7	4457d55e7b12f64e4528c5d2e9b11706	Autotallissa säilytetään kesärenkaita, pulkkia ja venettä, harvemmin autoa.	Auto on autotallissa.
+varasto	storage room / storeroom	7	c9700d8ac2a666698888ae887ec7f692	Talvirenkaat ja joulukoristeet vievät varastosta puolet tilasta.	Tavarat ovat varastossa.
+huonekalu	piece of furniture	7	89d66fa4a825c51e4894d35fff85c258	Aallon suunnittelema huonekalu tunnistetaan koivun taivutuksesta.	Tämä huonekalu on vanha.
+nojatuoli	armchair	7	76b96726e9f6a4fa269c5430eb260655	Ukki istuu nojatuolissa ja kuuntelee radiosta kelitiedotteen kahdesti.	Istu nojatuoliin.
+vuode	bed (more formal)	7	8695460b8fd399720c3a1e04ef7d9095	Sairaalan vuode seisoo ikkunan vieressä, ja siitä näkee suoraan joelle.	Vuode on pehmeä.
+kirjahylly	bookshelf	7	287aa2e6f080fb253d8c970639964527	Kirjahyllyn ylimmällä hyllyllä seisoo Kalevala, jota kukaan ei uskalla heittää pois.	Kirja on kirjahyllyssä.
+lakana	sheet (bed)	7	b83304ebb982573d195beadfe033745c	Puhtaat lakanat vaihdetaan lauantaina, ja saunavuoro tulee heti perään.	Lakana on valkoinen.
+valaisin	light fixture / lamp	7	9c93c5b36429e8a5c769e926f72bb8fc	Kaamoksessa kirkas valaisin osoittautuu järkevämmäksi hankinnaksi kuin uusi takki.	Valaisin on rikki.
+pistorasia	electrical outlet / socket	7	0f85b6e4d210a97039925d3af74c6724	Mökin ainoa pistorasia sijaitsee eteisessä, ja laturit odottavat vuoroaan.	Missä on pistorasia?
+lämmitys	heating	7	8b4cc701fd3136a5ae0814380f1d05f4	Vanhan hirsitalon lämmitys perustuu puuhun, ja pinon koko kertoo talven pituuden.	Lämmitys on päällä.
+patteri	radiator / battery	7	174ea62ce2c49dc1c31e77afe970425f	Patteri kolisee yöllä, ja huoltomies lupasi ilmata sen ensi viikolla.	Patteri on lämmin.
+takka	fireplace	7	4c401e8fae3875861381b0b8a9ca603d	Takka lämmittää tuvan illaksi, ja koivuklapi palaa hitaasti loppuun.	Takka on olohuoneessa.
+mikroaaltouuni	microwave oven	7	e41631af2d9d4c6d9d2bb85ed3646cdc	Työpaikan mikroaaltouunin edessä syntyy tauolla jono, joka ulottuu käytävään.	Lämmitä ruoka mikroaaltouunissa.
+silitysrauta	iron (clothes)	7	1fbc54711b9d14b0a84b37c5b118631e	Silitysrauta otetaan esiin kahdesti vuodessa: ylioppilasjuhliin ja hautajaisiin.	Silitysrauta on kuuma.
+herätyskello	alarm clock	7	f4c7d8f8131129149a769bbb3183c871	Herätyskello soi kuudelta, ja pimeys ikkunan takana väittää kolmea yöllä.	Herätyskello soi.
+kannu	jug / pitcher	7	fb54e3c9ad6c991f998bc38d0eed14fd	Kannu kahvia riittää neljälle, ja talkooväkeä saapuu kaksitoista.	Kannu on täynnä.
+kulho	bowl	7	f101a7f9cc822a65aae10c0df532998f	Mustikat kaadetaan isoon kulhoon ja puhdistetaan roskista illalla.	Kulho on pöydällä.
+sakset	scissors	7	3b4d506b0673f28fb449143a99b3634c	Sakset löytyvät aina viimeisenä siitä laatikosta, josta ne ensin etsittiin.	Anna sakset minulle.
+shampoo	shampoo	7	33871e4ee93b6d4f5c0b67d9a4243527	Shampoo loppui kesken uimahallireissun, ja hiukset pestiin pelkällä vedellä.	Shampoo loppui.
+hammasharja	toothbrush	7	4fcdfa2d293b4e2ee86bc949daf6e7e9	Hammasharja vaihdetaan kolmen kuukauden välein, muistuttaa lappu peilin reunassa.	Hammasharja on sininen.
+hammastahna	toothpaste	7	1faddb4785770d085c88c7913d571366	Hammastahnaa riittää herneen kokoinen määrä, vaikka mainos näyttää toista.	Hammastahna loppui.
+harja	brush	7	97b8375629f82bb4034c52c08eae503e	Otin harjan ja puhdistin lumiset saappaat ennen eteiseen astumista.	Harja on lattialla.
+luuta	broom	7	dcc48ce46c55d9458f90338a120fe24f	Luuta seisoo mökin nurkassa, ja hiekkaa riittää lakaistavaksi koko kesän.	Luuta on nurkassa.
+rätti	rag / cloth	7	0c02b2fbab36c742de106a2dfddd9027	Rätti kastellaan ja lauteet pyyhitään, minkä jälkeen sauna jätetään tuulettumaan.	Anna märkä rätti.
+ämpäri	bucket	7	efadb1399d24eaa2e192c8698a507aa1	Ämpäri täyttyy mustikoista kahdessa tunnissa, jos paikka on oikea.	Ämpäri on täynnä.
+pesuaine	detergent / cleaning agent	7	70b014801c759aa7daf186bdb6ea21f9	Pesuainetta laitetaan koneeseen vähemmän kuin purkin kyljessä lukee.	Pesuaine loppui.
+jäte	waste	7	4c43ca448f3db158b7962ce91ae65a3c	Metsästä kannetaan jäte pois, ja se on jokamiehenoikeuden toinen puoli.	Jäte lajitellaan kotona.
+pesuallas	sink / washbasin	7	4496bf5d0675ab3fe816ef37e0c4846e	Kylpyhuoneen pesuallas tukkeutui, ja putkimies pääsi tulemaan vasta torstaina.	Pesuallas on likainen.
+tiskiallas	kitchen sink	7	2eae68eee3c22901ae54c2dc80c54c1c	Tiskialtaaseen kertyi talkoiden jäljiltä astioita kolmen pöydän verran.	Tiskiallas on täynnä.
+kylpyamme	bathtub	7	47ec2708c95dc5a22527a7a2822f93c1	Kylpyamme on täällä harvinaisuus, sillä sauna hoitaa saman asian.	Kylpyamme on täynnä.
+lakaista	to sweep	7	87a9e8fcf8938168b5dd9b95f489620f	Lakaisin terassilta koivunlehdet, ja tuuli toi tilalle uudet.	Lakaise lattia.
+silittää	to iron / to stroke	7	24e8d459b97a01a57d5ea37f9d109f5c	Silitän paidan sunnuntaina, jotta maanantaiaamu sujuu ilman draamaa.	Silitän paidan.
+pyykätä	to do laundry	7	ccdc8de87c13a4d0d6705bcd49224b4d	Pesutuvassa ehtii pyykätä kaksi koneellista, jos vuoron varasi ajoissa.	Minun pitää pyykätä.
+appi	father-in-law	7	178ba12616bc0323b0d3f40ebf2b1ba1	Appi vie minut joka kesä onkimaan, eikä kalasta puhuta paluumatkalla.	Appi tuli kylään.
+tuttava	acquaintance	7	29748db71240106c6757b71baef2c018	Törmäsin torilla vanhaan tuttavaan, ja juttelimme säästä täsmälleen minuutin.	Hän on vanha tuttava.
+nuoriso	youth / young people	7	afdb6129a867b350650d7dcf78c33c42	Nuoriso kokoontuu talvella kauppakeskukseen, sillä ulkona on kaksikymmentä astetta pakkasta.	Nuoriso on äänekästä.
+kaksoset	twins	7	271e7432de80e528ecb2a7f5b741ef51	Naapurin kaksoset erottaa toisistaan vain pipojen väristä.	Heillä on kaksoset.
+avioero	divorce	7	bdfc462fe5ef9be3f1b75ca820352fe8	Avioero jakoi mökin vuorot, ja järjestely toimii yhä.	He hakivat avioeroa.
+naimaton	unmarried / single	7	75d3b5189b5124e2b49f8e2c91a92fe4	Serkkuni on naimaton ja kuulee siitä joka sukujuhlassa.	Hän on naimaton.
+nuoruus	youth (time of life)	7	a5d4d77830c9a95d9be1a1c0a7b8c3bc	Isoäiti muistelee nuoruutta, jolloin tanssilavalle hiihdettiin kymmenen kilometriä.	Nuoruus on lyhyt.
+vanhuus	old age	7	c03342fb245d2547b55a84f3da8a9693	Vanhuus tuo hänen mukaansa vain sen edun, ettei enää tarvitse kolata lunta.	Vanhuus tuli nopeasti.
+sukupolvi	generation	7	b74c8c3b8e544749cb654ad24f77f20d	Jokainen sukupolvi lupaa korjata laiturin, ja työ siirtyy seuraavalle.	Uusi sukupolvi kasvaa.
+leski	widow / widower	7	75d8b3e45c8b471345a9b721c80b7ae2	Naapurin leski hoitaa yhä puutarhaa ja jakaa herukoita koko rapulle.	Naapurin leski asuu yksin.
+kummi	godparent	7	d1a8708242050eda10c41631d8497bab	Sisareni pyysi minua kummiksi, ja lupasin opettaa lapsen soutamaan.	Olen hänen kumminsa.
+isäntä	host / master of the house	7	1c5e2ff90e1a7b3f00fe1c5d6f51afa1	Isäntä lämmitti saunan ja sanoi, ettei siitä tarvitse kiittää.	Isäntä avasi oven.
+emäntä	hostess / mistress of the house	7	39212344a04116beee257b3183cc0ff9	Emäntä kattoi pöytään pullat ja kysyi kolmesti, riittääkö kahvi.	Emäntä keitti kahvia.
+seurustella	to date / to go out with	7	96e0b6d61a366b8bb3d48ce0745bd692	He ovat seurustelleet kaksi vuotta ja tapasivat alun perin talkoissa.	He seurustelevat.
+hautajaiset	funeral	7	1be5fb06b50c3710c7b76766789510a5	Hautajaisiin saapui koko kylä, ja kahvipöytä katettiin seurojentalolle.	Menemme hautajaisiin.
+keski-ikäinen	middle-aged	7	b6ad216e12cb917319c2c219c1e63396	Keski-ikäinen naapuri aloitti hiihtoharrastuksen ja hiihti helmikuussa sata kilometriä.	Hän on keski-ikäinen.
+alaikäinen	minor / underage	7	48a52986920a059aa9614d5d6486788c	Alaikäiselle ei myydä olutta, ja kassalla kysytään korttia kysymättä ikää.	Hän on alaikäinen.
+avopuoliso	common-law partner / cohabiting partner	7	7acd7db0e552dfa35701fa361357205f	Avopuolisoni hoitaa lumityöt, ja minä vastaan kahvista.	Avopuoliso tuli kotiin.
+avoliitto	cohabitation / common-law relationship	7	6d7e6919a7d688e360c784ba07bcd0d9	He elivät avoliitossa kymmenen vuotta ennen kuin kutsuivat vieraat häihin.	He ovat avoliitossa.
+raskaus	pregnancy	7	48c6c2bab68b3533fa22a863f0146810	Raskaus sujui hyvin, ja neuvolaan matkasi kolmekymmentä kilometriä joka kerta.	Raskaus sujui hyvin.
+synnytys	childbirth / delivery	7	80d4547b2685a709fa602426bebeec10	Synnytys alkoi keskellä lumipyryä, ja auto kaivettiin esiin hangesta.	Synnytys meni hyvin.
+yksilö	individual	7	b52af4e499563fe5166df8478e7a0aa7	Jokainen yksilö kestää löylyä eri määrän, ja siitä ei kilpailla.	Hän on vahva yksilö.
+isovanhempi	grandparent	7	6e2a04c82c4df6348af33bd8ce15fadf	Isovanhempi opettaa lapsenlapselle verkon kudonnan, jos malttia riittää molemmilla.	Isovanhempi asuu maalla.
+otsa	forehead	7	68fc9e1c91fdcc5aa7f2f0b339548678	Pakkasessa otsa paleltuu ensimmäisenä, ja pipo vedetään alemmas.	Otsa on hikinen.
+niska	back of the neck / nape	7	8bcbe17caf01553085ee03cfc160e409	Lumikolan jälkeen niska on jäykkä, ja pään kääntäminen vaatii koko vartalon.	Niska on kipeä.
+poski	cheek	7	1d1d0e3cd4626277fe7e4f267b2484af	Pakkasessa lapsen poski punoittaa, ja lämmin mehu odottaa sisällä.	Poski on punainen.
+leuka	chin / jaw	7	39600cafb51eab5cddb370cbd6623c98	Kaaduin liukkaalla pihalla ja löin leukani portaisiin.	Leuka sattuu.
+käsivarsi	arm	7	b77676211ed38d0abfc4476f123b0b46	Marjaämpäriä kantaessa käsivarsi väsyy ennen kuin ämpäri täyttyy.	Käsivarsi on kipeä.
+peukalo	thumb	7	ceae855469742abe3d6440215336fe67	Löin vasaralla peukaloon laituria korjatessa, ja työ jäi kesken.	Peukalo on kipeä.
+kynsi	nail / claw	7	f3f981061fd855ac131f1439ccb464e3	Kissan kynsi jätti käteen kolme punaista viivaa.	Kynsi katkesi.
+nilkka	ankle	7	23c8503276dd8f46963b39fee2a9ecc1	Nyrjäytin nilkkani juurakossa, ja loppumatka mökille kesti tunnin.	Nilkka on turvoksissa.
+varvas	toe	7	c0ba690d2d2a74465e1d00cc0cc0ee85	Varvas osui sängynjalkaan pimeässä, ja kaamos sai osansa syytöksistä.	Varvas on kipeä.
+keuhko	lung	7	4a39c2608993bceb1ebd55390e581993	Pakkasilmaa vedetään keuhkoihin varovasti, huivi suun edessä.	Keuhkot tarvitsevat happea.
+maksa	liver	7	20c04573156def9bbf3e3befb4b94713	Lääkäri muistutti, että maksa lepää parhaiten silloin kun sitä ei rasita.	Maksa on tärkeä elin.
+särky	ache	7	91c58287c08ca341664f56fd188c33bc	Särky alkoi illalla, ja lääkekaappi osoittautui tyhjäksi.	Minulla on kova särky.
+vatsakipu	stomachache	7	d62094f68a4361620aea5d245c0779b5	Liika salmiakki aiheuttaa vatsakipua, minkä jokainen oppii kerran.	Vatsakipu meni ohi.
+nuha	runny nose / head cold	7	d62df66c39c581a8c150a9cf2d6e950e	Sain nuhan ensimmäisenä pakkaspäivänä, ja nenäliinat loppuivat illalla.	Minulla on nuha.
+sairastua	to fall ill	7	bf6d3d0967820b87002ced8559a44ed9	Puolet päiväkodin ryhmästä sairastui tammikuussa saman viikon aikana.	Lapsi sairastui eilen.
+oksentaa	to vomit	7	607c2183ae215122015619c0b378b358	Merenkäynti Ahvenanmerellä sai matkustajat oksentamaan, ja kansi tyhjeni.	Lapsi joutui oksentamaan.
+pahoinvointi	nausea	7	033d170a3767674ab2352dcbfcfa286d	Mutkainen tie Kolille aiheutti pahoinvointia takapenkillä istuvalle.	Tunnen pahoinvointia.
+syöpä	cancer	7	46dd2e14ce09711b1f7511a7b3f038e0	Syöpä havaittiin varhain, ja hoidot aloitettiin heti seuraavalla viikolla.	Syöpä vaatii hoitoa.
+tartunta	infection / contagion	7	b6b76700e6d2086d0f77cb4609d883e3	Tartunta kiersi koko luokan, ja opettajakin jäi lopulta kotiin.	Tartunta leviää nopeasti.
+bakteeri	bacterium	7	82f5a161bfdc90f0a9e4407ef285e280	Kädet pestään saippualla, sillä bakteeri ei katoa pelkällä vedellä.	Bakteeri aiheuttaa sairauksia.
+tulehdus	inflammation / infection	7	8609156ef5d1f2af64dc6448f796b0a0	Haavaan tuli tulehdus, ja lääkäri kirjoitti kuurin heti vastaanotolla.	Korvassa on tulehdus.
+loukkaantua	to get injured	7	ae2cabf8de7e27cd58c5043233acfe48	Pelaaja loukkaantui jäähallissa, ja kausi päättyi hänen osaltaan siihen.	Hän loukkaantui pelissä.
+vamma	injury	7	69424fd583a58c70b32814ae76e84650	Vamma parani hitaasti, ja hiihtoretket siirtyivät seuraavaan talveen.	Vamma paranee hitaasti.
+verenpaine	blood pressure	7	f9dd097f3c5fb4fce1ee661eb2f68381	Lääkäri mittasi verenpaineen ja kysyi, montako kuppia kahvia päivässä.	Verenpaine on korkea.
+allerginen	allergic	7	a0ef12606bc7d9243e892d1d9be82aae	Olen allerginen koivun siitepölylle, joten toukokuu kuluu sisätiloissa.	Olen allerginen kissoille.
+ambulanssi	ambulance	7	5c1b279a67fe81285211d2cf4ac2421f	Ambulanssi ajoi mökille soratietä varttitunnin, ja naapuri odotti tienhaarassa.	Ambulanssi tuli nopeasti.
+ensiapu	first aid / emergency room	7	f1d7faf4801dfcc62aba6a121a35671a	Retkelle otetaan ensiapulaukku, vaikka sitä tarvittaisiin kerran kymmenessä vuodessa.	Tarvitsen ensiapua.
+tabletti	tablet / pill	7	3e309f2f86562ff576b061d9b92b4f7f	Ota tabletti aamulla ruoan kanssa, neuvoi lääkäri vastaanotolla.	Otan tabletin aamulla.
+pilleri	pill	7	359125264f924421ae1f12a83fd07491	Iso pilleri meni nieluun vasta kolmannella yrityksellä.	Otin pillerin.
+rokote	vaccine	7	ff4a9e8b2a415a4df7a1b2d5925b9ab5	Rokote annetaan neuvolassa, ja lapsi saa perään tarran.	Rokote suojaa taudilta.
+rokotus	vaccination	7	c0ffcd628d0b9297dbf8ece71c0f6d17	Rokotus siirtyi viikolla, sillä koko perhe sairasti flunssaa.	Rokotus on huomenna.
+laastari	plaster / bandage	7	f665964af089f9600d41326e8f1d8556	Laita laastari polveen, niin pulkkamäkeen pääsee vielä tänään.	Laita laastari haavaan.
+kipulääke	painkiller	7	c522c3b19d80d89d61457245a8b91b12	Kipulääke löytyi vasta naapurista, sillä oma kaappi ammotti tyhjänä.	Tarvitsen kipulääkettä.
+parantua	to recover / to heal	7	0c1279bdf32f0c6bc3d5d26b65f2fdb8	Flunssa parantui viikossa, ja saunaa syytettiin siitä ansiotta.	Haava parantui nopeasti.
+toipua	to recover	7	bb2d5fa89bf14a1dcc059fe9215050b3	Leikkauksesta toipuminen vei kuukausia, mutta keväällä hän jaksoi jo hiihtää.	Hän toipuu hyvin.
+leikkaus	surgery / operation	7	1078c960fd91e1ac9c3105374ccc24a3	Polven leikkaus onnistui, ja kuntoutus alkoi jo seuraavalla viikolla.	Leikkaus onnistui hyvin.
+oire	symptom	7	1208b206fcf177ac1f8c1a8c266201a1	Ensimmäinen oire kaamosväsymyksestä ilmenee marraskuussa, ja lamppu ostetaan joulukuussa.	Mikä on ensimmäinen oire?
+sairausloma	sick leave	7	4f4459c690efd6673b48f2ad7e39cc30	Sain viikon sairausloman, ja naapuri toi kaupasta maidon ja lehden.	Olen sairauslomalla.
+terveydenhuolto	healthcare	7	9cdb286d987f8e29f58ccfef04c88278	Terveydenhuolto toimii täällä pääosin hyvin, mutta jonotusmusiikki tulee tutuksi.	Terveydenhuolto on tärkeää.
+lepo	rest	7	3ee0d5ad4ce6a48b87a32a4aabbcb01f	Lepo ja pimeä huone auttavat päänsärkyyn paremmin kuin mikään puhe.	Tarvitsen lepoa.
+väsymys	fatigue / tiredness	7	141819919f976bf8f3ad7dba4d430aa1	Marraskuun väsymys selittyy valolla, ei laiskuudella, vakuuttaa lääkäri.	Tunnen kovaa väsymystä.
+hengitys	breathing / breath	7	c81e9f81dbe1735798f4bcd489149973	Kolmenkymmenen asteen pakkasessa hengitys jäätyy huiviin heti.	Hengitys on raskasta.
+hiki	sweat	7	a5982d414fcf2ada8b10cbfc11d5b4fb	Saunassa hiki valuu hiljaisuudessa, eikä kukaan katso kelloa.	Minulla on hiki.
+hygienia	hygiene	7	038aa14c226166d1ca7de782a561abb6	Saunan hygienia perustuu siihen, että peseydytään ennen lauteille nousua.	Hygienia on tärkeää.
+sampoo	shampoo	7	3c8374137b9676ec10115805b4fc4330	Sampoo unohtui kotiin, ja uimahallin automaatti vaati kolikon.	Sampoo loppui.
+wc-paperi	toilet paper	7	807695db8b83a01214037761b7898e26	Mökille viedään wc-paperia varastoon, sillä kauppa-auto käy kahdesti viikossa.	Wc-paperi loppui.
+parta	beard	7	e9a4bbb85561c01d7a88b3ac2d3ade3f	Isällä on tuuhea parta, joka huurtuu tammikuussa jo pihatiellä.	Isällä on parta.
+treenata	to work out / to train	7	b3678dbd3f1ada61c3a5de90adb92338	Kuntosalilla käydään treenaamassa tammikuussa, ja helmikuussa vuorot vapautuvat.	Käyn treenaamassa salilla.
+lenkki	jog / a run	7	6b8c4edfbd1c4ebcfb518488cd94becd	Aamulenkki hangella tuntuu raskaalta, kunnes latu on kerran ajettu.	Menen lenkille.
+hyvinvointi	well-being	7	72167ac43c0bbcc2c0d1ed7c3a831c3b	Hyvinvointi tarkoittaa täällä usein sitä, että pääsee metsään yksin.	Hyvinvointi on tärkeää.
+laihtua	to lose weight	7	7a5ac4f73f0d9c4ff47fb26f899bacd0	Hän laihtui talven aikana hiihtämällä, ei suinkaan syömällä vähemmän.	Hän laihtui paljon.
+vaate	garment / piece of clothing	7	3778c2e2cc5643477bf057638fcf9c90	Tämä vaate kestää pakkasta, mutta kastuu räntäsateessa hetkessä.	Tämä vaate on kaunis.
+pukea	to dress / to put on (someone)	7	df4e28d3f31d71411b5af3f281396106	Lapsi pitää pukea kerroksittain, sillä sisällä päiväkodissa on lämmin.	Osaatko pukea lapsen?
+pukeutua	to get dressed / to dress oneself	7	d7f3d9fe88174a4209b51e662701bb0b	Pukeudun kerroksittain, sillä bussi on kuuma ja pysäkki jäinen.	Pukeudun lämpimästi.
+sovittaa	to try on	7	cf521636872f3fe96bfc3b2ff12cb87c	Halusin sovittaa saappaat villasukat jalassa, kuten täällä kuuluukin.	Haluan sovittaa takkia.
+pusero	blouse / top	7	f18c55879edf2487c930e962eb2ab7e0	Ostin juhliin sinisen puseron, jota käytän todennäköisesti kerran vuodessa.	Pusero on sininen.
+villapaita	wool sweater / jumper	7	a80064708c0121ee5fb968ddb350502e	Villapaita neulottiin lampaanvillasta, ja se kutittaa ensimmäiset kymmenen vuotta.	Villapaita on lämmin.
+shortsit	shorts	7	0bc0fa8c8fbc84fb57eb9b216761f489	Shortsit otetaan esiin kahdeksi viikoksi heinäkuussa, ei päivääkään aiemmin.	Shortsit ovat mukavat.
+alusvaatteet	underwear	7	ca17d19177160e74a0354b222860aae6	Pakkasin retkelle puhtaat alusvaatteet ja kaksi paria villasukkia.	Alusvaatteet ovat puhtaat.
+saappaat	boots	7	b1d3b51fe7c536030186d7840bd922d6	Kumisaappaat ovat kelirikon aikaan ainoa järkevä jalkine.	Saappaat ovat märät.
+lenkkarit	sneakers / trainers	7	e901369b91e7edd1102e9b4d397a87e6	Lenkkarit vaihdetaan nastakenkiin marraskuussa, ja siitä ei tingitä.	Lenkkarit ovat mukavat.
+lakki	cap	7	74cb1921834d4d68fc2a364aca5beb9b	Ylioppilaslakki otetaan esiin vappuna, olipa sää mikä tahansa.	Lakki on päässä.
+pipo	beanie / woolly hat	7	a16656a039d8b23731b3e933914f8bd7	Pipo pysyy päässä toukokuuhun asti, vaikka takki jäisi kotiin.	Pipo on lämmin.
+huivi	scarf	7	ee9d5a174606683e80a8a302fc6c21cf	Villahuivi kiedotaan kaulaan, ennen kuin ovi avataan tammikuussa.	Minulla on punainen huivi.
+käsineet	gloves	7	c79f486603c898d78cb8f5850ba9ff72	Käsineet unohtuivat bussiin, ja sormet kohmettuivat matkalla kotiin.	Käsineet ovat lämpimät.
+hanskat	gloves (colloquial)	7	7ff8b91567039ce884485c763ca20c3a	Ota hanskat mukaan, sillä pyörän ohjaustanko on aamulla jäinen.	Missä mun hanskat ovat?
+vyö	belt	7	5809cf3c433a7d290b58eb05f1d1111f	Vyö kiristettiin yhden reiän verran hiihtokauden jälkeen.	Vyö on liian löysä.
+solmio	tie / necktie	7	a656a12e58011df93116e63e6b5868bb	Solmio otetaan kaapista vain valmistujaisiin ja hautajaisiin.	Isällä on uusi solmio.
+kassi	bag / carrier bag	7	4ddf69372c3d7379a4b625571eaaacaf	Kangaskassi kulkee taskussa, sillä muovipussista maksetaan erikseen.	Kassi on raskas.
+korut	jewellery	7	1a3555eebb527349f6ef58bba493426c	Isoäidin korut kulkevat suvussa, ja niitä käytetään vain juhlissa.	Korut ovat laatikossa.
+sormus	ring	7	f88a20d9d8d5c9f2941a9f316e80e8df	Sormus liukui sormesta avannossa, eikä sitä löydetty keväälläkään.	Sain uuden sormuksen.
+silmälasit	eyeglasses	7	28a67cdf3f86b731141e5d9c2e746c04	Ilman silmälaseja en erota lautan aikataulua laiturin taululta.	Silmälasit ovat pöydällä.
+aurinkolasit	sunglasses	7	1c2a46bdd992e0af9f498d31bc348eca	Maaliskuussa aurinkolasit ovat hangella välttämättömät, ei ylellisyys.	Käytän aurinkolaseja kesällä.
+sateenvarjo	umbrella	7	26ea28a2ed53e435385a234a29246160	Sateenvarjo kääntyy Perämeren tuulessa nurin ensimmäisellä sadalla metrillä.	Otin sateenvarjon mukaan.
+nappi	button	7	f6d3928a6b93066fe49933e738dd2d39	Takin ylin nappi irtosi pakkasella, ja ompelu siirtyi kevääseen.	Nappi putosi lattialle.
+tasku	pocket	7	4e41b6ee3dc181cf0f7a66e041d6e9a6	Avaimet kulkevat takin sisätaskussa, sillä ulkotaskusta ne katoavat hankeen.	Avaimet ovat taskussa.
+violetti	purple / violet	7	38f9dcb2bfe11615e4fab23d8b6bb2a5	Violetti hiihtoasu erottuu hangelta kauas, mikä on oikeasti hyödyllistä.	Pidän violetista väristä.
+vaaleanpunainen	pink	7	550f102d008e97b6fe47e6351f093086	Vaaleanpunainen taivas maaliskuun iltapäivällä kestää vain vartin.	Mekko on vaaleanpunainen.
+kirkas	bright	7	f2e262e8d11554e9ab33d84ecba65774	Maaliskuun aurinko on niin kirkas hangella, että silmiä särkee.	Taivas on kirkas.
+materiaali	material	7	7cb5d617b929160a71ee47b75ce8fcc8	Ryijyn materiaali on villa, ja työ kesti aikanaan kokonaisen talven.	Materiaali on pehmeää.
+kangas	fabric / cloth	7	a96f93472e6b026a5c997fef46cfa24a	Kangas kudottiin kotona, ja kangaspuut seisovat yhä ullakolla.	Kangas on sininen.
+puuvilla	cotton	7	f8c0d18d758a854a7da923ebe9c763cd	Kesällä puuvilla tuntuu iholla paremmalta kuin mikään muu.	Paita on puuvillaa.
+villa	wool	7	ed3f29fee9e28e36f7cdc8115e0642e9	Villa lämmittää märkänäkin, mikä selittää villasukkien aseman täällä.	Villa lämmittää hyvin.
+nahka	leather	7	9adb5ec132f14702eec024c312bed353	Nahka kovettuu pakkasessa, joten saappaat rasvataan syksyllä.	Lompakko on nahkaa.
+muovi	plastic	7	c11520897bf38cc8e4af3dceff8fb7e8	Muovi korvattiin kaupassa kangaskassilla, ja tapa levisi nopeasti.	Pullo on muovia.
+metalli	metal	7	0507f771b5b82be5009a0f1adc46360d	Puukon terä on metallia, mutta varsi veistetään koivusta.	Lusikka on metallia.
+hopea	silver	7	e684a6f2d59d882d2e081fa5f28b7bf2	Hopea tummuu ajan myötä, ja isoäidin lusikat kiillotetaan jouluksi.	Sormus on hopeaa.
+kauppakeskus	shopping mall	7	3602edb4c94464a33894cfdbfe9dc9fc	Marraskuun lauantaina kauppakeskus täyttyy, sillä ulkona sataa räntää.	Menemme kauppakeskukseen.
+ostos	purchase	7	8535acf86713aa92d9eb3eb3f632dbb2	Yksi ostos veloitettiin kahdesti, ja kuitti pelasti tilanteen.	Ostos maksoi liikaa.
+tehdä ostoksia	to go shopping	7	16b3ff1b6c8f74249dd2d87cc67f1f9d	Lähdimme tekemään ostoksia keskustaan ja päädyimme kahvilaan kahdeksi tunniksi.	Haluan tehdä ostoksia.
+sopiva	suitable / fitting	7	da7dc05ebbe742682ba42fb7772c50c2	Etsin pitkään sopivaa lahjaa ja päädyin lopulta villasukkiin.	Tämä koko on sopiva.
+tiukka	tight	7	51399cee89669b921e50483bd6b10d15	Uudet saappaat tuntuivat tiukoilta, kunnes villasukka vaihtui ohuempaan.	Housut ovat liian tiukat.
+seteli	banknote / bill	7	2d38b571d401917a70a6f5a583eb36bd	Viidenkymmenen euron seteli hämmentää nykyään kassalla useampaa kuin yhtä.	Minulla on yksi seteli.
+kolikko	coin	7	c4c26b6cb107c8210016ff6edc9ce097	Uimahallin kaappi vaatii kolikon, jonka saa takaisin lähtiessä.	Löysin kolikon lattialta.
+edullinen	affordable / inexpensive	7	59fdb8afc98d7cb560bc73a1e42d207f	Löysin edullisen talvitakin alennusmyynnistä helmikuussa, jolloin pakkanen vasta alkoi.	Tämä tuote on edullinen.
+alennusmyynti	sale / clearance	7	9395dc9a0b594ae7fc2d4894f5346ce8	Alennusmyynti alkaa tammikuussa, ja talvitakit myydään kesken pakkasten.	Kaupassa on alennusmyynti.
+pankkikortti	debit card / bank card	7	f01c226ea89bb88230cea8fa7bab6e60	Unohdin pankkikortin kotiin, ja puhelin pelasti kassajonossa.	Maksoin pankkikortilla.
+luottokortti	credit card	7	8c71e207fb6a88cb0db9bbce1a0ff73c	Varasin lautan luottokortilla, sillä matkavakuutus tuli siinä mukana.	Käytän luottokorttia ulkomailla.
+maksaa kortilla	to pay by card	7	5781e756618f932bebec34ce99bb7aa0	Pienessäkin kylän kaupassa voi maksaa kortilla, mikä yllättää vieraan.	Haluan maksaa kortilla.
+maksaa käteisellä	to pay in cash	7	b12b5f819f39ec4f62d684e99bcb79cb	Torilla kannattaa maksaa käteisellä, sillä kaikilla ei ole maksupäätettä.	Voin maksaa käteisellä.
+palauttaa	to return (an item)	7	ced3ecde4652d288ae4f7075e556fa2f	Päätin palauttaa liian pienet saappaat ja pyytää tilalle isomman koon.	Haluan palauttaa tämän.
+tili	account	7	d230b87d70c03b05fba1e12f6de9a012	Palkka tulee tilille kuun viimeisenä, ja laskut ajoitetaan sen jälkeen.	Rahat ovat tilillä.
+vero	tax	7	27c71a28001d570c9a47971f8c7bbd97	Vero peritään jo hinnassa, joten kassalla ei tule yllätyksiä.	Maksan paljon veroa.
+summa	sum / amount	7	a1f80f0ff609147e9b254a5864500705	Laskun summa yllätti helmikuussa, ja saunavuoroja harvennettiin heti.	Summa on suuri.
+jono	queue / line	7	42867493d4d4874f331d288df0044baa	Vuoronumero ratkaisee jonon, eikä kukaan yritä kiilata.	Jono on pitkä.
+käytetty	used / second-hand	7	732d0838fefc44a83a17a32f6a5a2d4d	Ostin kirpputorilta käytetyn polkupyörän, joka kesti kaksi kesää.	Auto on käytetty.
+laatu	quality	7	7a9b7753940bd4b4937f1e6bd24f6835	Puuveneen laatu näkyy vasta kymmenennen kesän jälkeen.	Laatu on hyvä.
+muoti	fashion	7	06a6259bb384ba7bf701a51742aa3c68	Muoti muuttuu, mutta villasukka pysyy samannäköisenä sukupolvesta toiseen.	Seuraan muotia mielelläni.
+työnantaja	employer	7	ff15b1b62ebc48e285933c7fea5e3a97	Hyvä työnantaja antaa hiihtolomaviikon myös niille, joilla ei ole lapsia.	Työnantaja maksaa palkan.
+esimies	supervisor / manager	7	e5cad31ef8cbadbc4e3d3835e3784f0b	Puhuin esimieheni kanssa etätyöstä, ja hän suostui heti.	Esimies on mukava.
+työtön	unemployed	7	24500913897e5b3303c406734d9c9d3b	Hän oli puoli vuotta työtön ja sai sitten paikan sahalta.	Hän on tällä hetkellä työtön.
+ansaita	to earn	7	c3200af806c8c58422a7feb470c38d89	Kesätöissä halusin ansaita tarpeeksi interrailia varten.	Haluan ansaita rahaa.
+työaika	working hours	7	f7b25d4592abdcd36753e57433af4ed3	Kesällä työaika joustaa, sillä valoa riittää iltayhdeksään.	Työaika alkaa kahdeksalta.
+työpäivä	working day / workday	7	cf36c0098d25a07adae89050630695db	Joulukuun työpäivä alkaa ja päättyy pimeässä, mikä selittää kynttilät pöydällä.	Työpäivä oli pitkä.
+hakea töitä	to look for work / to apply for a job	7	549a57b8fb4d561527f5d533edf97fe3	Valmistumisen jälkeen aloin hakea töitä Tampereelta ja Turusta yhtä aikaa.	Aion hakea töitä.
+haastattelu	interview	7	5a180ad0d02d88aec7e4bda16823fe3e	Haastattelussa kysyttiin, siedänkö hiljaisuutta, ja vastasin hetken vaiettuani.	Minulla on haastattelu huomenna.
+sopimus	contract / agreement	7	b0bfb493f15850f14162adba5de15d56	Lue sopimus kokonaan läpi, myös se kohta irtisanomisajasta.	Allekirjoitin sopimuksen.
+osaaminen	know-how / competence	7	153e95ca140d7e957c2b8fb765e7d91d	Hirsirakentajan osaaminen siirtyy yhä työmaalla, ei oppikirjasta.	Osaaminen on tärkeää.
+lukio	upper secondary school	7	00ec2cf21f4155f0240b5d6e6ca555c4	Peruskoulun jälkeen hän haki lukioon, vaikka ammattikoulu houkutteli myös.	Käyn lukiota.
+peruskoulu	comprehensive school	7	6de74d8ae407349a6c7aeb45cf1f1e15	Peruskoulu kestää yhdeksän vuotta, ja lounas kuuluu siihen kaikille.	Aloitin peruskoulun seitsemänvuotiaana.
+päiväkoti	daycare / kindergarten	7	3f6ddc064fc68b60131c89e068bf29a3	Päiväkodissa ulkoillaan myös pakkasella, kunhan raja ei ylity.	Lapsi on päiväkodissa.
+oppitunti	lesson / class	7	6912d6cc519051cda0b942a9a8e10492	Oppitunti venyi, sillä opettaja innostui kertomaan Väinö Linnasta.	Oppitunti alkaa pian.
+läksy	homework	7	82f7f77549aa72967fa00aabb65dac10	Tein läksyt heti koulun jälkeen, jotta ehdin luistelemaan valoisalla.	Minulla on paljon läksyjä.
+tentti	exam (university)	7	268079459f79f92e3b175d4d96e829ba	Luin tenttiin koko viikonlopun, ja kysymykset koskivat lopulta yhtä lukua.	Tentti oli vaikea.
+arvosana	grade / mark	7	f3d363f9afa54a6c188f41c6efa36860	Sain esseestä paremman arvosanan kuin uskalsin toivoa.	Sain hyvän arvosanan.
+tutkinto	degree / qualification	7	aa9b199e2c32b802792430357c2e1a21	Hän suoritti tutkinnon kolmessa vuodessa ja muutti sen jälkeen Ouluun.	Suoritin tutkinnon yliopistossa.
+todistus	certificate / report card	7	63b0c0b17fa37a7e2060892785bd4ead	Sain päättötodistuksen kesäkuun ensimmäisenä lauantaina, kuten kaikki muutkin.	Sain todistuksen koulusta.

@@ -1,248 +1,248 @@
-la scienza	science	10	6ccb61d4afb0aa00915128f22954007e	La scienza moderna ha fatto enormi progressi negli ultimi cento anni in molti campi del sapere umano.	Una grande scienza.
-la biologia	biology	10	6c1ea7d75a46b979a0e4a56c8285740f	La biologia molecolare studia i meccanismi della vita a livello cellulare e ha applicazioni mediche importantissime.	Biologia marina.
-la chimica	chemistry	10	22da421544abbe463f8f4ffffecfb0d2	La chimica organica studia i composti del carbonio che sono alla base di tutti gli esseri viventi sul pianeta.	Chimica avanzata.
-la fisica	physics	10	aca10b2e53c67fe247e857054ed65c7b	La fisica quantistica ha rivoluzionato la nostra comprensione della materia e dell'universo nel ventesimo secolo recente.	Fisica nucleare.
-la matematica	mathematics	10	f13c58cd3a587d7995463375a528dd4b	La matematica è la regina delle scienze e fornisce gli strumenti per descrivere il mondo in modo preciso.	Matematica applicata.
-la geometria	geometry	10	fca2d0645b8315e88f3019aaee80f2d0	La geometria euclidea studia le proprietà delle figure piane e solide secondo i postulati dell'antico matematico greco.	Geometria analitica.
-l'algebra	algebra	10	384712ec65183407ac811fff2f4c4798	L'algebra elementare studia le equazioni con incognite e le proprietà delle operazioni matematiche fondamentali tra numeri reali.	Algebra lineare.
-la statistica	statistics	10	7ab95f7eba3260e04feddc07ba79aa4f	La statistica raccoglie e analizza i dati per scoprire tendenze e fare previsioni sul comportamento di fenomeni complessi.	Statistica descrittiva.
-l'astronomia	astronomy	10	138c4af8611983bf6ea57355cb8c11ce	L'astronomia studia i corpi celesti e l'universo intero usando potenti telescopi posizionati sulla terra e nello spazio.	Astronomia antica.
-la geologia	geology	10	1d143597679f849f6675215befeef267	La geologia studia la struttura interna della terra e i processi che hanno modellato il pianeta durante miliardi di anni.	Geologia applicata.
-la botanica	botany	10	2f2529392621cc26a0e5b2f778d5a4e5	La botanica studia le piante in tutte le loro forme e funzioni vitali nel grande ecosistema globale del nostro pianeta.	Botanica medica.
-la zoologia	zoology	10	182bf62071a943cc5871bec5be2078b4	La zoologia è la scienza che studia gli animali e la loro evoluzione attraverso milioni di anni di storia naturale terrestre.	Zoologia moderna.
-l'ecologia	ecology	10	5703591fd828da90c249a49e9740b01f	L'ecologia studia le relazioni tra gli organismi viventi e il loro ambiente naturale per comprendere meglio l'equilibrio del pianeta.	Ecologia urbana.
-l'anatomia	anatomy	10	eae510978844bb70b6795ee3d6817737	L'anatomia umana è una materia fondamentale per gli studenti di medicina che devono conoscere il corpo nei minimi dettagli.	Anatomia comparata.
-la fisiologia	physiology	10	ce6ae9e3a4fd60ea6d1aea2610312e87	La fisiologia studia il funzionamento degli organi del corpo umano in condizioni normali e in caso di malattia comune.	Fisiologia animale.
-la cellula	cell	10	6363ffe1cf5649ee6017cdb01aea2fc0	La cellula è l'unità fondamentale della vita e tutti gli esseri viventi sono fatti di cellule complesse e specializzate.	Una cellula vivente.
-l'organo	organ	10	6a3e0dcca305968dc8ebeeff79a95fdc	Il cuore è l'organo più importante del corpo umano perché pompa il sangue in tutto l'organismo continuamente.	Un organo vitale.
-il muscolo	muscle	10	543a70ee58fe7508818893ba034d6d99	Il muscolo del braccio destro mi fa molto male dopo l'allenamento intenso di ieri sera in palestra moderna.	Un muscolo forte.
-l'osso	bone	10	a2c1f17ffa3ac439fe9cd94e6c358291	L'osso del braccio si è rotto durante la caduta dalla bicicletta e mi hanno messo il gesso per due mesi.	Un osso rotto.
-il sangue	blood	10	2e33a38d91c121d6643623576c04185c	Il sangue circola in tutto il corpo grazie al cuore che lo pompa con grande precisione e regolarità necessaria.	Donazione di sangue.
-il nervo	nerve	10	5442d96e5089f853eb990395860ae9ec	Il nervo sciatico fa molto male quando è infiammato e impedisce di camminare normalmente per molti giorni difficili.	Un nervo scoperto.
-la vena	vein	10	52e2a0a0d93f20b191d9577b893f80e0	La vena del braccio è gonfia perché ho fatto le analisi del sangue stamattina presto in ospedale specializzato.	Una vena varicosa.
-l'arteria	artery	10	5cf24c756c57d0a2448a11ea56d124d2	L'arteria principale del cuore si chiama aorta e porta il sangue ossigenato a tutti gli organi del corpo umano.	Un'arteria importante.
-il polmone	lung	10	fbd3c423fe8e6ddb37662ca7390e63a9	Il polmone destro è leggermente più grande del sinistro per fare spazio al cuore nella cassa toracica.	Cancro al polmone.
-il fegato	liver	10	dc91af42459acf7bc8e1fb5866e92c49	Il fegato è l'organo che filtra il sangue dalle tossine ed è importante mantenerlo in salute con una dieta equilibrata.	Un fegato sano.
-il rene	kidney	10	93de1a7f9a00f8823ac377738b66236b	Il rene filtra il sangue e produce l'urina che viene eliminata dal corpo attraverso le vie urinarie quotidianamente.	Un trapianto di rene.
-lo stomaco	stomach	10	54ea8d3e5f7912b94ba095e86b80bba2	Lo stomaco digerisce il cibo grazie agli acidi gastrici prima di passarlo all'intestino tenue del corpo umano.	Mal di stomaco.
-l'intestino	intestine	10	caeff11e8c4f3d9c0db3e3515a4dfa7e	L'intestino è lungo molti metri e assorbe i nutrienti dal cibo digerito mandandoli al sangue per il nutrimento del corpo.	Intestino tenue.
-il cervello	brain	10	a800dad25e96cbd2c92bf916ecdae958	Il cervello umano è uno degli organi più complessi dell'universo conosciuto con miliardi di neuroni perfettamente collegati tra loro.	Un grande cervello.
-lo scheletro	skeleton	10	aebf7a7f745d66dd1390db9625d4500e	Lo scheletro umano è composto da circa duecento ossa che sostengono tutto il corpo e proteggono gli organi vitali interni.	Uno scheletro completo.
-l'atomo	atom	10	5028ea3da2e02508c8d2ce4651fc65af	L'atomo è il mattoncino fondamentale della materia ed è composto da elettroni, protoni e neutroni in equilibrio dinamico.	Un piccolo atomo.
-la molecola	molecule	10	f98a89c049aa5f1445fccfc3799b1b18	La molecola dell'acqua è composta da due atomi di idrogeno e uno di ossigeno legati chimicamente insieme.	Una molecola complessa.
-l'elettrone	electron	10	47ea1038f795174c890881167dad3b0b	L'elettrone gira intorno al nucleo dell'atomo a velocità incredibili e ha una carica elettrica negativa molto piccola.	Un elettrone libero.
-l'idrogeno	hydrogen	10	2406c45abf4db9d4297b21119f5d775d	L'idrogeno è l'elemento chimico più semplice e abbondante dell'universo conosciuto dagli astronomi e dai chimici moderni esperti.	Atomo di idrogeno.
-l'ossigeno	oxygen	10	464d2d7df33cb36cdc873d85f698fff4	L'ossigeno è essenziale per la vita degli esseri umani e degli animali che lo respirano dall'aria atmosferica.	Senza ossigeno.
-il carbonio	carbon	10	91e46dc490525ad93e901ccb6d1f5e19	Il carbonio è alla base della chimica organica e di tutte le molecole della vita sul nostro pianeta blu.	Anidride carbonica.
-l'oro	gold	10	a13314e5b7614acf77e65427af6d3791	L'oro è un metallo prezioso che non si arrugginisce mai e mantiene il suo valore nel tempo a lungo.	Un anello d'oro.
-l'argento	silver	10	66f9f1d9af1ade3c4457ebdf00c2ced7	L'argento è un metallo prezioso usato per fare gioielli e posate eleganti che si tramandano di generazione in generazione familiare.	Posate d'argento.
-il rame	copper	10	db4180193c578a686685739556791951	Il rame è un metallo rosso usato per fare i fili elettrici grazie alla sua eccellente conducibilità della corrente elettrica.	Un tubo di rame.
-il gas	gas	10	fee74eac0728a1bb5ff7d4666f8c4a88	Il gas naturale è la principale fonte di energia per riscaldare le case in molti paesi europei moderni del nord.	Un gas tossico.
-la cifra	digit / figure	10	c3c06e5aa01129eea3b7ce3faf9de1c2	La cifra finale della somma è quattro perché i numeri sommati danno questo risultato preciso senza alcun errore.	Una grossa cifra.
-la somma	sum / addition	10	a0f4ba2c8d5c9a230f176943e5de5194	La somma di tutti i numeri da uno a dieci è cinquantacinque secondo i miei calcoli matematici precisi.	Una somma esatta.
-il prodotto	product	10	23147ce18e7364b9e8a4bc95c0cfd8bb	Il prodotto di sei per sette è quarantadue secondo le tabelline che abbiamo imparato in seconda elementare a scuola.	Un buon prodotto.
-il quoziente	quotient	10	4451f930b8aef472634b49c7add973e4	Il quoziente della divisione di venti per cinque è quattro senza resto come tutti i bambini sanno fare bene.	Un alto quoziente.
-l'equazione	equation	10	e60650d58e50cf4ef67da014b867db07	L'equazione di secondo grado ha sempre due soluzioni che si trovano usando la formula risolutiva imparata al liceo.	Un'equazione complessa.
-la formula	formula	10	35be2c1cf2cc489bdb16b678cd73cd78	La formula matematica per calcolare l'area del cerchio è pi greco moltiplicato per il raggio al quadrato.	Una formula segreta.
-il grafico	graph / chart	10	0c84b8e6cb355aed4768c33064af6730	Il grafico mostra l'andamento delle vendite negli ultimi cinque anni con una crescita costante del fatturato aziendale.	Un grafico chiaro.
-l'asse	axis (m.) / board, plank (f.)	10	ff359c65a79d0e894e8ebccf5bff7c47	L'asse delle ascisse è quello orizzontale mentre quello delle ordinate è verticale come si vede nel grafico cartesiano.	L'asse della terra.
-la percentuale	percentage	10	b27fe3f48c75f42f2eb1b6644c352a17	La percentuale di studenti che ha superato l'esame è del settantacinque per cento secondo le statistiche ufficiali raccolte.	Una percentuale alta.
-la frazione	fraction	10	53db61d50aa0f1d97ae2d1f2aea95b0a	La frazione un mezzo significa una parte su due ed è il modo più semplice per rappresentare un numero non intero.	Una piccola frazione.
-l'arte	art	10	c8581bc43486c23ee099afe031f4de31	L'arte italiana del Rinascimento è famosa in tutto il mondo per i grandi maestri come Leonardo, Michelangelo e Raffaello.	Un'arte bella.
-la pittura	painting (art)	10	2f185a2629abefd3591219bde8dd1d2a	La pittura ad olio richiede grande pazienza perché i colori asciugano molto lentamente sulla tela del quadro.	Una bella pittura.
-la scultura	sculpture	10	e0f85950871864ae68bbd52aa767ef8c	La scultura del David di Michelangelo a Firenze è considerata uno dei capolavori assoluti dell'arte rinascimentale italiana mondiale.	Una bella scultura.
-il disegno	drawing	10	ff5b440ba28d32ec3f3affeda37d3b48	Il disegno preparatorio del quadro è stato fatto a matita prima di passare ai colori a olio definitivi sulla tela.	Un bel disegno.
-lo schizzo	sketch	10	da4817f198e913ccdd312f37ab2db333	Lo schizzo veloce dell'artista cattura perfettamente l'atmosfera di quella mattina di sole sulla spiaggia italiana del sud.	Uno schizzo a matita.
-il ritratto	portrait	10	76620b057982a23214f9ad1925f1cfdf	Il ritratto della Gioconda è il dipinto più famoso al mondo e attira ogni anno milioni di visitatori al Louvre.	Un bel ritratto.
-l'opera	work / opera (music) / deed	10	9ed987966c06808b50f9fddc24931bd1	L'opera completa di questo artista è stata raccolta in un grande museo della sua città di nascita italiana storica.	Un'opera d'arte.
-la mostra	exhibition	10	0dd100bf1c5c2001e6274bc2ae12b78c	La mostra di pittura impressionista è aperta al pubblico fino alla fine del mese al palazzo reale del centro storico.	Una mostra interessante.
-l'esposizione	exhibition	10	67e4ad7638102e4dafb784e7b899b47e	L'esposizione internazionale di Milano ha attirato visitatori da tutto il mondo durante i sei mesi di apertura totale.	Una grande esposizione.
-il capolavoro	masterpiece	10	5a44377365358440c13d250b870909e0	Questo libro è considerato un capolavoro della letteratura italiana del ventesimo secolo per la sua originalità e profondità.	Un vero capolavoro.
-la critica	criticism / review	10	83407c4b3d986aeed008077ee44c80f7	La critica letteraria ha apprezzato molto il nuovo romanzo dell'autore che ha vinto il prestigioso premio Strega quest'anno.	Una critica positiva.
-il restauro	restoration	10	e117080c5bd840f5d73e1bed0892ac7b	Il restauro della Cappella Sistina ha restituito ai dipinti di Michelangelo i loro colori originali brillanti dopo secoli di degrado.	Un restauro lungo.
-lo stile	style	10	7740cfdf681b827617cfa8174ef42072	Lo stile barocco si caratterizza per la grande ricchezza di decorazioni e per le forme curve in tutti gli edifici dell'epoca.	Uno stile unico.
-la tecnica	technique	10	9805c6fbb42cb82adb63bc6afd8f2039	La tecnica del chiaroscuro è stata perfezionata da Caravaggio nel diciassettesimo secolo dando vita a opere straordinarie e drammatiche.	Una tecnica precisa.
-l'ispirazione	inspiration	10	4bb29cd1210c9000a676ec639c0a41e4	L'ispirazione per questo romanzo mi è venuta durante un viaggio in Sicilia ammirando i paesaggi mozzafiato della costa orientale.	Una grande ispirazione.
-il pianoforte	piano	10	66c7668c1dc32a916a4bfd52bfe5d46b	Il pianoforte è uno degli strumenti più completi e permette di suonare quasi tutta la musica scritta dai grandi compositori.	Un pianoforte a coda.
-la chitarra	guitar	10	7dc45bf351c65cbd1f7dfae533d1ce39	Mio fratello suona la chitarra in un gruppo rock locale che si esibisce nei pub del centro storico ogni venerdì sera.	Una chitarra acustica.
-il violino	violin	10	7459dd91940f963cba35deb8530f02af	Il violino è uno strumento difficile da imparare ma il suo suono melodico ripaga di tutti gli sforzi necessari per padroneggiarlo.	Un violino antico.
-il flauto	flute	10	5a85aff8a1006c35c4e8cf07ee5da468	Il flauto traverso è uno strumento molto antico che ha origini nelle culture preistoriche di tutto il mondo conosciuto antico.	Un flauto magico.
-la tromba	trumpet	10	b8813be56090919fc83ab7a6bcb88e5c	La tromba è lo strumento più squillante dell'orchestra e si sente sempre molto bene anche dietro tutti gli altri suonatori.	Una tromba d'argento.
-l'arpa	harp	10	7cbe3df146ebaf48504f63bea715aaef	L'arpa è uno strumento elegante usato spesso nella musica classica per accompagnare le melodie dei violini in orchestra.	Un'arpa celeste.
-la fisarmonica	accordion	10	1985c5e43224f226254eb99c6ac8b56f	La fisarmonica è uno strumento popolare nella musica tradizionale italiana e si sente spesso nelle feste di paese estive.	Una fisarmonica colorata.
-il contrabbasso	double bass	10	775288b9becce4280275ab24d9b0ce74	Il contrabbasso è il più grande strumento ad arco dell'orchestra e produce le note più basse della sezione delle corde.	Un grosso contrabbasso.
-il violoncello	cello	10	9ed03e6bda9b3b7e9251453fa956bc49	Il violoncello ha un suono caldo e profondo che ricorda la voce umana maschile durante il canto a piena voce.	Un dolce violoncello.
-il clarinetto	clarinet	10	a85f4b2d2e473d639013155c5dfcd16a	Il clarinetto è uno strumento a fiato di legno usato sia nella musica classica che nel jazz più moderno e improvvisato.	Un clarinetto nero.
-il tamburo	drum	10	2ce213718c8736e516592508a7e903d5	Il tamburo è uno strumento a percussione antico usato fin dalla preistoria per accompagnare le danze rituali delle antiche tribù.	Un grande tamburo.
-l'oboe	oboe	10	c0de6b975080d84145a31c4430546b52	L'oboe è uno strumento a fiato a doppia ancia con un suono caratteristico che si distingue facilmente nell'orchestra sinfonica intera.	Un dolce oboe.
-la percussione	percussion	10	73aa1840eba60653e8fa6e63cfb2ea7b	Le percussioni dell'orchestra sono molte e variano dai timpani classici fino ai piatti e ai vari tipi di tamburi.	Strumenti a percussione.
-il sassofono	saxophone	10	c55dc3740a79d41b8791443b940ae562	Il sassofono è lo strumento simbolo del jazz americano e si distingue per il suo suono caldo e avvolgente alla persona.	Un sax sensuale.
-il mandolino	mandolin	10	0acc46d892983a71eeead4b7fe1c0f99	Il mandolino napoletano è uno strumento tipico della tradizione musicale italiana e si suona con un plettro come la chitarra.	Suona il mandolino.
-lo sport	sport	10	3823552b7a2b839259a831e3b7b349a3	Lo sport è importante per mantenere il corpo in forma e la mente lucida durante tutte le età della vita.	Praticare uno sport.
-il calcio	soccer / football / kick	10	657cd0659a8d7ccfd0793cbb6f1459f0	Il calcio è lo sport più popolare in Italia e ogni weekend milioni di tifosi vanno allo stadio a vedere la partita.	Una partita di calcio.
-il basket	basketball	10	0f6cdb621b452ac6fb994d88e674e49f	Il basket americano è famoso in tutto il mondo grazie alla lega professionistica che ha lanciato grandi campioni di livello internazionale.	Una palla da basket.
-il tennis	tennis	10	1fbfb23351e3580651395ab721f5e935	Il tennis è uno sport individuale che richiede grande concentrazione e preparazione atletica per competere a livelli professionali importanti.	Una racchetta da tennis.
-il golf	golf	10	c6cf642b8f1cac1101e23a06aa63600e	Il golf è considerato uno sport elegante e si pratica su grandi campi verdi con buche distribuite secondo regole precise.	Un campo da golf.
-la scherma	fencing	10	15d55c4c83e2e4d80bded5f25db58c25	La scherma è uno sport olimpico in cui l'Italia ha vinto molte medaglie d'oro nel corso della sua lunga storia sportiva.	Lezioni di scherma.
-il pugilato	boxing	10	017946eef30cc9510e506c6faf193cd6	Il pugilato è uno sport molto duro che richiede grande preparazione fisica, resistenza e capacità di sopportare i colpi avversari.	Un incontro di pugilato.
-il ciclismo	cycling	10	07caca02f543c403998b2533c0ee645b	Il ciclismo italiano ha una grande tradizione e ha prodotto molti campioni del giro d'Italia e del tour de France.	Praticare ciclismo.
-l'atletica	athletics	10	94394fea6f396174880772b11593dfe2	L'atletica leggera comprende molte discipline diverse come la corsa, il salto in alto e il lancio del giavellotto sportivo.	Atletica leggera.
-la ginnastica	gymnastics	10	1300a24b401c8c96868fe37ff9093660	La ginnastica artistica è uno degli sport più seguiti durante le olimpiadi grazie alla bravura delle giovani atlete russe famose.	Lezioni di ginnastica.
-il judo	judo	10	88055190df7d13c9ccf8c274a6dc32ef	Il judo è un'arte marziale giapponese basata sulle prese e sulle proiezioni dell'avversario sul tappeto durante l'incontro.	Cintura nera di judo.
-il karate	karate	10	9e1a52d3b7387beae058f1dbaa8da096	Il karate è un'arte marziale antica che insegna la disciplina, il rispetto e l'autocontrollo fin dai primi gradi base.	Il karate giapponese.
-la pallavolo	volleyball	10	67f06dcbe36ab7a62bc54f5262bbbdc5	La pallavolo italiana ha vinto molti campionati mondiali grazie alla preparazione tecnica e fisica dei suoi atleti molto talentuosi.	Una rete da pallavolo.
-il rugby	rugby	10	24908ce13bfd3ec802bfc0ba32fc79e8	Il rugby è uno sport di squadra molto duro e impegnativo che richiede grande preparazione fisica e tattica per giocarlo bene.	Una partita di rugby.
-l'hockey	hockey	10	df0349ce110b69f03b4def8012ae4970	L'hockey su ghiaccio è lo sport nazionale del Canada dove si gioca a tutti i livelli da quello amatoriale a quello professionistico.	Hockey su ghiaccio.
-la partita	match / game	10	e35c9393c8f130b7d323c2082b127ec3	La partita di ieri sera è stata emozionante fino all'ultimo minuto con un risultato di tre a due finale combattuto.	Una bella partita.
-la gara	race / competition / tender (bid)	10	04b7aaeab58d4c6507e86a90250694af	La gara di nuoto è stata vinta dal nostro campione nazionale che ha battuto il record italiano di tre secondi pieni.	Una difficile gara.
-il torneo	tournament	10	f46be5aeb362172e14d72145e0dd9897	Il torneo di tennis di Wimbledon è il più antico e prestigioso del mondo e si svolge ogni anno a Londra.	Un grande torneo.
-il campionato	championship / league	10	3140bbdcc4512998485e2376b5181afa	Il campionato di calcio italiano è uno dei più seguiti al mondo e ogni anno la Juventus è tra le favorite alla vittoria.	Vincere il campionato.
-l'allenamento	training / workout	10	64ef9a0f17178b525d0cde8f07d4798a	L'allenamento quotidiano è fondamentale per mantenere alta la forma fisica e migliorare le proprie prestazioni atletiche durante l'anno.	Un duro allenamento.
-la squadra	team	10	eb283845b39df947674b038815495b40	La nostra squadra del cuore ha vinto la coppa nazionale dopo dieci anni di attesa con grande gioia di tutti i tifosi.	Una forte squadra.
-il giocatore	player	10	ccb5a956b1780d5c27a1db6c30dc245f	Il giocatore brasiliano ha segnato il gol decisivo della partita all'ottantanovesimo minuto regalando la vittoria alla sua squadra.	Un grande giocatore.
-l'allenatore	coach / trainer	10	3a9a4e8d4639b21725faae212d8aca9e	L'allenatore della squadra è stato licenziato dopo una serie di sconfitte consecutive che hanno fatto retrocedere la squadra in classifica.	Un buon allenatore.
-l'arbitro	referee	10	b8417aa7b96a70125f8e96dceb65d388	L'arbitro ha fischiato il rigore decisivo all'ultimo minuto della partita scatenando le proteste della squadra avversaria perdente.	Un arbitro severo.
-il tifoso	fan / supporter	10	7b104033c08a4c5fa038effaa760cd1f	Il tifoso napoletano è il più caloroso d'Italia e segue la sua squadra del cuore in tutti gli stadi italiani con grande passione.	Un tifoso accanito.
-il chirurgo	surgeon	10	02de4179ef139570aac72b86f62ee5fd	Il chirurgo ha eseguito un'operazione delicata al cuore di mia nonna salvandole la vita dopo molte ore di intervento.	Un grande chirurgo.
-il neurologo	neurologist	10	bee68ce8996bd894395602de2d6d88e6	Il neurologo ha visitato mio padre per capire la causa dei suoi problemi di memoria che si manifestano da qualche mese.	Un bravo neurologo.
-il cardiologo	cardiologist	10	cc7e83809b1ddae92fe77e1f370361fe	Il cardiologo mi ha consigliato di fare più sport per migliorare la salute del mio cuore e del sistema circolatorio.	Un cardiologo esperto.
-lo psicologo	psychologist	10	be8ed87575d54a97e04b5f3c920d7e51	Mio cugino è andato dallo psicologo per superare il difficile momento di crisi che sta vivendo dopo la fine del matrimonio.	Uno psicologo bravo.
-lo psichiatra	psychiatrist	10	cb63d193c66f01ecbe29c5f5d7aff65a	Lo psichiatra ha prescritto una terapia farmacologica per il suo paziente con problemi di depressione cronica grave e difficile.	Uno psichiatra famoso.
-il ricercatore	researcher	10	1b9e7e7ffd63931f98dd01b94ff412a7	Il ricercatore universitario ha pubblicato un articolo importante su una rivista scientifica internazionale di grande prestigio mondiale.	Un giovane ricercatore.
-il biologo	biologist	10	b40b48c3864a29e2a130abea98fc38f0	Il biologo studia il comportamento delle balene nel Mediterraneo per capire meglio i loro spostamenti annuali e proteggerne la specie.	Un biologo marino.
-il chimico	chemist	10	6f641aed38bcca2cfddf9affa5789753	Il chimico ha sintetizzato una nuova sostanza che potrebbe essere usata per curare alcune malattie genetiche rare e difficili.	Un chimico geniale.
-il fisico	physicist	10	27314ee70cb242c7bf67364274dde9fc	Il fisico nucleare ha vinto il premio Nobel per le sue scoperte rivoluzionarie sulla struttura interna dell'atomo nel ventesimo secolo.	Un fisico teorico.
-il matematico	mathematician	10	39dfc6debcadac8507a751d477746a94	Il matematico ha dimostrato un teorema famoso che era rimasto irrisolto per più di trecento anni dalla sua prima formulazione storica.	Un grande matematico.
-l'archeologo	archaeologist	10	a57635eaee529b712f6a6a7561f72e36	L'archeologo ha scoperto una tomba etrusca di grande importanza durante gli scavi nella campagna toscana del centro Italia.	Un archeologo esperto.
-il paleontologo	paleontologist	10	3f0be2b93b1a256a45e8cdf96b436f3d	Il paleontologo ha trovato i resti fossili di un dinosauro mai conosciuto prima durante gli scavi nel deserto del Sahara africano.	Un paleontologo coraggioso.
-l'antropologo	anthropologist	10	540569700718c6af5278509a374ad047	L'antropologo ha studiato per anni le popolazioni indigene dell'Amazzonia per documentarne le tradizioni prima della loro scomparsa definitiva.	Un antropologo illustre.
-il sociologo	sociologist	10	0adaf584815aea368e39886cc1fb64ae	Il sociologo ha condotto una ricerca approfondita sui comportamenti dei giovani italiani durante il periodo della pandemia globale del duemilaventi.	Un sociologo attento.
-il filosofo	philosopher	10	d1895dd945b779807d03cbdd51568b43	Il filosofo greco Platone ha scritto opere fondamentali per la cultura occidentale che vengono ancora studiate dopo duemila anni.	Un grande filosofo.
-lo scultore	sculptor	10	fb9e825f269c83b28bff9b125f47cf2b	Lo scultore italiano del Rinascimento Michelangelo è considerato uno dei più grandi artisti di tutti i tempi nella storia mondiale.	Un bravo scultore.
-il disegnatore	draftsman / illustrator	10	4ecff3e60ae342efc8432c2234b389c4	Il disegnatore di fumetti italiano è famoso in tutto il mondo per le sue storie originali e i suoi personaggi memorabili indimenticabili.	Un disegnatore preciso.
-l'illustratore	illustrator	10	c2ed24b81449ecebe05ff7b50203a2e9	L'illustratore di libri per bambini ha vinto un premio internazionale per le sue immagini originali, colorate e piene di poesia.	Un illustratore creativo.
-il restauratore	restorer	10	2270051b4f7ff024517e2e98d84f01b1	Il restauratore d'arte ha lavorato per cinque anni al recupero degli affreschi della cappella secolare nel paese antico di campagna.	Un esperto restauratore.
-il ceramista	ceramist / potter	10	c2c5771df1b41414b83eeb176249e2fe	Il ceramista del paese fa vasi tradizionali decorati a mano secondo tecniche antiche tramandate da molte generazioni di artigiani esperti.	Un ceramista abile.
-il fabbro	blacksmith	10	fc5c0d56a0698c50231c4bf27203154c	Il fabbro del paese fa lavori di ferro battuto per le case storiche del centro storico secondo tecniche antiche e tradizionali.	Un fabbro forte.
-l'orafo	goldsmith	10	40fd268cb9a5d975482380cfba3dbbfd	L'orafo crea gioielli unici su commissione dei suoi clienti più ricchi che vogliono qualcosa di esclusivo e originale per loro.	Un bravo orafo.
-il ballerino	dancer	10	ba97aaddfa5d7f906a2dc8bdb99f58d4	Il ballerino classico ha studiato per anni alla scuola del teatro alla Scala di Milano prima di diventare primo ballerino mondiale famoso.	Un grande ballerino.
-il compositore	composer	10	40dcc4de3fb6ef73a5e11000597e8d6b	Il compositore italiano Verdi ha scritto opere immortali come Aida e La Traviata che sono ancora rappresentate nei teatri di tutto il mondo.	Un grande compositore.
-il direttore	director / conductor	10	854c6101009e66a060f365dd0f830e26	Il direttore d'orchestra dirige i musicisti con grande passione facendoli suonare all'unisono come un solo grande strumento perfetto.	Un direttore famoso.
-l'universo	universe	10	f3a442b43b91e04d28aa9375fcac2f73	L'universo è infinito secondo le ultime teorie della cosmologia moderna e contiene miliardi di galassie con miliardi di stelle ciascuna.	Un universo vasto.
-la stella	star	10	430244540aa38ff181545cb0d539f038	La stella polare è importantissima per orientarsi durante la notte perché indica sempre il nord celeste senza mai cambiare posizione.	Una stella cadente.
-la galassia	galaxy	10	bedb586363f272b1c298d711fe1fea8a	La nostra galassia si chiama Via Lattea e contiene circa cento miliardi di stelle distribuite a forma di spirale magnifica.	Una galassia lontana.
-la costellazione	constellation	10	690746a595cc873e5c6bb550a25523c2	La costellazione di Orione è facilmente riconoscibile nel cielo invernale grazie alle tre stelle allineate della cintura del cacciatore mitologico.	Una costellazione luminosa.
-il satellite	satellite	10	53bb79002a8ade0bc488f4469ce3fcd7	Il satellite artificiale che orbita intorno alla Terra fornisce immagini per le previsioni meteorologiche di tutti i paesi del mondo connessi.	Un satellite spia.
-la cometa	comet	10	2f5581dddbf6355398b8b4cb298df89b	La cometa di Halley passa vicino alla Terra circa ogni settantasei anni e l'ultima volta è stata visibile nel millenovecentoottantasei.	Una cometa luminosa.
-l'asteroide	asteroid	10	270066dee326ac556845d7d7096cda07	L'asteroide gigante che si è schiantato sulla Terra sessantacinque milioni di anni fa ha causato l'estinzione dei dinosauri preistorici.	Un grande asteroide.
-l'eclissi	eclipse	10	66f46b67c3fa07ce9017f5e2e2beaa95	L'eclissi solare totale è un evento spettacolare che si verifica solo poche volte ogni secolo in determinate zone del nostro pianeta.	Un'eclissi rara.
-l'orbita	orbit	10	dad166a4a2a3022591b1bdcc2b7a5c62	L'orbita della Terra intorno al Sole dura esattamente un anno solare ed è leggermente ellittica come quella degli altri pianeti.	In orbita stabile.
-la gravità	gravity / seriousness	10	0259e1aa0f848f71942edc999e46a193	La gravità terrestre tiene tutti gli oggetti attaccati alla superficie del pianeta impedendoci di volare via nello spazio profondo.	La forza di gravità.
-calcolare	to calculate	10	9b64ddab9cf410832e2e30da7eb99c97	Devo calcolare il costo totale del viaggio prima di decidere se posso permettermi di andare in vacanza l'estate prossima.	Calcola la somma.
-misurare	to measure	10	624e37345f62daba445dfe94fcae558d	Bisogna misurare con precisione la stanza prima di comprare i mobili nuovi per la casa appena ristrutturata da poco.	Misura la stanza.
-sommare	to add up / sum	10	a506be022dbdf9a144e33b9cd8f973e3	Devo sommare tutti i numeri della lista per ottenere il totale finale delle spese del mese di settembre scorso.	Sommare i conti.
-sottrarre	to subtract	10	6b6c8a6517a0872b92a1a24a07c8a262	Bisogna sottrarre le tasse dallo stipendio lordo per ottenere lo stipendio netto che effettivamente arriva sul conto bancario.	Sottrai dieci.
-moltiplicare	to multiply	10	307acb4799dbda4539557e4cafed5a13	Per calcolare l'area del rettangolo bisogna moltiplicare la base per l'altezza usando la formula imparata in geometria base.	Moltiplicare per cinque.
-analizzare	to analyze	10	1b5141a786ec493904b205c9de370953	Lo scienziato deve analizzare i dati raccolti durante l'esperimento per arrivare a delle conclusioni scientifiche valide e dimostrabili.	Analizzare i risultati.
-sintetizzare	to synthesize	10	46bb431c9d5a01cc388558061d030951	Bisogna sintetizzare le informazioni più importanti del libro in poche pagine per preparare il riassunto della tesi finale.	Sintetizzare il discorso.
-classificare	to classify	10	5c092f83021ceed1c35020717df1da21	I biologi devono classificare le nuove specie scoperte secondo un sistema universale di tassonomia condiviso da tutta la comunità scientifica.	Classificare gli animali.
-osservare	to observe	10	0a2a2858ccca8ea3ff36cf272a911556	Bisogna osservare attentamente il comportamento degli animali nel loro habitat naturale per capire meglio le loro abitudini quotidiane di vita.	Osservare il cielo.
-esaminare	to examine	10	0e98b5a61f7f73fa42edfb3e188f68b7	Il medico deve esaminare attentamente il paziente per fare la diagnosi corretta e prescrivere la cura giusta per la sua malattia.	Esaminare la situazione.
-scientifico	scientific	10	4e769c7f72343d25232add0fe262ebab	Il metodo scientifico richiede l'osservazione, la formulazione di ipotesi e la verifica sperimentale per essere considerato veramente valido.	Un articolo scientifico.
-tecnologico	technological	10	e87be27ebdafac988cf4b0b04837211b	Il progresso tecnologico degli ultimi vent'anni ha cambiato profondamente la vita quotidiana di tutti gli abitanti dei paesi sviluppati.	Un'azienda tecnologica.
-accademico	academic	10	a74c8af557c8a7288f9b2e7c7b62fa04	Il mondo accademico italiano ha grande prestigio internazionale grazie alle università storiche come Bologna, Padova e la Sapienza di Roma.	Un titolo accademico.
-teorico	theoretical	10	0863bfadcd9e8f81f6219e9e8a716afb	Il fisico teorico lavora con le formule matematiche per cercare di spiegare i fenomeni naturali dell'universo conosciuto e oltre.	Un approccio teorico.
-sperimentale	experimental	10	57bf685ee072a5bbb9f0641f2d2be3e2	La fisica sperimentale richiede strumenti sofisticati e costosi per verificare le teorie elaborate dai fisici teorici durante anni di ricerca.	Un metodo sperimentale.
-empirico	empirical	10	43199c34267207b3f8b82c5aa289c838	L'approccio empirico si basa sull'osservazione diretta dei fenomeni e sui dati raccolti durante esperimenti ripetuti molte volte per conferma.	Un dato empirico.
-logico	logical	10	fc1e8666e73b2cc44fcdfea8b6a0e6f0	Il ragionamento logico è fondamentale per risolvere i problemi matematici complessi e per arrivare alle giuste conclusioni razionali finali.	Un pensiero logico.
-illogico	illogical	10	9f9c0add2a03331837dd5027375f9750	La sua decisione di lasciare il lavoro senza averne trovato un altro mi sembra completamente illogica e poco ragionevole francamente.	Un comportamento illogico.
-razionale	rational	10	948ed28f7889ad56d354e4f173cfb16d	Bisogna prendere decisioni in modo razionale valutando i pro e i contro di ogni scelta possibile e i suoi effetti futuri.	Un'analisi razionale.
-irrazionale	irrational	10	002310cf9c535540020d3befa730d252	La paura del buio è completamente irrazionale ma molte persone adulte continuano a sentirla anche nelle loro case sicure.	Una paura irrazionale.
-geniale	brilliant	10	c56c34f2fa35cad0a5922d87d753e3c6	Einstein è stato uno scienziato geniale che ha rivoluzionato la fisica moderna con la sua teoria della relatività generale famosa.	Un'idea geniale.
-brillante	brilliant / shining	10	ee62961b05e19e79583393dbbec14c75	Mio nipote è uno studente brillante e prende sempre i voti più alti in tutte le materie scolastiche del liceo classico.	Una mente brillante.
-stupido	stupid / foolish	10	072d98e017fe33291ae559b2648cf996	Non bisogna fare scelte stupide per impressionare gli amici perché poi le conseguenze possono essere gravi e durevoli nel tempo.	Un errore stupido.
-ignorante	ignorant	10	487b813444eb86e2383a124260d130bf	Quella persona è davvero ignorante perché non sa neanche le cose più elementari della cultura generale di base scolastica.	Un commento ignorante.
-colto	cultured / educated	10	8d0fc5443a388221b3193a0d12c66e81	Mio nonno era un uomo molto colto che parlava cinque lingue ed era esperto di storia e letteratura italiana antica.	Una persona colta.
-la tradizione	tradition	10	be2b9d90f40f6777b932977d2fcf1f75	La tradizione del pranzo di Natale in famiglia è importante per mantenere vivi i legami tra le diverse generazioni.	Una vecchia tradizione.
-il costume	custom / costume / swimsuit	10	4f99e8ee797ac7727600ce4bc5b28e5f	Il costume di Carnevale di Venezia è famoso in tutto il mondo per la sua eleganza, ricchezza di dettagli e bellezza unica.	Un bel costume.
-la cerimonia	ceremony	10	b05a706dc6e93d50e6a00bdcefd7bb08	La cerimonia di laurea di mia sorella si è tenuta nel palazzo storico dell'università alla presenza di tutta la famiglia riunita.	Una bella cerimonia.
-il rituale	ritual	10	fc95387773aa436c71b658f968d4b092	Il rituale del caffè della mattina è importante per molti italiani per iniziare bene la giornata di lavoro intensa quotidiana.	Un antico rituale.
-il festival	festival	10	ae8fc55ccdc61c9812a7e247cf4dafdf	Il festival del cinema di Venezia è uno dei più importanti del mondo e attira ogni anno star del cinema internazionale famose.	Un grande festival.
-la sagra	village festival	10	fa67c99917767876918b0952b5ea9354	La sagra del pesce fritto è un appuntamento estivo importante per il piccolo paese di pescatori sulla costa adriatica.	Una sagra paesana.
-la fiera	fair / trade show	10	2ce2b6c8bd07b8ea77ae28facf0c8463	La fiera del libro di Torino è la più importante d'Italia e ospita migliaia di editori e scrittori da tutto il mondo.	Una fiera commerciale.
-la processione	procession	10	c9c49cca871348e399419c17a2bb9975	La processione religiosa attraversa tutto il centro storico del paese durante la festa patronale con la statua del santo protettore.	Una processione solenne.
-la parata	parade	10	52e96c102489cc80cced47ab998b195b	La parata militare del due giugno celebra la nascita della repubblica italiana con grande pompa e cerimonia in via dei Fori Imperiali.	Una grande parata.
-la sfilata	fashion show / parade	10	f28e6dfc4c314b1445036dcde053b865	La sfilata di moda di Milano è uno degli eventi più attesi dell'anno e attira giornalisti e celebrità da tutto il mondo.	Una sfilata elegante.
-il concorso	contest / competition	10	b2f844ec2af3d88bb8550581aecdfe01	Il concorso di poesia è aperto a tutti i giovani italiani sotto i venticinque anni e premia le opere migliori dell'anno.	Un concorso letterario.
-la competizione	competition	10	26ef09b19de4b17633df3a1a88d417e0	La competizione tra i diversi atleti è stata serrata fino all'ultimo metro della finale dei cento metri piani delle olimpiadi.	Una sana competizione.
-il riconoscimento	recognition / award	10	a554d6a23bb23c7533a6ba3f9f41294e	Lo scrittore ha ricevuto un importante riconoscimento internazionale per la sua opera letteraria di grande valore artistico ed umano.	Un grande riconoscimento.
-la medaglia	medal	10	596ba5e5391061b7c6fcc5c4771552ee	L'atleta ha vinto la medaglia d'oro alle olimpiadi dopo anni di duro allenamento e di sacrifici familiari personali pesanti.	Una medaglia d'oro.
-il trofeo	trophy	10	0088d7c2d68eaf9d33da24e4c2bd2b70	Il trofeo della coppa del mondo di calcio è esposto nella vetrina principale della federazione italiana di calcio dopo la vittoria.	Un grande trofeo.
-il teorema	theorem	10	bcdb9477a7ec6b2673843d431fd5e8e1	Il teorema di Pitagora è uno dei più famosi della matematica e tutti gli studenti italiani lo studiano in seconda media.	Un teorema dimostrato.
-l'esperimento	experiment	10	21da3ee69c2b7aa5440214883ec25c60	L'esperimento scientifico ha confermato la teoria proposta dal famoso fisico italiano nel suo recente articolo pubblicato sulla rivista internazionale.	Un esperimento riuscito.
-l'ipotesi	hypothesis	10	3b50dcfb4ca2dfc90c0f6e7b5e25946a	L'ipotesi iniziale dello scienziato è stata confermata dai dati raccolti durante i lunghi mesi di esperimenti accurati e ripetuti.	Una nuova ipotesi.
-la teoria	theory	10	5afe42a4f589d170f1dda59b43504070	La teoria della relatività di Einstein è una delle più importanti della fisica moderna e ha cambiato la nostra comprensione dell'universo.	Una teoria nuova.
-la scoperta	discovery	10	a20f5e1ca1282db08fece1670c939941	La scoperta del codice genetico da parte di Watson e Crick è stata una delle più importanti del ventesimo secolo per la genetica moderna.	Una grande scoperta.
-inferire	to infer	10	e0fdbcbdf4a13ba85b8050e8630064e2	Bisogna inferire le conclusioni dai dati raccolti durante l'esperimento per arrivare alla risposta corretta del problema scientifico.	Inferire dal contesto.
-dedurre	to deduce	10	8f3a3f8abb7d4338bb7184b49d67c921	Posso dedurre dal tuo silenzio che non sei d'accordo con quello che ho detto durante la riunione di stamattina.	Dedurre la verità.
-concludere	to conclude	10	2d1daf703f5545fb5e1a441635a5345a	Bisogna concludere il discorso prima di mezzogiorno perché poi tutti devono andare a pranzo nel ristorante della facoltà.	Concludere bene.
-generalizzare	to generalize	10	cb59e1080df8c806fea4234fec1ac090	Non bisogna generalizzare partendo da pochi casi particolari perché si rischia di trarre conclusioni sbagliate sulla realtà osservata.	Generalizzare troppo.
-formulare	to formulate	10	b1ab519be3c2cd3dbe5eeec7e52e4df0	Devi formulare la tua ipotesi in modo chiaro e preciso prima di iniziare l'esperimento scientifico in laboratorio universitario.	Formulare un'idea.
-confutare	to refute	10	f2bdfc4c315916afff498885260fbe97	Lo scienziato è riuscito a confutare la teoria precedente con nuovi dati sperimentali raccolti durante anni di ricerca attenta.	Confutare la tesi.
-validare	to validate	10	2305a984d4068a683002e8ef9808f127	Bisogna validare il risultato dell'esperimento ripetendolo molte volte in condizioni controllate per essere sicuri della sua attendibilità reale.	Validare i dati.
-verificare	to verify	10	fd5e6309319a737aa03b5edd1e9767e5	Devo verificare l'esattezza di queste informazioni prima di pubblicarle sul giornale di domani mattina presto in edicola.	Verifica il fatto.
-definire	to define	10	5bb81750264bedda596beba5feb2cacb	Bisogna definire chiaramente i termini usati prima di iniziare una discussione filosofica seria su temi così complicati e profondi.	Definire le regole.
-prevedere	to foresee / predict / stipulate	10	3e36e933e726f3a0924f36de5be479dd	Le previsioni meteorologiche prevedono pioggia per tutta la settimana e quindi dovremo rimandare il pic-nic in campagna programmato sabato.	Prevedere il futuro.
-universale	universal	10	a0ee8fc8218a3c17a51d14ec5443aa20	I diritti umani sono valori universali che dovrebbero essere garantiti a tutti gli abitanti del pianeta senza alcuna distinzione.	Una verità universale.
-particolare	particular / specific	10	29607aaee7f4806670d089d45189bef1	Questa è una situazione particolare che richiede una soluzione speciale e creativa diversa da quelle utilizzate in casi simili precedenti.	Un caso particolare.
-generale	general	10	ba4a1c94052b1153792981fbf4622029	La regola generale prevede che tutti i dipendenti debbano timbrare il cartellino in entrata e in uscita ogni giorno lavorativo.	Un discorso generale.
-specifico	specific	10	b5d3e37fed86acae2925f2b1efb8bbcb	Il problema specifico riguarda solo una piccola parte del sistema informatico aziendale che bisogna riparare con interventi mirati di manutenzione.	Un problema specifico.
-astratto	abstract	10	1d1e6417c26387d3067688cea8429b24	Il concetto astratto di libertà è difficile da definire in modo univoco perché significa cose diverse per persone diverse.	Un'arte astratta.
-fui	I was (passato remoto)	10	2460b253fb566067962c63c284d2ad74	Fui molto sorpreso quando ricevetti la notizia della sua promozione inaspettata al lavoro.	Fui felice.
-fosti	you were (passato remoto)	10	cf47220fa7dad56f60361580320413e0	Fosti tu il primo a credere in me quando tutti gli altri avevano dubbi importanti.	Fosti coraggioso.
-fu	he/she/it was (passato remoto)	10	ca4da36c48be1c0b87a7d575c73f6e42	Fu una giornata indimenticabile quella del nostro matrimonio celebrato in una piccola chiesa antica.	Fu un successo.
-fummo	we were (passato remoto)	10	23f3cb334e9b6595bb0cd73adee57c56	Fummo gli ultimi a uscire dal teatro quella sera dopo lo spettacolo straordinario.	Fummo amici.
-foste	you were (passato remoto, pl)	10	54263c34963c0f3ac78d33fc7081b109	Foste molto gentili a venire al funerale di mio nonno la settimana scorsa con tutti.	Foste presenti.
-furono	they were (passato remoto)	10	8d0ef59992f92acb36c6b96cf358fbbc	Furono anni difficili ma anche ricchi di esperienze importanti per la nostra famiglia intera.	Furono qui.
-ebbi	I had (passato remoto)	10	5c1169dac3e8243e0d50eaa85631eff5	Ebbi la fortuna di conoscere uno scrittore famoso durante un viaggio di studio in Francia.	Ebbi paura.
-avesti	you had (passato remoto)	10	d2be3fac49afec90deb6a0a238388e45	Avesti il coraggio di lasciare tutto e ricominciare da zero in un altro paese lontano.	Avesti ragione.
-ebbe	he/she had (passato remoto)	10	a7cb5eddea4d149b3850d4089ba8f9d8	Mio nonno ebbe una vita molto difficile durante la guerra mondiale del Novecento.	Ebbe successo.
-avemmo	we had (passato remoto)	10	140fdd7d9ff9d5ae0b3596f5d11067c4	Avemmo il piacere di conoscere persone meravigliose durante il nostro lungo viaggio in Asia.	Avemmo paura.
-aveste	you had (passato remoto, pl)	10	0b23b0b1628b8611ecb141bc1fc6be36	Aveste mai immaginato che un giorno avreste vissuto in un posto così bello e tranquillo?	Aveste fortuna.
-ebbero	they had (passato remoto)	10	a5fdd022aef70c42c76581adff2166f3	I miei nonni ebbero cinque figli che oggi vivono in diverse parti del mondo intero.	Ebbero successo.
-feci	I did/made (passato remoto)	10	0092dc158a0db2aac6fb8b333bc3bf0f	Feci un lungo viaggio in solitaria attraverso tutta l'Europa dopo aver finito gli studi.	Feci tutto.
-facesti	you did/made (passato remoto)	10	7e817df8ce516c685a09a043088ab385	Facesti la scelta giusta quando decidesti di trasferirti in quella nuova grande città.	Cosa facesti?
-fece	he/she did/made (passato remoto)	10	36cd567f634124f9d9eede6942683cfa	Mio padre fece molti sacrifici per permettere a me e a mio fratello di studiare all'università.	Fece bene.
-facemmo	we did/made (passato remoto)	10	3e07ace2644ef602ebdf4327f9cd1c76	Facemmo una promessa importante quel giorno e l'abbiamo mantenuta per tutti questi anni.	Facemmo presto.
-faceste	you did/made (passato remoto, pl)	10	e1e9deb04a4cdfebdedf4db5edd9d4e7	Faceste un ottimo lavoro durante quel difficile periodo di crisi economica del paese.	Cosa faceste?
-fecero	they did/made (passato remoto)	10	220c50e64023baf54f9935e2f8269bb7	I fondatori dell'azienda fecero scelte coraggiose che cambiarono per sempre il mercato italiano.	Fecero tardi.
-dissi	I said/told (passato remoto)	10	eb3f0868bed8d3c687748e3dcb658df1	Dissi la verità anche se sapevo che le conseguenze sarebbero state difficili da affrontare.	Dissi sì.
-dicesti	you said/told (passato remoto)	10	4cd62a2fe51f1b65f7825d29944ea7bf	Dicesti delle parole molto sagge quel giorno che mi sono rimaste in mente per sempre.	Cosa dicesti?
-disse	he/she said/told (passato remoto)	10	e52afc6520dea8f41a9abc41e8eeefec	Mio nonno disse che la vita è fatta di piccoli momenti di felicità da apprezzare ogni giorno.	Disse no.
-dicemmo	we said/told (passato remoto)	10	1612c14e7807eee50d86a3efff0afbb6	Ci dicemmo addio con la promessa di rivederci dopo qualche mese di lontananza necessaria.	Dicemmo addio.
-diceste	you said/told (passato remoto, pl)	10	b70fb19d990ed90121332ccedc026390	Diceste cose molto interessanti durante quella lunga discussione filosofica del weekend scorso.	Cosa diceste?
-dissero	they said/told (passato remoto)	10	de5c8c31b4789d6963c813902df81966	I miei genitori dissero sempre che lo studio sarebbe stato la nostra migliore eredità.	Lo dissero tutti.
-vidi	I saw (passato remoto)	10	ee6a8951038f756077633fd3f477682a	Vidi per la prima volta il mare quando avevo solo sei anni durante una gita scolastica.	Vidi tutto.
-vedesti	you saw (passato remoto)	10	71babbcd4694f9eeb1f873bb3c727b8a	Vedesti subito che qualcosa non andava bene appena entrasti nella stanza buia del piano.	Cosa vedesti?
-vide	he/she saw (passato remoto)	10	d0194b848a336a942a5f7d1c87c0b956	Mio padre vide mia madre per la prima volta durante una festa di paese di tanti anni fa.	Vide molto.
-vedemmo	we saw (passato remoto)	10	860380402e34b7cb50e23d804e01a468	Vedemmo il sole sorgere dalla cima della montagna dopo una notte intera di cammino faticoso.	Vedemmo lui.
-vedeste	you saw (passato remoto, pl)	10	60c11dd69eba6c619044359194059e30	Vedeste lo spettacolo di stelle cadenti durante la notte di San Lorenzo dello scorso agosto?	Cosa vedeste?
-videro	they saw (passato remoto)	10	10b047928967b5c448eaf046ac7d7ffc	I primi esploratori videro terre meravigliose che nessun europeo aveva mai visto prima.	Videro tutto.
-venni	I came (passato remoto)	10	421e9bc4722d24ce39324d0851ffdd84	Venni a Roma per la prima volta a vent'anni e da allora è la mia città del cuore.	Venni qui.
-venisti	you came (passato remoto)	10	3e6f5cf79f2e064fa6b96897bef57b11	Venisti a trovarmi quando ero in ospedale e te ne sarò grato per tutta la vita.	Venisti presto.
-venne	he/she came (passato remoto)	10	962a0224890810c0544fc5ccff4236e8	Mio nonno venne in Italia dalla Grecia negli anni Sessanta in cerca di un futuro migliore.	Venne lui.
-venimmo	we came (passato remoto)	10	509345df759dcf3e905b619c7c5bc2ca	Venimmo in questa città dieci anni fa e abbiamo trovato qui la nostra nuova casa.	Venimmo insieme.
-veniste	you came (passato remoto, pl)	10	8d0538e9c9c1415dfafad089a18317d4	Veniste al matrimonio di mia sorella nonostante il lungo viaggio in macchina necessario.	Quando veniste?
-vennero	they came (passato remoto)	10	b7102dfc590afe56a05da1f521eaa835	I miei antenati vennero da molto lontano per stabilirsi in questa piccola valle alpina.	Vennero insieme.
-presi	I took (passato remoto)	10	196801e16a9c169a12f3975e83fe6556	Presi il primo treno della mattina per non perdere la riunione importante in azienda.	Lo presi.
-prendesti	you took (passato remoto)	10	2e3be0c45b1e408b23b0b64fc4434eb0	Prendesti la decisione giusta quando scegliesti di studiare medicina invece di legge.	Cosa prendesti?
-prese	he/she took (passato remoto)	10	a923f5ed8d1bf1c9f2f2d90073c4d28c	Mio fratello prese in mano la situazione e risolse il problema in poche ore di lavoro intenso.	Prese tutto.
-prendemmo	we took (passato remoto)	10	d9992559bc50e03cf276de3a42c046ed	Prendemmo una strada secondaria per evitare il traffico autostradale di quel weekend lungo.	Prendemmo poco.
-prendeste	you took (passato remoto, pl)	10	233ec1975395c0f2b573ff8300b8a0e3	Prendeste la giusta decisione quando rifiutaste quell'offerta di lavoro così rischiosa.	Cosa prendeste?
-presero	they took (passato remoto)	10	2783e69c5beeb272391936014c23617f	I rivoluzionari presero il controllo della città in una sola notte di combattimenti accesi.	Lo presero.
-scrissi	I wrote (passato remoto)	10	ede3a9dc41860dadd83eeb64f271c171	Scrissi il mio primo romanzo durante un lungo inverno passato in una piccola casa di montagna.	Scrissi tutto.
-scrivesti	you wrote (passato remoto)	10	a390ae55d9803b42a448c1c8f57ac283	Scrivesti delle bellissime poesie durante gli anni dell'università che non ho mai dimenticato.	Cosa scrivesti?
-scrisse	he/she wrote (passato remoto)	10	ea1d11a4809bedff0776562335f2a974	Dante scrisse la Divina Commedia durante gli anni difficili del suo lungo esilio politico forzato.	Scrisse molto.
-scrivemmo	we wrote (passato remoto)	10	75ec1e1fc1c7dd1e90ac1261fdd8fb59	Scrivemmo una lunga lettera al nostro caro amico che si era trasferito all'estero da poco.	Scrivemmo insieme.
-scriveste	you wrote (passato remoto, pl)	10	78a65791eaf9e326f1f92c47b950aea0	Scriveste un articolo molto bello sul giornale locale della vostra città di provincia.	Cosa scriveste?
-scrissero	they wrote (passato remoto)	10	77891cbd639fc4a4828c8dc6590c1671	Gli antichi scrissero su pergamene e tavolette di argilla che si sono conservate fino a oggi.	Scrissero molto.
+la scienza	science	10	6ccb61d4afb0aa00915128f22954007e	In quel museo la scienza si spiega ai bambini con esperimenti semplici.	La scienza mi interessa molto.
+la biologia	biology	10	6c1ea7d75a46b979a0e4a56c8285740f	A Padova la biologia si studia accanto all'orto botanico più antico d'Europa.	Studio biologia.
+la chimica	chemistry	10	22da421544abbe463f8f4ffffecfb0d2	In laboratorio la chimica insegna soprattutto a essere ordinati.	La chimica è difficile.
+la fisica	physics	10	aca10b2e53c67fe247e857054ed65c7b	Galileo cambiò la fisica osservando un pendolo e poi il cielo.	Non capisco la fisica.
+la matematica	mathematics	10	f13c58cd3a587d7995463375a528dd4b	Con Fibonacci arrivarono in Europa le cifre che usiamo, e la matematica cambiò.	La matematica è utile.
+la geometria	geometry	10	fca2d0645b8315e88f3019aaee80f2d0	Nella piazza rinascimentale la geometria si vede a occhio nudo.	Studiamo geometria oggi.
+l'algebra	algebra	10	384712ec65183407ac811fff2f4c4798	All'esame l'algebra sembrava facile fino all'ultimo esercizio.	L'algebra non mi piace.
+la statistica	statistics	10	7ab95f7eba3260e04feddc07ba79aa4f	La statistica sulle presenze in spiaggia non convince i bagnini.	Studio la statistica.
+l'astronomia	astronomy	10	138c4af8611983bf6ea57355cb8c11ce	In montagna, senza luci intorno, l'astronomia diventa un passatempo serale.	Mi piace l'astronomia.
+la geologia	geology	10	1d143597679f849f6675215befeef267	La geologia dell'Etna cambia dopo ogni eruzione.	Studia geologia a Pisa.
+la botanica	botany	10	2f2529392621cc26a0e5b2f778d5a4e5	L'orto botanico di Padova insegna botanica da quasi cinquecento anni.	La botanica è affascinante.
+la zoologia	zoology	10	182bf62071a943cc5871bec5be2078b4	Il museo di zoologia conserva ancora le vetrine dell'Ottocento.	Studia zoologia.
+l'ecologia	ecology	10	5703591fd828da90c249a49e9740b01f	L'ecologia della laguna dipende moltissimo dalle maree.	Mi interessa l'ecologia.
+l'anatomia	anatomy	10	eae510978844bb70b6795ee3d6817737	A Bologna, nel teatro anatomico di legno, si insegnava anatomia.	Studia anatomia umana.
+la fisiologia	physiology	10	ce6ae9e3a4fd60ea6d1aea2610312e87	La fisiologia spiega perché in salita manca il fiato prima delle gambe.	Studio fisiologia.
+la cellula	cell	10	6363ffe1cf5649ee6017cdb01aea2fc0	Al microscopio la cellula vegetale si riconosce dalla parete.	Che cos'è una cellula?
+l'organo	organ	10	6a3e0dcca305968dc8ebeeff79a95fdc	Nella chiesa l'organo del Settecento suona ancora due volte l'anno.	Il cuore è un organo.
+il muscolo	muscle	10	543a70ee58fe7508818893ba034d6d99	Dopo la salita in bici ogni muscolo si fa sentire il giorno dopo.	Mi fa male un muscolo.
+l'osso	bone	10	a2c1f17ffa3ac439fe9cd94e6c358291	Nel brodo l'osso ci va, altrimenti non sa di niente.	Mi sono rotto un osso.
+il sangue	blood	10	2e33a38d91c121d6643623576c04185c	Alla vista del sangue qualcuno sviene, anche in farmacia.	Ha perso poco sangue.
+il nervo	nerve	10	5442d96e5089f853eb990395860ae9ec	Un nervo schiacciato gli ha rovinato tutta la settimana di ferie.	Ho un nervo infiammato.
+la vena	vein	10	52e2a0a0d93f20b191d9577b893f80e0	Sul marmo di Carrara la vena grigia disegna tutto il blocco.	Si vede una vena sul braccio.
+l'arteria	artery	10	5cf24c756c57d0a2448a11ea56d124d2	In anatomia si impara che l'arteria porta il sangue lontano dal cuore.	L'arteria è ostruita.
+il polmone	lung	10	fbd3c423fe8e6ddb37662ca7390e63a9	Con l'aria di gennaio in pianura il polmone si lamenta.	Respira con un polmone solo.
+il fegato	liver	10	dc91af42459acf7bc8e1fb5866e92c49	In trattoria il fegato alla veneziana si fa con le cipolle.	Il fegato funziona bene.
+il rene	kidney	10	93de1a7f9a00f8823ac377738b66236b	Il medico ha detto che un rene solo basta, se sta bene.	Mi fa male un rene.
+lo stomaco	stomach	10	54ea8d3e5f7912b94ba095e86b80bba2	Dopo il pranzo della domenica lo stomaco chiede una passeggiata.	Ho mal di stomaco.
+l'intestino	intestine	10	caeff11e8c4f3d9c0db3e3515a4dfa7e	Il medico consiglia verdura, perché l'intestino ringrazia.	L'intestino è lungo.
+il cervello	brain	10	a800dad25e96cbd2c92bf916ecdae958	Con questa afa il cervello si ferma verso le tre del pomeriggio.	Usa il cervello!
+lo scheletro	skeleton	10	aebf7a7f745d66dd1390db9625d4500e	Al museo lo scheletro della balena occupa tutta la sala.	Lo scheletro ha molte ossa.
+l'atomo	atom	10	5028ea3da2e02508c8d2ce4651fc65af	Fermi studiò l'atomo a Roma, prima di trasferirsi negli Stati Uniti.	L'atomo è piccolissimo.
+la molecola	molecule	10	f98a89c049aa5f1445fccfc3799b1b18	In laboratorio disegnano la molecola prima di provare qualunque cosa.	L'acqua è una molecola.
+l'elettrone	electron	10	47ea1038f795174c890881167dad3b0b	Al museo spiegano l'elettrone con una pallina che gira.	L'elettrone ha carica negativa.
+l'idrogeno	hydrogen	10	2406c45abf4db9d4297b21119f5d775d	Nell'acqua ci sono due atomi di idrogeno e uno di ossigeno.	L'idrogeno è leggerissimo.
+l'ossigeno	oxygen	10	464d2d7df33cb36cdc873d85f698fff4	In alta quota l'ossigeno manca e i passi diventano cortissimi.	Serve più ossigeno.
+il carbonio	carbon	10	91e46dc490525ad93e901ccb6d1f5e19	Il carbonio serve agli archeologi per datare i reperti.	Il diamante è carbonio.
+l'oro	gold	10	a13314e5b7614acf77e65427af6d3791	Sul Ponte Vecchio l'oro sta nelle vetrine da secoli.	Ha un anello d'oro.
+l'argento	silver	10	66f9f1d9af1ade3c4457ebdf00c2ced7	Nelle botteghe di Vicenza si lavorano l'oro e l'argento.	Il cucchiaio è d'argento.
+il rame	copper	10	db4180193c578a686685739556791951	Nel paiolo di rame la polenta viene meglio, dicono in montagna.	La pentola è di rame.
+il gas	gas	10	fee74eac0728a1bb5ff7d4666f8c4a88	In cucina il gas finisce sempre a metà cottura, di domenica.	Chiudi il gas!
+la cifra	digit / figure	10	c3c06e5aa01129eea3b7ce3faf9de1c2	Sul modulo la cifra scritta a mano non si capiva affatto.	Scrivi la cifra qui.
+la somma	sum / addition	10	a0f4ba2c8d5c9a230f176943e5de5194	La somma delle spese condominiali non torna mai al primo colpo.	Fai la somma.
+il prodotto	product	10	23147ce18e7364b9e8a4bc95c0cfd8bb	Al mercato ogni prodotto ha il cartello con la provenienza.	Il prodotto è finito.
+il quoziente	quotient	10	4451f930b8aef472634b49c7add973e4	All'esame chiedono il quoziente e il resto, non solo il risultato.	Calcola il quoziente.
+l'equazione	equation	10	e60650d58e50cf4ef67da014b867db07	Alla lavagna l'equazione occupava tutta la riga.	Risolvi questa equazione.
+la formula	formula	10	35be2c1cf2cc489bdb16b678cd73cd78	Nella formula del pesto contano le proporzioni, non i segreti.	Ricordo la formula.
+il grafico	graph / chart	10	0c84b8e6cb355aed4768c33064af6730	Sul giornale il grafico delle temperature saliva da tre estati.	Guarda questo grafico.
+l'asse	axis (m.) / board, plank (f.)	10	ff359c65a79d0e894e8ebccf5bff7c47	Il falegname ha piallato l'asse di castagno per il tagliere.	L'asse è di legno.
+la percentuale	percentage	10	b27fe3f48c75f42f2eb1b6644c352a17	La percentuale di sconto sul cartello era più piccola del previsto.	Qual è la percentuale?
+la frazione	fraction	10	53db61d50aa0f1d97ae2d1f2aea95b0a	In quel comune la frazione più alta ha dodici abitanti.	Calcola questa frazione.
+l'arte	art	10	c8581bc43486c23ee099afe031f4de31	A Urbino l'arte si studia dentro un palazzo rinascimentale.	Amo l'arte moderna.
+la pittura	painting (art)	10	2f185a2629abefd3591219bde8dd1d2a	Nella pittura a fresco si lavora in fretta, prima che l'intonaco asciughi.	Studio pittura.
+la scultura	sculpture	10	e0f85950871864ae68bbd52aa767ef8c	In cortile una scultura di marmo aspetta il restauro da anni.	Che bella scultura!
+il disegno	drawing	10	ff5b440ba28d32ec3f3affeda37d3b48	Sul quaderno il disegno del campanile era più preciso di una foto.	Fai un disegno.
+lo schizzo	sketch	10	da4817f198e913ccdd312f37ab2db333	Sul tovagliolo ha fatto uno schizzo della barca in due minuti.	È solo uno schizzo.
+il ritratto	portrait	10	76620b057982a23214f9ad1925f1cfdf	Nel museo un ritratto del Cinquecento guarda chiunque entri.	Che bel ritratto!
+l'opera	work / opera (music) / deed	10	9ed987966c06808b50f9fddc24931bd1	All'opera il pubblico applaude a metà aria, se l'acuto tiene.	Andiamo all'opera.
+la mostra	exhibition	10	0dd100bf1c5c2001e6274bc2ae12b78c	La mostra sui mosaici resta aperta fino a novembre.	Visitiamo la mostra.
+l'esposizione	exhibition	10	67e4ad7638102e4dafb784e7b899b47e	L'esposizione di ceramiche a Faenza torna ogni anno.	L'esposizione è gratuita.
+il capolavoro	masterpiece	10	5a44377365358440c13d250b870909e0	Il capolavoro del museo sta in una saletta laterale e nessuno lo trova.	È un vero capolavoro.
+la critica	criticism / review	10	83407c4b3d986aeed008077ee44c80f7	La critica ha stroncato il film e in paese è andato benissimo.	Accetto ogni critica.
+il restauro	restoration	10	e117080c5bd840f5d73e1bed0892ac7b	Il restauro della facciata è cominciato anni fa e non è ancora finito.	Il restauro è costoso.
+lo stile	style	10	7740cfdf681b827617cfa8174ef42072	Nel palazzo si mescolano due stili, e si vede dalle finestre.	Ha uno stile personale.
+la tecnica	technique	10	9805c6fbb42cb82adb63bc6afd8f2039	La tecnica dell'affresco non perdona i ripensamenti.	Serve più tecnica.
+l'ispirazione	inspiration	10	4bb29cd1210c9000a676ec639c0a41e4	L'ispirazione, dice il liutaio, arriva solo quando le mani lavorano.	Cerco un po' d'ispirazione.
+il pianoforte	piano	10	66c7668c1dc32a916a4bfd52bfe5d46b	Al piano di sopra il pianoforte suona sempre alla stessa ora.	Suono il pianoforte.
+la chitarra	guitar	10	7dc45bf351c65cbd1f7dfae533d1ce39	In spiaggia, la sera, qualcuno tira fuori la chitarra.	Ho una chitarra vecchia.
+il violino	violin	10	7459dd91940f963cba35deb8530f02af	A Cremona un violino può richiedere mesi di lavoro in bottega.	Suona bene il violino.
+il flauto	flute	10	5a85aff8a1006c35c4e8cf07ee5da468	Al saggio di fine anno il flauto era lo strumento più stonato.	Studio il flauto.
+la tromba	trumpet	10	b8813be56090919fc83ab7a6bcb88e5c	Nella banda del paese la tromba apre sempre la marcia.	Sento una tromba.
+l'arpa	harp	10	7cbe3df146ebaf48504f63bea715aaef	In teatro l'arpa arriva prima di tutti, per l'accordatura.	L'arpa ha molte corde.
+la fisarmonica	accordion	10	1985c5e43224f226254eb99c6ac8b56f	Alle feste di paese la fisarmonica basta a far ballare tutti.	Suona la fisarmonica.
+il contrabbasso	double bass	10	775288b9becce4280275ab24d9b0ce74	Il contrabbasso non entra in macchina, e il problema è tutto lì.	Il contrabbasso è enorme.
+il violoncello	cello	10	9ed03e6bda9b3b7e9251453fa956bc49	Nel quartetto il violoncello tiene il basso e quasi nessuno lo nota.	Studia violoncello.
+il clarinetto	clarinet	10	a85f4b2d2e473d639013155c5dfcd16a	In banda il clarinetto porta la melodia quasi sempre.	Suoni il clarinetto?
+il tamburo	drum	10	2ce213718c8736e516592508a7e903d5	Nella sfilata il tamburo si sente molto prima della banda.	Batti il tamburo.
+l'oboe	oboe	10	c0de6b975080d84145a31c4430546b52	L'orchestra si accorda sulla nota dell'oboe.	L'oboe ha un suono dolce.
+la percussione	percussion	10	73aa1840eba60653e8fa6e63cfb2ea7b	Nel concerto la percussione stava in fondo e si sentiva ovunque.	Suona uno strumento a percussione.
+il sassofono	saxophone	10	c55dc3740a79d41b8791443b940ae562	Sotto i portici un ragazzo suonava il sassofono per pochi spiccioli.	Il sassofono è dorato.
+il mandolino	mandolin	10	0acc46d892983a71eeead4b7fe1c0f99	A Napoli il mandolino accompagna ancora certe canzoni antiche.	Suona il mandolino.
+lo sport	sport	10	3823552b7a2b839259a831e3b7b349a3	In paese lo sport più praticato resta la passeggiata serale.	Faccio sport ogni giorno.
+il calcio	soccer / football / kick	10	657cd0659a8d7ccfd0793cbb6f1459f0	La domenica il calcio svuota le strade per novanta minuti.	Giochiamo a calcio?
+il basket	basketball	10	0f6cdb621b452ac6fb994d88e674e49f	In palestra d'inverno il basket si gioca fino a tardi.	Mi piace il basket.
+il tennis	tennis	10	1fbfb23351e3580651395ab721f5e935	Al circolo il tennis si gioca sulla terra rossa, come una volta.	Giochiamo a tennis.
+il golf	golf	10	c6cf642b8f1cac1101e23a06aa63600e	Da queste parti il golf lo pratica davvero in pochi.	Non ho mai giocato a golf.
+la scherma	fencing	10	15d55c4c83e2e4d80bded5f25db58c25	In Italia la scherma ha una tradizione lunga e molte medaglie.	Faccio scherma da tre anni.
+il pugilato	boxing	10	017946eef30cc9510e506c6faf193cd6	Nella palestra vecchia il pugilato si insegna ancora al sacco.	Segui il pugilato?
+il ciclismo	cycling	10	07caca02f543c403998b2533c0ee645b	Qui il ciclismo è una cosa seria: sull'asfalto restano le scritte.	Amo il ciclismo.
+l'atletica	athletics	10	94394fea6f396174880772b11593dfe2	In pista l'atletica si allena anche con la nebbia.	Faccio atletica leggera.
+la ginnastica	gymnastics	10	1300a24b401c8c96868fe37ff9093660	In piazza, la mattina presto, fanno ginnastica in una decina.	Faccio ginnastica ogni mattina.
+il judo	judo	10	88055190df7d13c9ccf8c274a6dc32ef	In palestra il judo lo insegnano ai bambini dai sei anni.	I bambini fanno judo.
+il karate	karate	10	9e1a52d3b7387beae058f1dbaa8da096	Nella sala sopra il bar fanno karate tre sere a settimana.	Studio il karate.
+la pallavolo	volleyball	10	67f06dcbe36ab7a62bc54f5262bbbdc5	In molti paesi la pallavolo è da sempre lo sport delle ragazze.	Giochiamo a pallavolo.
+il rugby	rugby	10	24908ce13bfd3ec802bfc0ba32fc79e8	A Rovigo e a Treviso il rugby ha un seguito vero.	Il rugby è uno sport duro.
+l'hockey	hockey	10	df0349ce110b69f03b4def8012ae4970	In Alto Adige l'hockey riempie il palazzetto anche di lunedì.	Guardo una partita di hockey.
+la partita	match / game	10	e35c9393c8f130b7d323c2082b127ec3	Dopo la partita il bar resta aperto un'ora in più.	La partita comincia adesso.
+la gara	race / competition / tender (bid)	10	04b7aaeab58d4c6507e86a90250694af	La gara di paese finisce sempre con la polenta per tutti.	Chi ha vinto la gara?
+il torneo	tournament	10	f46be5aeb362172e14d72145e0dd9897	Il torneo di briscola in oratorio dura tutto l'inverno.	Partecipo al torneo.
+il campionato	championship / league	10	3140bbdcc4512998485e2376b5181afa	A metà campionato in paese si discute già di retrocessione.	Segui il campionato?
+l'allenamento	training / workout	10	64ef9a0f17178b525d0cde8f07d4798a	L'allenamento del martedì si fa anche sotto la pioggia.	Vado all'allenamento.
+la squadra	team	10	eb283845b39df947674b038815495b40	La squadra del paese gioca su un campo tutto in salita.	Che squadra tifi?
+il giocatore	player	10	ccb5a956b1780d5c27a1db6c30dc245f	Il giocatore più anziano ha quarantadue anni e non molla.	È un giocatore forte.
+l'allenatore	coach / trainer	10	3a9a4e8d4639b21725faae212d8aca9e	L'allenatore ha cambiato tre volte modulo e nessuno ha capito.	Parla con l'allenatore.
+l'arbitro	referee	10	b8417aa7b96a70125f8e96dceb65d388	L'arbitro fischia e mezzo campo protesta, come da tradizione.	L'arbitro ha ragione.
+il tifoso	fan / supporter	10	7b104033c08a4c5fa038effaa760cd1f	Il tifoso vero guarda anche le partite che non contano niente.	È un tifoso appassionato.
+il chirurgo	surgeon	10	02de4179ef139570aac72b86f62ee5fd	Il chirurgo ha spiegato tutto in cinque minuti e senza paroloni.	È un chirurgo bravo.
+il neurologo	neurologist	10	bee68ce8996bd894395602de2d6d88e6	Per il neurologo l'attesa è di sei mesi, salvo urgenze.	Vado dal neurologo.
+il cardiologo	cardiologist	10	cc7e83809b1ddae92fe77e1f370361fe	Il cardiologo gli ha detto di camminare, non di correre.	Ho visto il cardiologo.
+lo psicologo	psychologist	10	be8ed87575d54a97e04b5f3c920d7e51	In quella scuola lo psicologo riceve una mattina a settimana.	Parla con uno psicologo.
+lo psichiatra	psychiatrist	10	cb63d193c66f01ecbe29c5f5d7aff65a	Lo psichiatra lavora in reparto insieme agli infermieri.	È uno psichiatra noto.
+il ricercatore	researcher	10	1b9e7e7ffd63931f98dd01b94ff412a7	Il ricercatore contava le rondini sui tetti, con il binocolo.	Fa il ricercatore all'università.
+il biologo	biologist	10	b40b48c3864a29e2a130abea98fc38f0	Un biologo marino segue le tartarughe lungo la costa ionica.	Il biologo studia le cellule.
+il chimico	chemist	10	6f641aed38bcca2cfddf9affa5789753	Il chimico dell'oleificio controlla l'acidità dopo ogni partita.	Fa il chimico in laboratorio.
+il fisico	physicist	10	27314ee70cb242c7bf67364274dde9fc	Il fisico spiegava le maree con un bicchiere e un cucchiaio.	È un fisico famoso.
+il matematico	mathematician	10	39dfc6debcadac8507a751d477746a94	Un matematico pisano portò in Europa le cifre che usiamo oggi.	È un matematico bravissimo.
+l'archeologo	archaeologist	10	a57635eaee529b712f6a6a7561f72e36	L'archeologo ha fermato il cantiere per tre mesi, e aveva ragione.	L'archeologo scava qui.
+il paleontologo	paleontologist	10	3f0be2b93b1a256a45e8cdf96b436f3d	Il paleontologo ha riconosciuto l'osso dalla forma della testa.	Il paleontologo studia i fossili.
+l'antropologo	anthropologist	10	540569700718c6af5278509a374ad047	Un antropologo registrò i canti delle mondine prima che sparissero.	L'antropologo studia le culture.
+il sociologo	sociologist	10	0adaf584815aea368e39886cc1fb64ae	Il sociologo ha studiato perché i giovani lasciano i borghi.	È un sociologo giovane.
+il filosofo	philosopher	10	d1895dd945b779807d03cbdd51568b43	Il filosofo del paese sta al bar e discute con chiunque entri.	Studia un filosofo greco.
+lo scultore	sculptor	10	fb9e825f269c83b28bff9b125f47cf2b	Lo scultore lavorava il marmo di Carrara con lo scalpello.	È uno scultore famoso.
+il disegnatore	draftsman / illustrator	10	4ecff3e60ae342efc8432c2234b389c4	Il disegnatore ha copiato la facciata riga per riga.	Fa il disegnatore tecnico.
+l'illustratore	illustrator	10	c2ed24b81449ecebe05ff7b50203a2e9	L'illustratore ha disegnato tutte le copertine della collana.	L'illustratore lavora a casa.
+il restauratore	restorer	10	2270051b4f7ff024517e2e98d84f01b1	Il restauratore ha pulito l'affresco un centimetro alla volta.	Chiamiamo un restauratore.
+il ceramista	ceramist / potter	10	c2c5771df1b41414b83eeb176249e2fe	A Faenza il ceramista dipinge a mano libera, senza modello.	Il ceramista lavora l'argilla.
+il fabbro	blacksmith	10	fc5c0d56a0698c50231c4bf27203154c	Il fabbro del paese fa ancora cancelli e ringhiere su misura.	Il fabbro batte il ferro.
+l'orafo	goldsmith	10	40fd268cb9a5d975482380cfba3dbbfd	L'orafo lavora con una lente all'occhio, curvo sul banco.	L'orafo fa gli anelli.
+il ballerino	dancer	10	ba97aaddfa5d7f906a2dc8bdb99f58d4	Il ballerino prova la mattina e insegna il pomeriggio.	È un ballerino bravissimo.
+il compositore	composer	10	40dcc4de3fb6ef73a5e11000597e8d6b	Puccini fu un compositore toscano, nato a Lucca.	Chi è il compositore?
+il direttore	director / conductor	10	854c6101009e66a060f365dd0f830e26	Il direttore d'orchestra è entrato e la sala ha smesso di tossire.	Parla con il direttore.
+l'universo	universe	10	f3a442b43b91e04d28aa9375fcac2f73	Dal rifugio, senza luci, l'universo sembra molto più affollato.	L'universo è immenso.
+la stella	star	10	430244540aa38ff181545cb0d539f038	Ad agosto si guarda il cielo aspettando qualche stella cadente.	Che stella luminosa!
+la galassia	galaxy	10	bedb586363f272b1c298d711fe1fea8a	Al planetario spiegano che la nostra galassia è una fra tantissime.	La galassia è enorme.
+la costellazione	constellation	10	690746a595cc873e5c6bb550a25523c2	D'inverno la costellazione di Orione si vede anche dalla città.	Riconosci quella costellazione?
+il satellite	satellite	10	53bb79002a8ade0bc488f4469ce3fcd7	Con il satellite le previsioni sbagliano meno, ma sbagliano lo stesso.	Il satellite gira intorno alla Terra.
+la cometa	comet	10	2f5581dddbf6355398b8b4cb298df89b	Nei presepi la cometa sta sempre sopra la capanna.	È passata una cometa.
+l'asteroide	asteroid	10	270066dee326ac556845d7d7096cda07	Al museo tengono un frammento di asteroide dentro una teca.	L'asteroide è caduto lontano.
+l'eclissi	eclipse	10	66f46b67c3fa07ce9017f5e2e2beaa95	Per l'eclissi mezzo paese è salito sul campanile.	Guardiamo l'eclissi insieme.
+l'orbita	orbit	10	dad166a4a2a3022591b1bdcc2b7a5c62	Il satellite resta in orbita per anni prima di scendere.	Che orbita strana!
+la gravità	gravity / seriousness	10	0259e1aa0f848f71942edc999e46a193	Nessuno capì la gravità della frana fino al mattino dopo.	Studiamo la gravità.
+calcolare	to calculate	10	9b64ddab9cf410832e2e30da7eb99c97	Per calcolare le spese condominiali ci vuole un pomeriggio intero.	Calcola il totale.
+misurare	to measure	10	624e37345f62daba445dfe94fcae558d	Il sarto misura due volte e taglia una volta sola.	Misura questa stanza.
+sommare	to add up / sum	10	a506be022dbdf9a144e33b9cd8f973e3	Basta sommare le ore di coda per capire perché partiamo all'alba.	Somma questi numeri.
+sottrarre	to subtract	10	6b6c8a6517a0872b92a1a24a07c8a262	Dal totale bisogna sottrarre lo sconto, non aggiungerlo.	Sottrai dieci da cento.
+moltiplicare	to multiply	10	307acb4799dbda4539557e4cafed5a13	In cucina moltiplicare le dosi per otto non funziona quasi mai.	Moltiplica per due.
+analizzare	to analyze	10	1b5141a786ec493904b205c9de370953	In laboratorio analizzano l'olio prima di metterlo in bottiglia.	Analizza questi dati.
+sintetizzare	to synthesize	10	46bb431c9d5a01cc388558061d030951	Il relatore ha provato a sintetizzare in dieci minuti e ce ne ha messi quaranta.	Sintetizza il testo.
+classificare	to classify	10	5c092f83021ceed1c35020717df1da21	In archivio classificano le carte per anno e per comune.	Classifica questi libri.
+osservare	to observe	10	0a2a2858ccca8ea3ff36cf272a911556	Per osservare le stelle bisogna salire dove non arriva la luce.	Osserva bene questa foto.
+esaminare	to examine	10	0e98b5a61f7f73fa42edfb3e188f68b7	Il perito è venuto a esaminare la crepa nel muro portante.	Esamina il documento.
+scientifico	scientific	10	4e769c7f72343d25232add0fe262ebab	Al liceo scientifico si studia ancora il latino, e sorprende sempre.	È un metodo scientifico.
+tecnologico	technological	10	e87be27ebdafac988cf4b0b04837211b	Il museo tecnologico di Milano espone anche i modelli di Leonardo.	È un settore tecnologico.
+accademico	academic	10	a74c8af557c8a7288f9b2e7c7b62fa04	L'anno accademico comincia a ottobre, con le aule piene.	Ha un tono accademico.
+teorico	theoretical	10	0863bfadcd9e8f81f6219e9e8a716afb	Il corso teorico dura due mesi, poi si va in bottega.	È un discorso teorico.
+sperimentale	experimental	10	57bf685ee072a5bbb9f0641f2d2be3e2	Nel campo sperimentale provano nuove varietà di grano duro.	È un progetto sperimentale.
+empirico	empirical	10	43199c34267207b3f8b82c5aa289c838	Il metodo del fornaio è empirico: guarda, tocca e decide.	È un dato empirico.
+logico	logical	10	fc1e8666e73b2cc44fcdfea8b6a0e6f0	Non è logico chiudere il museo proprio la domenica.	È un ragionamento logico.
+illogico	illogical	10	9f9c0add2a03331837dd5027375f9750	Sembra illogico, eppure il treno più lento arriva prima.	È un comportamento illogico.
+razionale	rational	10	948ed28f7889ad56d354e4f173cfb16d	L'orto è organizzato in modo razionale, filare per filare.	Sii razionale, per favore.
+irrazionale	irrational	10	002310cf9c535540020d3befa730d252	La paura del temporale in montagna non è affatto irrazionale.	È una paura irrazionale.
+geniale	brilliant	10	c56c34f2fa35cad0a5922d87d753e3c6	L'idea di coprire il cortile con una vela era geniale.	Che idea geniale!
+brillante	brilliant / shining	10	ee62961b05e19e79583393dbbec14c75	Il vetro di Murano resta brillante anche dopo cent'anni.	È uno studente brillante.
+stupido	stupid / foolish	10	072d98e017fe33291ae559b2648cf996	È stupido partire di sabato e poi lamentarsi della coda.	Che errore stupido!
+ignorante	ignorant	10	487b813444eb86e2383a124260d130bf	In cucina si dichiara ignorante, e poi cucina benissimo.	Non essere ignorante.
+colto	cultured / educated	10	8d0fc5443a388221b3193a0d12c66e81	Il libraio è colto e non lo fa pesare a nessuno.	È una persona colta.
+la tradizione	tradition	10	be2b9d90f40f6777b932977d2fcf1f75	La tradizione vuole le lenticchie a Capodanno, e nessuno discute.	È una vecchia tradizione.
+il costume	custom / costume / swimsuit	10	4f99e8ee797ac7727600ce4bc5b28e5f	Per il palio il costume storico si tira fuori una volta l'anno.	Ho comprato un costume nuovo.
+la cerimonia	ceremony	10	b05a706dc6e93d50e6a00bdcefd7bb08	La cerimonia è durata poco e il pranzo cinque ore.	La cerimonia comincia alle undici.
+il rituale	ritual	10	fc95387773aa436c71b658f968d4b092	Il caffè al banco alle otto è un rituale, non un'abitudine.	È un rituale quotidiano.
+il festival	festival	10	ae8fc55ccdc61c9812a7e247cf4dafdf	Il festival del cinema muto a Pordenone attira gente da mezzo mondo.	Andiamo al festival.
+la sagra	village festival	10	fa67c99917767876918b0952b5ea9354	Alla sagra si mangia in piedi e si paga con i gettoni.	C'è la sagra domenica.
+la fiera	fair / trade show	10	2ce2b6c8bd07b8ea77ae28facf0c8463	La fiera del tartufo riempie il paese per tre fine settimana.	Andiamo alla fiera.
+la processione	procession	10	c9c49cca871348e399419c17a2bb9975	Per la processione chiudono le strade e spostano tutte le auto.	La processione passa qui.
+la parata	parade	10	52e96c102489cc80cced47ab998b195b	Il due giugno c'è la parata a Roma, in provincia solo la banda.	Guardiamo la parata.
+la sfilata	fashion show / parade	10	f28e6dfc4c314b1445036dcde053b865	A Ivrea la sfilata dei carri apre il carnevale.	Che bella sfilata!
+il concorso	contest / competition	10	b2f844ec2af3d88bb8550581aecdfe01	Al concorso di ceramica arrivano pezzi da mezza Europa.	Ho vinto un concorso.
+la competizione	competition	10	26ef09b19de4b17633df3a1a88d417e0	Tra i due panifici la competizione dura da trent'anni.	È una competizione dura.
+il riconoscimento	recognition / award	10	a554d6a23bb23c7533a6ba3f9f41294e	Il riconoscimento è arrivato tardi, come succede spesso.	Ha ricevuto un riconoscimento.
+la medaglia	medal	10	596ba5e5391061b7c6fcc5c4771552ee	La medaglia è appesa in bacheca, accanto alle foto della squadra.	Ha vinto una medaglia.
+il trofeo	trophy	10	0088d7c2d68eaf9d33da24e4c2bd2b70	Il trofeo resta al bar fino all'anno dopo, sopra la macchina del caffè.	Che bel trofeo!
+il teorema	theorem	10	bcdb9477a7ec6b2673843d431fd5e8e1	Alla lavagna il teorema occupava due colonne intere.	Dimostra questo teorema.
+l'esperimento	experiment	10	21da3ee69c2b7aa5440214883ec25c60	L'esperimento è fallito due volte e alla terza ha funzionato.	Facciamo un esperimento.
+l'ipotesi	hypothesis	10	3b50dcfb4ca2dfc90c0f6e7b5e25946a	L'ipotesi degli archeologi era giusta: sotto c'era il mosaico.	È solo un'ipotesi.
+la teoria	theory	10	5afe42a4f589d170f1dda59b43504070	In teoria il traghetto parte alle sei; in pratica dipende dal vento.	Conosco questa teoria.
+la scoperta	discovery	10	a20f5e1ca1282db08fece1670c939941	La scoperta della tomba etrusca ha cambiato i piani del comune.	Che bella scoperta!
+inferire	to infer	10	e0fdbcbdf4a13ba85b8050e8630064e2	Dai cocci si può inferire l'età dello strato, dicono gli archeologi.	Cosa possiamo inferire?
+dedurre	to deduce	10	8f3a3f8abb7d4338bb7184b49d67c921	Dal rumore in cortile si può dedurre che l'idraulico è arrivato.	Cosa deduci da questo?
+concludere	to conclude	10	2d1daf703f5545fb5e1a441635a5345a	Prima di concludere, il relatore ha aggiunto altre dieci pagine.	Vorrei concludere qui.
+generalizzare	to generalize	10	cb59e1080df8c806fea4234fec1ac090	Non si può generalizzare: ogni valle ha il suo dialetto.	Non generalizzare troppo.
+formulare	to formulate	10	b1ab519be3c2cd3dbe5eeec7e52e4df0	Ci ha messo un'ora a formulare una domanda semplicissima.	Formula la tua richiesta.
+confutare	to refute	10	f2bdfc4c315916afff498885260fbe97	Il professore invitava a confutare le sue tesi, non a ripeterle.	Vuole confutare l'ipotesi.
+validare	to validate	10	2305a984d4068a683002e8ef9808f127	Prima di salire bisogna validare il biglietto alla macchinetta.	Devo validare il biglietto.
+verificare	to verify	10	fd5e6309319a737aa03b5edd1e9767e5	Conviene verificare l'orario prima di correre alla stazione.	Verifica questi conti.
+definire	to define	10	5bb81750264bedda596beba5feb2cacb	È difficile definire il confine tra pranzo e cena, la domenica.	Definisci questa parola.
+prevedere	to foresee / predict / stipulate	10	3e36e933e726f3a0924f36de5be479dd	Il contratto prevede tre mesi di lavori, e siamo al nono.	Non posso prevedere tutto.
+universale	universal	10	a0ee8fc8218a3c17a51d14ec5443aa20	Il gesto delle mani è universale, ma qui ha più dialetti.	È una regola universale.
+particolare	particular / specific	10	29607aaee7f4806670d089d45189bef1	Quella bottega ha un odore particolare, di legno e di colla.	Non è niente di particolare.
+generale	general	10	ba4a1c94052b1153792981fbf4622029	L'impressione generale è che i lavori finiranno l'anno prossimo.	È una regola generale.
+specifico	specific	10	b5d3e37fed86acae2925f2b1efb8bbcb	Per quella pratica serve un modulo specifico, non quello che hai.	Serve un attrezzo specifico.
+astratto	abstract	10	1d1e6417c26387d3067688cea8429b24	Nella sala accanto c'è un quadro astratto che divide i visitatori.	È un concetto astratto.
+fui	I was (passato remoto)	10	2460b253fb566067962c63c284d2ad74	Fui in Sicilia una sola volta, da ragazzo, e non l'ho più scordata.	Fui io a chiamarlo.
+fosti	you were (passato remoto)	10	cf47220fa7dad56f60361580320413e0	Fosti tu a raccontare per primo quella storia del castello.	Fosti molto gentile.
+fu	he/she/it was (passato remoto)	10	ca4da36c48be1c0b87a7d575c73f6e42	Quell'inverno fu il più freddo che il paese ricordi.	Fu una bella giornata.
+fummo	we were (passato remoto)	10	23f3cb334e9b6595bb0cd73adee57c56	Fummo gli ultimi a lasciare la piazza, quella notte d'agosto.	Fummo felici di vederlo.
+foste	you were (passato remoto, pl)	10	54263c34963c0f3ac78d33fc7081b109	Foste voi a scoprire quel sentiero sopra il lago.	Foste molto gentili.
+furono	they were (passato remoto)	10	8d0ef59992f92acb36c6b96cf358fbbc	Furono i romani a portare l'acqua fin quassù, con l'acquedotto.	Furono anni difficili.
+ebbi	I had (passato remoto)	10	5c1169dac3e8243e0d50eaa85631eff5	Ebbi la fortuna di sentire quel coro in una chiesa vuota.	Ebbi paura per un momento.
+avesti	you had (passato remoto)	10	d2be3fac49afec90deb6a0a238388e45	Avesti ragione tu: quel giorno il traghetto non partì affatto.	Avesti coraggio.
+ebbe	he/she had (passato remoto)	10	a7cb5eddea4d149b3850d4089ba8f9d8	Il paese ebbe la sua scuola solo dopo l'arrivo della strada.	Ebbe molto successo.
+avemmo	we had (passato remoto)	10	140fdd7d9ff9d5ae0b3596f5d11067c4	Avemmo appena il tempo di salire prima che chiudesse la funivia.	Avemmo fortuna quel giorno.
+aveste	you had (passato remoto, pl)	10	0b23b0b1628b8611ecb141bc1fc6be36	Aveste il coraggio di partire in pieno agosto.	Aveste ragione voi.
+ebbero	they had (passato remoto)	10	a5fdd022aef70c42c76581adff2166f3	Ebbero tre giorni di bora e non uscirono quasi mai di casa.	Ebbero molta pazienza.
+feci	I did/made (passato remoto)	10	0092dc158a0db2aac6fb8b333bc3bf0f	Feci il primo viaggio in Sicilia in treno, e durò un giorno intero.	Feci un errore.
+facesti	you did/made (passato remoto)	10	7e817df8ce516c685a09a043088ab385	Facesti bene a fermarti: la strada era chiusa più avanti.	Facesti tu la torta?
+fece	he/she did/made (passato remoto)	10	36cd567f634124f9d9eede6942683cfa	Il temporale fece cadere due alberi nella piazza del paese.	Fece molto freddo.
+facemmo	we did/made (passato remoto)	10	3e07ace2644ef602ebdf4327f9cd1c76	Facemmo colazione all'alba e partimmo prima del caldo.	Facemmo una lunga passeggiata.
+faceste	you did/made (passato remoto, pl)	10	e1e9deb04a4cdfebdedf4db5edd9d4e7	Faceste bene a prenotare: quella sera era tutto pieno.	Cosa faceste dopo?
+fecero	they did/made (passato remoto)	10	220c50e64023baf54f9935e2f8269bb7	Fecero il ponte in un anno e ci misero venti a decidere.	Fecero molta strada.
+dissi	I said/told (passato remoto)	10	eb3f0868bed8d3c687748e3dcb658df1	Dissi che sarebbe piovuto, e nessuno prese l'ombrello.	Dissi la verità.
+dicesti	you said/told (passato remoto)	10	4cd62a2fe51f1b65f7825d29944ea7bf	Dicesti che conoscevi la strada, e ci perdemmo lo stesso.	Cosa dicesti allora?
+disse	he/she said/told (passato remoto)	10	e52afc6520dea8f41a9abc41e8eeefec	L'oste disse che il vino era finito, e portò un'altra caraffa.	Disse di aspettare.
+dicemmo	we said/told (passato remoto)	10	1612c14e7807eee50d86a3efff0afbb6	Dicemmo di partire alle sei e uscimmo alle nove passate.	Dicemmo la stessa cosa.
+diceste	you said/told (passato remoto, pl)	10	b70fb19d990ed90121332ccedc026390	Diceste che la trattoria era chiusa, e invece era aperta.	Diceste qualcosa?
+dissero	they said/told (passato remoto)	10	de5c8c31b4789d6963c813902df81966	In paese dissero che la neve sarebbe arrivata presto, e arrivò.	Dissero di no.
+vidi	I saw (passato remoto)	10	ee6a8951038f756077633fd3f477682a	Vidi l'Etna fumare dal finestrino del treno, all'alba.	Vidi una luce lontana.
+vedesti	you saw (passato remoto)	10	71babbcd4694f9eeb1f873bb3c727b8a	Vedesti anche tu quel lampo sopra le colline?	Vedesti il film?
+vide	he/she saw (passato remoto)	10	d0194b848a336a942a5f7d1c87c0b956	Dal campanile vide tutta la pianura coperta di nebbia.	Vide qualcosa di strano.
+vedemmo	we saw (passato remoto)	10	860380402e34b7cb50e23d804e01a468	Vedemmo i delfini seguire il traghetto per un buon tratto.	Vedemmo il mare da lassù.
+vedeste	you saw (passato remoto, pl)	10	60c11dd69eba6c619044359194059e30	Vedeste la piazza durante il palio, o eravate già partiti?	Vedeste quel quadro?
+videro	they saw (passato remoto)	10	10b047928967b5c448eaf046ac7d7ffc	I pescatori videro arrivare il temporale e rientrarono subito.	Videro tutto dalla finestra.
+venni	I came (passato remoto)	10	421e9bc4722d24ce39324d0851ffdd84	Venni a Bologna per un anno solo e ci restai dieci.	Venni subito da te.
+venisti	you came (passato remoto)	10	3e6f5cf79f2e064fa6b96897bef57b11	Venisti in treno con due ore di ritardo e non ti lamentasti.	Venisti da solo?
+venne	he/she came (passato remoto)	10	962a0224890810c0544fc5ccff4236e8	Quell'estate venne la grandine e rovinò tutta l'uva.	Venne verso mezzogiorno.
+venimmo	we came (passato remoto)	10	509345df759dcf3e905b619c7c5bc2ca	Venimmo per la sagra e restammo tre giorni.	Venimmo a piedi.
+veniste	you came (passato remoto, pl)	10	8d0538e9c9c1415dfafad089a18317d4	Veniste in agosto, quando il paese era pieno di gente.	Veniste con noi?
+vennero	they came (passato remoto)	10	b7102dfc590afe56a05da1f521eaa835	Vennero da mezza provincia per sentire quel coro.	Vennero tutti insieme.
+presi	I took (passato remoto)	10	196801e16a9c169a12f3975e83fe6556	Presi il traghetto delle sei e arrivai con la nebbia.	Presi un caffè al banco.
+prendesti	you took (passato remoto)	10	2e3be0c45b1e408b23b0b64fc4434eb0	Prendesti la strada vecchia e ci mettesti il doppio del tempo.	Prendesti tu le chiavi?
+prese	he/she took (passato remoto)	10	a923f5ed8d1bf1c9f2f2d90073c4d28c	Prese il violino in mano e la stanza cambiò subito.	Prese l'ombrello e uscì.
+prendemmo	we took (passato remoto)	10	d9992559bc50e03cf276de3a42c046ed	Prendemmo il sentiero sbagliato e finimmo dentro un uliveto.	Prendemmo il treno insieme.
+prendeste	you took (passato remoto, pl)	10	233ec1975395c0f2b573ff8300b8a0e3	Prendeste la funivia o saliste a piedi fino al rifugio?	Prendeste il biglietto?
+presero	they took (passato remoto)	10	2783e69c5beeb272391936014c23617f	Presero la casa in collina e non tornarono più in città.	Presero il primo treno.
+scrissi	I wrote (passato remoto)	10	ede3a9dc41860dadd83eeb64f271c171	Scrissi una cartolina da Matera e arrivò tre settimane dopo.	Scrissi una lettera lunga.
+scrivesti	you wrote (passato remoto)	10	a390ae55d9803b42a448c1c8f57ac283	Scrivesti il tuo nome sul quaderno del rifugio, come tutti.	Scrivesti tu quel biglietto?
+scrisse	he/she wrote (passato remoto)	10	ea1d11a4809bedff0776562335f2a974	Leopardi scrisse L'infinito a Recanati, ancora giovanissimo.	Scrisse una lettera.
+scrivemmo	we wrote (passato remoto)	10	75ec1e1fc1c7dd1e90ac1261fdd8fb59	Scrivemmo al comune tre volte prima di ricevere risposta.	Scrivemmo insieme la lista.
+scriveste	you wrote (passato remoto, pl)	10	78a65791eaf9e326f1f92c47b950aea0	Scriveste voi il testo della canzone della sagra?	Scriveste al direttore?
+scrissero	they wrote (passato remoto)	10	77891cbd639fc4a4828c8dc6590c1671	In quell'archivio scrissero i registri per quattro secoli.	Scrissero un lungo articolo.

@@ -1,61 +1,61 @@
-hola	hello / hi	0	03b5d67edd89f46e1e1f4cc598e4216b	Hola, ¿qué tal estás? Hacía muchísimo tiempo que no nos veíamos por aquí.	¡Hola, buenos días!
-adiós	goodbye	0	67ad4523b2fae86398c0aeb91ff24cfc	Adiós, ha sido un verdadero placer conocerte durante estas vacaciones tan bonitas.	Adiós, hasta pronto.
-hasta luego	see you later	0	37e14d7bd7353da91f756f7eaad46f77	Hasta luego, nos vemos esta tarde en la plaza para tomar algo juntos.	Hasta luego, guapa.
-buenos días	good morning	0	2f980a741c7567708694ce2631c8dbe1	Buenos días, quería un café con leche y una tostada con tomate, por favor.	Buenos días a todos.
-buenas tardes	good afternoon / good evening	0	da72e6db6ec55b6fc9397a7bd426670a	Buenas tardes, ¿tienen una mesa libre en la terraza para cuatro personas?	Buenas tardes, señora.
-buenas noches	good night / good evening (late)	0	4791089b203f7ea6983168d435963b8f	Buenas noches, que descanses bien y mañana desayunamos juntos temprano antes de salir.	Buenas noches, hasta mañana.
-por favor	please	0	98127d583586546285ef3bc3fbb0bd03	¿Me puede pasar la sal, por favor, y también el pan que está ahí?	Un agua, por favor.
-gracias	thank you	0	b47e4b6c78ddb4d715aa3c1eb05afe66	Muchas gracias por tu ayuda, no habría terminado nunca esto sin ti.	Gracias, muy amable.
-de nada	you're welcome	0	cedcfe24ba04d1e3ecc7ce81b0acb690	De nada, hombre, para eso estamos los amigos cuando hace falta echar una mano.	De nada, mujer.
-perdone	excuse me (formal)	0	e1d3ff2b8220e5f143d8eefd640cbad0	Perdone, ¿me puede decir dónde está la estación de tren más cercana?	Perdone, ¿qué hora es?
-perdona	excuse me / sorry (informal)	0	404068465ea30e172164fcb83f410844	Perdona, no te había visto entrar, estaba mirando el móvil en ese momento.	Perdona, ha sido sin querer.
-lo siento	I'm sorry	0	82748817a13b28f7838bbf81960f1809	Lo siento mucho por lo que pasó ayer, no era mi intención molestarte.	Lo siento mucho.
-sí	yes	0	c8b4d99e259dd7be9b624efd8f279394	Sí, estoy de acuerdo con tu propuesta y me apetece mucho participar.	Sí, gracias.
-no	no	0	43cd4fa39c6f28ba28faf95425016b04	No, esta noche no puedo salir porque tengo otro compromiso bastante importante.	No, gracias.
-vale	OK / all right	0	83816f8248728a6de208ada8a2b278d0	Vale, quedamos a las ocho delante del museo y de ahí vamos andando.	Vale, perfecto.
-¿qué tal?	how are you? / how's it going?	0	4714711f3e974752801796a882f861c2	Hola Carmen, ¿qué tal? Hace siglos que no sé nada de tu vida.	¿Qué tal, Marta?
-estoy bien	I'm fine / I'm well	0	b35feed18e9f25a510ce2a442765770d	Estoy bien, gracias por preguntar, aunque un poco cansado por el viaje de ayer.	Estoy bien, gracias.
-¿cómo te llamas?	what's your name? (informal)	0	e97aa15ea500afb43da36fc24a985e03	Encantado de conocerte, ¿cómo te llamas y de dónde eres, si puedo preguntar?	Oye, ¿cómo te llamas?
-me llamo	my name is	0	b371e65aa5da9d9f60b91d06a84ed6cb	Me llamo Javier y vengo de Alemania, pero ahora vivo en Valencia por trabajo.	Me llamo Ana.
-mucho gusto	nice to meet you	0	0a8b733c7d77258955f64eaa44034822	Mucho gusto, he oído hablar muchísimo de usted a nuestros amigos comunes.	Mucho gusto, encantada.
-¿habla inglés?	do you speak English? (formal)	0	0cacc7ca5c8a62a8d81a0461243e040d	Perdone, ¿habla inglés por casualidad? Mi español todavía no es demasiado bueno.	¿Habla inglés, señor?
-no hablo español	I don't speak Spanish	0	793d31ff4e37cee94b6f6ae89ddf237e	Lo siento, no hablo español muy bien todavía, ¿puede escribírmelo en un papel?	Perdone, no hablo español.
-no entiendo	I don't understand	0	a8a7c56a78d0ce21769ae8ab1a7d59bd	Perdone, no entiendo lo que me está diciendo, ¿puede hablar un poco más despacio?	No entiendo nada.
-no lo sé	I don't know	0	2e3f09366b39b44e148af53d88d56199	No lo sé la verdad, lo siento, pero puedes preguntarle a aquel señor de allí.	No lo sé.
-más despacio, por favor	more slowly, please	0	77c7e9743d9c1bdfe510767e930f859f	Perdone, más despacio, por favor, que todavía estoy aprendiendo el idioma.	Más despacio, por favor.
-¿puede repetir?	can you repeat? (formal)	0	f579924c825ebde88c3b83ab8e9ea618	Perdone, ¿puede repetir lo que acaba de decir? No le he oído bien con este ruido.	¿Puede repetir, por favor?
-¿cómo se dice?	how do you say?	0	ea781e2ae6ffb2dc4e9f0e0e33cf9419	Oye, ¿cómo se dice esta palabra en español? No la encuentro en el diccionario.	¿Cómo se dice esto?
-¿me puede ayudar?	can you help me? (formal)	0	d368becfe9a9694125598e47d171dc4a	Perdone, ¿me puede ayudar? Creo que me he perdido y busco la catedral.	Por favor, ¿me puede ayudar?
-¡socorro!	help!	0	4214020272bda62e1810181b5a55d503	¡Socorro! Ha habido un accidente en la carretera y hay alguien herido, llamen a una ambulancia.	¡Socorro, deprisa!
-dónde	where	0	e64fc91d193b1f7a7b1fa25935549adf	¿Dónde vives ahora y dónde trabajas normalmente durante la semana?	¿Dónde estás?
-cuándo	when	0	8bb14c470a78b90eec3de0c1510e444a	¿Cuándo llegas esta noche a casa? Te preparo la cena que tanto te gusta.	¿Cuándo sales?
-por qué	why	0	e893e0a574f327ee151a746adda89aca	¿Por qué no viniste ayer por la noche a la fiesta de cumpleaños de María?	¿Por qué no?
-cómo	how / like / as	0	22b904248ab1585c087bfb7fc80fe7ef	¿Cómo estás hoy y cómo te ha ido la jornada en el trabajo?	¿Cómo va todo?
-¿cuánto cuesta?	how much does it cost?	0	53120f068156055cb34b7992e6af70ee	Perdone, ¿cuánto cuesta este libro que he visto en el escaparate? Es para un regalo.	¿Cuánto cuesta esto?
-¿dónde está el baño?	where is the bathroom?	0	64b5eb160b8eb5068656413361aff6e7	Perdone, ¿dónde está el baño? Es la primera vez que vengo a este restaurante.	¿Dónde está el baño?
-quisiera	I would like	0	bb193b37cc18b52363e99b29d7a8313d	Quisiera reservar una habitación doble para tres noches a partir del viernes que viene.	Quisiera un café.
-la cuenta, por favor	the bill, please	0	75059b6c6934b71155007479c30275d2	La cuenta, por favor, y si puede ser cobramos por separado, que somos cuatro.	La cuenta, por favor.
-¿puedo pagar con tarjeta?	can I pay by card?	0	5c1f864808f9d0e4f19e4fd149b6bf9f	Perdone, ¿puedo pagar con tarjeta o solamente aceptan dinero en efectivo aquí?	¿Puedo pagar con tarjeta?
-una mesa para dos	a table for two	0	4edfb94624c32ea476519f40e57f9739	Buenas noches, queríamos una mesa para dos en la terraza si todavía queda alguna libre.	Una mesa para dos, gracias.
-la carta	the menu	0	3964a2cf2be70c536ee9da1f0422a3f2	¿Nos trae la carta, por favor? Queremos ver qué platos tienen hoy de temporada.	La carta, por favor.
-las tapas	tapas (small dishes)	0	f168cbf2e1c8997e140128113eb450ff	En este bar ponen las tapas gratis con cada caña y están buenísimas de verdad.	Unas tapas, por favor.
-una caña	a small draught beer	0	73009d2fed836ef85fbffa5e81508804	Ponme una caña bien fría y una ración de patatas bravas para compartir, por favor.	Dos cañas, por favor.
-el agua	water	0	573a90615983197deee829625defea45	¿Nos puede traer una botella de agua sin gas bien fría para la mesa?	Un vaso de agua.
-la comida	food / lunch	0	d4a4f8817f30213eb1a83925cb85a9e6	La comida de este restaurante es excelente y además los precios siguen siendo muy razonables.	¡Qué buena comida!
-tengo hambre	I'm hungry	0	478585c84ae15cfc51faf6b4bd3bb7f2	Tengo hambre, ¿por qué no paramos en aquel bar de la esquina a comer algo?	Tengo mucha hambre.
-tengo sed	I'm thirsty	0	ed2e00725c8869efca8dbaea498c614c	Tengo sed después de toda esta caminata bajo el sol, necesito beber algo fresco.	Tengo mucha sed.
-¡salud!	cheers! / bless you!	0	6deef7da4dea9746b639cb54263c3a84	¡Salud! Brindemos por este viaje maravilloso y por todos los amigos que hemos hecho.	¡Salud, chicos!
-hoy	today	0	b7fd76b228d4ea209776f107b5911f06	Hoy hace un día espléndido, deberíamos aprovechar para ir a la playa por la mañana.	Hoy no trabajo.
-mañana	tomorrow / morning	0	94d042ae9cbf97c415b221e2e8c8e65b	Mañana por la mañana salimos temprano hacia Granada para visitar la Alhambra con calma.	Hasta mañana.
-ayer	yesterday	0	ad2c8d066e11cb3a861e916c57a3c020	Ayer estuvimos paseando por el casco antiguo y cenamos en una plaza preciosa.	Ayer llovió mucho.
-ahora	now	0	f4d337de52c91d3f392c137fbd7a6641	Ahora mismo no puedo atenderte porque estoy terminando una cosa bastante urgente.	Ahora no puedo.
-a la derecha	to the right	0	8904a931a1af62c79d59f46ce1fa2dff	Siga todo recto y luego gire a la derecha justo después del semáforo grande.	Gire a la derecha.
-a la izquierda	to the left	0	1a3b20cebb7939bf6e5f350b067f93df	La farmacia está a la izquierda, al final de esta calle, junto a la panadería.	Está a la izquierda.
-todo recto	straight ahead	0	7174c0c04073cf18307337f32a827fa3	Vaya todo recto unos doscientos metros y encontrará la plaza mayor enfrente de usted.	Siga todo recto.
-cerca	near / close	0	b8154e4397bcb76323ec9d0f78f105ad	¿Hay alguna farmacia cerca de aquí que esté abierta a estas horas de la noche?	Está muy cerca.
-lejos	far	0	f0c8d3d3d627b6d86a54d19cd727af1c	La playa está bastante lejos del centro, es mejor que cojáis el autobús urbano.	¿Está lejos?
-abierto	open	0	47deb9ded6eedef4c7f8974562dd536a	El museo está abierto de martes a domingo desde las diez hasta las ocho.	Todavía está abierto.
-cerrado	closed	0	e9c14407be87028ef9905132c65a1744	El supermercado está cerrado los domingos, así que hay que comprar todo el sábado.	Hoy está cerrado.
-te quiero	I love you (romantic)	0	5717d03f3f329f1f95302f7433dd59ce	Te quiero muchísimo y quiero pasar el resto de mi vida a tu lado.	Te quiero mucho.
-bienvenido	welcome	0	e25545c43449bcee32ba44976d421c86	Bienvenido a nuestra casa, ponte cómodo y siéntete como si estuvieras en la tuya.	¡Bienvenidos a Madrid!
-buena suerte	good luck	0	e37400a7193e3208e101fc2c118be30f	Buena suerte mañana en el examen, seguro que lo haces fenomenal, has estudiado mucho.	¡Buena suerte!
+hola	hello / hi	0	03b5d67edd89f46e1e1f4cc598e4216b	Hola, ¿te acuerdas de mí? Coincidimos el año pasado en San Fermín.	¡Hola, vecina!
+adiós	goodbye	0	67ad4523b2fae86398c0aeb91ff24cfc	Nos dijimos adiós en la estación de Atocha y el tren salió puntual.	Adiós, hasta el lunes.
+hasta luego	see you later	0	37e14d7bd7353da91f756f7eaad46f77	Hasta luego, que mañana madrugo para ir al mercado de Triana.	¡Hasta luego, chicos!
+buenos días	good morning	0	2f980a741c7567708694ce2631c8dbe1	Buenos días, ¿me pone un café con leche y una tostada con tomate?	Buenos días, panadera.
+buenas tardes	good afternoon / good evening	0	da72e6db6ec55b6fc9397a7bd426670a	Buenas tardes, ¿queda alguna mesa en la terraza? Dentro hace un calor horrible.	Buenas tardes, señor Ramos.
+buenas noches	good night / good evening (late)	0	4791089b203f7ea6983168d435963b8f	Buenas noches, aunque aquí a las diez todavía hay gente cenando en la calle.	Buenas noches, que descanses.
+por favor	please	0	98127d583586546285ef3bc3fbb0bd03	Cierra la ventana, por favor, que está entrando el polvo de la calima.	Un vaso de agua, por favor.
+gracias	thank you	0	b47e4b6c78ddb4d715aa3c1eb05afe66	Muchas gracias por el jamón que trajisteis de Extremadura, se acabó en dos días.	Gracias, muy amable.
+de nada	you're welcome	0	cedcfe24ba04d1e3ecc7ce81b0acb690	—Gracias por ayudarme con las maletas. —De nada, hombre, si no pesaban nada.	De nada, mujer.
+perdone	excuse me (formal)	0	e1d3ff2b8220e5f143d8eefd640cbad0	Perdone, ¿este autobús para en la plaza mayor de Salamanca?	Perdone, ¿tiene hora?
+perdona	excuse me / sorry (informal)	0	404068465ea30e172164fcb83f410844	Perdona el retraso, es que había obras en toda la calle y no se pasaba.	Perdona, no te oí.
+lo siento	I'm sorry	0	82748817a13b28f7838bbf81960f1809	Lo siento, hoy la cocina cierra pronto porque es fiesta local.	Lo siento mucho.
+sí	yes	0	c8b4d99e259dd7be9b624efd8f279394	—¿Vienes a la verbena? —Sí, pero llegaré tarde, que salgo del trabajo a las nueve.	Sí, claro que sí.
+no	no	0	43cd4fa39c6f28ba28faf95425016b04	No, hoy no hay menú del día porque el cocinero está de vacaciones.	No, gracias.
+vale	OK / all right	0	83816f8248728a6de208ada8a2b278d0	Vale, quedamos a las nueve, aunque aquí eso suele significar las nueve y cuarto.	Vale, de acuerdo.
+¿qué tal?	how are you? / how's it going?	0	4714711f3e974752801796a882f861c2	¿Qué tal por Galicia? Dicen que este otoño ha llovido sin parar.	¿Qué tal, Marta?
+estoy bien	I'm fine / I'm well	0	b35feed18e9f25a510ce2a442765770d	Estoy bien, solo un poco cansado del viaje en tren desde Vigo.	Estoy bien, gracias.
+¿cómo te llamas?	what's your name? (informal)	0	e97aa15ea500afb43da36fc24a985e03	¿Cómo te llamas? Aquí en el pueblo todos nos conocemos por el mote.	¿Cómo te llamas, niño?
+me llamo	my name is	0	b371e65aa5da9d9f60b91d06a84ed6cb	Me llamo Rosario, como mi abuela, pero todo el mundo me llama Charo.	Me llamo Javier.
+mucho gusto	nice to meet you	0	0a8b733c7d77258955f64eaa44034822	Mucho gusto; mi compañera me ha hablado mucho de vosotros.	Mucho gusto, señora.
+¿habla inglés?	do you speak English? (formal)	0	0cacc7ca5c8a62a8d81a0461243e040d	¿Habla inglés? En la oficina de turismo de Cádiz seguro que sí.	Perdone, ¿habla inglés?
+no hablo español	I don't speak Spanish	0	793d31ff4e37cee94b6f6ae89ddf237e	Todavía no hablo español muy bien, pero entiendo casi todo si van despacio.	Lo siento, no hablo español.
+no entiendo	I don't understand	0	a8a7c56a78d0ce21769ae8ab1a7d59bd	No entiendo nada cuando habláis todos a la vez en la sobremesa.	No entiendo esta palabra.
+no lo sé	I don't know	0	2e3f09366b39b44e148af53d88d56199	No lo sé; pregunta en el ayuntamiento, aunque hoy cierran a las dos.	No lo sé, perdona.
+más despacio, por favor	more slowly, please	0	77c7e9743d9c1bdfe510767e930f859f	Más despacio, por favor, que no consigo apuntar la dirección del hotel.	Repítelo más despacio, por favor.
+¿puede repetir?	can you repeat? (formal)	0	f579924c825ebde88c3b83ab8e9ea618	¿Puede repetir el número del andén? Con el ruido no he oído nada.	¿Puede repetir, por favor?
+¿cómo se dice?	how do you say?	0	ea781e2ae6ffb2dc4e9f0e0e33cf9419	¿Cómo se dice 'pulpo' en gallego? Aquí lo llaman polbo.	¿Cómo se dice esto?
+¿me puede ayudar?	can you help me? (formal)	0	d368becfe9a9694125598e47d171dc4a	¿Me puede ayudar con la maleta? El ascensor lleva dos semanas averiado.	¿Me puede ayudar, señora?
+¡socorro!	help!	0	4214020272bda62e1810181b5a55d503	Gritó socorro desde la orilla y el socorrista salió corriendo hacia el agua.	¡Socorro, que me caigo!
+dónde	where	0	e64fc91d193b1f7a7b1fa25935549adf	¿Dónde has aparcado? Aquí la zona azul acaba en la esquina.	¿Dónde vives?
+cuándo	when	0	8bb14c470a78b90eec3de0c1510e444a	¿Cuándo empieza la procesión? Dicen que este año sale a las siete.	¿Cuándo llega el tren?
+por qué	why	0	e893e0a574f327ee151a746adda89aca	¿Por qué cierran las tiendas a mediodía? Por la siesta, dicen algunos.	¿Por qué lloras?
+cómo	how / like / as	0	22b904248ab1585c087bfb7fc80fe7ef	Nadie sabe cómo llegar al monasterio porque el cartel está medio borrado.	¿Cómo se llama tu perro?
+¿cuánto cuesta?	how much does it cost?	0	53120f068156055cb34b7992e6af70ee	¿Cuánto cuesta el kilo de cerezas del Jerte? En junio están riquísimas.	¿Cuánto cuesta esto?
+¿dónde está el baño?	where is the bathroom?	0	64b5eb160b8eb5068656413361aff6e7	Perdone, ¿dónde está el baño? Al fondo, pasando la barra, junto a la cocina.	¿Dónde está el baño?
+quisiera	I would like	0	bb193b37cc18b52363e99b29d7a8313d	Quisiera dos entradas para la visita guiada del acueducto, si todavía quedan.	Quisiera un café solo.
+la cuenta, por favor	the bill, please	0	75059b6c6934b71155007479c30275d2	La cuenta, por favor, que tenemos el coche aparcado en doble fila.	Camarero, la cuenta, por favor.
+¿puedo pagar con tarjeta?	can I pay by card?	0	5c1f864808f9d0e4f19e4fd149b6bf9f	¿Puedo pagar con tarjeta? En este bar solo aceptan efectivo, me temo.	¿Puedo pagar con tarjeta aquí?
+una mesa para dos	a table for two	0	4edfb94624c32ea476519f40e57f9739	Buenas, ¿tendrían una mesa para dos fuera? Dentro no se aguanta el calor.	Queremos una mesa para dos.
+la carta	the menu	0	3964a2cf2be70c536ee9da1f0422a3f2	Tráiganos la carta, por favor, y díganos si queda menú del día.	Pide la carta.
+las tapas	tapas (small dishes)	0	f168cbf2e1c8997e140128113eb450ff	En León las tapas van incluidas con la bebida, y eso no pasa en todas partes.	Vamos de tapas.
+una caña	a small draught beer	0	73009d2fed836ef85fbffa5e81508804	Ponme una caña bien fría y unas aceitunas, que aprieta el calor.	Quiero una caña.
+el agua	water	0	573a90615983197deee829625defea45	Este verano el agua del pantano ha bajado muchísimo por la sequía.	Bebe agua, hace calor.
+la comida	food / lunch	0	d4a4f8817f30213eb1a83925cb85a9e6	Aquí la comida fuerte es a mediodía y se cena pasadas las nueve.	¡Qué rica está la comida!
+tengo hambre	I'm hungry	0	478585c84ae15cfc51faf6b4bd3bb7f2	Tengo hambre, ¿bajamos a por unos churros antes de que cierren?	Tengo mucha hambre.
+tengo sed	I'm thirsty	0	ed2e00725c8869efca8dbaea498c614c	Con este levante tengo sed todo el día y bebo agua sin parar.	Tengo sed otra vez.
+¡salud!	cheers! / bless you!	0	6deef7da4dea9746b639cb54263c3a84	¡Salud! Brindemos con sidra, aunque aquí se escancia de otra manera.	¡Salud, amigos!
+hoy	today	0	b7fd76b228d4ea209776f107b5911f06	Hoy no hay pescado fresco porque la flota no ha salido con el temporal.	Hoy hace mucho frío.
+mañana	tomorrow / morning	0	94d042ae9cbf97c415b221e2e8c8e65b	Mañana por la mañana pasamos por la panadería antes de coger la carretera.	Mañana vamos a Toledo.
+ayer	yesterday	0	ad2c8d066e11cb3a861e916c57a3c020	Ayer estuvimos en el mercado de abastos y compramos pimientos de Padrón.	Ayer llovió muchísimo.
+ahora	now	0	f4d337de52c91d3f392c137fbd7a6641	Ahora mismo hay obras en la calle y no se puede pasar con el coche.	Ven ahora, por favor.
+a la derecha	to the right	0	8904a931a1af62c79d59f46ce1fa2dff	Gira a la derecha después del quiosco y verás la iglesia con las cigüeñas.	Mira a la derecha.
+a la izquierda	to the left	0	1a3b20cebb7939bf6e5f350b067f93df	Tuerce a la izquierda al llegar a la muralla y sigue hasta la plaza.	Está a la izquierda.
+todo recto	straight ahead	0	7174c0c04073cf18307337f32a827fa3	Siga todo recto hasta la rotonda y allí vuelva a preguntar, que es un lío.	Ve todo recto.
+cerca	near / close	0	b8154e4397bcb76323ec9d0f78f105ad	Vivimos cerca del Ebro y en primavera el río baja muy alto.	Está cerca de aquí.
+lejos	far	0	f0c8d3d3d627b6d86a54d19cd727af1c	Mis primos viven lejos, en las islas, y solo vienen por Navidad.	Queda muy lejos.
+abierto	open	0	47deb9ded6eedef4c7f8974562dd536a	Este bar está abierto desde las seis para los que entran temprano a trabajar.	Está abierto, entra.
+cerrado	closed	0	e9c14407be87028ef9905132c65a1744	Llegamos al ayuntamiento y estaba cerrado: había que pedir cita previa.	Hoy está cerrado.
+te quiero	I love you (romantic)	0	5717d03f3f329f1f95302f7433dd59ce	Te quiero, aunque roncas más fuerte que las obras de la calle.	Te quiero mucho.
+bienvenido	welcome	0	e25545c43449bcee32ba44976d421c86	Bienvenido a Galicia; aquí llueve bastante, pero se come de maravilla.	¡Bienvenido a casa!
+buena suerte	good luck	0	e37400a7193e3208e101fc2c118be30f	Buena suerte con el examen; luego te esperamos para tomar algo.	Buena suerte mañana.

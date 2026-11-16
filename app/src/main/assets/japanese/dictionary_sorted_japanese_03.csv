@@ -1,224 +1,224 @@
-赤ちゃん (akachan)	baby	3	22a842057585be138ae8ea6de61b5d23	隣の家に赤ちゃんが生まれました。	赤ちゃんが寝ている。
-祖父母 (sofubo)	grandparents	3	9b22a45d0fdfaefb41f4189de431ad0c	夏休みに祖父母の家へ遊びに行きます。	祖父母に会う。
-親 (oya)	parent	3	c8aa33267e698dbb8138d3918d7686fc	子供は親の言うことをよく聞きます。	親と住む。
-夫婦 (fūfu)	married couple	3	d7de99389828692e456abec5be6638e7	あの夫婦はとても仲がいいです。	夫婦で出かける。
-主人 (shujin)	husband (one's own)	3	2db959c0066850d6eee8423f3dce923e	主人は今、出張で大阪にいます。	主人は留守です。
-家内 (kanai)	wife (one's own)	3	a14f47b50c20eddad2d07a6d37b79097	家内は今、買い物に行っています。	家内は元気です。
-息子 (musuko)	son	3	9ace74101cd0737a79f3284a13de5fde	息子は今年から高校に通っています。	息子が二人いる。
-娘 (musume)	daughter	3	cb29a5b6754d5469ca76b65b7ef2f898	娘は来月、結婚する予定です。	娘は十歳です。
-孫 (mago)	grandchild	3	b17292eb8e1c58bae9f64500f7a5a263	祖母は孫が来るのを楽しみにしています。	孫が遊びに来る。
-親戚 (shinseki)	relative	3	8fae89886afa0108f06e7a739de984e9	お正月に親戚がたくさん集まりました。	親戚が多い。
-知り合い (shiriai)	acquaintance	3	e0ec2c0c611a5492b906bbd756c96891	駅で昔の知り合いに偶然会いました。	知り合いが少ない。
-隣の人 (tonari no hito)	neighbor	3	a701553c434caa1388028d26c54d0360	隣の人はとても親切な方です。	隣の人に会う。
-お客さん (okyakusan)	guest, customer	3	ff8b09fa1016f63792fc77ded50e435e	今日は家にお客さんが来ます。	お客さんが多い。
-赤ん坊 (akanbō)	infant	3	f40686c8293cf27dfc273b0b435c81d4	赤ん坊が大きな声で泣いています。	赤ん坊が笑う。
-首 (kubi)	neck	3	6e51abe135c74a94e449e75b543a34af	長く下を向いて首が痛くなりました。	首が痛い。
-肩 (kata)	shoulder	3	a144c70455f50aea1f0a46cdf4673cc3	重い荷物を持って肩がこりました。	肩が痛い。
-腕 (ude)	arm	3	ba826e033b330e2fd20431852546194e	転んで腕に大きな傷ができました。	腕を上げる。
-指 (yubi)	finger	3	ed7dd8824543b71a739d20175f95457d	ドアに指を挟んでとても痛いです。	指が長い。
-背中 (senaka)	back (body)	3	3861509dbd895ac4880f76190c5f6253	朝から背中がずっと痛いです。	背中が広い。
-お腹 (onaka)	belly, stomach	3	6660848b75ac4cd13e5277bbeb11af92	食べすぎてお腹が痛くなりました。	お腹が痛い。
-胸 (mune)	chest	3	8e64d61096ca8851f753b85611a0325a	走った後で胸が苦しくなりました。	胸が痛い。
-喉 (nodo)	throat	3	3a437ac92329539939689f578fc0859d	風邪をひいて喉がとても痛いです。	喉が痛い。
-血 (chi)	blood	3	1600b8232729421bf4a0be0367444d5f	指を切って少し血が出ました。	血が出る。
-怪我 (kega)	injury	3	48ccdf1d08dcbd68c36edc0444066a13	自転車で転んで足を怪我しました。	怪我をする。
-痛い (itai)	painful	3	5521c03b0537ec2a15b0c6cf8b023a46	朝から頭がとても痛いです。	お腹が痛い。
-具合 (guai)	condition (health)	3	0d10d5acef4df1852bcf235f31eea627	今日は体の具合が悪くて休みます。	具合が悪い。
-咳 (seki)	cough	3	c7dd520ca658fc70141ec1ce51a9c98e	昨日から咳が止まらなくて困っています。	咳が出る。
-入院 (nyūin)	hospitalization	3	9a5dc7e8879a2b022984f4be906c32d4	祖父は来週、手術のために入院します。	病院に入院する。
-注射 (chūsha)	injection, shot	3	0afbfdad1721035cb4f093547c04b3b9	医者に行って注射をしてもらいました。	注射が怖い。
-焼く (yaku)	to grill, to bake	3	8eab215b7e2ac765a52ea8c388feecbb	今夜は魚を焼いて食べましょう。	パンを焼く。
-煮る (niru)	to simmer, to boil	3	7182716b67cfe5bb3699987e382e5145	野菜を弱火でゆっくり煮ます。	豆を煮る。
-沸かす (wakasu)	to boil (water)	3	e2a1549430314809cbc9a4290a1c3f2f	お茶のためにお湯を沸かします。	お湯を沸かす。
-味 (aji)	taste, flavor	3	e88263f9a759fb66e5d4fc4c3543ead8	このスープは味が少し薄いです。	味がいい。
-甘い (amai)	sweet	3	d401279dd943a31cf5f5e44901fbe443	このケーキは甘くておいしいです。	甘いお菓子。
-辛い (karai)	spicy, hot	3	b93fe353ea96471ee98033b721bb073b	このカレーは辛くて食べられません。	辛い料理。
-苦い (nigai)	bitter	3	4c1950a8f810695b38a2fd47400538ca	この薬はとても苦いです。	苦いコーヒー。
-お湯 (oyu)	hot water	3	2e4a652dee76de6e8f6c9fc53ac84eb9	カップにお湯を入れてください。	お湯を飲む。
-ストーブ (sutōbu)	heater, stove	3	90c1d52695adbbb2bd0ae045db03db73	寒いので部屋のストーブをつけました。	ストーブが暖かい。
-味噌 (miso)	miso	3	6e4bf366ac9b7c8e83ee5c3af2a7a053	母は毎朝味噌汁を作ります。	味噌を買う。
-醤油 (shōyu)	soy sauce	3	41c3e68dced6466ef974fc84d253ee6d	刺身に醤油を少しつけて食べます。	醤油をかける。
-ご飯を炊く (gohan o taku)	to cook rice	3	40b3d9c71498cdf789d1943ef7345f98	夕方になったらご飯を炊きます。	ご飯を炊く。
-鍋 (nabe)	pot, pan	3	b297966d30bc33b29f21b2e47dc47fd8	大きな鍋でスープを作りました。	鍋で煮る。
-皿洗い (saraarai)	dishwashing	3	98f0000ae09f10193651be0867a0f8af	食事の後で皿洗いを手伝います。	皿洗いをする。
-ゴミ (gomi)	trash, garbage	3	03e130bb63095fc907e70d6aa4b74cdd	毎週月曜日にゴミを出します。	ゴミを捨てる。
-片付ける (katazukeru)	to tidy up	3	633b550adc7389b401080be1ac0ac8e4	使った物はちゃんと片付けてください。	部屋を片付ける。
-汚い (kitanai)	dirty	3	f048d80dc12c3ade904079836965ad05	手が汚いので石鹸で洗います。	部屋が汚い。
-綺麗 (kirei)	clean, pretty	3	ff7935625cce504f43543cbffeb48f1a	掃除をして部屋を綺麗にしました。	綺麗な花。
-棚 (tana)	shelf	3	e9419dc4d5c1bb029c4be5d20d7b080a	高い棚から皿を取りました。	棚に置く。
-引き出し (hikidashi)	drawer	3	a16821a485e1c0103b3cd37e5737a0cb	靴下は一番上の引き出しにあります。	引き出しを開ける。
-押し入れ (oshiire)	closet (Japanese-style)	3	61d2b545592dcc2d311615df775e1240	布団は押し入れの中にしまいます。	押し入れに入れる。
-布団 (futon)	futon, bedding	3	c2850dfca61ebfd02d9313723aca6b2a	夜になったら布団を敷いて寝ます。	布団で寝る。
-毛布 (mōfu)	blanket	3	81d1c458aea1d9245cf6e43e46cf6686	寒い夜は毛布をもう一枚かけます。	毛布をかける。
-壁 (kabe)	wall	3	d4a2da7c28c07b2960449694788f0a49	部屋の壁に家族の写真を飾りました。	壁に貼る。
-床 (yuka)	floor	3	a8599b353cd42d004934f8dd489c5297	子供が床に座って遊んでいます。	床を拭く。
-屋根 (yane)	roof	3	dd4c3e3b5b006db22036c2b6a48d8b1b	古い家の屋根から雨が漏ります。	屋根が赤い。
-階段 (kaidan)	stairs	3	55ce162df333dcdd3fa9628d478f7fe6	二階へは階段を上って行きます。	階段を上る。
-エアコン (eakon)	air conditioner	3	8cf3b21fd6e5decc8b237f599bbf4201	暑いのでエアコンをつけました。	エアコンを消す。
-扇風機 (senpūki)	electric fan	3	055baeb7ac6bde34a725a80aa2ce51f0	夏は扇風機の風が気持ちいいです。	扇風機をつける。
-歯ブラシ (haburashi)	toothbrush	3	457b38c63e677b32638f564146dceadd	新しい歯ブラシで歯を磨きます。	歯ブラシを使う。
-波 (nami)	wave	3	7a695596a698013e35ecee6dab50800c	今日は海の波がとても高いです。	波が来る。
-砂 (suna)	sand	3	49e9e57ba2a7fe26a3d82f315b60ee81	子供たちは海辺で砂で遊んでいます。	砂が温かい。
-岸 (kishi)	shore, bank	3	f3f320cba07b1b296bc1fd442e2b0a66	船はゆっくりと岸に近づきました。	岸まで泳ぐ。
-林 (hayashi)	woods, grove	3	aeed6005ebf99caf09abcd763b2a5ab1	家の裏に小さな竹の林があります。	林を歩く。
-谷 (tani)	valley	3	8b8ebf12bdee3ab0677ed165498f2dc9	深い谷の底を川が流れています。	谷は深い。
-岩 (iwa)	rock, boulder	3	dc185ad53b9250908a1319ed7c278b70	海岸に大きな岩がいくつも並んでいます。	岩が大きい。
-畑 (hatake)	field (crops)	3	49c95e6ca8a30ddf108c8bb42424da23	祖父は毎朝畑で野菜を育てています。	畑で働く。
-虹 (niji)	rainbow	3	8a421093ef8e8b00625a8bfa14fe743b	雨がやんで空に大きな虹が出ました。	虹が見える。
-霧 (kiri)	fog, mist	3	e25471056d4a885755dd8c101f504606	朝は霧が深くて前がよく見えません。	霧が出る。
-嵐 (arashi)	storm	3	584f9f974f9cbc34e96daedd525e4930	昨夜は強い嵐で木が倒れました。	嵐が来る。
-気温 (kion)	temperature (air)	3	eec50e13bd8a5216f240e420936250fe	今日は気温が三十度まで上がりました。	気温が高い。
-湿気 (shikke)	humidity	3	03d9444d737b671155c61453f3090183	夏は湿気が多くてとても暑く感じます。	湿気がひどい。
-雷 (kaminari)	thunder, lightning	3	38fda644e56493c13e27d14be965c84a	遠くで雷が鳴り始めて少し怖いです。	雷が鳴る。
-滝 (taki)	waterfall	3	902b03a63a57b4873397a8de7de8fc75	山の奥に大きな滝が流れ落ちています。	滝を見る。
-枝 (eda)	branch	3	79c83252ac2ebbfa52a26248e66ec879	鳥が木の枝で気持ちよさそうに鳴いています。	枝を折る。
-根 (ne)	root	3	3476fdaccc9309e9013a9b3c175b6ae9	この大きな木は根がとても深いです。	根が太い。
-種 (tane)	seed	3	a914a9bc219a5072bb7a7f1355ccaa19	春に庭へ花の種をたくさんまきました。	種をまく。
-実 (mi)	fruit, nut (on a tree)	3	9b6c4a54c5d99578f4f8ea9174b8e68a	秋になると木にたくさんの実がなります。	実がなる。
-松 (matsu)	pine tree	3	cca423aa53ab568d0815a3b32edf537a	お寺の庭に古い松が立っています。	松が高い。
-竹 (take)	bamboo	3	d99eb1890a06b781e38f1d070425f59d	山の裏に竹がまっすぐに伸びています。	竹は強い。
-麦 (mugi)	wheat, barley	3	c09c5fd1e5a5cd05d5eaf5961bc7d69e	広い畑で黄色い麦が風にゆれています。	麦を育てる。
-芝生 (shibafu)	lawn, turf	3	6f7636c8a5d83b86faa30e15d24286e1	公園の芝生に座って弁当を食べました。	芝生で遊ぶ。
-森林 (shinrin)	forest, woodland	3	10742835cef3eaeb19353c4b5d71f2b8	この国は緑の森林がとても豊かです。	森林を守る。
-ライオン (raion)	lion	3	a06a02914fc08240255c016ef6206a6d	動物園で大きなライオンが昼寝していました。	ライオンは強い。
-鹿 (shika)	deer	3	497eb2059f90fb6a2b427a75da262b3a	奈良の公園にはたくさんの鹿がいます。	鹿に会う。
-鯨 (kujira)	whale	3	0fbf09413c26b57c309e329a9881318e	海で大きな鯨が泳ぐのを見ました。	鯨は大きい。
-蜂 (hachi)	bee	3	9c4d14e99a500a22897cc932d1e0d459	庭の花のまわりを蜂が飛んでいます。	蜂が怖い。
-羽 (hane)	feather, wing	3	e2afe323fde1ffd1fdaa0ae18316ccbe	きれいな鳥の羽が地面に落ちていました。	羽が白い。
-巣 (su)	nest	3	67cbe1b3e4ec6cfdce746f1beae2d16e	木の高い所に鳥が巣を作りました。	鳥の巣だ。
-ペット (petto)	pet	3	41aa085dfcc4742599f34840086f70c7	私はペットに小さな犬を飼っています。	ペットが好きだ。
-横断歩道 (ōdan hodō)	pedestrian crossing	3	b6a6f32ad81252e4b01c256a16912ae7	子供は横断歩道をゆっくり渡りました。	横断歩道を渡る。
-通り (tōri)	street, avenue	3	8af7a38c13df2d666338c223b52bd9a2	この通りは昼も夜も車が多いです。	広い通り。
-坂 (saka)	slope, hill	3	239124f8d4f865477ae97d60bd340bf8	駅までの坂を上るのは大変です。	坂を上る。
-乗り換える (norikaeru)	to transfer (trains)	3	6f824dadc62f4c5001bcffdcb998bd53	次の駅で地下鉄に乗り換えてください。	電車を乗り換える。
-急行 (kyūkō)	express (train)	3	14bd2551dc509deec10a7f700d88f358	急行に乗れば三十分で着きます。	急行に乗る。
-通る (tōru)	to pass through	3	fedcd2dba3197572afd779e00ab8eba8	この道は学校の前を通っています。	門を通る。
-通う (kayou)	to commute	3	36ee2c20cab1ccb7172eba7bff4ffac4	毎日バスで会社に通っています。	学校に通う。
-観光 (kankō)	sightseeing	3	28d680fc12e5f548a1e6ac1921119062	京都へ観光に行く人がとても多いです。	観光に行く。
-見物 (kenbutsu)	sightseeing visit	3	070857f1c52568ebb87cb500e9e76d03	お祭りの見物に大勢の人が集まりました。	町を見物する。
-予約 (yoyaku)	reservation	3	196820d40a9cf01b8cfe024681d14341	駅前のホテルを三泊予約しました。	席を予約する。
-案内 (annai)	guidance, showing the way	3	b77d74f29f864877f25e519ceccb413b	町を案内してくれてありがとうございました。	道を案内する。
-郊外 (kōgai)	suburbs	3	44c967f021c4aa6d1e5904cd4b23f20d	両親は静かな郊外に住んでいます。	郊外に住む。
-田舎 (inaka)	countryside	3	6c5cba3ae510e43999f30639e15f81a4	夏休みは祖父母の田舎へ帰ります。	田舎は静かだ。
-都会 (tokai)	big city	3	207665d80cbe3e670b7367ea8aa40b72	都会の生活は便利だけれど疲れます。	都会に住む。
-踏切 (fumikiri)	railroad crossing	3	8023006211d5abd865a49dba78aae965	踏切の音が鳴って電車が通りました。	踏切を渡る。
-歩道 (hodō)	sidewalk	3	7de563eb67d7e6b56141fd45aeabace3	自転車は歩道を走ってはいけません。	歩道を歩く。
-事故 (jiko)	accident	3	95000fc0793846d883efd1fbaa241cc8	あの交差点で大きな事故がありました。	事故が起きる。
-出発 (shuppatsu)	departure	3	f89a3b64c1957b2b88c8799e3cd65a7b	バスの出発までまだ時間があります。	九時に出発する。
-工場 (kōjō)	factory	3	86491c4582fdd55fb2a161424760f00a	父はあの車の工場で働いています。	工場を見学する。
-会議 (kaigi)	meeting	3	42df42d7349264b6a37673f1c1a4c650	明日の朝、大切な会議があります。	会議に出る。
-用事 (yōji)	errand, business	3	6c2a74f81d691363944637a0c0399fc9	午後は用事があるので帰ります。	用事がある。
-手伝う (tetsudau)	to help, to assist	3	f214ea2ca1e8c4d713b6d8f42b3699d5	母の仕事を少し手伝いました。	仕事を手伝う。
-社長 (shachō)	company president	3	cc21a566a0d875d5a3d0d25479964c0d	うちの会社の社長はとても若いです。	社長と話す。
-受付 (uketsuke)	reception desk	3	49c312747809c92ce4ba867121b2699f	病院に着いたら受付で名前を言います。	受付で聞く。
-品物 (shinamono)	goods, article	3	8ccf497c3c9327c463e93f3854d55c19	この店の品物はどれも質がいいです。	品物を選ぶ。
-店員 (ten'in)	shop clerk	3	1abe0415a0bc4e8297d3ed0141ddf182	店員にこの服のサイズを聞きました。	店員を呼ぶ。
-注文 (chūmon)	order (placing)	3	19b0373d1ff0241c87503474e6a7dc1a	レストランで飲み物を注文しました。	注文をする。
-無料 (muryō)	free of charge	3	658ca630134848697ea09351d3f22bbd	この美術館は子供は無料で入れます。	入場は無料だ。
-貯金 (chokin)	savings	3	332ce1bb9e1872ad0e3d114ec151f671	旅行のために毎月貯金をしています。	貯金が増える。
-小学校 (shōgakkō)	elementary school	3	2093bd2f7838d9b4c511167040f168c3	妹は今年から小学校に通っています。	小学校に入る。
-中学校 (chūgakkō)	junior high school	3	6dfe5916704fb939cac4389b2ac064a5	兄は近くの中学校で英語を教えています。	中学校に通う。
-高校 (kōkō)	high school	3	86525b12e52982cfc6a51cc56fb52f91	高校を卒業したら大学に行きます。	高校に入る。
-教科書 (kyōkasho)	textbook	3	7b64fe9156ba2f9a1e5bd8015f8c57b1	授業の前に教科書を読んでおきます。	教科書を開く。
-消しゴム (keshigomu)	eraser	3	2cfa66e238dfbd17c54e67ca7921b74f	間違えたので消しゴムで消しました。	消しゴムを使う。
-説明 (setsumei)	explanation	3	2726027c01283ebb074382c07144cd2f	先生が使い方を丁寧に説明しました。	説明を聞く。
-経験 (keiken)	experience	3	5aae018064339f0f928003d2f0e15537	私はまだ働いた経験がありません。	経験が少ない。
-卒業 (sotsugyō)	graduation	3	076d2c52fe206bb404be9e9f5597df56	姉は来年の春に大学を卒業します。	高校を卒業する。
-入学 (nyūgaku)	entering school	3	6d781462cef99e0b8f809b4d5a96a23b	四月に新しい学生が大学に入学します。	大学に入学する。
-校長 (kōchō)	school principal	3	072e69eac8633a20f07d263e03331065	校長が朝の集まりで話をしました。	校長に会う。
-出席 (shusseki)	attendance	3	b88c53fc8909916a5f86aa41b8dcdd59	今日は全員が授業に出席しました。	会議に出席する。
-専門 (senmon)	specialty, major	3	76080fd51667fb2168055b80ea16a26b	大学では経済を専門に勉強しています。	専門は何ですか。
-文法 (bunpō)	grammar	3	bcb3519e098fe62e65f6c2a616c7306e	日本語の文法は少し難しいです。	文法を覚える。
-発音 (hatsuon)	pronunciation	3	3c9d7ea7e17b8de5c0909651d1a1920f	先生の後について発音を練習します。	発音がいい。
-準備 (junbi)	preparation	3	03c6ea7ddf97b496c72e3fac8b32aed9	明日の会議の準備をしています。	準備ができた。
-都合 (tsugō)	convenience, circumstances	3	8e3b271472e651ee49acf843f0935d0a	その日は都合が悪くて行けません。	都合がいい。
-心 (kokoro)	heart, mind	3	5c652bfc3fda36b6b2fe39d9ed5c629a	彼の優しい心に深く感動しました。	心が温かい。
-怒る (okoru)	to get angry	3	d8b01582b9869bce73c94836cf9deeea	父は私の嘘を知って怒りました。	先生が怒る。
-驚く (odoroku)	to be surprised	3	c1c9b66bb3a05d527428b4a0150e17e5	突然の大きな音にとても驚きました。	知らせに驚く。
-安心 (anshin)	relief, peace of mind	3	9781b2ffc4fb83e861485c4abedec7fa	無事に着いたと聞いて安心しました。	安心して寝る。
-興味 (kyōmi)	interest	3	8b26ffe20dfa0853a35365bce06e0336	私は日本の歴史に興味があります。	音楽に興味がある。
-趣味 (shumi)	hobby	3	c54c89c56d81c746eba1199ca9183ea4	私の趣味は古い切手を集めることです。	趣味は読書だ。
-夢 (yume)	dream	3	1da06dd5d7727872d53f5e306094d289	医者になるのが子供の頃からの夢です。	いい夢を見た。
-喜ぶ (yorokobu)	to be glad, rejoice	3	3584e15337f7ab832c5fea9d1aa09fca	合格の知らせに家族みんなが喜びました。	とても喜ぶ。
-注意 (chūi)	caution, attention	3	f68f9d5f987e81ba457d9f487a4c2099	道を渡る時は車に注意してください。	注意が必要だ。
-教育 (kyōiku)	education	3	bbd4c2c456cd00191ddc9ed5afdba895	この国は子供の教育をとても大切にします。	教育が大事だ。
-意見 (iken)	opinion	3	263aed520abb420663ff670ca4aace5f	会議でみんなが自由に意見を言いました。	意見を聞く。
-連絡 (renraku)	contact, communication	3	994bae13028fb5387fda0a40871bbc22	着いたら必ず連絡してください。	連絡を取る。
-伝える (tsutaeru)	to convey, tell	3	fbef772e3e5f655f8e10c723e1b47afa	母にこの言葉を伝えてください。	気持ちを伝える。
-相談 (sōdan)	consultation	3	34d4a3b0026150f139085fb9f3e499ca	将来のことを先生に相談しました。	友達に相談する。
-平和 (heiwa)	peace	3	6a41609a60021c9025696298af5cf1b0	世界中の人が平和を願っています。	平和が一番だ。
-科学 (kagaku)	science	3	6c19256f70b52503d121f538ada999e5	弟は学校で科学の勉強が好きです。	科学を学ぶ。
-失礼 (shitsurei)	rudeness, impoliteness	3	11c52f73eba0ba75db3bd6bc385a08d4	遅れて本当に失礼しました。	失礼なことを言う。
-世話 (sewa)	care, looking after	3	5043f11b8ea504b065ca8dfe2438a8c2	祖母が病気の犬の世話をしています。	子供の世話をする。
-反対 (hantai)	opposition, opposite	3	e305360356a5ead0fe73aebfa26455e6	私は彼の意見に反対しました。	計画に反対する。
-嘘 (uso)	lie	3	d8c92caded3cae32e8ec196eed99ae83	彼は平気でみんなに嘘をつきます。	嘘はだめだ。
-けんか (kenka)	quarrel, fight	3	75b9a1aa9d6eb998a2d0e1ca515bc1bb	兄弟が小さなことでけんかをしました。	友達とけんかする。
-社会 (shakai)	society	3	767495b97ce6386dd9cd73aaeb1f7c30	学校を出て初めて社会の厳しさを知りました。	社会に出る。
-文化 (bunka)	culture	3	b9ade347d3313fd05776b484324b43f5	日本の古い文化にとても興味があります。	文化を学ぶ。
-政治 (seiji)	politics	3	acb2313c1180e32d633d8228eebbdfdf	父は毎晩政治のニュースを見ます。	政治に関心がある。
-経済 (keizai)	economy	3	f3e4fc963d2b8b29e587f4b7a02f01e7	この国の経済は少しずつ良くなっています。	経済を勉強する。
-歴史 (rekishi)	history	3	0f47cc174dbb0954a4a0c4caf0332bfb	この町には長い歴史があります。	歴史が好きだ。
-戦争 (sensō)	war	3	964e0f6bf5b0df354cb7e3017514e8e5	祖父は若い頃に戦争を経験しました。	戦争は怖い。
-法律 (hōritsu)	law	3	cfcd3d66bfcd8436b817030090428803	国民はみんな法律を守る必要があります。	法律を守る。
-規則 (kisoku)	rule, regulation	3	c9a4266fe2a2f6e7e0c722e130f18158	この学校には厳しい規則があります。	規則を守る。
-国際 (kokusai)	international	3	f758c106e95df2d2a72980426dda5cdf	彼は国際的な会社で働いています。	国際会議に出る。
-進む (susumu)	to advance, to proceed	3	9c1ac72ee15a24eb96989c34d29a087a	工事は予定より早く進んでいます。	前へ進む。
-戻る (modoru)	to return, to go back	3	70426a70c21c526b541bf0af7c9f88df	忘れ物をして家に戻りました。	席に戻る。
-過ぎる (sugiru)	to pass (by), to exceed	3	b238608cedcac7fb4deb0903fe6ace73	楽しい時間はすぐに過ぎてしまいます。	昼を過ぎる。
-寄る (yoru)	to drop by, to stop by	3	00a31c78d1ed638c4ccb7aa9be64006a	帰りにスーパーに寄って卵を買います。	店に寄る。
-慣れる (nareru)	to get used to	3	4d43e4687245328aed5584dac9110d90	新しい仕事にやっと慣れてきました。	生活に慣れる。
-連れて行く (tsurete iku)	to take (someone) along	3	cd49ac08625c630b2a07c6657857354b	日曜日に子供を動物園へ連れて行きます。	友達を連れて行く。
-変わる (kawaru)	to change (intransitive)	3	40e26ca579ec7c2aefec2199d5ce74a7	駅前の様子がすっかり変わりました。	色が変わる。
-変える (kaeru)	to change (transitive)	3	0581f90ecd7813c9275d8449adfda12a	会議の時間を午後に変えました。	予定を変える。
-増える (fueru)	to increase	3	9711e8c0e77e79c5703ce6c388ca4d50	最近、外国人の旅行者が増えています。	人が増える。
-減る (heru)	to decrease	3	84fd7fbc06c71792a11bbf97975d5f50	運動して少し体重が減りました。	お金が減る。
-育てる (sodateru)	to raise, to bring up	3	dc48547d809c1b607381d0ffb90fd384	庭で野菜を育てるのが趣味です。	花を育てる。
-育つ (sodatsu)	to grow up	3	535e1ce016f4e24f9d5cc6ce48817538	この子は田舎で元気に育ちました。	木が育つ。
-迎える (mukaeru)	to go to meet, to welcome	3	6928872fa689ca0a92794bd03fe48196	空港まで友達を迎えに行きます。	客を迎える。
-折る (oru)	to break, to fold	3	0670b278d450b30f178d14211d58ffce	転んで右手の指を折ってしまいました。	紙を折る。
-割れる (wareru)	to break, to crack	3	9dcb25ad4139411f2737ce20dc473ce6	落としたコップが粉々に割れました。	皿が割れる。
-倒れる (taoreru)	to fall over, to collapse	3	765c19611c9c0d3f2112e98d312193f6	強い風で庭の木が倒れました。	自転車が倒れる。
-壊れる (kowareru)	to break down	3	46a9b50df655298f911d2e2a252a47cc	古いテレビがとうとう壊れました。	時計が壊れる。
-壊す (kowasu)	to break (something)	3	6d20526d3fce73226f4326316ec6c28d	弟がおもちゃを壊してしまいました。	機械を壊す。
-続ける (tsuzukeru)	to continue (something)	3	8741720827287a28a588e7e83bba0867	毎日日本語の勉強を続けています。	運動を続ける。
-決める (kimeru)	to decide	3	ee79ea1a6bfd7c79054e078e8b37b6b0	今年の夏は海へ行くと決めました。	日にちを決める。
-集める (atsumeru)	to collect, to gather	3	6e1582a5e4948a0511fc8f302ccb30fd	子供の頃から切手を集めています。	ゴミを集める。
-選ぶ (erabu)	to choose, to select	3	48b6bf98ac07054504fde5263bec5cd6	プレゼントに何を選ぶか迷っています。	色を選ぶ。
-比べる (kuraberu)	to compare	3	be7e2abaf27b0944a44431acd23579a8	二つの店の値段を比べて買いました。	前と比べる。
-見つける (mitsukeru)	to find, to discover	3	a29439c5dfb14e32b8cc57b5e0e72208	なくした鍵をやっと見つけました。	答えを見つける。
-忘れる (wasureru)	to forget	3	45ce5ab5f54266bdea550fe43dce5fe8	電車に傘を忘れてきました。	宿題を忘れる。
-捨てる (suteru)	to throw away	3	e5f43f5b6da187dc94de010f22ee0f90	古い新聞をまとめて捨てました。	ゴミを捨てる。
-拾う (hirou)	to pick up	3	d6170af654c56cda476507d08967e67a	道で財布を拾って交番に届けました。	ゴミを拾う。
-建てる (tateru)	to build	3	2360ca1f49d9d881a5ecad22eb71f052	両親は来年新しい家を建てます。	ビルを建てる。
-植える (ueru)	to plant	3	910c3e2779d41ab93f1c5d3c8674b8ab	春になったら庭に桜を植えたいです。	花を植える。
-助ける (tasukeru)	to help, to rescue	3	1b8c087ada5f201ea74e49fc61ad0afd	困っている人を見たら必ず助けます。	友達を助ける。
-将来 (shōrai)	future	3	e6322bfa9acfda2af5b0bd9274c59d86	将来は外国で働いてみたいです。	将来の夢。
-さっき (sakki)	a moment ago	3	ac47f569cfb2ba9419f047cf5b5a4431	さっき駅で友達に会いました。	さっき食べた。
-最後 (saigo)	last, end	3	5302cf08a40408c741c96c034d2c5850	映画の最後はとても悲しかったです。	最後まで見る。
-最初 (saisho)	first, beginning	3	b8effefcae6358896d0f55aaceb54641	最初は日本語が全然わかりませんでした。	最初に話す。
-以前 (izen)	before, formerly	3	be5251ab2f708a74fa8c2048329c7bbf	以前この町に住んでいました。	以前会った人。
-久しぶり (hisashiburi)	after a long time	3	8dd5c3a8942015026279ffc4cd137c84	久しぶりに古い友達に会いました。	久しぶりですね。
-期間 (kikan)	period, term	3	0989a224eef17b5bad57104408132f4a	夏休みの期間は一か月もあります。	短い期間。
-予定 (yotei)	plan, schedule	3	b388d5d33a5b634789a1cf96a58990e0	週末は友達と出かける予定です。	予定がある。
-今度 (kondo)	next time	3	b954ea9b6d5ed37f8bd58c361cf43e6e	今度の日曜日に映画を見に行きましょう。	今度会おう。
-普段 (fudan)	usually, ordinarily	3	4e1b2d9b7cec9a263abce47d7fe91fc2	普段は七時ごろに家を出ます。	普段は静かだ。
-急 (kyū)	sudden, urgent	3	220772364a1ad0bef5ed9db61eb6fe93	急な用事ができて行けなくなりました。	急に泣く。
-確か (tashika)	certain, sure	3	2a63532bed0d4b534e009a1d3f023425	その話は確かだと思います。	確かな話。
-立派 (rippa)	splendid, fine	3	430b2f0e070c96aceb160ad466341d33	彼は立派な家に住んでいます。	立派な人。
-重要 (jūyō)	important, crucial	3	c5c303a0d486827643a8bc2790d8a9ab	明日はとても重要な会議があります。	重要な話。
-無理 (muri)	impossible, unreasonable	3	90b0e2de0d552fb3df014e4bcc5532c7	一日でこの仕事は無理です。	無理をするな。
-十分 (jūbun)	enough, sufficient	3	3f8f01f22f3df6dec50f7b79b5cf69b3	今日は十分に休むことができました。	時間は十分だ。
-邪魔 (jama)	hindrance, nuisance	3	a0ddffddf6c95961bb6f27dbdb45da6d	勉強の邪魔をしないでください。	邪魔をする。
-適当 (tekitō)	suitable, appropriate	3	70e4b02ef519fde3197c7bdcc7106b1c	適当な大きさの箱を選びました。	適当に作る。
-複雑 (fukuzatsu)	complicated	3	b1586d8e987f59b6319a0a17ce85bf6a	この問題はとても複雑で難しいです。	複雑な気持ち。
-簡単 (kantan)	simple, easy	3	41542f045307c548f4601c550bfff6ee	この料理は簡単に作れます。	簡単な問題。
-途中 (tochū)	on the way, midway	3	3c33cb56a6e99aff6335d75289bfb8cc	学校へ行く途中で雨が降りました。	途中で帰る。
-間違い (machigai)	mistake, error	3	dfba443949671d5955a40ff9753788c8	この計算には間違いがあります。	間違いが多い。
-危険 (kiken)	dangerous, danger	3	a470bd93e27bf885359a317415e4a61f	夜に一人で歩くのは危険です。	危険な場所。
-丁寧 (teinei)	polite, careful	3	e7274260d27185c073cd81523cdb9d9d	店員はとても丁寧に説明してくれました。	丁寧な言葉。
-細かい (komakai)	detailed, fine	3	c2db62ba9a6e80a989194563cfafe8ec	先生は細かい所まで直してくれました。	細かいお金。
-硬い (katai)	hard, stiff	3	d0ffeb9b443803ec8382bbaecac68083	このパンは古くて硬いです。	硬い椅子。
-柔らかい (yawarakai)	soft, tender	3	202afb2e16082f615f4d969258d88beb	この肉はとても柔らかくておいしいです。	柔らかい布団。
-深い (fukai)	deep	3	d7a575ee844a017acfc319be675dd343	この川は思ったより深いです。	深い海。
-浅い (asai)	shallow	3	8ca9644be4140121f09adab66ad064b8	この池は浅いので安全です。	浅い川。
-原因 (gen'in)	cause	3	04b0c0625e2e0d851ad0092ee2389514	火事の原因はまだわかりません。	原因を調べる。
+赤ちゃん (akachan)	baby	3	22a842057585be138ae8ea6de61b5d23	電車で赤ちゃんが泣きだすと、周りの人がそっと顔を上げます。	赤ちゃんが寝ています。
+祖父母 (sofubo)	grandparents	3	9b22a45d0fdfaefb41f4189de431ad0c	祖父母は山形で、今も自分の畑を持っています。	祖父母に会いに行く。
+親 (oya)	parent	3	c8aa33267e698dbb8138d3918d7686fc	入学式では、子供より親の方が張り切ります。	親と住んでいます。
+夫婦 (fūfu)	married couple	3	d7de99389828692e456abec5be6638e7	隣の夫婦は、毎朝そろって犬の散歩に出ます。	あの二人は夫婦です。
+主人 (shujin)	husband (one's own)	3	2db959c0066850d6eee8423f3dce923e	主人は転勤が多くて、三年ごとに引っ越しています。	主人は今、留守です。
+家内 (kanai)	wife (one's own)	3	a14f47b50c20eddad2d07a6d37b79097	家内の実家は讃岐で、うどんにはうるさいです。	家内が作りました。
+息子 (musuko)	son	3	9ace74101cd0737a79f3284a13de5fde	息子は高校で弓道を始め、朝練に通っています。	息子は大学生です。
+娘 (musume)	daughter	3	cb29a5b6754d5469ca76b65b7ef2f898	娘が七五三の着物を嫌がるので、写真どころではありません。	娘は五歳です。
+孫 (mago)	grandchild	3	b17292eb8e1c58bae9f64500f7a5a263	盆に孫が帰ってくるので、祖母は張り切っています。	孫の写真を見せます。
+親戚 (shinseki)	relative	3	8fae89886afa0108f06e7a739de984e9	法事で久しぶりに親戚が集まり、話が尽きませんでした。	親戚が九州にいます。
+知り合い (shiriai)	acquaintance	3	e0ec2c0c611a5492b906bbd756c96891	名古屋の知り合いに、味噌煮込みの店を教わりました。	知り合いが多いです。
+隣の人 (tonari no hito)	neighbor	3	a701553c434caa1388028d26c54d0360	隣の人が留守のとき、荷物を預かることがあります。	隣の人に挨拶した。
+お客さん (okyakusan)	guest, customer	3	ff8b09fa1016f63792fc77ded50e435e	雨の日は、この喫茶店にお客さんがほとんど来ません。	お客さんが待っています。
+赤ん坊 (akanbō)	infant	3	f40686c8293cf27dfc273b0b435c81d4	昔は赤ん坊を背負ったまま、畑仕事をしていたそうです。	赤ん坊が笑った。
+首 (kubi)	neck	3	6e51abe135c74a94e449e75b543a34af	枕が合わなかったのか、朝から首が回りません。	首が痛いです。
+肩 (kata)	shoulder	3	a144c70455f50aea1f0a46cdf4673cc3	重い荷物を持ったせいで、肩がずっと張っています。	肩をたたきます。
+腕 (ude)	arm	3	ba826e033b330e2fd20431852546194e	この職人は腕がいいと、近所ではもっぱらの評判です。	腕を上げてください。
+指 (yubi)	finger	3	ed7dd8824543b71a739d20175f95457d	障子を張り替えるたびに、指が糊だらけになります。	指を切りました。
+背中 (senaka)	back (body)	3	3861509dbd895ac4880f76190c5f6253	銭湯では、知らない人が背中を流してくれることもあります。	背中がかゆいです。
+お腹 (onaka)	belly, stomach	3	6660848b75ac4cd13e5277bbeb11af92	食べすぎたのか、夜になってお腹の調子が悪いです。	お腹がいっぱいです。
+胸 (mune)	chest	3	8e64d61096ca8851f753b85611a0325a	坂を一気に上ったので、胸がまだ苦しいです。	胸が痛みます。
+喉 (nodo)	throat	3	3a437ac92329539939689f578fc0859d	冬は空気が乾くので、喉を痛める人が増えます。	喉が痛いです。
+血 (chi)	blood	3	1600b8232729421bf4a0be0367444d5f	転んで膝から血が出ましたが、たいしたことはありません。	血が止まりません。
+怪我 (kega)	injury	3	48ccdf1d08dcbd68c36edc0444066a13	雪道で転んで怪我をする人が、毎年出るそうです。	怪我はありませんか。
+痛い (itai)	painful	3	5521c03b0537ec2a15b0c6cf8b023a46	慣れない正座を続けたら、足がしびれて痛いです。	ここが痛いです。
+具合 (guai)	condition (health)	3	0d10d5acef4df1852bcf235f31eea627	具合が悪いなら、無理せず早めに帰ってください。	具合はどうですか。
+咳 (seki)	cough	3	c7dd520ca658fc70141ec1ce51a9c98e	咳が二週間も続くので、一度診てもらうつもりです。	咳が出ます。
+入院 (nyūin)	hospitalization	3	9a5dc7e8879a2b022984f4be906c32d4	祖父の入院が決まったので、家族で当番を分けます。	入院は一週間でした。
+注射 (chūsha)	injection, shot	3	0afbfdad1721035cb4f093547c04b3b9	注射が苦手な子供が、待合室で泣いていました。	注射をしてもらいます。
+焼く (yaku)	to grill, to bake	3	8eab215b7e2ac765a52ea8c388feecbb	秋刀魚を焼くと、家中に煙のにおいが残ります。	パンを焼く。
+煮る (niru)	to simmer, to boil	3	7182716b67cfe5bb3699987e382e5145	大根は下ゆでしてから煮ると、味がよくしみます。	魚を煮る。
+沸かす (wakasu)	to boil (water)	3	e2a1549430314809cbc9a4290a1c3f2f	山小屋では、雪をとかして湯を沸かすこともあります。	お湯を沸かす。
+味 (aji)	taste, flavor	3	e88263f9a759fb66e5d4fc4c3543ead8	関西の出汁は、関東より味が薄いと言われます。	味はどうですか。
+甘い (amai)	sweet	3	d401279dd943a31cf5f5e44901fbe443	九州の醤油は、他の地方より甘いので驚きます。	このお菓子は甘い。
+辛い (karai)	spicy, hot	3	b93fe353ea96471ee98033b721bb073b	この味噌ラーメンは、思ったよりずっと辛いです。	辛いのは苦手です。
+苦い (nigai)	bitter	3	4c1950a8f810695b38a2fd47400538ca	抹茶は初めてだと、思ったより苦いと感じます。	この薬は苦い。
+お湯 (oyu)	hot water	3	2e4a652dee76de6e8f6c9fc53ac84eb9	源泉のお湯は熱すぎて、水でうめてから入ります。	お湯が出ません。
+ストーブ (sutōbu)	heater, stove	3	90c1d52695adbbb2bd0ae045db03db73	教室では、ストーブの上でやかんが鳴っています。	ストーブをつけます。
+味噌 (miso)	miso	3	6e4bf366ac9b7c8e83ee5c3af2a7a053	味噌は地方によって、色も塩加減もかなり違います。	味噌を買ってきます。
+醤油 (shōyu)	soy sauce	3	41c3e68dced6466ef974fc84d253ee6d	小豆島には、醤油の蔵が今も並んでいます。	醤油を少しかけます。
+ご飯を炊く (gohan o taku)	to cook rice	3	40b3d9c71498cdf789d1943ef7345f98	土鍋でご飯を炊くと、おこげができて楽しいです。	朝にご飯を炊く。
+鍋 (nabe)	pot, pan	3	b297966d30bc33b29f21b2e47dc47fd8	冬は鍋にすると、野菜がたくさん食べられます。	鍋が重いです。
+皿洗い (saraarai)	dishwashing	3	98f0000ae09f10193651be0867a0f8af	皿洗いは、じゃんけんで負けた人の仕事です。	皿洗いを手伝います。
+ゴミ (gomi)	trash, garbage	3	03e130bb63095fc907e70d6aa4b74cdd	燃えるゴミと資源ゴミで、出す曜日が違います。	ゴミを出しました。
+片付ける (katazukeru)	to tidy up	3	633b550adc7389b401080be1ac0ac8e4	客が来る前に、居間を片付けることにしました。	机を片付ける。
+汚い (kitanai)	dirty	3	f048d80dc12c3ade904079836965ad05	靴が泥で汚いので、玄関で脱がせてもらいました。	手が汚いです。
+綺麗 (kirei)	clean, pretty	3	ff7935625cce504f43543cbffeb48f1a	雨上がりの朝は、遠くの山まで綺麗に見えます。	綺麗な字ですね。
+棚 (tana)	shelf	3	e9419dc4d5c1bb029c4be5d20d7b080a	台所の棚には、祖母の器がまだ残っています。	棚に置いてください。
+引き出し (hikidashi)	drawer	3	a16821a485e1c0103b3cd37e5737a0cb	机の引き出しから、古い切符が出てきました。	引き出しを開けます。
+押し入れ (oshiire)	closet (Japanese-style)	3	61d2b545592dcc2d311615df775e1240	押し入れから布団を出して、客間に敷きました。	押し入れにしまう。
+布団 (futon)	futon, bedding	3	c2850dfca61ebfd02d9313723aca6b2a	天気のいい日は、布団を干す家が通りに並びます。	布団を敷きます。
+毛布 (mōfu)	blanket	3	81d1c458aea1d9245cf6e43e46cf6686	夜行バスでは、薄い毛布を貸してもらえます。	毛布が一枚要ります。
+壁 (kabe)	wall	3	d4a2da7c28c07b2960449694788f0a49	土壁の部屋は夏に涼しく、冬も思ったより暖かいです。	壁に絵をかけます。
+床 (yuka)	floor	3	a8599b353cd42d004934f8dd489c5297	木の床は、歩くたびに小さくきしみます。	床をふきます。
+屋根 (yane)	roof	3	dd4c3e3b5b006db22036c2b6a48d8b1b	雪国の屋根は、傾きが急に作られています。	屋根が赤いです。
+階段 (kaidan)	stairs	3	55ce162df333dcdd3fa9628d478f7fe6	神社の階段を上りきると、町が一望できます。	階段を下ります。
+エアコン (eakon)	air conditioner	3	8cf3b21fd6e5decc8b237f599bbf4201	職場のエアコンの温度で、毎年もめています。	エアコンをつけます。
+扇風機 (senpūki)	electric fan	3	055baeb7ac6bde34a725a80aa2ce51f0	扇風機の風だけでは、八月の夜はしのげません。	扇風機が古いです。
+歯ブラシ (haburashi)	toothbrush	3	457b38c63e677b32638f564146dceadd	旅館には、歯ブラシとタオルが用意されています。	歯ブラシを換えます。
+波 (nami)	wave	3	7a695596a698013e35ecee6dab50800c	台風の後は波が高く、船が出せませんでした。	波の音が聞こえます。
+砂 (suna)	sand	3	49e9e57ba2a7fe26a3d82f315b60ee81	鳥取の砂丘では、風で砂の模様が毎日変わります。	靴に砂が入りました。
+岸 (kishi)	shore, bank	3	f3f320cba07b1b296bc1fd442e2b0a66	川の岸には、朝から釣り人が並びます。	向こう岸まで泳ぐ。
+林 (hayashi)	woods, grove	3	aeed6005ebf99caf09abcd763b2a5ab1	竹の林を抜けると、急に視界が開けます。	林の中を歩きます。
+谷 (tani)	valley	3	8b8ebf12bdee3ab0677ed165498f2dc9	谷の底を流れる川は、夏でもかなり冷たいです。	谷が深いです。
+岩 (iwa)	rock, boulder	3	dc185ad53b9250908a1319ed7c278b70	波に削られた岩が、海岸にいくつも並んでいます。	岩に座りました。
+畑 (hatake)	field (crops)	3	49c95e6ca8a30ddf108c8bb42424da23	三月になると、畑に肥料をまく人が増えます。	畑を耕します。
+虹 (niji)	rainbow	3	8a421093ef8e8b00625a8bfa14fe743b	にわか雨がやんだ後、田んぼの上に虹が出ました。	虹が見えますか。
+霧 (kiri)	fog, mist	3	e25471056d4a885755dd8c101f504606	早朝の盆地は霧が濃く、対岸がまるで見えません。	霧が出てきました。
+嵐 (arashi)	storm	3	584f9f974f9cbc34e96daedd525e4930	嵐の夜は、雨戸が鳴ってなかなか眠れませんでした。	嵐が近づいています。
+気温 (kion)	temperature (air)	3	eec50e13bd8a5216f240e420936250fe	内陸は昼と夜で、気温の差がかなりあります。	気温が下がりました。
+湿気 (shikke)	humidity	3	03d9444d737b671155c61453f3090183	梅雨時は湿気で、押し入れの中がかび臭くなります。	湿気がすごいですね。
+雷 (kaminari)	thunder, lightning	3	38fda644e56493c13e27d14be965c84a	夏の夕方、山の方から雷が近づいてきました。	雷が鳴っています。
+滝 (taki)	waterfall	3	902b03a63a57b4873397a8de7de8fc75	那智の滝は、日本でも指折りの落差があります。	滝の音が大きいです。
+枝 (eda)	branch	3	79c83252ac2ebbfa52a26248e66ec879	雪の重みで、松の枝が折れることもあります。	枝を切ります。
+根 (ne)	root	3	3476fdaccc9309e9013a9b3c175b6ae9	台風で、大きな木が根ごと倒れていました。	根が深いです。
+種 (tane)	seed	3	a914a9bc219a5072bb7a7f1355ccaa19	春に朝顔の種をまくのは、小学校の定番です。	種を植えます。
+実 (mi)	fruit, nut (on a tree)	3	9b6c4a54c5d99578f4f8ea9174b8e68a	秋になると、柿の実が枝いっぱいにつきます。	実がなりました。
+松 (matsu)	pine tree	3	cca423aa53ab568d0815a3b32edf537a	海沿いの松は、風でみな同じ方向に曲がります。	松が並んでいます。
+竹 (take)	bamboo	3	d99eb1890a06b781e38f1d070425f59d	竹は成長が早く、春には一日で伸びるそうです。	竹の器を使います。
+麦 (mugi)	wheat, barley	3	c09c5fd1e5a5cd05d5eaf5961bc7d69e	六月の畑は、麦が黄色く色づいています。	麦のお茶を飲みます。
+芝生 (shibafu)	lawn, turf	3	6f7636c8a5d83b86faa30e15d24286e1	公園の芝生は、養生中で入れませんでした。	芝生に座ります。
+森林 (shinrin)	forest, woodland	3	10742835cef3eaeb19353c4b5d71f2b8	日本は国土の多くが、今も森林で覆われています。	森林が広がります。
+ライオン (raion)	lion	3	a06a02914fc08240255c016ef6206a6d	動物園のライオンは、昼のうちはほとんど寝ています。	ライオンを見ました。
+鹿 (shika)	deer	3	497eb2059f90fb6a2b427a75da262b3a	奈良では、鹿が信号待ちをしていることもあります。	鹿に煎餅をやります。
+鯨 (kujira)	whale	3	0fbf09413c26b57c309e329a9881318e	昔は学校の給食に、鯨の肉が出たそうです。	鯨は大きいです。
+蜂 (hachi)	bee	3	9c4d14e99a500a22897cc932d1e0d459	軒下に蜂の巣ができて、業者に取ってもらいました。	蜂に刺されました。
+羽 (hane)	feather, wing	3	e2afe323fde1ffd1fdaa0ae18316ccbe	川原に、鳥の羽が一枚だけ落ちていました。	羽が白いです。
+巣 (su)	nest	3	67cbe1b3e4ec6cfdce746f1beae2d16e	つばめが巣を作る家は、縁起がいいと言われます。	巣に卵があります。
+ペット (petto)	pet	3	41aa085dfcc4742599f34840086f70c7	この宿はペットと泊まれるので、人気があります。	ペットを飼っています。
+横断歩道 (ōdan hodō)	pedestrian crossing	3	b6a6f32ad81252e4b01c256a16912ae7	横断歩道の前では、車がきちんと止まってくれました。	横断歩道を渡ります。
+通り (tōri)	street, avenue	3	8af7a38c13df2d666338c223b52bd9a2	祭りの日は、この通りが歩行者天国になります。	広い通りに出ます。
+坂 (saka)	slope, hill	3	239124f8d4f865477ae97d60bd340bf8	長崎の坂は急で、自転車はまず使えません。	坂を上ります。
+乗り換える (norikaeru)	to transfer (trains)	3	6f824dadc62f4c5001bcffdcb998bd53	京都で新幹線から在来線に乗り換えるつもりです。	バスに乗り換える。
+急行 (kyūkō)	express (train)	3	14bd2551dc509deec10a7f700d88f358	急行は次の駅を通過するので、気をつけてください。	急行に乗ります。
+通る (tōru)	to pass through	3	fedcd2dba3197572afd779e00ab8eba8	この道は救急車がよく通るので、静かではありません。	車が通る。
+通う (kayou)	to commute	3	36ee2c20cab1ccb7172eba7bff4ffac4	娘は自転車で三十分かけて、高校に通うそうです。	病院に通う。
+観光 (kankō)	sightseeing	3	28d680fc12e5f548a1e6ac1921119062	紅葉の時期は、観光の客で宿がまるで取れません。	観光に行きませんか。
+見物 (kenbutsu)	sightseeing visit	3	070857f1c52568ebb87cb500e9e76d03	山車の見物に、朝から人が集まってきました。	祭りを見物します。
+予約 (yoyaku)	reservation	3	196820d40a9cf01b8cfe024681d14341	連休の宿は、二か月前に予約しておきました。	予約をお願いします。
+案内 (annai)	guidance, showing the way	3	b77d74f29f864877f25e519ceccb413b	駅の案内が英語でも書いてあるので、ずいぶん助かります。	案内をお願いします。
+郊外 (kōgai)	suburbs	3	44c967f021c4aa6d1e5904cd4b23f20d	郊外に引っ越したら、家賃がずいぶん下がりました。	郊外に住んでいます。
+田舎 (inaka)	countryside	3	6c5cba3ae510e43999f30639e15f81a4	田舎ではバスが少ないので、車がないと不便です。	田舎に帰ります。
+都会 (tokai)	big city	3	207665d80cbe3e670b7367ea8aa40b72	都会の夜は明るすぎて、星がほとんど見えません。	都会は人が多いです。
+踏切 (fumikiri)	railroad crossing	3	8023006211d5abd865a49dba78aae965	朝の踏切はなかなか開かなくて、正直いらいらします。	踏切で待ちます。
+歩道 (hodō)	sidewalk	3	7de563eb67d7e6b56141fd45aeabace3	雪が積もると、歩道が狭くなって歩きにくいです。	歩道を歩いてください。
+事故 (jiko)	accident	3	95000fc0793846d883efd1fbaa241cc8	事故の影響で、上りの電車が止まっています。	事故がありました。
+出発 (shuppatsu)	departure	3	f89a3b64c1957b2b88c8799e3cd65a7b	出発の三十分前には、空港に着いていたいです。	出発は八時です。
+工場 (kōjō)	factory	3	86491c4582fdd55fb2a161424760f00a	この町の工場では、今も手作業で刃物を作ります。	工場で働いています。
+会議 (kaigi)	meeting	3	42df42d7349264b6a37673f1c1a4c650	会議が長引いて、昼ご飯を食べそこねました。	会議は三時からです。
+用事 (yōji)	errand, business	3	6c2a74f81d691363944637a0c0399fc9	午後に用事があるので、今日は先に失礼します。	用事が入りました。
+手伝う (tetsudau)	to help, to assist	3	f214ea2ca1e8c4d713b6d8f42b3699d5	引っ越しを手伝うと、たいてい昼をおごってもらえます。	準備を手伝う。
+社長 (shachō)	company president	3	cc21a566a0d875d5a3d0d25479964c0d	小さな会社なので、社長も一緒に荷物を運びます。	社長は出張中です。
+受付 (uketsuke)	reception desk	3	49c312747809c92ce4ba867121b2699f	受付で名前を書いてから、二階へ上がってください。	受付は一階です。
+品物 (shinamono)	goods, article	3	8ccf497c3c9327c463e93f3854d55c19	市場の品物は、朝のうちが一番いいそうです。	品物を並べます。
+店員 (ten'in)	shop clerk	3	1abe0415a0bc4e8297d3ed0141ddf182	店員さんが方言で話しかけてきて、うれしくなりました。	店員を呼びます。
+注文 (chūmon)	order (placing)	3	19b0373d1ff0241c87503474e6a7dc1a	注文してから出てくるまで、三十分も待ちました。	注文はお決まりですか。
+無料 (muryō)	free of charge	3	658ca630134848697ea09351d3f22bbd	この美術館は、月に一度だけ入場が無料になります。	駐車場は無料です。
+貯金 (chokin)	savings	3	332ce1bb9e1872ad0e3d114ec151f671	旅行のために、毎月少しずつ貯金をするつもりです。	貯金が減りました。
+小学校 (shōgakkō)	elementary school	3	2093bd2f7838d9b4c511167040f168c3	廃校になった小学校が、今は宿として使われています。	小学校まで歩きます。
+中学校 (chūgakkō)	junior high school	3	6dfe5916704fb939cac4389b2ac064a5	中学校では、部活が終わるころにはもう日が暮れます。	中学校の先生です。
+高校 (kōkō)	high school	3	86525b12e52982cfc6a51cc56fb52f91	高校の三年間、毎日同じ電車に乗っていました。	高校はどこですか。
+教科書 (kyōkasho)	textbook	3	7b64fe9156ba2f9a1e5bd8015f8c57b1	教科書に載っていた俳句を、今でも覚えています。	教科書を開きます。
+消しゴム (keshigomu)	eraser	3	2cfa66e238dfbd17c54e67ca7921b74f	消しゴムを机から落として、拾うのに苦労しました。	消しゴムを貸して。
+説明 (setsumei)	explanation	3	2726027c01283ebb074382c07144cd2f	係の人の説明が丁寧で、手続きがよく分かりました。	説明を聞きます。
+経験 (keiken)	experience	3	5aae018064339f0f928003d2f0e15537	田植えの経験がないので、一日で腰が持ちませんでした。	いい経験でした。
+卒業 (sotsugyō)	graduation	3	076d2c52fe206bb404be9e9f5597df56	卒業の日は、後輩から花をもらうのが習わしです。	三月に卒業します。
+入学 (nyūgaku)	entering school	3	6d781462cef99e0b8f809b4d5a96a23b	入学のときに買ったかばんを、今でも使っています。	四月に入学します。
+校長 (kōchō)	school principal	3	072e69eac8633a20f07d263e03331065	校長の話は長いと、生徒の間では有名です。	校長が来ました。
+出席 (shusseki)	attendance	3	b88c53fc8909916a5f86aa41b8dcdd59	会議には、部署から二人だけ出席することになりました。	出席は取りますか。
+専門 (senmon)	specialty, major	3	76080fd51667fb2168055b80ea16a26b	私の専門は近世の陶芸で、備前をよく見に行きます。	専門は何ですか。
+文法 (bunpō)	grammar	3	bcb3519e098fe62e65f6c2a616c7306e	文法より、話す量を増やす方が早いと言われました。	文法が難しいです。
+発音 (hatsuon)	pronunciation	3	3c9d7ea7e17b8de5c0909651d1a1920f	発音を直されるうちに、少しずつ慣れてきました。	発音がきれいですね。
+準備 (junbi)	preparation	3	03c6ea7ddf97b496c72e3fac8b32aed9	祭りの準備は、一か月前から始まるそうです。	準備ができました。
+都合 (tsugō)	convenience, circumstances	3	8e3b271472e651ee49acf843f0935d0a	都合が悪ければ、来週に延ばしても構いません。	都合はどうですか。
+心 (kokoro)	heart, mind	3	5c652bfc3fda36b6b2fe39d9ed5c629a	静かな庭を見ていると、心が少しずつ落ち着いてきます。	心が広い人です。
+怒る (okoru)	to get angry	3	d8b01582b9869bce73c94836cf9deeea	電車で大声を出していると、さすがに怒る人もいます。	父はすぐ怒る。
+驚く (odoroku)	to be surprised	3	c1c9b66bb3a05d527428b4a0150e17e5	大晦日の混みように、初めて来た人はたいてい驚くそうです。	大きな音に驚く。
+安心 (anshin)	relief, peace of mind	3	9781b2ffc4fb83e861485c4abedec7fa	保険証さえ持っていれば、旅先でも安心です。	安心してください。
+興味 (kyōmi)	interest	3	8b26ffe20dfa0853a35365bce06e0336	落語に興味があるなら、寄席に行ってみませんか。	興味がありません。
+趣味 (shumi)	hobby	3	c54c89c56d81c746eba1199ca9183ea4	趣味で始めた蕎麦打ちが、今では年末の仕事です。	趣味は何ですか。
+夢 (yume)	dream	3	1da06dd5d7727872d53f5e306094d289	自分の店を持つのが、昔からの夢だそうです。	変な夢を見ました。
+喜ぶ (yorokobu)	to be glad, rejoice	3	3584e15337f7ab832c5fea9d1aa09fca	地酒を土産にすると、あの人はたいてい喜ぶはずです。	みんなが喜ぶ。
+注意 (chūi)	caution, attention	3	f68f9d5f987e81ba457d9f487a4c2099	足元が滑りやすいので、注意してお進みください。	注意が必要です。
+教育 (kyōiku)	education	3	bbd4c2c456cd00191ddc9ed5afdba895	教育の話になると、どうしても話が長くなります。	教育は大切です。
+意見 (iken)	opinion	3	263aed520abb420663ff670ca4aace5f	会議では、若い人の意見も聞くようにしています。	意見を言ってください。
+連絡 (renraku)	contact, communication	3	994bae13028fb5387fda0a40871bbc22	電波が届かないので、山を下りてから連絡します。	連絡をください。
+伝える (tsutaeru)	to convey, tell	3	fbef772e3e5f655f8e10c723e1b47afa	大家さんに、水漏れのことを伝えるつもりです。	気持ちを伝える。
+相談 (sōdan)	consultation	3	34d4a3b0026150f139085fb9f3e499ca	進路の相談で、担任の先生と長く話しました。	相談してもいいですか。
+平和 (heiwa)	peace	3	6a41609a60021c9025696298af5cf1b0	平和な日曜の午後、境内で子供が遊んでいます。	平和な町ですね。
+科学 (kagaku)	science	3	6c19256f70b52503d121f538ada999e5	科学の実験の授業だけは、今もよく覚えています。	科学の本を読みます。
+失礼 (shitsurei)	rudeness, impoliteness	3	11c52f73eba0ba75db3bd6bc385a08d4	名刺を片手で受け取るのは、失礼にあたります。	失礼しました。
+世話 (sewa)	care, looking after	3	5043f11b8ea504b065ca8dfe2438a8c2	留守の間、猫の世話を隣に頼みました。	世話になりました。
+反対 (hantai)	opposition, opposite	3	e305360356a5ead0fe73aebfa26455e6	駅の反対側に出ると、静かな住宅街が広がります。	反対の意見です。
+嘘 (uso)	lie	3	d8c92caded3cae32e8ec196eed99ae83	天気予報が嘘のように、朝から快晴になりました。	嘘をつかないで。
+けんか (kenka)	quarrel, fight	3	75b9a1aa9d6eb998a2d0e1ca515bc1bb	兄弟のけんかは、たいてい母の一言で終わります。	けんかはやめて。
+社会 (shakai)	society	3	767495b97ce6386dd9cd73aaeb1f7c30	社会に出てから、敬語の難しさが分かりました。	社会の勉強をします。
+文化 (bunka)	culture	3	b9ade347d3313fd05776b484324b43f5	靴を脱ぐ文化は、住んでみるとよく分かります。	文化が違います。
+政治 (seiji)	politics	3	acb2313c1180e32d633d8228eebbdfdf	政治の話は、飲み会では避けるのが無難です。	政治に関心がある。
+経済 (keizai)	economy	3	f3e4fc963d2b8b29e587f4b7a02f01e7	港が栄えたころ、この町の経済は漁業が支えていました。	経済の本です。
+歴史 (rekishi)	history	3	0f47cc174dbb0954a4a0c4caf0332bfb	この宿には、江戸のころからの歴史があるそうです。	歴史が好きです。
+戦争 (sensō)	war	3	964e0f6bf5b0df354cb7e3017514e8e5	資料館では、戦争の時代の暮らしが展示されています。	歴史で戦争を学ぶ。
+法律 (hōritsu)	law	3	cfcd3d66bfcd8436b817030090428803	自転車の乗り方も、細かく法律で決まっています。	法律が変わりました。
+規則 (kisoku)	rule, regulation	3	c9a4266fe2a2f6e7e0c722e130f18158	寮には、門限という古い規則が残っています。	規則を守ります。
+国際 (kokusai)	international	3	f758c106e95df2d2a72980426dda5cdf	空港の国際線は、第二ターミナルから出ます。	国際電話をかけます。
+進む (susumu)	to advance, to proceed	3	9c1ac72ee15a24eb96989c34d29a087a	工事が進むにつれ、通れる道が変わっていきます。	前に進む。
+戻る (modoru)	to return, to go back	3	70426a70c21c526b541bf0af7c9f88df	傘を忘れたので、いったん店まで戻ることにします。	席に戻る。
+過ぎる (sugiru)	to pass (by), to exceed	3	b238608cedcac7fb4deb0903fe6ace73	昼を過ぎると、市場の魚はだいぶ減ります。	三時を過ぎる。
+寄る (yoru)	to drop by, to stop by	3	00a31c78d1ed638c4ccb7aa9be64006a	帰りに本屋へ寄ると、つい長居してしまいます。	郵便局に寄る。
+慣れる (nareru)	to get used to	3	4d43e4687245328aed5584dac9110d90	満員電車には、なかなか慣れるものではありません。	生活に慣れる。
+連れて行く (tsurete iku)	to take (someone) along	3	cd49ac08625c630b2a07c6657857354b	子供を祭りに連れて行くと、金魚すくいから動きません。	犬を連れて行く。
+変わる (kawaru)	to change (intransitive)	3	40e26ca579ec7c2aefec2199d5ce74a7	山の天気は、一時間で変わることもあります。	信号が変わる。
+変える (kaeru)	to change (transitive)	3	0581f90ecd7813c9275d8449adfda12a	予定を変えるなら、早めに宿へ連絡してください。	席を変える。
+増える (fueru)	to increase	3	9711e8c0e77e79c5703ce6c388ca4d50	春先は、この川沿いを歩く人が増えるようです。	客が増える。
+減る (heru)	to decrease	3	84fd7fbc06c71792a11bbf97975d5f50	島の人口が減るのを、みんな気にかけているようです。	数が減る。
+育てる (sodateru)	to raise, to bring up	3	dc48547d809c1b607381d0ffb90fd384	苗から育てるより、買った方が早いと言われました。	花を育てる。
+育つ (sodatsu)	to grow up	3	535e1ce016f4e24f9d5cc6ce48817538	この米は、雪解け水で育つと言われています。	早く育つ。
+迎える (mukaeru)	to go to meet, to welcome	3	6928872fa689ca0a92794bd03fe48196	空港へ姉を迎えるために、朝早く家を出ます。	客を迎える。
+折る (oru)	to break, to fold	3	0670b278d450b30f178d14211d58ffce	強い風のせいで、傘の骨を折る人が続きました。	紙を折る。
+割れる (wareru)	to break, to crack	3	9dcb25ad4139411f2737ce20dc473ce6	落ちた茶碗が割れる音で、家中が静かになりました。	コップが割れる。
+倒れる (taoreru)	to fall over, to collapse	3	765c19611c9c0d3f2112e98d312193f6	台風で、街路樹が何本も倒れるほどでした。	自転車が倒れる。
+壊れる (kowareru)	to break down	3	46a9b50df655298f911d2e2a252a47cc	古い扇風機が壊れると、直せる店がもうありません。	時計が壊れる。
+壊す (kowasu)	to break (something)	3	6d20526d3fce73226f4326316ec6c28d	建て替えのために、古い蔵を壊すことになりました。	おもちゃを壊す。
+続ける (tsuzukeru)	to continue (something)	3	8741720827287a28a588e7e83bba0867	毎朝ラジオ体操を続けると、体が軽くなる気がします。	練習を続ける。
+決める (kimeru)	to decide	3	ee79ea1a6bfd7c79054e078e8b37b6b0	行き先を決めるのに、家族で一時間もかかりました。	日にちを決める。
+集める (atsumeru)	to collect, to gather	3	6e1582a5e4948a0511fc8f302ccb30fd	全国の駅の切符を集める人も、いるそうです。	落ち葉を集める。
+選ぶ (erabu)	to choose, to select	3	48b6bf98ac07054504fde5263bec5cd6	土産を選ぶのに、店を三軒も回りました。	好きな方を選ぶ。
+比べる (kuraberu)	to compare	3	be7e2abaf27b0944a44431acd23579a8	東と西の出汁を比べると、色がまるで違います。	値段を比べる。
+見つける (mitsukeru)	to find, to discover	3	a29439c5dfb14e32b8cc57b5e0e72208	古本屋で、探していた本を見つけることができました。	鍵を見つける。
+忘れる (wasureru)	to forget	3	45ce5ab5f54266bdea550fe43dce5fe8	傘を電車に忘れる人が、雨の日は特に多いそうです。	名前を忘れる。
+捨てる (suteru)	to throw away	3	e5f43f5b6da187dc94de010f22ee0f90	缶と瓶は、別々の袋に入れて捨てるきまりです。	ごみを捨てる。
+拾う (hirou)	to pick up	3	d6170af654c56cda476507d08967e67a	海岸で貝殻を拾うのが、子供のころの遊びでした。	石を拾う。
+建てる (tateru)	to build	3	2360ca1f49d9d881a5ecad22eb71f052	家を建てるなら、地元の木を使いたいそうです。	小屋を建てる。
+植える (ueru)	to plant	3	910c3e2779d41ab93f1c5d3c8674b8ab	五月に苗を植えると、九月には稲刈りになります。	木を植える。
+助ける (tasukeru)	to help, to rescue	3	1b8c087ada5f201ea74e49fc61ad0afd	川で溺れた人を助けるのは、簡単ではありません。	友達を助ける。
+将来 (shōrai)	future	3	e6322bfa9acfda2af5b0bd9274c59d86	将来は田舎で店をやりたいと、彼は話しています。	将来が楽しみです。
+さっき (sakki)	a moment ago	3	ac47f569cfb2ba9419f047cf5b5a4431	さっきまで晴れていたのに、急に降ってきました。	さっき電話がありました。
+最後 (saigo)	last, end	3	5302cf08a40408c741c96c034d2c5850	最後の一本のバスを逃して、歩いて帰りました。	最後まで見ます。
+最初 (saisho)	first, beginning	3	b8effefcae6358896d0f55aaceb54641	最初は方言が分からず、聞き返してばかりでした。	最初に説明します。
+以前 (izen)	before, formerly	3	be5251ab2f708a74fa8c2048329c7bbf	以前この場所には、大きな市場があったそうです。	以前も来ました。
+久しぶり (hisashiburi)	after a long time	3	8dd5c3a8942015026279ffc4cd137c84	久しぶりに実家へ帰ったら、犬がちゃんと覚えていました。	久しぶりですね。
+期間 (kikan)	period, term	3	0989a224eef17b5bad57104408132f4a	花見の期間だけ、この公園は夜も開いています。	期間は一週間です。
+予定 (yotei)	plan, schedule	3	b388d5d33a5b634789a1cf96a58990e0	予定より早く着いたので、駅前をぶらぶらしました。	予定を教えてください。
+今度 (kondo)	next time	3	b954ea9b6d5ed37f8bd58c361cf43e6e	今度は、雪の少ない時期に来たいと思います。	今度、会いましょう。
+普段 (fudan)	usually, ordinarily	3	4e1b2d9b7cec9a263abce47d7fe91fc2	普段は自炊ですが、疲れた日は総菜を買います。	普段は歩きます。
+急 (kyū)	sudden, urgent	3	220772364a1ad0bef5ed9db61eb6fe93	急な雨で、干していた洗濯物がだめになりました。	急に寒くなりました。
+確か (tashika)	certain, sure	3	2a63532bed0d4b534e009a1d3f023425	確かこの先に、古い酒蔵があったはずです。	確か三時からです。
+立派 (rippa)	splendid, fine	3	430b2f0e070c96aceb160ad466341d33	門の前には、立派な松が一本だけ残っています。	立派な建物ですね。
+重要 (jūyō)	important, crucial	3	c5c303a0d486827643a8bc2790d8a9ab	会議で重要なのは、結論を先に言うことです。	重要な話です。
+無理 (muri)	impossible, unreasonable	3	90b0e2de0d552fb3df014e4bcc5532c7	日帰りで四国を一周するのは、さすがに無理でした。	無理をしないで。
+十分 (jūbun)	enough, sufficient	3	3f8f01f22f3df6dec50f7b79b5cf69b3	三十分あれば、駅まで歩くのに十分です。	これで十分です。
+邪魔 (jama)	hindrance, nuisance	3	a0ddffddf6c95961bb6f27dbdb45da6d	通路に置いた荷物が、他の客の邪魔になります。	お邪魔しました。
+適当 (tekitō)	suitable, appropriate	3	70e4b02ef519fde3197c7bdcc7106b1c	味付けは適当でいいと言われて、かえって困りました。	適当な大きさに切る。
+複雑 (fukuzatsu)	complicated	3	b1586d8e987f59b6319a0a17ce85bf6a	乗り換えが複雑なので、駅の中でよく迷います。	話が複雑です。
+簡単 (kantan)	simple, easy	3	41542f045307c548f4601c550bfff6ee	おにぎりは簡単そうに見えて、握り方が難しいです。	簡単な問題です。
+途中 (tochū)	on the way, midway	3	3c33cb56a6e99aff6335d75289bfb8cc	山を下りる途中で日が暮れると、急に心細くなります。	途中で降ります。
+間違い (machigai)	mistake, error	3	dfba443949671d5955a40ff9753788c8	書類に間違いがあると、また窓口に並び直しです。	間違いがありました。
+危険 (kiken)	dangerous, danger	3	a470bd93e27bf885359a317415e4a61f	増水した川に近づくのは危険だと、放送が流れます。	危険な場所です。
+丁寧 (teinei)	polite, careful	3	e7274260d27185c073cd81523cdb9d9d	駅員さんの案内が丁寧で、乗り換えがよく分かりました。	丁寧に洗います。
+細かい (komakai)	detailed, fine	3	c2db62ba9a6e80a989194563cfafe8ec	細かい作業なので、目が疲れて仕方ありません。	細かいお金がない。
+硬い (katai)	hard, stiff	3	d0ffeb9b443803ec8382bbaecac68083	この地方のせんべいは、驚くほど硬いです。	パンが硬いです。
+柔らかい (yawarakai)	soft, tender	3	202afb2e16082f615f4d969258d88beb	煮込んだ大根は、箸で切れるほど柔らかいです。	布団が柔らかいです。
+深い (fukai)	deep	3	d7a575ee844a017acfc319be675dd343	この湖は思ったより深いので、泳ぐのは危ないです。	雪が深いですね。
+浅い (asai)	shallow	3	8ca9644be4140121f09adab66ad064b8	川の浅いところなら、子供でも安心して遊べます。	浅い皿を使います。
+原因 (gen'in)	cause	3	04b0c0625e2e0d851ad0092ee2389514	停電の原因は、雷だったと後で分かりました。	原因が分かりません。

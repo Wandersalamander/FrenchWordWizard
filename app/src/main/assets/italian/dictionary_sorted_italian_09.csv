@@ -1,254 +1,254 @@
-il governo	government	9	4c38928fdb5a015bee0899990399d77d	Il nuovo governo ha promesso riforme importanti per migliorare l'economia del paese nei prossimi anni.	Un buon governo.
-il parlamento	parliament	9	e9dbc7ea764439b868c45ab3fb462d5f	Il parlamento italiano è formato da due camere che lavorano insieme per approvare le leggi della repubblica.	In parlamento.
-il senato	senate	9	624470bb742b9caf06d1427b04433fc3	Il senato della repubblica ha approvato la nuova legge dopo un lungo dibattito durato diverse settimane intense.	Un seggio al senato.
-l'assemblea	assembly	9	e45d7b1999a4790e0f4925f90bcaa256	L'assemblea condominiale di stasera deciderà i lavori da fare nel palazzo durante l'estate prossima.	Un'assemblea pubblica.
-il ministero	ministry	9	662272298a362709057ee11617571779	Il ministero dell'istruzione ha annunciato nuove regole per la scuola che entreranno in vigore l'anno prossimo.	Il ministero degli esteri.
-il deputato	deputy / MP	9	5e2971d3d87e5dc33a428d404f153aff	Il deputato della maggioranza ha presentato una mozione importante in parlamento per riformare il sistema sanitario nazionale.	Un deputato eletto.
-il senatore	senator	9	4501a349eca0454b278f23ba65f6e53f	Il senatore a vita è stato nominato dal presidente della repubblica per il suo contributo alla cultura italiana.	Un saggio senatore.
-eletto	elected	9	43c34f281edcd284477f45c044b7147b	Il candidato eletto sindaco ha ringraziato tutti i suoi elettori per la fiducia dimostrata durante le elezioni.	Un eletto giovane.
-il candidato	candidate	9	91decb248f8a7be12263b3988d28cdf0	Il candidato alle elezioni ha tenuto un comizio nella piazza principale del paese davanti a molti cittadini.	Un candidato preparato.
-il partito	party (political)	9	574aa1d6a416fee359f18d809296fbeb	Il partito politico ha cambiato il suo programma per attirare nuovi elettori durante la prossima campagna elettorale.	Un partito nuovo.
-l'elezione	election	9	293516138d6a7de231db017ccd26b454	L'elezione del nuovo presidente del consiglio è prevista per la prossima primavera dopo lo scioglimento del parlamento.	Le elezioni politiche.
-il referendum	referendum	9	c538ad4cb2671e6072b4677f23136b48	Il referendum costituzionale ha visto la vittoria del no con una larga maggioranza di voti contrari alla riforma.	Un referendum importante.
-la costituzione	constitution	9	0a04aa5eaf54c9298e0331791dceeed5	La costituzione italiana è del millenovecentoquarantotto ed è considerata una delle più belle del mondo per i diritti.	La nostra costituzione.
-la legge	law	9	61f4c12744f51ac5b6efea114ca0f485	La nuova legge sulla privacy entrerà in vigore il prossimo mese e cambierà molte cose per i cittadini.	La legge è uguale per tutti.
-il decreto	decree	9	5a49f033125267ddac6b3e14e19c04cd	Il decreto del governo ha imposto nuove restrizioni per limitare la diffusione del virus durante la pandemia.	Un decreto urgente.
-la normativa	regulation	9	e9595c35b57d1cdc031ff5b47a1bbe8a	La nuova normativa europea sulla protezione dei dati personali è molto severa e richiede grande attenzione alle aziende.	Una normativa rigorosa.
-il regolamento	regulation / rules	9	d46cacefe773d0cdbfd09bce17ea530c	Il regolamento condominiale vieta di tenere animali in casa e di fare rumore dopo le dieci di sera.	Il regolamento scolastico.
-lo statuto	statute / charter	9	de54e62ca4752577e22f1aeff8a73dab	Lo statuto della società è stato aggiornato per adeguarlo alle nuove normative europee in materia di trasparenza.	Lo statuto regionale.
-la repubblica	republic	9	566f736224e6837a24b5d805f499f7ff	La repubblica italiana è nata nel millenovecentoquarantasei dopo il referendum costituzionale che ha abolito la monarchia precedente.	Una repubblica democratica.
-la monarchia	monarchy	9	afb648eb8840db0843387b58c294daf5	La monarchia inglese è una delle più antiche del mondo e ha grande rispetto da parte di tutti i sudditi.	La monarchia costituzionale.
-il popolo	people / nation	9	4a695ba3544f29cf5932d33fef4c6db5	Il popolo italiano è famoso nel mondo per la sua cultura, la sua cucina e la sua lunga storia.	Il popolo decide.
-il cittadino	citizen	9	84fdecacb98f9c61e8c4aef8592b2311	Ogni cittadino ha il diritto di votare alle elezioni dopo aver compiuto la maggiore età legale del paese.	Un cittadino italiano.
-la comunità	community	9	c5bf8e67ecaa6d21fd177a1b343d8631	La comunità del nostro paese è molto unita e si aiuta sempre nei momenti difficili come durante i terremoti.	La nostra comunità.
-il gruppo	group	9	6ef46601909e9b878798089069cefd63	Il gruppo di studio si riunisce ogni martedì sera per preparare insieme l'esame finale dell'università prossimo.	Un piccolo gruppo.
-il ceto	social class	9	7426b2a9c0e90d0abfca8897c5f90c69	Il ceto medio italiano è in difficoltà a causa della crisi economica e dell'aumento del costo della vita.	Un ceto sociale.
-l'etnia	ethnicity	9	0d4f4c9f255b6960d1e2bcf3ac18ce50	L'etnia italiana è composta da molte sottoculture regionali che hanno tradizioni e dialetti diversi tra loro.	Una minoranza etnica.
-la razza	race / breed	9	eb812dc59c3c0cf9c120d9d92993ad3f	La razza umana è una sola e tutte le persone meritano gli stessi diritti senza alcuna distinzione di colore.	Una razza canina.
-la cultura	culture	9	e6da8e51b4510f9c253957d20dfd3090	La cultura italiana è ricca di arte, musica, letteratura e tradizioni che attirano turisti da tutto il mondo.	Una vasta cultura.
-il diritto	right / law	9	c5f88cff090e14fafc9237e3a69e572f	Il diritto al voto è uno dei più importanti per il funzionamento di una vera democrazia moderna.	I diritti umani.
-l'obbligo	obligation / duty	9	71e1366e0c7675f0b284bcb7eb911285	Il pagamento delle tasse è un obbligo per tutti i cittadini di un paese civile e democratico.	Un obbligo morale.
-la giustizia	justice	9	e6638b1caa9ded83b36ded12575b3de0	La giustizia in Italia è lenta e spesso i processi durano anni prima di arrivare a una sentenza definitiva.	La giustizia trionfa.
-l'ingiustizia	injustice	9	d79060be2d960de2b7d5b5e1a053d5dd	L'ingiustizia sociale è uno dei problemi più gravi della nostra società moderna che bisogna combattere ogni giorno.	Una grande ingiustizia.
-l'equità	equity / fairness	9	88cb468f2f6f89bb007d425446470c68	L'equità nel trattamento dei dipendenti è fondamentale per mantenere un buon clima aziendale e produttivo nell'azienda.	Una decisione equa.
-la parità	parity / equality	9	c7ec4e2185c31d3419d1b54d89105028	La parità di genere è ancora un obiettivo da raggiungere in molti settori del mondo del lavoro italiano.	Pari opportunità.
-la discriminazione	discrimination	9	192ec606412ee574ae7b4fcba02ccdba	La discriminazione razziale è proibita dalla legge in tutti i paesi democratici e civili dell'Europa moderna.	Lotta alla discriminazione.
-la povertà	poverty	9	8399abf313905328b8b59a497a75776d	La povertà in alcune zone del mondo è ancora un problema grave che richiede l'intervento della comunità internazionale.	Vivere in povertà.
-la ricchezza	wealth	9	a15e676560e3404dd847528966bc3d68	La ricchezza materiale non porta sempre la felicità e molti ricchi sono persone profondamente infelici e tristi.	Una grande ricchezza.
-sociale	social	9	08349e044293b7d1c08e19a00b8be2df	L'impegno sociale è importante per costruire un mondo migliore e più giusto per tutte le persone del pianeta.	Una rete sociale.
-l'individuo	individual	9	5fb087abfbc77088535610dff30a88a2	Ogni individuo è unico e ha le sue caratteristiche personali che lo rendono diverso da tutti gli altri.	Un individuo libero.
-la popolazione	population	9	b1ef15dbba11f682071cec57cc15450a	La popolazione italiana sta invecchiando rapidamente e ci sono sempre meno giovani rispetto agli anziani sempre più numerosi.	Una grande popolazione.
-il crimine	crime	9	75c0bae41ae24dfb8fefddd9dc85dbd2	Il crimine organizzato in Italia è ancora un grave problema che richiede l'impegno di tutte le istituzioni.	Un grave crimine.
-il reato	offense / crime	9	b922ac39df1038a570145dcefff7754c	Il reato di evasione fiscale è punito severamente dal codice penale italiano con multe e pene detentive.	Un piccolo reato.
-il delitto	crime / felony	9	a7bfdd3f8bf4e6f0435076aae1f25a28	Il delitto è stato commesso durante la notte e la polizia ha già identificato il colpevole grazie alle telecamere.	Un orribile delitto.
-l'omicidio	homicide / murder	9	646759b5e7006f241fc80f11627f288f	L'omicidio del giornalista coraggioso ha scosso tutta la nazione che chiede giustizia per la sua famiglia.	Un omicidio efferato.
-il furto	theft	9	4a941df1b779fbdd3b0be43ef9598b6b	Il furto in casa è successo durante il weekend mentre eravamo in vacanza al mare con la famiglia.	Un furto audace.
-la rapina	robbery	9	762372e75940934b4bb181334e3425a8	La rapina alla banca è stata sventata dalla polizia che ha arrestato i due malviventi armati di pistola.	Una rapina a mano armata.
-la frode	fraud	9	7cc81078f1180fdb8fa578915958fb10	La frode informatica colpisce sempre più persone che usano le carte di credito online senza le dovute precauzioni.	Una grande frode.
-la truffa	scam / swindle	9	f19814c8e0a59c440ff52a236a495a0a	Mio nonno è stato vittima di una truffa telefonica e ha perso tutti i suoi risparmi degli anni.	Una truffa via internet.
-il criminale	criminal	9	2db178b83a5b030c570db81aa2be6fcd	Il criminale è stato condannato a vent'anni di prigione per i gravi reati commessi negli ultimi cinque anni.	Un pericoloso criminale.
-il ladro	thief	9	a41e184c1e6427af811fb00979b0ca66	Il ladro è entrato in casa rompendo la finestra del salotto durante l'assenza della famiglia in vacanza.	Un ladro di gioielli.
-la prigione	prison	9	d1a8aa7e97ac47a03e24c8b6a1629eea	La prigione di Regina Coeli a Roma è una delle più antiche e importanti d'Italia per i detenuti.	Una vita in prigione.
-il carcere	jail / prison	9	c0e30392c6249cce502aa8b6a1508428	Il carcere italiano è sovraffollato e le condizioni di detenzione sono spesso difficili per i detenuti che ci vivono.	Pena di carcere.
-il detenuto	prisoner	9	993a05cfbfc1daf91f7120e2871ce93b	Il detenuto ha scontato la sua pena di dieci anni e adesso può tornare libero in mezzo alla società normale.	Un detenuto pentito.
-il processo	trial / process	9	80cbe2ae46f07b07a37fd20e7b671789	Il processo è durato tre lunghi anni prima di arrivare a una sentenza definitiva da parte della corte d'appello.	Un lungo processo.
-il tribunale	court	9	c224019629d57c6b168729e57caae749	Il tribunale di Milano ha emesso la sentenza di condanna per il caso di corruzione politica che ha scosso il paese.	Andare in tribunale.
-la religione	religion	9	ecc136b30c16147f16fed27c3e3003fe	La religione cristiana è la più diffusa in Italia ma ci sono anche altre fedi presenti nel paese.	Religione cattolica.
-la fede	faith	9	7d11810cf99c74a1f3fa22c3879ea39d	La fede di mia nonna è stata sempre molto forte e l'ha aiutata in tutti i momenti più difficili della vita.	Una fede solida.
-il dio	god	9	27b205035c328b16d8c8329c4b41e87e	Per i credenti dio è l'essere supremo che ha creato il mondo e l'universo intero in sette giorni.	Credere in dio.
-l'anima	soul	9	380000c85ecc4187faa4f50c1517920e	L'anima è la parte spirituale di ogni persona secondo molte religioni del mondo orientale e occidentale.	Un'anima pura.
-lo spirito	spirit	9	3adf53c6f9f1cc48616ecad8c45eeff7	Lo spirito di mio nonno mi accompagna sempre nei momenti difficili anche se non c'è più fisicamente con me.	Lo Spirito Santo.
-il paradiso	paradise / heaven	9	64427ad53bd35ec3783d69409c671b94	Il paradiso secondo i credenti è un luogo meraviglioso dove le anime giuste vanno dopo la morte.	Un paradiso terrestre.
-il peccato	sin / pity	9	d21b216279e4d318031377bd91e2b2f9	Il peccato è una colpa morale secondo la religione cristiana che bisogna confessare per ottenere il perdono.	Che peccato!
-il santo	saint	9	ea07ff4e27d0bcf5f786f39e44e031f1	Il santo patrono del nostro paese si festeggia il quindici di agosto con una grande processione religiosa.	Un santo importante.
-il prete	priest	9	1a023e91d43fde0f75e51281ac2efb01	Il prete del paese conosce tutte le famiglie e celebra la messa ogni domenica mattina nella chiesa antica.	Un giovane prete.
-la preghiera	prayer	9	f577f4c9c0b64128fff3b8f92f2aaae4	La preghiera mattutina è un momento di raccoglimento spirituale che mi aiuta a iniziare bene la giornata di lavoro.	Una breve preghiera.
-il miracolo	miracle	9	91ace5b7bb757ae8fb8b5075369147d0	I medici hanno parlato di miracolo perché nessuno pensava che potesse sopravvivere dopo l'incidente terribile della scorsa settimana.	Un grande miracolo.
-la filosofia	philosophy	9	8d9cf576c5110bbc3c74a5cc5112a51f	La filosofia greca antica ha posto le basi del pensiero occidentale moderno per più di duemila anni di storia.	Filosofia moderna.
-l'etica	ethics	9	bb5b8e74d1b487d61f171a1706f54e95	L'etica professionale impone al medico di curare tutti i pazienti senza distinzione di razza, religione o ceto sociale.	Un'etica rigorosa.
-la morale	moral / morals	9	208c6aa15739eb855bcd4c3df2b08f2d	La morale di una persona si vede dalle sue azioni quotidiane e non solo dalle parole che pronuncia.	Una buona morale.
-il destino	destiny / fate	9	ce604407b420b7de3df81516e16a09cc	Il destino ci ha fatto incontrare per caso in quel piccolo bar di provincia molti anni fa indimenticabilmente.	Un destino crudele.
-l'essenza	essence	9	764e941c475b5c152f4aedcbef5776ca	L'essenza dell'amore vero è la capacità di mettere sempre l'altro al primo posto nelle proprie scelte importanti.	L'essenza della vita.
-l'esistenza	existence	9	e69d6b3ebd33035117000ce6c1ce786e	L'esistenza di forme di vita su altri pianeti è ancora una domanda aperta per la scienza moderna.	Una vita di esistenza.
-la realtà	reality	9	06f7510dc7f4e80f9e1db870dd9b8893	La realtà è spesso più strana della finzione e ci offre situazioni inaspettate ogni giorno della nostra vita.	Una dura realtà.
-l'illusione	illusion	9	8eb7cf3e2a0bf425192569113106987a	L'illusione di essere felici grazie ai beni materiali svanisce presto quando si capisce cosa conta davvero.	Una pura illusione.
-la verità	truth	9	a68280303c02f9c49501526f85718827	La verità viene sempre a galla prima o poi e nasconderla per troppo tempo è sempre controproducente.	La sacra verità.
-l'eternità	eternity	9	1fb7d06cbace72869721090ac6431c4b	L'eternità è un concetto difficile da comprendere per la mente umana abituata a misurare il tempo in giorni e anni.	Per l'eternità.
-l'infinito	infinity / infinite / infinitive (grammar)	9	dc12a613487cfc433bdf981b7a65baf4	L'infinito dell'universo affascina gli astronomi che continuano a scoprire nuovi mondi e nuove galassie ogni anno.	Lo spazio infinito.
-finito	finished / finite	9	6b4641ad5f0d7938e1ceb4a6a2b5fa99	Il tempo finito che abbiamo nella vita ci impone di scegliere bene cosa fare e cosa lasciare perdere subito.	Un mondo finito.
-immortale	immortal	9	8b40cd026fea8e18949b49f41175ccad	L'opera del grande poeta è immortale e continua a essere letta e amata anche dopo molti secoli dalla sua morte.	Una fama immortale.
-mortale	mortal	9	4e6df43af7b9371b79507bbdf4522f21	L'uomo è mortale e questa consapevolezza dovrebbe spingerci a vivere ogni momento della vita con maggiore intensità.	Un colpo mortale.
-la certezza	certainty	9	579a8e1cbb76fe84494991eb966774da	Non c'è alcuna certezza assoluta nella vita ma dobbiamo prendere decisioni anche con dei dubbi e delle paure.	Una assoluta certezza.
-l'incertezza	uncertainty	9	4a1d68ae64cbe935af0ddcd3c3f40513	L'incertezza del futuro mi rende ansioso ma cerco di vivere il presente al meglio senza pensare troppo a domani.	Una grande incertezza.
-il pessimismo	pessimism	9	d71f61f79f22f230f4df102fcf845f14	Il pessimismo cosmico del filosofo Schopenhauer ha influenzato profondamente la cultura occidentale del diciannovesimo secolo per decenni.	Un grande pessimismo.
-l'ottimismo	optimism	9	30670bf7ed60a141d08bae8b6d205c31	L'ottimismo è una scelta di vita che permette di affrontare meglio le difficoltà quotidiane con maggiore serenità interiore.	Un sano ottimismo.
-lo scopo	purpose	9	02f3f906e3028f023163e3e2e52f90cc	Lo scopo della mia vita è aiutare gli altri e lasciare un segno positivo nel mondo che mi circonda quotidianamente.	Senza uno scopo.
-il significato	meaning	9	ebc5c24be3949eddc86f3daa768714f1	Il significato della vita è una domanda che gli esseri umani si fanno da sempre e ognuno trova la propria risposta.	Il vero significato.
-il valore	value	9	f2821da2e8d7e15c7c9864a8a0b769b8	Il valore di una persona non si misura dalla quantità di soldi che ha ma dalle qualità del suo carattere.	Un grande valore.
-il principio	principle / beginning	9	71d4fa138503bfeee7b0bb8ac91e2cc0	Il principio fondamentale della democrazia è la parità di tutti i cittadini davanti alla legge senza alcuna eccezione.	All'inizio del principio.
-il concetto	concept	9	ae5f849d753e5f4ff7ac3cabd2d8912c	Il concetto di libertà cambia molto da una cultura all'altra e da un'epoca all'altra della storia umana.	Un concetto astratto.
-l'ideale	ideal	9	ef15a8fb3e509c31760aef50c873487c	L'ideale di giustizia spinge molti giovani avvocati a scegliere la carriera della magistratura piuttosto che lo studio privato.	Il marito ideale.
-l'onestà	honesty	9	6aa259ab8fbb779a1afd9435d0748d09	L'onestà è la qualità più importante che cerco in un amico e in un compagno di vita serio.	Una grande onestà.
-la dignità	dignity	9	2aa18aeaebb46a008ff94155d6c41964	La dignità di una persona non si vende per denaro e va difesa anche nei momenti più difficili della vita.	La propria dignità.
-l'orgoglio	pride	9	736e9b108a46e3b3564114f92342c2b1	L'orgoglio di essere italiano è qualcosa che porto sempre con me anche quando sono lontano dalla mia patria.	Un sano orgoglio.
-l'umiltà	humility	9	7e45b5f1e77afab930ee6de764c17bc2	L'umiltà è una virtù rara nei tempi moderni dove tutti vogliono apparire più di quello che sono veramente.	Vera umiltà.
-la modestia	modesty	9	6dd9dcf4e9426946fb0afe95124a942b	La modestia di mio padre è ammirevole anche se ha raggiunto traguardi importanti nella sua lunga carriera professionale brillante.	Falsa modestia.
-la generosità	generosity	9	72fa8e9933b618433161bc40de425b81	La generosità di mia nonna verso i poveri del paese è un esempio per tutta la famiglia che la conosceva.	Una grande generosità.
-l'egoismo	selfishness	9	0bc1799d9c817edcb1a2c21486257482	L'egoismo è la radice di molti mali del mondo moderno dove tutti pensano solo al proprio personale interesse.	Un puro egoismo.
-la gentilezza	kindness	9	39e94d17ee6d5984b2255a5376358fc1	La gentilezza è un valore che bisognerebbe insegnare ai bambini fin dalla più tenera età della loro vita.	Una rara gentilezza.
-la cortesia	courtesy	9	32fb3fc07e0f781d5a8f684cc973ae9c	La cortesia non costa nulla ma fa la differenza in tutti i rapporti umani e professionali della vita.	Una grande cortesia.
-la sincerità	sincerity	9	1f7ccefdf1ec259bf6355cb80fcbe090	La sincerità è il fondamento di qualsiasi rapporto sano sia in amicizia che nell'amore profondo e duraturo.	Vera sincerità.
-la fedeltà	loyalty / faithfulness	9	410a35860838705662b70f9245805862	La fedeltà al partner è un valore importante per costruire una relazione duratura e felice nella propria vita.	Eterna fedeltà.
-la lealtà	loyalty	9	8227d95c121708631ddcc85ba5740a02	La lealtà nei confronti dei propri amici è una qualità rara e preziosa che bisogna sempre coltivare attentamente.	Lealtà assoluta.
-la gratitudine	gratitude	9	21221c9ac6621c8ef4f2e52358397cf8	La gratitudine è un sentimento che ci rende più felici e ci permette di apprezzare le piccole cose della vita.	Profonda gratitudine.
-l'ambizione	ambition	9	e71a81e4597d63f76f5e34a5ff0cbebd	L'ambizione di mio fratello l'ha portato a diventare amministratore delegato di una grande azienda multinazionale italiana.	Una sana ambizione.
-la determinazione	determination	9	c999a9ea1ca120a01623fc711934ba16	La determinazione di vincere è ciò che distingue i grandi atleti da quelli mediocri nello sport ad alti livelli.	Grande determinazione.
-significare	to mean	9	17acbfb282a21855c328ff531e7c6951	Cosa vuole significare questa parola in italiano? Non l'ho mai sentita prima d'ora durante le lezioni di scuola.	Significa molto.
-riflettere	to reflect / think	9	82cf1b2f5d88766a76117b1791664828	Devo riflettere bene prima di prendere una decisione così importante che cambierà tutta la mia vita futura.	Riflettere a lungo.
-considerare	to consider	9	da316358e2782725e95659e06bc63fae	Devi considerare tutti gli aspetti della questione prima di esprimere un giudizio definitivo sui fatti accaduti recentemente.	Considerare le opzioni.
-supporre	to suppose	9	8ceadc59e878ae6771a3607d1632df60	Posso supporre che tu abbia ragione anche se non ho prove certe per dimostrarlo in modo definitivo a tutti.	Suppongo di sì.
-ipotizzare	to hypothesize	9	68985db845d56c063158e8d0acb153ac	Gli scienziati ipotizzano che ci sia vita su altri pianeti ma non hanno ancora prove certe della loro esistenza reale.	Ipotizzare scenari.
-dubitare	to doubt	9	32dfaf4b05b9f45a58a9e91ecf34cb52	Ho cominciato a dubitare delle sue parole quando ho scoperto le contraddizioni nelle sue spiegazioni durante l'ultima conversazione.	Non dubito di te.
-fidarsi	to trust	9	1de71c518e12bbab9e4a74c8e1e1fa7b	Mi fido completamente del mio migliore amico perché non mi ha mai tradito in tanti anni di amicizia profonda.	Fidati di me.
-sospettare	to suspect	9	763fa2d752011b69bfe3f6783c86e276	La polizia sospetta che il vicino sia coinvolto nel furto avvenuto la scorsa settimana nel palazzo accanto.	Sospetto qualcosa.
-accusare	to accuse	9	c9a0b64f2f848157d8bc1d2e026b2d6d	Non puoi accusare qualcuno senza avere prove concrete altrimenti rischi di rovinare la sua reputazione per sempre senza motivo.	Accusare qualcuno.
-giudicare	to judge	9	2a22513a4c4d0153a2508fb67b80bc8c	Non bisogna giudicare le persone dall'apparenza ma bisogna conoscerle bene prima di esprimere un'opinione su di loro.	Giudicare con calma.
-condannare	to condemn	9	4d41937caff222f6aa8a6d054fb50a22	Il giudice ha deciso di condannare l'imputato a venti anni di carcere per i gravi reati commessi negli ultimi cinque anni.	Condannare il colpevole.
-assolvere	to acquit	9	e3e91c1e3027d4158042dec6ce929483	La corte d'appello ha deciso di assolvere l'imputato per insufficienza di prove dopo tre anni di processi lunghissimi.	Assolto con formula piena.
-difendere	to defend	9	47f0767a0e9d9f6838d61e8c32018be8	Bisogna sempre difendere i propri principi anche quando è scomodo o costa caro per la propria carriera personale.	Difendi i deboli.
-attaccare	to attack / attach / stick / start	9	defc3318d7a3905b96037d4d806fb965	Non è giusto attaccare una persona personalmente solo perché si hanno opinioni diverse sui temi della politica attuale.	Attaccare il nemico.
-conquistare	to conquer	9	cdcef85a142b257c6e6f422e269a2d24	Il generale romano è riuscito a conquistare tutta l'Italia in pochi anni grazie alle sue strategie militari geniali e innovative.	Conquistare il mondo.
-dominare	to dominate	9	12661b8d914bca729c24c2f09cd44b85	L'impero romano è riuscito a dominare tutto il Mediterraneo per più di cinque secoli fino al crollo dell'impero d'occidente.	Dominare la situazione.
-governare	to govern	9	2456fac8d64555739110cc743b414a30	Governare un paese non è facile e richiede grande competenza, esperienza e capacità di mediazione tra interessi contrastanti.	Governare con saggezza.
-esprimere	to express	9	323b92bdaafa99f513de7f9dac3583cb	Bisogna esprimere le proprie opinioni con rispetto verso gli altri anche quando si è in disaccordo con loro.	Esprimere un'opinione.
-dichiarare	to declare	9	a19ff6c21ff425c42d1dae34a6087a36	Il primo ministro ha deciso di dichiarare lo stato d'emergenza dopo il forte terremoto che ha colpito il centro Italia.	Dichiarare guerra.
-contestare	to contest / dispute	9	1fb422b1729762aa39a7c1f3da0ff780	Voglio contestare la multa che mi è stata fatta perché non ho commesso nessuna infrazione del codice della strada.	Contestare la decisione.
-giusto	fair / right	9	21016dc3fe441ee5b71fd6f15d982476	Il giudice ha preso una decisione giusta basata sulle prove portate in tribunale durante il processo lungo.	Una scelta giusta.
-ingiusto	unjust / unfair	9	8f8e4db9c09d42fafff9c5c387436e89	È ingiusto che alcuni paghino le tasse e altri evadano senza essere puniti per legge dallo stato italiano.	Un trattamento ingiusto.
-equo	equitable / fair	9	da35a8e1508df9e6c8e0e6f76ff8ee7f	Bisogna trovare un compromesso equo tra le richieste dei lavoratori e le esigenze dell'azienda durante le trattative sindacali.	Un prezzo equo.
-onesto	honest	9	d909dd50d0ba7e7c2e87bd1f11fa141f	Mio padre è sempre stato un uomo onesto e mi ha insegnato il valore della verità fin da bambino piccolo.	Un uomo onesto.
-disonesto	dishonest	9	fa055905cca0ddc39e2d955c8e20298a	Quel commerciante è disonesto e cerca sempre di ingannare i clienti con prezzi falsati e merce di bassa qualità.	Un atto disonesto.
-generoso	generous	9	e87322d45135b3e8976f17b1f759c2a0	Il mio amico è molto generoso con tutti e regala sempre il suo tempo a chi ne ha veramente bisogno.	Una persona generosa.
-egoista	selfish	9	65eaef292094df518669d36af1cf5b7b	Quel collega è troppo egoista e pensa solo al proprio interesse senza considerare il benessere del resto del gruppo.	Un atteggiamento egoista.
-gentile	kind / polite	9	f841faf0549252ed798e9fb3751ab505	La signora del bar è sempre molto gentile con tutti i clienti e li saluta con un sorriso caloroso.	Una persona gentile.
-scortese	rude / impolite	9	1d8a140f19ab2ca6948c297d1c2de1f8	Quel cassiere è stato davvero scortese con me e non meritava di lavorare a contatto con il pubblico così.	Un comportamento scortese.
-sincero	sincere	9	ec727856d612d3f5f60b307951451650	Sono stato sincero con il mio capo e gli ho detto quello che pensavo del nuovo progetto aziendale lanciato.	Un amico sincero.
-fedele	faithful	9	06df1e734b08cc0a9847b3b766bfdd7d	Il mio cane è sempre stato fedele alla nostra famiglia e ha vissuto con noi per più di quindici anni.	Un amico fedele.
-leale	loyal	9	8fcb41423db26057b1740f8906f3d44b	Mio fratello è una persona leale che non tradisce mai la fiducia degli amici anche nelle situazioni difficili e complicate.	Un dipendente leale.
-ambizioso	ambitious	9	6f6944ddea696e9f9b2bdb0ce0da6d1c	Il giovane manager è molto ambizioso e vuole diventare amministratore delegato dell'azienda entro pochi anni di lavoro.	Un progetto ambizioso.
-determinato	determined	9	47f59de54d39b4db447b412ceea95183	Sono determinato a finire questo difficile progetto entro la fine del mese nonostante tutte le difficoltà incontrate finora.	Una persona determinata.
-modesto	modest	9	cee4ba0cccdba9f3955d498c89fae725	Il professore è una persona molto modesta nonostante abbia vinto premi internazionali importanti nella sua carriera accademica.	Un guadagno modesto.
-valere	to be worth	9	dd9d5b4b1b4c9d85714c9ca379d9e766	Questa antica moneta vale molto più di quanto pensi se la fai valutare da un esperto numismatico.	Vale la pena.
-contare	to count / count on / rely	9	ab62175861fad120ba6e3773e10ca9f5	Devo contare i giorni che mi separano dalle vacanze al mare con la mia famiglia tutta riunita finalmente.	Conto su di te.
-importare	to matter / import	9	6ab6a853515153c782d224598f1b984d	Non mi importa cosa pensano gli altri della mia scelta perché sono sicuro di aver fatto la cosa giusta.	Mi importa molto.
-riferire	to report / refer	9	1ff42d58ea9d2e22c7ad4ef5f43d1d72	Devo riferire al mio capo tutto quello che è successo durante la riunione di ieri pomeriggio in dettaglio.	Riferisci il messaggio.
-riguardare	to concern / regard	9	4456d7dc50262990cd3361dd27bb460e	Questa decisione importante riguarda tutti i dipendenti dell'azienda e quindi richiede una riflessione collettiva approfondita.	Mi riguarda.
-trattare	to treat / deal with	9	5483d8c32b7f244a9cb1c41dddfba84b	Bisogna trattare tutti gli ospiti con cortesia e rispetto senza alcuna distinzione di nazionalità o ceto sociale.	Trattare bene tutti.
-convenire	to be worthwhile / advantageous; to agree	9	faf44decff2dffa24eca6159e8d1e93d	Mi conviene comprare l'abbonamento mensile della metropolitana perché uso i mezzi pubblici tutti i giorni per lavoro.	Conviene così.
-opporre	to oppose	9	936d12657fc15f19e882b3d5b9f12e1e	Devo opporre resistenza a questa decisione ingiusta che colpisce molti dipendenti senza alcuna giustificazione razionale comprensibile finora.	Opporsi al cambiamento.
-sopportare	to bear / stand	9	eb551f2ffc734ab9aff2586725a22a90	Non posso più sopportare questo comportamento da parte dei miei colleghi e devo parlare con il capo subito.	Sopporta la situazione.
-tollerare	to tolerate	9	0ad4bf666ac1f2d8e03e2733af0d45c7	Non posso tollerare la mancanza di rispetto da parte dei miei studenti durante le lezioni di matematica importanti.	Tollerare gli errori.
-l'istante	instant	9	a5a76f067abd0680c5b584e586f02c2d	In un istante tutto è cambiato per sempre e nulla sarà più come prima nella nostra vita quotidiana sempre.	Un solo istante.
-l'epoca	era / epoch	9	a17d6b3b49c54f8e5b1106998d52c4aa	Ogni epoca storica ha le sue caratteristiche uniche e ci insegna molto sull'evoluzione dell'umanità nel corso dei secoli.	Un'epoca lontana.
-l'era	era / age	9	cf5c0a6a33f6f53bf10be6c527fe5c93	L'era industriale ha cambiato radicalmente il modo di vivere e lavorare in tutti i paesi del mondo moderno.	Una nuova era.
-il secolo	century	9	120696b6b2ae625fb2902cae256b6a2a	Il secolo scorso ha visto due guerre mondiali devastanti che hanno cambiato l'equilibrio politico ed economico del pianeta.	Un intero secolo.
-il decennio	decade	9	f8f3602596122599376640637f7dc0ca	L'ultimo decennio è stato caratterizzato da profondi cambiamenti tecnologici che hanno trasformato il modo di vivere e comunicare.	Per un decennio.
-la generazione	generation	9	cb14ff35b15f3fbc6f45b25ec61c3524	La nuova generazione di giovani è molto più attenta ai temi ambientali rispetto a quelle precedenti del secolo scorso.	Una nuova generazione.
-l'antichità	antiquity	9	6ad26a8b98a5d3861c021643d376d8bd	L'antichità classica ha lasciato un patrimonio artistico e culturale enorme che ancora oggi studiamo nei nostri libri.	Antichità romana.
-la modernità	modernity	9	f1ad145b5c4bc94198a7465976fe29fd	La modernità ha portato grandi vantaggi ma anche nuovi problemi sociali ed ecologici da affrontare urgentemente nel mondo.	La nostra modernità.
-la posterità	posterity	9	67926cf6d6c3272f65194f3a021c7887	La posterità giudicherà le nostre scelte attuali e le conseguenze sulle generazioni future del nostro mondo civilizzato.	Per la posterità.
-la contemporaneità	contemporary times	9	c59b72967712495b7bc2237ad11bd2c4	La contemporaneità ci offre molte opportunità ma richiede anche grande capacità di adattamento ai cambiamenti continui e veloci.	La nostra contemporaneità.
-la democrazia	democracy	9	f963f5494e549cd56bd7c01af3521a83	La democrazia è il sistema politico migliore anche se ha i suoi difetti e richiede partecipazione attiva dei cittadini.	Una grande democrazia.
-la dittatura	dictatorship	9	f9c50f10bfcfeae1e4f251186be6d330	La dittatura toglie le libertà fondamentali ai cittadini e bisogna sempre difendere la democrazia da chi la vuole abolire.	Una crudele dittatura.
-l'anarchia	anarchy	9	e75b6000941176b7e37fc6f4690db5e1	L'anarchia non è la mancanza di regole ma una forma di organizzazione sociale alternativa basata sull'autogestione collettiva volontaria.	Pura anarchia.
-l'oligarchia	oligarchy	9	d90e681f1b3c050e984dfea885e21e21	L'oligarchia di pochi ricchi controlla l'economia di molti paesi del mondo a discapito della maggioranza della popolazione.	Un'oligarchia chiusa.
-il comunismo	communism	9	29ddb02ff71d99a46677feaf05d886a3	Il comunismo è un'ideologia politica che sognava una società senza classi sociali e basata sull'uguaglianza tra gli uomini.	Il comunismo storico.
-il socialismo	socialism	9	fd9c9b812dde91eb2a103bf95a762ca6	Il socialismo democratico cerca di conciliare giustizia sociale e libertà individuale in un'economia di mercato regolato dallo stato.	Socialismo riformista.
-il capitalismo	capitalism	9	9c13b91e09b5587249e01d7d483e00d4	Il capitalismo è il sistema economico dominante nel mondo moderno e ha portato ricchezza ma anche grandi disuguaglianze sociali persistenti.	Capitalismo selvaggio.
-il fascismo	fascism	9	9f46f9846ed1d4f55a7a88dbff15e21b	Il fascismo italiano ha portato il paese alla rovina della seconda guerra mondiale con conseguenze terribili per tutta la popolazione.	Lotta al fascismo.
-la rivoluzione	revolution	9	86df29c3f5d33c8fc7e11ee7a27778ef	La rivoluzione francese ha cambiato per sempre la storia europea introducendo i principi di libertà, uguaglianza e fraternità universali.	Una rivoluzione pacifica.
-la riforma	reform	9	bcf78d9361bb418527bce74bae88e206	La riforma del sistema scolastico è urgente per adeguarlo alle esigenze del mondo del lavoro moderno e tecnologico.	Una riforma necessaria.
-la diplomazia	diplomacy	9	50e78a4ec9e5d5c21d3080a87e3e5a13	La diplomazia internazionale ha evitato molte guerre nei secoli e continua a essere uno strumento fondamentale per la pace mondiale.	Diplomazia segreta.
-l'ambasciata	embassy	9	0965888f6af437ba9dece21638feb701	L'ambasciata italiana a Parigi è in un palazzo storico del centro città vicino agli uffici governativi francesi.	Visita l'ambasciata.
-l'ambasciatore	ambassador	9	3916267cf38592f1fa040f9914c18a89	L'ambasciatore italiano in America ha presentato le sue credenziali al presidente degli Stati Uniti la settimana scorsa.	Un saggio ambasciatore.
-l'alleanza	alliance	9	6a2109628526531611eb6707f4c4cc95	L'alleanza tra le grandi democrazie occidentali è fondamentale per affrontare le sfide globali del ventunesimo secolo moderno.	Una solida alleanza.
-il conflitto	conflict	9	00a43df032897a6525b49f800163b4ab	Il conflitto in Medio Oriente continua da decenni e ha causato sofferenze terribili a milioni di persone innocenti civili.	Un grave conflitto.
-il trattato	treaty	9	8025d68c065e464ff0b512c93d01c07d	Il trattato di pace tra le due nazioni è stato firmato dopo lunghe trattative diplomatiche durate molti mesi consecutivi.	Un trattato storico.
-il negoziato	negotiation	9	961c3574221c7c8dc8ee4a06edefdd28	Il negoziato tra i sindacati e l'azienda è andato avanti per molti giorni prima di trovare un accordo finale soddisfacente.	Un lungo negoziato.
-il territorio	territory	9	d2fbf1f66eb549e8220efd8962b120af	Il territorio italiano è caratterizzato da grandi differenze geografiche, climatiche e culturali tra il nord e il sud.	Un vasto territorio.
-la sovranità	sovereignty	9	d9275be2eb62ecc7e7adc5b86c13b9d2	La sovranità nazionale è un concetto fondamentale del diritto internazionale moderno che limita le interferenze straniere negli affari interni.	La nostra sovranità.
-l'indipendenza	independence	9	50e87f5042cd1702f296c6e16551ee50	L'indipendenza è un valore fondamentale per ogni nazione e bisogna difenderla sempre dalle pressioni delle grandi potenze straniere.	Festa dell'indipendenza.
-l'inquinamento	pollution	9	f58b48e84bd1d48633949f4dbe5d4b11	L'inquinamento atmosferico è un grave problema delle grandi città italiane e europee del nord industrializzate molto produttive.	Inquinamento ambientale.
-la disuguaglianza	inequality	9	82441565f30ab92d2665fc9d4496b7f7	La disuguaglianza economica tra ricchi e poveri sta crescendo in tutti i paesi del mondo capitalista moderno avanzato.	Una grande disuguaglianza.
-l'integrazione	integration	9	939a8753755f1422e805193f6277a329	L'integrazione degli immigrati nella società italiana richiede tempo, pazienza e politiche pubbliche mirate ed efficaci da parte dello stato.	Integrazione sociale.
-l'immigrazione	immigration	9	dae05b32271e8176d5fe5bfffc94b1f8	L'immigrazione è un fenomeno complesso che richiede risposte umane e politiche adeguate da parte di tutti i paesi europei.	Politica dell'immigrazione.
-l'emigrazione	emigration	9	341e26f4326de2468d5a7d8119d7ca9c	L'emigrazione italiana di fine ottocento ha portato milioni di nostri connazionali in America e in Europa per cercare lavoro.	Una triste emigrazione.
-il razzismo	racism	9	bc8592488471c64477f3c04a88d9c476	Il razzismo è una piaga sociale che bisogna combattere con l'educazione e la cultura fin dai primi anni di scuola elementare.	Lotta al razzismo.
-l'abuso	abuse	9	f74220ed64ec7250621d2af7eb8f3d81	L'abuso di potere è un reato grave che mina la fiducia dei cittadini nelle istituzioni democratiche del paese.	Un grave abuso.
-la violenza	violence	9	520c543b68bc3ced359a622f536e9ab0	La violenza domestica è purtroppo ancora molto diffusa nelle case italiane e bisogna fare di più per fermarla definitivamente.	Senza violenza.
-la corruzione	corruption	9	f1a3ec62c192a1e9fa4f8543a739f94b	La corruzione politica è un grave problema italiano che danneggia l'economia e la fiducia nelle istituzioni pubbliche democratiche legittime.	Lotta alla corruzione.
-la criminalità	crime / criminality	9	ef9ec9eeea933368069f93046d6d83be	La criminalità organizzata è ancora forte in alcune regioni d'Italia e richiede l'impegno di tutti per essere sconfitta definitivamente.	Alta criminalità.
-la bellezza	beauty	9	efa02ebdb816ea0ec68ce11b443b20f9	La bellezza dell'arte italiana attira milioni di turisti da tutto il mondo ogni anno nelle nostre splendide città storiche.	Una grande bellezza.
-la bruttezza	ugliness	9	c135ca44fa892d085ebf424d1af28a51	La bruttezza dei nuovi palazzi di periferia stride con la bellezza dei centri storici italiani famosi nel mondo intero.	La pura bruttezza.
-l'armonia	harmony	9	36d2891be2fdab5e38a02344af612aaa	L'armonia tra le persone è fondamentale per costruire una società pacifica e solidale dove tutti possono vivere bene.	Vivere in armonia.
-l'equilibrio	balance	9	fe5323d5e54e115aa8e6099c1d960985	L'equilibrio tra lavoro e vita privata è fondamentale per vivere felici e in salute nel mondo frenetico di oggi.	Un buon equilibrio.
-la simmetria	symmetry	9	7d5851fc1864a88683803f89ec7662bd	La simmetria della facciata di questo palazzo è perfetta e mostra la grande maestria architettonica del rinascimento italiano.	Una bella simmetria.
-la proporzione	proportion	9	891fff1b8640093ffef314e98d397f80	La proporzione tra le diverse parti del corpo umano è stata studiata da Leonardo da Vinci nel suo famoso disegno.	Le giuste proporzioni.
-la qualità	quality	9	e29ce0538ab67571c60502767c04a3b4	La qualità del prodotto italiano è famosa nel mondo intero per la cura artigianale e l'attenzione ai dettagli precisi.	Alta qualità.
-la quantità	quantity	9	244bc089074537075b62bd3f375a6254	La quantità di informazioni che riceviamo ogni giorno è davvero enorme e bisogna saper distinguere quelle importanti dalle altre.	Una grande quantità.
-l'eccellenza	excellence	9	ae49f0aa79139806853be6b10d9daf76	L'eccellenza italiana nel settore della moda è riconosciuta in tutto il mondo da decenni di duro lavoro creativo.	Un'eccellenza italiana.
-la mediocrità	mediocrity	9	e966bd514adcf2f93c0c0c558b5a3e4c	La mediocrità della classe dirigente attuale è un grave problema per il futuro del nostro paese e della prossima generazione.	Pura mediocrità.
-che io sia	(that) I be (subjunctive)	9	5fda9d05ee620dd56b8eae7b411edda8	Mia madre vuole che io sia puntuale alla cena di stasera per non far aspettare nessuno.	Che io sia felice!
-che tu sia	(that) you be (subjunctive)	9	5e2e34105bc1dbcf23a4563a31bbd7f2	Spero che tu sia in buona salute dopo tutto quello che hai passato negli ultimi mesi.	Che tu sia benedetto.
-che lui sia / che lei sia	(that) he/she be (subjunctive)	9	60cd6334a3f81f5502f571dbaf562c39	Penso che lui sia il candidato migliore e che lei sia molto preparata anche.	Che sia vero?
-che noi siamo	(that) we be (subjunctive)	9	56e1b884b39da0d185a7a8b4cee25677	È importante che noi siamo uniti in questo momento difficile per la nostra famiglia.	Che siamo bravi!
-che voi siate	(that) you be (subj. pl)	9	853c17c1ddf7f9bde896154b07ea47d2	Mi auguro che voi siate tutti d'accordo sulla decisione presa ieri sera durante la riunione.	Che siate felici.
-che loro siano	(that) they be (subjunctive)	9	bd7cc8bcfc749d96f074f1a145262587	Spero che loro siano felici della scelta che hanno fatto per il loro futuro insieme.	Che siano contenti!
-che io abbia	(that) I have (subjunctive)	9	7b10fec6a30bca0a3d770e429bf428ea	Spero che io abbia abbastanza tempo per finire tutti i lavori entro la scadenza.	Che io abbia ragione!
-che tu abbia	(that) you have (subjunctive)	9	ca78a0cc2d62c6171ee715359863a470	Mi auguro che tu abbia tutto ciò che ti serve per il viaggio di domani mattina.	Che tu abbia ragione.
-che lui abbia / che lei abbia	(that) he/she have (subjunctive)	9	4d68d36300c5c21b36efdca16e29adf4	Credo che lui abbia ragione e che lei abbia bisogno di un po' di riposo.	Che abbia capito?
-che noi abbiamo	(that) we have (subjunctive)	9	c85b0b258b4508106aeedd80034b8c25	È necessario che noi abbiamo tutti i documenti pronti prima della riunione di domani.	Che abbiamo fortuna!
-che voi abbiate	(that) you have (subj. pl)	9	6465471c999abf4027f62bcc2474ab96	Spero che voi abbiate passato delle buone vacanze al mare con tutta la famiglia.	Che abbiate pazienza.
-che loro abbiano	(that) they have (subjunctive)	9	4471a9eba3addb01f8010ca64f9330d5	È importante che loro abbiano fiducia in noi e nel nostro lavoro futuro insieme.	Che abbiano fortuna!
-che io faccia	(that) I do/make (subjunctive)	9	27e6af1b02e10a38c9dd9fc9143bfa1a	Vuoi che io faccia la spesa al posto tuo perché sei occupato con i bambini?	Che io faccia presto!
-che tu faccia	(that) you do/make (subjunctive)	9	43513776e3a844fb0207302706099f51	È importante che tu faccia attenzione mentre guidi su queste strade di montagna pericolose.	Che tu faccia bene.
-che lui faccia / che lei faccia	(that) he/she do/make (subj.)	9	94509a7bed43fe67baf48ee86bd91587	Spero che lui faccia bene all'esame e che lei faccia un buon lavoro.	Che faccia presto!
-che noi facciamo	(that) we do/make (subjunctive)	9	d426c4287df8fb55df268b90278ca387	Bisogna che noi facciamo qualcosa per aiutare i nostri vicini in difficoltà economiche.	Che facciamo presto!
-che voi facciate	(that) you do/make (subj. pl)	9	9204be34d31fab5bcd6d72cb83ac8aca	Voglio che voi facciate i compiti prima di guardare la televisione stasera dopo cena.	Che facciate attenzione.
-che loro facciano	(that) they do/make (subjunctive)	9	ff7bbd691a71b3ccc2ef86de5120f565	Spero che loro facciano la cosa giusta in questa difficile situazione familiare attuale.	Che facciano presto!
-che io vada	(that) I go (subjunctive)	9	e25391a3777c6a1b20cde7eebb2a28ca	Mi sembra giusto che io vada a parlare direttamente con il responsabile del problema.	Che io vada subito!
-che tu vada	(that) you go (subjunctive)	9	232dab9062de5777481422e5aa2075e4	Penso che tu vada al lavoro troppo presto la mattina e ti stanchi inutilmente molto.	Che tu vada bene.
-che lui vada / che lei vada	(that) he/she go (subjunctive)	9	db2c142c395ae438402149a16a7d4835	Voglio che lui vada al colloquio e che lei vada con lui per supporto morale.	Che vada bene!
-che noi andiamo	(that) we go (subjunctive)	9	015e90816beae4510505cd9f4d2d1e8d	Bisogna che noi andiamo subito a vedere cosa è successo dai nostri vicini di casa.	Che andiamo subito!
-che voi andiate	(that) you go (subj. pl)	9	1961c07e47d72eb072cb369721666f1c	Spero che voi andiate d'accordo con i nuovi colleghi del nuovo ufficio di Milano.	Che andiate piano.
-che loro vadano	(that) they go (subjunctive)	9	0a2ecfa99a8aa4dada015e7ff1b3ea59	Voglio che loro vadano a riposarsi un po' dopo questo lungo viaggio in macchina.	Che vadano via!
-che io venga	(that) I come (subjunctive)	9	382f364af5e0829b3c11f022707ae099	Vuoi davvero che io venga con te al matrimonio della tua amica del cuore?	Che io venga subito!
-che tu venga	(that) you come (subjunctive)	9	16ec1bbde4f65539f2a3f2794b95f8b4	Mi piacerebbe che tu venga alla mia festa di compleanno il prossimo sabato sera.	Che tu venga presto.
-che lui venga / che lei venga	(that) he/she come (subj.)	9	201786e6809fb315ce475b4269bf32df	Spero che lui venga in tempo e che lei venga dalla città vicina senza ritardi.	Che venga lui!
-che noi veniamo	(that) we come (subjunctive)	9	a3391bccd6f6bfcb7dfdeadbd33fe2aa	Vuoi che noi veniamo a prenderti all'aeroporto domani mattina molto presto?	Che veniamo dopo!
-che voi veniate	(that) you come (subj. pl)	9	7bdbc7af27c194fd5c3c1486167eb594	Mi auguro che voi veniate al concerto di sabato sera nel parco del centro città.	Che veniate insieme.
-che loro vengano	(that) they come (subjunctive)	9	48cf3600118aaa2dbeb9f327bf160596	Spero che loro vengano alla festa di compleanno di mio figlio sabato prossimo a casa.	Che vengano tutti!
-che io possa	(that) I can/be able (subj.)	9	cfeb4a7a6b0f86fa0185d7c534136609	Credo che io possa finire questo progetto in tempo nonostante tutte le difficoltà recenti.	Che possa farcela!
-che tu possa	(that) you can/be able (subj.)	9	31290e9fac7bb0565f72707ba41f47eb	Spero che tu possa venire alla cena di sabato sera anche se sei molto occupato.	Che tu possa venire.
-che lui possa / che lei possa	(that) he/she can (subj.)	9	3c6b5418049db7e1cf631700afb1757b	Voglio che lui possa esprimersi liberamente e che lei possa fare le proprie scelte.	Che possa farcela!
-che noi possiamo	(that) we can/be able (subj.)	9	b846b8a6267a7e145165b7b7bddc65aa	Spero che noi possiamo trovare una soluzione a questo problema il prima possibile.	Che possiamo riuscire!
-che voi possiate	(that) you can/be able (subj. pl)	9	2151983e0ab34f40b32eb84768398bf7	Mi auguro che voi possiate tornare presto in Italia per rivedere i vostri parenti.	Che possiate riuscire.
-che loro possano	(that) they can/be able (subj.)	9	4ec843749f44212a38cca7182a0f7869	Spero che loro possano realizzare i loro sogni più importanti durante la loro vita.	Che possano farcela!
-che io parli	(that) I speak (subjunctive)	9	523689ae482a68988636f36618d4a1e5	Mio padre vuole che io parli con il direttore della banca per chiedere un prestito.	Che io parli piano!
-che tu parli	(that) you speak (subjunctive)	9	dbeb765b62414790c1e4eecf3cfede6b	È importante che tu parli con il medico del tuo problema di salute al più presto.	Che tu parli chiaro.
-che lui parli / che lei parli	(that) he/she speak (subj.)	9	0e12a261d6ecf0e693831e316f825755	Voglio che lui parli con suo padre e che lei parli con la madre della questione.	Che parli piano!
-che noi parliamo	(that) we speak (subjunctive)	9	009571302be862fd7d8a261134d79082	È bene che noi parliamo apertamente di questo problema durante la prossima riunione di famiglia.	Che parliamo dopo!
-che voi parliate	(that) you speak (subj. pl)	9	1c83123e44ea0d15fa7f4d992b2b8b11	Vorrei che voi parliate sempre in italiano durante le nostre riunioni di famiglia tutti insieme.	Che parliate chiaro.
-che loro parlino	(that) they speak (subjunctive)	9	9c640ad51207570dfb34dba692eff938	Spero che loro parlino sempre la verità anche quando questa è dolorosa o difficile.	Che parlino piano!
-che io tema	(that) I fear (subjunctive)	9	911767bdbabd335cd3ca487e79aca2ab	Mio padre teme che io tema troppo le decisioni difficili che dovrò prendere nel futuro.	Che io tema il peggio!
-che tu tema	(that) you fear (subjunctive)	9	c954f25cddbeb898818c0231c5271418	Mi dispiace che tu tema così tanto il giudizio degli altri durante il tuo lavoro quotidiano.	Che tu tema niente.
-che lui tema / che lei tema	(that) he/she fear (subj.)	9	abab7dda740feb6b0baaca1b56f21f17	Non voglio che lui tema di esprimersi e che lei tema di seguire i suoi sogni.	Che tema il peggio!
-che noi temiamo	(that) we fear (subjunctive)	9	57a63b28458d8fa1483a41e7deddcaf2	È strano che noi temiamo sempre cose che alla fine non succedono mai veramente nella vita.	Che temiamo poco!
-che voi temiate	(that) you fear (subj. pl)	9	e3a9a582c64355378650dd66f2a4e918	Non vorrei che voi temiate i cambiamenti perché spesso portano anche tante belle opportunità.	Che temiate niente.
-che loro temano	(that) they fear (subjunctive)	9	5a6b42f6c974982747046a3dc89ccb40	Spero che loro temano abbastanza da rispettare le regole del condominio in cui vivono.	Che temano qualcosa!
-che io parta	(that) I leave (subjunctive)	9	8b828ef88b2d8971a250f5d731541926	Mio fratello vuole che io parta con lui per il viaggio in Sicilia il mese prossimo.	Che io parta presto!
-che tu parta	(that) you leave (subjunctive)	9	927e65ed631b930536d58a3be5c9986f	È meglio che tu parta presto domani mattina per evitare il traffico delle ore di punta.	Che tu parta subito.
-che lui parta / che lei parta	(that) he/she leave (subj.)	9	ef9c1eb0f2d6d9610a54e7c1693f8bd9	Voglio che lui parta domani e che lei parta dopodomani per arrivare insieme alla destinazione.	Che parta subito!
-che noi partiamo	(that) we leave (subjunctive)	9	80900ffac231172a8aeb4ea0e5fb70bf	È necessario che noi partiamo entro le sette per arrivare in tempo all'aeroporto.	Che partiamo presto!
-che voi partiate	(that) you leave (subj. pl)	9	795cd66a830a077e8fb98204841bbccb	Vorrei che voi partiate insieme a noi per le vacanze al mare di agosto.	Che partiate insieme.
-che loro partano	(that) they leave (subjunctive)	9	f43fadc0cf37f71920a16ef6b7d5a7fe	Spero che loro partano in tempo per non perdere la coincidenza del volo internazionale.	Che partano presto!
+il governo	government	9	4c38928fdb5a015bee0899990399d77d	Il governo di un condominio richiede più riunioni di quanto si pensi.	Il governo si riunisce oggi.
+il parlamento	parliament	9	e9dbc7ea764439b868c45ab3fb462d5f	Il parlamento italiano ha due camere con gli stessi poteri.	Il parlamento è a Roma.
+il senato	senate	9	624470bb742b9caf06d1427b04433fc3	Il senato si riunisce a Palazzo Madama, in centro a Roma.	Il senato ha votato oggi.
+l'assemblea	assembly	9	e45d7b1999a4790e0f4925f90bcaa256	L'assemblea di condominio è finita alle undici senza decidere niente.	C'è l'assemblea stasera.
+il ministero	ministry	9	662272298a362709057ee11617571779	Per quel documento bisogna scrivere al ministero e poi aspettare.	Lavora al ministero.
+il deputato	deputy / MP	9	5e2971d3d87e5dc33a428d404f153aff	Un deputato resta in carica cinque anni, salvo elezioni anticipate.	Il deputato ha parlato poco.
+il senatore	senator	9	4501a349eca0454b278f23ba65f6e53f	In Italia si può diventare senatore solo dopo i quarant'anni.	Il senatore arriva domani.
+eletto	elected	9	43c34f281edcd284477f45c044b7147b	Il presidente della pro loco è stato eletto per acclamazione.	È stato eletto ieri.
+il candidato	candidate	9	91decb248f8a7be12263b3988d28cdf0	Al concorso ogni candidato porta sempre una copia in più dei documenti.	Chi è il candidato?
+il partito	party (political)	9	574aa1d6a416fee359f18d809296fbeb	Nel bar del paese si discute di calcio più che di partiti.	Ha fondato un partito.
+l'elezione	election	9	293516138d6a7de231db017ccd26b454	Dopo l'elezione del nuovo consiglio hanno rifatto il campo da bocce.	L'elezione è domenica.
+il referendum	referendum	9	c538ad4cb2671e6072b4677f23136b48	Per il referendum le scuole restano chiuse due giorni.	Voto al referendum.
+la costituzione	constitution	9	0a04aa5eaf54c9298e0331791dceeed5	La costituzione italiana è entrata in vigore nel millenovecentoquarantotto.	Leggo la costituzione.
+la legge	law	9	61f4c12744f51ac5b6efea114ca0f485	La legge sulla ZTL cambia da comune a comune, e la multa arriva lo stesso.	È vietato dalla legge.
+il decreto	decree	9	5a49f033125267ddac6b3e14e19c04cd	Il decreto è uscito in agosto, quando gli uffici erano chiusi.	Hanno firmato un decreto.
+la normativa	regulation	9	e9595c35b57d1cdc031ff5b47a1bbe8a	La normativa sui tavolini cambia ogni due anni e i tavolini restano.	La normativa è cambiata.
+il regolamento	regulation / rules	9	d46cacefe773d0cdbfd09bce17ea530c	Il regolamento del condominio vieta i panni stesi sulla facciata.	Leggi il regolamento.
+lo statuto	statute / charter	9	de54e62ca4752577e22f1aeff8a73dab	Lo statuto della pro loco è del dopoguerra e non è mai cambiato.	Lo statuto è chiaro.
+la repubblica	republic	9	566f736224e6837a24b5d805f499f7ff	La repubblica italiana si festeggia il due giugno, con la banda in piazza.	L'Italia è una repubblica.
+la monarchia	monarchy	9	afb648eb8840db0843387b58c294daf5	Prima della repubblica in Italia c'era la monarchia.	In Spagna c'è la monarchia.
+il popolo	people / nation	9	4a695ba3544f29cf5932d33fef4c6db5	Ad agosto sembra che tutto il popolo delle città si sposti verso il mare.	Il popolo è in piazza.
+il cittadino	citizen	9	84fdecacb98f9c61e8c4aef8592b2311	Ogni cittadino può chiedere un certificato all'anagrafe, con molta pazienza.	Sono un cittadino italiano.
+la comunità	community	9	c5bf8e67ecaa6d21fd177a1b343d8631	Nei borghi la comunità si riconosce durante la festa patronale.	La comunità è unita.
+il gruppo	group	9	6ef46601909e9b878798089069cefd63	Un gruppo di cantori gira le case del paese la sera dell'Epifania.	Siamo un gruppo piccolo.
+il ceto	social class	9	7426b2a9c0e90d0abfca8897c5f90c69	Nell'Ottocento il ceto dei mercanti costruì i palazzi che vediamo oggi.	Viene da un ceto modesto.
+l'etnia	ethnicity	9	0d4f4c9f255b6960d1e2bcf3ac18ce50	Nel censimento dell'Alto Adige si dichiara il gruppo linguistico, non l'etnia.	Parliamo di lingua, non di etnia.
+la razza	race / breed	9	eb812dc59c3c0cf9c120d9d92993ad3f	Nelle stalle di montagna si allevano razze di mucche piccole e robuste.	Che razza è questo cane?
+la cultura	culture	9	e6da8e51b4510f9c253957d20dfd3090	La cultura del cibo qui comincia al mercato e finisce a tavola.	Amo la cultura italiana.
+il diritto	right / law	9	c5f88cff090e14fafc9237e3a69e572f	All'università lo studente ha diritto di rifiutare il voto e ripetere l'esame.	È un mio diritto.
+l'obbligo	obligation / duty	9	71e1366e0c7675f0b284bcb7eb911285	In Italia la scuola è d'obbligo fino ai sedici anni.	Non c'è nessun obbligo.
+la giustizia	justice	9	e6638b1caa9ded83b36ded12575b3de0	La giustizia civile è lenta, come sa chiunque abbia avuto una causa.	Chiedo solo giustizia.
+l'ingiustizia	injustice	9	d79060be2d960de2b7d5b5e1a053d5dd	Trovare parcheggio davanti a casa d'altri sembra sempre un'ingiustizia.	È una grande ingiustizia.
+l'equità	equity / fairness	9	88cb468f2f6f89bb007d425446470c68	Dividere il conto a metà non è vera equità, ma è più semplice.	Chiediamo più equità.
+la parità	parity / equality	9	c7ec4e2185c31d3419d1b54d89105028	La partita è finita in parità e in piazza hanno discusso fino a tardi.	Vogliamo la parità.
+la discriminazione	discrimination	9	192ec606412ee574ae7b4fcba02ccdba	Nel regolamento c'è scritto che ogni discriminazione è vietata.	La discriminazione è vietata.
+la povertà	poverty	9	8399abf313905328b8b59a497a75776d	Nel dopoguerra la povertà spinse molti a partire per l'estero.	La povertà è diminuita.
+la ricchezza	wealth	9	a15e676560e3404dd847528966bc3d68	La vera ricchezza di questa valle è l'acqua, dicono i vecchi.	Che ricchezza di colori!
+sociale	social	9	08349e044293b7d1c08e19a00b8be2df	Il centro sociale del quartiere organizza il torneo di briscola.	È un problema sociale.
+l'individuo	individual	9	5fb087abfbc77088535610dff30a88a2	In coro il singolo individuo si sente poco, e il risultato è migliore.	Ogni individuo è diverso.
+la popolazione	population	9	b1ef15dbba11f682071cec57cc15450a	Nei borghi dell'Appennino la popolazione cala di anno in anno.	La popolazione cresce.
+il crimine	crime	9	75c0bae41ae24dfb8fefddd9dc85dbd2	Nei libri gialli il crimine avviene sempre in una villa isolata.	È un crimine grave.
+il reato	offense / crime	9	b922ac39df1038a570145dcefff7754c	Parcheggiare in doppia fila non è un reato, ma la multa arriva.	Non è un reato.
+il delitto	crime / felony	9	a7bfdd3f8bf4e6f0435076aae1f25a28	Nei romanzi di Camilleri il delitto è quasi una scusa per raccontare la Sicilia.	Ha commesso un delitto.
+l'omicidio	homicide / murder	9	646759b5e7006f241fc80f11627f288f	Nel giallo l'omicidio si scopre soltanto all'ultimo capitolo.	Indagano su un omicidio.
+il furto	theft	9	4a941df1b779fbdd3b0be43ef9598b6b	Al mercato bisogna badare alla borsa: il furto è questione di un attimo.	Hanno denunciato un furto.
+la rapina	robbery	9	762372e75940934b4bb181334e3425a8	Nel film la rapina finisce male, come in tutti i film di rapine.	C'è stata una rapina.
+la frode	fraud	9	7cc81078f1180fdb8fa578915958fb10	Contro la frode alimentare ci sono i controlli e le denominazioni d'origine.	È un caso di frode.
+la truffa	scam / swindle	9	f19814c8e0a59c440ff52a236a495a0a	Al telefono provano sempre la solita truffa, e qualcuno ci casca.	Attento alla truffa!
+il criminale	criminal	9	2db178b83a5b030c570db81aa2be6fcd	Nel romanzo il criminale è il personaggio più simpatico di tutti.	Hanno preso il criminale.
+il ladro	thief	9	a41e184c1e6427af811fb00979b0ca66	A Ferrara, dove girano tutti in bici, un ladro ha vita fin troppo facile.	Il ladro è scappato.
+la prigione	prison	9	d1a8aa7e97ac47a03e24c8b6a1629eea	Nel castello la vecchia prigione è diventata una sala per le mostre.	È finito in prigione.
+il carcere	jail / prison	9	c0e30392c6249cce502aa8b6a1508428	Il vecchio carcere dell'isola oggi si può visitare con la guida.	Il carcere è chiuso.
+il detenuto	prisoner	9	993a05cfbfc1daf91f7120e2871ce93b	In alcune carceri il detenuto lavora in cucina o nell'orto.	Il detenuto ha studiato.
+il processo	trial / process	9	80cbe2ae46f07b07a37fd20e7b671789	Un processo civile può durare più della memoria dei testimoni.	Il processo comincia lunedì.
+il tribunale	court	9	c224019629d57c6b168729e57caae749	Davanti al tribunale la fila comincia molto prima dell'apertura.	Ci vediamo al tribunale.
+la religione	religion	9	ecc136b30c16147f16fed27c3e3003fe	A scuola l'ora di religione si può scegliere oppure no.	Studia le religioni antiche.
+la fede	faith	9	7d11810cf99c74a1f3fa22c3879ea39d	La fede nuziale in Italia si porta a sinistra, altrove a destra.	Ha molta fede.
+il dio	god	9	27b205035c328b16d8c8329c4b41e87e	Al museo archeologico c'è la statua di un dio greco senza braccia.	Era il dio del mare.
+l'anima	soul	9	380000c85ecc4187faa4f50c1517920e	D'inverno, nei paesi vuoti, non si incontra anima viva.	Che anima gentile!
+lo spirito	spirit	9	3adf53c6f9f1cc48616ecad8c45eeff7	Nella festa sopravvive lo spirito di quando il paese era pieno.	Ha spirito di iniziativa.
+il paradiso	paradise / heaven	9	64427ad53bd35ec3783d69409c671b94	Dopo quella salita l'ombra del rifugio sembrava il paradiso.	Questo posto è un paradiso.
+il peccato	sin / pity	9	d21b216279e4d318031377bd91e2b2f9	Che peccato: il museo chiude proprio il giorno in cui siamo liberi.	È un vero peccato.
+il santo	saint	9	ea07ff4e27d0bcf5f786f39e44e031f1	Ogni paese ha il suo santo e la sua festa, e non si spostano per nessuno.	Oggi è il mio santo.
+il prete	priest	9	1a023e91d43fde0f75e51281ac2efb01	Il prete del paese apre la chiesa e chiude anche il campo da calcio.	Il prete ha suonato le campane.
+la preghiera	prayer	9	f577f4c9c0b64128fff3b8f92f2aaae4	In cima al passo una cappella porta una preghiera incisa nella pietra.	Ha detto una preghiera.
+il miracolo	miracle	9	91ace5b7bb757ae8fb8b5075369147d0	Trovare un taxi a Roma sotto la pioggia è un piccolo miracolo.	È stato un miracolo!
+la filosofia	philosophy	9	8d9cf576c5110bbc3c74a5cc5112a51f	Al liceo la filosofia si studia in ordine, dai greci in poi.	Studio filosofia.
+l'etica	ethics	9	bb5b8e74d1b487d61f171a1706f54e95	Nel mestiere del restauratore l'etica conta quanto la tecnica.	È una questione di etica.
+la morale	moral / morals	9	208c6aa15739eb855bcd4c3df2b08f2d	La morale della storia arriva sempre nell'ultima riga.	Qual è la morale?
+il destino	destiny / fate	9	ce604407b420b7de3df81516e16a09cc	Il destino di molti borghi dipende da una strada e da una scuola.	Era il suo destino.
+l'essenza	essence	9	764e941c475b5c152f4aedcbef5776ca	L'essenza del pesto è il basilico; tutto il resto viene dopo.	Vai all'essenza!
+l'esistenza	existence	9	e69d6b3ebd33035117000ce6c1ce786e	Leopardi scriveva dell'esistenza guardando le colline di Recanati.	Che esistenza tranquilla!
+la realtà	reality	9	06f7510dc7f4e80f9e1db870dd9b8893	Sulla cartolina il mare è turchese; nella realtà c'è anche la mareggiata.	Questa è la realtà.
+l'illusione	illusion	9	8eb7cf3e2a0bf425192569113106987a	La prospettiva di quella galleria è un'illusione, e funziona da secoli.	Era solo un'illusione.
+la verità	truth	9	a68280303c02f9c49501526f85718827	La verità sulla ricetta la sa solo chi la fa da trent'anni.	Dimmi la verità.
+l'eternità	eternity	9	1fb7d06cbace72869721090ac6431c4b	Il cantiere della strada dura da un'eternità, dicono in paese.	Ti aspetto da un'eternità.
+l'infinito	infinity / infinite / infinitive (grammar)	9	dc12a613487cfc433bdf981b7a65baf4	L'infinito di Leopardi si legge in tutte le scuole italiane.	Guardo l'infinito del mare.
+finito	finished / finite	9	6b4641ad5f0d7938e1ceb4a6a2b5fa99	Il lavoro è finito, ma il ponteggio è rimasto su un altro mese.	Ho finito il libro.
+immortale	immortal	9	8b40cd026fea8e18949b49f41175ccad	Certe arie di Verdi sembrano immortali, e le canta anche chi non va all'opera.	Nessuno è immortale.
+mortale	mortal	9	4e6df43af7b9371b79507bbdf4522f21	Al museo hanno spiegato che per i greci l'uomo era mortale e gli dei no.	È un errore mortale.
+la certezza	certainty	9	579a8e1cbb76fe84494991eb966774da	L'unica certezza di agosto è che il fornaio sarà chiuso.	Non ho nessuna certezza.
+l'incertezza	uncertainty	9	4a1d68ae64cbe935af0ddcd3c3f40513	Con questa incertezza del tempo nessuno prenota il campeggio.	Vivo nell'incertezza.
+il pessimismo	pessimism	9	d71f61f79f22f230f4df102fcf845f14	Il pessimismo di Leopardi si studia al liceo, spesso di corsa.	Basta con il pessimismo!
+l'ottimismo	optimism	9	30670bf7ed60a141d08bae8b6d205c31	Con un po' di ottimismo si crede persino agli orari dei traghetti.	Serve più ottimismo.
+lo scopo	purpose	9	02f3f906e3028f023163e3e2e52f90cc	Lo scopo della passeggiata non è arrivare, è incontrare qualcuno.	Qual è lo scopo?
+il significato	meaning	9	ebc5c24be3949eddc86f3daa768714f1	Il significato di quella parola cambia da un paese all'altro.	Non capisco il significato.
+il valore	value	9	f2821da2e8d7e15c7c9864a8a0b769b8	Il valore di quel violino sta nel legno e in due secoli di suono.	Ha un grande valore.
+il principio	principle / beginning	9	71d4fa138503bfeee7b0bb8ac91e2cc0	In principio la piazza era un campo, poi ci hanno messo la fontana.	È una questione di principio.
+il concetto	concept	9	ae5f849d753e5f4ff7ac3cabd2d8912c	Il concetto di ora di punta a Napoli è più largo che altrove.	Non ho capito il concetto.
+l'ideale	ideal	9	ef15a8fb3e509c31760aef50c873487c	L'ideale sarebbe partire di martedì, ma nessuno può.	È il posto ideale.
+l'onestà	honesty	9	6aa259ab8fbb779a1afd9435d0748d09	L'onestà del fruttivendolo si vede da come pesa la frutta.	Apprezzo la tua onestà.
+la dignità	dignity	9	2aa18aeaebb46a008ff94155d6c41964	Il vecchio sarto lavora poco, ma con la stessa dignità di sempre.	Lo ha fatto con dignità.
+l'orgoglio	pride	9	736e9b108a46e3b3564114f92342c2b1	L'orgoglio di paese si misura in campanili e in ricette.	Che orgoglio!
+l'umiltà	humility	9	7e45b5f1e77afab930ee6de764c17bc2	Il maestro insegna con umiltà, e forse per questo lo ascoltano.	Parla con umiltà.
+la modestia	modesty	9	6dd9dcf4e9426946fb0afe95124a942b	Con falsa modestia dice che la sfoglia gli viene appena decente.	La modestia è una virtù.
+la generosità	generosity	9	72fa8e9933b618433161bc40de425b81	In campagna la generosità si misura in cassette di verdura.	Grazie della tua generosità.
+l'egoismo	selfishness	9	0bc1799d9c817edcb1a2c21486257482	Occupare due posti in treno è puro egoismo, e lo sanno tutti.	È solo egoismo.
+la gentilezza	kindness	9	39e94d17ee6d5984b2255a5376358fc1	Al banco la gentilezza dura quanto la coda, poi si accorcia.	Grazie per la gentilezza.
+la cortesia	courtesy	9	32fb3fc07e0f781d5a8f684cc973ae9c	Per cortesia, mi lascia passare? Il treno parte tra due minuti.	Fammi una cortesia.
+la sincerità	sincerity	9	1f7ccefdf1ec259bf6355cb80fcbe090	Con sincerità: il caffè di quel bar è imbevibile.	Apprezzo la sincerità.
+la fedeltà	loyalty / faithfulness	9	410a35860838705662b70f9245805862	La fedeltà al proprio bar, da queste parti, è una cosa seria.	Che fedeltà!
+la lealtà	loyalty	9	8227d95c121708631ddcc85ba5740a02	Tra i giocatori di bocce la lealtà conta più del punteggio.	Ammiro la sua lealtà.
+la gratitudine	gratitude	9	21221c9ac6621c8ef4f2e52358397cf8	Ha portato una cassa di vino per gratitudine, senza dire una parola.	Provo molta gratitudine.
+l'ambizione	ambition	9	e71a81e4597d63f76f5e34a5ff0cbebd	L'ambizione del liutaio è che il violino suoni ancora tra cent'anni.	Ha molta ambizione.
+la determinazione	determination	9	c999a9ea1ca120a01623fc711934ba16	Con determinazione ha rimesso in piedi un frantoio abbandonato.	Ammiro la sua determinazione.
+significare	to mean	9	17acbfb282a21855c328ff531e7c6951	In dialetto quella parola può significare due cose opposte.	Cosa significa questo?
+riflettere	to reflect / think	9	82cf1b2f5d88766a76117b1791664828	Prima di firmare conviene riflettere, ripete sempre il notaio.	Rifletti un momento.
+considerare	to consider	9	da316358e2782725e95659e06bc63fae	Bisogna considerare anche il traffico del rientro, non solo la strada.	Considera questa proposta.
+supporre	to suppose	9	8ceadc59e878ae6771a3607d1632df60	Possiamo supporre che il traghetto sia in ritardo, come al solito.	Suppongo di sì.
+ipotizzare	to hypothesize	9	68985db845d56c063158e8d0acb153ac	Gli archeologi ipotizzano che sotto la piazza passasse una strada romana.	Ipotizziamo un'altra data.
+dubitare	to doubt	9	32dfaf4b05b9f45a58a9e91ecf34cb52	Nessuno dubita della sfoglia bolognese: si discute solo del ripieno.	Non dubito di te.
+fidarsi	to trust	9	1de71c518e12bbab9e4a74c8e1e1fa7b	Del meteo in montagna conviene fidarsi solo la mattina stessa.	Mi fido di te.
+sospettare	to suspect	9	763fa2d752011b69bfe3f6783c86e276	Comincio a sospettare che questi lavori non finiranno mai.	Sospetto un errore.
+accusare	to accuse	9	c9a0b64f2f848157d8bc1d2e026b2d6d	Alla partita accusano sempre l'arbitro, mai il portiere.	Non accusare nessuno.
+giudicare	to judge	9	2a22513a4c4d0153a2508fb67b80bc8c	Non si può giudicare una trattoria dal solo antipasto.	Non giudicare troppo presto.
+condannare	to condemn	9	4d41937caff222f6aa8a6d054fb50a22	Nel romanzo lo condannano per un delitto che non ha commesso.	Non condannare subito.
+assolvere	to acquit	9	e3e91c1e3027d4158042dec6ce929483	Il tribunale ha deciso di assolvere l'imputato dopo anni di attesa.	Vogliono assolvere l'imputato.
+difendere	to defend	9	47f0767a0e9d9f6838d61e8c32018be8	In piazza difendono la propria ricetta come si difende un confine.	Devo difendere la mia idea.
+attaccare	to attack / attach / stick / start	9	defc3318d7a3905b96037d4d806fb965	Il francobollo non si attacca più: adesso stampano l'etichetta.	Attacca il manifesto qui.
+conquistare	to conquer	9	cdcef85a142b257c6e6f422e269a2d24	Il pesto ha conquistato mezzo mondo partendo da un mortaio di marmo.	Vuole conquistare tutti.
+dominare	to dominate	9	12661b8d914bca729c24c2f09cd44b85	Dal colle il castello domina tutta la pianura fino al fiume.	Domina la situazione.
+governare	to govern	9	2456fac8d64555739110cc743b414a30	Governare un condominio di venti famiglie è più difficile di quanto sembri.	Non è facile governare.
+esprimere	to express	9	323b92bdaafa99f513de7f9dac3583cb	In dialetto certe cose si riescono a esprimere molto meglio.	Esprimi la tua opinione.
+dichiarare	to declare	9	a19ff6c21ff425c42d1dae34a6087a36	Alla dogana bisogna dichiarare quello che si porta, formaggio compreso.	Devo dichiarare qualcosa?
+contestare	to contest / dispute	9	1fb422b1729762aa39a7c1f3da0ff780	Hanno contestato la multa e dopo un anno gliel'hanno tolta.	Voglio contestare il conto.
+giusto	fair / right	9	21016dc3fe441ee5b71fd6f15d982476	Il prezzo giusto al mercato lo sa solo chi ci va ogni settimana.	È la risposta giusta.
+ingiusto	unjust / unfair	9	8f8e4db9c09d42fafff9c5c387436e89	Sembra ingiusto che l'unico bar del paese chiuda proprio la domenica.	È un prezzo ingiusto.
+equo	equitable / fair	9	da35a8e1508df9e6c8e0e6f76ff8ee7f	Un conto equo divide anche il vino, non soltanto i piatti.	Non è un accordo equo.
+onesto	honest	9	d909dd50d0ba7e7c2e87bd1f11fa141f	Il meccanico è onesto: dice anche quando non serve cambiare niente.	È una persona onesta.
+disonesto	dishonest	9	fa055905cca0ddc39e2d955c8e20298a	Alle bocce nessuno è disonesto, però misurano tutti.	È un comportamento disonesto.
+generoso	generous	9	e87322d45135b3e8976f17b1f759c2a0	L'oste è generoso con il vino e severissimo con i tavoli.	Sei molto generoso.
+egoista	selfish	9	65eaef292094df518669d36af1cf5b7b	Chi tiene la sdraio occupata tutto il giorno è un po' egoista.	Non essere egoista!
+gentile	kind / polite	9	f841faf0549252ed798e9fb3751ab505	L'impiegata era gentile, ma il modulo era sbagliato lo stesso.	Che persona gentile!
+scortese	rude / impolite	9	1d8a140f19ab2ca6948c297d1c2de1f8	Non è scortese: parla così anche con i parenti.	È stato scortese.
+sincero	sincere	9	ec727856d612d3f5f60b307951451650	Sii sincero: il vino di quest'anno non è come quello scorso.	Un amico sincero è raro.
+fedele	faithful	9	06df1e734b08cc0a9847b3b766bfdd7d	È rimasto fedele allo stesso barbiere per quarant'anni.	È un cane fedele.
+leale	loyal	9	8fcb41423db26057b1740f8906f3d44b	Un avversario leale ti dice in faccia che quel rigore non c'era.	È stato leale con noi.
+ambizioso	ambitious	9	6f6944ddea696e9f9b2bdb0ce0da6d1c	Il progetto era ambizioso: rifare tutta la piazza in tre mesi.	È un ragazzo ambizioso.
+determinato	determined	9	47f59de54d39b4db447b412ceea95183	Con passo determinato è salito fino al rifugio senza mai fermarsi.	È una persona determinata.
+modesto	modest	9	cee4ba0cccdba9f3955d498c89fae725	Il pranzo era modesto, ma il vino veniva dalla cantina buona.	Vive in una casa modesta.
+valere	to be worth	9	dd9d5b4b1b4c9d85714c9ca379d9e766	Salire a piedi fino alla basilica vale la fatica, anche con il caldo.	Non vale la pena.
+contare	to count / count on / rely	9	ab62175861fad120ba6e3773e10ca9f5	In cucina conta il tempo più della ricetta.	Puoi contare su di me.
+importare	to matter / import	9	6ab6a853515153c782d224598f1b984d	Non importa il ritardo: il traghetto aspetta comunque i pullman.	Non mi importa niente.
+riferire	to report / refer	9	1ff42d58ea9d2e22c7ad4ef5f43d1d72	Bisogna riferire tutto all'amministratore, altrimenti non si muove nulla.	Riferisci il messaggio.
+riguardare	to concern / regard	9	4456d7dc50262990cd3361dd27bb460e	La questione riguarda tutto il condominio, non solo il primo piano.	Non ti riguarda.
+trattare	to treat / deal with	9	5483d8c32b7f244a9cb1c41dddfba84b	Al mercato si tratta ancora sul prezzo, ma con garbo.	Trattano bene i clienti.
+convenire	to be worthwhile / advantageous; to agree	9	faf44decff2dffa24eca6159e8d1e93d	Conviene partire presto, che poi la statale si riempie.	Conviene prenotare prima.
+opporre	to oppose	9	936d12657fc15f19e882b3d5b9f12e1e	Nessuno ha voluto opporre resistenza al nuovo orario dei bus.	Non opporre resistenza.
+sopportare	to bear / stand	9	eb551f2ffc734ab9aff2586725a22a90	Ad agosto in pianura bisogna sopportare l'afa fino a sera.	Non sopporto il rumore.
+tollerare	to tolerate	9	0ad4bf666ac1f2d8e03e2733af0d45c7	Il condominio tollera il pianoforte, ma non dopo le dieci.	Non tollero i ritardi.
+l'istante	instant	9	a5a76f067abd0680c5b584e586f02c2d	Per un istante, dal treno, si vede il mare e poi sparisce.	Aspetta un istante.
+l'epoca	era / epoch	9	a17d6b3b49c54f8e5b1106998d52c4aa	In quell'epoca la seta di Como si vendeva in mezza Europa.	Che epoca strana!
+l'era	era / age	9	cf5c0a6a33f6f53bf10be6c527fe5c93	Nell'era del telefono in tasca nessuno guarda più gli orari in stazione.	Comincia una nuova era.
+il secolo	century	9	120696b6b2ae625fb2902cae256b6a2a	La torre è del dodicesimo secolo e pende ancora oggi.	È un palazzo del secolo scorso.
+il decennio	decade	9	f8f3602596122599376640637f7dc0ca	Nell'ultimo decennio il ghiacciaio si è ritirato parecchio.	È passato un decennio.
+la generazione	generation	9	cb14ff35b15f3fbc6f45b25ec61c3524	La terza generazione ha ripreso la bottega e cambiato l'insegna.	Siamo la nuova generazione.
+l'antichità	antiquity	9	6ad26a8b98a5d3861c021643d376d8bd	Nell'antichità qui passava una strada romana, e si vede ancora.	Studio l'antichità classica.
+la modernità	modernity	9	f1ad145b5c4bc94198a7465976fe29fd	La modernità è arrivata in paese con la funivia e poi con la fibra.	Amo la modernità.
+la posterità	posterity	9	67926cf6d6c3272f65194f3a021c7887	Il liutaio lavora per la posterità, non per il cliente di oggi.	Lasciamo qualcosa alla posterità.
+la contemporaneità	contemporary times	9	c59b72967712495b7bc2237ad11bd2c4	La contemporaneità entra nei borghi con qualche anno di ritardo.	Studio la contemporaneità.
+la democrazia	democracy	9	f963f5494e549cd56bd7c01af3521a83	Nell'assemblea di condominio la democrazia funziona a fatica.	Viviamo in una democrazia.
+la dittatura	dictatorship	9	f9c50f10bfcfeae1e4f251186be6d330	A carte vige la dittatura di chi ha insegnato le regole.	Studiamo le dittature antiche.
+l'anarchia	anarchy	9	e75b6000941176b7e37fc6f4690db5e1	Al parcheggio della festa regna una piccola anarchia.	C'era una totale anarchia.
+l'oligarchia	oligarchy	9	d90e681f1b3c050e984dfea885e21e21	Nelle repubbliche marinare il potere stava spesso in mano a un'oligarchia.	Studiamo l'oligarchia antica.
+il comunismo	communism	9	29ddb02ff71d99a46677feaf05d886a3	A scuola il comunismo si studia nel programma del Novecento.	Studia la storia del comunismo.
+il socialismo	socialism	9	fd9c9b812dde91eb2a103bf95a762ca6	Il socialismo è uno dei temi del corso di storia contemporanea.	Ha studiato il socialismo.
+il capitalismo	capitalism	9	9c13b91e09b5587249e01d7d483e00d4	Il capitalismo è un capitolo intero del manuale di economia.	Studia il capitalismo moderno.
+il fascismo	fascism	9	9f46f9846ed1d4f55a7a88dbff15e21b	Il fascismo si studia in terza media e di nuovo al liceo.	Il fascismo è un tema storico.
+la rivoluzione	revolution	9	86df29c3f5d33c8fc7e11ee7a27778ef	L'arrivo del trattore fu una rivoluzione per queste campagne.	È stata una rivoluzione.
+la riforma	reform	9	bcf78d9361bb418527bce74bae88e206	La riforma della scuola si sente soprattutto negli orari.	Serve una riforma.
+la diplomazia	diplomacy	9	50e78a4ec9e5d5c21d3080a87e3e5a13	Per far togliere il ponteggio serve più diplomazia che denaro.	Ci vuole diplomazia.
+l'ambasciata	embassy	9	0965888f6af437ba9dece21638feb701	Per il visto bisogna andare in ambasciata e prendere appuntamento.	L'ambasciata è chiusa oggi.
+l'ambasciatore	ambassador	9	3916267cf38592f1fa040f9914c18a89	All'inaugurazione della mostra c'era anche un ambasciatore.	L'ambasciatore ha parlato.
+l'alleanza	alliance	9	6a2109628526531611eb6707f4c4cc95	Tra due contrade di Siena esiste un'alleanza che dura da secoli.	Hanno fatto un'alleanza.
+il conflitto	conflict	9	00a43df032897a6525b49f800163b4ab	Il conflitto tra i due vicini riguarda un albero e mezzo metro di siepe.	C'è un conflitto aperto.
+il trattato	treaty	9	8025d68c065e464ff0b512c93d01c07d	Sul tavolo c'era un trattato di enologia con le pagine consumate.	Hanno firmato un trattato.
+il negoziato	negotiation	9	961c3574221c7c8dc8ee4a06edefdd28	Il negoziato con il vicino per il muretto è durato due estati.	Il negoziato è difficile.
+il territorio	territory	9	d2fbf1f66eb549e8220efd8962b120af	Il territorio del comune arriva fino al crinale, dove non sale nessuno.	Conosco bene il territorio.
+la sovranità	sovereignty	9	d9275be2eb62ecc7e7adc5b86c13b9d2	Nelle repubbliche marinare la sovranità stava nelle mani di poche famiglie.	Parliamo di sovranità.
+l'indipendenza	independence	9	50e87f5042cd1702f296c6e16551ee50	Da ragazzi l'indipendenza erano il motorino e le chiavi di casa.	Vuole la sua indipendenza.
+l'inquinamento	pollution	9	f58b48e84bd1d48633949f4dbe5d4b11	In pianura d'inverno l'inquinamento resta fermo con l'aria immobile.	L'inquinamento è aumentato.
+la disuguaglianza	inequality	9	82441565f30ab92d2665fc9d4496b7f7	Tra le città e i borghi la disuguaglianza si vede nei servizi.	Parliamo di disuguaglianza.
+l'integrazione	integration	9	939a8753755f1422e805193f6277a329	In quartiere l'integrazione passa dal campo da calcio e dalla scuola.	L'integrazione richiede tempo.
+l'immigrazione	immigration	9	dae05b32271e8176d5fe5bfffc94b1f8	L'immigrazione ha portato nuovi negozi e nuove cucine nelle vie del centro.	Studiamo l'immigrazione recente.
+l'emigrazione	emigration	9	341e26f4326de2468d5a7d8119d7ca9c	Dall'Appennino l'emigrazione svuotò interi paesi nel Novecento.	L'emigrazione è finita.
+il razzismo	racism	9	bc8592488471c64477f3c04a88d9c476	Nel regolamento sportivo il razzismo è punito con la squalifica.	Il razzismo va combattuto.
+l'abuso	abuse	9	f74220ed64ec7250621d2af7eb8f3d81	L'abuso edilizio lungo la costa si vede ancora dalle finestre.	È un abuso evidente.
+la violenza	violence	9	520c543b68bc3ced359a622f536e9ab0	La violenza del temporale ha scoperchiato due tetti in una notte.	Con violenza non si risolve.
+la corruzione	corruption	9	f1a3ec62c192a1e9fa4f8543a739f94b	Nel romanzo la corruzione dei funzionari è il motore di tutta la trama.	La corruzione danneggia tutti.
+la criminalità	crime / criminality	9	ef9ec9eeea933368069f93046d6d83be	Le statistiche sulla criminalità si leggono male sui giornali.	La criminalità è diminuita.
+la bellezza	beauty	9	efa02ebdb816ea0ec68ce11b443b20f9	La bellezza di questi borghi sta anche nel silenzio di novembre.	Che bellezza!
+la bruttezza	ugliness	9	c135ca44fa892d085ebf424d1af28a51	La bruttezza del palazzo nuovo è diventata un argomento da bar.	Che bruttezza!
+l'armonia	harmony	9	36d2891be2fdab5e38a02344af612aaa	Nella facciata l'armonia delle proporzioni si nota anche senza saperne nulla.	Vivono in armonia.
+l'equilibrio	balance	9	fe5323d5e54e115aa8e6099c1d960985	Sul ponte di barche l'equilibrio si perde al primo passo.	Ha perso l'equilibrio.
+la simmetria	symmetry	9	7d5851fc1864a88683803f89ec7662bd	Nella piazza rinascimentale la simmetria è quasi perfetta.	Che bella simmetria!
+la proporzione	proportion	9	891fff1b8640093ffef314e98d397f80	Nel pesto la proporzione tra aglio e basilico è materia di litigio.	Manca la proporzione.
+la qualità	quality	9	e29ce0538ab67571c60502767c04a3b4	Al mercato la qualità si riconosce dal prezzo e dalla fila.	È di ottima qualità.
+la quantità	quantity	9	244bc089074537075b62bd3f375a6254	In trattoria la quantità non è mai un problema, semmai il contrario.	Che quantità di neve!
+l'eccellenza	excellence	9	ae49f0aa79139806853be6b10d9daf76	Il violino di Cremona resta un'eccellenza riconosciuta ovunque.	È un'eccellenza locale.
+la mediocrità	mediocrity	9	e966bd514adcf2f93c0c0c558b5a3e4c	Il menù turistico galleggia in una mediocrità garantita.	Basta con la mediocrità!
+che io sia	(that) I be (subjunctive)	9	5fda9d05ee620dd56b8eae7b411edda8	Non credo che io sia capace di salire fin lassù con questo caldo.	Pensa che io sia stanco.
+che tu sia	(that) you be (subjunctive)	9	5e2e34105bc1dbcf23a4563a31bbd7f2	Spero che tu sia arrivato prima del temporale.	Voglio che tu sia felice.
+che lui sia / che lei sia	(that) he/she be (subjunctive)	9	60cd6334a3f81f5502f571dbaf562c39	Pare che lei sia tornata a vivere in paese dopo vent'anni.	Credo che lui sia in ritardo.
+che noi siamo	(that) we be (subjunctive)	9	56e1b884b39da0d185a7a8b4cee25677	Vogliono che noi siamo in piazza alle otto, per la partenza.	Pensano che noi siamo pronti.
+che voi siate	(that) you be (subj. pl)	9	853c17c1ddf7f9bde896154b07ea47d2	Bisogna che voi siate alla stazione mezz'ora prima.	Spero che voi siate contenti.
+che loro siano	(that) they be (subjunctive)	9	bd7cc8bcfc749d96f074f1a145262587	Sembra che loro siano rimasti in città anche a Ferragosto.	Credo che loro siano usciti.
+che io abbia	(that) I have (subjunctive)	9	7b10fec6a30bca0a3d770e429bf428ea	Non credo che io abbia il tempo di passare dal fornaio.	Pensa che io abbia ragione.
+che tu abbia	(that) you have (subjunctive)	9	ca78a0cc2d62c6171ee715359863a470	Spero che tu abbia preso il biglietto in tabaccheria.	Credo che tu abbia ragione.
+che lui abbia / che lei abbia	(that) he/she have (subjunctive)	9	4d68d36300c5c21b36efdca16e29adf4	Pare che lei abbia venduto la casa in collina.	Credo che lui abbia fame.
+che noi abbiamo	(that) we have (subjunctive)	9	c85b0b258b4508106aeedd80034b8c25	Non immaginano che noi abbiamo già pagato la quota.	Sperano che noi abbiamo tempo.
+che voi abbiate	(that) you have (subj. pl)	9	6465471c999abf4027f62bcc2474ab96	Bisogna che voi abbiate i documenti, anche solo per il traghetto.	Spero che voi abbiate mangiato.
+che loro abbiano	(that) they have (subjunctive)	9	4471a9eba3addb01f8010ca64f9330d5	Dubito che loro abbiano prenotato in tempo per agosto.	Credo che loro abbiano finito.
+che io faccia	(that) I do/make (subjunctive)	9	27e6af1b02e10a38c9dd9fc9143bfa1a	Vuoi che io faccia il caffè, o preferisci scendere al bar?	Vuole che io faccia presto.
+che tu faccia	(that) you do/make (subjunctive)	9	43513776e3a844fb0207302706099f51	È meglio che tu faccia il biglietto prima di salire sul treno.	Voglio che tu faccia attenzione.
+che lui faccia / che lei faccia	(that) he/she do/make (subj.)	9	94509a7bed43fe67baf48ee86bd91587	Speriamo che lei faccia in tempo a chiudere le persiane.	Credo che lui faccia tardi.
+che noi facciamo	(that) we do/make (subjunctive)	9	d426c4287df8fb55df268b90278ca387	Vogliono che noi facciamo la spesa prima che chiuda il mercato.	Pensano che noi facciamo tardi.
+che voi facciate	(that) you do/make (subj. pl)	9	9204be34d31fab5bcd6d72cb83ac8aca	Bisogna che voi facciate silenzio: qui i muri sono sottili.	Spero che voi facciate presto.
+che loro facciano	(that) they do/make (subjunctive)	9	ff7bbd691a71b3ccc2ef86de5120f565	È strano che loro facciano la sfoglia con la macchina.	Credo che loro facciano festa.
+che io vada	(that) I go (subjunctive)	9	e25391a3777c6a1b20cde7eebb2a28ca	Non è necessario che io vada in comune di persona, spero.	Vuoi che io vada adesso?
+che tu vada	(that) you go (subjunctive)	9	232dab9062de5777481422e5aa2075e4	È meglio che tu vada al mercato presto, che il pesce finisce.	Voglio che tu vada piano.
+che lui vada / che lei vada	(that) he/she go (subjunctive)	9	db2c142c395ae438402149a16a7d4835	Pare che lei vada in montagna ogni fine settimana.	Credo che lui vada via.
+che noi andiamo	(that) we go (subjunctive)	9	015e90816beae4510505cd9f4d2d1e8d	Sperano che noi andiamo a prenderli alla stazione.	Vuole che noi andiamo subito.
+che voi andiate	(that) you go (subj. pl)	9	1961c07e47d72eb072cb369721666f1c	Conviene che voi andiate a piedi: in centro non si parcheggia.	Spero che voi andiate presto.
+che loro vadano	(that) they go (subjunctive)	9	0a2ecfa99a8aa4dada015e7ff1b3ea59	Non credo che loro vadano al mare con questo vento.	Voglio che loro vadano via.
+che io venga	(that) I come (subjunctive)	9	382f364af5e0829b3c11f022707ae099	Vuoi che io venga a prenderti alla fermata del pullman?	Pensa che io venga domani.
+che tu venga	(that) you come (subjunctive)	9	16ec1bbde4f65539f2a3f2794b95f8b4	Speriamo che tu venga alla vendemmia, come l'anno scorso.	Voglio che tu venga con me.
+che lui venga / che lei venga	(that) he/she come (subj.)	9	201786e6809fb315ce475b4269bf32df	È probabile che lei venga in treno, con i prezzi della benzina.	Credo che lui venga stasera.
+che noi veniamo	(that) we come (subjunctive)	9	a3391bccd6f6bfcb7dfdeadbd33fe2aa	Sperano che noi veniamo a cena, e hanno già fatto il ragù.	Vuole che noi veniamo presto.
+che voi veniate	(that) you come (subj. pl)	9	7bdbc7af27c194fd5c3c1486167eb594	Bisogna che voi veniate prima delle otto, poi chiudono la strada.	Spero che voi veniate domani.
+che loro vengano	(that) they come (subjunctive)	9	48cf3600118aaa2dbeb9f327bf160596	Non credo che loro vengano fin quassù con questa nebbia.	Voglio che loro vengano subito.
+che io possa	(that) I can/be able (subj.)	9	cfeb4a7a6b0f86fa0185d7c534136609	Non penso che io possa finire il sentiero prima del buio.	Spero che io possa aiutarti.
+che tu possa	(that) you can/be able (subj.)	9	31290e9fac7bb0565f72707ba41f47eb	Spero che tu possa vedere il duomo prima che chiuda.	Credo che tu possa farcela.
+che lui possa / che lei possa	(that) he/she can (subj.)	9	3c6b5418049db7e1cf631700afb1757b	Non è detto che lei possa venire: dipende dal turno.	Spero che lui possa venire.
+che noi possiamo	(that) we can/be able (subj.)	9	b846b8a6267a7e145165b7b7bddc65aa	Sembra che noi possiamo entrare gratis la prima domenica del mese.	Pensa che noi possiamo aiutare.
+che voi possiate	(that) you can/be able (subj. pl)	9	2151983e0ab34f40b32eb84768398bf7	Spero che voi possiate assaggiare il vino della cantina vecchia.	Credo che voi possiate entrare.
+che loro possano	(that) they can/be able (subj.)	9	4ec843749f44212a38cca7182a0f7869	Dubito che loro possano salire in vetta con quelle scarpe.	Spero che loro possano venire.
+che io parli	(that) I speak (subjunctive)	9	523689ae482a68988636f36618d4a1e5	Preferisci che io parli in italiano o in dialetto con il fornaio?	Vuole che io parli piano.
+che tu parli	(that) you speak (subjunctive)	9	dbeb765b62414790c1e4eecf3cfede6b	È meglio che tu parli con il proprietario prima di firmare.	Voglio che tu parli chiaro.
+che lui parli / che lei parli	(that) he/she speak (subj.)	9	0e12a261d6ecf0e693831e316f825755	Pare che lei parli quattro lingue e non lo dica a nessuno.	Credo che lui parli troppo.
+che noi parliamo	(that) we speak (subjunctive)	9	009571302be862fd7d8a261134d79082	Vogliono che noi parliamo con l'amministratore prima dell'assemblea.	Spera che noi parliamo con lui.
+che voi parliate	(that) you speak (subj. pl)	9	1c83123e44ea0d15fa7f4d992b2b8b11	Bisogna che voi parliate con il medico, non con il farmacista.	Voglio che voi parliate piano.
+che loro parlino	(that) they speak (subjunctive)	9	9c640ad51207570dfb34dba692eff938	Poco importa che loro parlino: in paese si parla comunque.	Spero che loro parlino con noi.
+che io tema	(that) I fear (subjunctive)	9	911767bdbabd335cd3ca487e79aca2ab	Non c'è motivo che io tema la discesa: l'ho già fatta altre volte.	Credi che io tema il buio?
+che tu tema	(that) you fear (subjunctive)	9	c954f25cddbeb898818c0231c5271418	È normale che tu tema la bora, almeno la prima volta.	Non voglio che tu tema.
+che lui tema / che lei tema	(that) he/she fear (subj.)	9	abab7dda740feb6b0baaca1b56f21f17	Non credo che lei tema il temporale: è cresciuta in montagna.	Pare che lui tema l'esame.
+che noi temiamo	(that) we fear (subjunctive)	9	57a63b28458d8fa1483a41e7deddcaf2	Non pensare che noi temiamo un po' di pioggia.	Crede che noi temiamo il freddo.
+che voi temiate	(that) you fear (subj. pl)	9	e3a9a582c64355378650dd66f2a4e918	Non c'è ragione che voi temiate il sentiero: è largo e segnato.	Spero che voi non temiate nulla.
+che loro temano	(that) they fear (subjunctive)	9	5a6b42f6c974982747046a3dc89ccb40	È giusto che loro temano la grandine, in questa stagione.	Credo che loro temano il buio.
+che io parta	(that) I leave (subjunctive)	9	8b828ef88b2d8971a250f5d731541926	Vuoi che io parta prima, per evitare la coda del rientro?	Pensa che io parta domani.
+che tu parta	(that) you leave (subjunctive)	9	927e65ed631b930536d58a3be5c9986f	È meglio che tu parta all'alba, con il traffico di agosto.	Voglio che tu parta sereno.
+che lui parta / che lei parta	(that) he/she leave (subj.)	9	ef9c1eb0f2d6d9610a54e7c1693f8bd9	Sembra che lei parta per la Sardegna a fine mese.	Credo che lui parta stasera.
+che noi partiamo	(that) we leave (subjunctive)	9	80900ffac231172a8aeb4ea0e5fb70bf	Vogliono che noi partiamo insieme, così si divide la benzina.	Spera che noi partiamo presto.
+che voi partiate	(that) you leave (subj. pl)	9	795cd66a830a077e8fb98204841bbccb	Conviene che voi partiate presto, che poi si mette a piovere.	Spero che voi partiate domani.
+che loro partano	(that) they leave (subjunctive)	9	f43fadc0cf37f71920a16ef6b7d5a7fe	È probabile che loro partano con il traghetto della sera.	Voglio che loro partano subito.
